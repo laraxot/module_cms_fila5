@@ -1,0 +1,133 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Cms\Models;
+
+use Modules\Tenant\Models\Traits\SushiToJsons;
+use Modules\Xot\Actions\Tree\GetTreeOptionsByModelClassAction;
+use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
+use Modules\Xot\Models\Traits\TypedHasRecursiveRelationships;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
+
+/**
+ * Modules\Cms\Models\Menu.
+ *
+ * @property string                                      $id
+ * @property string|null                                 $title
+ * @property int|null                                    $parent_id
+ * @property string|null                                 $created_at
+ * @property string|null                                 $updated_at
+ * @property string|null                                 $created_by
+ * @property string|null                                 $updated_by
+ * @property Collection<int, Menu>                       $children
+ * @property int|null                                    $children_count
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property Menu|null                                   $parent
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property int                                         $depth
+ * @property string                                      $path
+ * @property Collection<int, Menu>                       $ancestors      The model's recursive parents.
+ * @property-read int|null $ancestors_count
+ * @property-read Collection<int, Menu> $ancestorsAndSelf The model's recursive parents and itself.
+ * @property-read int|null $ancestors_and_self_count
+ * @property-read Collection<int, Menu> $bloodline The model's ancestors, descendants and itself.
+ * @property-read int|null $bloodline_count
+ * @property-read Collection<int, Menu> $childrenAndSelf The model's direct children and itself.
+ * @property-read int|null $children_and_self_count
+ * @property-read Collection<int, Menu> $descendants The model's recursive children.
+ * @property-read int|null $descendants_count
+ * @property-read Collection<int, Menu> $descendantsAndSelf The model's recursive children and itself.
+ * @property-read int|null $descendants_and_self_count
+ * @property-read Collection<int, Menu> $parentAndSelf The model's direct parent and itself.
+ * @property-read int|null $parent_and_self_count
+ * @property-read Menu|null $rootAncestor The model's topmost parent.
+ * @property-read Collection<int, Menu> $siblings The parent's other children.
+ * @property-read int|null $siblings_count
+ * @property-read Collection<int, Menu> $siblingsAndSelf All the parent's children.
+ * @property-read int|null $siblings_and_self_count
+ *
+ * @method static Collection<int, static>                                         all($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu breadthFirst()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu depthFirst()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu doesntHaveChildren()
+ * @method static Collection<int, static>                                         get($columns = ['*'])
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu getExpressionGrammar()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu hasChildren()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu hasParent()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu isLeaf()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu isRoot()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu newModelQuery()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu newQuery()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu query()
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu tree($maxDepth = null)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu treeOf(\Illuminate\Database\Eloquent\Model|callable $constraint, $maxDepth = null)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereCreatedAt($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereCreatedBy($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereDepth($operator, $value = null)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereId($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereParentId($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereTitle($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereUpdatedAt($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu whereUpdatedBy($value)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu withGlobalScopes(array $scopes)
+ * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder<static>|Menu withRelationshipExpression($direction, callable $constraint, $initialDepth, $from = null, $maxDepth = null)
+ *
+ * @mixin \Eloquent
+ */
+class Menu extends BaseModel implements HasRecursiveRelationshipsContract
+{
+    use SushiToJsons;
+    use TypedHasRecursiveRelationships;
+
+    /** @var list<string> */
+    protected $fillable = [
+        'title',
+        'items',
+        'parent_id',
+    ];
+
+    protected array $schema = [
+        'id' => 'integer',
+        'title' => 'string',
+        'parent_id' => 'integer',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'created_by' => 'string',
+        'updated_by' => 'string',
+    ];
+
+    /**
+     * @return array<int|string, string>
+     */
+    public static function getTreeMenuOptions(): array
+    {
+        /** @var class-string<HasRecursiveRelationshipsContract> $className */
+        $className = self::class;
+
+        return app(GetTreeOptionsByModelClassAction::class)->execute($className);
+    }
+
+    public function getRows(): array
+    {
+        return $this->getSushiRows();
+    }
+
+    #[\Override]
+    public function getLabel(): string
+    {
+        // PHPStan Level 10: Ensure string return
+        return $this->title ?? '';
+    }
+
+    /** @return array<string, string> */
+    #[\Override]
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string',
+            'items' => 'array',
+        ];
+    }
+}
