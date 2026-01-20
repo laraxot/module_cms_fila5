@@ -53,7 +53,7 @@ beforeEach(function (): void {
         /* @var \Modules\User\Models\User */
         /* @phpstan-ignore-next-line method.nonObject */
         $this->no_super_admin_user = $this->getNoSuperAdminUser();
-    } catch (\Spatie\Permission\Exceptions\RoleDoesNotExist $e) {
+    } catch (Spatie\Permission\Exceptions\RoleDoesNotExist $e) {
         $this->markTestSkipped('Roles not seeded in test database');
     }
 });

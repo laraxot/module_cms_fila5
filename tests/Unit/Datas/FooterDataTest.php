@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Datas\FooterData;
 
@@ -15,13 +15,13 @@ test('FooterData can be instantiated', function (): void {
 test('FooterData extends Spatie Data', function (): void {
     $footerData = new FooterData();
 
-    expect($footerData)->toBeInstanceOf(\Spatie\LaravelData\Data::class);
+    expect($footerData)->toBeInstanceOf(Spatie\LaravelData\Data::class);
 });
 
 test('FooterData implements Wireable interface', function (): void {
     $footerData = new FooterData();
 
-    expect($footerData)->toBeInstanceOf(\Livewire\Wireable::class);
+    expect($footerData)->toBeInstanceOf(Livewire\Wireable::class);
 });
 
 test('FooterData has default view path', function (): void {

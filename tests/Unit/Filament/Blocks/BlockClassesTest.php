@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Filament\Blocks\ActionsBlock;
 use Modules\Cms\Filament\Blocks\ContactBlock;
@@ -20,7 +20,7 @@ test('ActionsBlock can be instantiated', function () {
 
 test('ActionsBlock has getBlockSchema method', function () {
     expect(method_exists(ActionsBlock::class, 'getBlockSchema'))->toBeTrue();
-    
+
     $schema = ActionsBlock::getBlockSchema();
     expect($schema)->toBeArray();
 });

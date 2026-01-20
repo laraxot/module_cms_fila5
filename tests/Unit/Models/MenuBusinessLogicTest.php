@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Menu;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
-use Modules\Xot\Models\Traits\TypedHasRecursiveRelationships;
 
 use function Safe\class_uses;
 
@@ -27,7 +26,7 @@ describe('Menu Business Logic', function () {
         $traits = class_uses_recursive(Menu::class);
 
         // Menu uses HasRecursiveRelationships from staudenmeir/laravel-adjacency-list
-        expect(array_values($traits))->toContain(\Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships::class);
+        expect(array_values($traits))->toContain(Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships::class);
     });
 
     test('menu has sushi to json trait', function () {
@@ -72,7 +71,7 @@ describe('Menu Business Logic', function () {
         $menu = new Menu();
 
         // Use reflection to access protected $schema property
-        $reflection = new \ReflectionClass($menu);
+        $reflection = new ReflectionClass($menu);
         $schemaProperty = $reflection->getProperty('schema');
 
         expect($schemaProperty->isProtected())->toBeTrue();

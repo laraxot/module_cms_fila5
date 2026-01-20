@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Models\Page;
 
@@ -13,7 +13,7 @@ test('page model can be instantiated', function (): void {
 
 test('page extends BaseModelLang', function (): void {
     $page = new Page();
-    expect($page)->toBeInstanceOf(\Modules\Cms\Models\BaseModelLang::class);
+    expect($page)->toBeInstanceOf(Modules\Cms\Models\BaseModelLang::class);
 });
 
 test('page has expected fillable fields', function (): void {
@@ -58,7 +58,7 @@ test('page has SushiToJsons trait', function (): void {
     $page = new Page();
     $traits = class_uses_recursive($page);
 
-    expect(array_values($traits))->toContain(\Modules\Tenant\Models\Traits\SushiToJsons::class);
+    expect(array_values($traits))->toContain(Modules\Tenant\Models\Traits\SushiToJsons::class);
 });
 
 test('page has getRows method for sushi functionality', function (): void {
@@ -71,7 +71,7 @@ test('page has getRows method for sushi functionality', function (): void {
 test('page has schema definition', function (): void {
     $page = new Page();
 
-    $reflection = new \ReflectionClass($page);
+    $reflection = new ReflectionClass($page);
     $schemaProperty = $reflection->getProperty('schema');
 
     expect($schemaProperty->isProtected())->toBeTrue();

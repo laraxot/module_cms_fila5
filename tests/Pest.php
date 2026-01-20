@@ -30,7 +30,7 @@ uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
 expect()->extend('toBeSubclassOf', function (string $parentClass) {
     $class = $this->value;
     if (! is_string($class)) {
-        throw new \InvalidArgumentException('Expected a class name string');
+        throw new InvalidArgumentException('Expected a class name string');
     }
 
     return $this->and(is_subclass_of($class, $parentClass) || $class === $parentClass)->toBeTrue();

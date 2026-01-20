@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Section;
@@ -65,7 +65,7 @@ describe('Section Business Logic', function (): void {
         $section = new Section();
 
         // Use reflection to access protected $schema property
-        $reflection = new \ReflectionClass($section);
+        $reflection = new ReflectionClass($section);
         $schemaProperty = $reflection->getProperty('schema');
 
         expect($schemaProperty->isProtected())->toBeTrue();

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Models\Section;
 
 test('Section model can be instantiated', function () {
     $section = new Section();
-    
+
     expect($section)->toBeInstanceOf(Section::class);
 });
 
@@ -27,13 +27,13 @@ test('Section model extends BaseModelLang', function () {
     $section = new Section();
 
     // Section extends BaseModelLang for translations support
-    expect($section)->toBeInstanceOf(\Modules\Cms\Models\BaseModelLang::class);
+    expect($section)->toBeInstanceOf(Modules\Cms\Models\BaseModelLang::class);
 });
 
 test('Section model has expected casts', function () {
     $section = new Section();
-    
+
     $casts = $section->getCasts();
-    
+
     expect($casts)->toBeArray();
 });

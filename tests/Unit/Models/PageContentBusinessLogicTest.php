@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Models\PageContent;
 use Modules\Tenant\Models\Traits\SushiToJsons;
@@ -15,7 +15,7 @@ test('page content model can be instantiated', function (): void {
 
 test('page content extends BaseModel', function (): void {
     $pageContent = new PageContent();
-    expect($pageContent)->toBeInstanceOf(\Modules\Cms\Models\BaseModel::class);
+    expect($pageContent)->toBeInstanceOf(Modules\Cms\Models\BaseModel::class);
 });
 
 test('page content uses SushiToJsons trait', function (): void {
@@ -52,7 +52,7 @@ test('page content has correct fillable attributes', function (): void {
 test('page content has correct schema definition', function (): void {
     $pageContent = new PageContent();
 
-    $reflection = new \ReflectionClass($pageContent);
+    $reflection = new ReflectionClass($pageContent);
     $schemaProperty = $reflection->getProperty('schema');
 
     expect($schemaProperty->isProtected())->toBeTrue();

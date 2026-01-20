@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Tenant\Models\Traits\SushiToJsons;
@@ -72,7 +72,7 @@ describe('Page Business Logic', function (): void {
         $page = new Page();
 
         // Use reflection to access protected $schema property
-        $reflection = new \ReflectionClass($page);
+        $reflection = new ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');
 
         expect($schemaProperty->isProtected())->toBeTrue();

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(Modules\Cms\Tests\TestCase::class);
 
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Datas\FooterData;
@@ -18,13 +18,13 @@ test('BlockData can be instantiated', function () {
 
 test('FooterData can be instantiated', function () {
     $footerData = FooterData::from([]);
-    
+
     expect($footerData)->toBeInstanceOf(FooterData::class);
 });
 
 test('HeadernavData can be instantiated', function () {
     $headernavData = HeadernavData::from([]);
-    
+
     expect($headernavData)->toBeInstanceOf(HeadernavData::class);
 });
 
