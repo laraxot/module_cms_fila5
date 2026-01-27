@@ -16,7 +16,7 @@ class ListPages extends LangBaseListRecords
     /**
      * @return array<string, Column>
      */
-public function getTableColumns(): array
+    public function getTableColumns(): array
     {
         return [
             'title' => TextColumn::make('title')->searchable(),
