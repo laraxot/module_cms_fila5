@@ -1,42 +1,33 @@
-# Cms Module Documentation Index
+# 📚 **Indice Documentazione Modulo Cms**
 
-## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
+**Last Update**: 31 Gennaio 2026
+**Status**: ✅ PHPStan Level 10 Compliant
+**Module Version**: 2.3.0
 
-## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
+## 🎯 **Lettura Essenziale**
+1. [README.md](./README.md) - Panoramica completa, Quick Start e Architettura.
+2. [roadmap.md](./roadmap.md) - Stato avanzamento e obiettivi 2026.
+3. [philosophy.md](./philosophy.md) - Visione "Zen" della gestione contenuti modulare.
 
-## Code Quality
-- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
+## 🏗️ **Architettura e Blocchi**
+- 🧱 **[Content Blocks System](./blocks/)** - Guida al sistema di blocchi trascinabili.
+- 🧬 **[XotData Pattern](./architecture-xotdata-pattern.md)** - Gestione dei dati tipizzati nel CMS.
+- 🧩 **[Page Rendering](./livewire/page-show.md)** - Ciclo di vita del rendering delle pagine Volt.
 
-## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
+## 🎨 **Frontend & Theming**
+- 💅 **[Theming System](./themes/)** - Creazione e personalizzazione dei temi.
+- 🌐 **[SEO & Metatags](./metatag-population-strategy.md)** - Strategie per l'ottimizzazione sui motori di ricerca.
+- ⚡ **[Volt Components](./components/)** - Libreria di componenti interattivi pronti all'uso.
 
-## Missing Features & Gaps
-- [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
-- [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
-# Cms Module Documentation Index
+## 🧪 **Qualità e Sviluppo**
+- ✅ **[PHPStan Compliance](./phpstan-level-10-compliance.md)** - Traguardi di analisi statica.
+- 🔬 **[Testing Guidelines](./tests/architecture-separation-rules.md)** - Come scrivere test per il CMS.
+- 🧹 **[PHPMD & Complexity](./cyclomatic-complexity-report.md)** - Report sulla pulizia del codice.
 
-## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
+## 🔗 **Moduli Correlati**
+- [UI](../../UI/docs/README.md) - Componenti grafici base.
+- [Media](../../Media/docs/README.md) - Gestione file e immagini cloud.
+- [Xot](../../Xot/docs/README.md) - Core framework.
 
-## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
-
-## Code Quality
-- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
-
-## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
-
-## Missing Features & Gaps
-- [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
-- [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
+---
+*Documentazione conforme agli standard Laraxot - DRY + KISS + SOLID*
