@@ -25,7 +25,7 @@ trait HasBlocks
     {
         $blocks = $this->blocks;
 
-        if (is_array($blocks) && count($blocks) > 0 && is_string(array_key_first($blocks)) && strlen(array_key_first($blocks)) === 2) {
+        if (is_array($blocks) && count($blocks) > 0 && is_string(array_key_first($blocks)) && 2 === strlen(array_key_first($blocks))) {
             $primary_lang = XotData::make()->primary_lang;
             $blocks = $this->getTranslation('blocks', app()->getLocale() ?: $primary_lang);
         }
