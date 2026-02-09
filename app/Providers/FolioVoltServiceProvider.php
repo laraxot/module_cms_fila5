@@ -22,7 +22,9 @@ class FolioVoltServiceProvider extends ServiceProvider
     /**
      * Register services.
      */
-    public function register(): void {}
+    public function register(): void
+    {
+    }
 
     /**
      * Bootstrap services.
@@ -83,7 +85,7 @@ class FolioVoltServiceProvider extends ServiceProvider
 
         // Register Folio paths WITHOUT locale-setting middleware to avoid serialization issues
         // The locale will be set in the page templates themselves
-        
+
         // Verifica che il percorso tema esista e sia una directory prima di passarlo a Folio
         if (File::exists($theme_path) && File::isDirectory($theme_path)) {
             // Registra Folio per ogni lingua supportata - WITHOUT locale middleware

@@ -5,9 +5,10 @@ declare(strict_types=1);
 uses(Modules\Cms\Tests\TestCase::class);
 use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\Conf;
-use Sushi\Sushi;
 
 use function Safe\class_uses;
+
+use Sushi\Sushi;
 
 describe('Conf Business Logic', function (): void {
     test('conf extends eloquent model', function (): void {
