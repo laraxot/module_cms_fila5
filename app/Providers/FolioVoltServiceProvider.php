@@ -22,9 +22,7 @@ class FolioVoltServiceProvider extends ServiceProvider
     /**
      * Register services.
      */
-    public function register(): void
-    {
-    }
+    public function register(): void {}
 
     /**
      * Bootstrap services.
@@ -83,20 +81,17 @@ class FolioVoltServiceProvider extends ServiceProvider
         $modules = Module::all();
         $paths = [];
 
+        // Register Folio paths WITHOUT locale-setting middleware to avoid serialization issues
+        // The locale will be set in the page templates themselves
+        
         // Verifica che il percorso tema esista e sia una directory prima di passarlo a Folio
         if (File::exists($theme_path) && File::isDirectory($theme_path)) {
-            // Registra Folio per ogni lingua supportata
+            // Registra Folio per ogni lingua supportata - WITHOUT locale middleware
             foreach ($supportedLocales as $locale) {
                 Folio::path($theme_path)
                     ->uri($locale)
                     ->middleware([
-                        '*' => array_merge($base_middleware, [
-                            function ($request, callable $next) use ($locale) {
-                                app()->setLocale($locale);
-
-                                return $next($request);
-                            },
-                        ]),
+                        '*' => $base_middleware, // No locale-setting middleware here
                     ]);
             }
             $paths[] = $theme_path;
@@ -108,18 +103,12 @@ class FolioVoltServiceProvider extends ServiceProvider
                 continue;
             }
             $paths[] = $path;
-            // Registra Folio per ogni lingua supportata
+            // Registra Folio per ogni lingua supportata - WITHOUT locale middleware
             foreach ($supportedLocales as $locale) {
                 Folio::path($path)
                     ->uri($locale)
                     ->middleware([
-                        '*' => array_merge($base_middleware, [
-                            function ($request, callable $next) use ($locale) {
-                                app()->setLocale($locale);
-
-                                return $next($request);
-                            },
-                        ]),
+                        '*' => $base_middleware, // No locale-setting middleware here
                     ]);
             }
         }
