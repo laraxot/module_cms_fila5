@@ -6,7 +6,6 @@ namespace Modules\Cms\View\Components;
 
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
-use Modules\Cms\Actions\View\GetCmsViewAction;
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Models\Section as SectionModel;
 use Spatie\LaravelData\DataCollection;
@@ -16,9 +15,9 @@ use Spatie\LaravelData\DataCollection;
  *
  * Renders a reusable section of the site using the Section model.
  *
- * @property string      $slug The unique identifier for the section
+ * @property string $slug The unique identifier for the section
  * @property string|null $view Custom view path for rendering
- * @property array       $data Additional data to pass to the view
+ * @property array $data Additional data to pass to the view
  */
 class Section extends Component
 {
@@ -33,14 +32,14 @@ class Section extends Component
 
     public ?string $id = null;
 
-    public ?string $tpl = null;
+    public string $tpl = 'v1';
 
     /**
      * Create a new component instance.
      *
-     * @param string      $slug  Unique identifier for the section
-     * @param string|null $class Additional CSS classes
-     * @param string|null $id    Custom ID for the section
+     * @param  string  $slug  Unique identifier for the section
+     * @param  string|null  $class  Additional CSS classes
+     * @param  string|null  $id  Custom ID for the section
      */
     public function __construct(
         string $slug,
@@ -51,7 +50,9 @@ class Section extends Component
         $this->slug = $slug;
         $this->class = $class;
         $this->id = $id;
-        $this->tpl = $tpl;
+        if (is_string($tpl)) {
+            $this->tpl = $tpl;
+        }
         $this->blocks = SectionModel::getBlocksBySlug($this->slug);
     }
 
@@ -60,24 +61,12 @@ class Section extends Component
      */
     public function render(): ViewContract
     {
-        $baseViewName = 'pub_theme::components.sections.'.$this->slug;
-        if ($this->tpl) {
-            $baseViewName .= '.'.$this->tpl;
-        }
+        $view = 'pub_theme::components.sections.'.$this->slug.'.'.$this->tpl;
+        $view_params = [
+            'blocks' => $this->blocks,
+        ];
 
-        $viewAction = app(GetCmsViewAction::class);
+        return view($view, $view_params);
 
-        try {
-            // The action's execute method returns view-string, so PHPStan should be happy
-            $view = $viewAction->execute($baseViewName);
-
-            return view($view);
-        } catch (\Exception $e) {
-            // Fallback: this view exists in the Cms module
-            // The action's execute method returns view-string
-            $fallbackView = $viewAction->execute('cms::components.section');
-
-            return view($fallbackView);
-        }
     }
 }

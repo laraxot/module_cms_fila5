@@ -26,7 +26,7 @@ class Page extends Component
     {
         $this->data = $data;
         $this->side = $side;
-        if (null !== $type) {
+        if ($type !== null) {
             $slug = $type.'-'.$slug;
         }
         $this->slug = $slug;
@@ -34,15 +34,16 @@ class Page extends Component
         // $page = PageModel::firstOrCreate(['slug' => $slug], ['title' => $slug, $field => []]);
         $page = PageModel::firstWhere('slug', $slug);
 
-        if (null === $page) {
+        if ($page === null) {
             abort(404, 'page not found: '.$slug);
         }
         $metatag = MetatagData::make();
 
-        // Ensure title is string|null, not array
+        // Extract title in current language
         $title = $page->title;
         if (is_array($title)) {
-            $title = null;
+            $current_lang = app()->getLocale();
+            $title = $title[$current_lang] ?? $title['it'] ?? null;
         }
 
         $metatag->concatTitle($title);

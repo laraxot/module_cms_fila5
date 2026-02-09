@@ -7,10 +7,9 @@ use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Menu;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 
 use function Safe\class_uses;
-
-use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 
 describe('Menu Business Logic', function () {
     test('menu extends base model', function () {

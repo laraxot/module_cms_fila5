@@ -1,33 +1,126 @@
-# 📚 **Indice Documentazione Modulo Cms**
+# Cms Module Documentation
 
-**Last Update**: 31 Gennaio 2026
-**Status**: ✅ PHPStan Level 10 Compliant
-**Module Version**: 2.3.0
+## Overview
 
-## 🎯 **Lettura Essenziale**
-1. [README.md](./README.md) - Panoramica completa, Quick Start e Architettura.
-2. [roadmap.md](./roadmap.md) - Stato avanzamento e obiettivi 2026.
-3. [philosophy.md](./philosophy.md) - Visione "Zen" della gestione contenuti modulare.
+The Cms module handles content management, page rendering, and multi-language support through a flexible block-based system.
 
-## 🏗️ **Architettura e Blocchi**
-- 🧱 **[Content Blocks System](./blocks/)** - Guida al sistema di blocchi trascinabili.
-- 🧬 **[XotData Pattern](./architecture-xotdata-pattern.md)** - Gestione dei dati tipizzati nel CMS.
-- 🧩 **[Page Rendering](./livewire/page-show.md)** - Ciclo di vita del rendering delle pagine Volt.
+## Key Components
 
-## 🎨 **Frontend & Theming**
-- 💅 **[Theming System](./themes/)** - Creazione e personalizzazione dei temi.
-- 🌐 **[SEO & Metatags](./metatag-population-strategy.md)** - Strategie per l'ottimizzazione sui motori di ricerca.
-- ⚡ **[Volt Components](./components/)** - Libreria di componenti interattivi pronti all'uso.
+### Page Model
+- **Location**: `app/Models/Page.php`
+- **Purpose**: Manages page content with multi-language JSON fields
+- **Fields**: `title`, `content_blocks`, `sidebar_blocks`, `footer_blocks`
 
-## 🧪 **Qualità e Sviluppo**
-- ✅ **[PHPStan Compliance](./phpstan-level-10-compliance.md)** - Traguardi di analisi statica.
-- 🔬 **[Testing Guidelines](./tests/architecture-separation-rules.md)** - Come scrivere test per il CMS.
-- 🧹 **[PHPMD & Complexity](./cyclomatic-complexity-report.md)** - Report sulla pulizia del codice.
+### Page Component
+- **Location**: `app/View/Components/Page.php`
+- **Purpose**: Renders pages using block-based architecture
+- **Features**: Multi-language support, block processing, component resolution
 
-## 🔗 **Moduli Correlati**
-- [UI](../../UI/docs/README.md) - Componenti grafici base.
-- [Media](../../Media/docs/README.md) - Gestione file e immagini cloud.
-- [Xot](../../Xot/docs/README.md) - Core framework.
+### BlockData System
+- **Location**: `app/Datas/BlockData.php`
+- **Purpose**: Manages individual block data and view resolution
+- **Features**: Type safety, view existence validation, data merging
 
----
-*Documentazione conforme agli standard Laraxot - DRY + KISS + SOLID*
+## Multi-Language Support
+
+### Language Detection Logic
+```php
+// In Page component
+$current_lang = app()->getLocale();
+if (in_array($current_lang, $locales)) {
+    $blocks = $blocks[$current_lang];
+} elseif (in_array('it', $locales)) {
+    $blocks = $blocks['it']; // Fallback to Italian
+}
+```
+
+### Content Structure
+```json
+{
+  "title": {
+    "it": "Titolo Italiano",
+    "en": "English Title"
+  },
+  "content_blocks": {
+    "it": [...],
+    "en": [...]
+  }
+}
+```
+
+## Block System Architecture
+
+### Block Types
+- **Hero**: Page header sections
+- **Services**: Service listings and grids
+- **Content**: General content sections
+- **Forms**: Contact and interaction forms
+- **Testimonials**: Customer reviews
+- **Resources**: Downloads and guides
+
+### Component Resolution
+Blocks use view paths like:
+- `pub_theme::components.blocks.hero.simple`
+- `pub_theme::components.blocks.services.grid`
+- `pub_theme::components.blocks.newsletter.simple`
+
+## Important Notes
+
+### Critical Issues Identified (2026-02-08)
+1. **Missing Component**: `hero.fullscreen.blade.php` referenced but non-existent
+2. **Content Disparity**: Italian version has 9 blocks vs English 3 blocks
+3. **Component Duplication**: 32+ hero variants across themes
+
+### Recommendations
+1. **Audit Component References**: Ensure all referenced views exist
+2. **Standardize Content**: Maintain parity between language versions
+3. **Consolidate Components**: Reduce redundant hero component variants
+
+## File Structure
+
+```
+Modules/Cms/
+├── app/
+│   ├── Models/Page.php
+│   ├── View/Components/
+│   │   ├── Page.php
+│   │   └── PageContent.php
+│   └── Datas/BlockData.php
+├── resources/views/
+│   └── components/
+│       ├── page.blade.php
+│       └── page-content.blade.php
+└── docs/
+    ├── 00-index.md (this file)
+    ├── page-translation-strategy.md
+    ├── block-component-guidelines.md
+    └── multi-language-content-management.md
+```
+
+## Dependencies
+
+- **Xot Module**: Base functionality and data structures
+- **Lang Module**: Multi-language support (if available)
+- **Themes**: Component rendering (active: "Two")
+
+## Best Practices
+
+1. **Always verify component existence** before referencing in page data
+2. **Maintain content parity** across all supported languages
+3. **Use consistent data structures** for similar block types
+4. **Test multi-language functionality** thoroughly
+5. **Document custom block types** and their required data structure
+
+## Testing
+
+- Use Pest testing framework
+- Test multi-language scenarios
+- Verify component rendering
+- Test data validation and fallbacks
+
+## Recent Changes
+
+### 2026-02-08
+- Identified critical missing component issue
+- Documented content disparity between languages
+- Created comprehensive duplicate content analysis
