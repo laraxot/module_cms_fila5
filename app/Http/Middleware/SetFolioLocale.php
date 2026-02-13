@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Http\Middleware;
 
-use Closure;
 use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -18,17 +17,17 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  */
 class SetFolioLocale
 {
-    public function handle(Request $request, Closure $next): mixed
+    public function handle(Request $request, \Closure $next): mixed
     {
         // Priority 1: If user is logged in and has a saved language, use that
         if ($request->user() && $request->user()->lang) {
             $userLocale = $request->user()->lang;
             app()->setLocale($userLocale);
             LaravelLocalization::setLocale($userLocale);
-            
+
             return $next($request);
         }
-        
+
         // Get the first segment from the URL
         $segments = $request->segments();
         $firstSegment = $segments[0] ?? '';
@@ -40,7 +39,7 @@ class SetFolioLocale
         } catch (\Exception $e) {
             $supportedLocales = ['it', 'en'];
         }
-        
+
         /** @var string $defaultLocale */
         $defaultLocale = config('app.locale', 'it');
 
