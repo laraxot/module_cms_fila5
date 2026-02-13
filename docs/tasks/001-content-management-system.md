@@ -250,6 +250,5 @@ The Cms module needs a robust CMS for managing pages, blog posts, and dynamic co
 
 ---
 
-**Created**: 2026-01-31
 **Status**: Pending
 **Assignee**: TBD

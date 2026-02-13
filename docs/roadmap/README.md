@@ -6,7 +6,6 @@ The CMS module provides comprehensive content management capabilities with modul
 
 ## 📋 Current Status
 
-**Version**: 2.0.0  
 **Maturity**: Production Ready  
 **PHPStan Level**: 10 ✅  
 **Test Coverage**: 80%+  
