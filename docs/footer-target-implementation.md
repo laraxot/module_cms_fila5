@@ -1,6 +1,5 @@
 # Footer Target Implementation - Cms Module
 
-**Data**: 2026-02-07  
 **Stato**: ✅ Completato  
 **Theme**: Two  
 **File**: `Themes/Two/resources/views/components/sections/footer/v1.blade.php`

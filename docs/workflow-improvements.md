@@ -1,6 +1,5 @@
 # Workflow Improvements - 2026-02-08
 
-**Data**: 2026-02-08
 **Modulo**: CMS
 **Tipo**: Process Improvement
 **Status**: ✅ IMPLEMENTATO
@@ -280,6 +279,5 @@ If you encounter issues with the new workflow:
 ---
 
 **Status**: ✅ ACTIVE
-**Last Updated**: 2026-02-08
-**Next Review**: 2026-02-15
+
 **Owner**: iFlow CLI
