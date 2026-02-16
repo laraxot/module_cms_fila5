@@ -161,4 +161,6 @@ return [
             'heading' => 'Footer',
         ],
     ],
+    'label' => 'Page',
+    'plural_label' => 'Page (Plurale)',
 ];

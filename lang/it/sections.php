@@ -51,4 +51,28 @@ return [
         'style' => 'Stile',
         'content' => 'Contenuti',
     ],
+    'label' => 'Sections',
+    'plural_label' => 'Sections (Plurale)',
+    'navigation' => [
+        'name' => 'Sections',
+        'plural' => 'Sections',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Sections',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Sections',
+        ],
+        'edit' => [
+            'label' => 'Modifica Sections',
+        ],
+        'delete' => [
+            'label' => 'Elimina Sections',
+        ],
+    ],
 ];

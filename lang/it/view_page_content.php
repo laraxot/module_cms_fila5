@@ -88,4 +88,17 @@ return [
             'label' => 'activeLocale',
         ],
     ],
+    'label' => 'View Page Content',
+    'plural_label' => 'View Page Content (Plurale)',
+    'navigation' => [
+        'name' => 'View Page Content',
+        'plural' => 'View Page Content',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'View Page Content',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];

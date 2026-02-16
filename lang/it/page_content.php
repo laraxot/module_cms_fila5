@@ -104,4 +104,6 @@ return [
             'heading' => 'Content',
         ],
     ],
+    'label' => 'Page Content',
+    'plural_label' => 'Page Content (Plurale)',
 ];

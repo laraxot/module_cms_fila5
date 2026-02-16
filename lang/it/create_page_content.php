@@ -73,4 +73,17 @@ return [
             'label' => 'create',
         ],
     ],
+    'label' => 'Create Page Content',
+    'plural_label' => 'Create Page Content (Plurale)',
+    'navigation' => [
+        'name' => 'Create Page Content',
+        'plural' => 'Create Page Content',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Create Page Content',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];

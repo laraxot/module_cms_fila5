@@ -12,7 +12,7 @@ return [
         'slug' => [
             'label' => 'Slug',
             'placeholder' => 'testo-per-url',
-            'help' => 'Versione dell\'URL del titolo (solo lettere minuscole, trattini e numeri)',
+            'help' => 'Versione dell\'URL del titolo (solo lettere minuscole, trattini e numeri]',
         ],
         'content' => [
             'label' => 'Contenuto',
@@ -148,7 +148,7 @@ return [
         'url' => [
             'label' => 'URL',
             'placeholder' => 'https://esempio.com',
-            'help' => 'Inserisci un URL valido (inizia con http:// o https://)',
+            'help' => 'Inserisci un URL valido (inizia con http:// o https://]',
         ],
         'target' => [
             'label' => 'Destinazione',
@@ -203,6 +203,19 @@ return [
     'validation' => [
         'required' => 'Questo campo è obbligatorio',
         'email' => 'Inserisci un indirizzo email valido',
-        'url' => 'Inserisci un URL valido (inizia con http:// o https://)',
+        'url' => 'Inserisci un URL valido (inizia con http:// o https://]',
+    ],
+    'label' => 'Create',
+    'plural_label' => 'Create (Plurale)',
+    'navigation' => [
+        'name' => 'Create',
+        'plural' => 'Create',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Create',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
     ],
 ];

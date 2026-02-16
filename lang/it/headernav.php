@@ -52,4 +52,17 @@ return [
             'label' => 'updateAction',
         ],
     ],
+    'label' => 'Headernav',
+    'plural_label' => 'Headernav (Plurale)',
+    'navigation' => [
+        'name' => 'Headernav',
+        'plural' => 'Headernav',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Headernav',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];

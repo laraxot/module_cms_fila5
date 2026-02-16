@@ -12,7 +12,7 @@ return [
         'slug' => [
             'label' => 'Slug',
             'placeholder' => 'nome-sezione',
-            'help' => 'Identificativo univoco della sezione (solo lettere minuscole, trattini e numeri)',
+            'help' => 'Identificativo univoco della sezione (solo lettere minuscole, trattini e numeri]',
         ],
         'title' => [
             'label' => 'Titolo',
@@ -40,7 +40,6 @@ return [
             'placeholder' => 'Aggiungi blocchi alla sezione',
             'helper_text' => 'Blocchi di contenuto che compongono la sezione',
         ],
-        // Company Information
         'company_name' => [
             'label' => 'Ragione Sociale',
             'placeholder' => 'Azienda S.p.A.',
@@ -77,7 +76,6 @@ return [
             'help' => 'Testo del copyright',
             'helper_text' => 'Testo di copyright da visualizzare',
         ],
-        // Navigation & Links
         'links' => [
             'label' => 'Collegamenti',
             'placeholder' => 'Aggiungi link di navigazione',
@@ -91,7 +89,7 @@ return [
         'url' => [
             'label' => 'URL',
             'placeholder' => 'https://esempio.com',
-            'help' => 'Inserisci un URL valido (inizia con http:// o https://)',
+            'help' => 'Inserisci un URL valido (inizia con http:// o https://]',
             'helper_text' => 'Indirizzo web di destinazione',
         ],
         'target' => [
@@ -105,7 +103,6 @@ return [
             'placeholder' => 'Seleziona icona',
             'helper_text' => 'Icona da associare al link',
         ],
-        // Social Media
         'social_links' => [
             'label' => 'Social Media',
             'help' => 'Collegamenti ai profili social',
@@ -118,7 +115,6 @@ return [
             'placeholder' => 'Facebook, Instagram, LinkedIn',
             'helper_text' => 'Nome della piattaforma social',
         ],
-        // Visual Elements
         'width' => [
             'label' => 'Larghezza',
             'placeholder' => 'Larghezza in px o %',
@@ -142,7 +138,6 @@ return [
             'placeholder' => '#333333 o nome colore',
             'helper_text' => 'Colore del testo nella sezione',
         ],
-        // Media Elements
         'caption' => [
             'label' => 'Didascalia',
             'placeholder' => 'Descrizione dell\'immagine',
@@ -158,7 +153,6 @@ return [
             'placeholder' => 'UUID dell\'immagine',
             'helper_text' => 'Identificatore univoco dell\'immagine',
         ],
-        // Content Elements
         'level' => [
             'label' => 'Livello',
             'placeholder' => 'Livello gerarchico',
@@ -169,7 +163,6 @@ return [
             'placeholder' => 'Contenuto testuale',
             'helper_text' => 'Testo semplice della sezione',
         ],
-        // Form Messages
         'error_message' => [
             'label' => 'Messaggio Errore',
             'placeholder' => 'Testo per errori',
@@ -247,5 +240,18 @@ return [
         'required' => 'Questo campo è obbligatorio',
         'slug_exists' => 'Questo slug è già in uso',
         'min' => 'Il valore deve essere almeno :min',
+    ],
+    'label' => 'Edit Section',
+    'plural_label' => 'Edit Section (Plurale)',
+    'navigation' => [
+        'name' => 'Edit Section',
+        'plural' => 'Edit Section',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Edit Section',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
     ],
 ];

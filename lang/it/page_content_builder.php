@@ -35,4 +35,28 @@ return [
             'description' => 'content',
         ],
     ],
+    'label' => 'Page Content Builder',
+    'plural_label' => 'Page Content Builder (Plurale)',
+    'navigation' => [
+        'name' => 'Page Content Builder',
+        'plural' => 'Page Content Builder',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Page Content Builder',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Page Content Builder',
+        ],
+        'edit' => [
+            'label' => 'Modifica Page Content Builder',
+        ],
+        'delete' => [
+            'label' => 'Elimina Page Content Builder',
+        ],
+    ],
 ];

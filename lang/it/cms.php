@@ -94,4 +94,40 @@ return [
             ],
         ],
     ],
+    'label' => 'Cms',
+    'plural_label' => 'Cms (Plurale)',
+    'navigation' => [
+        'name' => 'Cms',
+        'plural' => 'Cms',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Cms',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'fields' => [
+        'id' => [
+            'label' => 'Identificativo',
+            'tooltip' => 'Identificativo univoco del record',
+        ],
+        'created_at' => [
+            'label' => 'Data Creazione',
+        ],
+        'updated_at' => [
+            'label' => 'Ultima Modifica',
+        ],
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Cms',
+        ],
+        'edit' => [
+            'label' => 'Modifica Cms',
+        ],
+        'delete' => [
+            'label' => 'Elimina Cms',
+        ],
+    ],
 ];

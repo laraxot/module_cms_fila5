@@ -66,4 +66,6 @@ return [
             'label' => 'updateAction',
         ],
     ],
+    'label' => 'Breadcrumb',
+    'plural_label' => 'Breadcrumb (Plurale)',
 ];

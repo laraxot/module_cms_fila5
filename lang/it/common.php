@@ -44,4 +44,29 @@ return [
         'now' => 'Adesso',
         'ago' => 'fa',
     ],
+    'label' => 'Common',
+    'plural_label' => 'Common (Plurale)',
+    'navigation' => [
+        'name' => 'Common',
+        'plural' => 'Common',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Common',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'fields' => [
+        'id' => [
+            'label' => 'Identificativo',
+            'tooltip' => 'Identificativo univoco del record',
+        ],
+        'created_at' => [
+            'label' => 'Data Creazione',
+        ],
+        'updated_at' => [
+            'label' => 'Ultima Modifica',
+        ],
+    ],
 ];

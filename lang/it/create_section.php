@@ -121,4 +121,17 @@ return [
             'label' => 'activeLocale',
         ],
     ],
+    'label' => 'Create Section',
+    'plural_label' => 'Create Section (Plurale)',
+    'navigation' => [
+        'name' => 'Create Section',
+        'plural' => 'Create Section',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Create Section',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];

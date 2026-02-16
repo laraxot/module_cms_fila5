@@ -29,4 +29,28 @@ return [
             'description' => 'url',
         ],
     ],
+    'label' => 'Social',
+    'plural_label' => 'Social (Plurale)',
+    'navigation' => [
+        'name' => 'Social',
+        'plural' => 'Social',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Social',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Social',
+        ],
+        'edit' => [
+            'label' => 'Modifica Social',
+        ],
+        'delete' => [
+            'label' => 'Elimina Social',
+        ],
+    ],
 ];
