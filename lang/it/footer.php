@@ -17,4 +17,17 @@ return [
             'color' => 'primary',
         ],
     ],
+    'label' => 'Footer',
+    'plural_label' => 'Footer (Plurale)',
+    'navigation' => [
+        'name' => 'Footer',
+        'plural' => 'Footer',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Footer',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];

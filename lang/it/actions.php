@@ -208,4 +208,6 @@ return [
             'right' => 'Destra',
         ],
     ],
+    'label' => 'Actions',
+    'plural_label' => 'Actions (Plurale)',
 ];

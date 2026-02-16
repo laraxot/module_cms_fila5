@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 return [
     'fields' => [
-        // Core Content Fields
         'title' => [
             'label' => 'Titolo',
             'placeholder' => 'Inserisci il titolo principale',
@@ -14,7 +13,7 @@ return [
         'slug' => [
             'label' => 'Slug',
             'placeholder' => 'testo-per-url',
-            'help' => 'Versione dell\'URL del titolo (solo lettere minuscole, trattini e numeri)',
+            'help' => 'Versione dell\'URL del titolo (solo lettere minuscole, trattini e numeri]',
             'helper_text' => 'URL SEO-friendly generato automaticamente dal titolo',
         ],
         'subtitle' => [
@@ -39,7 +38,6 @@ return [
             'placeholder' => 'Inserisci il testo',
             'helper_text' => 'Contenuto testuale semplice senza formattazione',
         ],
-        // Media & Visual Elements
         'image' => [
             'label' => 'Immagine',
             'help' => 'Carica un\'immagine',
@@ -61,7 +59,6 @@ return [
             'placeholder' => '300px, auto, 50vh',
             'helper_text' => 'Altezza dell\'elemento in pixel, percentuale o viewport',
         ],
-        // Layout & Design
         'style' => [
             'label' => 'Stile',
             'help' => 'Stile di visualizzazione',
@@ -111,7 +108,6 @@ return [
             'placeholder' => '#007BFF, blu, primary',
             'helper_text' => 'Colore dei pulsanti call-to-action',
         ],
-        // Navigation & Links
         'items' => [
             'label' => 'Elementi',
             'help' => 'Elenco di elementi',
@@ -126,13 +122,13 @@ return [
         'url' => [
             'label' => 'URL',
             'placeholder' => 'https://esempio.com',
-            'help' => 'Inserisci un URL valido (inizia con http:// o https://)',
+            'help' => 'Inserisci un URL valido (inizia con http:// o https://]',
             'helper_text' => 'Indirizzo web completo di destinazione',
         ],
         'target' => [
             'label' => 'Destinazione',
             'placeholder' => '_blank, _self, _parent, _top',
-            'helper_text' => 'Come aprire il collegamento (stessa finestra o nuova)',
+            'helper_text' => 'Come aprire il collegamento (stessa finestra o nuova]',
         ],
         'icon' => [
             'label' => 'Icona',
@@ -140,7 +136,6 @@ return [
             'placeholder' => 'Seleziona icona rappresentativa',
             'helper_text' => 'Icona da mostrare accanto al testo o come elemento standalone',
         ],
-        // UI Components
         'view' => [
             'label' => 'Template',
             'placeholder' => 'Seleziona template di visualizzazione',
@@ -153,7 +148,7 @@ return [
         ],
         'level' => [
             'label' => 'Livello',
-            'placeholder' => 'Livello gerarchico (1-6)',
+            'placeholder' => 'Livello gerarchico (1-6]',
             'helper_text' => 'Livello di importanza nella gerarchia del contenuto',
         ],
         'children' => [
@@ -161,7 +156,6 @@ return [
             'placeholder' => 'Elementi nested o subordinati',
             'helper_text' => 'Elementi contenuti o dipendenti da questo elemento',
         ],
-        // Company & Contact Information
         'email' => [
             'label' => 'Email',
             'placeholder' => 'esempio@dominio.com',
@@ -194,7 +188,6 @@ return [
             'placeholder' => '2024 Nome Azienda. Tutti i diritti riservati.',
             'helper_text' => 'Testo di copyright da visualizzare nel footer',
         ],
-        // Call-to-Action Elements
         'button_text' => [
             'label' => 'Testo del pulsante',
             'placeholder' => 'Scopri di più',
@@ -218,7 +211,6 @@ return [
             'help' => 'URL di destinazione per la call-to-action',
             'helper_text' => 'URL della pagina di destinazione per la CTA',
         ],
-        // Social Media
         'social_links' => [
             'label' => 'Link Social',
             'placeholder' => 'Aggiungi profili social media',
@@ -234,7 +226,6 @@ return [
             'placeholder' => 'Lista di link di navigazione',
             'helper_text' => 'Collezione di collegamenti per menu o footer',
         ],
-        // Statistics & Data
         'stats' => [
             'label' => 'Statistiche',
             'placeholder' => 'Dati numerici da evidenziare',
@@ -245,7 +236,6 @@ return [
             'placeholder' => 'Valore numerico',
             'helper_text' => 'Valore numerico per contatori o statistiche',
         ],
-        // Page Structure
         'sections' => [
             'label' => 'Sezioni',
             'help' => 'Elenco delle sezioni',
@@ -267,7 +257,6 @@ return [
             'placeholder' => 'Contenuti del piè di pagina',
             'helper_text' => 'Elementi da includere nel footer del sito',
         ],
-        // Interactive Elements
         'placeholder' => [
             'label' => 'Placeholder',
             'placeholder' => 'Testo segnaposto per campi input',
@@ -283,11 +272,10 @@ return [
             'placeholder' => 'Si è verificato un errore',
             'helper_text' => 'Messaggio mostrato in caso di errore',
         ],
-        // Advanced Layout
         'background' => [
             'label' => 'Sfondo',
             'placeholder' => 'Immagine o colore di sfondo',
-            'helper_text' => 'Sfondo della sezione (immagine, colore o gradiente)',
+            'helper_text' => 'Sfondo della sezione (immagine, colore o gradiente]',
         ],
         'buttons' => [
             'label' => 'Pulsanti',
@@ -417,7 +405,20 @@ return [
         'image_size' => 'L\'immagine deve essere inferiore a 5MB',
         'video_format' => 'Formato video non supportato',
         'required_field' => 'Questo campo è obbligatorio',
-        'max_length' => 'Il testo è troppo lungo (massimo :max caratteri)',
-        'min_length' => 'Il testo è troppo corto (minimo :min caratteri)',
+        'max_length' => 'Il testo è troppo lungo (massimo :max caratteri]',
+        'min_length' => 'Il testo è troppo corto (minimo :min caratteri]',
+    ],
+    'label' => 'Txt',
+    'plural_label' => 'Txt (Plurale)',
+    'navigation' => [
+        'name' => 'Txt',
+        'plural' => 'Txt',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Txt',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
     ],
 ];

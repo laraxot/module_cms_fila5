@@ -35,4 +35,28 @@ return [
             'description' => 'icon',
         ],
     ],
+    'label' => 'Links',
+    'plural_label' => 'Links (Plurale)',
+    'navigation' => [
+        'name' => 'Links',
+        'plural' => 'Links',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Links',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Crea Links',
+        ],
+        'edit' => [
+            'label' => 'Modifica Links',
+        ],
+        'delete' => [
+            'label' => 'Elimina Links',
+        ],
+    ],
 ];

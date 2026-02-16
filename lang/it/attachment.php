@@ -158,4 +158,6 @@ return [
     'model' => [
         'label' => 'attachment.model',
     ],
+    'label' => 'Attachment',
+    'plural_label' => 'Attachment (Plurale)',
 ];

@@ -106,4 +106,17 @@ return [
             'label' => 'activeLocale',
         ],
     ],
+    'label' => 'View Section',
+    'plural_label' => 'View Section (Plurale)',
+    'navigation' => [
+        'name' => 'View Section',
+        'plural' => 'View Section',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'View Section',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];

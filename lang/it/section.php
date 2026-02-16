@@ -290,4 +290,6 @@ return [
             'heading' => 'blocks',
         ],
     ],
+    'label' => 'Section',
+    'plural_label' => 'Section (Plurale)',
 ];

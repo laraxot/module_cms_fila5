@@ -18,7 +18,7 @@ return [
     'fields' => [
         'title' => [
             'label' => 'Titolo Contatto',
-            'placeholder' => 'Inserisci il titolo (es. Studio Dentistico)',
+            'placeholder' => 'Inserisci il titolo (es. Studio Dentistico]',
             'help' => 'Nome o titolo principale per identificare il contatto',
             'helper_text' => 'title',
             'description' => 'title',
@@ -88,4 +88,6 @@ return [
         'loading' => 'Caricamento contatti in corso...',
         'saved' => 'Modifiche salvate correttamente',
     ],
+    'label' => 'Contact',
+    'plural_label' => 'Contact (Plurale)',
 ];

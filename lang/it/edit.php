@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 return [
     'fields' => [
-        // Content Fields
         'title' => [
             'label' => 'Titolo',
             'placeholder' => 'Inserisci il titolo',
@@ -13,7 +12,7 @@ return [
         'slug' => [
             'label' => 'Slug',
             'placeholder' => 'testo-per-url',
-            'help' => 'Versione dell\'URL del titolo (solo lettere minuscole, trattini e numeri)',
+            'help' => 'Versione dell\'URL del titolo (solo lettere minuscole, trattini e numeri]',
         ],
         'content' => [
             'label' => 'Contenuto',
@@ -39,7 +38,6 @@ return [
             'label' => 'Livello',
             'help' => 'Livello gerarchico del contenuto',
         ],
-        // Visual & Media
         'image' => [
             'label' => 'Immagine',
             'help' => 'Carica un\'immagine',
@@ -71,7 +69,6 @@ return [
             'placeholder' => '16:9, 4:3, 1:1',
             'helper_text' => 'Rapporto di proporzione per il ridimensionamento',
         ],
-        // Styling & Layout
         'background' => [
             'label' => 'Sfondo',
             'help' => 'Immagine o colore di sfondo',
@@ -96,7 +93,6 @@ return [
             'placeholder' => 'URL o percorso del file',
             'helper_text' => 'Percorso della risorsa multimediale',
         ],
-        // Interaction Elements
         'buttons' => [
             'label' => 'Pulsanti',
             'help' => 'Elenco dei pulsanti da visualizzare',
@@ -109,7 +105,7 @@ return [
         'url' => [
             'label' => 'URL',
             'placeholder' => 'https://esempio.com',
-            'help' => 'Inserisci un URL valido (inizia con http:// o https://)',
+            'help' => 'Inserisci un URL valido (inizia con http:// o https://]',
         ],
         'target' => [
             'label' => 'Destinazione',
@@ -126,7 +122,6 @@ return [
             'placeholder' => 'https://destinazione.it',
             'helper_text' => 'URL di destinazione del pulsante',
         ],
-        // Navigation & Structure
         'label' => [
             'label' => 'Etichetta',
             'placeholder' => 'Nome dell\'elemento',
@@ -157,7 +152,6 @@ return [
             'placeholder' => 'Seleziona icona',
             'helper_text' => 'Icona rappresentativa dell\'elemento',
         ],
-        // Company & Contact
         'company_name' => [
             'label' => 'Nome Azienda',
             'placeholder' => 'La Tua Azienda S.r.l.',
@@ -183,7 +177,6 @@ return [
             'placeholder' => 'Via Roma, 123 - 00100 Roma',
             'helper_text' => 'Indirizzo fisico completo',
         ],
-        // Technical Fields
         'type' => [
             'label' => 'Tipo',
             'placeholder' => 'Tipologia elemento',
@@ -211,7 +204,6 @@ return [
             'placeholder' => 'Valore numerico',
             'helper_text' => 'Valore numerico per statistiche o contatori',
         ],
-        // Block Management
         'content_blocks' => [
             'label' => 'Blocchi Contenuto',
             'placeholder' => 'Aggiungi sezioni di contenuto',
@@ -258,5 +250,18 @@ return [
         'media' => 'Media',
         'seo' => 'SEO',
         'settings' => 'Impostazioni',
+    ],
+    'label' => 'Edit',
+    'plural_label' => 'Edit (Plurale)',
+    'navigation' => [
+        'name' => 'Edit',
+        'plural' => 'Edit',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Edit',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
     ],
 ];

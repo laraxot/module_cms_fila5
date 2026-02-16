@@ -94,4 +94,17 @@ return [
             'label' => 'cancel',
         ],
     ],
+    'label' => 'Edit Page Content',
+    'plural_label' => 'Edit Page Content (Plurale)',
+    'navigation' => [
+        'name' => 'Edit Page Content',
+        'plural' => 'Edit Page Content',
+        'group' => [
+            'name' => 'General',
+            'description' => 'General Settings',
+        ],
+        'label' => 'Edit Page Content',
+        'sort' => 1,
+        'icon' => 'heroicon-o-collection',
+    ],
 ];
