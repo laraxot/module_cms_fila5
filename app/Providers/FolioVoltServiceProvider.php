@@ -17,14 +17,14 @@ use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
 use Webmozart\Assert\Assert;
 
+use function Safe\realpath;
+
 class FolioVoltServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
-    public function register(): void
-    {
-    }
+    public function register(): void {}
 
     /**
      * Bootstrap services.
@@ -102,6 +102,17 @@ class FolioVoltServiceProvider extends ServiceProvider
                     ]);
             }
             $paths[] = $theme_path;
+        }
+
+        // Theme Livewire block components: livewire/ → blocks.events.detail, components/blocks → events.detail
+        $theme_views = \dirname($theme_path);
+        $theme_livewire = $theme_views.\DIRECTORY_SEPARATOR.'livewire';
+        if (File::exists($theme_livewire) && File::isDirectory($theme_livewire)) {
+            $paths[] = realpath($theme_livewire);
+        }
+        $theme_components_blocks = $theme_views.\DIRECTORY_SEPARATOR.'components'.\DIRECTORY_SEPARATOR.'blocks';
+        if (File::exists($theme_components_blocks) && File::isDirectory($theme_components_blocks)) {
+            $paths[] = realpath($theme_components_blocks);
         }
 
         foreach ($modules as $module) {

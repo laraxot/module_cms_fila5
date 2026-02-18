@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Modules\Cms\Datas\BlockData;
 use Modules\Xot\Datas\XotData;
-use Spatie\LaravelData\DataCollection;
 
 /**
  * Trait for Models that have blocks.
@@ -19,9 +18,9 @@ use Spatie\LaravelData\DataCollection;
 trait HasBlocks
 {
     /**
-     * @return DataCollection<BlockData>|array
+     * @return array<string, BlockData>
      */
-    public function getBlocks(?string $side = null)
+    public function getBlocks(?string $side = null): array
     {
         $field = 'blocks';
         if ($side) {
@@ -43,13 +42,17 @@ trait HasBlocks
         // Create BlockData instances manually to ensure constructor is called
         // This is necessary because Laravel Data's collect() doesn't call custom constructors
         // which is needed for dynamic query resolution
-        $blockDataInstances = array_map(function (array $block): BlockData {
-            $type = $block['type'] ?? 'unknown';
-            $data = $block['data'] ?? [];
-            $slug = $block['slug'] ?? null;
+        $blockDataInstances = [];
+        foreach ($blocks as $key => $block) {
+            /** @var array<string, mixed> $block */
+            $type = (string) ($block['type'] ?? 'unknown');
+            $data = (array) ($block['data'] ?? []);
+            $slug = isset($block['slug']) ? (string) $block['slug'] : null;
 
-            return new BlockData($type, $data, $slug);
-        }, $blocks);
+            $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug);
+        }
+
+        /** @var array<string, BlockData> $blockDataInstances */
 
         // Return array directly to ensure BlockData constructor is called for dynamic query resolution
         return $blockDataInstances;
@@ -83,9 +86,9 @@ trait HasBlocks
     /**
      * Get blocks for a record by slug.
      *
-     * @return DataCollection<BlockData>|array
+     * @return array<string, BlockData>
      */
-    public static function getBlocksBySlug(string $slug, ?string $side = null)
+    public static function getBlocksBySlug(string $slug, ?string $side = null): array
     {
         // This trait requires the class to extend Model (@phpstan-require-extends Model)
         // So we can safely use static methods
@@ -105,7 +108,7 @@ trait HasBlocks
             return [];
         }
 
-        /** @var DataCollection<BlockData>|array $blocks */
+        /** @var array<string, BlockData> $blocks */
         $blocks = $record->getBlocks($side);
 
         return $blocks;
