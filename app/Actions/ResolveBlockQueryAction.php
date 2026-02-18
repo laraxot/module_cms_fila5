@@ -6,13 +6,9 @@ namespace Modules\Cms\Actions;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
-/**
- * ResolveBlockQueryAction: Resolves dynamic data for CMS blocks based on query configuration.
- */
 class ResolveBlockQueryAction
 {
     use QueueableAction;
@@ -20,30 +16,29 @@ class ResolveBlockQueryAction
     /**
      * Executes the query path specified in block data and returns the result.
      *
-     * @param array<string, mixed> $queryConfig Configuration: [model, scopes, orderBy, limit, wrap_in]
-     *
+     * @param  array<string, mixed>  $queryConfig  Configuration: [model, scopes, orderBy, limit, wrap_in]
      * @return array<string, mixed> The transformed data to be merged into block data
      */
     public function execute(array $queryConfig): array
     {
-        $modelClass = Arr::get($queryConfig, 'model');
-        if (null === $modelClass || ! is_string($modelClass) || ! class_exists($modelClass)) {
+        $modelClass = data_get($queryConfig, 'model');
+        if ($modelClass === null || ! is_string($modelClass) || ! class_exists($modelClass)) {
             return [];
         }
 
         /** @var Model $modelInstance */
-        $modelInstance = new $modelClass();
+        $modelInstance = new $modelClass;
         $query = $modelInstance->newQuery();
 
         // Apply scopes (support both 'scope' singular and 'scopes' plural)
-        $singleScope = Arr::get($queryConfig, 'scope');
+        $singleScope = data_get($queryConfig, 'scope');
         /** @var array<int, string> $scopes */
-        $scopes = (array) Arr::get($queryConfig, 'scopes', []);
-        if (null !== $singleScope && is_string($singleScope)) {
+        $scopes = (array) data_get($queryConfig, 'scopes', []);
+        if ($singleScope !== null && is_string($singleScope)) {
             array_unshift($scopes, $singleScope);
         }
         foreach ($scopes as $scope) {
-            if (is_string($scope) && '' !== $scope) {
+            if (is_string($scope) && $scope !== '') {
                 // Scopes are added dynamically by Laravel, so we just try to call them
                 // method_exists() won't work because they're added via __call
                 try {
@@ -55,14 +50,14 @@ class ResolveBlockQueryAction
         }
 
         // Apply ordering
-        $orderBy = Arr::get($queryConfig, 'orderBy', 'created_at');
+        $orderBy = (string) data_get($queryConfig, 'orderBy', 'created_at');
         // Assert::string($orderBy, '['.__LINE__.']['.__FILE__.']');
-        $direction = Arr::get($queryConfig, 'direction', 'desc');
+        $direction = (string) data_get($queryConfig, 'direction', 'desc');
         // Assert::string($direction, '['.__LINE__.']['.__FILE__.']');
         $query->orderBy($orderBy, $direction);
 
         // Apply limit
-        $limit = (int) Arr::get($queryConfig, 'limit', 10);
+        $limit = (int) data_get($queryConfig, 'limit', 10);
         $query->limit($limit);
 
         /** @var Collection<int, Model> $results */
@@ -80,7 +75,7 @@ class ResolveBlockQueryAction
             return $item->toArray();
         })->toArray();
 
-        $wrapIn = Arr::get($queryConfig, 'wrap_in', 'items');
+        $wrapIn = data_get($queryConfig, 'wrap_in', 'items');
         if (! is_string($wrapIn)) {
             $wrapIn = 'items';
         }
