@@ -109,7 +109,11 @@ describe('Filament Builder Blocks System', function () {
 
     test('block views follow theme pattern', function () {
         // Test with actual homepage JSON
+<<<<<<< Updated upstream
         $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
+=======
+        $homepageJsonPath = config_path('local/<nome progetto>/database/content/home.json');
+>>>>>>> Stashed changes
         if (! file_exists($homepageJsonPath)) {
             $this->assertTrue(true);
 
@@ -146,7 +150,11 @@ describe('Filament Builder Blocks System', function () {
     });
 
     test('json storage pattern is consistent', function () {
+<<<<<<< Updated upstream
         $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
+=======
+        $homepageJsonPath = config_path('local/<nome progetto>/database/content/home.json');
+>>>>>>> Stashed changes
         if (! file_exists($homepageJsonPath)) {
             $this->assertTrue(true);
 
@@ -215,7 +223,11 @@ describe('Filament Builder Blocks System', function () {
         $this->assertStringContainsString('slug="home"', $content);
 
         // Verify blocks are rendered
+<<<<<<< Updated upstream
         $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
+=======
+        $homepageJsonPath = config_path('local/<nome progetto>/database/content/home.json');
+>>>>>>> Stashed changes
         if (! file_exists($homepageJsonPath)) {
             $this->assertTrue(true);
 
@@ -249,7 +261,11 @@ describe('Filament Builder Blocks System', function () {
     });
 
     test('block data validation and security', function () {
+<<<<<<< Updated upstream
         $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
+=======
+        $homepageJsonPath = config_path('local/<nome progetto>/database/content/home.json');
+>>>>>>> Stashed changes
         if (! file_exists($homepageJsonPath)) {
             $this->assertTrue(true);
 
@@ -322,7 +338,11 @@ describe('Filament Builder Blocks System', function () {
 
     test('performance considerations are implemented', function () {
         // Test that JSON loading is efficient
+<<<<<<< Updated upstream
         $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
+=======
+        $homepageJsonPath = config_path('local/<nome progetto>/database/content/home.json');
+>>>>>>> Stashed changes
         if (! file_exists($homepageJsonPath)) {
             $this->assertTrue(true);
 

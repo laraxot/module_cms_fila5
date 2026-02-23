@@ -177,4 +177,7 @@ Ogni blocco supporta diversi contesti:
 - [Filament Builder](https://filamentphp.com/docs/3.x/forms/fields/builder)
 - [Laravel Folio](../../docs/folio-routing.md)
 
+<<<<<<< Updated upstream
 *Ultimo aggiornamento: Dicembre 2024*
+=======
+>>>>>>> Stashed changes
