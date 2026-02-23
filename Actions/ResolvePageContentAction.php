@@ -14,8 +14,9 @@ class ResolvePageContentAction
     /**
      * Resolves page content based on container and slug.
      *
-     * @param  string  $container0  The container identifier (e.g., 'events').
-     * @param  string  $slug0  The content slug (e.g., 'laravel-beginners-pizza-night').
+     * @param string $container0 The container identifier (e.g., 'events').
+     * @param string $slug0      The content slug (e.g., 'laravel-beginners-pizza-night').
+     *
      * @return array{content: mixed, contentType: ?string, view: ?string, pageSlug: string}
      */
     public function execute(string $container0, string $slug0): array
@@ -25,21 +26,21 @@ class ResolvePageContentAction
         // Priority 1: Check if exact CMS page exists (e.g., events.laravel-beginners-pizza-night)
         $pageSlug = '';
         $page = PageModel::firstWhere('slug', $fullSlug);
-        if ($page !== null) {
+        if (null !== $page) {
             $pageSlug = $fullSlug;
         }
 
         // Priority 2: Fallback to container.view (e.g., events.view)
-        if ($pageSlug === '') {
+        if ('' === $pageSlug) {
             $viewSlug = $container0.'.view';
             $viewPage = PageModel::firstWhere('slug', $viewSlug);
-            if ($viewPage !== null) {
+            if (null !== $viewPage) {
                 $pageSlug = $viewSlug;
             }
         }
 
         // Priority 3: Last resort - use exact slug
-        if ($pageSlug === '') {
+        if ('' === $pageSlug) {
             $pageSlug = $fullSlug;
         }
 
