@@ -203,9 +203,15 @@ describe('CMS Individual Folio Routes Tests', function () {
         $response->assertSee('<html');
     });
 
+<<<<<<< Updated upstream
     test('cms: route GET /{locale}/pages/{slug}', function () {
         $locale = (string) app()->getLocale();
         $response = get('/'.$locale.'/pages/test-slug');
+=======
+    test('cms: route GET /{locale}/{slug}', function () {
+        $locale = (string) app()->getLocale();
+        $response = get('/'.$locale.'/test-slug');
+>>>>>>> Stashed changes
 
         // Le pagine dinamiche potrebbero non esistere
         expect($response->status())->toBeIn([200, 404]);
@@ -305,7 +311,11 @@ describe('CMS Individual Folio Routes Tests', function () {
 
             // Verifica che il JSON della homepage sia caricato correttamente
             // Il sito funziona, quindi il path reale è config/local/laravelpizza/
+<<<<<<< Updated upstream
             $homepageJsonPath = config_path('local/laravelpizza/database/content/pages/home.json');
+=======
+            $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+>>>>>>> Stashed changes
             // Il file potrebbe non esistere in test environment, quindi accettiamo sia true che false
             if (! file_exists($homepageJsonPath)) {
                 $this->markTestSkipped('Homepage JSON file not found in test environment: '.$homepageJsonPath);
@@ -333,7 +343,11 @@ describe('CMS Individual Folio Routes Tests', function () {
             $response->assertStatus(200);
 
             // Il sito funziona, quindi il path reale è config/local/laravelpizza/
+<<<<<<< Updated upstream
             $homepageJsonPath = config_path('local/laravelpizza/database/content/pages/home.json');
+=======
+            $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+>>>>>>> Stashed changes
             if (! file_exists($homepageJsonPath)) {
                 $this->markTestSkipped('Homepage JSON file not found in test environment: '.$homepageJsonPath);
             }
@@ -355,7 +369,11 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         test('cms processes blade syntax in json correctly', function () {
             // Il sito funziona, quindi il path reale è config/local/laravelpizza/
+<<<<<<< Updated upstream
             $homepageJsonPath = config_path('local/laravelpizza/database/content/pages/home.json');
+=======
+            $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+>>>>>>> Stashed changes
             if (! file_exists($homepageJsonPath)) {
                 $this->markTestSkipped('Homepage JSON file not found in test environment: '.$homepageJsonPath);
             }
