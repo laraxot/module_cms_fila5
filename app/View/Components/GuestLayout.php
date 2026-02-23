@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
-<<<<<<< Updated upstream
-=======
 use Closure;
 use Illuminate\Contracts\Support\Htmlable;
->>>>>>> Stashed changes
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -17,11 +14,7 @@ class GuestLayout extends Component
     /**
      * Get the view / contents that represents the component.
      */
-<<<<<<< Updated upstream
-    public function render(): View
-=======
     public function render(): View|Htmlable|Closure|string
->>>>>>> Stashed changes
     {
         /** @var string $view */
         $view = 'pub_theme::components.layouts.guest';
