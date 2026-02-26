@@ -31,7 +31,7 @@ class ThemeComposer
             return null;
         }
 
-        /** @var array<string, mixed> $items */
+        /* @var array<string, mixed> $items */
         return $items;
     }
 
