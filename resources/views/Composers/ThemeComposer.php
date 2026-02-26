@@ -31,8 +31,13 @@ class ThemeComposer
             return null;
         }
 
-        /* @var array<string, mixed> $items */
-        return $items;
+        /** @var array<string, mixed> $result */
+        $result = [];
+        foreach ($items as $key => $value) {
+            $result[(string) $key] = $value;
+        }
+
+        return $result;
     }
 
     public function getMenuUrl(array $menu): string
@@ -75,9 +80,9 @@ class ThemeComposer
             $blocks = [];
         }
         $blocksComponent = new Blocks(
-            tpl: 'ui::components.render.blocks.v1',
-            blocks: $blocks,
-            model: $page,
+            'ui::components.render.blocks.v1',
+            $blocks,
+            $page,
         );
 
         return $blocksComponent->render();
@@ -97,9 +102,9 @@ class ThemeComposer
         }
 
         $blocksComponent = new Blocks(
-            tpl: 'ui::components.render.blocks.v1',
-            blocks: $blocks,
-            model: $page,
+            'ui::components.render.blocks.v1',
+            $blocks,
+            $page,
         );
 
         return $blocksComponent->render();
@@ -119,9 +124,9 @@ class ThemeComposer
         }
 
         $blocksComponent = new Blocks(
-            tpl: 'ui::components.render.blocks.v1',
-            blocks: $blocks,
-            model: $page,
+            'ui::components.render.blocks.v1',
+            $blocks,
+            $page,
         );
 
         return $blocksComponent->render();
