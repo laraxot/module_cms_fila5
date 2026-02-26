@@ -31,7 +31,7 @@ class ThemeComposer
             return null;
         }
 
-        /* @var array<string, mixed> $items */
+        /** @var array<string, mixed> $items */
         return $items;
     }
 
@@ -75,7 +75,7 @@ class ThemeComposer
             $blocks = [];
         }
         $blocksComponent = new Blocks(
-            tpl: 'ui::components.render.blocks.v1',
+            view: 'ui::components.render.blocks.v1',
             blocks: $blocks,
             model: $page,
         );
@@ -97,7 +97,7 @@ class ThemeComposer
         }
 
         $blocksComponent = new Blocks(
-            tpl: 'ui::components.render.blocks.v1',
+            view: 'ui::components.render.blocks.v1',
             blocks: $blocks,
             model: $page,
         );
@@ -119,7 +119,7 @@ class ThemeComposer
         }
 
         $blocksComponent = new Blocks(
-            tpl: 'ui::components.render.blocks.v1',
+            view: 'ui::components.render.blocks.v1',
             blocks: $blocks,
             model: $page,
         );
