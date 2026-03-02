@@ -8,7 +8,6 @@ use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Models\Page as PageModel;
-use Spatie\LaravelData\DataCollection;
 
 class Page extends Component
 {
@@ -35,7 +34,7 @@ class Page extends Component
         $this->slug = $slug;
         $this->container0 = $container0;
         $this->slug0 = $slug0;
-        /** @phpstan-ignore staticMethod.notFound, assign.propertyType */
+        /* @phpstan-ignore staticMethod.notFound, assign.propertyType */
         $this->blocks = PageModel::getBlocksBySlug($slug, $side);
     }
 
