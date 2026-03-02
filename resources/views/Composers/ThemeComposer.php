@@ -31,8 +31,13 @@ class ThemeComposer
             return null;
         }
 
-        /* @var array<string, mixed> $items */
-        return $items;
+        /** @var array<string, mixed> $normalized */
+        $normalized = [];
+        foreach ($items as $key => $value) {
+            $normalized[(string) $key] = $value;
+        }
+
+        return $normalized;
     }
 
     public function getMenuUrl(array $menu): string

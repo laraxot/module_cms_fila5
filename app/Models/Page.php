@@ -5,15 +5,18 @@ declare(strict_types=1);
 namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
 use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Models\Traits\HasBlocks;
-use Modules\Tenant\Models\Traits\SushiToJsons;
+use Modules\Tenant\Contracts\SushiToJsonContract;
+use Modules\Tenant\Models\Traits\SushiToJson;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modules\Cms\Models\Page.
+ *
+ * @method static array<int, array<string, mixed>> getMiddlewareBySlug(string $slug)
+ * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  *
  * @property string                       $id
  * @property array<array-key, mixed>|null $title
@@ -31,7 +34,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null         $creator
  * @property mixed                        $translations
  * @property ProfileContract|null         $updater
- *
  * @method static Builder<static>|Page    newModelQuery()
  * @method static Builder<static>|Page    newQuery()
  * @method static Builder<static>|Page    query()
@@ -175,25 +177,23 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static static                  onlyTrashed()
  * @method static static                  withTrashed()
  * @method static static                  withoutTrashed()
- * @method static Collection<int, static> all($columns = ['*'])
- * @method static Collection<int, static> get($columns = ['*'])
+ * @method static \Illuminate\Database\Eloquent\Collection<int, static> all($columns = ['*'])
+ * @method static \Illuminate\Database\Eloquent\Collection<int, static> get($columns = ['*'])
  * @method static static|null             first($columns = ['*'])
  * @method static static|null             find($id, $columns = ['*'])
- *
  * @property ProfileContract|null $deleter
- *
  * @method static PageFactory factory($count = null, $state = [])
- *
  * @property array<array-key, mixed>|null $blocks
- *
  * @method static Builder<static>|Page whereBlocks($value)
- *
+ * @method array<int, array<string, mixed>> getSushiRows()
+ * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
+ * @method static array<int, string> getMiddlewareBySlug(string $slug)
  * @mixin \Eloquent
  */
-class Page extends BaseModelLang
+class Page extends BaseModelLang implements SushiToJsonContract
 {
     use HasBlocks;
-    use SushiToJsons;
+    use SushiToJson;
 
     /** @var array<int, string> */
     public $translatable = [
