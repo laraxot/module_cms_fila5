@@ -85,7 +85,7 @@ test('FooterData can be converted to array', function (): void {
 });
 
 test('FooterData has _tpl property', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     expect($footerData->_tpl)->toBeNull();
 });
