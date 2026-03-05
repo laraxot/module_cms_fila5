@@ -38,7 +38,7 @@ test('FixJigSawByModuleAction execute creates files in module docs directory', f
     $module->shouldReceive('getName')->andReturn('TestModule');
     $module->shouldReceive('getPath')->andReturn($tempModulePath);
 
-    $action = new FixJigSawByModuleAction;
+    $action = new FixJigSawByModuleAction();
     $result = $action->execute($module);
 
     expect($result)->toBeArray();
@@ -56,12 +56,12 @@ test('FixJigSawByModuleAction execute creates files in module docs directory', f
 });
 
 test('FixJigSawByModuleAction publish replaces ModuleName placeholder', function () {
-    $action = new FixJigSawByModuleAction;
+    $action = new FixJigSawByModuleAction();
 
     // Use stub file that contains ModuleName placeholder
     $stubPath = '/var/www/_bases/base_laravelpizza/laravel/Modules/Cms/app/Console/Commands/stubs/docs/config.php.stub';
 
-    $stubFile = new \Symfony\Component\Finder\SplFileInfo($stubPath, 'docs/config.php.stub', 'config.php.stub');
+    $stubFile = new Symfony\Component\Finder\SplFileInfo($stubPath, 'docs/config.php.stub', 'config.php.stub');
 
     // Create a mock module with real temp directory
     $modulePath = sys_get_temp_dir().'/test_module_pub_'.uniqid();
