@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Http\Volt\Password;
 
-use Modules\Cms\Http\Volt\Password\ConfirmComponent;
-use ReflectionClass;
 use Livewire\Volt\Component as VoltComponent;
+use Modules\Cms\Http\Volt\Password\ConfirmComponent;
 
 uses(\Modules\Cms\Tests\TestCase::class, \Illuminate\Foundation\Testing\DatabaseTransactions::class);
 
@@ -29,7 +28,7 @@ describe('Password ConfirmComponent', function (): void {
     });
 
     test('confirm method declares redirect response return type', function (): void {
-        $reflection = new ReflectionClass(ConfirmComponent::class);
+        $reflection = new \ReflectionClass(ConfirmComponent::class);
         $method = $reflection->getMethod('confirm');
         $returnType = $method->getReturnType();
 
