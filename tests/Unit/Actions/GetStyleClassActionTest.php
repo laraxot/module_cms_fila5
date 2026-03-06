@@ -26,5 +26,3 @@ test('GetStyleClassAction handles exceptions gracefully', function () {
         expect(true)->toBeTrue();
     }
 });
-
-
