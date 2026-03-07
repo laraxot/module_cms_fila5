@@ -31,7 +31,7 @@ function setProtected(object $object, string $property, mixed $value): void
 
 test('handle returns next response when slug is not a string', function (): void {
     $request = Request::create('/test', 'GET');
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
 
     $response = $middleware->handle($request, fn (Request $req): Response => new Response('ok', 200));
 
@@ -41,7 +41,7 @@ test('handle returns next response when slug is not a string', function (): void
 
 test('handle wraps non-response next value into 500 response when slug is not a string', function (): void {
     $request = Request::create('/test', 'GET');
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
 
     $response = $middleware->handle($request, fn (Request $req) => 'not-a-response');
 
@@ -50,7 +50,7 @@ test('handle wraps non-response next value into 500 response when slug is not a 
 });
 
 test('parseMiddleware splits name and parameters', function (): void {
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
 
     /** @var array{0:string,1:array<string>} $parsed */
     $parsed = invokeProtected($middleware, 'parseMiddleware', ['throttle:60,1']);
@@ -60,7 +60,7 @@ test('parseMiddleware splits name and parameters', function (): void {
 });
 
 test('resolveMiddlewareClass returns mapped class for alias', function (): void {
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
     $kernel = \Mockery::mock(Kernel::class);
     $kernel->shouldReceive('getRouteMiddleware')
         ->once()
@@ -74,7 +74,7 @@ test('resolveMiddlewareClass returns mapped class for alias', function (): void 
 });
 
 test('executeMiddlewareChain returns 500 when final closure does not return response', function (): void {
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
     $request = Request::create('/test', 'GET');
 
     /** @var Response $response */
