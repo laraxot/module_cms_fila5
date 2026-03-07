@@ -17,7 +17,7 @@ abstract class TestCase extends XotBaseTestCase
 {
 <<<<<<< HEAD
     /** @var array<int, string> */
-    protected $connectionsToTransact = [
+    protected array $connectionsToTransact = [
         'mysql',
         'user',
     ];
