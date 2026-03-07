@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Cms\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -59,8 +61,8 @@ class PostFactory extends Factory
     {
         return $this->afterCreating(function (Post $post) {
             $post->featuredImage()->create([
-                'name' => $post->title . ' Image',
-                'path' => '/images/' . $this->faker->word() . '.jpg',
+                'name' => $post->title.' Image',
+                'path' => '/images/'.$this->faker->word().'.jpg',
                 'alt' => $post->title,
                 'caption' => $this->faker->sentence(),
             ]);
