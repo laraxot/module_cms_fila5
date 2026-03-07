@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Actions;
 
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Str;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Datas\ResolvePageData;
@@ -21,11 +20,7 @@ class ResolvePageActionTest extends TestCase
      */
     protected array $connectionsToTransact = ['mysql', 'meetup', 'user', 'tenant'];
 
-<<<<<<< HEAD
     public function testItResolvesADynamicModelFromKnownMappings(): void
-=======
-    public function test_it_resolves_a_dynamic_model_from_known_mappings(): void
->>>>>>> e1ecbe9 (.)
     {
         $event = Event::factory()->create(['slug' => 'test-event-'.uniqid()]);
         PageModel::where('slug', 'events.'.$event->slug)->delete();
@@ -42,19 +37,11 @@ class ResolvePageActionTest extends TestCase
         }
     }
 
-<<<<<<< HEAD
     public function testItResolvesACmsPageWithExactSlug(): void
     {
         $slug = 'about.us-'.uniqid();
         PageModel::factory()->create(['slug' => $slug]);
 
-=======
-    public function test_it_resolves_a_cms_page_with_exact_slug(): void
-    {
-        $slug = 'about.us-'.uniqid();
-        PageModel::factory()->create(['slug' => $slug]);
-        
->>>>>>> e1ecbe9 (.)
         $action = app(ResolvePageAction::class);
         $result = $action->execute('about', (string) Str::after($slug, 'about.'));
 
@@ -62,19 +49,11 @@ class ResolvePageActionTest extends TestCase
         expect($result->pageSlug)->toBe($slug);
     }
 
-<<<<<<< HEAD
     public function testItFallsBackToContainerViewIfSlugNotFound(): void
     {
         $viewSlug = 'blog.view-'.uniqid();
         PageModel::factory()->create(['slug' => $viewSlug]);
 
-=======
-    public function test_it_falls_back_to_container_view_if_slug_not_found(): void
-    {
-        $viewSlug = 'blog.view-'.uniqid();
-        PageModel::factory()->create(['slug' => $viewSlug]);
-        
->>>>>>> e1ecbe9 (.)
         $container = (string) Str::before($viewSlug, '.');
         $action = app(ResolvePageAction::class);
         $result = $action->execute($container, 'non-existent');
@@ -83,11 +62,7 @@ class ResolvePageActionTest extends TestCase
         expect($result->pageSlug)->toBeIn([$container.'.view', $viewSlug]);
     }
 
-<<<<<<< HEAD
     public function testItReturnsFullSlugAsFinalFallback(): void
-=======
-    public function test_it_returns_full_slug_as_final_fallback(): void
->>>>>>> e1ecbe9 (.)
     {
         $action = app(ResolvePageAction::class);
         $result = $action->execute('unknown', 'page');
