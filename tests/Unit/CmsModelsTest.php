@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit;
 
-use Modules\Cms\Tests\TestCase;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\Post;
+use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
 
