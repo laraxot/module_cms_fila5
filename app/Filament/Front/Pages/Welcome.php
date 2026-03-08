@@ -46,8 +46,16 @@ class Welcome extends XotBasePage
     public function getViewData(): array
     {
         $data = [];
+<<<<<<< HEAD
+        if ([] !== $this->containers) {
+            $container_last = last($this->containers);
+||||||| 6161e129d
+        if ($this->containers !== []) {
+            $container_last = last($this->containers);
+=======
         if ([] !== $containers
             $container_last = last($containers);
+>>>>>>> feature/ralph-loop-implementation
             Assert::string($container_last, '['.__LINE__.']['.__FILE__.']');
             $item_last = last($items);
             Assert::string($item_last, '['.__LINE__.']['.__FILE__.']');

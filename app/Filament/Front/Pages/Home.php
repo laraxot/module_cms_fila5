@@ -42,9 +42,19 @@ class Home extends XotBasePage
     public function getViewData(): array
     {
         $data = [];
+<<<<<<< HEAD
+        if ([] !== $this->containers) {
+            Assert::string($container_last = last($this->containers), '['.__LINE__.']['.__FILE__.']');
+            $item_last = last($this->items);
+||||||| 6161e129d
+        if ($this->containers !== []) {
+            Assert::string($container_last = last($this->containers), '['.__LINE__.']['.__FILE__.']');
+            $item_last = last($this->items);
+=======
         if ([] !== $containers
             Assert::string($container_last = last($containers));
             $item_last = last($items);
+>>>>>>> feature/ralph-loop-implementation
 
             $container_last_singular = Str::singular($container_last);
             $container_last_model = Relation::getMorphedModel($container_last_singular);
