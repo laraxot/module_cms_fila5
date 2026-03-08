@@ -43,7 +43,7 @@ class CmsServiceProvider extends XotBaseServiceProvider
         // Verifica che la configurazione di LaravelLocalization sia caricata
         // NOTA: La configurazione è già gestita dal modulo Lang
         // if (!config()->has('laravellocalization.supportedLocales')) {
-        //     // @var mixed mergeConfigFrom(__DIR__.'/../config/laravellocalization.php', 'laravellocalization';
+        //     $this->mergeConfigFrom(__DIR__.'/../config/laravellocalization.php', 'laravellocalization');
         // }
 
         if ($xot->register_pub_theme) {
