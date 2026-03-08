@@ -6,6 +6,17 @@ namespace Modules\Cms\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Cms\Models\Page;
+<<<<<<< HEAD
+
+use function Safe\preg_replace;
+||||||| 6161e129d
+use Webmozart\Assert\Assert;
+
+use function Safe\preg_replace;
+=======
+>>>>>>> feature/ralph-loop-implementation
+
+use Webmozart\Assert\Assert;
 
 /**
  * @extends Factory<Page>

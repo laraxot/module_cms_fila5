@@ -28,7 +28,8 @@ trait HasBlocks
         if ($side) {
             $field = $side.'_blocks';
         }
-        $blocks = // @var mixed {$field};
+        /** @var mixed $blocks */
+        $blocks = $this->{$field};
 
         if (! is_array($blocks)) {
             $primary_lang = XotData::make()->primary_lang;

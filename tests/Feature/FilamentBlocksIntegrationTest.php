@@ -140,7 +140,14 @@ describe('Filament Blocks Integration', function () {
 
         $status = $response->getStatusCode();
         if (200 !== $status) {
+<<<<<<< HEAD
+            $this->markTestSkipped('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
+||||||| 6161e129d
+        if ($status !== 200) {
+            $this->markTestSkipped('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
+=======
             $this->markTestSkipped('Homepage is not directly renderable (redirect/non-200)); performance check is not applicable.');
+>>>>>>> feature/ralph-loop-implementation
         }
 
         // Verifica che i blocchi si carichino entro tempi accettabili
