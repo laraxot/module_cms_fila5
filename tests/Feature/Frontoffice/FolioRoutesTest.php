@@ -45,7 +45,7 @@ it('validates Folio routes basic accessibility and localization', function (): v
     foreach ($paths as $path) {
         // Root should redirect to /{locale}
         if ('/' === $path) {
-            $response = $this->get($path);
+            $response = // @var mixed get($path;
             $response->assertRedirect('/'.$locale);
 
             continue;
@@ -53,27 +53,20 @@ it('validates Folio routes basic accessibility and localization', function (): v
 
         // Skip dynamic placeholder routes; they require seeded data or specific tokens
         if (str_contains($path, '{')) {
-            $this->markTestSkipped("Dynamic Folio route requires fixture: {$path}");
+            // @var mixed markTestSkipped("Dynamic Folio route requires fixture: {$path}";
 
             continue;
         }
 
-        $response = $this->get($path);
+        $response = // @var mixed get($path;
         $status = $response->getStatusCode();
 
         // Skip Not Found (routing misalignment) and any server error with context
         if (404 === $status) {
-<<<<<<< HEAD
-            $this->markTestSkipped("Folio route not found (404): {$path}");
-||||||| 6161e129d
-        if ($status === 404) {
-            $this->markTestSkipped("Folio route not found (404): {$path}");
-=======
-            $this->markTestSkipped("Folio route not found (404));
->>>>>>> feature/ralph-loop-implementation
+            // @var mixed markTestSkipped("Folio route not found (404;
         }
         if ($status >= 500) {
-            $this->markTestSkipped("Folio route returned server error ({$status}));
+            // @var mixed markTestSkipped("Folio route returned server error ({$status};
         }
 
         // For unauthenticated contexts, allow OK, No Content, Redirects, and Auth-required statuses

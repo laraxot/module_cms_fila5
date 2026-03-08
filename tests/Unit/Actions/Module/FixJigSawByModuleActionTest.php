@@ -19,37 +19,6 @@ test('FixJigSawByModuleAction execute with real stubs returns array', function (
     $module->shouldReceive('getName')->andReturn('Cms');
     $module->shouldReceive('getPath')->andReturn('/var/www/_bases/base_laravelpizza/laravel/Modules/Cms/app');
 
-<<<<<<< HEAD
-    // Create a temporary stub file for testing
-    $stubsDir = '/tmp/test-stubs';
-    if (! is_dir($stubsDir)) {
-        mkdir($stubsDir, 0755, true);
-    }
-
-    file_put_contents($stubsDir.'/test.stub', 'This is a test stub for ModuleName');
-
-    // Mock File facade to return our test stub file
-    File::shouldReceive('allFiles')
-        ->with(Mockery::any())
-        ->andReturn([new Symfony\Component\Finder\SplFileInfo($stubsDir.'/test.stub', '', 'test.stub')]);
-
-||||||| 6161e129d
-    // Create a temporary stub file for testing
-    $stubsDir = '/tmp/test-stubs';
-    if (! is_dir($stubsDir)) {
-        mkdir($stubsDir, 0755, true);
-    }
-
-    file_put_contents($stubsDir.'/test.stub', 'This is a test stub for ModuleName');
-
-    // Mock File facade to return our test stub file
-    File::shouldReceive('allFiles')
-        ->with(Mockery::any())
-        ->andReturn([new Symfony\Component\Finder\SplFileInfo($stubsDir.'/test.stub', '', 'test.stub')]);
-
-    $action = new FixJigSawByModuleAction;
-=======
->>>>>>> feature/ralph-loop-implementation
     $action = new FixJigSawByModuleAction();
     $result = $action->execute($module);
 

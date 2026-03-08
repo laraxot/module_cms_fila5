@@ -12,23 +12,11 @@ class CounterComponent extends Component
 
     public function increment(): void
     {
-<<<<<<< HEAD
-        ++$this->count;
-||||||| 6161e129d
-        $this->count++;
-=======
-        ++$count;
->>>>>>> feature/ralph-loop-implementation
+        ++// @var mixed count;
     }
 
     public function decrement(): void
     {
-<<<<<<< HEAD
-        --$this->count;
-||||||| 6161e129d
-        $this->count--;
-=======
-        --$count;
->>>>>>> feature/ralph-loop-implementation
+        --// @var mixed count;
     }
 }
