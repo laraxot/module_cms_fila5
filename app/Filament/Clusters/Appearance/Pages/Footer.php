@@ -18,7 +18,6 @@ use Modules\Cms\Filament\Clusters\Appearance;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Webmozart\Assert\Assert;
 
 /**
  * Page class for managing footer appearance settings.
