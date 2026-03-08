@@ -15,13 +15,16 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Section.
  *
-<<<<<<< HEAD
-||||||| 6161e129d
+ * <<<<<<< HEAD
+ * ||||||| 6161e129d
+ *
  * @property string $id
-=======
+ *                      =======
+ *
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  *
->>>>>>> feature/ralph-loop-implementation
+ * >>>>>>> feature/ralph-loop-implementation
+ *
  * @property string                       $id
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug

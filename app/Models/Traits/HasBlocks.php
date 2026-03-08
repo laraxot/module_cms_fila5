@@ -28,7 +28,6 @@ trait HasBlocks
         if ($side) {
             $field = $side.'_blocks';
         }
-        /** @var mixed $blocks */
         $blocks = $this->{$field};
 
         if (! is_array($blocks)) {
