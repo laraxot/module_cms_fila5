@@ -11,24 +11,13 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 
 class ListPageContents extends LangBaseListRecords
 {
-    // use ListRecords\Concerns\Translatable;
-    // protected static string $resource = PageContentResource::class;
-    /**
-     * @return array<int, Column|Stack>
-     */
     public function getGridTableColumns(): array
     {
-        /** @var array<int, Column> $columns */
-        $columns = // @var mixed getTableColumns(;
-
         return [
-            Stack::make($columns),
+            Stack::make($this->getTableColumns()),
         ];
     }
 
-    /**
-     * @return array<int, TextColumn>
-     */
     public function getTableColumns(): array
     {
         return [
@@ -36,14 +25,4 @@ class ListPageContents extends LangBaseListRecords
             TextColumn::make('slug')->sortable()->searchable(),
         ];
     }
-
-    /*
-     * protected function getHeaderActions(): array
-     * {
-     * return [
-     * CreateAction::make(),
-     * Actions\LocaleSwitcher::make(),
-     * ];
-     * }
-     */
 }
