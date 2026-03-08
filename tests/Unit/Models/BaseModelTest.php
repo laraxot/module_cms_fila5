@@ -4,38 +4,32 @@ declare(strict_types=1);
 
 uses(Modules\Cms\Tests\TestCase::class);
 
+use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\BaseModel;
 
 beforeEach(function (): void {
-<<<<<<< HEAD
-    $this->baseModel = new class extends BaseModel {
-||||||| 6161e129d
-    $this->baseModel = new class extends BaseModel
-    {
-=======
-    $baseModel = new class extends BaseModel {
->>>>>>> feature/ralph-loop-implementation
+    // @var mixed baseModel = new class extends BaseModel {
         protected $table = 'test_cms_table';
     };
 });
 
 test('base model extends eloquent model', function (): void {
-    expect($baseModel);
+    expect(// @var mixed baseModel;
 });
 
 test('base model has correct table name', function (): void {
-    expect($baseModel->getTable());
+    expect(// @var mixed baseModel->getTable(;
 });
 
 test('base model can be instantiated', function (): void {
-    expect($baseModel);
+    expect(// @var mixed baseModel;
 });
 
 test('base model has proper inheritance chain', function (): void {
-    expect($baseModel);
-    expect($baseModel);
+    expect(// @var mixed baseModel;
+    expect(// @var mixed baseModel;
 });
 
 test('base model has timestamps enabled', function (): void {
-    expect($baseModel->usesTimestamps());
+    expect(// @var mixed baseModel->usesTimestamps(;
 });

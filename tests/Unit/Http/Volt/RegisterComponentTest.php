@@ -6,6 +6,7 @@ namespace Modules\Cms\Tests\Unit\Http\Volt;
 
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\RegisterComponent;
+use ReflectionClass;
 
 uses(\Modules\Cms\Tests\TestCase::class);
 
@@ -34,7 +35,7 @@ describe('RegisterComponent', function (): void {
     });
 
     test('register method returns redirect response', function (): void {
-        $reflection = new \ReflectionClass(RegisterComponent::class);
+        $reflection = new ReflectionClass(RegisterComponent::class);
         $method = $reflection->getMethod('register');
         $returnType = $method->getReturnType();
 
