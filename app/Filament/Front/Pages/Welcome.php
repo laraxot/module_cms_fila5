@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Filament\Front\Pages;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Webmozart\Assert\Assert;
 
 class Welcome extends XotBasePage
 {
