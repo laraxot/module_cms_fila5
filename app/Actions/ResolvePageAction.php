@@ -31,7 +31,7 @@ final class ResolvePageAction
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
-                pageSlug: '' // Non serve per il mode 'model'
+                pageSlug: $container0.'.view' 
             );
         }
 
