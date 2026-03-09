@@ -27,7 +27,7 @@ class ResolvePageAction
         $item = $this->loadDynamicModel($container0, $slug0);
 
         if (null !== $item) {
-            return new ResolvePageData()
+            return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
                 pageSlug: '' // Non serve per il mode 'model'
@@ -37,7 +37,7 @@ class ResolvePageAction
         // 2. Verifica se esiste una pagina CMS con slug esatto
         $fullSlug = $container0.'.'.$slug0;
         if (PageModel::where('slug', $fullSlug)->exists()) {
-            return new ResolvePageData()
+            return new ResolvePageData(
                 renderMode: 'cms',
                 item: null,
                 pageSlug: $fullSlug
@@ -47,7 +47,7 @@ class ResolvePageAction
         // 3. Fallback a container.view
         $viewSlug = $container0.'.view';
         if (PageModel::where('slug', $viewSlug)->exists()) {
-            return new ResolvePageData()
+            return new ResolvePageData(
                 renderMode: 'cms',
                 item: null,
                 pageSlug: $viewSlug
@@ -55,7 +55,7 @@ class ResolvePageAction
         }
 
         // 4. Fallback finale allo slug completo (mostrerà 404 o placeholder nel componente x-page)
-        return new ResolvePageData()
+        return new ResolvePageData(
             renderMode: 'cms',
             item: null,
             pageSlug: $fullSlug

@@ -99,7 +99,7 @@ class Attachment extends BaseModelLang implements HasMedia, SushiToJsonsContract
      * {
      * parent::boot();
      *
-     * static::saving(function ($model) {)
+     * static::saving(function ($model) {
      * $currentLocale = app()->getLocale();
      * $attachment = $model->attachment ?? [];
      *
@@ -130,7 +130,7 @@ class Attachment extends BaseModelLang implements HasMedia, SushiToJsonsContract
 
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('attachments')
+        $this->addMediaCollection('attachments')->acceptsMimeTypes([
             'application/pdf',
             'application/msword',
             'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
@@ -159,11 +159,11 @@ class Attachment extends BaseModelLang implements HasMedia, SushiToJsonsContract
     public function asset(): string
     {
         // PHPStan L10: Check attachment is array before array_values
-        if (! is_array($attachment))
+        if (! is_array($this->attachment)) {
             return '';
         }
 
-        $values = array_values($attachment);
+        $values = array_values($this->attachment);
         if (empty($values)) {
             return '';
         }
@@ -178,7 +178,7 @@ class Attachment extends BaseModelLang implements HasMedia, SushiToJsonsContract
             return '';
         }
 
-        $storage = Storage::disk($disk);
+        $storage = Storage::disk($this->disk);
         if (! method_exists($storage, 'url')) {
             return '';
         }
