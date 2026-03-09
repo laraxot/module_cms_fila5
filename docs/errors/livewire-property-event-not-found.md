@@ -1,0 +1,21 @@
+# Livewire Property `$event` Not Found (container0.view)
+
+## Sintomo
+
+Errore su route dinamica `/it/events/{slug}`:
+
+- `Livewire\Exceptions\PropertyNotFoundException`
+- `Property [$event] not found on component: [container0.view]`
+
+## Causa
+
+`x-page` renderizza i blocchi CMS con `@include($block->view, $block->data)`.
+
+Se il block file incluso usa stato/metodi Livewire (`$this->event`, `wire:click`, `wire:model`) senza essere montato esplicitamente come componente Livewire, `$this` punta al parent (`container0.view`) e la property non esiste.
+
+## Regola
+
+- Block inclusi via `@include` devono restare **plain Blade**.
+- Se serve stato reattivo:
+  - usare Alpine per UI locale, oppure
+  - montare un componente Livewire dedicato con `@livewire(...)`.
