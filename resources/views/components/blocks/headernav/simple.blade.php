@@ -94,14 +94,20 @@ declare(strict_types=1);
                 
             @else
                 <div class="flex items-center w-auto">
-                    <x-ui.button type="secondary" submit="true" tag="a" href="{{ route('login') }}">
-                        {{ __('user::auth.login-in') }}
-                    </x-ui.button>
+                    <a
+                        href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::localizeUrl('/auth/login') }}"
+                        class="inline-flex items-center rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                    >
+                        {{ __('pub_theme::navigation.auth.login') }}
+                    </a>
                 </div>
                 <div class="flex items-center w-auto">
-                    <x-ui.button type="primary" submit="true" tag="a" href="{{ route('register') }}">
-                        {{ __('user::auth.sign-up') }}
-                    </x-ui.button>
+                    <a
+                        href="{{ \Mcamara\LaravelLocalization\Facades\LaravelLocalization::localizeUrl('/auth/register') }}"
+                        class="inline-flex items-center rounded-xl bg-red-600 px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                    >
+                        {{ __('pub_theme::navigation.auth.register') }}
+                    </a>
                 </div>
             @endauth
 
