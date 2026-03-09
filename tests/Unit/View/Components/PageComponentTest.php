@@ -9,7 +9,7 @@ use Modules\Cms\View\Components\Page;
 
 uses(TestCase::class);
 
-/**
+/*
  * Tests for Modules\Cms\View\Components\Page (the Blade VIEW component).
  *
  * Not to be confused with Modules\Cms\Tests\Unit\Models\PageTest
