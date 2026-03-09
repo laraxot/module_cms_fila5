@@ -50,7 +50,7 @@ class FooterData extends Data implements Wireable
             $message = 'The view ['.$view.'] does not exist';
             throw new \Exception($message);
         }
-        
+
         /** @var array<string, mixed> */
         $view_params = $this->toArray();
 
