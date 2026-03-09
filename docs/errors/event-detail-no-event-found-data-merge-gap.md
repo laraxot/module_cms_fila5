@@ -18,10 +18,24 @@ Per `events/detail.blade.php` significa:
 - nessuna query `Event::where('slug', ... )`
 - fallback UI: "Nessun evento trovato"
 
-## Fix DRY + KISS
+### 2. Volt Component `mount` Parameters Gap
 
-Centralizzare nel page renderer il merge dati:
+In class-based Volt components used inside Folio routes with parameters (e.g., `[container0]/[slug0]/index.blade.php`), the parameters `container0` and `slug0` MUST be explicitly included in the `mount()` signature if other dependencies are also being injected, otherwise they might remain empty at the start of the `mount()` execution.
 
-- `array_merge($data, $block->data)`
+**Symptom:** `ResolvePageAction::execute($this->container0, $this->slug0)` was being called with empty strings.
 
-Cosi ogni blocco riceve sempre il contesto route + i propri dati specifici.
+**Fix:**
+```php
+public function mount(ResolvePageAction $resolvePageAction, string $container0, string $slug0): void
+{
+    $this->container0 = $container0;
+    $this->slug0 = $slug0;
+    // ...
+}
+```
+
+### 3. `Page` Component Robustness
+
+The `Page` component should extract `container0` and `slug0` from the `$data` array if they are not provided as individual props.
+
+**Fix:** Added logic in `Page::__construct` to extract and sync these variables.

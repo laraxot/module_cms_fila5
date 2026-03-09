@@ -19,3 +19,4 @@ Se il block file incluso usa stato/metodi Livewire (`$this->event`, `wire:click`
 - Se serve stato reattivo:
   - usare Alpine per UI locale, oppure
   - montare un componente Livewire dedicato con `@livewire(...)`.
+- Per i dettagli dinamici (`/it/events/{slug}`), il modello deve essere risolto prima nel route layer tramite `ResolvePageAction` e passato a `x-page` come `item`/`event`.
