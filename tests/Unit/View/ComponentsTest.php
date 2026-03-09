@@ -10,7 +10,7 @@ use Modules\Cms\View\Components\Section;
 
 uses(TestCase::class);
 
-/**
+/*
  * Smoke tests for Section and PageContent view components.
  *
  * Page component tests are in:
