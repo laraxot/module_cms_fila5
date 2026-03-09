@@ -4,13 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Filament\Front\Pages;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Webmozart\Assert\Assert;
 
 class Home extends XotBasePage
 {
