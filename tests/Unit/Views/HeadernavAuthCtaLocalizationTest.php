@@ -23,14 +23,15 @@ test('headernav auth ctas use theme localization keys and not legacy auth keys',
         }
 
         expect($content)
-            ->toContain("__('pub_theme::navigation.auth.login')")
-            ->toContain("__('pub_theme::navigation.auth.register')")
+            ->toContain("@include('pub_theme::components.ui.auth-buttons'")
             ->not->toContain("__('user::auth.login-in')")
-            ->not->toContain("__('user::auth.sign-up')");
+            ->not->toContain("__('user::auth.sign-up')")
+            ->not->toContain("localizeUrl('/auth/login')")
+            ->not->toContain("localizeUrl('/auth/register')");
     }
 });
 
-test('headernav auth ctas use localized auth urls', function (): void {
+test('headernav auth ctas delegate rendering to theme auth-buttons partial', function (): void {
     $paths = [
         base_path('Modules/Cms/resources/views/components/headernav/simple.blade.php'),
         base_path('Modules/Cms/resources/views/components/blocks/headernav/simple.blade.php'),
@@ -45,7 +46,6 @@ test('headernav auth ctas use localized auth urls', function (): void {
         }
 
         expect($content)
-            ->toContain("localizeUrl('/auth/login')")
-            ->toContain("localizeUrl('/auth/register')");
+            ->toContain("@include('pub_theme::components.ui.auth-buttons', ['showLabels' => true, 'size' => 'md'])");
     }
 });
