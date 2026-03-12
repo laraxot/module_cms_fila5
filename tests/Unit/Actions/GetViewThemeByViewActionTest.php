@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Actions;
 
-
 use Modules\Cms\Actions\GetViewThemeByViewAction;
 
 test('GetViewThemeByViewAction can be executed', function () {

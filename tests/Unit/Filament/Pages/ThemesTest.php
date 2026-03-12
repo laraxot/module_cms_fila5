@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Filament\Pages;
 
-
 use Modules\Cms\Filament\Pages\Themes;
 
 test('Themes page can be instantiated', function () {

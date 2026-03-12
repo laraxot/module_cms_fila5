@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Datas;
 
-
 use Modules\Cms\Datas\ResolvePageData;
 
 test('ResolvePageData can be instantiated with constructor', function (): void {

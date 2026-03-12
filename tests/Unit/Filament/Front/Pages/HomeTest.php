@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Filament\Front\Pages;
 
-
 use Modules\Cms\Filament\Front\Pages\Home;
 
 test('Home page can be instantiated', function () {

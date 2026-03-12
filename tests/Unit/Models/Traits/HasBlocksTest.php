@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Models\Traits;
 
-
 use Modules\Cms\Models\Traits\HasBlocks;
 
 test('HasBlocks trait can be used', function () {

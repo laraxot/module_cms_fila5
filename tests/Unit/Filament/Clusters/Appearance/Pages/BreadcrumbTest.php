@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Filament\Clusters\Appearance\Pages;
 
-
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
 
 test('Breadcrumb page uses correct view', function () {

@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\Module;
-use Modules\Cms\Tests\TestHelper;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
 
 describe('CMS Module', function () {

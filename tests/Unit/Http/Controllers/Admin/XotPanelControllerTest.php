@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Http\Controllers\Admin;
 
-
 use Modules\Cms\Http\Controllers\Admin\XotPanelController;
 
 describe('XotPanelController', function (): void {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\View\Composers;
 
-
 use Modules\Cms\View\Composers\ThemeComposer;
 
 test('ThemeComposer can be instantiated', function () {

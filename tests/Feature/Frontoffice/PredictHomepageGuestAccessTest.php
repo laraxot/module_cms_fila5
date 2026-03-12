@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Auth;
-use Modules\Predict\View\Composers\ThemeComposer as PredictThemeComposer;
 use Modules\Cms\Tests\TestCase;
+use Modules\Predict\View\Composers\ThemeComposer as PredictThemeComposer;
 use Modules\Xot\Datas\XotData;
 
 uses(TestCase::class);

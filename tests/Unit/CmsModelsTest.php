@@ -6,8 +6,6 @@ namespace Modules\Cms\Tests\Unit;
 
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\Post;
-use Modules\Cms\Tests\TestCase;
-
 
 it('can create a cms page', function () {
     $page = Page::factory()->create([
