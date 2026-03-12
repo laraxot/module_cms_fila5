@@ -7,7 +7,6 @@ namespace Modules\Cms\Tests\Unit\Http\Volt;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\VerifyComponent;
 
-
 describe('VerifyComponent', function (): void {
     test('verify component extends volt component', function (): void {
         $component = new VerifyComponent();

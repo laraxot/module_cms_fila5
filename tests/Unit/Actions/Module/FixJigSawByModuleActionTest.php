@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Illuminate\Support\Facades\File;
 use Modules\Cms\Actions\Module\FixJigSawByModuleAction;
 use Nwidart\Modules\Laravel\Module;

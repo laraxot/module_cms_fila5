@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Enums\AttachmentDiskEnum;
 
 test('AttachmentDiskEnum has all cases', function () {

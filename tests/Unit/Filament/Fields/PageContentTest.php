@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Filament\Fields;
 
-
 use Modules\Cms\Filament\Fields\PageContent;
 
 test('PageContent creates builder with blocks from GetAllBlocksAction', function () {

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Http\Volt;
 
-
 use Modules\Cms\Http\Volt\CounterComponent;
 
 describe('CounterComponent', function (): void {

@@ -7,7 +7,6 @@ namespace Modules\Cms\Tests\Unit\Http\Volt\Password;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\TokenComponent;
 
-
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
         $component = new TokenComponent();

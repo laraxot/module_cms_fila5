@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Filament\Resources;
 
-
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Models\Menu;
 

@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Models\Page;
 
 test('page model can be instantiated', function (): void {

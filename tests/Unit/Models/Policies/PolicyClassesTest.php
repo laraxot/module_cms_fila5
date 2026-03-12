@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Models\Policies;
 
-
 use Modules\Cms\Models\Policies\CmsBasePolicy;
 use Modules\Cms\Models\Policies\ConfPolicy;
 use Modules\Cms\Models\Policies\MenuPolicy;
