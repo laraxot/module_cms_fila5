@@ -19,6 +19,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  *
  * @property string                $id
  * @property string|null           $title
+ * @property array<int, mixed>|null $items
  * @property int|null              $parent_id
  * @property string|null           $created_at
  * @property string|null           $updated_at

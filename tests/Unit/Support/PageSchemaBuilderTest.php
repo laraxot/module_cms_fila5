@@ -9,7 +9,6 @@ use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
 
-uses(TestCase::class);
 
 test('it resolves home as webpage', function (): void {
     $builder = new PageSchemaBuilder();
