@@ -8,7 +8,6 @@ use Modules\Cms\Models\Page;
 use Modules\Cms\Models\Post;
 use Modules\Cms\Tests\TestCase;
 
-uses(TestCase::class)->in(__DIR__);
 
 it('can create a cms page', function () {
     $page = Page::factory()->create([

@@ -16,7 +16,7 @@ class ThemeComposer
     /**
      * Get menu items by name.
      *
-     * @return array<string, mixed>|null
+     * @return array<int|string, mixed>|null
      */
     public function getMenu(string $menu_name): ?array
     {

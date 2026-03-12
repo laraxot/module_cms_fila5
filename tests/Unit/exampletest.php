@@ -41,7 +41,6 @@ describe('CMS Module', function () {
         expect(Module::class)->toBeString()->and(GetModulesNavigationItems::class)->toBeString();
     });
 });
-uses(TestHelper::class);
 
 beforeEach(function (): void {
     $this->super_admin_user = $this->getSuperAdminUser();
