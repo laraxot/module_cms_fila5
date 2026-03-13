@@ -64,4 +64,3 @@ Launch core CMS page builder with content creation and publishing capabilities.
 
 ---
 
-*Last Updated: March 12, 2026*

@@ -2,7 +2,6 @@
 
 **Module:** Cms  
 **Version:** 1.0.0  
-**Last Updated:** March 12, 2026  
 **Owner:** Product Team
 
 ---
@@ -84,4 +83,3 @@ Fast content delivery.
 
 ---
 
-*Last Updated: March 12, 2026*
