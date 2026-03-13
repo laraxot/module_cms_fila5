@@ -32,10 +32,7 @@ class ThemeComposer
         }
 
         /** @var array<string, mixed> $normalized */
-        $normalized = [];
-        foreach ($items as $key => $value) {
-            $normalized[(string) $key] = $value;
-        }
+        $normalized = $items;
 
         return $normalized;
     }
@@ -139,7 +136,7 @@ class ThemeComposer
 
     public function getPageModel(string $slug): ?Page
     {
-        return Page::where('slug', $slug)->first();
+        return Page::findUniqueBySlug($slug);
     }
 
     public function getUrlPage(string $slug): string

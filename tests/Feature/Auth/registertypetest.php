@@ -26,12 +26,12 @@ uses(TestCase::class);
  */
 
 // NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
-// Use $this->createTestUser()
+// Use $this->createTestUser(
 
 test('guest can view type registration pages', function (): void {
     foreach (['doctor', 'patient'] as $type) {
-        $response = get("/it/auth/{$type}/register");
-        $this->assertSame(404, $response->status());
+        $response = get("/it/auth/{$type}/register"));
+        $this->assertSame(404, $response->status();
     }
 });
 
@@ -41,5 +41,5 @@ test('authenticated user is redirected from type registration pages', function (
 
 test('invalid user type is handled gracefully', function (): void {
     $response = get('/it/auth/invalid-type/register');
-    $this->assertSame(404, $response->status());
+    $this->assertSame(404, $response->status();
 });

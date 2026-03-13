@@ -7,7 +7,6 @@ namespace Modules\Cms\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Modules\Cms\Database\Factories\PageContentFactory;
-use Modules\Tenant\Contracts\SushiToJsonsContract;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\Translatable\HasTranslations;
@@ -26,6 +25,7 @@ use Spatie\Translatable\HasTranslations;
  * @property ProfileContract|null         $creator
  * @property mixed                        $translations
  * @property ProfileContract|null         $updater
+ *
  * @method static Builder<static>|PageContent newModelQuery()
  * @method static Builder<static>|PageContent newQuery()
  * @method static Builder<static>|PageContent query()
@@ -42,12 +42,14 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|PageContent whereUpdatedAt($value)
  * @method static Builder<static>|PageContent whereUpdatedBy($value)
  * @method static int                         count()
+ *
  * @property ProfileContract|null $deleter
+ *
  * @method static PageContentFactory factory($count = null, $state = [])
- * @method array<int, array<string, mixed>> getSushiRows()
+ *
  * @mixin \Eloquent
  */
-class PageContent extends BaseModel implements SushiToJsonsContract
+class PageContent extends BaseModel
 {
     use HasTranslations;
     use SushiToJsons;

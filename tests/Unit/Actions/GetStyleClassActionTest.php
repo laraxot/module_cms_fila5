@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(Modules\Cms\Tests\TestCase::class);
+namespace Modules\Cms\Tests\Unit\Actions;
 
 use Illuminate\Support\Facades\Config;
 use Modules\Cms\Actions\GetStyleClassAction;
