@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Models;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
@@ -239,9 +240,21 @@ class Page extends BaseModelLang
         return $this->getSushiRows();
     }
 
+    public static function findUniqueBySlug(string $slug): ?self
+    {
+        try {
+            /** @var self $page */
+            $page = self::query()->where('slug', $slug)->sole();
+
+            return $page;
+        } catch (ModelNotFoundException) {
+            return null;
+        }
+    }
+
     public static function getMiddlewareBySlug(string $slug): array
     {
-        $page = self::where('slug', $slug)->first();
+        $page = self::findUniqueBySlug($slug);
 
         if (! $page instanceof Page) {
             return [];

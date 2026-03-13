@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Modules\Cms\Datas\BlockData;
@@ -90,15 +91,12 @@ trait HasBlocks
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
     {
-        // This trait requires the class to extend Model (@phpstan-require-extends Model)
-        // So we can safely use static methods
-        $query = static::where('slug', $slug);
-
-        if (! method_exists($query, 'first')) {
+        try {
+            $record = static::query()->where('slug', $slug)->sole();
+        } catch (ModelNotFoundException) {
             return [];
         }
 
-        $record = $query->first();
         if (! $record instanceof Model) {
             return [];
         }
