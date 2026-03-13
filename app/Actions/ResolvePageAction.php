@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions;
 
+use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Datas\ResolvePageData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\QueueableAction\QueueableAction;
@@ -17,7 +18,7 @@ use Spatie\QueueableAction\QueueableAction;
  * 2. Verifica se esiste una pagina CMS con slug esatto (container.slug).
  * 3. Fallback a una pagina CMS generica (container.view).
  */
-class ResolvePageAction
+final class ResolvePageAction
 {
     use QueueableAction;
 
@@ -30,7 +31,7 @@ class ResolvePageAction
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
-                pageSlug: '' // Non serve per il mode 'model'
+                pageSlug: $container0.'.view'
             );
         }
 
@@ -64,6 +65,10 @@ class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
+        if ('profile' === $container0) {
+            return $this->resolvePublicProfileItem($slug0);
+        }
+
         // Mappature note (Priority 1)
         $knownMappings = [
             'events' => 'Modules\\Meetup\\Models\\Event',
@@ -101,13 +106,54 @@ class ResolvePageAction
         return null;
     }
 
-    private function queryModel(string $modelClass, string $slug): ?object
+    private function queryModel(string $modelClass, string $identifier): ?object
     {
-        if (class_exists($modelClass) && method_exists($modelClass, 'where')) {
-            /** @var \Illuminate\Database\Eloquent\Builder $query */
-            $query = $modelClass::where('slug', $slug);
+        if (class_exists($modelClass) && is_subclass_of($modelClass, Model::class)) {
+            /** @var Model $model */
+            $model = app($modelClass);
+            $candidateKeys = array_values(array_unique([
+                $model->getRouteKeyName(),
+                'slug',
+                'id',
+                'uuid',
+                'user_id',
+                'user_name',
+            ]));
 
-            return $query->first();
+            foreach ($candidateKeys as $key) {
+                try {
+                    $item = $model->newQuery()->where($key, $identifier)->first();
+                } catch (\Throwable) {
+                    continue;
+                }
+
+                if (null !== $item) {
+                    return $item;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private function resolvePublicProfileItem(string $identifier): ?object
+    {
+        $userClass = 'Modules\\User\\Models\\User';
+        $user = $this->queryModel($userClass, $identifier);
+        if (null !== $user) {
+            return $user;
+        }
+
+        $profileClasses = [
+            'Modules\\Meetup\\Models\\Profile',
+            'Modules\\User\\Models\\Profile',
+        ];
+
+        foreach ($profileClasses as $profileClass) {
+            $profile = $this->queryModel($profileClass, $identifier);
+            if (null !== $profile) {
+                return $profile;
+            }
         }
 
         return null;

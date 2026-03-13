@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-uses(Modules\Cms\Tests\TestCase::class);
+namespace Modules\Cms\Tests\Unit\Filament;
 
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Filament\Resources\PageContentResource;

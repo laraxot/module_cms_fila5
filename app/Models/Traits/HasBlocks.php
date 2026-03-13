@@ -5,14 +5,15 @@ declare(strict_types=1);
 namespace Modules\Cms\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Modules\Cms\Datas\BlockData;
 use Modules\Xot\Datas\XotData;
+
 /**
  * Trait for Models that have blocks.
  *
- * @method static array<string, BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @phpstan-require-extends Model
  */
 trait HasBlocks
@@ -44,19 +45,12 @@ trait HasBlocks
         // which is needed for dynamic query resolution
         $blockDataInstances = [];
         foreach ($blocks as $key => $block) {
-            if (! is_array($block)) {
-                continue;
-            }
             /** @var array<string, mixed> $block */
             $type = (string) ($block['type'] ?? 'unknown');
             $data = (array) ($block['data'] ?? []);
             $slug = isset($block['slug']) ? (string) $block['slug'] : null;
 
-            try {
-                $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug);
-            } catch (\Throwable) {
-                continue;
-            }
+            $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug);
         }
 
         /* @var array<string, BlockData> $blockDataInstances */
@@ -91,60 +85,30 @@ trait HasBlocks
     }
 
     /**
-     * Get blocks by slug for a specific side.
+     * Get blocks for a record by slug.
      *
-     * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
-     * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
-     *
-     * @param  string  $slug  The section/page slug
-     * @param  string|null  $side  The side to get blocks for (null for all blocks)
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
     {
-        $record = static::where('slug', $slug)->first();
+        try {
+            $record = static::query()->where('slug', $slug)->sole();
+        } catch (ModelNotFoundException) {
+            return [];
+        }
 
         if (! $record instanceof Model) {
             return [];
         }
 
-        $blocks = $record->blocks ?? null;
-
-        if (! is_array($blocks)) {
-            if (method_exists($record, 'getBlocks')) {
-                /** @var array<string, BlockData> $result */
-                $result = $record->getBlocks($side);
-
-                return $result;
-            }
-
+        // Check if getBlocks method exists
+        if (! method_exists($record, 'getBlocks')) {
             return [];
         }
 
-        $result = [];
+        /** @var array<string, BlockData> $blocks */
+        $blocks = $record->getBlocks($side);
 
-        foreach ($blocks as $block) {
-            if (! is_array($block)) {
-                continue;
-            }
-
-            $blockType = (string) ($block['type'] ?? 'text');
-            $blockData = is_array($block['data'] ?? null) ? $block['data'] : [];
-            $blockSlug = isset($block['slug']) ? (string) $block['slug'] : null;
-
-            try {
-                $blockDataObj = new BlockData($blockType, $blockData, $blockSlug);
-
-                if ($side === null) {
-                    $result[$blockSlug ?? $blockType] = $blockDataObj;
-                } elseif (isset($block['side']) && (string) $block['side'] === $side) {
-                    $result[$blockSlug ?? $blockType] = $blockDataObj;
-                }
-            } catch (\Throwable) {
-                continue;
-            }
-        }
-
-        return $result;
+        return $blocks;
     }
 }

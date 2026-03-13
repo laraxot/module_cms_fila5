@@ -10,33 +10,50 @@ use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\LaravelData\DataCollection;
 
-class Page extends Component
+/**
+ * @SuppressWarnings("PHPMD.StaticAccess")
+ */
+final class Page extends Component
 {
     public string $side;
 
     public string $slug;
 
-    /** @var array<string, BlockData> */
-    public array $blocks;
+    /** @var DataCollection<BlockData>|array */
+    public DataCollection|array $blocks;
 
+    /** @var array<string, mixed> */
     public array $data = [];
 
-    public string $container0 = '';
-
-    public string $slug0 = '';
-
-    public function __construct(string $side, string $slug, ?string $type = null, array $data = [], string $container0 = '', string $slug0 = '')
-    {
-        $this->data = $data;
+    /**
+     * @param array<string, mixed> $data
+     */
+    public function __construct(
+        array $data = [],
+        string $side = 'content',
+        ?string $slug = null,
+        ?string $type = null,
+    ) {
         $this->side = $side;
+        $this->data = $data;
+
+        // Resolve slug from data if not passed explicitly
+        if (null === $slug && isset($data['slug'])) {
+            $slug = (string) $data['slug'];
+        }
+
+        // Fallback or composition
+        if (null === $slug) {
+            $slug = '';
+        }
+
         if (null !== $type) {
             $slug = $type.'-'.$slug;
         }
+
         $this->slug = $slug;
-        $this->container0 = $container0;
-        $this->slug0 = $slug0;
-        /** @phpstan-ignore staticMethod.notFound, assign.propertyType */
-        $this->blocks = PageModel::getBlocksBySlug($slug, $side);
+
+        $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
     }
 
     /**
@@ -45,19 +62,18 @@ class Page extends Component
     public function render(): ViewContract
     {
         $view = 'cms::components.page';
-        $view_params = [
+        $viewParams = [
+            ...$this->data,
             'blocks' => $this->blocks,
             'side' => $this->side,
             'slug' => $this->slug,
             'data' => $this->data,
-            'container0' => $this->container0,
-            'slug0' => $this->slug0,
         ];
         // @phpstan-ignore-next-line
         if (! view()->exists($view)) {
             throw new \Exception('view not found: '.$view);
         }
 
-        return view($view, $view_params);
+        return view($view, $viewParams);
     }
 }
