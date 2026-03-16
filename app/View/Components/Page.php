@@ -26,7 +26,7 @@ final class Page extends Component
     public array $data = [];
 
     /**
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
      */
     public function __construct(
         array $data = [],
@@ -38,21 +38,21 @@ final class Page extends Component
         $this->data = $data;
 
         // Resolve slug from data if not passed explicitly
-        if ($slug === null && isset($data['slug'])) {
+        if (null === $slug && isset($data['slug'])) {
             $slug = (string) $data['slug'];
         }
 
         // Fallback or composition
-        if ($slug === null) {
+        if (null === $slug) {
             $slug = '';
         }
 
-        if ($type !== null) {
+        if (null !== $type) {
             $slug = $type.'-'.$slug;
         }
 
         $this->slug = $slug;
-        
+
         $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
     }
 
