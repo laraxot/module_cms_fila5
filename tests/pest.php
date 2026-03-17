@@ -14,7 +14,7 @@ use Tests\TestCase;
  * |
  */
 
-uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
+uses(\Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
 
 /*
  * |--------------------------------------------------------------------------
