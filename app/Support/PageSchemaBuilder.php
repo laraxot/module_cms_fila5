@@ -14,7 +14,8 @@ use Modules\Xot\Datas\MetatagData;
 final class PageSchemaBuilder
 {
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
+     *
      * @return array<string, mixed>
      */
     public function build(
@@ -35,32 +36,32 @@ final class PageSchemaBuilder
             'inLanguage' => app()->getLocale(),
         ];
 
-        if ($pageType === 'ProfilePage') {
+        if ('ProfilePage' === $pageType) {
             $personSchema = $this->resolveProfileMainEntity($routeParameters, $user);
-            if ($personSchema !== null) {
+            if (null !== $personSchema) {
                 $schema['mainEntity'] = $personSchema;
             }
         }
 
         if (
-            $pageType === 'ItemPage'
-            && $routeName === 'container0.view'
+            'ItemPage' === $pageType
+            && 'container0.view' === $routeName
             && isset($routeParameters['container0'], $routeParameters['slug0'])
             && is_string($routeParameters['container0'])
             && is_string($routeParameters['slug0'])
-            && $routeParameters['slug0'] !== ''
+            && '' !== $routeParameters['slug0']
         ) {
             $container0 = $routeParameters['container0'];
             $slug0 = $routeParameters['slug0'];
 
-            if ($container0 === 'events' || Str::contains($path, '/events/')) {
+            if ('events' === $container0 || Str::contains($path, '/events/')) {
                 $schema['mainEntity'] = [
                     '@type' => 'Event',
                     'url' => url('/events/'.$slug0),
                 ];
             } else {
                 $mainEntity = $this->resolvePredictOrGenericMainEntity($container0, $slug0);
-                if ($mainEntity !== null) {
+                if (null !== $mainEntity) {
                     $schema['mainEntity'] = $mainEntity;
                 }
             }
@@ -70,50 +71,50 @@ final class PageSchemaBuilder
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
      */
     private function resolvePageType(?string $routeName, string $path, array $routeParameters): string
     {
-        if ($routeName !== null && Str::startsWith($routeName, 'profile.')) {
+        if (null !== $routeName && Str::startsWith($routeName, 'profile.')) {
             return 'ProfilePage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'profile' || Str::contains($path, '/profile/'))
         ) {
             return 'ProfilePage';
         }
 
         if (
-            $routeName === 'container0.index'
+            'container0.index' === $routeName
             && (($routeParameters['container0'] ?? null) === 'events' || Str::contains($path, '/events'))
         ) {
             return 'CollectionPage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'events' || Str::contains($path, '/events/'))
         ) {
             return 'ItemPage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'predicts' || Str::contains($path, '/predicts/'))
         ) {
             return 'ItemPage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'profile' || Str::contains($path, '/profile/'))
         ) {
             return 'ProfilePage';
         }
 
-        if ($routeName === 'home' || $path === '/' || $path === '') {
+        if ('home' === $routeName || '/' === $path || '' === $path) {
             return 'WebPage';
         }
 
@@ -126,7 +127,7 @@ final class PageSchemaBuilder
         }
 
         if (
-            ($routeName !== null && Str::startsWith($routeName, 'auth.'))
+            (null !== $routeName && Str::startsWith($routeName, 'auth.'))
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')
@@ -140,7 +141,8 @@ final class PageSchemaBuilder
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
+     *
      * @return array<string, mixed>|null
      */
     private function resolveProfileMainEntity(array $routeParameters, ?Authenticatable $user): ?array
@@ -149,7 +151,7 @@ final class PageSchemaBuilder
 
         $publicIdentifier = $routeParameters['id'] ?? $routeParameters['slug0'] ?? null;
 
-        if (is_string($publicIdentifier) && $publicIdentifier !== '') {
+        if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
             $publicUser = User::query()
                 ->with('profile')
                 ->find($publicIdentifier);
@@ -160,7 +162,7 @@ final class PageSchemaBuilder
         }
 
         if (! $publicUser instanceof User) {
-            if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && $routeParameters['slug0'] !== '') {
+            if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && '' !== $routeParameters['slug0']) {
                 return [
                     '@type' => 'Person',
                     'identifier' => $routeParameters['slug0'],
@@ -185,20 +187,20 @@ final class PageSchemaBuilder
             $profileBio = $this->readNullableStringProperty($profile, 'bio');
 
             $avatarUrl = $profile->getAvatarUrl();
-            if (is_string($avatarUrl) && $avatarUrl !== '') {
+            if (is_string($avatarUrl) && '' !== $avatarUrl) {
                 $profileImage = $avatarUrl;
             }
         }
 
         $name = trim((string) ($publicUser->name ?? ''));
 
-        if ($name === '') {
+        if ('' === $name) {
             $firstName = trim((string) ($publicUser->first_name ?? $profileFirstName));
             $lastName = trim((string) ($publicUser->last_name ?? $profileLastName));
             $name = trim($firstName.' '.$lastName);
         }
 
-        if ($name === '') {
+        if ('' === $name) {
             $name = 'Profile';
         }
 
@@ -208,7 +210,7 @@ final class PageSchemaBuilder
             'url' => url('/profile/'.(string) $publicUser->getKey()),
         ];
 
-        if (is_string($publicIdentifier) && $publicIdentifier !== '') {
+        if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
             $schema['identifier'] = $publicIdentifier;
         }
 
@@ -218,23 +220,23 @@ final class PageSchemaBuilder
         $description = trim((string) $profileBio);
         $image = $profileImage;
 
-        if ($givenName !== '') {
+        if ('' !== $givenName) {
             $schema['givenName'] = $givenName;
         }
 
-        if ($familyName !== '') {
+        if ('' !== $familyName) {
             $schema['familyName'] = $familyName;
         }
 
-        if ($email !== '') {
+        if ('' !== $email) {
             $schema['email'] = $email;
         }
 
-        if ($description !== '') {
+        if ('' !== $description) {
             $schema['description'] = $description;
         }
 
-        if ($image !== null) {
+        if (null !== $image) {
             $schema['image'] = $image;
         }
 
@@ -261,7 +263,7 @@ final class PageSchemaBuilder
     {
         try {
             $resolved = app(ResolvePageAction::class)->execute($container0, $slug0);
-            if ($resolved->item === null) {
+            if (null === $resolved->item) {
                 return null;
             }
 
@@ -270,17 +272,17 @@ final class PageSchemaBuilder
             $locale = app()->getLocale();
             $url = url('/'.$locale.'/'.$container0.'/'.$slug0);
 
-            if ($container0 === 'predicts') {
+            if ('predicts' === $container0) {
                 return [
                     '@type' => 'Question',
-                    'name' => $title !== '' ? $title : 'Prediction Market',
+                    'name' => '' !== $title ? $title : 'Prediction Market',
                     'url' => $url,
                 ];
             }
 
             return [
                 '@type' => 'Thing',
-                'name' => $title !== '' ? $title : 'Item',
+                'name' => '' !== $title ? $title : 'Item',
                 'url' => $url,
             ];
         } catch (\Throwable) {
@@ -293,7 +295,7 @@ final class PageSchemaBuilder
         $locale = app()->getLocale();
         $title = $item->title ?? $item->name ?? $item->subject ?? null;
 
-        if ($title === null) {
+        if (null === $title) {
             return '';
         }
 
