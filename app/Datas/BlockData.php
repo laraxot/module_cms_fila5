@@ -12,14 +12,15 @@ use Illuminate\View\FileViewFinder;
 use Livewire\Wireable;
 use Modules\Cms\Actions\ResolveBlockQueryAction;
 use Modules\Cms\Actions\ResolveLocalizedBlockDataAction;
-use Spatie\LaravelData\Concerns\WireableData;
-use Spatie\LaravelData\Data;
-use Spatie\LaravelData\DataCollection;
-use Webmozart\Assert\Assert;
 
 use function Safe\fclose;
 use function Safe\fopen;
 use function Safe\fread;
+
+use Spatie\LaravelData\Concerns\WireableData;
+use Spatie\LaravelData\Data;
+use Spatie\LaravelData\DataCollection;
+use Webmozart\Assert\Assert;
 
 class BlockData extends Data implements Wireable
 {
