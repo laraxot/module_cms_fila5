@@ -26,7 +26,7 @@ final class Page extends Component
     public array $data = [];
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function __construct(
         array $data = [],
@@ -38,21 +38,22 @@ final class Page extends Component
         $this->data = $data;
 
         // Resolve slug from data if not passed explicitly
-        if (null === $slug && isset($data['slug'])) {
+        if ($slug === null && isset($data['slug'])) {
             $slug = (string) $data['slug'];
         }
 
         // Fallback or composition
-        if (null === $slug) {
+        if ($slug === null) {
             $slug = '';
         }
 
-        if (null !== $type) {
+        if ($type !== null) {
             $slug = $type.'-'.$slug;
         }
 
         $this->slug = $slug;
 
+        // BlockData construction handles URL localization automatically via LocalizeBlockDataAction
         $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
     }
 
@@ -69,6 +70,7 @@ final class Page extends Component
             'slug' => $this->slug,
             'data' => $this->data,
         ];
+
         // @phpstan-ignore-next-line
         if (! view()->exists($view)) {
             throw new \Exception('view not found: '.$view);
