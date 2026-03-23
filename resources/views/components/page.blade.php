@@ -20,6 +20,11 @@ declare(strict_types=1);
                 $delayStep = (($index % 5) + 1);
             @endphp
 
+            @php
+                $isEnabled = $block->enabled ?? true;
+            @endphp
+
+            @if($isEnabled)
             <section
                 class="reveal-kinetic kinetic-delay-{{ $delayStep }} page-block page-block-{{ str_replace('_', '-', $blockType) }}"
                 data-kinetic-block
@@ -66,6 +71,7 @@ declare(strict_types=1);
                     @include($block->view, $mergedParams)
                 @endif
             </section>
+            @endif
         @endforeach
     </div>
 @endif
