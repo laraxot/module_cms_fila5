@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions;
 
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Cms\Datas\ResolvePageData;
@@ -28,7 +29,11 @@ final class ResolvePageAction
         // 1. Tenta il caricamento di un modello dinamico
         $item = $this->loadDynamicModel($container0, $slug0);
 
+<<<<<<< HEAD
         if (null !== $item) {
+=======
+        if ($item !== null) {
+>>>>>>> origin/dev
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -66,7 +71,11 @@ final class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
+<<<<<<< HEAD
         if ('profile' === $container0) {
+=======
+        if ($container0 === 'profile') {
+>>>>>>> origin/dev
             return $this->resolvePublicProfileItem($slug0);
         }
 
@@ -100,7 +109,11 @@ final class ResolvePageAction
 
         foreach ($possibleModels as $modelClass) {
             $item = $this->queryModel($modelClass, $slug0);
+<<<<<<< HEAD
             if (null !== $item) {
+=======
+            if ($item !== null) {
+>>>>>>> origin/dev
                 return $item;
             }
         }
@@ -189,7 +202,11 @@ final class ResolvePageAction
     {
         $userClass = 'Modules\\User\\Models\\User';
         $user = $this->queryModel($userClass, $identifier);
+<<<<<<< HEAD
         if (null !== $user) {
+=======
+        if ($user !== null) {
+>>>>>>> origin/dev
             return $user;
         }
 
@@ -200,7 +217,11 @@ final class ResolvePageAction
 
         foreach ($profileClasses as $profileClass) {
             $profile = $this->queryModel($profileClass, $identifier);
+<<<<<<< HEAD
             if (null !== $profile) {
+=======
+            if ($profile !== null) {
+>>>>>>> origin/dev
                 return $profile;
             }
         }
