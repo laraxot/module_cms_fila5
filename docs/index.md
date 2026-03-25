@@ -104,3 +104,5 @@
 
 ## Note sulla Manutenzione
 Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al codice del modulo CMS, consultare la documentazione pertinente e aggiornare i documenti correlati.
+
+- [Conflict Resolution](conflict-resolution.md)
