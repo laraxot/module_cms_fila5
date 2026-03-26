@@ -27,7 +27,7 @@ class Breadcrumb extends XotBasePage
      *
      * @var array<string, mixed>
      */
-    public array $data = [];
+    public ?array $data = [];
 
     protected string $view = 'cms::filament.clusters.appearance.pages.headernav';
 
