@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Actions;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Cms\Datas\ResolvePageData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\QueueableAction\QueueableAction;
@@ -27,7 +28,11 @@ final class ResolvePageAction
         // 1. Tenta il caricamento di un modello dinamico
         $item = $this->loadDynamicModel($container0, $slug0);
 
+<<<<<<< Updated upstream
         if (null !== $item) {
+=======
+        if ($item !== null) {
+>>>>>>> Stashed changes
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -65,7 +70,11 @@ final class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
+<<<<<<< Updated upstream
         if ('profile' === $container0) {
+=======
+        if ($container0 === 'profile') {
+>>>>>>> Stashed changes
             return $this->resolvePublicProfileItem($slug0);
         }
 
@@ -99,7 +108,11 @@ final class ResolvePageAction
 
         foreach ($possibleModels as $modelClass) {
             $item = $this->queryModel($modelClass, $slug0);
+<<<<<<< Updated upstream
             if (null !== $item) {
+=======
+            if ($item !== null) {
+>>>>>>> Stashed changes
                 return $item;
             }
         }
@@ -122,14 +135,34 @@ final class ResolvePageAction
             ]));
 
             foreach ($candidateKeys as $key) {
+                foreach ($this->buildCandidateQueries($model) as $query) {
+                    try {
+                        $item = $query->where($key, $identifier)->first();
+                    } catch (\Throwable) {
+                        continue;
+                    }
+
+                    if (null !== $item) {
+                        return $item;
+                    }
+                }
+            }
+
+            foreach ($candidateKeys as $key) {
                 try {
-                    $item = $model->newQuery()->where($key, $identifier)->first();
+                    $row = $model->getConnection()
+                        ->table($model->getTable())
+                        ->where($key, $identifier)
+                        ->first();
                 } catch (\Throwable) {
                     continue;
                 }
 
-                if (null !== $item) {
-                    return $item;
+                if (null !== $row) {
+                    /** @var array<string, mixed> $attributes */
+                    $attributes = (array) $row;
+
+                    return $model->newFromBuilder($attributes);
                 }
             }
         }
@@ -137,11 +170,42 @@ final class ResolvePageAction
         return null;
     }
 
+    /**
+     * @return array<int, \Illuminate\Database\Eloquent\Builder<Model>>
+     */
+    private function buildCandidateQueries(Model $model): array
+    {
+        $queries = [$model->newQuery()];
+
+        try {
+            $queries[] = $model->newQueryWithoutScopes();
+        } catch (\Throwable) {
+        }
+
+        $usesSoftDeletes = in_array(SoftDeletes::class, class_uses_recursive($model), true);
+
+        if ($usesSoftDeletes) {
+            foreach ($queries as $index => $query) {
+                try {
+                    $queries[] = (clone $query)->withTrashed();
+                } catch (\Throwable) {
+                    unset($queries[$index]);
+                }
+            }
+        }
+
+        return array_values($queries);
+    }
+
     private function resolvePublicProfileItem(string $identifier): ?object
     {
         $userClass = 'Modules\\User\\Models\\User';
         $user = $this->queryModel($userClass, $identifier);
+<<<<<<< Updated upstream
         if (null !== $user) {
+=======
+        if ($user !== null) {
+>>>>>>> Stashed changes
             return $user;
         }
 
@@ -152,7 +216,11 @@ final class ResolvePageAction
 
         foreach ($profileClasses as $profileClass) {
             $profile = $this->queryModel($profileClass, $identifier);
+<<<<<<< Updated upstream
             if (null !== $profile) {
+=======
+            if ($profile !== null) {
+>>>>>>> Stashed changes
                 return $profile;
             }
         }
