@@ -116,6 +116,48 @@ Modules/Cms/
 
 - **Compatibilità 5.x**: [filament-5x-compatibility.md](filament-5x-compatibility.md) — progetto su Filament 5.x; pattern e riferimenti per il modulo Cms.
 
+## 📄 Documenti Aggiuntivi
+
+### Panoramica
+| File | Scopo |
+|------|-------|
+| [architecture.md](./architecture.md) | Architettura sistema |
+| [philosophy.md](./philosophy.md) | Filosofia di design |
+
+### Filament Integration
+| File | Scopo |
+|------|-------|
+| [filament-resources.md](./filament-resources.md) | Resource Filament |
+| [filament-forms.md](./filament-forms.md) | Form per CMS |
+| [filament-widgets.md](./filament-widgets.md) | Widget per backoffice |
+
+### Block System
+| File | Scopo |
+|------|-------|
+| [block-system.md](./block-system.md) | Sistema blocchi |
+| [content-blocks.md](./content-blocks.md) | Content blocks |
+| [blocks-reference.md](./blocks-reference.md) | Riferimento blocchi |
+
+### Frontend (Folio/Volt)
+| File | Scopo |
+|------|-------|
+| [folio-routing.md](./folio-routing.md) | Routing Folio |
+| [volt-components.md](./volt-components.md) | Componenti Volt |
+| [page-rendering.md](./page-rendering.md) | Rendering pagine |
+
+### SEO & Localization
+| File | Scopo |
+|------|-------|
+| [seo-integration.md](./seo-integration.md) | Integrazione SEO |
+| [multi-language.md](./multi-language.md) | Multilingua |
+| [meta-tags.md](./meta-tags.md) | Meta tag management |
+
+## 🔗 Riferimenti
+
+- [Xot Module](../Xot/docs/00-index.md) - Base classes
+- [UI Module](../UI/docs/00-index.md) - Blocchi UI
+- [AGENTS.md](../../../../AGENTS.md) - Project guidelines
+
 ## Dependencies
 
 - **Xot Module**: Base functionality and data structures
