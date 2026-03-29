@@ -25,14 +25,9 @@ final class ResolvePageAction
 
     public function execute(string $container0, string $slug0): ResolvePageData
     {
-        // 1. Tenta il caricamento di un modello dinamico
         $item = $this->loadDynamicModel($container0, $slug0);
 
-<<<<<<< Updated upstream
-        if (null !== $item) {
-=======
         if ($item !== null) {
->>>>>>> Stashed changes
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -40,7 +35,6 @@ final class ResolvePageAction
             );
         }
 
-        // 2. Verifica se esiste una pagina CMS con slug esatto
         $fullSlug = $container0.'.'.$slug0;
         if (PageModel::where('slug', $fullSlug)->exists()) {
             return new ResolvePageData(
@@ -50,7 +44,6 @@ final class ResolvePageAction
             );
         }
 
-        // 3. Fallback a container.view
         $viewSlug = $container0.'.view';
         if (PageModel::where('slug', $viewSlug)->exists()) {
             return new ResolvePageData(
@@ -60,7 +53,6 @@ final class ResolvePageAction
             );
         }
 
-        // 4. Fallback finale allo slug completo (mostrerà 404 o placeholder nel componente x-page)
         return new ResolvePageData(
             renderMode: 'cms',
             item: null,
@@ -70,15 +62,10 @@ final class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
-<<<<<<< Updated upstream
-        if ('profile' === $container0) {
-=======
         if ($container0 === 'profile') {
->>>>>>> Stashed changes
             return $this->resolvePublicProfileItem($slug0);
         }
 
-        // Mappature note (Priority 1)
         $knownMappings = [
             'events' => 'Modules\\Meetup\\Models\\Event',
             'predicts' => 'Modules\\Predict\\Models\\Predict',
@@ -90,7 +77,6 @@ final class ResolvePageAction
             return $this->queryModel($modelClass, $slug0);
         }
 
-        // Mappature da config (Priority 2)
         $modelMap = config('xra.container0_model_map', []);
         if (is_array($modelMap) && isset($modelMap[$container0])) {
             $modelClass = $modelMap[$container0];
@@ -99,7 +85,6 @@ final class ResolvePageAction
             }
         }
 
-        // Convenzioni (Priority 3)
         $singular = rtrim($container0, 's');
         $possibleModels = [
             'Modules\\'.ucfirst($container0).'\\Models\\'.ucfirst($singular),
@@ -108,11 +93,7 @@ final class ResolvePageAction
 
         foreach ($possibleModels as $modelClass) {
             $item = $this->queryModel($modelClass, $slug0);
-<<<<<<< Updated upstream
-            if (null !== $item) {
-=======
             if ($item !== null) {
->>>>>>> Stashed changes
                 return $item;
             }
         }
@@ -142,7 +123,7 @@ final class ResolvePageAction
                         continue;
                     }
 
-                    if (null !== $item) {
+                    if ($item !== null) {
                         return $item;
                     }
                 }
@@ -158,7 +139,7 @@ final class ResolvePageAction
                     continue;
                 }
 
-                if (null !== $row) {
+                if ($row !== null) {
                     /** @var array<string, mixed> $attributes */
                     $attributes = (array) $row;
 
@@ -201,11 +182,7 @@ final class ResolvePageAction
     {
         $userClass = 'Modules\\User\\Models\\User';
         $user = $this->queryModel($userClass, $identifier);
-<<<<<<< Updated upstream
-        if (null !== $user) {
-=======
         if ($user !== null) {
->>>>>>> Stashed changes
             return $user;
         }
 
@@ -216,11 +193,7 @@ final class ResolvePageAction
 
         foreach ($profileClasses as $profileClass) {
             $profile = $this->queryModel($profileClass, $identifier);
-<<<<<<< Updated upstream
-            if (null !== $profile) {
-=======
             if ($profile !== null) {
->>>>>>> Stashed changes
                 return $profile;
             }
         }
