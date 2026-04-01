@@ -104,3 +104,4 @@
 
 ## Note sulla Manutenzione
 Questa documentazione viene aggiornata regolarmente. Prima di apportare modifiche al codice del modulo CMS, consultare la documentazione pertinente e aggiornare i documenti correlati.
+- [Tests Pages Block Bridge](./tests-pages-block-bridge.md) - Bridge tema/CMS per le pagine tests.* con view mancanti
