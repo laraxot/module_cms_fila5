@@ -168,9 +168,9 @@ Il modulo CMS gestisce i contenuti e i widget del sistema, fornendo un sistema f
    - [Wizard](ux-wizard-registrazione-paziente.md)
 
 ## Dipendenze Principali
-- Laravel Framework ^11.0
-- Filament ^3.2
-- Livewire ^3.0
+- Laravel Framework ^12.0
+- Filament ^5.0
+- Livewire ^4.0
 - Laravel Folio ^1.0
 - Laravel Volt ^1.0
 - Tailwind CSS ^3.4
@@ -335,3 +335,6 @@ npm run dev
 * [README.md](laravel/Themes/Two/docs/README.md)
 * [README.md](laravel/Themes/One/docs/README.md)
 
+
+## AI Workflows
+- [AI Methodologies](./ai-methodologies.md)
