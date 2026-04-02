@@ -27,7 +27,11 @@ final class ResolvePageAction
         // 1. Tenta il caricamento di un modello dinamico
         $item = $this->loadDynamicModel($container0, $slug0);
 
+<<<<<<< Updated upstream
         if (null !== $item) {
+=======
+        if ($item !== null) {
+>>>>>>> Stashed changes
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -65,7 +69,11 @@ final class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
+<<<<<<< Updated upstream
         if ('profile' === $container0) {
+=======
+        if ($container0 === 'profile') {
+>>>>>>> Stashed changes
             return $this->resolvePublicProfileItem($slug0);
         }
 
@@ -98,7 +106,11 @@ final class ResolvePageAction
 
         foreach ($possibleModels as $modelClass) {
             $item = $this->queryModel($modelClass, $slug0);
+<<<<<<< Updated upstream
             if (null !== $item) {
+=======
+            if ($item !== null) {
+>>>>>>> Stashed changes
                 return $item;
             }
         }
@@ -140,7 +152,11 @@ final class ResolvePageAction
     {
         $userClass = 'Modules\\User\\Models\\User';
         $user = $this->queryModel($userClass, $identifier);
+<<<<<<< Updated upstream
         if (null !== $user) {
+=======
+        if ($user !== null) {
+>>>>>>> Stashed changes
             return $user;
         }
 
@@ -151,7 +167,11 @@ final class ResolvePageAction
 
         foreach ($profileClasses as $profileClass) {
             $profile = $this->queryModel($profileClass, $identifier);
+<<<<<<< Updated upstream
             if (null !== $profile) {
+=======
+            if ($profile !== null) {
+>>>>>>> Stashed changes
                 return $profile;
             }
         }
