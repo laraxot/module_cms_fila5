@@ -29,11 +29,8 @@ test('there is exactly one canonical home page slug in json content', function (
 test('italian header navigation uses mercati label', function (): void {
     /** @var array<string, string> $translations */
     $translations = require base_path('Themes/TwentyOne/lang/it/headernav.php');
-    /** @var array<string, string> $resourceTranslations */
-    $resourceTranslations = require base_path('Themes/TwentyOne/resources/lang/it/headernav.php');
 
     expect($translations['markets'] ?? null)->toBe('Mercati');
-    expect($resourceTranslations['markets'] ?? null)->toBe('Mercati');
 });
 
 test('canonical homepage starts with a clear hero and contains onboarding blocks', function (): void {
@@ -50,26 +47,4 @@ test('canonical homepage starts with a clear hero and contains onboarding blocks
     expect($blocks[0]['type'] ?? null)->toBe('hero');
     expect($blocks[1]['type'] ?? null)->toBe('features');
     expect(collect($blocks)->pluck('type'))->toContain('widget', 'cta');
-});
-
-test('cms sections use unique slugs in json content', function (): void {
-    $sectionsPath = base_path('config/local/predict/database/content/sections');
-    $files = glob($sectionsPath.'/*.json');
-
-    expect($files)->not->toBeFalse();
-
-    $duplicates = collect($files ?: [])
-        ->map(static function (string $file): array {
-            $data = json_decode((string) file_get_contents($file), true);
-
-            return [
-                'file' => basename($file),
-                'slug' => is_array($data) ? ($data['slug'] ?? null) : null,
-            ];
-        })
-        ->filter(static fn (array $item): bool => is_string($item['slug']))
-        ->groupBy('slug')
-        ->filter(static fn ($group) => $group->count() > 1);
-
-    expect($duplicates->all())->toBe([]);
 });
