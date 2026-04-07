@@ -52,8 +52,10 @@ final class Page extends Component
         }
 
         $this->slug = $slug;
+        
 
         $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
+        
     }
 
     /**
