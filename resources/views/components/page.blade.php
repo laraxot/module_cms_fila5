@@ -13,8 +13,14 @@ declare(strict_types=1);
 ])
 
 @if(!empty($blocks))
-    @foreach($blocks as $block)
-        {{-- BlockData ha già gestito tutto: vista, dati, fallback --}}
-        @include($block->view, array_merge($data, $block->data, ['data' => $block->data]))
-    @endforeach
+    <div class="page-{{ $side }}-content" data-slug="{{ $slug }}" data-side="{{ $side }}">
+        @foreach($blocks as $block)
+            {{-- BlockData ha già gestito tutto: vista, dati, fallback --}}
+            {{-- Salta i blocchi non attivi --}}
+            @if(property_exists($block, 'active') && !$block->active)
+                @continue
+            @endif
+            @include($block->view, array_merge($data, $block->data))
+        @endforeach
+    </div>
 @endif
