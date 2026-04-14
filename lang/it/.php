@@ -105,7 +105,7 @@ return array (
     ),
     'address' => 
     array (
-      'label' => 'address',
+      'label' => 'address1',
       'tooltip' => '',
       'helper_text' => '',
       'description' => '',
