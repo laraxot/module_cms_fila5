@@ -90,7 +90,7 @@ class PageContent extends BaseModel
      */
     public function getRows(): array
     {
-        return // @var mixed getSushiRows(;
+        return $this->getSushiRows();
     }
 
     /**
