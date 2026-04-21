@@ -339,18 +339,18 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static \Illuminate\Database\Eloquent\Collection<int, static> get($columns = ['*'])
  * @method static static|null                                           first($columns = ['*'])
  * @method static static|null                                           find($id, $columns = ['*'])
-     *
-     * @property ProfileContract|null $deleter
+ *
+ * @property ProfileContract|null $deleter
  *
  * @method static PageFactory factory($count = null, $state = [])
  *
  * @property array<array-key, mixed>|null $blocks
  *
  * @method static Builder<static>|Page                        whereBlocks($value)
-     * @method        array<int, array<string, mixed>>            getSushiRows()
-     * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
-     * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
-     *
+ * @method        array<int, array<string, mixed>>            getSushiRows()
+ * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
+ * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
+ *
  * @mixin \Eloquent
  */
 class Page extends BaseModelLang
