@@ -7,7 +7,7 @@ use Modules\Cms\Actions\Module\FixJigSawByModuleAction;
 use Nwidart\Modules\Laravel\Module;
 
 test('FixJigSawByModuleAction can be instantiated', function () {
-    $action = new FixJigSawByModuleAction;
+    $action = new FixJigSawByModuleAction();
 
     expect($action)->toBeInstanceOf(FixJigSawByModuleAction::class);
 });
@@ -31,7 +31,7 @@ test('FixJigSawByModuleAction execute method returns array', function () {
         ->with(Mockery::any())
         ->andReturn([new Symfony\Component\Finder\SplFileInfo($stubsDir.'/test.stub', '', 'test.stub')]);
 
-    $action = new FixJigSawByModuleAction;
+    $action = new FixJigSawByModuleAction();
     $result = $action->execute($module);
 
     expect($result)->toBeArray();
