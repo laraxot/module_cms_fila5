@@ -42,35 +42,35 @@ describe('CMS Module', function () {
 });
 
 beforeEach(function (): void {
-    $super_admin_user = $this->getSuperAdminUser();
-    $no_super_admin_user = $this->getNoSuperAdminUser();
+    // @var mixed super_admin_user = $this->getSuperAdminUser(;
+    // @var mixed no_super_admin_user = $this->getNoSuperAdminUser(;
 });
 
 it('user admin can view main dashboard', function (): void {
-    $modules_name = $this->getModuleNameLists();
+    $modules_name = // @var mixed getModuleNameLists(;
 
-    $this->actingAs($this->super_admin_user);
-    $this->actingAs($this->super_admin_user); // ->assertSee($modules_name);
+    // @var mixed actingAs($this->super_admin_user;
+    // @var mixed actingAs($this->super_admin_user; // ->assertSee($modules_name);
 });
 
 it('guest user can view main dashboard', function (): void {
-    $this->actingAs($this->no_super_admin_user);
-    $this->actingAs($this->no_super_admin_user);
+    // @var mixed actingAs($this->no_super_admin_user;
+    // @var mixed actingAs($this->no_super_admin_user;
 });
 
 it('the user views navigation modules entries based on their role', function (): void {
-    $item_navs_roles = $this->getUserNavigationItemUrlRoles($this->super_admin_user);
+    $item_navs_roles = // @var mixed getUserNavigationItemUrlRoles($this->super_admin_user;
     foreach ($item_navs_roles as $item_nav_role) {
-        $this->actingAs($this->super_admin_user);
+        // @var mixed actingAs($this->super_admin_user;
 
         // ->assertSeeText($item_nav_role)
     }
 });
 
 it('the user no views navigation modules entries based on their no role', function (): void {
-    $diff_navigation_items = $this->getMainAdminNavigationUrlItems();
+    $diff_navigation_items = // @var mixed getMainAdminNavigationUrlItems(;
     foreach ($diff_navigation_items as $item_nav_role) {
-        $this->actingAs($this->super_admin_user);
+        // @var mixed actingAs($this->super_admin_user;
 
         // ->assertDontSeeText($item_nav_role)
     }
@@ -79,8 +79,8 @@ it('the user no views navigation modules entries based on their no role', functi
 it('user admin can view module dashboard', function (): void {
     // $module_name = 'BarberShop';
 
-    // $this->get('/admin');
+    // // @var mixed get('/admin';
 
-    // $this->actingAs($super_admin_user);
-    $this->actingAs($this->super_admin_user); // ->assertSee($modules_name);
+    // // @var mixed actingAs($super_admin_user;
+    // @var mixed actingAs($this->super_admin_user; // ->assertSee($modules_name);
 })->todo();
