@@ -213,7 +213,7 @@ class Menu extends BaseModel implements HasRecursiveRelationshipsContract
     public function getLabel(): string
     {
         // PHPStan Level 10: Ensure string return
-        return $title ?? '';
+        return $this->title ?? '';
     }
 
     /** @return array<string, string> */
