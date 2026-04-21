@@ -17,8 +17,6 @@ uses(TestCase::class);
 test('blocks discovery returns a data collection', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     expect($allBlocks)->toBeInstanceOf(DataCollection::class);
 });
 

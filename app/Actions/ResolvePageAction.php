@@ -25,12 +25,7 @@ final class ResolvePageAction
 
     public function execute(string $container0, string $slug0): ResolvePageData
     {
-<<<<<<< HEAD
         $item = $this->loadDynamicModel($container0, $slug0);
-=======
-        // 1. Tenta il caricamento di un modello dinamico
-        $item = // @var mixed loadDynamicModel($container0, $slug0;
->>>>>>> 526b81f (.)
 
         if (null !== $item) {
             return new ResolvePageData(

@@ -43,23 +43,12 @@ class Show extends Component
 
     protected function loadPageContent(): void
     {
-<<<<<<< HEAD
         $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? ThemeService::getTheme());
 
         if ($this->cache) {
             $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function () {
                 return $this->fetchPageContent();
             });
-=======
-        // Chiave per la cache
-        $cacheKey = 'page_content_'.// @var mixed slug.'_'.($this->theme ?? ThemeService::getTheme(;
-
-        // Se la cache è abilitata, tenta di recuperare dalla cache
-        if (// @var mixed cache
-            /** @var array<string, mixed> $cached */
-            $cached = Cache::remember($cacheKey, now()->addHours(24), // @var mixed fetchPageContent(...;
-            // @var mixed pageContent = $cached;
->>>>>>> 526b81f (.)
         } else {
             // @var mixed pageContent = $this->fetchPageContent(;
         }
@@ -68,7 +57,6 @@ class Show extends Component
     protected function fetchPageContent(): array
     {
         try {
-<<<<<<< HEAD
             $page = Page::findUniqueBySlug($this->slug);
 
             if (! $page instanceof Page) {
@@ -77,28 +65,6 @@ class Show extends Component
 
             $title = is_scalar($page->title) ? (string) $page->title : $this->slug;
             $content = is_scalar($page->content) ? (string) $page->content : '';
-=======
-            // Recupera la pagina dal database
-            $page = Page::where('slug', // @var mixed slug;
-
-            if (! $page) {
-                return ['error' => 'Page not found', 'slug' => // @var mixed slug];
-            }
-
-            // Type narrowing: ensure $page is a Page model
-            if (! $page instanceof Page) {
-                return ['error' => 'Invalid page type', 'slug' => // @var mixed slug];
-            }
-
-            // Recupera e processa i contenuti della pagina
-            // Access model properties directly
-            $title = $page->title;
-            $subtitle = $page->subtitle ?? null;
-            $content = $page->content;
-            $metaDescription = $page->meta_description ?? null;
-            $metaKeywords = $page->meta_keywords ?? null;
-            $contentBlocks = $page->content_blocks;
->>>>>>> 526b81f (.)
 
             return [
                 'title' => $title,
