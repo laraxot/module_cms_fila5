@@ -45,7 +45,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null         $deleter
  * @property mixed                        $translations
  *
-<<<<<<< Updated upstream
+ * <<<<<<< Updated upstream
  * <<<<<<< HEAD
  *
  * @method static Builder<static>|Page                                  newModelQuery()
@@ -352,43 +352,43 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property array<array-key, mixed>|null $blocks
  *
  * @method static Builder<static>|Page                        whereBlocks($value)
- *                                                                                                                <<<<<<< HEAD
- *                                                                                                                =======
+ *                                                                                                                                                           <<<<<<< HEAD
+ *                                                                                                                                                           =======
  * @method        array<int, array<string, mixed>>            getSushiRows()
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
- *                                                                                                                >>>>>>> 5580e39 (.)
-=======
- * @method static PageFactory factory($count = null, $state = [])
- * @method static Builder<static>|Page newModelQuery()
- * @method static Builder<static>|Page newQuery()
- * @method static Builder<static>|Page query()
- * @method static Builder<static>|Page whereBlocks($value)
- * @method static Builder<static>|Page whereContent($value)
- * @method static Builder<static>|Page whereContentBlocks($value)
- * @method static Builder<static>|Page whereCreatedAt($value)
- * @method static Builder<static>|Page whereCreatedBy($value)
- * @method static Builder<static>|Page whereDescription($value)
- * @method static Builder<static>|Page whereFooterBlocks($value)
- * @method static Builder<static>|Page whereId($value)
- * @method static Builder<static>|Page whereMiddleware($value)
- * @method static Builder<static>|Page whereSidebarBlocks($value)
- * @method static Builder<static>|Page whereSlug($value)
- * @method static Builder<static>|Page whereTitle($value)
- * @method static Builder<static>|Page whereUpdatedAt($value)
- * @method static Builder<static>|Page whereUpdatedBy($value)
- * @method static Builder<static>|Page whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Page whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Page whereLocale(string $column, string $locale)
- * @method static Builder<static>|Page whereLocales(string $column, array $locales)
- * @method static Collection<int, static> all($columns = ['*'])
- * @method static Collection<int, static> get($columns = ['*'])
- * @method static static|null first($columns = ['*'])
- * @method static static|null find($id, $columns = ['*'])
+ *                                                                                                                                                           >>>>>>> 5580e39 (.)
+ *                                                                                                                                                           =======
+ * @method static PageFactory                                 factory($count = null, $state = [])
+ * @method static Builder<static>|Page                        newModelQuery()
+ * @method static Builder<static>|Page                        newQuery()
+ * @method static Builder<static>|Page                        query()
+ * @method static Builder<static>|Page                        whereBlocks($value)
+ * @method static Builder<static>|Page                        whereContent($value)
+ * @method static Builder<static>|Page                        whereContentBlocks($value)
+ * @method static Builder<static>|Page                        whereCreatedAt($value)
+ * @method static Builder<static>|Page                        whereCreatedBy($value)
+ * @method static Builder<static>|Page                        whereDescription($value)
+ * @method static Builder<static>|Page                        whereFooterBlocks($value)
+ * @method static Builder<static>|Page                        whereId($value)
+ * @method static Builder<static>|Page                        whereMiddleware($value)
+ * @method static Builder<static>|Page                        whereSidebarBlocks($value)
+ * @method static Builder<static>|Page                        whereSlug($value)
+ * @method static Builder<static>|Page                        whereTitle($value)
+ * @method static Builder<static>|Page                        whereUpdatedAt($value)
+ * @method static Builder<static>|Page                        whereUpdatedBy($value)
+ * @method static Builder<static>|Page                        whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Page                        whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Page                        whereLocale(string $column, string $locale)
+ * @method static Builder<static>|Page                        whereLocales(string $column, array $locales)
+ * @method static Collection<int, static>                     all($columns = ['*'])
+ * @method static Collection<int, static>                     get($columns = ['*'])
+ * @method static static|null                                 first($columns = ['*'])
+ * @method static static|null                                 find($id, $columns = ['*'])
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- * @method static array<int, string> getMiddlewareBySlug(string $slug)
- * @method array<int, array<string, mixed>> getSushiRows()
->>>>>>> Stashed changes
+ * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
+ * @method        array<int, array<string, mixed>>            getSushiRows()
+ *                                                                                                                                                           >>>>>>> Stashed changes
  *
  * @mixin \Eloquent
  */
