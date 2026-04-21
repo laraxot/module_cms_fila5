@@ -109,9 +109,9 @@ final class PageSchemaBuilder
 
         if (
             'container0.view' === $routeName
-            && (($routeParameters['container0'] ?? null) === 'profile' || Str::contains($path, '/profile/'))
+            && (($routeParameters['container0'] ?? null) === 'predicts' || Str::contains($path, '/predicts/'))
         ) {
-            return 'ProfilePage';
+            return 'ItemPage';
         }
 
         if ('home' === $routeName || '/' === $path || '' === $path) {
