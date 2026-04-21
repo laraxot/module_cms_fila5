@@ -3,23 +3,18 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\BaseModelLang;
-use Modules\Cms\Models\BaseModelLang;
-use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
-use Modules\Cms\Models\Traits\HasBlocks;
-use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 
 use function Safe\class_uses;
-use function Safe\class_uses;
 
-describe('Section Business Logic', function (): void {
-    test('section extends base model lang for multilingual support', function (): void {
+describe('Section Business Logic', static function (): void {
+    test('section extends base model lang for multilingual support', static function (): void {
         expect(Section::class)->toBeSubclassOf(BaseModelLang::class);
     });
 
-    test('section has translatable fields configured', function (): void {
+    test('section has translatable fields configured', static function (): void {
         $section = new Section();
 
         expect($section->translatable)->toEqual([
@@ -28,7 +23,7 @@ describe('Section Business Logic', function (): void {
         ]);
     });
 
-    test('section has expected fillable fields', function (): void {
+    test('section has expected fillable fields', static function (): void {
         $section = new Section();
         $expectedFillable = [
             'name',
@@ -39,19 +34,19 @@ describe('Section Business Logic', function (): void {
         expect($section->getFillable())->toEqual($expectedFillable);
     });
 
-    test('section has sushi to json trait', function (): void {
+    test('section has sushi to json trait', static function (): void {
         $traits = class_uses(Section::class);
 
         expect($traits)->toHaveKey(SushiToJsons::class);
     });
 
-    test('section has has blocks trait', function (): void {
+    test('section has has blocks trait', static function (): void {
         $traits = class_uses(Section::class);
 
         expect($traits)->toHaveKey(HasBlocks::class);
     });
 
-    test('section has correct casts for multilingual and structured data', function (): void {
+    test('section has correct casts for multilingual and structured data', static function (): void {
         $section = new Section();
         /** @phpstan-ignore-next-line method.nonObject */
         $casts = $section->getCasts();
@@ -64,7 +59,7 @@ describe('Section Business Logic', function (): void {
         expect($casts['id'])->toBe('string');
     });
 
-    test('section has schema definition for structured data', function (): void {
+    test('section has schema definition for structured data', static function (): void {
         $section = new Section();
 
         // Use reflection to access protected $schema property
@@ -80,7 +75,7 @@ describe('Section Business Logic', function (): void {
         expect($schema['slug'])->toBe('string');
     });
 
-    test('section can get rows for sushi functionality', function (): void {
+    test('section can get rows for sushi functionality', static function (): void {
         $section = new Section();
 
         expect(method_exists($section, 'getRows'))->toBeTrue();
