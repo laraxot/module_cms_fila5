@@ -21,7 +21,7 @@ test('login screen can be rendered', function (): void {
     $this->get('/'.$lang.'/auth/login');
 });
 
-test('users can authenticate using the login screen', function (): void {
+test('users can authenticate using the login screen', static function (): void {
     /** @var class-string<Model> $userClass */
     $userClass = XotData::make()->getUserClass();
     $factory = $userClass::factory();

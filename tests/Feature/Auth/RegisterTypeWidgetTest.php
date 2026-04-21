@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
-use Exception;
 use Livewire\Livewire;
 use Modules\User\Filament\Widgets\RegistrationWidget;
 use Modules\Xot\Datas\XotData;
@@ -14,7 +13,7 @@ use Modules\Xot\Tests\TestCase;
 uses(TestCase::class);
 
 // Ensure XotData is mocked for every test
-beforeEach(function (): void {
+beforeEach(static function (): void {
     // ✅ Utilizzo funzione centralizzata dal TestCase
     static::mockXotData();
 });
@@ -25,97 +24,100 @@ beforeEach(function (): void {
 // ✅ Architettura: Filament Widget + XotBaseWidget + dynamic resolution
 
 // WIDGET CORE TESTS
+describe('Registration Widget', static function () {
+    test('patient widget renders correctly', static function () {
+        Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
+            ->assertStatus(200)
+            ->assertViewIs('pub_theme::filament.widgets.registration');
+    });
 
-    Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
-        ->assertStatus(200)
-        ->assertViewIs('pub_theme::filament.widgets.registration');
-});
+    test('doctor widget renders correctly', static function () {
+        Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
+            ->assertStatus(200)
+            ->assertViewIs('pub_theme::filament.widgets.registration');
+    });
 
-    Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
-        ->assertStatus(200)
-        ->assertViewIs('pub_theme::filament.widgets.registration');
-});
+    test('widget without type throws exception', static function () {
+        expect(static function () {
+            Livewire::test(RegistrationWidget::class);
+        })->toThrow(\Exception::class);
+    });
 
-        Livewire::test(RegistrationWidget::class);
-    })
-        ->toThrow(Exception::class);
-});
+    test('widget accepts form data', static function () {
+        $email = static::generateUniqueEmail();
 
-    // ✅ Utilizzo funzione centralizzata dal TestCase
-    $email = static::generateUniqueEmail();
+        $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
+            ->set('data.email', $email)
+            ->set('data.name', 'Test User')
+            ->assertSet('data.email', $email)
+            ->assertSet('data.name', 'Test User');
 
-    $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
-        ->set('data.email', $email)
-        ->set('data.name', 'Test User')
-        ->assertSet('data.email', $email)
-        ->assertSet('data.name', 'Test User');
+        expect($widget->get('data.email'))->toBe($email);
+    });
 
-    expect($widget->get('data.email'))->toBe($email);
-});
+    test('widget accepts multiple fields', static function () {
+        $testData = [
+            'name' => 'Test Patient',
+            'email' => static::generateUniqueEmail(),
+            'password' => 'TestPassword123!',
+        ];
 
-    $testData = [
-        'name' => 'Test Patient',
-        'email' => static::generateUniqueEmail(), // ✅ Utilizzo funzione centralizzata
-        'password' => 'TestPassword123!',
-    ];
+        $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
 
-    $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
+        foreach ($testData as $field => $value) {
+            $widget->set("data.{$field}", $value);
+        }
 
-    foreach ($testData as $field => $value) {
-        $widget->set("data.{$field}", $value);
-    }
+        foreach ($testData as $field => $value) {
+            expect($widget->get("data.{$field}"))->toBe($value);
+        }
+    });
 
-    foreach ($testData as $field => $value) {
-        expect($widget->get("data.{$field}"))->toBe($value);
-    }
-});
-
-    $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
-        ->set('data.email', static::generateUniqueEmail()) // ✅ Utilizzo funzione centralizzata
-        ->set('data.name', 'Test User')
-        ->set('data.password', 'TestPassword123!');
-
-    // Chiamata a register - potrebbe fallire per action class mancante
-    // ma non dovrebbe generare errori fatali di sintassi
-    try {
-        $widget->call('register');
-        expect(true)->toBeTrue(); // Success path
-    } catch (Exception $e) {
-        // Se fallisce per action class o validation, è normale in test
-        expect($e)->toBeInstanceOf(Exception::class);
-    }
-});
-
-    $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
-
-    // Verifica che il widget sia compatibile con Livewire testing
-    expect($widget)->not()->toBeNull();
-});
-
-    foreach (['patient', 'doctor'] as $type) {
-        $widget = Livewire::test(RegistrationWidget::class, ['type' => $type])
-            ->set('data.email', static::generateUniqueEmail()) // ✅ Utilizzo funzione centralizzata
-            ->set('data.name', "Test {$type}")
+    test('widget register action does not cause fatal errors', static function () {
+        $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
+            ->set('data.email', static::generateUniqueEmail())
+            ->set('data.name', 'Test User')
             ->set('data.password', 'TestPassword123!');
 
         try {
             $widget->call('register');
             expect(true)->toBeTrue();
-        } catch (Exception $e) {
-            // Normale per environment di test
-            expect($e)->toBeInstanceOf(Exception::class);
+        } catch (\Exception $e) {
+            expect($e)->toBeInstanceOf(\Exception::class);
         }
-    }
-});
+    });
 
-    $email = 'invalid-email';
-    $name = 'Test User';
+    test('widget is compatible with livewire testing', static function () {
+        $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
 
-    $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])->set('data.email', $email)->set(
-        'data.name',
-        $name,
-    );
+        expect($widget)->not()->toBeNull();
+    });
 
-    // Anche dopo errori, i dati dovrebbero rimanere
-    expect($widget->get('data.email'))->toBe($email)->and($widget->get('data.name'))->toBe($name);
+    test('widget works for all user types', static function () {
+        foreach (['patient', 'doctor'] as $type) {
+            $widget = Livewire::test(RegistrationWidget::class, ['type' => $type])
+                ->set('data.email', static::generateUniqueEmail())
+                ->set('data.name', "Test {$type}")
+                ->set('data.password', 'TestPassword123!');
+
+            try {
+                $widget->call('register');
+                expect(true)->toBeTrue();
+            } catch (\Exception $e) {
+                expect($e)->toBeInstanceOf(\Exception::class);
+            }
+        }
+    });
+
+    test('widget preserves data after invalid input', static function () {
+        $email = 'invalid-email';
+        $name = 'Test User';
+
+        $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])->set('data.email', $email)->set(
+            'data.name',
+            $name,
+        );
+
+        expect($widget->get('data.email'))->toBe($email)->and($widget->get('data.name'))->toBe($name);
+    });
 });

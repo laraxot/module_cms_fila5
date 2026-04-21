@@ -17,9 +17,7 @@ wiki/
 
 ## Pagine Compilate
 
-| Pagina | Tipo | Argomento |
-|--------|------|-----------|
-| [cms-module](./overviews/cms-module.md) | overview | Routing Folio, content blocks, multilingua |
+- [cms-module](./overviews/cms-module.md) — overview: routing Folio, content blocks, multilingua
 
 ## Raw Sources
 
@@ -31,4 +29,4 @@ Vedi [[../../../../docs/wiki/index|Index Globale Wiki]]
 
 ---
 
-*Ultimo aggiornamento: 2026-04-15*
+*Ultimo aggiornamento: 2026-04-21*
