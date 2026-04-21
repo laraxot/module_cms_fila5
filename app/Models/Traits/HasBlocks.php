@@ -98,8 +98,18 @@ trait HasBlocks
     }
 
     /**
+<<<<<<< HEAD
      * Get blocks for a record by slug.
      *
+=======
+     * Get blocks by slug for a specific side.
+     *
+     * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
+     * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
+     *
+     * @param  string  $slug  The section/page slug
+     * @param  string|null  $side  The side to get blocks for (null for all blocks)
+>>>>>>> 5580e39 (.)
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
@@ -122,6 +132,32 @@ trait HasBlocks
         /** @var array<string, BlockData> $blocks */
         $blocks = $record->getBlocks($side);
 
+<<<<<<< HEAD
         return $blocks;
+=======
+        foreach ($blocks as $block) {
+            if (! is_array($block)) {
+                continue;
+            }
+
+            $blockType = (string) ($block['type'] ?? 'text');
+            $blockData = is_array($block['data'] ?? null) ? $block['data'] : [];
+            $blockSlug = isset($block['slug']) ? (string) $block['slug'] : null;
+
+            try {
+                $blockDataObj = new BlockData($blockType, $blockData, $blockSlug);
+
+                if ($side === null) {
+                    $result[$blockSlug ?? $blockType] = $blockDataObj;
+                } elseif (isset($block['side']) && (string) $block['side'] === $side) {
+                    $result[$blockSlug ?? $blockType] = $blockDataObj;
+                }
+            } catch (\Throwable) {
+                continue;
+            }
+        }
+
+        return $result;
+>>>>>>> 5580e39 (.)
     }
 }

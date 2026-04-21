@@ -35,6 +35,7 @@ final class Page extends Component
         ?string $type = null,
     ) {
         $this->side = $side;
+<<<<<<< HEAD
         $this->data = $data;
 
         // Resolve slug from data if not passed explicitly
@@ -48,6 +49,9 @@ final class Page extends Component
         }
 
         if (null !== $type) {
+=======
+        if ($type !== null) {
+>>>>>>> 5580e39 (.)
             $slug = $type.'-'.$slug;
         }
 
