@@ -10,7 +10,7 @@ describe('CMS Module', function () {
         // Test business logic: check that Module class exists and has required methods
         expect(class_exists(Module::class))->toBeTrue();
 
-        $moduleInstance = new Module;
+        $moduleInstance = new Module();
         expect(method_exists($moduleInstance, 'getRows'))->toBeTrue();
     });
 
@@ -18,7 +18,7 @@ describe('CMS Module', function () {
         // Test business logic: check that navigation action exists
         expect(class_exists(GetModulesNavigationItems::class))->toBeTrue();
 
-        $navigationAction = new GetModulesNavigationItems;
+        $navigationAction = new GetModulesNavigationItems();
         expect(method_exists($navigationAction, 'execute'))->toBeTrue();
     });
 
