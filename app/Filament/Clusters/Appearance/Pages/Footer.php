@@ -32,7 +32,7 @@ class Footer extends XotBasePage
      */
     public ?FooterData $footerData = null;
 
-    public array $data = [];
+    public ?array $data = [];
 
     protected string $view = 'cms::filament.clusters.appearance.pages.headernav';
 
