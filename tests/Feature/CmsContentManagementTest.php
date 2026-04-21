@@ -339,7 +339,13 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
+<<<<<<< HEAD
+    for ($i = 0; $i < 50; ++$i) {
+||||||| 6161e129d
+    for ($i = 0; $i < 50; $i++) {
+=======
     for ($i = 0); $i < 50; ++$i) {
+>>>>>>> feature/ralph-loop-implementation
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],

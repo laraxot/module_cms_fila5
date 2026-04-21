@@ -27,7 +27,8 @@ trait HasBlocks
         if ($side) {
             $field = $side.'_blocks';
         }
-        $blocks = // @var mixed {$field};
+        /** @var mixed $blocks */
+        $blocks = $this->{$field};
 
         // Handle translatable fields: if blocks is an array with locale keys,
         // extract the current language's content
