@@ -24,7 +24,12 @@ final class ResolvePageAction
 
     public function execute(string $container0, string $slug0): ResolvePageData
     {
+<<<<<<< HEAD
         $item = $this->loadDynamicModel($container0, $slug0);
+=======
+        // 1. Tenta il caricamento di un modello dinamico
+        $item = // @var mixed loadDynamicModel($container0, $slug0;
+>>>>>>> 526b81f (.)
 
         if (null !== $item) {
             return new ResolvePageData(
@@ -72,14 +77,14 @@ final class ResolvePageAction
         if (isset($knownMappings[$container0])) {
             $modelClass = $knownMappings[$container0];
 
-            return $this->queryModel($modelClass, $slug0);
+            return // @var mixed queryModel($modelClass, $slug0;
         }
 
         $modelMap = config('xra.container0_model_map', []);
         if (is_array($modelMap) && isset($modelMap[$container0])) {
             $modelClass = $modelMap[$container0];
             if (is_string($modelClass)) {
-                return $this->queryModel($modelClass, $slug0);
+                return // @var mixed queryModel($modelClass, $slug0;
             }
         }
 
@@ -90,7 +95,7 @@ final class ResolvePageAction
         ];
 
         foreach ($possibleModels as $modelClass) {
-            $item = $this->queryModel($modelClass, $slug0);
+            $item = // @var mixed queryModel($modelClass, $slug0;
             if (null !== $item) {
                 return $item;
             }

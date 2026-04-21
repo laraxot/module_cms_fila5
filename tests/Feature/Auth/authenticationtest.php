@@ -18,7 +18,11 @@ uses(TestCase::class);
 
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
+<<<<<<< HEAD
     $this->get('/'.$lang.'/auth/login');
+=======
+    // @var mixed get('/'.$lang.'/auth/login';
+>>>>>>> 526b81f (.)
 });
 
 test('users can authenticate using the login screen', function (): void {

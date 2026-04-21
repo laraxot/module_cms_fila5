@@ -19,7 +19,16 @@ class Welcome extends XotBasePage
 
     public function mount(): void
     {
+<<<<<<< HEAD
         $this->initView();
+=======
+        $lang = request('lang') ?? app()->getLocale();
+        if (is_string($lang)) {
+            app()->setLocale($lang);
+        }
+        [// @var mixed containers, $this->items] = params2ContainerItem(;
+        // @var mixed initView(;
+>>>>>>> 526b81f (.)
     }
 
     public function getViewData(): array
@@ -28,10 +37,10 @@ class Welcome extends XotBasePage
         return [];
 =======
         $data = [];
-        if ([] !== $this->containers) {
-            $container_last = last($this->containers);
+        if ([] !== // @var mixed containers
+            $container_last = last(// @var mixed containers;
             Assert::string($container_last, '['.__LINE__.']['.__FILE__.']');
-            $item_last = last($this->items);
+            $item_last = last(// @var mixed items;
             Assert::string($item_last, '['.__LINE__.']['.__FILE__.']');
 
             $container_last_singular = Str::singular($container_last);
@@ -63,8 +72,17 @@ class Welcome extends XotBasePage
 
     public function initView(): void
     {
+<<<<<<< HEAD
         if (view()->exists($this->view)) {
             return;
+=======
+        $containers = // @var mixed containers;
+        $items = // @var mixed items;
+
+        $view = '';
+        if (\count($containers) === \count($items)) {
+            $view = 'show';
+>>>>>>> 526b81f (.)
         }
 <<<<<<< HEAD
         $this->view = 'cms::filament.front.pages.welcome';
@@ -76,7 +94,7 @@ class Welcome extends XotBasePage
             $view = 'home';
         }
 
-        $this->view_type = $view;
+        // @var mixed view_type = $view;
 
         $views = [];
 
@@ -105,14 +123,14 @@ class Welcome extends XotBasePage
         }
         Assert::string($view_work, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
 
-        $this->view = $view_work;
+        // @var mixed view = $view_work;
     }
 
     public function url(string $name = 'show', array $parameters = []): string
     {
         // dddx($parameters);
         $parameters['lang'] = app()->getLocale();
-        $record = $parameters['record'] ?? $this->instanceModel;
+        $record = $parameters['record'] ?? // @var mixed instanceModel;
         // dddx($record);
         if ($record && is_object($record) && 'show' === $name) {
             $container0 = class_basename($record);
@@ -139,7 +157,7 @@ class Welcome extends XotBasePage
 
     public function setModel(Model $model): self
     {
-        $this->instanceModel = $model;
+        // @var mixed instanceModel = $model;
 
         return $this;
 >>>>>>> 5580e39 (.)
