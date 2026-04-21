@@ -6,35 +6,28 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\BaseModel;
 
 beforeEach(function (): void {
-<<<<<<< HEAD
     $this->baseModel = new class extends BaseModel {
-||||||| 6161e129d
-    $this->baseModel = new class extends BaseModel
-    {
-=======
-    $baseModel = new class extends BaseModel {
->>>>>>> feature/ralph-loop-implementation
         protected $table = 'test_cms_table';
     };
 });
 
 test('base model extends eloquent model', function (): void {
-    expect($baseModel);
+    expect($this->baseModel)->toBeInstanceOf(Model::class);
 });
 
 test('base model has correct table name', function (): void {
-    expect($baseModel->getTable());
+    expect($this->baseModel->getTable())->toBe('test_cms_table');
 });
 
 test('base model can be instantiated', function (): void {
-    expect($baseModel);
+    expect($this->baseModel)->toBeInstanceOf(BaseModel::class);
 });
 
 test('base model has proper inheritance chain', function (): void {
-    expect($baseModel);
-    expect($baseModel);
+    expect($this->baseModel)->toBeInstanceOf(BaseModel::class);
+    expect($this->baseModel)->toBeInstanceOf(Model::class);
 });
 
 test('base model has timestamps enabled', function (): void {
-    expect($baseModel->usesTimestamps());
+    expect($this->baseModel->usesTimestamps())->toBeTrue();
 });

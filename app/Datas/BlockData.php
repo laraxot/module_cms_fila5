@@ -40,14 +40,9 @@ class BlockData extends Data implements Wireable
 
     public function __construct(string $type, array $data, ?string $slug = null, bool $active = true)
     {
-<<<<<<< HEAD
         $this->type = $type;
         $this->slug = $slug;
         $this->active = $active;
-=======
-        // @var mixed type = $type;
-        // @var mixed slug = $slug;
->>>>>>> 526b81f (.)
 
         // Dynamic Query Resolution
         /** @var array<string, mixed> $query */
@@ -57,7 +52,7 @@ class BlockData extends Data implements Wireable
             $data = array_merge($data, $dynamicData);
         }
 
-        // @var mixed data = $data;
+        $this->data = $data;
         Assert::string($view = Arr::get($data, 'view', 'ui::empty'), '['.__LINE__.']['.__FILE__.']');
 
         // Verifica che la view esista, con gestione più robusta per i namespace
@@ -74,7 +69,7 @@ class BlockData extends Data implements Wireable
                     $viewFactory = view();
                     if (method_exists($viewFactory, 'addNamespace')) {
                         // Se il metodo esiste, possiamo procedere con logica alternativa
-                        // @var mixed view = $view; // Accetta la view temporaneamente
+                        $this->view = $view; // Accetta la view temporaneamente
 
                         return;
                     }
@@ -86,10 +81,10 @@ class BlockData extends Data implements Wireable
             throw new \Exception('view not found: '.$view);
         }
 
-        // @var mixed view = $view;
-        // @var mixed livewire = $this->detectLivewire($view;
-        if (// @var mixed livewire
-            // @var mixed livewireComponentName = $this->normalizeComponentName($view;
+        $this->view = $view;
+        $this->livewire = $this->detectLivewire($view);
+        if ($this->livewire) {
+            $this->livewireComponentName = $this->normalizeComponentName($view);
         }
     }
 

@@ -17,8 +17,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\Menu.
  *
- * <<<<<<< HEAD
- *
  * @property string                 $id
  * @property string|null            $title
  * @property array<int, mixed>|null $items
@@ -35,23 +33,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int                    $depth
  * @property string                 $path
  * @property Collection<int, Menu>  $ancestors      The model's recursive parents.
- *                                                  =======
- * @property string                 $id
- * @property string|null            $title
- * @property int|null               $parent_id
- * @property string|null            $created_at
- * @property string|null            $updated_at
- * @property string|null            $created_by
- * @property string|null            $updated_by
- * @property Collection<int, Menu>  $children
- * @property int|null               $children_count
- * @property ProfileContract|null   $creator
- * @property Menu|null              $parent
- * @property ProfileContract|null   $updater
- * @property int                    $depth
- * @property string                 $path
- * @property Collection<int, Menu>  $ancestors      The model's recursive parents.
- *                                                  >>>>>>> 5580e39 (.)
  * @property-read int|null $ancestors_count
  * @property-read Collection<int, Menu> $ancestorsAndSelf The model's recursive parents and itself.
  * @property-read int|null $ancestors_and_self_count
@@ -164,11 +145,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  *
  * @property ProfileContract|null $deleter
  *
- * @method static MenuFactory                      factory($count = null, $state = [])
- *                                                                                     <<<<<<< HEAD
- *                                                                                     =======
- * @method        array<int, array<string, mixed>> getSushiRows()
- *                                                                                     >>>>>>> 5580e39 (.)
+ * @method static MenuFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */

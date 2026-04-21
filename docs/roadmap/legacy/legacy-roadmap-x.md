@@ -206,10 +206,6 @@ Cms Module
 
 ---
 
-<<<<<<< HEAD
-=======
-**
->>>>>>> 7a08650 (.)
 **Next Review**: 2025-11-01
 **Status**: 🚧 PLANNING  
 **Confidence Level**: 70%  

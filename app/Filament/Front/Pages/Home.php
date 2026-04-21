@@ -17,133 +17,20 @@ class Home extends XotBasePage
 
     public function mount(): void
     {
-<<<<<<< HEAD
         $this->initView();
-=======
-        [// @var mixed containers, $this->items] = params2ContainerItem(;
-        // @var mixed initView(;
->>>>>>> 526b81f (.)
     }
 
     public function getViewData(): array
     {
-<<<<<<< HEAD
         return [];
-=======
-        $data = [];
-        if ([] !== // @var mixed containers
-            Assert::string($container_last = last(// @var mixed containers;
-            $item_last = last(// @var mixed items;
-
-            $container_last_singular = Str::singular($container_last);
-            $container_last_model = Relation::getMorphedModel($container_last_singular);
-            Assert::notNull($container_last_model, '['.__LINE__.']['.__FILE__.']');
-            Assert::string($container_last_model, 'Container last model should be a string');
-
-            $modelInstance = app($container_last_model);
-            if (is_object($modelInstance) && method_exists($modelInstance, 'getRouteKeyName')) {
-                $container_last_key_name = $modelInstance->getRouteKeyName();
-                Assert::string($container_last_key_name, 'Route key name must be a string');
-
-                /** @var class-string<Model> $modelClass */
-                $modelClass = $container_last_model;
-
-                // Ensure the model class has the where method
-                if (! method_exists($modelClass, 'where')) {
-                    throw new \RuntimeException("Model class {$modelClass} does not have where method");
-                }
-
-                /** @var Builder<Model> $query */
-                $query = $modelClass::where($container_last_key_name, $item_last);
-                $row = $query->first();
-                $data[$container_last_singular] = $row;
-            }
-        }
-
-        return $data;
->>>>>>> 5580e39 (.)
     }
 
     public function initView(): void
     {
-<<<<<<< HEAD
         $this->view_type = 'home';
         if (view()->exists($this->view)) {
             return;
-=======
-        $containers = // @var mixed containers;
-        $items = // @var mixed items;
-        $view = '';
-        if (\count($containers) === \count($items)) {
-            $view = 'show';
->>>>>>> 526b81f (.)
         }
-<<<<<<< HEAD
         $this->view = 'cms::filament.front.pages.welcome';
-=======
-        if (\count($containers) > \count($items)) {
-            $view = 'index';
-        }
-        if ([] === $containers) {
-            $view = 'home';
-        }
-
-        // @var mixed view_type = $view;
-
-        $views = [];
-
-        if ([] !== $containers) {
-            $views[] = 'pub_theme::'.implode('.', $containers).'.'.$view;
-
-            $firstContainer = $containers[0] ?? '';
-            Assert::string($firstContainer, 'First container must be a string');
-
-            $model_root = Str::singular($firstContainer);
-            $res = Relation::getMorphedModel($model_root);
-            Assert::string($res, '['.__LINE__.']['.__FILE__.']');
-
-            $module_name = Str::between($res, 'Modules\\', '\\Models\\');
-            Assert::string($module_name, 'Module name must be a string');
-            $module_name_low = Str::lower($module_name);
-            $views[] = $module_name_low.'::'.implode('.', $containers).'.'.$view;
-        } else {
-            $views[] = 'pub_theme::'.$view;
-        }
-
-        $view_work = Arr::first($views, view()->exists(...));
-        Assert::string($view_work, __FILE__.':'.__LINE__.' - '.class_basename(self::class));
-
-        // @var mixed view = $view_work;
-    }
-
-    public function url(string $name, array $parameters = []): string
-    {
-        $parameters['lang'] = app()->getLocale();
-        $record = $parameters['record'] ?? null;
-
-        if ($record && is_object($record) && 'show' === $name) {
-            $container0 = class_basename($record);
-            $container0 = Str::plural($container0);
-            $container0 = Str::snake($container0);
-            $parameters['container0'] = $container0;
-            $parameters['item0'] = $record->slug ?? '';
-
-            return route('test', $parameters);
-        }
-
-        if ($record && is_object($record) && 'index' === $name) {
-            $container0 = class_basename($record);
-            $container0 = Str::plural($container0);
-            $container0 = Str::snake($container0);
-            $parameters['container0'] = $container0;
-
-            return route('test', $parameters);
-        }
-
-        $parameters['container0'] = 'articles';
-        $parameters['item0'] = 'zibibbo';
-
-        return route('test', $parameters);
->>>>>>> 5580e39 (.)
     }
 }

@@ -32,6 +32,7 @@ class CmsMassSeeder extends Seeder
         $startTime = microtime(true);
 
         try {
+<<<<<<< Updated upstream
             /**
              * 1. Creazione moduli CMS.
              *
@@ -67,6 +68,26 @@ class CmsMassSeeder extends Seeder
              *
              * @var mixed createConfigurations(;
              */
+=======
+            // 1. Creazione moduli CMS
+            $this->createCmsModules();
+
+            // 2. Creazione sezioni
+            $this->createSections();
+
+            // 3. Creazione pagine
+            $this->createPages();
+
+            // 4. Creazione contenuti delle pagine
+            $this->createPageContents();
+
+            // 5. Creazione menu
+            $this->createMenus();
+
+            // 6. Creazione configurazioni
+            $this->createConfigurations();
+
+>>>>>>> Stashed changes
             $endTime = microtime(true);
             $executionTime = round($endTime - $startTime, 2);
 
@@ -105,7 +126,11 @@ class CmsMassSeeder extends Seeder
             'created_at' => Carbon::now()->subDays(rand(1, 365)),
         ]);
         /** @var Collection<int, Section> $sections */
+<<<<<<< Updated upstream
         $sectionCount = \is_object($sections) && method_exists($sections, 'count') ? $sections->count() : 0;
+=======
+        $sectionCount = is_object($sections) && method_exists($sections, 'count') ? $sections->count() : 0;
+>>>>>>> Stashed changes
         $this->command->info('Create '.$sectionCount.' sezioni.');
     }
 
@@ -122,7 +147,11 @@ class CmsMassSeeder extends Seeder
             'created_at' => Carbon::now()->subDays(rand(1, 365)),
         ]);
         /** @var Collection<int, Page> $pages */
+<<<<<<< Updated upstream
         $pageCount = \is_object($pages) && method_exists($pages, 'count') ? $pages->count() : 0;
+=======
+        $pageCount = is_object($pages) && method_exists($pages, 'count') ? $pages->count() : 0;
+>>>>>>> Stashed changes
         $this->command->info('Create '.$pageCount.' pagine.');
     }
 
@@ -139,7 +168,11 @@ class CmsMassSeeder extends Seeder
             'created_at' => Carbon::now()->subDays(rand(1, 365)),
         ]);
         /** @var Collection<int, PageContent> $contents */
+<<<<<<< Updated upstream
         $contentCount = \is_object($contents) && method_exists($contents, 'count') ? $contents->count() : 0;
+=======
+        $contentCount = is_object($contents) && method_exists($contents, 'count') ? $contents->count() : 0;
+>>>>>>> Stashed changes
         $this->command->info('Creati '.$contentCount.' contenuti di pagina.');
     }
 
@@ -156,7 +189,11 @@ class CmsMassSeeder extends Seeder
             'created_at' => Carbon::now()->subDays(rand(1, 365)),
         ]);
         /** @var Collection<int, Menu> $menus */
+<<<<<<< Updated upstream
         $menuCount = \is_object($menus) && method_exists($menus, 'count') ? $menus->count() : 0;
+=======
+        $menuCount = is_object($menus) && method_exists($menus, 'count') ? $menus->count() : 0;
+>>>>>>> Stashed changes
         $this->command->info('Creati '.$menuCount.' menu.');
     }
 
