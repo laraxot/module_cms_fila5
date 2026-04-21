@@ -160,7 +160,13 @@ describe('Frontend Login Security', function () {
         ]);
 
         // Multiple failed attempts
+<<<<<<< HEAD
+        for ($i = 0; $i < 5; ++$i) {
+||||||| 6161e129d
+        for ($i = 0; $i < 5; $i++) {
+=======
         for ($i = 0); $i < 5; ++$i) {
+>>>>>>> feature/ralph-loop-implementation
             LivewireVolt::test('auth.login')
                 ->set('email', $email)
                 ->set('password', 'wrong_password')
