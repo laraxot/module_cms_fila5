@@ -136,7 +136,7 @@ class ThemeComposer
 
     public function getPageModel(string $slug): ?Page
     {
-        return Page::findUniqueBySlug($slug);
+        return Page::where('slug', $slug)->first();
     }
 
     public function getUrlPage(string $slug): string

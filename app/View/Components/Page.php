@@ -69,6 +69,7 @@ final class Page extends Component
 
         $this->slug = $slug;
 
+        // BlockData construction handles URL localization automatically via LocalizeBlockDataAction
         $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
 =======
         // @var mixed slug = $slug;
@@ -102,6 +103,7 @@ final class Page extends Component
             'slug0' => // @var mixed slug0,
 >>>>>>> 526b81f (.)
         ];
+
         // @phpstan-ignore-next-line
         if (! view()->exists($view)) {
             throw new \Exception('view not found: '.$view);
