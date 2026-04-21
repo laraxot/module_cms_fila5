@@ -143,7 +143,7 @@ final class ResolvePageAction
                     continue;
                 }
 
-                if ($row !== null) {
+                if (null !== $row) {
                     /** @var array<string, mixed> $attributes */
                     $attributes = (array) $row;
 
