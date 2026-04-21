@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Traits\HasBlocks;
-use Modules\Tenant\Contracts\SushiToJsonsContract;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modules\Cms\Models\Section.
  *
- * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @property string                       $id
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug
@@ -27,6 +25,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null         $creator
  * @property mixed                        $translations
  * @property ProfileContract|null         $updater
+ *
  * @method static Builder<static>|Section newModelQuery()
  * @method static Builder<static>|Section newQuery()
  * @method static Builder<static>|Section query()
@@ -44,12 +43,14 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Section whereUpdatedBy($value)
  * @method static int                     count()
  * @method static Builder<static>|Section where($column, $operator = null, $value = null, $boolean = 'and')
+ *
  * @property ProfileContract|null $deleter
+ *
  * @method static SectionFactory factory($count = null, $state = [])
- * @method array<int, array<string, mixed>> getSushiRows()
+ *
  * @mixin \Eloquent
  */
-class Section extends BaseModelLang implements SushiToJsonsContract
+class Section extends BaseModelLang
 {
     use HasBlocks;
     use SushiToJsons;
