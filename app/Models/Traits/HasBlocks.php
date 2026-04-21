@@ -6,6 +6,7 @@ namespace Modules\Cms\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\MultipleRecordsFoundException;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Modules\Cms\Datas\BlockData;
@@ -118,6 +119,12 @@ trait HasBlocks
             $record = static::query()->where('slug', $slug)->sole();
         } catch (ModelNotFoundException) {
             return [];
+        } catch (MultipleRecordsFoundException) {
+            $record = static::query()
+                ->where('slug', $slug)
+                ->orderByDesc('updated_at')
+                ->orderByDesc('id')
+                ->first();
         }
 
         if (! $record instanceof Model) {
