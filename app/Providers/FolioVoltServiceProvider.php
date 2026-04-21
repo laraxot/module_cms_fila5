@@ -21,14 +21,14 @@ use function Safe\realpath;
 
 use Webmozart\Assert\Assert;
 
+use function Safe\realpath;
+
 class FolioVoltServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
-    public function register(): void
-    {
-    }
+    public function register(): void {}
 
     /**
      * Bootstrap services.
