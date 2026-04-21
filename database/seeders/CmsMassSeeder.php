@@ -33,37 +33,37 @@ class CmsMassSeeder extends Seeder
 
         try {
             /**
-             * 1. Creazione moduli CMS
+             * 1. Creazione moduli CMS.
              *
              * @var mixed createCmsModules(;
              */
 
             /**
-             * 2. Creazione sezioni
+             * 2. Creazione sezioni.
              *
              * @var mixed createSections(;
              */
 
             /**
-             * 3. Creazione pagine
+             * 3. Creazione pagine.
              *
              * @var mixed createPages(;
              */
 
             /**
-             * 4. Creazione contenuti delle pagine
+             * 4. Creazione contenuti delle pagine.
              *
              * @var mixed createPageContents(;
              */
 
             /**
-             * 5. Creazione menu
+             * 5. Creazione menu.
              *
              * @var mixed createMenus(;
              */
 
             /**
-             * 6. Creazione configurazioni
+             * 6. Creazione configurazioni.
              *
              * @var mixed createConfigurations(;
              */
