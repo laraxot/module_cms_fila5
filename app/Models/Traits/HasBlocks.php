@@ -27,7 +27,7 @@ trait HasBlocks
         if ($side) {
             $field = $side.'_blocks';
         }
-        $blocks = // @var mixed {$field};
+        $blocks = // Placeholder purged {$field};
 
         // Handle translatable fields: if blocks is an array with locale keys,
         // extract the current language's content
