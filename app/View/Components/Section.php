@@ -51,13 +51,8 @@ class Section extends Component
         if (is_string($tpl)) {
             // @var mixed tpl = $tpl;
         }
-<<<<<<< HEAD
         $blocksResult = SectionModel::getBlocksBySlug($this->slug);
         $this->blocks = $blocksResult;
-=======
-        /* @phpstan-ignore staticMethod.notFound, assign.propertyType */
-        // @var mixed blocks = SectionModel::getBlocksBySlug($this->slug;
->>>>>>> 526b81f (.)
     }
 
     /**

@@ -27,19 +27,7 @@ trait HasBlocks
         if ($side) {
             $field = $side.'_blocks';
         }
-        $blocks = // Placeholder purged {$field};
-
-        // Handle translatable fields: if blocks is an array with locale keys,
-        // extract the current language's content
-        if (is_array($blocks)) {
-            $primary_lang = XotData::make()->primary_lang;
-            // Check if this looks like a translatable structure (has locale keys)
-            $localeKeys = ['it', 'en', 'fr', 'de', 'es', $primary_lang];
-            $hasLocaleKeys = count(array_intersect(array_keys($blocks), $localeKeys)) > 0;
-            if ($hasLocaleKeys) {
-                $blocks = $this->getTranslation($field, $primary_lang);
-            }
-        }
+        $blocks = $this->{$field};
 
         // Handle translatable fields: if blocks is an array with locale keys,
         // extract the current language's content
@@ -110,10 +98,6 @@ trait HasBlocks
     }
 
     /**
-<<<<<<< HEAD
-     * Get blocks for a record by slug.
-     *
-=======
      * Get blocks by slug for a specific side.
      *
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
@@ -121,7 +105,6 @@ trait HasBlocks
      *
      * @param  string  $slug  The section/page slug
      * @param  string|null  $side  The side to get blocks for (null for all blocks)
->>>>>>> 5580e39 (.)
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
@@ -144,32 +127,6 @@ trait HasBlocks
         /** @var array<string, BlockData> $blocks */
         $blocks = $record->getBlocks($side);
 
-<<<<<<< HEAD
         return $blocks;
-=======
-        foreach ($blocks as $block) {
-            if (! is_array($block)) {
-                continue;
-            }
-
-            $blockType = (string) ($block['type'] ?? 'text');
-            $blockData = is_array($block['data'] ?? null) ? $block['data'] : [];
-            $blockSlug = isset($block['slug']) ? (string) $block['slug'] : null;
-
-            try {
-                $blockDataObj = new BlockData($blockType, $blockData, $blockSlug);
-
-                if ($side === null) {
-                    $result[$blockSlug ?? $blockType] = $blockDataObj;
-                } elseif (isset($block['side']) && (string) $block['side'] === $side) {
-                    $result[$blockSlug ?? $blockType] = $blockDataObj;
-                }
-            } catch (\Throwable) {
-                continue;
-            }
-        }
-
-        return $result;
->>>>>>> 5580e39 (.)
     }
 }
