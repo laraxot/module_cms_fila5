@@ -112,7 +112,10 @@ class CmsMassSeeder extends Seeder
         ]);
         /** @var Collection<int, Section> $sections */
         $sectionCount = is_object($sections) && method_exists($sections, 'count') ? $sections->count() : 0;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         $this->command->info('Create '.$sectionCount.' sezioni.');
 =======
         // @var mixed command->info('✅ Create '.$sectionCount.' sezioni';
@@ -137,7 +140,10 @@ class CmsMassSeeder extends Seeder
         ]);
         /** @var Collection<int, Page> $pages */
         $pageCount = is_object($pages) && method_exists($pages, 'count') ? $pages->count() : 0;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         $this->command->info('Create '.$pageCount.' pagine.');
 =======
         // @var mixed command->info('✅ Create '.$pageCount.' pagine';
@@ -162,7 +168,10 @@ class CmsMassSeeder extends Seeder
         ]);
         /** @var Collection<int, PageContent> $contents */
         $contentCount = is_object($contents) && method_exists($contents, 'count') ? $contents->count() : 0;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         $this->command->info('Creati '.$contentCount.' contenuti di pagina.');
 =======
         // @var mixed command->info('✅ Creati '.$contentCount.' contenuti di pagina';
@@ -187,7 +196,10 @@ class CmsMassSeeder extends Seeder
         ]);
         /** @var Collection<int, Menu> $menus */
         $menuCount = is_object($menus) && method_exists($menus, 'count') ? $menus->count() : 0;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
         $this->command->info('Creati '.$menuCount.' menu.');
 =======
         // @var mixed command->info('✅ Creati '.$menuCount.' menu';
