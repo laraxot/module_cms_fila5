@@ -23,11 +23,19 @@ it('GET /{locale} uses the requested locale in the html lang attribute', functio
 
         expect(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true))->toBeTrue();
 
+<<<<<<< HEAD
         if (200 === $status) {
             /* @phpstan-ignore-next-line method.nonObject */
             $response->assertSee('<html', false);
             /* @phpstan-ignore-next-line method.nonObject */
             $response->assertSee(' lang="'.$locale.'"', false);
         }
+=======
+    if ($status === 200) {
+        /* @phpstan-ignore-next-line method.nonObject */
+        $response->assertSee('<html', false);
+        /* @phpstan-ignore-next-line method.nonObject */
+        $response->assertSee(' lang="'.$locale.'"', false);
+>>>>>>> 5580e39 (.)
     }
 });

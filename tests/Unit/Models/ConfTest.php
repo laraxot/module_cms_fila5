@@ -7,13 +7,13 @@ namespace Modules\Cms\Tests\Unit\Models;
 use Modules\Cms\Models\Conf;
 
 test('Conf model can be instantiated', function () {
-    $conf = new Conf();
+    $conf = new Conf;
 
     expect($conf)->toBeInstanceOf(Conf::class);
 });
 
 test('Conf model has expected fillable fields', function () {
-    $conf = new Conf();
+    $conf = new Conf;
 
     $fillable = $conf->getFillable();
 
@@ -22,7 +22,7 @@ test('Conf model has expected fillable fields', function () {
 });
 
 test('Conf model has name as route key', function () {
-    $conf = new Conf();
+    $conf = new Conf;
 
     expect($conf->getRouteKeyName())->toBe('name');
 });

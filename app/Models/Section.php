@@ -14,17 +14,23 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Section.
  *
+<<<<<<< HEAD
  * @property string                       $id
+=======
+ * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
+ *
+ * @property string $id
+>>>>>>> 5580e39 (.)
  * @property array<array-key, mixed>|null $name
- * @property string|null                  $slug
+ * @property string|null $slug
  * @property array<array-key, mixed>|null $blocks
- * @property Carbon|null                  $created_at
- * @property Carbon|null                  $updated_at
- * @property string|null                  $created_by
- * @property string|null                  $updated_by
- * @property ProfileContract|null         $creator
- * @property mixed                        $translations
- * @property ProfileContract|null         $updater
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property ProfileContract|null $creator
+ * @property mixed $translations
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Section newModelQuery()
  * @method static Builder<static>|Section newQuery()
@@ -41,12 +47,16 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Section whereSlug($value)
  * @method static Builder<static>|Section whereUpdatedAt($value)
  * @method static Builder<static>|Section whereUpdatedBy($value)
- * @method static int                     count()
+ * @method static int count()
  * @method static Builder<static>|Section where($column, $operator = null, $value = null, $boolean = 'and')
  *
  * @property ProfileContract|null $deleter
  *
  * @method static SectionFactory factory($count = null, $state = [])
+<<<<<<< HEAD
+=======
+ * @method array<int, array<string, mixed>> getSushiRows()
+>>>>>>> 5580e39 (.)
  *
  * @mixin \Eloquent
  */
