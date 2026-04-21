@@ -400,8 +400,8 @@ class Page extends BaseModelLang
 
     public function getRows(): array
     {
-        $rows= $this->getSushiRows();
-        
+        $rows = $this->getSushiRows();
+
         return $rows;
     }
 
