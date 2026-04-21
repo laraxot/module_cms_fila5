@@ -46,7 +46,7 @@ class Section extends Component
         $this->slug = $slug;
         $this->class = $class;
         $this->id = $id;
-        if (is_string($tpl) && $tpl !== '') {
+        if (is_string($tpl) && '' !== $tpl) {
             $this->tpl = $tpl;
         }
 

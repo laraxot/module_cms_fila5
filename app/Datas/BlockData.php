@@ -52,7 +52,6 @@ class BlockData extends Data implements Wireable
             $data = array_merge($data, $dynamicData);
         }
 
-        /** @var mixed $viewRaw */
         $viewRaw = Arr::get($data, 'view', 'ui::empty');
         Assert::string($viewRaw, '['.__LINE__.']['.__FILE__.']');
         $view = $viewRaw;
