@@ -31,25 +31,15 @@ class ThemeComposer
             return null;
         }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> e1ecbe9 (.)
         /** @var array<string, mixed> $normalized */
         $normalized = $items;
 
         return $normalized;
-<<<<<<< HEAD
-=======
-=======
-        return $items;
->>>>>>> 1aff77744 (.)
->>>>>>> e1ecbe9 (.)
     }
 
     public function getMenuUrl(array $menu): string
     {
-        if ([] === $menu) {
+        if ($menu === []) {
             return '#';
         }
         $lang = app()->getLocale();
@@ -61,13 +51,13 @@ class ThemeComposer
             return '#';
         }
 
-        if ('internal' === $type) {
+        if ($type === 'internal') {
             return route('page_slug.view', ['lang' => $lang, 'slug' => $url]);
         }
-        if ('external' === $type) {
+        if ($type === 'external') {
             return $url;
         }
-        if ('route_name' === $type) {
+        if ($type === 'route_name') {
             return route($url, ['lang' => $lang]);
         }
 

@@ -14,7 +14,7 @@ test('it uses user language with highest priority', function (): void {
     $request = Request::create('/en/some-page', 'GET');
     $request->setUserResolver(fn (): object => (object) ['lang' => 'fr']);
 
-    $middleware = new SetFolioLocale();
+    $middleware = new SetFolioLocale;
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
 
     expect($response->getStatusCode())->toBe(200)
@@ -32,7 +32,7 @@ test('it uses first url segment when locale is supported', function (): void {
     $request = Request::create('/de/some-page', 'GET');
     $request->setUserResolver(fn () => null);
 
-    $middleware = new SetFolioLocale();
+    $middleware = new SetFolioLocale;
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
 
     expect($response->getStatusCode())->toBe(200)
@@ -52,7 +52,7 @@ test('it falls back to default app locale when url segment is not supported', fu
     $request = Request::create('/blog/post-1', 'GET');
     $request->setUserResolver(fn () => null);
 
-    $middleware = new SetFolioLocale();
+    $middleware = new SetFolioLocale;
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
 
     expect($response->getStatusCode())->toBe(200)

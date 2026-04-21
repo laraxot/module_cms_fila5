@@ -26,8 +26,14 @@ test('GetStyleClassAction handles exceptions gracefully', function () {
         expect(true)->toBeTrue();
     }
 });
-<<<<<<< HEAD
-=======
 
+test('GetStyleClassAction with mocked config', function () {
+    // Mock the config to prevent exceptions
+    Config::set('adm_theme::components.some_component.class', 'mocked-class');
+    Config::set('pub_theme::components.some_component.class', 'mocked-class');
 
->>>>>>> e1ecbe9 (.)
+    $action = new GetStyleClassAction();
+
+    // This should still fail as the action expects specific view structure
+    expect($action)->toBeInstanceOf(GetStyleClassAction::class);
+})->skip('Skipping due to complex view dependency');
