@@ -1,6 +1,5 @@
 # PHPStan Corrections - Cms Module - Gennaio 2025
 
-**Data**: 2025-01-10
 **Modulo**: Cms
 **Errori Risolti**: 8
 
