@@ -94,7 +94,7 @@ class Section extends BaseModelLang
      */
     public function getRows(): array
     {
-        return // @var mixed getSushiRows(;
+        return $this->getSushiRows();
 
         /* @var array<int, array<string, mixed>> $typedRows */
     }
