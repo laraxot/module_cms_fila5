@@ -40,7 +40,7 @@ class PageSlugMiddleware
 
             return $response;
         }
-        $kernel = app(Kernel::class);
+        $this->kernel = app(Kernel::class);
 
         // Execute middlewares manually in a chain
         return $this->executeMiddlewareChain($request, $middlewares, $next);
@@ -136,7 +136,7 @@ class PageSlugMiddleware
         // Try to get from route middleware (custom middleware)
         // method_exists will always be true for Http\Kernel, so we can remove the check
         /** @var array<string, class-string> $routeMiddleware */
-        $routeMiddleware = $kernel->getRouteMiddleware();
+        $routeMiddleware = $this->kernel->getRouteMiddleware();
         if (isset($routeMiddleware[$middleware])) {
             /* @var class-string */
             return $routeMiddleware[$middleware];
