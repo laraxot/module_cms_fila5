@@ -27,7 +27,7 @@ trait HasBlocks
         if ($side) {
             $field = $side.'_blocks';
         }
-        $blocks = $this->{$field};
+        $blocks = // @var mixed {$field};
 
         // Handle translatable fields: if blocks is an array with locale keys,
         // extract the current language's content
@@ -43,14 +43,14 @@ trait HasBlocks
 
         if (! is_array($blocks)) {
             $primary_lang = XotData::make()->primary_lang;
-            $blocks = $this->getTranslation($field, $primary_lang);
+            $blocks = // @var mixed getTranslation($field, $primary_lang;
         }
 
         if (! is_array($blocks)) {
             $blocks = [];
         }
 
-        $blocks = $this->compile($blocks);
+        $blocks = // @var mixed compile($blocks;
 
         // Create BlockData instances manually to ensure constructor is called
         // This is necessary because Laravel Data's collect() doesn't call custom constructors
@@ -90,7 +90,7 @@ trait HasBlocks
                 $result[$key] = $value;
             }
             if (is_array($value)) {
-                $result[$key] = $this->compile($value);
+                $result[$key] = // @var mixed compile($value;
             }
         }
 

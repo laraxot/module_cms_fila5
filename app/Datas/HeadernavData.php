@@ -49,21 +49,30 @@ class HeadernavData extends Data implements Wireable
 
     public function render(): Renderable
     {
+<<<<<<< HEAD
         $view = $this->view;
         if (! view()->exists($view)) {
             $message = 'The view ['.$view.'] does not exist';
+=======
+        if (! view()->exists(// @var mixed view
+            $message = 'The view ['.// @var mixed view.'] does not exist';
+>>>>>>> 526b81f (.)
             throw new \Exception($message);
         }
 
         /** @var array<string, mixed> $view_params */
-        $view_params = $this->toArray();
+        $view_params = // @var mixed toArray(;
 
+<<<<<<< HEAD
         return view($view, $view_params);
     }
 
     public function view(): Renderable
     {
         return $this->render();
+=======
+        return view(// @var mixed view, $view_params;
+>>>>>>> 526b81f (.)
     }
 
     public static function rules(): array

@@ -8,10 +8,17 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
+<<<<<<< HEAD
 it('GET /{locale} uses the requested locale in the html lang attribute', function (): void {
     foreach (['it', 'en', 'de'] as $locale) {
         /** @phpstan-ignore-next-line property.notFound */
         $response = $this->get('/'.$locale);
+=======
+it('GET /{locale} returns 200 and has lang attribute', function (): void {
+    $locale = app()->getLocale();
+    /** @phpstan-ignore-next-line property.notFound */
+    $response = // @var mixed get('/'.$locale;
+>>>>>>> 526b81f (.)
 
         $status = (int) $response->getStatusCode();
 
