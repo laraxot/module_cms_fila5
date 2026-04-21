@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
 declare(strict_types=1);
 
-=======
->>>>>>> e1ecbe9 (.)
 use Illuminate\Support\Str;
 
 $moduleName = 'Cms';
@@ -19,24 +16,15 @@ return [
     'collections' => [
         'posts' => [
             'path' => function ($page) {
-<<<<<<< HEAD
                 // return $page->lang.'/posts/'.Str::slug($page->getFilename());
                 // return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
-=======
-                //return $page->lang.'/posts/'.Str::slug($page->getFilename());
-                //return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
->>>>>>> e1ecbe9 (.)
 
                 return 'posts/'.Str::slug($page->getFilename());
             },
         ],
         'docs' => [
             'path' => function ($page) {
-<<<<<<< HEAD
                 // return $page->lang.'/docs/'.Str::slug($page->getFilename());
-=======
-                //return $page->lang.'/docs/'.Str::slug($page->getFilename());
->>>>>>> e1ecbe9 (.)
                 return 'docs/'.Str::slug($page->getFilename());
             },
         ],
@@ -47,11 +35,7 @@ return [
     'docsearchIndexName' => env('DOCSEARCH_INDEX'),
 
     // navigation menu
-<<<<<<< HEAD
     'navigation' => require_once ('navigation.php'),
-=======
-    'navigation' => require_once('navigation.php'),
->>>>>>> e1ecbe9 (.)
 
     // helpers
     'isActive' => function ($page, $path) {
@@ -66,11 +50,7 @@ return [
                 return trimPath($page->getPath()) == trimPath($child);
             });
         }
-<<<<<<< HEAD
     }, /*
-=======
-    },/*
->>>>>>> e1ecbe9 (.)
     'url' => function ($page, $path) {
         return Str::startsWith($path, 'http') ? $path : '/' . trimPath($path);
     },
@@ -79,20 +59,12 @@ return [
         if (Str::startsWith($path, 'http')) {
             return $path;
         }
-<<<<<<< HEAD
 
         // return url('/'.$page->lang.'/'.trimPath($path));
-=======
-         //return url('/'.$page->lang.'/'.trimPath($path));
->>>>>>> e1ecbe9 (.)
         return url('/'.trimPath($path));
     },
 
     'children' => function ($page, $docs) {
         return $docs->where('parent_id', $page->id);
     },
-<<<<<<< HEAD
 ];
-=======
-];
->>>>>>> e1ecbe9 (.)
