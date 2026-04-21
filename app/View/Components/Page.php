@@ -55,7 +55,7 @@ final class Page extends Component
             $slug = '';
         }
 
-        if ($type !== null) {
+        if (null !== $type) {
             $slug = $type.'-'.$slug;
         }
 
