@@ -98,6 +98,7 @@ trait HasBlocks
     }
 
     /**
+<<<<<<< Updated upstream
      * Get blocks by slug for a specific side.
      *
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
@@ -105,6 +106,9 @@ trait HasBlocks
      *
      * @param string      $slug The section/page slug
      * @param string|null $side The side to get blocks for (null for all blocks)
+=======
+     * Get blocks for a record by slug.
+>>>>>>> Stashed changes
      *
      * @return array<string, BlockData>
      */

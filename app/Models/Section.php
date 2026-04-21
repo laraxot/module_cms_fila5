@@ -14,15 +14,7 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Section.
  *
- * <<<<<<< HEAD
- *
- * @property string $id
- *                      =======
- *
- * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- *
  * @property string                       $id
- *                                                      >>>>>>> 5580e39 (.)
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug
  * @property array<array-key, mixed>|null $blocks
@@ -54,11 +46,7 @@ use Modules\Xot\Contracts\ProfileContract;
  *
  * @property ProfileContract|null $deleter
  *
- * @method static SectionFactory                   factory($count = null, $state = [])
- *                                                                                     <<<<<<< HEAD
- *                                                                                     =======
- * @method        array<int, array<string, mixed>> getSushiRows()
- *                                                                                     >>>>>>> 5580e39 (.)
+ * @method static SectionFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */

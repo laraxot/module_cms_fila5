@@ -2,19 +2,10 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 namespace Modules\Cms\Tests\Unit;
 
 use function Pest\Laravel\get;
 
-=======
-use Tests\TestCase;
-
-use function Pest\Laravel\get;
-
-uses(TestCase::class);
-
->>>>>>> 5580e39 (.)
 test('route home redirects to locale-specific page', function (): void {
     // The home route redirects to a locale-specific URL
     get('/')->assertRedirect();

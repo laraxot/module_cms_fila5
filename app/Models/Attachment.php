@@ -55,11 +55,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  *
  * @property ProfileContract|null $deleter
  *
- * @method static AttachmentFactory                factory($count = null, $state = [])
- *                                                                                     <<<<<<< HEAD
- *                                                                                     =======
- * @method        array<int, array<string, mixed>> getSushiRows()
- *                                                                                     >>>>>>> 5580e39 (.)
+ * @method static AttachmentFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */

@@ -56,7 +56,7 @@ class HeadernavData extends Data implements Wireable
         }
 
         /** @var array<string, mixed> $view_params */
-        $view_params = // @var mixed toArray(;
+        $view_params = $this->toArray();
 
         return view($view, $view_params);
     }

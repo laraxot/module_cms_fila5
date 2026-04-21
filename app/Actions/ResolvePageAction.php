@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Cms\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Cms\Datas\ResolvePageData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\QueueableAction\QueueableAction;
@@ -25,12 +24,7 @@ final class ResolvePageAction
 
     public function execute(string $container0, string $slug0): ResolvePageData
     {
-<<<<<<< HEAD
         $item = $this->loadDynamicModel($container0, $slug0);
-=======
-        // 1. Tenta il caricamento di un modello dinamico
-        $item = // @var mixed loadDynamicModel($container0, $slug0;
->>>>>>> 526b81f (.)
 
         if (null !== $item) {
             return new ResolvePageData(
@@ -78,14 +72,14 @@ final class ResolvePageAction
         if (isset($knownMappings[$container0])) {
             $modelClass = $knownMappings[$container0];
 
-            return // @var mixed queryModel($modelClass, $slug0;
+            return $this->queryModel($modelClass, $slug0);
         }
 
         $modelMap = config('xra.container0_model_map', []);
         if (is_array($modelMap) && isset($modelMap[$container0])) {
             $modelClass = $modelMap[$container0];
             if (is_string($modelClass)) {
-                return // @var mixed queryModel($modelClass, $slug0;
+                return $this->queryModel($modelClass, $slug0);
             }
         }
 
@@ -96,7 +90,7 @@ final class ResolvePageAction
         ];
 
         foreach ($possibleModels as $modelClass) {
-            $item = // @var mixed queryModel($modelClass, $slug0;
+            $item = $this->queryModel($modelClass, $slug0);
             if (null !== $item) {
                 return $item;
             }
@@ -120,66 +114,19 @@ final class ResolvePageAction
             ]));
 
             foreach ($candidateKeys as $key) {
-                foreach ($this->buildCandidateQueries($model) as $query) {
-                    try {
-                        $item = $query->where($key, $identifier)->first();
-                    } catch (\Throwable) {
-                        continue;
-                    }
-
-                    if (null !== $item) {
-                        return $item;
-                    }
-                }
-            }
-
-            foreach ($candidateKeys as $key) {
                 try {
-                    $row = $model->getConnection()
-                        ->table($model->getTable())
-                        ->where($key, $identifier)
-                        ->first();
+                    $item = $model->newQuery()->where($key, $identifier)->first();
                 } catch (\Throwable) {
                     continue;
                 }
 
-                if (null !== $row) {
-                    /** @var array<string, mixed> $attributes */
-                    $attributes = (array) $row;
-
-                    return $model->newFromBuilder($attributes);
+                if (null !== $item) {
+                    return $item;
                 }
             }
         }
 
         return null;
-    }
-
-    /**
-     * @return array<int, \Illuminate\Database\Eloquent\Builder<Model>>
-     */
-    private function buildCandidateQueries(Model $model): array
-    {
-        $queries = [$model->newQuery()];
-
-        try {
-            $queries[] = $model->newQueryWithoutScopes();
-        } catch (\Throwable) {
-        }
-
-        $usesSoftDeletes = in_array(SoftDeletes::class, class_uses_recursive($model), true);
-
-        if ($usesSoftDeletes) {
-            foreach ($queries as $index => $query) {
-                try {
-                    $queries[] = (clone $query)->withTrashed();
-                } catch (\Throwable) {
-                    unset($queries[$index]);
-                }
-            }
-        }
-
-        return array_values($queries);
     }
 
     private function resolvePublicProfileItem(string $identifier): ?object
