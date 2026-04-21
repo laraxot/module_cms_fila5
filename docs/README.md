@@ -29,6 +29,7 @@ Modules/Cms/
 - [Architettura Frontend](./frontend-architecture/struttura-homepage.md)
 - [Testing Guidelines](./tests/architecture-separation-rules.md)
 - [Page Directory Structure](./page-directory-structure.md) ⭐
+- [Merge Conflict Marker Cleanup](./merge-conflict-marker-cleanup.md)
 
 ### Moduli Correlati
 - [Modulo UI - Blocchi](../../UI/docs/blocks-system.md)
@@ -338,3 +339,10 @@ npm run dev
 
 ## AI Workflows
 - [AI Methodologies](./ai-methodologies.md)
+
+
+## Standard Rules & Workflow
+
+- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
+- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
+- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]

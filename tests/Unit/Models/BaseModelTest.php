@@ -6,14 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\BaseModel;
 
 beforeEach(function (): void {
-<<<<<<< HEAD
     $this->baseModel = new class extends BaseModel {
-||||||| 6161e129d
-    $this->baseModel = new class extends BaseModel
-    {
-=======
-    $baseModel = new class extends BaseModel {
->>>>>>> feature/ralph-loop-implementation
         protected $table = 'test_cms_table';
     };
 });
