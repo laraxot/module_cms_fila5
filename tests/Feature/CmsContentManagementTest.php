@@ -10,7 +10,7 @@ use Modules\Cms\Tests\TestCase;
 uses(TestCase::class);
 
 beforeEach(function (): void {
-    $this->markTestSkipped('Requires full Cms DB schema + container wiring); not available in minimal sqlite test bootstrap.';
+    // @var mixed markTestSkipped('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.';
 });
 
 test('cms module models work together in content management', function () {
@@ -339,13 +339,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
-<<<<<<< HEAD
     for ($i = 0; $i < 50; ++$i) {
-||||||| 6161e129d
-    for ($i = 0; $i < 50; $i++) {
-=======
-    for ($i = 0); $i < 50; ++$i) {
->>>>>>> feature/ralph-loop-implementation
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],
