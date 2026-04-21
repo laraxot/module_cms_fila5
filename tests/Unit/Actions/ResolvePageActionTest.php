@@ -20,11 +20,7 @@ final class ResolvePageActionTest extends TestCase
      */
     protected array $connectionsToTransact = ['mysql', 'meetup', 'user', 'tenant'];
 
-<<<<<<< HEAD
     public function testItResolvesADynamicModelFromKnownMappings(): void
-=======
-    public function test_it_resolves_a_dynamic_model_from_known_mappings(): void
->>>>>>> e1ecbe9 (.)
     {
         $event = Event::factory()->create([
             'slug' => 'test-event-'.uniqid(),
@@ -45,19 +41,11 @@ final class ResolvePageActionTest extends TestCase
         expect($result->item->id)->toBe($event->id);
     }
 
-<<<<<<< HEAD
     public function testItResolvesACmsPageWithExactSlug(): void
     {
         $slug = 'about.us-'.uniqid();
         PageModel::factory()->create(['slug' => $slug]);
 
-=======
-    public function test_it_resolves_a_cms_page_with_exact_slug(): void
-    {
-        $slug = 'about.us-'.uniqid();
-        PageModel::factory()->create(['slug' => $slug]);
-        
->>>>>>> e1ecbe9 (.)
         $action = app(ResolvePageAction::class);
         $result = $action->execute('about', (string) Str::after($slug, 'about.'));
 
@@ -65,19 +53,11 @@ final class ResolvePageActionTest extends TestCase
         expect($result->pageSlug)->toBe($slug);
     }
 
-<<<<<<< HEAD
     public function testItFallsBackToContainerViewIfSlugNotFound(): void
     {
         $viewSlug = 'blog.view';
         PageModel::factory()->create(['slug' => $viewSlug]);
 
-=======
-    public function test_it_falls_back_to_container_view_if_slug_not_found(): void
-    {
-        $viewSlug = 'blog.view-'.uniqid();
-        PageModel::factory()->create(['slug' => $viewSlug]);
-        
->>>>>>> e1ecbe9 (.)
         $container = (string) Str::before($viewSlug, '.');
         $action = app(ResolvePageAction::class);
         $result = $action->execute($container, 'non-existent');
@@ -86,11 +66,7 @@ final class ResolvePageActionTest extends TestCase
         expect($result->pageSlug)->toBe($viewSlug);
     }
 
-<<<<<<< HEAD
     public function testItReturnsFullSlugAsFinalFallback(): void
-=======
-    public function test_it_returns_full_slug_as_final_fallback(): void
->>>>>>> e1ecbe9 (.)
     {
         $action = app(ResolvePageAction::class);
         $result = $action->execute('unknown', 'page');
