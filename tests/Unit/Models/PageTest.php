@@ -5,17 +5,17 @@ declare(strict_types=1);
 use Modules\Cms\Models\Page;
 
 test('page model can be instantiated', function (): void {
-    $page = new Page;
+    $page = new Page();
     expect($page)->toBeInstanceOf(Page::class);
 });
 
 test('page extends BaseModelLang', function (): void {
-    $page = new Page;
+    $page = new Page();
     expect($page)->toBeInstanceOf(Modules\Cms\Models\BaseModelLang::class);
 });
 
 test('page has expected fillable fields', function (): void {
-    $page = new Page;
+    $page = new Page();
     $fillable = $page->getFillable();
 
     // Check actual fillable fields from the model
@@ -30,7 +30,7 @@ test('page has expected fillable fields', function (): void {
 });
 
 test('page has expected casts', function (): void {
-    $page = new Page;
+    $page = new Page();
     $casts = $page->getCasts();
 
     expect($casts)->toBeArray()
@@ -43,7 +43,7 @@ test('page has expected casts', function (): void {
 });
 
 test('page has translatable fields configured', function (): void {
-    $page = new Page;
+    $page = new Page();
 
     expect($page->translatable)->toBeArray()
         ->and($page->translatable)->toContain('title')
@@ -53,21 +53,21 @@ test('page has translatable fields configured', function (): void {
 });
 
 test('page has SushiToJsons trait', function (): void {
-    $page = new Page;
+    $page = new Page();
     $traits = class_uses_recursive($page);
 
     expect(array_values($traits))->toContain(Modules\Tenant\Models\Traits\SushiToJsons::class);
 });
 
 test('page has getRows method for sushi functionality', function (): void {
-    $page = new Page;
+    $page = new Page();
 
     expect(method_exists($page, 'getRows'))->toBeTrue();
     expect($page->getRows())->toBeArray();
 });
 
 test('page has schema definition', function (): void {
-    $page = new Page;
+    $page = new Page();
 
     $reflection = new ReflectionClass($page);
     $schemaProperty = $reflection->getProperty('schema');
@@ -93,14 +93,14 @@ test('page has getMiddlewareBySlug static method', function (): void {
 });
 
 test('page casts content_blocks to array', function (): void {
-    $page = new Page;
+    $page = new Page();
     $casts = $page->getCasts();
 
     expect($casts['content_blocks'])->toBe('array');
 });
 
 test('page casts middleware to array', function (): void {
-    $page = new Page;
+    $page = new Page();
     $casts = $page->getCasts();
 
     expect($casts['middleware'])->toBe('array');
