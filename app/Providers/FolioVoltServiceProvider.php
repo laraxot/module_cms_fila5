@@ -20,14 +20,6 @@ use Nwidart\Modules\Facades\Module;
 use Webmozart\Assert\Assert;
 
 use function Safe\realpath;
-
-<<<<<<< HEAD
-use Webmozart\Assert\Assert;
-
-use function Safe\realpath;
-
-=======
->>>>>>> 5580e39 (.)
 class FolioVoltServiceProvider extends ServiceProvider
 {
     /**
