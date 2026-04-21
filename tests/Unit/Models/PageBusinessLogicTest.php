@@ -14,7 +14,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page has translatable fields configured', function (): void {
-        $page = new Page();
+        $page = new Page;
 
         expect($page->translatable)->toEqual([
             'title',
@@ -25,7 +25,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page has expected fillable fields', function (): void {
-        $page = new Page();
+        $page = new Page;
         $expectedFillable = [
             'content',
             'description',
@@ -53,7 +53,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page has correct casts for blocks and arrays', function (): void {
-        $page = new Page();
+        $page = new Page;
         /** @phpstan-ignore-next-line method.nonObject */
         $casts = $page->getCasts();
 
@@ -68,7 +68,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page has schema definition for structured data', function (): void {
-        $page = new Page();
+        $page = new Page;
 
         // Use reflection to access protected $schema property
         $reflection = new ReflectionClass($page);
@@ -84,7 +84,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page can get rows for sushi functionality', function (): void {
-        $page = new Page();
+        $page = new Page;
 
         expect(method_exists($page, 'getRows'))->toBeTrue();
     });

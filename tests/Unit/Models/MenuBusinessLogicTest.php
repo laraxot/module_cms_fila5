@@ -6,10 +6,9 @@ use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Menu;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 
 use function Safe\class_uses;
-
-use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 
 describe('Menu Business Logic', function () {
     test('menu extends base model', function () {
@@ -17,7 +16,7 @@ describe('Menu Business Logic', function () {
     });
 
     test('menu implements recursive relationships contract', function () {
-        $menu = new Menu();
+        $menu = new Menu;
         expect($menu)->toBeInstanceOf(HasRecursiveRelationshipsContract::class);
     });
 
@@ -35,7 +34,7 @@ describe('Menu Business Logic', function () {
     });
 
     test('menu has expected fillable fields', function () {
-        $menu = new Menu();
+        $menu = new Menu;
         $expectedFillable = [
             'title',
             'items',
@@ -52,14 +51,14 @@ describe('Menu Business Logic', function () {
     });
 
     test('menu can get label', function () {
-        $menu = new Menu();
+        $menu = new Menu;
         $menu->title = 'Test Menu';
 
         expect($menu->getLabel())->toBe('Test Menu');
     });
 
     test('menu has correct casts for structured data', function () {
-        $menu = new Menu();
+        $menu = new Menu;
         $casts = $menu->getCasts();
 
         expect($casts['items'])->toBe('array');
@@ -67,7 +66,7 @@ describe('Menu Business Logic', function () {
     });
 
     test('menu has schema definition for structured data', function () {
-        $menu = new Menu();
+        $menu = new Menu;
 
         // Use reflection to access protected $schema property
         $reflection = new ReflectionClass($menu);
@@ -82,7 +81,7 @@ describe('Menu Business Logic', function () {
     });
 
     test('menu can get rows for sushi functionality', function () {
-        $menu = new Menu();
+        $menu = new Menu;
 
         expect(method_exists($menu, 'getRows'))->toBeTrue();
     });
