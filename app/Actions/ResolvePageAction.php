@@ -70,7 +70,7 @@ final class ResolvePageAction
             'events' => 'Modules\\Meetup\\Models\\Event',
         ];
 
-if (isset($knownMappings[$container0])) {
+        if (isset($knownMappings[$container0])) {
             $modelClass = $knownMappings[$container0];
 
             return $this->queryModel($modelClass, $slug0);
