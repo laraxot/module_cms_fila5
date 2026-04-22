@@ -49,9 +49,8 @@ class Show extends Component
             $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function () {
                 return $this->fetchPageContent();
             });
-        } else {
-            // @var mixed pageContent = $this->fetchPageContent(;
         }
+        // @var mixed pageContent = $this->fetchPageContent(;
     }
 
     protected function fetchPageContent(): array
