@@ -16,16 +16,12 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Page.
  *
- * <<<<<<< HEAD
- *
  * @property string $id
- *                      =======
  *
  * @method static array<int, array<string, mixed>>            getMiddlewareBySlug(string $slug)
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  *
  * @property string                       $id
- *                                                        >>>>>>> 5580e39 (.)
  * @property array<array-key, mixed>|null $title
  * @property string|null                  $slug
  * @property array<array-key, mixed>|null $middleware
@@ -44,9 +40,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null         $updater
  * @property ProfileContract|null         $deleter
  * @property mixed                        $translations
- *
- * <<<<<<< Updated upstream
- * <<<<<<< HEAD
  *
  * @method static Builder<static>|Page                                  newModelQuery()
  * @method static Builder<static>|Page                                  newQuery()
@@ -352,8 +345,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property array<array-key, mixed>|null $blocks
  *
  * @method static Builder<static>|Page                        whereBlocks($value)
- *                                                                                                                                                           <<<<<<< HEAD
- *                                                                                                                                                           =======
  * @method        array<int, array<string, mixed>>            getSushiRows()
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
@@ -459,13 +450,13 @@ class Page extends BaseModelLang
     {
         $page = self::findUniqueBySlug($slug);
 
-        if (! $page instanceof Page) {
+        if (! $page instanceof self) {
             return [];
         }
 
         $middleware = $page->middleware;
 
-        return is_array($middleware) ? $middleware : [];
+        return \is_array($middleware) ? $middleware : [];
     }
 
     /**

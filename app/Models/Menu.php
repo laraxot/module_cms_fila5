@@ -17,8 +17,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\Menu.
  *
- * <<<<<<< HEAD
- *
  * @property string                 $id
  * @property string|null            $title
  * @property array<int, mixed>|null $items
@@ -165,10 +163,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property ProfileContract|null $deleter
  *
  * @method static MenuFactory                      factory($count = null, $state = [])
- *                                                                                     <<<<<<< HEAD
- *                                                                                     =======
  * @method        array<int, array<string, mixed>> getSushiRows()
- *                                                                                     >>>>>>> 5580e39 (.)
  *
  * @mixin \Eloquent
  */
