@@ -70,17 +70,17 @@ final class ResolvePageAction
             'events' => 'Modules\\Meetup\\Models\\Event',
         ];
 
-        if (isset($knownMappings[$container0])) {
+if (isset($knownMappings[$container0])) {
             $modelClass = $knownMappings[$container0];
 
-            return // @var mixed queryModel($modelClass, $slug0;
+            return $this->queryModel($modelClass, $slug0);
         }
 
         $modelMap = config('xra.container0_model_map', []);
         if (is_array($modelMap) && isset($modelMap[$container0])) {
             $modelClass = $modelMap[$container0];
             if (is_string($modelClass)) {
-                return // @var mixed queryModel($modelClass, $slug0;
+                return $this->queryModel($modelClass, $slug0);
             }
         }
 
@@ -91,7 +91,7 @@ final class ResolvePageAction
         ];
 
         foreach ($possibleModels as $modelClass) {
-            $item = // @var mixed queryModel($modelClass, $slug0;
+            $item = $this->queryModel($modelClass, $slug0);
             if (null !== $item) {
                 return $item;
             }

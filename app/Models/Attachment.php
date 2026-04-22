@@ -56,10 +56,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property ProfileContract|null $deleter
  *
  * @method static AttachmentFactory                factory($count = null, $state = [])
- *                                                                                     <<<<<<< HEAD
- *                                                                                     =======
  * @method        array<int, array<string, mixed>> getSushiRows()
- *                                                                                     >>>>>>> 5580e39 (.)
  *
  * @mixin \Eloquent
  */
@@ -161,7 +158,7 @@ class Attachment extends BaseModelLang implements HasMedia
     public function asset(): string
     {
         // PHPStan L10: Check attachment is array before array_values
-        if (! is_array($this->attachment)) {
+        if (! \is_array($this->attachment)) {
             return '';
         }
 
@@ -176,7 +173,7 @@ class Attachment extends BaseModelLang implements HasMedia
         }
 
         $file = $values[0];
-        if (! is_string($file)) {
+        if (! \is_string($file)) {
             return '';
         }
 
@@ -187,7 +184,7 @@ class Attachment extends BaseModelLang implements HasMedia
 
         $url = $storage->url($file);
 
-        return is_string($url) ? $url : '';
+        return \is_string($url) ? $url : '';
     }
 
     /**

@@ -20,14 +20,14 @@ class Show extends Component
 
     public function mount(): void
     {
-        // @var mixed loadPageContent(;
+        $this->loadPageContent();
     }
 
     public function render(): View
     {
         return view('cms::livewire.page.show', [
-            'pageContent' => // @var mixed pageContent,
-            'theme' => // @var mixed theme ?? ThemeService::getTheme(
+            'pageContent' => $this->pageContent,
+            'theme' => $this->theme ?? ThemeService::getTheme(),
         ]);
     }
 
@@ -78,7 +78,7 @@ class Show extends Component
                 'layout' => 'default',
             ];
         } catch (\Exception $e) {
-            if (// @var mixed debug
+            if ($this->debug) {
                 return [
                     'error' => $e->getMessage(),
                     'file' => $e->getFile(),

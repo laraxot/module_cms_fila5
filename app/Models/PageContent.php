@@ -46,10 +46,7 @@ use Spatie\Translatable\HasTranslations;
  * @property ProfileContract|null $deleter
  *
  * @method static PageContentFactory               factory($count = null, $state = [])
- *                                                                                     <<<<<<< HEAD
- *                                                                                     =======
  * @method        array<int, array<string, mixed>> getSushiRows()
- *                                                                                     >>>>>>> 5580e39 (.)
  *
  * @mixin \Eloquent
  */
