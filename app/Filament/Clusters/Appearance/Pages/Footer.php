@@ -30,7 +30,13 @@ class Footer extends XotBasePage
     /**
      * Dati dominio footer (tenant config), separati dallo stato form Livewire.
      */
+<<<<<<< Updated upstream
     public FooterData $footerData;
+=======
+    public ?FooterData $footerData = null;
+
+    public array $data = [];
+>>>>>>> Stashed changes
 
     protected string $view = 'cms::filament.clusters.appearance.pages.headernav';
 

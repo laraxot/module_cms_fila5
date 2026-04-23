@@ -34,7 +34,13 @@ class Headernav extends XotBasePage implements HasForms
     /**
      * @var HeadernavData the form data
      */
+<<<<<<< Updated upstream
     public HeadernavData $headernavData;
+=======
+    public ?HeadernavData $headernavData = null;
+
+    public array $data = [];
+>>>>>>> Stashed changes
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-document-text';
 
