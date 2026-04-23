@@ -22,6 +22,16 @@ use Webmozart\Assert\Assert;
  */
 class Breadcrumb extends XotBasePage
 {
+<<<<<<< Updated upstream
+=======
+    /**
+     * Data for the form state.
+     *
+     * @var array<string, mixed>
+     */
+    public array $data = [];
+
+>>>>>>> Stashed changes
     protected string $view = 'cms::filament.clusters.appearance.pages.headernav';
 
     protected static ?string $cluster = Appearance::class;
