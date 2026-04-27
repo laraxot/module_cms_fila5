@@ -5,6 +5,12 @@
 - [forbidden-folders-rule](../../../../docs/wiki/concepts/forbidden-folders.md): Strict structural constraints.
 - [llm-wiki-standard](../../../../docs/wiki/concepts/karpathy-wiki.md): Repository mapping and knowledge lifecycle.
 
+## Lessons Learned
+
+| Pagina | Tipo | Argomento |
+|--------|------|-----------|
+| [composer-lessons-learned](./concepts/composer-lessons-learned.md) | concept | Blocks constructor syntax error, View Composer criticality, firstOrCreate guards |
+
 ## Sacred Hierarchy
 
 - [concepts/](./concepts/): Architectural patterns and methodologies.
@@ -21,3 +27,4 @@
 | Page | Type | Source | Updated |
 |------|------|--------|---------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
+| [composer-lessons-learned](./concepts/composer-lessons-learned.md) | Concept | ThemeComposer syntax error fix + view composer criticality | 2026-04-23 |

@@ -73,7 +73,7 @@ class ThemeComposer
         if (! is_array($blocks)) {
             $blocks = [];
         }
-        $blocksComponent = new Blocks()
+        $blocksComponent = new Blocks(
             view: 'ui::components.render.blocks.v1',
             blocks: $blocks,
             model: $page,
@@ -92,7 +92,7 @@ class ThemeComposer
             $blocks = [];
         }
 
-        $blocksComponent = new Blocks()
+        $blocksComponent = new Blocks(
             view: 'ui::components.render.blocks.v1',
             blocks: $blocks,
             model: $page,
@@ -111,7 +111,7 @@ class ThemeComposer
             return view('ui::empty');
         }
 
-        $blocksComponent = new Blocks()
+        $blocksComponent = new Blocks(
             view: 'ui::components.render.blocks.v1',
             blocks: $blocks,
             model: $page,
