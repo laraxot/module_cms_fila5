@@ -11,6 +11,12 @@
 |--------|------|-----------|
 | [composer-lessons-learned](./concepts/composer-lessons-learned.md) | concept | Blocks constructor syntax error, View Composer criticality, firstOrCreate guards |
 
+## Lessons Learned
+
+| Pagina | Tipo | Argomento |
+|--------|------|-----------|
+| [composer-lessons-learned](./concepts/composer-lessons-learned.md) | concept | Blocks constructor syntax error, View Composer criticality, firstOrCreate guards |
+
 ## Sacred Hierarchy
 
 - [concepts/](./concepts/): Architectural patterns and methodologies.
