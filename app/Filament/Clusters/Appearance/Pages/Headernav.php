@@ -37,11 +37,15 @@ class Headernav extends XotBasePage implements HasForms
     public ?HeadernavData $headernavData = null;
 
     /**
+<<<<<<< Updated upstream
      * <<<<<<< Updated upstream
      * =======
      * Data for the form state.
      *
      * >>>>>>> Stashed changes
+=======
+     * Stato del form Livewire usato da `statePath('data')`.
+>>>>>>> Stashed changes
      *
      * @var array<string, mixed>
      */
