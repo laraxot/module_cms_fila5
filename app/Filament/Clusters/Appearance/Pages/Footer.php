@@ -33,15 +33,15 @@ class Footer extends XotBasePage
     public ?FooterData $footerData = null;
 
     /**
-<<<<<<< Updated upstream
+     * <<<<<<< Updated upstream
      * <<<<<<< Updated upstream
      * =======
      * Data for the form state.
      *
      * >>>>>>> Stashed changes
-=======
+     * =======
      * Stato del form Livewire usato da `statePath('data')`.
->>>>>>> Stashed changes
+     * >>>>>>> Stashed changes
      *
      * @var array<string, mixed>
      */
