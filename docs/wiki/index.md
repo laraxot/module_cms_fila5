@@ -3,7 +3,7 @@
 ## Karpathy LLM Wiki Standard
 
 - [forbidden-folders-rule](../../../../docs/wiki/concepts/forbidden-folders.md): Strict structural constraints.
-- [llm-wiki-standard](../../../../docs/wiki/concepts/karpathy-wiki.md): Repository mapping and knowledge lifecycle.
+- [llm-wiki-standard](../../../../docs/project/karpathy-llm-wiki-adoption.md): Repository mapping and knowledge lifecycle.
 
 ## Lessons Learned
 
