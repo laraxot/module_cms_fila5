@@ -188,7 +188,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Collection<int, static>                               get($columns = ['*'])
  * @method static static|null                                           first($columns = ['*'])
  * @method static static|null                                           find($id, $columns = ['*'])
- *                                                                                                                                                                     =======
  * @method static Builder<static>|Page                                  newModelQuery()
  * @method static Builder<static>|Page                                  newQuery()
  * @method static Builder<static>|Page                                  query()
@@ -336,7 +335,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static \Illuminate\Database\Eloquent\Collection<int, static> get($columns = ['*'])
  * @method static static|null                                           first($columns = ['*'])
  * @method static static|null                                           find($id, $columns = ['*'])
- *                                                                                                                                                                     >>>>>>> 5580e39 (.)
  *
  * @property ProfileContract|null $deleter
  *
@@ -348,8 +346,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method        array<int, array<string, mixed>>            getSushiRows()
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
- *                                                                                                                                                           >>>>>>> 5580e39 (.)
- *                                                                                                                                                           =======
  * @method static PageFactory                                 factory($count = null, $state = [])
  * @method static Builder<static>|Page                        newModelQuery()
  * @method static Builder<static>|Page                        newQuery()
@@ -379,7 +375,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
  * @method        array<int, array<string, mixed>>            getSushiRows()
- *                                                                                                                                                           >>>>>>> Stashed changes
  *
  * @mixin \Eloquent
  */
