@@ -7,9 +7,10 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-use Spatie\LaravelData\DataCollection;
 
 use function Pest\Laravel\get;
+
+use Spatie\LaravelData\DataCollection;
 
 uses(TestCase::class);
 
