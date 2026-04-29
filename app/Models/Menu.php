@@ -33,7 +33,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int                    $depth
  * @property string                 $path
  * @property Collection<int, Menu>  $ancestors      The model's recursive parents.
- *                                                  =======
  * @property string                 $id
  * @property string|null            $title
  * @property int|null               $parent_id
@@ -49,7 +48,6 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property int                    $depth
  * @property string                 $path
  * @property Collection<int, Menu>  $ancestors      The model's recursive parents.
- *                                                  >>>>>>> 5580e39 (.)
  * @property-read int|null $ancestors_count
  * @property-read Collection<int, Menu> $ancestorsAndSelf The model's recursive parents and itself.
  * @property-read int|null $ancestors_and_self_count

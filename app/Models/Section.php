@@ -19,7 +19,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  *
  * @property string                       $id
- *                                                      >>>>>>> 5580e39 (.)
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug
  * @property array<array-key, mixed>|null $blocks

@@ -3,15 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\BaseModelLang;
-use Modules\Cms\Models\BaseModelLang;
-use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
-use Modules\Cms\Models\Traits\HasBlocks;
-use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 
-use function Safe\class_uses;
 use function Safe\class_uses;
 
 describe('Section Business Logic', function (): void {
