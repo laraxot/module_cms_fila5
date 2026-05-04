@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+use Livewire\Wireable;
 use Modules\Cms\Datas\BlockData;
+use Spatie\LaravelData\Concerns\WireableData;
+use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
 test('BlockData can be instantiated with type and data', function (): void {
@@ -17,19 +20,19 @@ test('BlockData can be instantiated with type and data', function (): void {
 test('BlockData uses WireableData trait', function (): void {
     $traits = class_uses_recursive(BlockData::class);
 
-    expect(array_values($traits))->toContain(Spatie\LaravelData\Concerns\WireableData::class);
+    expect(array_values($traits))->toContain(WireableData::class);
 });
 
 test('BlockData extends Spatie Data', function (): void {
     $blockData = new BlockData('text', ['view' => 'ui::empty']);
 
-    expect($blockData)->toBeInstanceOf(Spatie\LaravelData\Data::class);
+    expect($blockData)->toBeInstanceOf(Data::class);
 });
 
 test('BlockData implements Wireable interface', function (): void {
     $blockData = new BlockData('card', ['view' => 'ui::empty']);
 
-    expect($blockData)->toBeInstanceOf(Livewire\Wireable::class);
+    expect($blockData)->toBeInstanceOf(Wireable::class);
 });
 
 test('BlockData collection method returns DataCollection', function (): void {

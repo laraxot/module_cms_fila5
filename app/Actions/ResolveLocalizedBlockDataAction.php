@@ -11,8 +11,7 @@ use function Safe\preg_match;
 final class ResolveLocalizedBlockDataAction
 {
     /**
-     * @param array<string, mixed> $data
-     *
+     * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
     public function execute(array $data): array
@@ -63,14 +62,14 @@ final class ResolveLocalizedBlockDataAction
 
     private function localizeUrl(string $url): string
     {
-        if ('' === $url || ! str_starts_with($url, '/')) {
+        if ($url === '' || ! str_starts_with($url, '/')) {
             return $url;
         }
 
         if (
             str_starts_with($url, '//')
             || str_starts_with($url, '/#')
-            || 1 === preg_match('#^/(it|en|es|fr|de|pt|zh|ja|ar|hi|ru|id)(/|$)#', $url)
+            || preg_match('#^/(it|en|es|fr|de|pt|zh|ja|ar|hi|ru|id)(/|$)#', $url) === 1
         ) {
             return $url;
         }

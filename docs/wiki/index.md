@@ -23,8 +23,9 @@
 - [_templates/](./_templates/): Standard templates.
 
 ## Compiled Pages
-
+ 
 | Page | Type | Source | Updated |
 |------|------|--------|---------|
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
 | [composer-lessons-learned](./concepts/composer-lessons-learned.md) | Concept | ThemeComposer syntax error fix + view composer criticality | 2026-04-23 |
+| [header-section-component](./concepts/header-section-component.md) | Concept | **NUOVO**: Section.php component architecture, Blade SSoT, JSON config, Filament Builder | 2026-05-04 |

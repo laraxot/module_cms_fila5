@@ -32,7 +32,22 @@ Il sito FixCity è un CMS headless basato su **blocchi JSON**. Ogni sezione del 
 
 ---
 
+## Due convivenze di schema (importante)
+
+Nel repository possono coesistere:
+
+1. **`blocks`** (pattern HasBlocks / Sushi): array per locale `blocks.it[]` con `type`, `data`, `view` — ideale per **Filament Builder** e editing strutturato.
+2. **`sections`** (chiavi dedicate): es. `sections.primary_nav.items` con `nav_group`, `order`, `active_patterns` — usato oggi da **Sixteen `v1.blade.php`** con lettura diretta del file JSON.
+
+**Schema canonica attuale:** `sections.primary_nav.items` (letto direttamente da `v1.blade.php` via `TenantService::filePath()`). La catena `Section → SushiToJsons → HasBlocks → BlockData` è usata per ALTRI blocchi header (es. `header-slim`), NON per la navigazione.
+
+**Filosofia:** una sola fonte di verità per il Comune; la migrazione al pattern `blocks` è desiderabile a lungo termine ma non prioritaria finché la gestione admin via `HeaderNavBlock` (Filament) scrive correttamente nel formato `sections`.
+
+---
+
 ## Struttura del JSON `header.json`
+
+### Esempio storico `blocks` (target Filament Builder)
 
 ```json
 {
@@ -142,18 +157,27 @@ TextInput: topics_url
 
 ---
 
-## Come `v1.blade.php` Accede ai Blocchi
+## Come `v1.blade.php` Accede alla Nav
 
-```blade
-@php
-    // I blocchi hanno chiave numerica (0, 1, ...) - non usare l'id del blocco come chiave
-    $headerNavBlock = collect($blocks ?? [])
-        ->first(fn($b) => $b->type === 'header-nav-wrapper');
-    $navItems = $headerNavBlock?->data['items'] ?? [];
-    $navSecondaryItems = $headerNavBlock?->data['secondary_items'] ?? [];
-    $topicsUrl = $headerNavBlock?->data['topics_url'] ?? '/it/argomenti';
-@endphp
+`v1.blade.php` legge il JSON **direttamente** (non tramite la catena `$blocks`):
+
+```php
+$headerNavJsonPath = TenantService::filePath('database/content/sections/header.json');
+$headerNavConfig   = File::json($headerNavJsonPath, []);
+$headerNavAllItems = $headerNavConfig['sections']['primary_nav']['items'] ?? [];
+
+$headerNavItems     = collect($headerNavAllItems)
+    ->filter(fn($i) => ($i['nav_group'] ?? 'primary') === 'primary' && ($i['enabled'] ?? true))
+    ->sortBy('order')->values()->all();
+
+$headerNavSecondary = collect($headerNavAllItems)
+    ->filter(fn($i) => ($i['nav_group'] ?? 'primary') === 'secondary' && ($i['enabled'] ?? true))
+    ->sortBy('order')->values()->all();
+
+$headerNavTopicsUrl = $headerNavConfig['sections']['primary_nav']['topics_url'] ?? '/it/argomenti';
 ```
+
+**BUG NOTO (Story 8-107):** Nel codice attuale, il PHP block definisce `$headerNavItems`/`$headerNavSecondary`, ma il template usa `$headerNavPrimaryItems`/`$headerNavSecondaryItems` → variabili undefined → nav non renderizzata.
 
 ---
 
@@ -177,7 +201,7 @@ TextInput: topics_url
 1. **MAI hardcodare link nav in Blade** — vanno nel JSON
 2. **MAI usare l'id del blocco come chiave array** — usare `collect()->first(fn($b) => $b->type === '...')`
 3. **`request()->is()` senza slash iniziale** — es. `it/servizi*` non `/it/servizi*`
-4. **`active_patterns` è un array di `{pattern: string}`** (Repeater annidato), non array di stringhe
+4. **`active_patterns`** nel JSON corrente è array di stringhe `["*servizi*"]`; dopo editing da admin Filament diventa array di `{pattern: string}` — il Blade deve gestire entrambi i formati
 5. **Sushi cache:** dopo modifica JSON manuale fare `php artisan optimize:clear`
 
 ---
