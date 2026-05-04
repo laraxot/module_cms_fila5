@@ -9,13 +9,13 @@ use Modules\Cms\Http\Volt\Password\ResetComponent;
 
 describe('Password ResetComponent', function (): void {
     test('reset component extends volt component', function (): void {
-        $component = new ResetComponent;
+        $component = new ResetComponent();
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
 
     test('reset component has expected public properties', function (): void {
-        $component = new ResetComponent;
+        $component = new ResetComponent();
 
         expect(property_exists($component, 'email'))->toBeTrue()
             ->and(property_exists($component, 'emailSentMessage'))->toBeTrue()
