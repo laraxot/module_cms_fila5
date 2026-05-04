@@ -7,9 +7,9 @@ use Modules\Cms\Tests\UnitTestCase;
 uses(UnitTestCase::class);
 
 it('header.json contiene voci di navigazione primarie', function (): void {
-    $path = \Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
+    $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
     expect(file_exists($path))->toBeTrue();
-    $config = \Illuminate\Support\Facades\File::json($path);
+    $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
     expect($items)->toBeArray()->not->toBeEmpty();
     // Verifica che esistano link primari (nav_group=primary)
@@ -18,8 +18,8 @@ it('header.json contiene voci di navigazione primarie', function (): void {
 });
 
 it('header.json ha la struttura corretta con active_patterns', function (): void {
-    $path = \Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
-    $config = \Illuminate\Support\Facades\File::json($path);
+    $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
+    $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
     foreach ($items as $item) {
         expect($item)->toHaveKey('label');
@@ -31,12 +31,12 @@ it('header.json ha la struttura corretta con active_patterns', function (): void
 });
 
 it('header.json contiene link specifici richiesti', function (): void {
-    $path = \Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
-    $config = \Illuminate\Support\Facades\File::json($path);
+    $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
+    $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
-    
+
     $slugs = array_map(fn ($i): string => $i['slug'] ?? '', $items);
-    
+
     // Verifica presenza link principali
     expect($slugs)->toContain('amministrazione');
     expect($slugs)->toContain('novita');
@@ -45,13 +45,13 @@ it('header.json contiene link specifici richiesti', function (): void {
 });
 
 it('header.json contiene link secondari richiesti', function (): void {
-    $path = \Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
-    $config = \Illuminate\Support\Facades\File::json($path);
+    $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
+    $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
-    
+
     $secondary = array_filter($items, fn ($i): bool => ($i['nav_group'] ?? 'primary') === 'secondary');
     $slugs = array_map(fn ($i): string => $i['slug'] ?? '', $secondary);
-    
+
     // Verifica presenza link secondari
     expect($slugs)->toContain('iscrizioni');
     expect($slugs)->toContain('estate-in-citta');
@@ -59,8 +59,8 @@ it('header.json contiene link secondari richiesti', function (): void {
 });
 
 it('header.json ha topics_url configurato', function (): void {
-    $path = \Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
-    $config = \Illuminate\Support\Facades\File::json($path);
+    $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
+    $config = Illuminate\Support\Facades\File::json($path);
     $topicsUrl = $config['sections']['primary_nav']['topics_url'] ?? null;
     expect($topicsUrl)->not->toBeNull();
     expect($topicsUrl)->toBeString();

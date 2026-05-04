@@ -8,13 +8,13 @@ use Modules\Cms\Http\Volt\CounterComponent;
 
 describe('CounterComponent', function (): void {
     test('counter component extends volt component', function (): void {
-        $component = new CounterComponent;
+        $component = new CounterComponent();
 
         expect($component)->toBeInstanceOf(Livewire\Volt\Component::class);
     });
 
     test('counter component has count property', function (): void {
-        $component = new CounterComponent;
+        $component = new CounterComponent();
 
         expect(property_exists($component, 'count'))->toBeTrue();
     });
@@ -34,7 +34,7 @@ describe('CounterComponent', function (): void {
     });
 
     test('counter component count starts at zero', function (): void {
-        $component = new CounterComponent;
+        $component = new CounterComponent();
 
         expect($component->count)->toBe(0);
     });
