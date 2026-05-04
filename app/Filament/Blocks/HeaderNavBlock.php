@@ -37,7 +37,7 @@ final class HeaderNavBlock extends XotBaseBlock
             Select::make('nav_group')
                 ->translateLabel()
                 ->options([
-                    'primary'   => 'Primaria',
+                    'primary' => 'Primaria',
                     'secondary' => 'Secondaria',
                 ])
                 ->default('primary')
@@ -45,7 +45,7 @@ final class HeaderNavBlock extends XotBaseBlock
             Select::make('type')
                 ->translateLabel()
                 ->options([
-                    'link'     => 'Link',
+                    'link' => 'Link',
                     'dropdown' => 'Dropdown',
                 ])
                 ->default('link')
