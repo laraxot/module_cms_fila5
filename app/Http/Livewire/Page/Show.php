@@ -13,9 +13,13 @@ use Modules\Xot\Services\ThemeService;
 class Show extends Component
 {
     public string $slug;
+
     public bool $cache = true;
+
     public ?string $theme = null;
+
     public bool $debug = false;
+
     public array $pageContent = [];
 
     public function mount(): void

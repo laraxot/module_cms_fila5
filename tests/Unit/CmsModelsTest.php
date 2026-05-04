@@ -4,8 +4,16 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit;
 
+use Modules\Cms\Models\Block;
+use Modules\Cms\Models\Category;
+use Modules\Cms\Models\CustomField;
+use Modules\Cms\Models\Media;
+use Modules\Cms\Models\Menu;
 use Modules\Cms\Models\Page;
+use Modules\Cms\Models\PageTranslation;
 use Modules\Cms\Models\Post;
+use Modules\Cms\Models\Seo;
+use Modules\Cms\Models\Tag;
 
 it('can create a cms page', function () {
     $page = Page::factory()->create([
@@ -26,7 +34,7 @@ it('can create a cms page with seo metadata', function () {
         'slug' => 'seo',
     ]);
 
-    expect($page->seo)->toBeInstanceOf(\Modules\Cms\Models\Seo::class);
+    expect($page->seo)->toBeInstanceOf(Seo::class);
     expect($page->seo->meta_title)->toBe('SEO Page');
 });
 
@@ -41,7 +49,7 @@ it('can create a cms page with menu', function () {
         'slug' => 'main-menu',
     ]);
 
-    expect($menu)->toBeInstanceOf(\Modules\Cms\Models\Menu::class);
+    expect($menu)->toBeInstanceOf(Menu::class);
     expect($menu->name)->toBe('Main Menu');
 });
 
@@ -57,7 +65,7 @@ it('can create a cms page with blocks', function () {
         'order' => 1,
     ]);
 
-    expect($block)->toBeInstanceOf(\Modules\Cms\Models\Block::class);
+    expect($block)->toBeInstanceOf(Block::class);
     expect($block->type)->toBe('text');
     expect($block->order)->toBe(1);
 });
@@ -80,7 +88,7 @@ it('can create a cms post with featured image', function () {
         'slug' => 'featured',
     ]);
 
-    expect($post->featuredImage)->toBeInstanceOf(\Modules\Cms\Models\Media::class);
+    expect($post->featuredImage)->toBeInstanceOf(Media::class);
 });
 
 it('can create a cms post category', function () {
@@ -94,7 +102,7 @@ it('can create a cms post category', function () {
         'slug' => 'technology',
     ]);
 
-    expect($category)->toBeInstanceOf(\Modules\Cms\Models\Category::class);
+    expect($category)->toBeInstanceOf(Category::class);
     expect($category->name)->toBe('Technology');
 });
 
@@ -109,7 +117,7 @@ it('can create a cms post tag', function () {
         'slug' => 'laravel',
     ]);
 
-    expect($tag)->toBeInstanceOf(\Modules\Cms\Models\Tag::class);
+    expect($tag)->toBeInstanceOf(Tag::class);
     expect($tag->name)->toBe('laravel');
 });
 
@@ -124,7 +132,7 @@ it('can create a cms page with custom fields', function () {
         'value' => '#ffffff',
     ]);
 
-    expect($customField)->toBeInstanceOf(\Modules\Cms\Models\CustomField::class);
+    expect($customField)->toBeInstanceOf(CustomField::class);
     expect($customField->key)->toBe('background_color');
     expect($customField->value)->toBe('#ffffff');
 });
@@ -141,6 +149,6 @@ it('can create a cms page with translations', function () {
         'slug' => 'translated-en',
     ]);
 
-    expect($translation)->toBeInstanceOf(\Modules\Cms\Models\PageTranslation::class);
+    expect($translation)->toBeInstanceOf(PageTranslation::class);
     expect($translation->locale)->toBe('en');
 });

@@ -8,6 +8,7 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Component;
 use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 /**
@@ -20,7 +21,7 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 final class HeaderNavBlock extends XotBaseBlock
 {
     /**
-     * @return array<\Filament\Schemas\Components\Component>
+     * @return array<Component>
      */
     #[\Override]
     public static function getBlockSchema(): array
@@ -90,6 +91,6 @@ final class HeaderNavBlock extends XotBaseBlock
 
     public static function getBlockLabel(): string
     {
-        return trans_string('cms::blocks.header_nav.label') ?? 'Voce Navigazione Header';
+        return trans_string('cms::blocks.header_nav.label');
     }
 }

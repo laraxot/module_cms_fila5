@@ -9,7 +9,7 @@ use Modules\Cms\Models\Attachment;
 
 describe('AttachmentResource', function (): void {
     test('attachment resource has correct model', function (): void {
-        $resource = new AttachmentResource();
+        $resource = new AttachmentResource;
 
         expect($resource::getModel())->toBe(Attachment::class);
     });
