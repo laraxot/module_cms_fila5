@@ -66,7 +66,7 @@ trait HasBlocks
             $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug, $active);
         }
 
-        /* @var array<string, BlockData> $blockDataInstances */
+        /** @var array<string, BlockData> $blockDataInstances */
 
         // Return array directly to ensure BlockData constructor is called for dynamic query resolution
         return $blockDataInstances;

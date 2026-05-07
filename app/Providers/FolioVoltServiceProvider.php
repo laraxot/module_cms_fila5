@@ -17,9 +17,7 @@ use Modules\Cms\Http\Middleware\SetFolioLocale;
 use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
-
 use function Safe\realpath;
-
 use Webmozart\Assert\Assert;
 
 class FolioVoltServiceProvider extends ServiceProvider
