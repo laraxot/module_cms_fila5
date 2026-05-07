@@ -7,21 +7,21 @@ namespace Modules\Cms\Tests\Unit\Filament\Resources;
 use Modules\Cms\Filament\Resources\PageResource;
 use Modules\Cms\Models\Page;
 
-describe('PageResource', function(): void {
-    test('page resource has correct model', function(): void {
+describe('PageResource', function (): void {
+    test('page resource has correct model', function (): void {
         $resource = new PageResource();
 
         expect($resource::getModel())->toBe(Page::class);
     });
 
-    test('page resource has form schema', function(): void {
+    test('page resource has form schema', function (): void {
         $schema = PageResource::getFormSchema();
 
         expect($schema)->toBeArray();
         expect(count($schema))->toBeGreaterThan(0);
     });
 
-    test('page resource has form fields', function(): void {
+    test('page resource has form fields', function (): void {
         $schema = PageResource::getFormSchema();
 
         // Check that form has required components (check array keys)
@@ -30,7 +30,7 @@ describe('PageResource', function(): void {
             ->toContain('content');
     });
 
-    test('page resource extends LangBaseResource', function(): void {
+    test('page resource extends LangBaseResource', function (): void {
         expect(is_subclass_of(PageResource::class, Modules\Lang\Filament\Resources\LangBaseResource::class))->toBeTrue();
     });
 });

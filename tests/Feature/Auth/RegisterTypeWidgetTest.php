@@ -13,7 +13,7 @@ use Modules\Xot\Tests\TestCase;
 uses(TestCase::class);
 
 // Ensure XotData is mocked for every test
-beforeEach(static function(): void {
+beforeEach(static function (): void {
     // ✅ Utilizzo funzione centralizzata dal TestCase
     static::mockXotData();
 });

@@ -14,13 +14,13 @@ use Spatie\LaravelData\DataCollection;
 
 uses(TestCase::class);
 
-test('blocks discovery returns a data collection', function(): void {
+test('blocks discovery returns a data collection', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 
     expect($allBlocks)->toBeInstanceOf(DataCollection::class);
 });
 
-test('blocks component class exists and can be instantiated', function(): void {
+test('blocks component class exists and can be instantiated', function (): void {
     expect(class_exists(Blocks::class))->toBeTrue();
 
     $component = new Blocks('ui::components.render.blocks', []);
@@ -30,7 +30,7 @@ test('blocks component class exists and can be instantiated', function(): void {
         ->and($component->view)->toBe('ui::components.render.blocks');
 });
 
-test('discovered blocks expose the expected metadata keys', function(): void {
+test('discovered blocks expose the expected metadata keys', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 
     $allBlocks->each(function (mixed $block): void {
@@ -45,7 +45,7 @@ test('discovered blocks expose the expected metadata keys', function(): void {
     });
 });
 
-test('homepage request is reachable when route is available', function(): void {
+test('homepage request is reachable when route is available', function (): void {
     $response = get('/');
 
     expect($response->status())->toBeInt();

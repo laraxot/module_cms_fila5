@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/learn acceptable', function(): void {
+it('GET /it/learn acceptable', function (): void {
     $res = $this->get('/it/learn');
 
     $status = (int) $res->getStatusCode();

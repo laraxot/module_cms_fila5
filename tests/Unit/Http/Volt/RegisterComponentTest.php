@@ -7,14 +7,14 @@ namespace Modules\Cms\Tests\Unit\Http\Volt;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\RegisterComponent;
 
-describe('RegisterComponent', function(): void {
-    test('register component extends volt component', function(): void {
+describe('RegisterComponent', function (): void {
+    test('register component extends volt component', function (): void {
         $component = new RegisterComponent();
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
 
-    test('register component has expected public properties defaults', function(): void {
+    test('register component has expected public properties defaults', function (): void {
         $component = new RegisterComponent();
 
         expect(property_exists($component, 'name'))->toBeTrue()
@@ -27,11 +27,11 @@ describe('RegisterComponent', function(): void {
             ->and($component->password_confirmation)->toBe('');
     });
 
-    test('register component has register method', function(): void {
+    test('register component has register method', function (): void {
         expect(method_exists(RegisterComponent::class, 'register'))->toBeTrue();
     });
 
-    test('register method returns redirect response', function(): void {
+    test('register method returns redirect response', function (): void {
         $reflection = new \ReflectionClass(RegisterComponent::class);
         $method = $reflection->getMethod('register');
         $returnType = $method->getReturnType();

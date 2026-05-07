@@ -9,7 +9,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('can work with pages using SushiToJsons system', function(): void {
+it('can work with pages using SushiToJsons system', function (): void {
     // Get existing pages from JSON files
     $pages = Page::all();
 
@@ -31,7 +31,7 @@ it('can work with pages using SushiToJsons system', function(): void {
     expect($retrievedPage->slug)->toBe('test-page');
 });
 
-it('can work with page content using SushiToJsons system', function(): void {
+it('can work with page content using SushiToJsons system', function (): void {
     // Create a page content
     $newContent = PageContent::create([
         'name' => ['it' => 'Test Content', 'en' => 'Test Content'],
@@ -50,7 +50,7 @@ it('can work with page content using SushiToJsons system', function(): void {
     expect($retrievedContent->slug)->toBe('test-content');
 });
 
-it('can work with sections using SushiToJsons system', function(): void {
+it('can work with sections using SushiToJsons system', function (): void {
     // Create a section
     $newSection = Section::create([
         'name' => ['it' => 'Test Section', 'en' => 'Test Section'],
@@ -69,7 +69,7 @@ it('can work with sections using SushiToJsons system', function(): void {
     expect($retrievedSection->slug)->toBe('test-section');
 });
 
-it('can update page content', function(): void {
+it('can update page content', function (): void {
     $page = Page::create([
         'title' => ['it' => 'Original Title', 'en' => 'Original Title'],
         'slug' => 'original-title',
@@ -91,7 +91,7 @@ it('can update page content', function(): void {
     }
 });
 
-it('can delete a page', function(): void {
+it('can delete a page', function (): void {
     $page = Page::create([
         'title' => ['it' => 'Page to Delete', 'en' => 'Page to Delete'],
         'slug' => 'page-to-delete',
@@ -107,7 +107,7 @@ it('can delete a page', function(): void {
     expect($deletedPage)->toBeNull();
 });
 
-it('can handle page relationships and data structure', function(): void {
+it('can handle page relationships and data structure', function (): void {
     // Create a page with content blocks
     $page = Page::create([
         'title' => ['it' => 'Page with Blocks', 'en' => 'Page with Blocks'],
@@ -132,7 +132,7 @@ it('can handle page relationships and data structure', function(): void {
     expect($page->content_blocks[1]['type'])->toBe('text');
 });
 
-it('can manage page description and content', function(): void {
+it('can manage page description and content', function (): void {
     $page = Page::create([
         'title' => ['it' => 'Page with Content', 'en' => 'Page with Content'],
         'slug' => 'page-with-content',
@@ -144,7 +144,7 @@ it('can manage page description and content', function(): void {
     expect($page->content)->toBe('This is the main content of the page');
 });
 
-it('can handle multilingual content', function(): void {
+it('can handle multilingual content', function (): void {
     $page = Page::create([
         'title' => [
             'it' => 'Titolo Italiano',
@@ -179,7 +179,7 @@ it('can handle multilingual content', function(): void {
     expect($page->content_blocks[0]['content']['de'])->toBe('Inhalt auf Deutsch');
 });
 
-it('can manage page sections', function(): void {
+it('can manage page sections', function (): void {
     $page = Page::create([
         'title' => ['it' => 'Page with Sections', 'en' => 'Page with Sections'],
         'slug' => 'page-with-sections',
@@ -206,7 +206,7 @@ it('can manage page sections', function(): void {
     expect($page->content_blocks[1]['title']['en'] ?? $page->content_blocks[1]['title'][1] ?? $page->content_blocks[1]['title'])->toBe('Section 2');
 });
 
-it('can handle page templates and layouts', function(): void {
+it('can handle page templates and layouts', function (): void {
     $page = Page::create([
         'title' => ['it' => 'Page with Template', 'en' => 'Page with Template'],
         'slug' => 'page-with-template',
@@ -241,7 +241,7 @@ it('can handle page templates and layouts', function(): void {
     expect($page->footer_blocks)->toHaveCount(1);
 });
 
-it('can handle page permissions and access control', function(): void {
+it('can handle page permissions and access control', function (): void {
     $page = Page::create([
         'title' => ['it' => 'Page with Permissions', 'en' => 'Page with Permissions'],
         'slug' => 'page-with-permissions',
@@ -253,7 +253,7 @@ it('can handle page permissions and access control', function(): void {
     expect($page->middleware)->toContain('verified');
 });
 
-it('can manage page timestamps', function(): void {
+it('can manage page timestamps', function (): void {
     $now = now();
 
     $page = Page::create([

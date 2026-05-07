@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/artisan-commands-manager returns acceptable status', function(): void {
+it('GET /it/artisan-commands-manager returns acceptable status', function (): void {
     $res = $this->get('/it/artisan-commands-manager');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

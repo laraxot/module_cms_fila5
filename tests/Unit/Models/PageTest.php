@@ -6,17 +6,17 @@ use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 
-test('page model can be instantiated', function(): void {
+test('page model can be instantiated', function (): void {
     $page = new Page();
     expect($page)->toBeInstanceOf(Page::class);
 });
 
-test('page extends BaseModelLang', function(): void {
+test('page extends BaseModelLang', function (): void {
     $page = new Page();
     expect($page)->toBeInstanceOf(BaseModelLang::class);
 });
 
-test('page has expected fillable fields', function(): void {
+test('page has expected fillable fields', function (): void {
     $page = new Page();
     $fillable = $page->getFillable();
 
@@ -31,7 +31,7 @@ test('page has expected fillable fields', function(): void {
         ->and($fillable)->toContain('footer_blocks');
 });
 
-test('page has expected casts', function(): void {
+test('page has expected casts', function (): void {
     $page = new Page();
     $casts = $page->getCasts();
 
@@ -44,7 +44,7 @@ test('page has expected casts', function(): void {
         ->and($casts)->toHaveKey('middleware');
 });
 
-test('page has translatable fields configured', function(): void {
+test('page has translatable fields configured', function (): void {
     $page = new Page();
 
     expect($page->translatable)->toBeArray()
@@ -54,21 +54,21 @@ test('page has translatable fields configured', function(): void {
         ->and($page->translatable)->toContain('footer_blocks');
 });
 
-test('page has SushiToJsons trait', function(): void {
+test('page has SushiToJsons trait', function (): void {
     $page = new Page();
     $traits = class_uses_recursive($page);
 
     expect(array_values($traits))->toContain(SushiToJsons::class);
 });
 
-test('page has getRows method for sushi functionality', function(): void {
+test('page has getRows method for sushi functionality', function (): void {
     $page = new Page();
 
     expect(method_exists($page, 'getRows'))->toBeTrue();
     expect($page->getRows())->toBeArray();
 });
 
-test('page has schema definition', function(): void {
+test('page has schema definition', function (): void {
     $page = new Page();
 
     $reflection = new ReflectionClass($page);
@@ -86,7 +86,7 @@ test('page has schema definition', function(): void {
         ->and($schema)->toHaveKey('content_blocks');
 });
 
-test('page has getMiddlewareBySlug static method', function(): void {
+test('page has getMiddlewareBySlug static method', function (): void {
     expect(method_exists(Page::class, 'getMiddlewareBySlug'))->toBeTrue();
 
     // Test with non-existent slug returns empty array
@@ -94,14 +94,14 @@ test('page has getMiddlewareBySlug static method', function(): void {
     expect($result)->toBeArray();
 });
 
-test('page casts content_blocks to array', function(): void {
+test('page casts content_blocks to array', function (): void {
     $page = new Page();
     $casts = $page->getCasts();
 
     expect($casts['content_blocks'])->toBe('array');
 });
 
-test('page casts middleware to array', function(): void {
+test('page casts middleware to array', function (): void {
     $page = new Page();
     $casts = $page->getCasts();
 

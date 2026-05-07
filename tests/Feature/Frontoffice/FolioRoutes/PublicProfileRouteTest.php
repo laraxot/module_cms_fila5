@@ -9,7 +9,7 @@ use Modules\User\Models\User;
 
 uses(TestCase::class);
 
-it('renders the public profile route using the localized profile page', function(): void {
+it('renders the public profile route using the localized profile page', function (): void {
     $user = User::factory()->create([
         'name' => 'Mario Rossi',
         'email' => 'mario.rossi@example.test',

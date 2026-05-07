@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/profile/show acceptable (likely auth required)', function(): void {
+it('GET /it/profile/show acceptable (likely auth required)', function (): void {
     $res = $this->get('/it/profile/show');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

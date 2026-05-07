@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-test('there is exactly one canonical home page slug in json content', function(): void {
+test('there is exactly one canonical home page slug in json content', function (): void {
     $pagesPath = base_path('config/local/predict/database/content/pages');
     $files = glob($pagesPath.'/*.json');
 
@@ -26,14 +26,14 @@ test('there is exactly one canonical home page slug in json content', function()
     expect($homeSlugFiles->first())->toBe($pagesPath.'/1.json');
 });
 
-test('italian header navigation uses mercati label', function(): void {
+test('italian header navigation uses mercati label', function (): void {
     /** @var array<string, string> $translations */
     $translations = require base_path('Themes/TwentyOne/lang/it/headernav.php');
 
     expect($translations['markets'] ?? null)->toBe('Mercati');
 });
 
-test('canonical homepage starts with a clear hero and contains onboarding blocks', function(): void {
+test('canonical homepage starts with a clear hero and contains onboarding blocks', function (): void {
     $homepage = json_decode(
         (string) file_get_contents(base_path('config/local/predict/database/content/pages/1.json')),
         true,

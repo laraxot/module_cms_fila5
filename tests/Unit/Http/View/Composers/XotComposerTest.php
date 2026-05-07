@@ -13,7 +13,7 @@ use Illuminate\View\View;
 use Modules\Cms\Http\View\Composers\XotComposer;
 use Modules\Xot\Contracts\UserContract;
 
-test('compose returns early when no authenticated user', function(): void {
+test('compose returns early when no authenticated user', function (): void {
     Auth::shouldReceive('user')->once()->andReturn(null);
 
     $view = \Mockery::mock(View::class);
@@ -25,7 +25,7 @@ test('compose returns early when no authenticated user', function(): void {
     expect(true)->toBeTrue();
 });
 
-test('compose returns early when authenticated user is not user contract', function(): void {
+test('compose returns early when authenticated user is not user contract', function (): void {
     $authUser = \Mockery::mock(Authenticatable::class);
     Auth::shouldReceive('user')->once()->andReturn($authUser);
 
@@ -38,7 +38,7 @@ test('compose returns early when authenticated user is not user contract', funct
     expect(true)->toBeTrue();
 });
 
-test('compose shares params lang and profile when user contract is authenticated', function(): void {
+test('compose shares params lang and profile when user contract is authenticated', function (): void {
     app()->setLocale('it');
 
     $profile = (object) ['id' => 123];

@@ -8,6 +8,6 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('SKIP dynamic /it/auth/{type}/register', function(): void {
+it('SKIP dynamic /it/auth/{type}/register', function (): void {
     $this->markTestSkipped('Dynamic type route requires fixture.');
 });

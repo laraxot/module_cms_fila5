@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/genesis/about acceptable', function(): void {
+it('GET /it/genesis/about acceptable', function (): void {
     $res = $this->get('/it/genesis/about');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

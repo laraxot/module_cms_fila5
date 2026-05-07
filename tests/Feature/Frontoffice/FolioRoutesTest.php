@@ -38,7 +38,7 @@ function getFolioPaths(): array
     return $paths;
 }
 
-it('validates Folio routes basic accessibility and localization', function(): void {
+it('validates Folio routes basic accessibility and localization', function (): void {
     $locale = app()->getLocale();
     $paths = getFolioPaths();
 

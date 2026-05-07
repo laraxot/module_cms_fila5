@@ -15,12 +15,12 @@ use function Pest\Laravel\post;
 
 uses(TestCase::class);
 
-test('login screen can be rendered', function(): void {
+test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
     get('/'.$lang.'/auth/login')->assertStatus(200);
 });
 
-test('users can authenticate using the login screen', function(): void {
+test('users can authenticate using the login screen', function (): void {
     $userClass = XotData::make()->getUserClass();
     $factory = $userClass::factory();
     /*

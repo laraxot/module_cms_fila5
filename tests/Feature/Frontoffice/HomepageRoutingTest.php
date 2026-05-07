@@ -9,7 +9,7 @@ use Modules\Xot\Tests\TestCase;
 // Use the project's base TestCase
 uses(TestCase::class);
 
-beforeEach(function(): void {
+beforeEach(function (): void {
     if (! function_exists('moduleEnabled')) {
         $this->markTestSkipped('moduleEnabled() helper not available.');
     }
@@ -18,13 +18,13 @@ beforeEach(function(): void {
     }
 });
 
-it('redirects root / to /{locale}', function(): void {
+it('redirects root / to /{locale}', function (): void {
     $locale = app()->getLocale();
     $response = $this->get('/');
     $response->assertRedirect('/'.$locale);
 });
 
-it('serves localized homepage at /{locale}', function(): void {
+it('serves localized homepage at /{locale}', function (): void {
     $locale = app()->getLocale();
     $response = $this->get('/'.$locale);
     $response->assertStatus(200);
