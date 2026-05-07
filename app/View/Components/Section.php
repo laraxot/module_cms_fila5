@@ -19,7 +19,7 @@ use Spatie\LaravelData\DataCollection;
  */
 class Section extends Component
 {
-    public string $slug;
+    public $slug;
 
     /** @var DataCollection<int, BlockData>|array<int|string, mixed> */
     public DataCollection|array $blocks;
@@ -46,7 +46,7 @@ class Section extends Component
         $this->slug = $slug;
         $this->class = $class;
         $this->id = $id;
-        if (is_string($tpl) && '' !== $tpl) {
+        if (is_string($tpl) && $tpl !== '') {
             $this->tpl = $tpl;
         }
 

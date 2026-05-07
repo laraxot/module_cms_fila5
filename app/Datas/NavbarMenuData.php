@@ -8,7 +8,7 @@ use Spatie\LaravelData\Data;
 
 class NavbarMenuData extends Data
 {
-    public string $title;
+    public $title;
 
     public string $url;
 
