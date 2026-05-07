@@ -19,7 +19,7 @@ use Spatie\LaravelData\DataCollection;
  */
 class Section extends Component
 {
-    public $slug;
+    public string $slug;
 
     /** @var DataCollection<int, BlockData>|array<int|string, mixed> */
     public DataCollection|array $blocks;
@@ -33,9 +33,9 @@ class Section extends Component
     public string $tpl = 'v1';
 
     /**
-     * @param string      $slug  Unique identifier for the section
-     * @param string|null $class Additional CSS classes
-     * @param string|null $id    Custom ID for the section
+     * @param  string  $slug  Unique identifier for the section
+     * @param  string|null  $class  Additional CSS classes
+     * @param  string|null  $id  Custom ID for the section
      */
     public function __construct(
         string $slug,

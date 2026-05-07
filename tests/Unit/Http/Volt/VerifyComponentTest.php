@@ -9,7 +9,7 @@ use Modules\Cms\Http\Volt\VerifyComponent;
 
 describe('VerifyComponent', function (): void {
     test('verify component extends volt component', function (): void {
-        $component = new VerifyComponent();
+        $component = new VerifyComponent;
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
