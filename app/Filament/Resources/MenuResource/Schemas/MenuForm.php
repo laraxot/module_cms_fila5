@@ -40,6 +40,5 @@ class MenuForm extends XotBaseResourceForm
                 ->collection('cms-icons')
                 ->helperText('Carica un\'icona per il menu'),
         ];
-
     }
 }

@@ -32,7 +32,7 @@ class PageContent
             $blockList[] = $blockInstance;
         }
 
-        /** @var list<Block> $blockList */
+        /* @var list<Block> $blockList */
         return Builder::make($name)
             ->blocks($blockList)
             ->collapsible();

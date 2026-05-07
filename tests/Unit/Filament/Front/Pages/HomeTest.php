@@ -7,12 +7,12 @@ namespace Modules\Cms\Tests\Unit\Filament\Front\Pages;
 use Modules\Cms\Filament\Front\Pages\Home;
 
 test('Home page can be instantiated', function () {
-    $page = new Home;
+    $page = new Home();
     expect($page)->toBeObject();
 });
 
 test('Home page has view_type property', function () {
-    $page = new Home;
+    $page = new Home();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
@@ -21,7 +21,7 @@ test('Home page has view_type property', function () {
 });
 
 test('Home page has containers property', function () {
-    $page = new Home;
+    $page = new Home();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
@@ -30,7 +30,7 @@ test('Home page has containers property', function () {
 });
 
 test('Home page has items property', function () {
-    $page = new Home;
+    $page = new Home();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);

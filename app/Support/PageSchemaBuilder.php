@@ -13,7 +13,8 @@ use Modules\Xot\Datas\MetatagData;
 final class PageSchemaBuilder
 {
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
+     *
      * @return array<string, mixed>
      */
     public function build(
@@ -58,7 +59,7 @@ final class PageSchemaBuilder
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
      */
     private function resolvePageType(?string $routeName, string $path, array $routeParameters): string
     {
@@ -121,7 +122,8 @@ final class PageSchemaBuilder
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
+     *
      * @return array<string, mixed>|null
      */
     private function resolveProfileMainEntity(array $routeParameters, ?Authenticatable $user): ?array

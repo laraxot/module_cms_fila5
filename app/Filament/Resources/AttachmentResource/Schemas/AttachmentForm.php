@@ -34,6 +34,5 @@ class AttachmentForm extends XotBaseResourceForm
                 ->openable()
                 ->disk(fn (Get $get) => $get('disk')),
         ];
-
     }
 }
