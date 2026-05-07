@@ -8,8 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/auth/logout_fixed acceptable', function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+it('GET /it/auth/logout_fixed acceptable', function(): void {
     $res = $this->get('/it/auth/logout_fixed');
     /** @var Illuminate\Testing\TestResponse $res */
     $status = (int) $res->getStatusCode();

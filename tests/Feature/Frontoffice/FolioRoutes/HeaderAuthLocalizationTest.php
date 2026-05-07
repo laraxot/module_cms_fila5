@@ -6,7 +6,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /de localizes guest auth labels in header', function (): void {
+it('GET /de localizes guest auth labels in header', function(): void {
     $this->get('/de')
         ->assertOk()
         ->assertSee('lang="de"', false)
@@ -17,7 +17,7 @@ it('GET /de localizes guest auth labels in header', function (): void {
         ->assertSee('/de/auth/register', false);
 });
 
-it('GET /en localizes guest auth labels in header', function (): void {
+it('GET /en localizes guest auth labels in header', function(): void {
     $this->get('/en')
         ->assertOk()
         ->assertSee('lang="en"', false)

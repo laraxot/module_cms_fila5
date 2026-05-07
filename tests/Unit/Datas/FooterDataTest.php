@@ -6,49 +6,49 @@ use Livewire\Wireable;
 use Modules\Cms\Datas\FooterData;
 use Spatie\LaravelData\Data;
 
-test('FooterData can be instantiated', function (): void {
+test('FooterData can be instantiated', function(): void {
     $footerData = new FooterData();
 
     expect($footerData)->toBeInstanceOf(FooterData::class);
 });
 
-test('FooterData extends Spatie Data', function (): void {
+test('FooterData extends Spatie Data', function(): void {
     $footerData = new FooterData();
 
     expect($footerData)->toBeInstanceOf(Data::class);
 });
 
-test('FooterData implements Wireable interface', function (): void {
+test('FooterData implements Wireable interface', function(): void {
     $footerData = new FooterData();
 
     expect($footerData)->toBeInstanceOf(Wireable::class);
 });
 
-test('FooterData has default view path', function (): void {
+test('FooterData has default view path', function(): void {
     $footerData = new FooterData();
 
     expect($footerData->view)->toBe('cms::components.footer');
 });
 
-test('FooterData has nullable background_color property', function (): void {
+test('FooterData has nullable background_color property', function(): void {
     $footerData = new FooterData();
 
     expect($footerData->background_color)->toBeNull();
 });
 
-test('FooterData has nullable background property', function (): void {
+test('FooterData has nullable background property', function(): void {
     $footerData = new FooterData();
 
     expect($footerData->background)->toBeNull();
 });
 
-test('FooterData has nullable overlay_color property', function (): void {
+test('FooterData has nullable overlay_color property', function(): void {
     $footerData = new FooterData();
 
     expect($footerData->overlay_color)->toBeNull();
 });
 
-test('FooterData rules method returns validation rules', function (): void {
+test('FooterData rules method returns validation rules', function(): void {
     $rules = FooterData::rules();
 
     expect($rules)->toBeArray()
@@ -58,7 +58,7 @@ test('FooterData rules method returns validation rules', function (): void {
         ->and($rules)->toHaveKey('view');
 });
 
-test('FooterData can be created from array using from method', function (): void {
+test('FooterData can be created from array using from method', function(): void {
     $data = [
         'background_color' => '#ffffff',
         'background' => 'image.jpg',
@@ -73,7 +73,7 @@ test('FooterData can be created from array using from method', function (): void
         ->and($footerData->overlay_color)->toBe('rgba(0,0,0,0.5)');
 });
 
-test('FooterData can be converted to array', function (): void {
+test('FooterData can be converted to array', function(): void {
     $footerData = FooterData::from([
         'background_color' => '#000000',
     ]);

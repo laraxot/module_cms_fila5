@@ -8,8 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/profile/show acceptable (likely auth required)', function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+it('GET /it/profile/show acceptable (likely auth required)', function(): void {
     $res = $this->get('/it/profile/show');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

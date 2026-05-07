@@ -7,7 +7,6 @@ namespace Modules\Cms\Actions;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
 class ResolveBlockQueryAction
 {
@@ -16,30 +15,29 @@ class ResolveBlockQueryAction
     /**
      * Executes the query path specified in block data and returns the result.
      *
-     * @param array<string, mixed> $queryConfig Configuration: [model, scopes, orderBy, limit, wrap_in]
-     *
+     * @param  array<string, mixed>  $queryConfig  Configuration: [model, scopes, orderBy, limit, wrap_in]
      * @return array<string, mixed> The transformed data to be merged into block data
      */
     public function execute(array $queryConfig): array
     {
         $modelClass = data_get($queryConfig, 'model');
-        if (null === $modelClass || ! is_string($modelClass) || ! class_exists($modelClass)) {
+        if ($modelClass === null || ! is_string($modelClass) || ! class_exists($modelClass)) {
             return [];
         }
 
         /** @var Model $modelInstance */
-        $modelInstance = new $modelClass();
+        $modelInstance = new $modelClass;
         $query = $modelInstance->newQuery();
 
         // Apply scopes (support both 'scope' singular and 'scopes' plural)
         $singleScope = data_get($queryConfig, 'scope');
         /** @var array<int, string> $scopes */
         $scopes = (array) data_get($queryConfig, 'scopes', []);
-        if (null !== $singleScope && is_string($singleScope)) {
+        if ($singleScope !== null && is_string($singleScope)) {
             array_unshift($scopes, $singleScope);
         }
         foreach ($scopes as $scope) {
-            if (is_string($scope) && '' !== $scope) {
+            if (is_string($scope) && $scope !== '') {
                 // Scopes are added dynamically by Laravel, so we just try to call them
                 // method_exists() won't work because they're added via __call
                 try {
@@ -67,9 +65,12 @@ class ResolveBlockQueryAction
         // Transform results if model has toBlockArray
         $transformedItems = $results->map(function (Model $item): array {
             if (method_exists($item, 'toBlockArray')) {
-                /** @var array<string, mixed> $res */
                 $res = $item->toBlockArray();
+                if (! is_array($res)) {
+                    return $item->toArray();
+                }
 
+                /** @var array<string, mixed> $res */
                 return $res;
             }
 

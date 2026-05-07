@@ -8,7 +8,7 @@ use Modules\Cms\Support\PageSchemaBuilder;
 use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
 
-test('it resolves home as webpage', function (): void {
+test('it resolves home as webpage', function(): void {
     $builder = new PageSchemaBuilder();
     $schema = $builder->build(
         meta: MetatagData::make(),
@@ -19,7 +19,7 @@ test('it resolves home as webpage', function (): void {
     expect($schema)->toHaveKey('@type', 'WebPage');
 });
 
-test('it resolves events index as collection page', function (): void {
+test('it resolves events index as collection page', function(): void {
     $builder = new PageSchemaBuilder();
     $schema = $builder->build(
         meta: MetatagData::make(),
@@ -31,7 +31,7 @@ test('it resolves events index as collection page', function (): void {
     expect($schema)->toHaveKey('@type', 'CollectionPage');
 });
 
-test('it resolves event detail as item page with main entity', function (): void {
+test('it resolves event detail as item page with main entity', function(): void {
     $builder = new PageSchemaBuilder();
     $schema = $builder->build(
         meta: MetatagData::make(),
@@ -49,7 +49,7 @@ test('it resolves event detail as item page with main entity', function (): void
         ->and($schema['mainEntity']['url'])->toContain('/events/test-event-slug');
 });
 
-test('it resolves profile route as profile page with person main entity', function (): void {
+test('it resolves profile route as profile page with person main entity', function(): void {
     $builder = new PageSchemaBuilder();
     $user = new User([
         'first_name' => 'Mario',
@@ -70,7 +70,7 @@ test('it resolves profile route as profile page with person main entity', functi
         ->and($schema['mainEntity'])->toHaveKey('name', 'Mario Rossi');
 });
 
-test('it resolves public profile detail route as profile page with person identifier', function (): void {
+test('it resolves public profile detail route as profile page with person identifier', function(): void {
     $builder = new PageSchemaBuilder();
 
     $schema = $builder->build(
@@ -89,7 +89,7 @@ test('it resolves public profile detail route as profile page with person identi
         ->and($schema['mainEntity'])->toHaveKey('identifier', '019cca1b-1f72-700a-ba0b-0bb414ca0c88');
 });
 
-test('it keeps auth routes as generic webpage', function (): void {
+test('it keeps auth routes as generic webpage', function(): void {
     $builder = new PageSchemaBuilder();
     $schema = $builder->build(
         meta: MetatagData::make(),

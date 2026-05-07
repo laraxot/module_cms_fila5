@@ -6,14 +6,14 @@ namespace Modules\Cms\Tests\Unit\Models;
 
 use Modules\Cms\Models\Section;
 
-describe('Section Model', function (): void {
-    test('section model can be instantiated', function (): void {
+describe('Section Model', function(): void {
+    test('section model can be instantiated', function(): void {
         $model = new Section();
 
         expect($model)->toBeInstanceOf(Section::class);
     });
 
-    test('section model has expected fillable fields', function (): void {
+    test('section model has expected fillable fields', function(): void {
         $model = new Section();
 
         $fillable = $model->getFillable();
@@ -23,7 +23,7 @@ describe('Section Model', function (): void {
             ->and($fillable)->toContain('blocks');
     });
 
-    test('section model has expected casts', function (): void {
+    test('section model has expected casts', function(): void {
         $model = new Section();
 
         $casts = $model->getCasts();
@@ -34,32 +34,32 @@ describe('Section Model', function (): void {
             ->and($casts)->toHaveKey('name');
     });
 
-    test('section model has translatable fields', function (): void {
+    test('section model has translatable fields', function(): void {
         $model = new Section();
 
         expect($model->translatable)->toContain('name')
             ->and($model->translatable)->toContain('blocks');
     });
 
-    test('section model uses HasBlocks trait', function (): void {
+    test('section model uses HasBlocks trait', function(): void {
         $model = new Section();
 
         expect(in_array(Modules\Cms\Models\Traits\HasBlocks::class, class_uses_recursive($model)))->toBeTrue();
     });
 
-    test('section model uses SushiToJsons trait', function (): void {
+    test('section model uses SushiToJsons trait', function(): void {
         $model = new Section();
 
         expect(in_array(Modules\Tenant\Models\Traits\SushiToJsons::class, class_uses_recursive($model)))->toBeTrue();
     });
 
-    test('section model has getRows method', function (): void {
+    test('section model has getRows method', function(): void {
         $model = new Section();
 
         expect(method_exists($model, 'getRows'))->toBeTrue();
     });
 
-    test('section model extends BaseModelLang', function (): void {
+    test('section model extends BaseModelLang', function(): void {
         $model = new Section();
 
         expect($model)->toBeInstanceOf(Modules\Cms\Models\BaseModelLang::class);

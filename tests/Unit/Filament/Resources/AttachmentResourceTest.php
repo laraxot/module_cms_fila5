@@ -7,27 +7,27 @@ namespace Modules\Cms\Tests\Unit\Filament\Resources;
 use Modules\Cms\Filament\Resources\AttachmentResource;
 use Modules\Cms\Models\Attachment;
 
-describe('AttachmentResource', function (): void {
-    test('attachment resource has correct model', function (): void {
+describe('AttachmentResource', function(): void {
+    test('attachment resource has correct model', function(): void {
         $resource = new AttachmentResource();
 
         expect($resource::getModel())->toBe(Attachment::class);
     });
 
-    test('attachment resource has form schema', function (): void {
+    test('attachment resource has form schema', function(): void {
         $schema = AttachmentResource::getFormSchema();
 
         expect($schema)->toBeArray();
         expect(count($schema))->toBeGreaterThan(0);
     });
 
-    test('attachment resource has relations', function (): void {
+    test('attachment resource has relations', function(): void {
         $relations = AttachmentResource::getRelations();
 
         expect($relations)->toBeArray();
     });
 
-    test('attachment resource has pages', function (): void {
+    test('attachment resource has pages', function(): void {
         $pages = AttachmentResource::getPages();
 
         expect($pages)->toBeArray();
@@ -36,19 +36,19 @@ describe('AttachmentResource', function (): void {
         expect($pages)->toHaveKey('edit');
     });
 
-    test('attachment resource extends LangBaseResource', function (): void {
+    test('attachment resource extends LangBaseResource', function(): void {
         expect(is_subclass_of(AttachmentResource::class, Modules\Lang\Filament\Resources\LangBaseResource::class))->toBeTrue();
     });
 
-    test('attachment resource has navigation icon', function (): void {
+    test('attachment resource has navigation icon', function(): void {
         expect(property_exists(AttachmentResource::class, 'navigationIcon'))->toBeTrue();
     });
 
-    test('attachment resource has navigation label', function (): void {
+    test('attachment resource has navigation label', function(): void {
         expect(property_exists(AttachmentResource::class, 'navigationLabel'))->toBeTrue();
     });
 
-    test('attachment resource has plural label', function (): void {
+    test('attachment resource has plural label', function(): void {
         expect(method_exists(AttachmentResource::class, 'getPluralModelLabel'))->toBeTrue();
     });
 });

@@ -8,8 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/events acceptable (LaravelPizza Meetup)', function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+it('GET /it/events acceptable (LaravelPizza Meetup)', function(): void {
     $res = $this->get('/it/events');
 
     $status = (int) $res->getStatusCode();

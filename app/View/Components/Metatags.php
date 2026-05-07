@@ -40,7 +40,6 @@ class Metatags extends Component
                 user: auth()->user(),
             ),
         ];
-        // @phpstan-ignore-next-line
         if (! view()->exists($view)) {
             throw new \Exception('view not found: '.$view);
         }

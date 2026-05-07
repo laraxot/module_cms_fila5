@@ -11,24 +11,20 @@ use function Safe\preg_match;
 final class ResolveLocalizedBlockDataAction
 {
     /**
-     * @param array<string, mixed> $data
-     *
+     * @param  array<string, mixed>  $data
      * @return array<string, mixed>
      */
     public function execute(array $data): array
     {
-        /** @var array<string, mixed> $resolved */
-        $resolved = $this->walk($data);
-
-        return $resolved;
+        return $this->walkArray($data);
     }
 
-    private function walk(mixed $value): mixed
+    /**
+     * @param  array<string, mixed>  $value
+     * @return array<string, mixed>
+     */
+    private function walkArray(array $value): array
     {
-        if (! is_array($value)) {
-            return $value;
-        }
-
         $resolved = [];
 
         foreach ($value as $key => $item) {
@@ -39,7 +35,14 @@ final class ResolveLocalizedBlockDataAction
                 continue;
             }
 
-            $resolved[$key] = $this->walk($item);
+            if (is_array($item)) {
+                /** @var array<string, mixed> $item */
+                $resolved[$key] = $this->walkArray($item);
+
+                continue;
+            }
+
+            $resolved[$key] = $item;
         }
 
         return $resolved;
@@ -47,6 +50,7 @@ final class ResolveLocalizedBlockDataAction
 
     private function isPublicUrlKey(string $key): bool
     {
+        /** @var list<string> $urlKeys */
         static $urlKeys = [
             'url',
             'link',
@@ -63,14 +67,14 @@ final class ResolveLocalizedBlockDataAction
 
     private function localizeUrl(string $url): string
     {
-        if ('' === $url || ! str_starts_with($url, '/')) {
+        if ($url === '' || ! str_starts_with($url, '/')) {
             return $url;
         }
 
         if (
             str_starts_with($url, '//')
             || str_starts_with($url, '/#')
-            || 1 === preg_match('#^/(it|en|es|fr|de|pt|zh|ja|ar|hi|ru|id)(/|$)#', $url)
+            || preg_match('#^/(it|en|es|fr|de|pt|zh|ja|ar|hi|ru|id)(/|$)#', $url) === 1
         ) {
             return $url;
         }
