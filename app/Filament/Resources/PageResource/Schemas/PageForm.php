@@ -43,6 +43,5 @@ class PageForm extends XotBaseResourceForm
                 PageContentBuilder::make('footer_blocks')->columnSpanFull(),
             ]),
         ];
-
     }
 }

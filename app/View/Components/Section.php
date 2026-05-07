@@ -33,9 +33,9 @@ class Section extends Component
     public string $tpl = 'v1';
 
     /**
-     * @param  string  $slug  Unique identifier for the section
-     * @param  string|null  $class  Additional CSS classes
-     * @param  string|null  $id  Custom ID for the section
+     * @param string      $slug  Unique identifier for the section
+     * @param string|null $class Additional CSS classes
+     * @param string|null $id    Custom ID for the section
      */
     public function __construct(
         string $slug,
@@ -46,7 +46,7 @@ class Section extends Component
         $this->slug = $slug;
         $this->class = $class;
         $this->id = $id;
-        if (is_string($tpl) && $tpl !== '') {
+        if (is_string($tpl) && '' !== $tpl) {
             $this->tpl = $tpl;
         }
 

@@ -20,14 +20,15 @@ class PageContentBuilder
 
         $blockList = self::buildBlockList($blocks, $context);
 
-        /** @var list<Block> $blockList */
+        /* @var list<Block> $blockList */
         return Builder::make($name)
             ->blocks($blockList)
             ->collapsible();
     }
 
     /**
-     * @param  DataCollection<int, ComponentFileData>  $blocks
+     * @param DataCollection<int, ComponentFileData> $blocks
+     *
      * @return list<Block>
      */
     private static function buildBlockList(DataCollection $blocks, string $context): array

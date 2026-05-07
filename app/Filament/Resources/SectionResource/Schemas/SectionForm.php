@@ -26,6 +26,5 @@ class SectionForm extends XotBaseResourceForm
                 PageContentBuilder::make('blocks')->columnSpanFull(),
             ]),
         ];
-
     }
 }

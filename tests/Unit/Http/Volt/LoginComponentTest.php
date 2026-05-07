@@ -8,25 +8,25 @@ use Modules\Cms\Http\Volt\LoginComponent;
 
 describe('LoginComponent', function (): void {
     test('login component extends volt component', function (): void {
-        $component = new LoginComponent;
+        $component = new LoginComponent();
 
         expect($component)->toBeInstanceOf(Livewire\Volt\Component::class);
     });
 
     test('login component has email property', function (): void {
-        $component = new LoginComponent;
+        $component = new LoginComponent();
 
         expect(property_exists($component, 'email'))->toBeTrue();
     });
 
     test('login component has password property', function (): void {
-        $component = new LoginComponent;
+        $component = new LoginComponent();
 
         expect(property_exists($component, 'password'))->toBeTrue();
     });
 
     test('login component has remember property', function (): void {
-        $component = new LoginComponent;
+        $component = new LoginComponent();
 
         expect(property_exists($component, 'remember'))->toBeTrue();
     });
