@@ -13,14 +13,16 @@ use Illuminate\Support\Facades\File;
 use Modules\Cms\Datas\ThemeData;
 use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use function Safe\json_decode;
 use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
 
 class Themes extends XotBasePage
 {
     /** @var array<int, array<string, mixed>> */
-public $themes = [];
-protected string $view = 'cms::filament.pages.themes';
+    public array $themes = [];
+
+    protected string $view = 'cms::filament.pages.themes';
 
     public function changePubTheme(string $name): void
     {
