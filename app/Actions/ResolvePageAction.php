@@ -28,7 +28,7 @@ final class ResolvePageAction
     {
         $item = $this->loadDynamicModel($container0, $slug0);
 
-        if (null !== $item) {
+        if ($item !== null) {
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -63,7 +63,7 @@ final class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
-        if ('profile' === $container0) {
+        if ($container0 === 'profile') {
             return $this->resolvePublicProfileItem($slug0);
         }
 
@@ -93,7 +93,7 @@ final class ResolvePageAction
 
         foreach ($possibleModels as $modelClass) {
             $item = $this->queryModel($modelClass, $slug0);
-            if (null !== $item) {
+            if ($item !== null) {
                 return $item;
             }
         }
@@ -123,7 +123,7 @@ final class ResolvePageAction
                         continue;
                     }
 
-                    if (null !== $item) {
+                    if ($item !== null) {
                         return $item;
                     }
                 }
@@ -139,7 +139,7 @@ final class ResolvePageAction
                     continue;
                 }
 
-                if (null !== $row) {
+                if ($row !== null) {
                     /** @var array<string, mixed> $attributes */
                     $attributes = (array) $row;
 
@@ -156,6 +156,7 @@ final class ResolvePageAction
      */
     private function buildCandidateQueries(Model $model): array
     {
+        /** @var array<int, Builder<Model>> $queries */
         $queries = [$model->newQuery()];
 
         try {
@@ -163,26 +164,19 @@ final class ResolvePageAction
         } catch (\Throwable) {
         }
 
-        $usesSoftDeletes = in_array(SoftDeletes::class, class_uses_recursive($model), true);
-
-        if ($usesSoftDeletes) {
-            foreach ($queries as $index => $query) {
-                try {
-                    $queries[] = (clone $query)->withTrashed();
-                } catch (\Throwable) {
-                    unset($queries[$index]);
-                }
-            }
+        if (in_array(SoftDeletes::class, class_uses_recursive($model), true)) {
+            // Soft deleted records are already covered by the fallback DB query branch.
+            return $queries;
         }
 
-        return array_values($queries);
+        return $queries;
     }
 
     private function resolvePublicProfileItem(string $identifier): ?object
     {
         $userClass = 'Modules\\User\\Models\\User';
         $user = $this->queryModel($userClass, $identifier);
-        if (null !== $user) {
+        if ($user !== null) {
             return $user;
         }
 
@@ -193,7 +187,7 @@ final class ResolvePageAction
 
         foreach ($profileClasses as $profileClass) {
             $profile = $this->queryModel($profileClass, $identifier);
-            if (null !== $profile) {
+            if ($profile !== null) {
                 return $profile;
             }
         }

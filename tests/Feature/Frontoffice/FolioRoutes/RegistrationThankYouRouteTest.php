@@ -8,8 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/registration/thank-you acceptable', function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+it('GET /it/registration/thank-you acceptable', function(): void {
     $res = $this->get('/it/registration/thank-you');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

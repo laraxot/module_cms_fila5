@@ -14,17 +14,17 @@ use Spatie\Translatable\HasTranslations;
 /**
  * Modules\Cms\Models\PageContent.
  *
- * @property string                       $id
+ * @property string $id
  * @property array<array-key, mixed>|null $name
- * @property string|null                  $slug
+ * @property string|null $slug
  * @property array<array-key, mixed>|null $blocks
- * @property Carbon|null                  $created_at
- * @property Carbon|null                  $updated_at
- * @property string|null                  $created_by
- * @property string|null                  $updated_by
- * @property ProfileContract|null         $creator
- * @property mixed                        $translations
- * @property ProfileContract|null         $updater
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property ProfileContract|null $creator
+ * @property mixed $translations
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|PageContent newModelQuery()
  * @method static Builder<static>|PageContent newQuery()
@@ -41,12 +41,12 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|PageContent whereSlug($value)
  * @method static Builder<static>|PageContent whereUpdatedAt($value)
  * @method static Builder<static>|PageContent whereUpdatedBy($value)
- * @method static int                         count()
+ * @method static int count()
  *
  * @property ProfileContract|null $deleter
  *
- * @method static PageContentFactory               factory($count = null, $state = [])
- * @method        array<int, array<string, mixed>> getSushiRows()
+ * @method static PageContentFactory factory($count = null, $state = [])
+ * @method array<int, array<string, mixed>> getSushiRows()
  *
  * @mixin \Eloquent
  */
@@ -55,8 +55,8 @@ class PageContent extends BaseModel
     use HasTranslations;
     use SushiToJsons;
 
-    /** @var array<int, string> */
-    public $translatable = [
+    /** @var list<string> */
+    public array $translatable = [
         'name',
         'blocks',
     ];
@@ -68,7 +68,8 @@ class PageContent extends BaseModel
         'blocks',
     ];
 
-    protected array $schema = [
+    /** @var array<string, string> */
+    protected $schema = [
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',
@@ -79,9 +80,6 @@ class PageContent extends BaseModel
         'updated_by' => 'string',
     ];
 
-    /**
-     * @return array<string, mixed>
-     */
     /**
      * @return array<int, array<string, mixed>>
      */

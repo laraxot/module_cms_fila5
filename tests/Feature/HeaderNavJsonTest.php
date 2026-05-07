@@ -6,7 +6,7 @@ use Modules\Cms\Tests\UnitTestCase;
 
 uses(UnitTestCase::class);
 
-it('header.json contiene voci di navigazione primarie', function (): void {
+it('header.json contiene voci di navigazione primarie', function(): void {
     $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
     expect(file_exists($path))->toBeTrue();
     $config = Illuminate\Support\Facades\File::json($path);
@@ -17,7 +17,7 @@ it('header.json contiene voci di navigazione primarie', function (): void {
     expect(count($primary))->toBeGreaterThan(0);
 });
 
-it('header.json ha la struttura corretta con active_patterns', function (): void {
+it('header.json ha la struttura corretta con active_patterns', function(): void {
     $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
     $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
@@ -30,7 +30,7 @@ it('header.json ha la struttura corretta con active_patterns', function (): void
     }
 });
 
-it('header.json contiene link specifici richiesti', function (): void {
+it('header.json contiene link specifici richiesti', function(): void {
     $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
     $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
@@ -44,7 +44,7 @@ it('header.json contiene link specifici richiesti', function (): void {
     expect($slugs)->toContain('vivere-il-comune');
 });
 
-it('header.json contiene link secondari richiesti', function (): void {
+it('header.json contiene link secondari richiesti', function(): void {
     $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
     $config = Illuminate\Support\Facades\File::json($path);
     $items = $config['sections']['primary_nav']['items'] ?? [];
@@ -58,7 +58,7 @@ it('header.json contiene link secondari richiesti', function (): void {
     expect($slugs)->toContain('polizia-locale');
 });
 
-it('header.json ha topics_url configurato', function (): void {
+it('header.json ha topics_url configurato', function(): void {
     $path = Modules\Tenant\Services\TenantService::filePath('database/content/sections/header.json');
     $config = Illuminate\Support\Facades\File::json($path);
     $topicsUrl = $config['sections']['primary_nav']['topics_url'] ?? null;

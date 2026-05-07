@@ -8,8 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/errors/password-expired acceptable', function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+it('GET /it/errors/password-expired acceptable', function(): void {
     $res = $this->get('/it/errors/password-expired');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

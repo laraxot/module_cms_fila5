@@ -11,8 +11,10 @@ class Welcome extends XotBasePage
 {
     public string $view_type = 'home';
 
+    /** @var array<string, mixed> */
     public array $containers = [];
 
+    /** @var array<string, mixed> */
     public array $items = [];
 
     public ?Model $instanceModel = null;
@@ -33,9 +35,9 @@ class Welcome extends XotBasePage
 
     public function initView(): void
     {
-        if (view()->exists($this->view)) {
-            return;
+        $primaryView = $this->view;
+        if (! view()->exists($primaryView)) {
+            $this->view = 'cms::filament.front.pages.welcome';
         }
-        $this->view = 'cms::filament.front.pages.welcome';
     }
 }

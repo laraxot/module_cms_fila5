@@ -29,10 +29,13 @@ class ResetComponent extends Component
 
         $response = Password::broker()->sendResetLink(['email' => $this->email]);
 
-        if (Password::RESET_LINK_SENT === $response) {
+        if ($response === Password::RESET_LINK_SENT) {
             $message = trans($response);
             if (is_array($message)) {
-                $this->emailSentMessage = implode(' ', $message);
+                $this->emailSentMessage = implode(' ', array_map(
+                    static fn (mixed $item): string => is_scalar($item) ? (string) $item : '',
+                    $message
+                ));
             } else {
                 $this->emailSentMessage = is_string($message) ? $message : (string) $message;
             }

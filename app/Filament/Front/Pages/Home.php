@@ -10,8 +10,10 @@ class Home extends XotBasePage
 {
     public string $view_type = 'home';
 
+    /** @var array<string, mixed> */
     public array $containers = [];
 
+    /** @var array<string, mixed> */
     public array $items = [];
 
     protected string $view = 'pub_theme::home';
@@ -31,9 +33,9 @@ class Home extends XotBasePage
     public function initView(): void
     {
         $this->view_type = 'home';
-        if (view()->exists($this->view)) {
-            return;
+        $primaryView = $this->view;
+        if (! view()->exists($primaryView)) {
+            $this->view = 'cms::filament.front.pages.welcome';
         }
-        $this->view = 'cms::filament.front.pages.welcome';
     }
 }

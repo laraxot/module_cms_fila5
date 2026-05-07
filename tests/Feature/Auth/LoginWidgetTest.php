@@ -22,17 +22,17 @@ uses(TestCase::class);
 
 // WIDGET STRUCTURE TESTS
 
-test('widget can be rendered', function (): void {
+test('widget can be rendered', function(): void {
     $component = Livewire::test(LoginWidget::class);
 
     $component->assertStatus(200);
 });
 
-test('widget has correct view', function (): void {
+test('widget has correct view', function(): void {
     expect(LoginWidget::getView())->toBe('user::filament.widgets.login');
 });
 
-test('widget initializes correctly', function (): void {
+test('widget initializes correctly', function(): void {
     $component = Livewire::test(LoginWidget::class);
 
     // Widget dovrebbe inizializzare la proprietà data
@@ -41,7 +41,7 @@ test('widget initializes correctly', function (): void {
 
 // WIDGET DATA BINDING TESTS
 
-test('can set form data', function (): void {
+test('can set form data', function(): void {
     $component = Livewire::test(LoginWidget::class);
 
     // Set form data
@@ -53,7 +53,7 @@ test('can set form data', function (): void {
 
 // WIDGET AUTHENTICATION LOGIC TESTS
 
-test('authenticates user with valid credentials', function (): void {
+test('authenticates user with valid credentials', function(): void {
     // ✅ Utilizzo funzione centralizzata dal TestCase
     $email = static::generateUniqueEmail();
     $user = static::createTestUser([
@@ -76,7 +76,7 @@ test('authenticates user with valid credentials', function (): void {
     expect($authenticatedUser?->email)->toBe($email);
 });
 
-test('handles invalid credentials gracefully', function (): void {
+test('handles invalid credentials gracefully', function(): void {
     // ✅ Utilizzo funzioni centralizzate dal TestCase
     $email = static::generateUniqueEmail();
     static::createTestUser([
@@ -97,7 +97,7 @@ test('handles invalid credentials gracefully', function (): void {
 
 // WIDGET XOTDATA INTEGRATION TESTS
 
-test('authentication works regardless of user type', function (): void {
+test('authentication works regardless of user type', function(): void {
     // ✅ Utilizzo funzioni centralizzate dal TestCase
     $email = static::generateUniqueEmail();
     $user = static::createTestUser([
@@ -119,7 +119,7 @@ test('authentication works regardless of user type', function (): void {
     expect($authenticatedUser?->email)->toBe($email);
 });
 
-test('getUserClass returns valid class', function (): void {
+test('getUserClass returns valid class', function(): void {
     // ✅ Utilizzo funzione centralizzata dal TestCase
     $userClass = static::getUserClass();
 
@@ -131,7 +131,7 @@ test('getUserClass returns valid class', function (): void {
     expect($interfaces)->toContain(UserContract::class);
 });
 
-test('createTestUser creates valid instances', function (): void {
+test('createTestUser creates valid instances', function(): void {
     // ✅ Utilizzo funzione centralizzata dal TestCase
     $user = static::createTestUser();
 

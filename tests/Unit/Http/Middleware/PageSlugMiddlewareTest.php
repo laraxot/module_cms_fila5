@@ -27,7 +27,7 @@ function setProtected(object $object, string $property, mixed $value): void
     $target->setValue($object, $value);
 }
 
-test('handle returns next response when slug is not a string', function (): void {
+test('handle returns next response when slug is not a string', function(): void {
     $request = Request::create('/test', 'GET');
     $middleware = new PageSlugMiddleware();
 
@@ -37,7 +37,7 @@ test('handle returns next response when slug is not a string', function (): void
         ->and($response->getContent())->toBe('ok');
 });
 
-test('handle wraps non-response next value into 500 response when slug is not a string', function (): void {
+test('handle wraps non-response next value into 500 response when slug is not a string', function(): void {
     $request = Request::create('/test', 'GET');
     $middleware = new PageSlugMiddleware();
 
@@ -47,7 +47,7 @@ test('handle wraps non-response next value into 500 response when slug is not a 
         ->and($response->getContent())->toBe('Internal Server Error');
 });
 
-test('parseMiddleware splits name and parameters', function (): void {
+test('parseMiddleware splits name and parameters', function(): void {
     $middleware = new PageSlugMiddleware();
 
     /** @var array{0:string,1:array<string>} $parsed */
@@ -57,7 +57,7 @@ test('parseMiddleware splits name and parameters', function (): void {
         ->and($parsed[1])->toBe(['60', '1']);
 });
 
-test('resolveMiddlewareClass returns mapped class for alias', function (): void {
+test('resolveMiddlewareClass returns mapped class for alias', function(): void {
     $middleware = new PageSlugMiddleware();
     $kernel = \Mockery::mock(Kernel::class);
     $kernel->shouldReceive('getRouteMiddleware')
@@ -71,7 +71,7 @@ test('resolveMiddlewareClass returns mapped class for alias', function (): void 
     expect($resolved)->toBe(Authenticate::class);
 });
 
-test('executeMiddlewareChain returns 500 when final closure does not return response', function (): void {
+test('executeMiddlewareChain returns 500 when final closure does not return response', function(): void {
     $middleware = new PageSlugMiddleware();
     $request = Request::create('/test', 'GET');
 

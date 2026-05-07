@@ -9,7 +9,7 @@ use Modules\Xot\Datas\XotData;
 
 uses(TestCase::class);
 
-beforeEach(function (): void {
+beforeEach(function(): void {
     config([
         'app.url' => 'http://predict.local',
         'xra.pub_theme' => 'TwentyOne',
@@ -27,7 +27,7 @@ beforeEach(function (): void {
     ]);
 });
 
-it('serves /it for guests on predict.local without requiring login', function (): void {
+it('serves /it for guests on predict.local without requiring login', function(): void {
     expect(Auth::check())->toBeFalse();
 
     $response = $this->get('/it');
@@ -38,7 +38,7 @@ it('serves /it for guests on predict.local without requiring login', function ()
     $response->assertSee('lang="it"', false);
 });
 
-it('returns an empty slider dataset instead of crashing when Predict banners are unavailable', function (): void {
+it('returns an empty slider dataset instead of crashing when Predict banners are unavailable', function(): void {
     $data = app(PredictThemeComposer::class)->getMethodData('getBanner');
 
     expect($data)->toBeArray();

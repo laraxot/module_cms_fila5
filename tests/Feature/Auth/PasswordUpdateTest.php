@@ -8,10 +8,10 @@ use Modules\Xot\Tests\TestCase;
 
 uses(TestCase::class);
 
-test('password can be updated', function (): void {
+test('password can be updated', function(): void {
     $this->assertTrue(true);
 });
 
-test('current password must be correct', function (): void {
+test('current password must be correct', function(): void {
     $this->assertTrue(true);
 });

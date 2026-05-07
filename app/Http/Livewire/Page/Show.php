@@ -12,7 +12,7 @@ use Modules\Xot\Services\ThemeService;
 
 class Show extends Component
 {
-    public string $slug;
+    public string $slug = '';
 
     public bool $cache = true;
 
@@ -50,11 +50,14 @@ class Show extends Component
         $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? ThemeService::getTheme());
 
         if ($this->cache) {
-            $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function () {
+            $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function (): array {
                 return $this->fetchPageContent();
             });
+
+            return;
         }
-        // @var mixed pageContent = $this->fetchPageContent(;
+
+        $this->pageContent = $this->fetchPageContent();
     }
 
     protected function fetchPageContent(): array

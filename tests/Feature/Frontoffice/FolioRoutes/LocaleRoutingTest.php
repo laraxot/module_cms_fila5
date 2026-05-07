@@ -33,7 +33,6 @@ function supportedTestLocales(): array
 }
 
 test('every supported locale has a reachable root route', function (string $locale) {
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/'.$locale);
 
     $status = (int) $response->getStatusCode();
@@ -54,7 +53,6 @@ test('every supported locale has a reachable root route', function (string $loca
 });
 
 test('HTML lang attribute matches the requested locale', function (string $locale) {
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/'.$locale);
 
     $status = (int) $response->getStatusCode();
@@ -65,13 +63,12 @@ test('HTML lang attribute matches the requested locale', function (string $local
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /{$locale} returned {$status} (redirect). Cannot check HTML lang attribute.");
 
         return;
     }
 
-    /* @phpstan-ignore-next-line method.nonObject */
     $response->assertSee('lang="'.$locale.'"', false);
 })->with(function () {
     foreach (supportedTestLocales() as $locale) {
@@ -80,7 +77,6 @@ test('HTML lang attribute matches the requested locale', function (string $local
 });
 
 test('/de route sets German locale', function () {
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/de');
 
     $status = (int) $response->getStatusCode();
@@ -91,13 +87,12 @@ test('/de route sets German locale', function () {
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /de returned {$status} (redirect). Cannot verify locale.");
 
         return;
     }
 
-    /* @phpstan-ignore-next-line method.nonObject */
     $response->assertSee('lang="de"', false);
 
     // Verify mcamara has set the locale correctly
@@ -105,7 +100,6 @@ test('/de route sets German locale', function () {
 });
 
 test('/it route sets Italian locale', function () {
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/it');
 
     $status = (int) $response->getStatusCode();
@@ -116,20 +110,18 @@ test('/it route sets Italian locale', function () {
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /it returned {$status} (redirect).");
 
         return;
     }
 
-    /* @phpstan-ignore-next-line method.nonObject */
     $response->assertSee('lang="it"', false);
 
     expect(LaravelLocalization::getCurrentLocale())->toBe('it');
 });
 
 test('/en route sets English locale', function () {
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/en');
 
     $status = (int) $response->getStatusCode();
@@ -140,13 +132,12 @@ test('/en route sets English locale', function () {
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /en returned {$status} (redirect).");
 
         return;
     }
 
-    /* @phpstan-ignore-next-line method.nonObject */
     $response->assertSee('lang="en"', false);
 
     expect(LaravelLocalization::getCurrentLocale())->toBe('en');

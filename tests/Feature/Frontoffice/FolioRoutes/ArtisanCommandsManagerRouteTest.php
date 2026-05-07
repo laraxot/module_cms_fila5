@@ -8,13 +8,10 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/artisan-commands-manager returns acceptable status', function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+it('GET /it/artisan-commands-manager returns acceptable status', function(): void {
     $res = $this->get('/it/artisan-commands-manager');
-    /** @phpstan-ignore-next-line method.nonObject */
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {
-        /* @phpstan-ignore-next-line property.notFound */
         $this->markTestSkipped('Server error on /it/artisan-commands-manager: '.$status);
     }
     $this->assertTrue(

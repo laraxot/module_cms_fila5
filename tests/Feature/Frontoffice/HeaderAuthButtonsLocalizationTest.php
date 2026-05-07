@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('renders localized auth labels and links on localized homepages', function (): void {
+it('renders localized auth labels and links on localized homepages', function(): void {
     $response = $this->get('/it');
 
     $status = $response->getStatusCode();
