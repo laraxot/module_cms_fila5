@@ -7,21 +7,21 @@ namespace Modules\Cms\Tests\Unit\Filament\Resources;
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Models\Menu;
 
-describe('MenuResource', function(): void {
-    test('menu resource has correct model', function(): void {
+describe('MenuResource', function (): void {
+    test('menu resource has correct model', function (): void {
         $resource = new MenuResource();
 
         expect($resource::getModel())->toBe(Menu::class);
     });
 
-    test('menu resource has form schema', function(): void {
+    test('menu resource has form schema', function (): void {
         $schema = MenuResource::getFormSchema();
 
         expect($schema)->toBeArray();
         expect(count($schema))->toBeGreaterThan(0);
     });
 
-    test('menu resource has form fields', function(): void {
+    test('menu resource has form fields', function (): void {
         $schema = MenuResource::getFormSchema();
 
         // Check that form has required components
@@ -42,7 +42,7 @@ describe('MenuResource', function(): void {
         expect($hasItems)->toBeTrue();
     });
 
-    test('menu resource extends XotBaseResource', function(): void {
+    test('menu resource extends XotBaseResource', function (): void {
         expect(is_subclass_of(MenuResource::class, Modules\Xot\Filament\Resources\XotBaseResource::class))->toBeTrue();
     });
 });

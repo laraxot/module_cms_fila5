@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/events acceptable (LaravelPizza Meetup)', function(): void {
+it('GET /it/events acceptable (LaravelPizza Meetup)', function (): void {
     $res = $this->get('/it/events');
 
     $status = (int) $res->getStatusCode();

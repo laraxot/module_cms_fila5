@@ -72,7 +72,7 @@ class PageSlugMiddleware
             $parameters = [];
         }
 
-        /** @var array<string> $parameters */
+        /* @var array<string> $parameters */
         return [$name, $parameters];
     }
 
@@ -147,7 +147,7 @@ class PageSlugMiddleware
         /** @var array<string, class-string> $routeMiddleware */
         $routeMiddleware = $this->kernel->getRouteMiddleware();
         if (isset($routeMiddleware[$middleware])) {
-            /** @var class-string */
+            /* @var class-string */
             return $routeMiddleware[$middleware];
         }
 

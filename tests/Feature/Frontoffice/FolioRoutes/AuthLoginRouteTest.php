@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/auth/login is reachable', function(): void {
+it('GET /it/auth/login is reachable', function (): void {
     $res = $this->get('/it/auth/login');
     expect($res->getStatusCode())->toBeIn([200, 204, 301, 302, 303, 307, 308]);
 });

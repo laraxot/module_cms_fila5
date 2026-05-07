@@ -7,14 +7,14 @@ namespace Modules\Cms\Tests\Unit\Http\Volt\Password;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\TokenComponent;
 
-describe('Password TokenComponent', function(): void {
-    test('token component extends volt component', function(): void {
+describe('Password TokenComponent', function (): void {
+    test('token component extends volt component', function (): void {
         $component = new TokenComponent();
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
 
-    test('token component has expected public properties', function(): void {
+    test('token component has expected public properties', function (): void {
         $component = new TokenComponent();
 
         expect(property_exists($component, 'token'))->toBeTrue()
@@ -25,7 +25,7 @@ describe('Password TokenComponent', function(): void {
             ->and($component->email)->toBe('');
     });
 
-    test('mount method sets token and email values', function(): void {
+    test('mount method sets token and email values', function (): void {
         $component = new TokenComponent();
 
         $component->mount('abc-token');
@@ -34,11 +34,11 @@ describe('Password TokenComponent', function(): void {
             ->and($component->email)->toBe('');
     });
 
-    test('token component has reset password method', function(): void {
+    test('token component has reset password method', function (): void {
         expect(method_exists(TokenComponent::class, 'resetPassword'))->toBeTrue();
     });
 
-    test('reset password method returns redirector or redirect response', function(): void {
+    test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new \ReflectionClass(TokenComponent::class);
         $method = $reflection->getMethod('resetPassword');
         $returnType = $method->getReturnType();

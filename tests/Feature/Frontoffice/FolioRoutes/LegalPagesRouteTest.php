@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('renders the italian privacy page from cms json content', function(): void {
+it('renders the italian privacy page from cms json content', function (): void {
     $this->get('/it/privacy')
         ->assertOk()
         ->assertSee('Privacy Policy')
@@ -17,7 +17,7 @@ it('renders the italian privacy page from cms json content', function(): void {
         ->assertSee('privacy@laravelpizza.com');
 });
 
-it('renders the italian terms page from cms json content', function(): void {
+it('renders the italian terms page from cms json content', function (): void {
     $this->get('/it/terms')
         ->assertOk()
         ->assertSee('Termini e Condizioni')

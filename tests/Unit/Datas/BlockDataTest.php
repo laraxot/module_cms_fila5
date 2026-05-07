@@ -8,7 +8,7 @@ use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
-test('BlockData can be instantiated with type and data', function(): void {
+test('BlockData can be instantiated with type and data', function (): void {
     $blockData = new BlockData('hero', ['view' => 'ui::empty', 'title' => 'Test']);
 
     expect($blockData)->toBeInstanceOf(BlockData::class)
@@ -17,25 +17,25 @@ test('BlockData can be instantiated with type and data', function(): void {
         ->and($blockData->data['title'])->toBe('Test');
 });
 
-test('BlockData uses WireableData trait', function(): void {
+test('BlockData uses WireableData trait', function (): void {
     $traits = class_uses_recursive(BlockData::class);
 
     expect(array_values($traits))->toContain(WireableData::class);
 });
 
-test('BlockData extends Spatie Data', function(): void {
+test('BlockData extends Spatie Data', function (): void {
     $blockData = new BlockData('text', ['view' => 'ui::empty']);
 
     expect($blockData)->toBeInstanceOf(Data::class);
 });
 
-test('BlockData implements Wireable interface', function(): void {
+test('BlockData implements Wireable interface', function (): void {
     $blockData = new BlockData('card', ['view' => 'ui::empty']);
 
     expect($blockData)->toBeInstanceOf(Wireable::class);
 });
 
-test('BlockData collection method returns DataCollection', function(): void {
+test('BlockData collection method returns DataCollection', function (): void {
     $data = [
         ['type' => 'hero', 'data' => ['view' => 'ui::empty', 'title' => 'Hero']],
         ['type' => 'text', 'data' => ['view' => 'ui::empty', 'content' => 'Text']],
@@ -46,19 +46,19 @@ test('BlockData collection method returns DataCollection', function(): void {
     expect($collection)->toBeInstanceOf(DataCollection::class);
 });
 
-test('BlockData sets default view when not provided', function(): void {
+test('BlockData sets default view when not provided', function (): void {
     $blockData = new BlockData('simple', []);
 
     expect($blockData->view)->toBe('ui::empty');
 });
 
-test('BlockData stores type correctly', function(): void {
+test('BlockData stores type correctly', function (): void {
     $blockData = new BlockData('testimonial', ['view' => 'ui::empty']);
 
     expect($blockData->type)->toBe('testimonial');
 });
 
-test('BlockData stores data array correctly', function(): void {
+test('BlockData stores data array correctly', function (): void {
     $testData = [
         'view' => 'ui::empty',
         'title' => 'Test Title',

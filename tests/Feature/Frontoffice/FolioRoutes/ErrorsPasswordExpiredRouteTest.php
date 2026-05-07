@@ -8,7 +8,7 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/errors/password-expired acceptable', function(): void {
+it('GET /it/errors/password-expired acceptable', function (): void {
     $res = $this->get('/it/errors/password-expired');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

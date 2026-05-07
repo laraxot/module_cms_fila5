@@ -37,17 +37,18 @@ class Headernav extends XotBasePage implements HasForms
     public ?HeadernavData $headernavData = null;
 
     /**
-<<<<<<< Updated upstream
+     * <<<<<<< Updated upstream
      * <<<<<<< Updated upstream
      * =======
      * Data for the form state.
      *
      * >>>>>>> Stashed changes
      *
-=======
+     * =======
      * Data for the form state.
      *
->>>>>>> Stashed changes
+     * >>>>>>> Stashed changes
+     *
      * @var array<string, mixed>
      */
     public array $data = [];
