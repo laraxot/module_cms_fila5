@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Filament\Resources\PageResource\Schemas;
 
+use Filament\Forms;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Components\Component as SchemaComponent;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Components\Utilities\Set;
@@ -16,7 +16,7 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 class PageForm extends XotBaseResourceForm
 {
     /**
-     * @return array<int|string, SchemaComponent>
+     * @return array<string, \Filament\Forms\Components\Component>
      */
     public static function getFormSchema(): array
     {

@@ -12,10 +12,9 @@ class AttachmentsTable extends XotBaseResourceTable
     public static function getTableColumns(): array
     {
         return [
-            'title' => TextColumn::make('title')->searchable()->sortable(),
-            'description' => TextColumn::make('description')->limit(50),
-            'slug' => TextColumn::make('slug'),
-            'disk' => TextColumn::make('disk'),
+            'id' => TextColumn::make('id')->searchable()->sortable(),
+            'created_at' => TextColumn::make('created_at')->dateTime(),
+            'updated_at' => TextColumn::make('updated_at')->dateTime(),
         ];
     }
 }

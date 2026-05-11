@@ -2,18 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Filament\Resources\PageContentResource\Tables;
+namespace Modules\base_quaeris_fila5\var\www\_bases\base_quaeris_fila5\laravel\Modules\Cms\app\Filament\Resources\PageContentResource\Tables;
 
+use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class PageContentsTable extends XotBaseResourceTable
 {
+    /**
+     * @return array<string, Column>
+     */
     public static function getTableColumns(): array
     {
         return [
-            'name' => TextColumn::make('name')->searchable()->sortable(),
-            'slug' => TextColumn::make('slug'),
+            'id' => TextColumn::make('id')->sortable(),
+            'name' => TextColumn::make('name')->searchable(),
+            'created_at' => TextColumn::make('created_at')->dateTime()->sortable(),
         ];
     }
 }

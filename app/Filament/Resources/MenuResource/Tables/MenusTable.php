@@ -12,8 +12,9 @@ class MenusTable extends XotBaseResourceTable
     public static function getTableColumns(): array
     {
         return [
-            'title' => TextColumn::make('title')->searchable()->sortable(),
-            'parent_id' => TextColumn::make('parent_id'),
+            'id' => TextColumn::make('id')->searchable()->sortable(),
+            'created_at' => TextColumn::make('created_at')->dateTime(),
+            'updated_at' => TextColumn::make('updated_at')->dateTime(),
         ];
     }
 }
