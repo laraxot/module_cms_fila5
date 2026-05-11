@@ -16,7 +16,7 @@ use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 class PageForm extends XotBaseResourceForm
 {
     /**
-     * @return array<string, \Filament\Forms\Components\Component>
+     * @return array<string, Forms\Components\Component>
      */
     public static function getFormSchema(): array
     {
