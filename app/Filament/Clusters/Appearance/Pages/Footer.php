@@ -33,18 +33,6 @@ class Footer extends XotBasePage
     public ?FooterData $footerData = null;
 
     /**
-     * <<<<<<< Updated upstream
-     * <<<<<<< Updated upstream
-     * =======
-     * Data for the form state.
-     *
-     * >>>>>>> Stashed changes
-     *
-     * =======
-     * Data for the form state.
-     *
-     * >>>>>>> Stashed changes
-     *
      * @var array<string, mixed>
      */
     public array $data = [];
