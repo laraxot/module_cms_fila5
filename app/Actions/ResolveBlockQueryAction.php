@@ -22,7 +22,7 @@ class ResolveBlockQueryAction
     public function execute(array $queryConfig): array
     {
         $modelClass = data_get($queryConfig, 'model');
-        if (null === $modelClass || ! is_string($modelClass) || ! class_exists($modelClass)) {
+        if ($modelClass === null || ! is_string($modelClass) || ! class_exists($modelClass)) {
             return [];
         }
 
@@ -34,11 +34,11 @@ class ResolveBlockQueryAction
         $singleScope = data_get($queryConfig, 'scope');
         /** @var array<int, string> $scopes */
         $scopes = (array) data_get($queryConfig, 'scopes', []);
-        if (null !== $singleScope && is_string($singleScope)) {
+        if ($singleScope !== null && is_string($singleScope)) {
             array_unshift($scopes, $singleScope);
         }
         foreach ($scopes as $scope) {
-            if (is_string($scope) && '' !== $scope) {
+            if (is_string($scope) && $scope !== '') {
                 // Scopes are added dynamically by Laravel, so we just try to call them
                 // method_exists() won't work because they're added via __call
                 try {
@@ -52,8 +52,8 @@ class ResolveBlockQueryAction
         // Apply ordering
         $orderBy = (string) data_get($queryConfig, 'orderBy', 'created_at');
         // Assert::string($orderBy, '['.__LINE__.']['.__FILE__.']');
-        $direction = (string) data_get($queryConfig, 'direction', 'desc');
-        // Assert::string($direction, '['.__LINE__.']['.__FILE__.']');
+        /** @var 'asc'|'desc' $direction */
+        $direction = in_array(data_get($queryConfig, 'direction', 'desc'), ['asc', 'desc'], true) ? (string) data_get($queryConfig, 'direction', 'desc') : 'desc';
         $query->orderBy($orderBy, $direction);
 
         // Apply limit
