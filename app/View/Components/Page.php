@@ -46,16 +46,16 @@ final class Page extends Component
         $this->slug0 = $slug0;
 
         // Resolve slug from data if not passed explicitly
-        if ($slug === null && isset($data['slug'])) {
+        if (null === $slug && isset($data['slug'])) {
             $slug = (string) $data['slug'];
         }
 
         // Fallback or composition
-        if ($slug === null) {
+        if (null === $slug) {
             $slug = '';
         }
 
-        if ($type !== null) {
+        if (null !== $type) {
             $slug = $type.'-'.$slug;
         }
 
