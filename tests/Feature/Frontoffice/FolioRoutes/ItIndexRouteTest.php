@@ -22,7 +22,7 @@ it('GET /{locale} uses the requested locale in the html lang attribute', functio
 
         expect(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true))->toBeTrue();
 
-        if ($status === 200) {
+        if (200 === $status) {
             $response->assertSee('<html', false);
             $response->assertSee(' lang="'.$locale.'"', false);
         }
