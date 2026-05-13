@@ -63,7 +63,7 @@ test('HTML lang attribute matches the requested locale', function (string $local
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /{$locale} returned {$status} (redirect). Cannot check HTML lang attribute.");
 
         return;
@@ -87,7 +87,7 @@ test('/de route sets German locale', function () {
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /de returned {$status} (redirect). Cannot verify locale.");
 
         return;
@@ -110,7 +110,7 @@ test('/it route sets Italian locale', function () {
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /it returned {$status} (redirect).");
 
         return;
@@ -132,7 +132,7 @@ test('/en route sets English locale', function () {
         return;
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         test()->markTestSkipped("Route /en returned {$status} (redirect).");
 
         return;

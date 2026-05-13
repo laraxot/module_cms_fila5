@@ -83,7 +83,14 @@ This informs PHPStan that the object has BOTH:
 
 ---
 
+<<<<<<< HEAD
 *
+=======
+<<<<<<< HEAD
+=======
+*
+>>>>>>> 7a08650 (.)
+>>>>>>> 01dce8d29 (initial commit)
 *PHPStan: PASSED*
 *Status: PRODUCTION READY*
 

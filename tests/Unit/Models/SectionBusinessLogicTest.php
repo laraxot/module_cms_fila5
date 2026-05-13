@@ -15,7 +15,8 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section has translatable fields configured', function (): void {
-        $section = new Section();
+        $section = new Section;
+        $section = new Section;
 
         expect($section->translatable)->toEqual([
             'name',
@@ -24,7 +25,8 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section has expected fillable fields', function (): void {
-        $section = new Section();
+        $section = new Section;
+        $section = new Section;
         $expectedFillable = [
             'name',
             'slug',
@@ -47,7 +49,8 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section has correct casts for multilingual and structured data', function (): void {
-        $section = new Section();
+        $section = new Section;
+        $section = new Section;
         $casts = $section->getCasts();
 
         expect($casts['name'])->toBe('array');
@@ -56,7 +59,8 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section has schema definition for structured data', function (): void {
-        $section = new Section();
+        $section = new Section;
+        $section = new Section;
 
         // Use reflection to access protected $schema property
         $reflection = new ReflectionClass($section);
@@ -72,7 +76,8 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section can get rows for sushi functionality', function (): void {
-        $section = new Section();
+        $section = new Section;
+        $section = new Section;
 
         expect(method_exists($section, 'getRows'))->toBeTrue();
         expect($section->getRows())->toBeArray();

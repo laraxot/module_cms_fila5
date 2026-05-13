@@ -9,13 +9,13 @@ use Modules\Cms\Http\Volt\Password\TokenComponent;
 
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
-        $component = new TokenComponent();
+        $component = new TokenComponent;
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
 
     test('token component has expected public properties', function (): void {
-        $component = new TokenComponent();
+        $component = new TokenComponent;
 
         expect(property_exists($component, 'token'))->toBeTrue()
             ->and(property_exists($component, 'email'))->toBeTrue()
@@ -26,7 +26,7 @@ describe('Password TokenComponent', function (): void {
     });
 
     test('mount method sets token and email values', function (): void {
-        $component = new TokenComponent();
+        $component = new TokenComponent;
 
         $component->mount('abc-token');
 
