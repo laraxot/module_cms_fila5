@@ -10,6 +10,10 @@
 
 ## Legacy / existing roadmap docs
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 01dce8d29 (initial commit)
 - [module-implementation-roadmap.md](module-implementation-roadmap.md)
 - [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md)
 - [phpstan-fixes-roadmap.md](phpstan-fixes-roadmap.md)
@@ -44,6 +48,10 @@
 - [roadmap/tasks/advanced-block-system.md](roadmap/tasks/advanced-block-system.md)
 - [roadmap/tasks/ai-powered-content-generation.md](roadmap/tasks/ai-powered-content-generation.md)
 - [roadmap/tasks/headless-cms-api.md](roadmap/tasks/headless-cms-api.md)
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 01dce8d29 (initial commit)
 Il modulo Cms fornisce:
 - **Pagine dinamiche** con slug-based routing e content blocks JSON
 - **Sistema Blocks** modulare (Paragraph, Navigation, Newsletter, Logo, Social, Links)
@@ -72,6 +80,10 @@ Il modulo Cms fornisce:
 - Buona copertura test (91 file)
 - 10 suppressioni PHPStan da risolvere
 - Sistema blocks funzionante ma estensibile
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 01dce8d29 (initial commit)
 # 🎯 CMS MODULE - ROADMAP 2025
 
 **Modulo**: Cms ([Description])  
@@ -288,3 +300,7 @@ Cms Module
 ---
 
 *Questa roadmap è specifica per il modulo Cms e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
+<<<<<<< HEAD
+=======
+>>>>>>> 7a08650 (.)
+>>>>>>> 01dce8d29 (initial commit)

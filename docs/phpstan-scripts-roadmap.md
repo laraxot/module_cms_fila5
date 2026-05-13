@@ -38,8 +38,16 @@ Quando questi script legacy tornano a generare errori PHPStan, il pattern corret
 
 Annotare il container applicativo con un tipo concreto prima di usare `make()` o `bootstrap()`.
 
+<<<<<<< HEAD
 ### Results payload
 **
+=======
+<<<<<<< HEAD
+### Results payload
+=======
+**
+>>>>>>> 7a08650 (.)
+>>>>>>> 01dce8d29 (initial commit)
 
 Per i riepiloghi finali usare shape esplicite, per esempio:
 
@@ -60,7 +68,13 @@ Se un callback puo' restituire collezioni, array o singoli record, conviene pass
 
 ## Nota operativa
 
+<<<<<<< HEAD
 Su questi due file non e' stata applicata una patch di codice in questa sessione, perche' il gate PHPStan corrente e' gia' verde e una modifica cosmetica ai legacy script avrebbe aumentato il rischio senza chiudere un errore reale.
+=======
+<<<<<<< HEAD
+Su questi due file non e' stata applicata una patch di codice in questa sessione, perche' il gate PHPStan corrente e' gia' verde e una modifica cosmetica ai legacy script avrebbe aumentato il rischio senza chiudere un errore reale.
+=======
+>>>>>>> 01dce8d29 (initial commit)
 ### ⏳ In Lavoro
 
 **`populate_database_comprehensive.php`** - **0/10 errori risolti**
@@ -97,3 +111,7 @@ Su questi due file non e' stata applicata una patch di codice in questa sessione
 ---
 
 **
+<<<<<<< HEAD
+=======
+>>>>>>> 7a08650 (.)
+>>>>>>> 01dce8d29 (initial commit)

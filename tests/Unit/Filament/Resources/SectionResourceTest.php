@@ -9,7 +9,7 @@ use Modules\Cms\Models\Section;
 
 describe('SectionResource', function (): void {
     test('section resource has correct model', function (): void {
-        $resource = new SectionResource();
+        $resource = new SectionResource;
 
         expect($resource::getModel())->toBe(Section::class);
     });
