@@ -15,8 +15,7 @@ class ResolveBlockQueryAction
     /**
      * Executes the query path specified in block data and returns the result.
      *
-     * @param array<string, mixed> $queryConfig Configuration: [model, scopes, orderBy, limit, wrap_in]
-     *
+     * @param  array<string, mixed>  $queryConfig  Configuration: [model, scopes, orderBy, limit, wrap_in]
      * @return array<string, mixed> The transformed data to be merged into block data
      */
     public function execute(array $queryConfig): array
@@ -27,7 +26,7 @@ class ResolveBlockQueryAction
         }
 
         /** @var Model $modelInstance */
-        $modelInstance = new $modelClass();
+        $modelInstance = new $modelClass;
         $query = $modelInstance->newQuery();
 
         // Apply scopes (support both 'scope' singular and 'scopes' plural)

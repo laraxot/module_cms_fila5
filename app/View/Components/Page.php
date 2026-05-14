@@ -30,7 +30,7 @@ final class Page extends Component
     public array $data = [];
 
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function __construct(
         array $data = [],

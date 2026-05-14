@@ -9,7 +9,7 @@ use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
 
 test('it resolves home as webpage', function (): void {
-    $builder = new PageSchemaBuilder();
+    $builder = new PageSchemaBuilder;
     $schema = $builder->build(
         meta: MetatagData::make(),
         routeName: 'home',
@@ -20,7 +20,7 @@ test('it resolves home as webpage', function (): void {
 });
 
 test('it resolves events index as collection page', function (): void {
-    $builder = new PageSchemaBuilder();
+    $builder = new PageSchemaBuilder;
     $schema = $builder->build(
         meta: MetatagData::make(),
         routeName: 'container0.index',
@@ -32,7 +32,7 @@ test('it resolves events index as collection page', function (): void {
 });
 
 test('it resolves event detail as item page with main entity', function (): void {
-    $builder = new PageSchemaBuilder();
+    $builder = new PageSchemaBuilder;
     $schema = $builder->build(
         meta: MetatagData::make(),
         routeName: 'container0.view',
@@ -50,7 +50,7 @@ test('it resolves event detail as item page with main entity', function (): void
 });
 
 test('it resolves profile route as profile page with person main entity', function (): void {
-    $builder = new PageSchemaBuilder();
+    $builder = new PageSchemaBuilder;
     $user = new User([
         'first_name' => 'Mario',
         'last_name' => 'Rossi',
@@ -71,7 +71,7 @@ test('it resolves profile route as profile page with person main entity', functi
 });
 
 test('it resolves public profile detail route as profile page with person identifier', function (): void {
-    $builder = new PageSchemaBuilder();
+    $builder = new PageSchemaBuilder;
 
     $schema = $builder->build(
         meta: MetatagData::make(),
@@ -90,7 +90,7 @@ test('it resolves public profile detail route as profile page with person identi
 });
 
 test('it keeps auth routes as generic webpage', function (): void {
-    $builder = new PageSchemaBuilder();
+    $builder = new PageSchemaBuilder;
     $schema = $builder->build(
         meta: MetatagData::make(),
         routeName: 'auth.login',
