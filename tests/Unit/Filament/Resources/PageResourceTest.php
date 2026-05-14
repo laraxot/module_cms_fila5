@@ -9,7 +9,7 @@ use Modules\Cms\Models\Page;
 
 describe('PageResource', function (): void {
     test('page resource has correct model', function (): void {
-        $resource = new PageResource();
+        $resource = new PageResource;
 
         expect($resource::getModel())->toBe(Page::class);
     });

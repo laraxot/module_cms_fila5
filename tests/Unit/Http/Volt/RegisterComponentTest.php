@@ -9,13 +9,13 @@ use Modules\Cms\Http\Volt\RegisterComponent;
 
 describe('RegisterComponent', function (): void {
     test('register component extends volt component', function (): void {
-        $component = new RegisterComponent();
+        $component = new RegisterComponent;
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
 
     test('register component has expected public properties defaults', function (): void {
-        $component = new RegisterComponent();
+        $component = new RegisterComponent;
 
         expect(property_exists($component, 'name'))->toBeTrue()
             ->and(property_exists($component, 'email'))->toBeTrue()

@@ -8,7 +8,7 @@ use Modules\Cms\Http\Controllers\Admin\XotPanelController;
 
 describe('XotPanelController', function (): void {
     test('xot panel controller extends base controller', function (): void {
-        $controller = new XotPanelController();
+        $controller = new XotPanelController;
 
         expect($controller)->toBeInstanceOf(Modules\Cms\Http\Controllers\BaseController::class);
     });
@@ -24,7 +24,7 @@ describe('XotPanelController', function (): void {
     });
 
     test('xot panel controller is not instantiable via constructor without params', function (): void {
-        $controller = new XotPanelController();
+        $controller = new XotPanelController;
 
         expect($controller)->toBeObject();
     });
