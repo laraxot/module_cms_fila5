@@ -7,12 +7,12 @@ namespace Modules\Cms\Tests\Unit\Filament\Front\Pages;
 use Modules\Cms\Filament\Front\Pages\Welcome;
 
 test('Welcome page can be instantiated', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     expect($page)->toBeObject();
 });
 
 test('Welcome page has view_type property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
@@ -21,7 +21,7 @@ test('Welcome page has view_type property', function () {
 });
 
 test('Welcome page has containers property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
@@ -30,7 +30,7 @@ test('Welcome page has containers property', function () {
 });
 
 test('Welcome page has items property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);
@@ -39,7 +39,7 @@ test('Welcome page has items property', function () {
 });
 
 test('Welcome page has instanceModel property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('instanceModel');
     $property->setAccessible(true);
