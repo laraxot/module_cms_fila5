@@ -7,12 +7,12 @@ namespace Modules\Cms\Tests\Unit\Filament\Pages;
 use Modules\Cms\Filament\Pages\Themes;
 
 test('Themes page can be instantiated', function () {
-    $page = new Themes;
+    $page = new Themes();
     expect($page)->toBeObject();
 });
 
 test('Themes page has themes property', function () {
-    $page = new Themes;
+    $page = new Themes();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('themes');
     $property->setAccessible(true);

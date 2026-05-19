@@ -7,12 +7,12 @@ namespace Modules\Cms\Tests\Unit\Filament\Clusters\Appearance\Pages;
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
 
 test('Headernav page can be instantiated', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     expect($page)->toBeObject();
 });
 
 test('Headernav page has data property', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -21,7 +21,7 @@ test('Headernav page has data property', function () {
 });
 
 test('Headernav page has headernavData property', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('headernavData');
     $property->setAccessible(true);
