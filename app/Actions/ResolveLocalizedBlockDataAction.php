@@ -17,16 +17,22 @@ final class ResolveLocalizedBlockDataAction
      */
     public function execute(array $data): array
     {
-        return $this->walkArray($data);
+        /** @var array<string, mixed> $res */
+        $res = $this->walkArray($data);
+
+        return $res;
     }
 
     /**
-     * @param array<string, mixed> $value
+     * @template TKey of array-key
      *
-     * @return array<string, mixed>
+     * @param array<TKey, mixed> $value
+     *
+     * @return array<TKey, mixed>
      */
     private function walkArray(array $value): array
     {
+        /** @var array<TKey, mixed> $resolved */
         $resolved = [];
 
         foreach ($value as $key => $item) {
@@ -38,7 +44,7 @@ final class ResolveLocalizedBlockDataAction
             }
 
             if (is_array($item)) {
-                /* @var array<string, mixed> $item */
+                /** @var array<array-key, mixed> $item */
                 $resolved[$key] = $this->walkArray($item);
 
                 continue;
