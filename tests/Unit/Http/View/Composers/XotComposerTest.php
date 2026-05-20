@@ -19,7 +19,7 @@ test('compose returns early when no authenticated user', function (): void {
     $view = \Mockery::mock(View::class);
     $view->shouldNotReceive('with');
 
-    $composer = new XotComposer;
+    $composer = new XotComposer();
     $composer->compose($view);
 
     expect(true)->toBeTrue();
@@ -32,7 +32,7 @@ test('compose returns early when authenticated user is not user contract', funct
     $view = \Mockery::mock(View::class);
     $view->shouldNotReceive('with');
 
-    $composer = new XotComposer;
+    $composer = new XotComposer();
     $composer->compose($view);
 
     expect(true)->toBeTrue();
@@ -60,7 +60,7 @@ test('compose shares params lang and profile when user contract is authenticated
     $view->shouldReceive('with')->once()->with('lang', 'it');
     $view->shouldReceive('with')->once()->with('profile', $profile);
 
-    $composer = new XotComposer;
+    $composer = new XotComposer();
     $composer->compose($view);
 
     expect(true)->toBeTrue();

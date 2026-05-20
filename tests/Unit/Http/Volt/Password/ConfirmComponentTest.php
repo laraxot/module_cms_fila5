@@ -9,13 +9,13 @@ use Modules\Cms\Http\Volt\Password\ConfirmComponent;
 
 describe('Password ConfirmComponent', function (): void {
     test('confirm component extends volt component', function (): void {
-        $component = new ConfirmComponent;
+        $component = new ConfirmComponent();
 
         expect($component)->toBeInstanceOf(VoltComponent::class);
     });
 
     test('confirm component has password property', function (): void {
-        $component = new ConfirmComponent;
+        $component = new ConfirmComponent();
 
         expect(property_exists($component, 'password'))->toBeTrue()
             ->and($component->password)->toBe('');
