@@ -11,7 +11,8 @@ use function Safe\preg_match;
 final class ResolveLocalizedBlockDataAction
 {
     /**
-     * @param  array<string, mixed>  $data
+     * @param array<string, mixed> $data
+     *
      * @return array<string, mixed>
      */
     public function execute(array $data): array

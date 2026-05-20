@@ -9,7 +9,7 @@ use Modules\Cms\Models\Menu;
 
 describe('MenuResource', function (): void {
     test('menu resource has correct model', function (): void {
-        $resource = new MenuResource;
+        $resource = new MenuResource();
 
         expect($resource::getModel())->toBe(Menu::class);
     });
@@ -30,10 +30,10 @@ describe('MenuResource', function (): void {
 
         foreach ($schema as $item) {
             $name = $item->getName();
-            if ($name === 'title') {
+            if ('title' === $name) {
                 $hasTitle = true;
             }
-            if ($name === 'items') {
+            if ('items' === $name) {
                 $hasItems = true;
             }
         }
