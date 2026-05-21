@@ -44,7 +44,7 @@ final class ResolveLocalizedBlockDataAction
             }
 
             if (is_array($item)) {
-                /** @var array<array-key, mixed> $item */
+                /* @var array<array-key, mixed> $item */
                 $resolved[$key] = $this->walkArray($item);
 
                 continue;
