@@ -1,7 +1,7 @@
-# Roadmap overview (Module Cms)
+---
+module: theme
+topic: overview
+canonical: ../../../../Themes/docs/shared-components/00-overview.md
+---
 
-## Scope
-
-## Goals
-
-## Non-goals
+See canonical documentation: ../../../../Themes/docs/shared-components/00-overview.md
