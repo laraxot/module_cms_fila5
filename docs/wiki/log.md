@@ -1,5 +1,9 @@
 # Cms Wiki Log
 
+## [2026-05-26] docs | ridondanza ThemeComposer — copia fuori da PSR-4
+
+- **Codice**: `app/View/Composers/ThemeComposer.php` (autoload) vs `resources/views/Composers/ThemeComposer.php` (fantasma quasi gemello) — vedere **[`docs/redundancy-report.md`](../redundancy-report.md)** §5 e hub Xot [`audit-profondo-ridondanze-holistic.md`](../../../Xot/docs/wiki/redundancy/audit-profondo-ridondanze-holistic.md) § analisi nominale.
+
 ## [2026-04-21] fix | merge conflict code-quality-analysis.md
 - Rimossa copia integrale duplicata introdotta dal merge (blocco `--- Merged from code-quality-analysis-2025-11-24.md ---`).
 - Preservata unica riga aggiuntiva utile: `**Status:** ❌ CRITICAL - Requires Immediate Fixes`.

@@ -10,7 +10,7 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord;
 
 class CreateAttachment extends LangBaseCreateRecord
 {
-    protected static string $resource = AttachmentResource::class;
+    public static string $resource = AttachmentResource::class;
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
