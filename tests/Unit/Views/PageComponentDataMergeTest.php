@@ -31,7 +31,8 @@ test('page component merges route context into block data', function (): void {
         ->toContain('container0=events')
         ->toContain('slug1=speaker-slug-456')
         ->toContain('container1=speakers')
-        ->toContain('name=probe');
+        ->toContain('name=probe')
+        ->toContain('data_name=probe');
 });
 
 test('page render exposes nested context', function (): void {

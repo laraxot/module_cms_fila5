@@ -213,12 +213,5 @@
 ---
 
 **Responsabile**: TBD
-<<<<<<< HEAD
 **
-=======
-<<<<<<< HEAD
-=======
-**
->>>>>>> 7a08650 (.)
->>>>>>> 01dce8d29 (initial commit)
 **Next Review**: 2026-02-07
