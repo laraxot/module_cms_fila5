@@ -1,10 +1,5 @@
-Copilot Redundancy Audit — 2026-05-25
+# Copilot audit stub — non usare come SSoT
 
-Sintesi
-- Documentazione e snippet ripetuti individuati across modules (README.md, links.md, structure.md). Questo crea rumore nel knowledge base.
+Analisi operativa e triage classificato: [`redundancy-report.md`](./redundancy-report.md) (agg. **2026-05-26**, §5 ThemeComposer) + hub cross-modulo [**`audit-profondo-ridondanze-holistic`**](../../Xot/docs/wiki/redundancy/audit-profondo-ridondanze-holistic.md) (modulo **Xot**).
 
-Raccomandazioni
-- Creare "single source of truth" per linee guida di architettura e per i pattern Filament/Xot in laravel/Modules/docs/.
-- Aggiungere riferimenti (link relativi) e una checklist di merge per evitare duplicazioni future.
-
-Autore: Copilot CLI
+Questo nome file resta come promemoria storico “Copilot CLI”; non duplicare contenuti qui.
