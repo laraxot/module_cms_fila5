@@ -11,7 +11,7 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseViewRecord;
 
 class ViewSection extends LangBaseViewRecord
 {
-    protected static string $resource = SectionResource::class;
+    public static string $resource = SectionResource::class;
 
     #[\Override]
     protected function getInfolistSchema(): array

@@ -41,11 +41,25 @@ Verificare se entrambi i Cluster sono necessari.
 
 Estende `BaseEventServiceProvider` (Laravel) invece di `XotBaseEventServiceProvider`.
 
+### 5. 🟠 ThemeComposer — copia storica fuori da PSR-4
+
+Due file dichiarano `namespace Modules\Cms\View\Composers` e `class ThemeComposer`:
+
+| Path | Effetto runtime |
+|------|-----------------|
+| [`app/View/Composers/ThemeComposer.php`](../app/View/Composers/ThemeComposer.php) | Caricato da autoload modulo (`"Modules\\Cms\\": "app/"` in [`composer.json`](../composer.json)). |
+| `resources/views/Composers/ThemeComposer.php` | **Non incluso nell’autoload**: resta codice quasi gemello soggetto a deriva (“edito qui ma il sito usa l’altro”). |
+
+Implementazioni divergono (es. **`getMenu`**: ciclo chiavi/`(string)` in `app/` vs assegnazione diretta nella copia sotto resources; branching `type/url` più difensivo in `app/`).
+
+**Azione suggerita:** rimuovere o archiviare la copia sotto **`resources/views/Composers/`** dopo verifica grep che nessuno la importi tramite include manuale; finché coesiste tenerla nei triage refactor insieme a issue [#90](https://github.com/laraxot/base_fixcity_fila5/issues/90).
+
 ## Riepilogo
 
 | Priorità | Problema | Stato |
 |----------|----------|-------|
 | 🟠 | BaseTreeModel non conforme | Da risolvere |
 | 🟠 | BaseModelLang duplicato con Lang | Da unificare |
+| 🟠 | ThemeComposer (copia in `resources/views/`) fuori autoload | Da bonificare / archiviare |
 | 🟡 | Appearance Cluster duplicato con User | Da verificare |
 | 🟡 | EventServiceProvider inconsistente | Da standardizzare |
