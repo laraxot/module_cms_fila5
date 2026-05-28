@@ -9,7 +9,7 @@ use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class SectionsTable extends XotBaseResourceTable
 {
-    public static function getTableColumns(): array
+    public function getTableColumns(): array
     {
         return [
             'name' => TextColumn::make('name')->searchable()->sortable(),
