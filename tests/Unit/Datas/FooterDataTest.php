@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 test('FooterData can be instantiated', function (): void {
     $footerData = new FooterData();
 
@@ -11,12 +10,10 @@ test('FooterData can be instantiated', function (): void {
 
 test('FooterData extends Spatie Data', function (): void {
     $footerData = new FooterData();
-
 });
 
 test('FooterData implements Wireable interface', function (): void {
     $footerData = new FooterData();
-
 });
 
 test('FooterData has default view path', function (): void {
