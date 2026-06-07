@@ -15,17 +15,14 @@ test('BlockData can be instantiated with type and data', function (): void {
 
 test('BlockData uses WireableData trait', function (): void {
     $traits = class_uses_recursive(BlockData::class);
-
 });
 
 test('BlockData extends Spatie Data', function (): void {
     $blockData = new BlockData('text', ['view' => 'ui::empty']);
-
 });
 
 test('BlockData implements Wireable interface', function (): void {
     $blockData = new BlockData('card', ['view' => 'ui::empty']);
-
 });
 
 test('BlockData collection method returns DataCollection', function (): void {

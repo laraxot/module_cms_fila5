@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Illuminate\Support\Facades\View;
 use Modules\Cms\Actions\View\GetCmsViewAction;
 

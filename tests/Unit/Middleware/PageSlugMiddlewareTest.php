@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 
 test('PageSlugMiddleware can be instantiated', function () {

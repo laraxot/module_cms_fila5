@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Models\Module;
 
 test('Module model can be instantiated', function () {

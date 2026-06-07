@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Models\Section;
 
 test('Section model can be instantiated', function () {
