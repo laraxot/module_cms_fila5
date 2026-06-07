@@ -55,6 +55,7 @@ class MioServizio
     ) {
     }
     
+    
     public function eseguiOperazione(): void
     {
         // Utilizzo dell'interfaccia UserContract
@@ -81,10 +82,12 @@ public function register(array $data): UserContract
 {
     $user = app(UserContract::class);
     
+    
     $user->name = $data['name'];
     $user->email = $data['email'];
     $user->password = Hash::make($data['password']);
     $user->save();
+    
     
     return $user;
 }

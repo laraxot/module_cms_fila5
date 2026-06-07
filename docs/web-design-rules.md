@@ -240,4 +240,5 @@
 - Verificare la conformità agli standard web
 - Testare su diversi browser
 - Controllare l'accessibilità
+- Validare il codice HTML/CSS
 - Validare il codice HTML/CSS 

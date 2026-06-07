@@ -126,6 +126,11 @@ public static function table(Table $table): Table
                 return 'bg-warning-500/10';
             }
             
+
+            if ($record->status === 'warning') {
+                return 'bg-warning-500/10';
+            }
+
             return '';
         });
 }
@@ -144,6 +149,11 @@ TextColumn::make('stock')
             return 'warning';
         }
         
+
+        if ($state < 10) {
+            return 'warning';
+        }
+
         return 'success';
     })
 ```
@@ -353,10 +363,12 @@ class MiaRisorsa extends XotBaseResource
 {
     protected static ?string $navigationIcon = 'heroicon-o-document';
     
+    
     public static function getRelations(): array
     {
         return [];
     }
+    
     
     public static function getFormSchema(): array
     {

@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Models\Traits;
-
-use Modules\Cms\Models\Traits\HasBlocks;
-
 test('HasBlocks trait can be used', function () {
     // Create an anonymous class that uses the trait
     $model = new class extends Modules\Cms\Models\BaseModel {

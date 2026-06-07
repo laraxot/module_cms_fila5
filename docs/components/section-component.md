@@ -141,6 +141,9 @@ Questo permette:
 - Stili specifici per sezione via slug
 
 ## Collegamenti
+- [Documentazione Blocchi](../blocks/README.md)
+- [Gestione Sezioni](../section-management.md)
+- [Documentazione Root](../../../../docs/components.md)
 - [Documentazione Blocchi](../blocks/readme.md)
 - [Gestione Sezioni](../section-management.md)
 - [Documentazione Root](../../../../../docs/components.md)

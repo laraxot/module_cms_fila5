@@ -114,6 +114,11 @@ trait HasBlocks
             $record = static::query()->where('slug', $slug)->sole();
         } catch (ModelNotFoundException) {
             return [];
+        } catch (\Illuminate\Database\MultipleRecordsFoundException) {
+            $record = static::query()->where('slug', $slug)->latest()->first();
+            if (! $record instanceof Model) {
+                return [];
+            }
         }
 
         if (! $record instanceof Model) {

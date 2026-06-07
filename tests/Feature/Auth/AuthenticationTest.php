@@ -17,6 +17,7 @@ uses(TestCase::class);
 
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
+    /** @var class-string<Model> $userClass */
     get('/'.$lang.'/auth/login')->assertStatus(200);
 });
 
@@ -45,7 +46,6 @@ test('users can authenticate using the login screen', function (): void {
 });
 
 /*
- * test('users cannot authenticate with invalid password', function(): void {
  * $userClass = XotData::make()->getUserClass();
  * $user = $userClass::factory()->create();
  *
@@ -59,7 +59,6 @@ test('users can authenticate using the login screen', function (): void {
  * expect(Auth::guest())->toBeTrue();
  * });
  *
- * test('users can logout', function(): void {
  * $userClass = XotData::make()->getUserClass();
  * $user = $userClass::factory()->create();
  *

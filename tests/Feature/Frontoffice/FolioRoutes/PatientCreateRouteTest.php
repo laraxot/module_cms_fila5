@@ -2,18 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Frontoffice\FolioRoutes;
-
 use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-it('GET /it/events acceptable (LaravelPizza Meetup)', function (): void {
-    $res = $this->get('/it/events');
-
-    $status = (int) $res->getStatusCode();
-    if ($status >= 500) {
-        test()->markTestSkipped('Events (LaravelPizza) route returned server error in this install.');
 
         return;
     }

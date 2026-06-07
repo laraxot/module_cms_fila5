@@ -199,6 +199,7 @@ protected function casts(): array
 
 ## Link Correlati
 
+- 📖 [Modulo Xot - Classi Base](../../Xot/docs/analisi-metodi-duplicati.md)
 - 📚 [Analisi Completa](../../../../docs/analisi-metodi-duplicati.md)
 - 📖 [Modulo Xot - Classi Base](../../xot/docs/analisi-metodi-duplicati.md)
 - 📖 [Convenzioni Namespace Filament](./convenzioni-namespace-filament.md)
@@ -206,5 +207,6 @@ protected function casts(): array
 
 ---
 
+**Data:** 2025-10-15
 **Data:** [DATE]
 **Status:** 📋 Draft per Review
