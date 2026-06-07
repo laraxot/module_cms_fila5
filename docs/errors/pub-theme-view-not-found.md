@@ -85,6 +85,7 @@ Il componente `Section` del modulo CMS:
 
 ---
 
+*Ultimo aggiornamento: Settembre 2025*
 # Errore: View pub_theme::components.sections.footer not found
 
 ## 🚨 Problema
@@ -172,3 +173,4 @@ Il componente `Section` del modulo CMS:
 
 ---
 
+*Ultimo aggiornamento: Settembre 2025*

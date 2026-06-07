@@ -8,7 +8,6 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Modules\Cms\Providers\CmsServiceProvider;
 use Modules\User\Providers\UserServiceProvider;
-use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotServiceProvider;
 use Modules\Xot\Tests\CreatesApplication;
 
@@ -32,13 +31,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        config(['xra.pub_theme' => 'TwentyOne']);
-        config(['xra.main_module' => 'User']);
-
-        XotData::make()->update([
-            'pub_theme' => 'TwentyOne',
-            'main_module' => 'User',
-        ]);
+        config(['main_module' => 'User']);
 
         // NOTE: Migrations are NOT run in setUp()
         // They must be run ONCE externally: php artisan migrate --env=testing

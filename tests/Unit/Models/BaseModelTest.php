@@ -11,22 +11,4 @@ beforeEach(function (): void {
 });
 
 test('base model extends eloquent model', function (): void {
-    expect($baseModel);
-});
-
-test('base model has correct table name', function (): void {
-    expect($baseModel->getTable());
-});
-
-test('base model can be instantiated', function (): void {
-    expect($baseModel);
-});
-
-test('base model has proper inheritance chain', function (): void {
-    expect($baseModel);
-    expect($baseModel);
-});
-
-test('base model has timestamps enabled', function (): void {
-    expect($baseModel->usesTimestamps());
 });

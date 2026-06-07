@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Datas;
 
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Datas\FooterData;

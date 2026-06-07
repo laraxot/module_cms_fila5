@@ -230,4 +230,5 @@ npm run build
 
 - [Documentazione Filament](https://filamentphp.com)
 - [Documentazione Livewire](https://livewire.laravel.com)
+- [Documentazione TailwindCSS](https://tailwindcss.com)
 - [Documentazione TailwindCSS](https://tailwindcss.com) 

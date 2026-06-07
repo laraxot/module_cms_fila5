@@ -213,4 +213,5 @@ npm update
 
 ## Collegamenti tra versioni di theme_compilation.md
 * [theme_compilation.md](docs/standards/theme_compilation.md)
+* [theme_compilation.md](laravel/Modules/Cms/docs/theme_compilation.md)
 * [theme_compilation.md](laravel/modules/cms/docs/theme_compilation.md)

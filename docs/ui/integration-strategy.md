@@ -157,5 +157,6 @@ class TailkitAssetManager
 
 ## Collegamenti
 - [Tailkit Components](tailkit-components.md)
+- [Theme System](../themes/README.md)
 - [Theme System](../themes/readme.md)
 - [Performance Guidelines](../performance.md)
