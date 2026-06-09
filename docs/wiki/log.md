@@ -1,4 +1,19 @@
+## [2026-06-05] docs | Folio routing — mount() tipizzato + @volt statico
+
+- `folio_routing_system.md`: `mount(string $container0, string $slug0 = '')`; anti-pattern senza `request()->route()`
+- Shell: [concepts/folio-page-shell-pattern.md](concepts/folio-page-shell-pattern.md)
+
+## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
+
+- Stub/checklist: second-brain → canon Xot, ai-harness, [hackernoon map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md), [llm-wiki.txt](../../../../../bashscripts/tools/prompts/llm-wiki.txt)
+- GitHub: [#272](https://github.com/laraxot/base_fixcity_fila5/issues/272) / [D#273](https://github.com/laraxot/base_fixcity_fila5/discussions/273)
+
 # Cms Wiki Log
+
+## [2026-06-05] architecture | Folio page shell — mount + x-page + volt statico
+
+- Nuovo: [folio-page-shell-pattern.md](concepts/folio-page-shell-pattern.md)
+- Aggiornato: `folio_routing_system.md` — no `@volt($pageSlug)`, es. `container1.index`
 
 ## [2026-05-26] docs | ridondanza ThemeComposer — copia fuori da PSR-4
 
