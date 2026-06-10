@@ -27,7 +27,7 @@ class FrontPanelProvider extends PanelProvider
         return $panel
             ->id('cms::front')
             ->path('{lang}/front')
-            ->colors(MetatagData::make()->getAllColors())
+            ->colors(MetatagData::make()->getFilamentColors())
             ->discoverResources(
                 in: app_path('Filament/Front/Resources'),
                 for: 'App\\Filament\\Front\\Resources',

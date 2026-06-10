@@ -59,6 +59,7 @@ trait HasBlocks
         foreach ($blocks as $key => $block) {
             /** @var array<string, mixed> $block */
             $type = (string) ($block['type'] ?? 'unknown');
+            /** @var array<string, mixed> $data */
             $data = (array) ($block['data'] ?? []);
             $slug = isset($block['slug']) ? (string) $block['slug'] : null;
             $active = (bool) ($block['active'] ?? true);
@@ -73,6 +74,7 @@ trait HasBlocks
     }
 
     /**
+     * @param  array<int|string, mixed>  $blocks
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array
