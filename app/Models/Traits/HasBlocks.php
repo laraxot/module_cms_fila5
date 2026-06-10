@@ -74,7 +74,8 @@ trait HasBlocks
     }
 
     /**
-     * @param  array<int|string, mixed>  $blocks
+     * @param array<int|string, mixed> $blocks
+     *
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array

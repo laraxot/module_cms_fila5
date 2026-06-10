@@ -38,7 +38,7 @@ class ThemeComposer
     }
 
     /**
-     * @param  array<string, mixed>  $menu
+     * @param array<string, mixed> $menu
      */
     public function getMenuUrl(array $menu): string
     {
