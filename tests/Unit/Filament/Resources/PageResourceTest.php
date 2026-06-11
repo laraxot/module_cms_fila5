@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Resources\PageResource;
 use Modules\Cms\Models\Page;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('PageResource', function (): void {
@@ -17,7 +16,7 @@ describe('PageResource', function (): void {
 
     test('page resource has form schema', function (): void {
         $schema = PageResource::getFormSchema();
-    /** @var array<string, mixed> $schema */
+        /* @var array<string, mixed> $schema */
         Assert::assertGreaterThan(0, count($schema));
     });
 

@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Illuminate\Support\Facades\Config;
 use Modules\Cms\Actions\GetStyleClassAction;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('GetStyleClassAction can be executed', function () {
@@ -21,9 +20,9 @@ test('GetStyleClassAction handles exceptions gracefully', function () {
     // so we need to test that it's handled appropriately
     try {
         $result = $action->execute();
-    } catch (\Exception $e) {
+    } catch (Exception $e) {
         // If an exception is thrown, it's expected due to missing dependencies
-            }
+    }
 });
 
 test('GetStyleClassAction with mocked config', function () {

@@ -5,8 +5,6 @@ declare(strict_types=1);
 use Illuminate\Support\Str;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Database\Factories\PageFactory;
-use Modules\Cms\Datas\ResolvePageData;
-use Modules\Cms\Models\Page as PageModel;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 

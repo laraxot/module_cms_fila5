@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Livewire\Wireable;
 use Modules\Cms\Datas\FooterData;
+use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('FooterData can be instantiated', function (): void {
@@ -53,7 +52,7 @@ test('FooterData has nullable overlay_color property', function (): void {
 
 test('FooterData rules method returns validation rules', function (): void {
     $rules = FooterData::rules();
-    /** @var array<string, mixed> $rules */
+    /* @var array<string, mixed> $rules */
     Assert::assertArrayHasKey('background_color', $rules);
 
     Assert::assertArrayHasKey('background', $rules);
@@ -87,6 +86,6 @@ test('FooterData can be converted to array', function (): void {
     ]);
 
     $array = $footerData->toArray();
-    /** @var array<string, mixed> $array */
+    /* @var array<string, mixed> $array */
     Assert::assertArrayHasKey('background_color', $array);
 });

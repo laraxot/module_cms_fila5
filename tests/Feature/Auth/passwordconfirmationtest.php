@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('confirm password screen can be rendered', function (): void {

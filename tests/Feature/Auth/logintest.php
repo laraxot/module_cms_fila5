@@ -2,44 +2,45 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
-use Livewire\Features\SupportTesting\Testable;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Datas\XotData;
-use PHPUnit\Framework\Assert;
+
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
-uses(Modules\Cms\Tests\TestCase::class);
+use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 // NOTE: Helper functions moved to Modules\Cms\Tests\TestCase for DRY pattern
 // Use cmsGenerateUniqueEmail(), $this->getUserClass(), cmsCreateTestUser()
 
 describe('Frontend Login Page Rendering', function () {
-        test('login page can be rendered', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $locale = app()->getLocale();
+    test('login page can be rendered', function () {
+        /** @var TestCase $this */
+        $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
     });
 
     test('login page contains login widget', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $locale = app()->getLocale();
+        /** @var TestCase $this */
+        $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status()); // ->assertSee('@livewire')
         // ->assertSee('LoginWidget')
     });
 
     test('login page has required form elements', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $locale = app()->getLocale();
+        /** @var TestCase $this */
+        $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status()); // ->assertSee('Hai dimenticato la password?')
         // ->assertSee('crea un nuovo account')
         // ->assertSee('logo-v2.png')
@@ -47,11 +48,11 @@ describe('Frontend Login Page Rendering', function () {
 });
 
 describe('Frontend Login Page Localization', function () {
-        test('login page works in italian', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            app()->setLocale('it');
+    test('login page works in italian', function () {
+        /* @var Modules\Cms\Tests\TestCase $this */
+        app()->setLocale('it');
         $response = get('/it/auth/login');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
     });
 
@@ -63,7 +64,7 @@ describe('Frontend Login Page Localization', function () {
     // });
 
     test('login page contains localized content', function () {
-        /** @var Modules\Cms\Tests\TestCase $this */
+        /** @var TestCase $this */
         $response = cmsGet('/it/auth/login');
         $response
             ->assertStatus(200)
@@ -74,9 +75,9 @@ describe('Frontend Login Page Localization', function () {
 });
 
 describe('Frontend Login Page Authentication', function () {
-        test('user can authenticate via frontend login page', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $email = cmsGenerateUniqueEmail();
+    test('user can authenticate via frontend login page', function () {
+        /** @var TestCase $this */
+        $email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -96,31 +97,31 @@ describe('Frontend Login Page Authentication', function () {
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame('/', $response->headers->get('Location'));
     });
 });
 
 describe('Frontend Login Page Integration', function () {
-        test('authenticated users are redirected from login page', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $user = cmsCreateTestUser();
+    test('authenticated users are redirected from login page', function () {
+        /** @var TestCase $this */
+        $user = cmsCreateTestUser();
 
         actingAs($user);
 
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         // May redirect to dashboard or intended page
         Assert::assertSame(302, $response->status());
     });
 });
 
 describe('Frontend Login Session Management', function () {
-        test('remember me functionality works', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $email = cmsGenerateUniqueEmail();
+    test('remember me functionality works', function () {
+        /** @var TestCase $this */
+        $email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -139,8 +140,8 @@ describe('Frontend Login Session Management', function () {
     });
 
     test('session regeneration on login', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $email = cmsGenerateUniqueEmail();
+        /** @var TestCase $this */
+        $email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -161,9 +162,9 @@ describe('Frontend Login Session Management', function () {
 });
 
 describe('Frontend Login Security', function () {
-        test('login attempts are rate limited', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            $email = cmsGenerateUniqueEmail();
+    test('login attempts are rate limited', function () {
+        /** @var TestCase $this */
+        $email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -190,9 +191,9 @@ describe('Frontend Login Security', function () {
 });
 
 describe('Frontend Login User Types', function () {
-        test('any user type can login via frontend', function () {
-            /** @var Modules\Cms\Tests\TestCase $this */
-            // Using XotData pattern ensures compatibility with any user type
+    test('any user type can login via frontend', function () {
+        /** @var TestCase $this */
+        // Using XotData pattern ensures compatibility with any user type
         $email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
             'email' => $email,

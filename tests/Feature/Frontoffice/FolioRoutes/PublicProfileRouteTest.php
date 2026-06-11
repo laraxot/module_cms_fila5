@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
-use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 it('renders the public profile route using the localized profile page', function (): void {
-        $user = UserFactory::new()->createOne([
+    $user = UserFactory::new()->createOne([
         'name' => 'Mario Rossi',
         'email' => 'mario.rossi@example.test',
         'lang' => 'it',

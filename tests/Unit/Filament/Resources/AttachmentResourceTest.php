@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Resources\AttachmentResource;
 use Modules\Cms\Models\Attachment;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('AttachmentResource', function (): void {
@@ -17,18 +16,18 @@ describe('AttachmentResource', function (): void {
 
     test('attachment resource has form schema', function (): void {
         $schema = AttachmentResource::getFormSchema();
-    /** @var array<string, mixed> $schema */
+        /* @var array<string, mixed> $schema */
         Assert::assertGreaterThan(0, count($schema));
     });
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
-    /** @var array<string, mixed> $relations */
+        /* @var array<string, mixed> $relations */
     });
 
     test('attachment resource has pages', function (): void {
         $pages = AttachmentResource::getPages();
-    /** @var array<string, mixed> $pages */
+        /* @var array<string, mixed> $pages */
         Assert::assertArrayHasKey('index', $pages);
         Assert::assertArrayHasKey('create', $pages);
         Assert::assertArrayHasKey('edit', $pages);
@@ -47,5 +46,5 @@ describe('AttachmentResource', function (): void {
     });
 
     test('attachment resource has plural label', function (): void {
-            });
+    });
 });

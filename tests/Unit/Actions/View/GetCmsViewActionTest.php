@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Illuminate\Support\Facades\View;
 use Modules\Cms\Actions\View\GetCmsViewAction;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('GetCmsViewAction can be instantiated', function () {
@@ -32,5 +31,4 @@ test('GetCmsViewAction execute method throws exception for non-existing view', f
         ->andReturn(false);
 
     $action = new GetCmsViewAction();
-
 });

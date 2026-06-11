@@ -2,23 +2,21 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
+
 use function Safe\class_uses;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('Page Business Logic', function (): void {
     test('page extends base model lang for multilingual support', function (): void {
-
     });
 
     test('page has translatable fields configured', function (): void {
         $page = new Page();
         $page = new Page();
-
     });
 
     test('page has expected fillable fields', function (): void {
@@ -46,7 +44,7 @@ describe('Page Business Logic', function (): void {
 
     test('page can get middleware by slug', function (): void {
         $middleware = Page::getMiddlewareBySlug('non-existent-slug');
-    /** @var array<string, mixed> $middleware */
+        /* @var array<string, mixed> $middleware */
     });
 
     test('page has correct casts for blocks and arrays', function (): void {
@@ -71,7 +69,7 @@ describe('Page Business Logic', function (): void {
         Assert::assertTrue($schemaProperty->isProtected());
 
         $schema = $schemaProperty->getValue($page);
-    /** @var array<string, mixed> $schema */
+        /* @var array<string, mixed> $schema */
         Assert::assertSame('json', $schema['content_blocks']);
         Assert::assertSame('json', $schema['sidebar_blocks']);
         Assert::assertSame('json', $schema['footer_blocks']);
@@ -80,6 +78,5 @@ describe('Page Business Logic', function (): void {
     test('page can get rows for sushi functionality', function (): void {
         $page = new Page();
         $page = new Page();
-
-            });
+    });
 });

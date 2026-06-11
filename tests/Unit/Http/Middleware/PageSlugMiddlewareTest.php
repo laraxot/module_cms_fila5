@@ -2,24 +2,21 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
-use PHPUnit\Framework\Assert;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 use Symfony\Component\HttpFoundation\Response;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 /**
- * @param  array<int, mixed>  $args
+ * @param array<int, mixed> $args
  */
 function invokeProtected(object $object, string $method, array $args = []): mixed
 {
-    $reflection = new \ReflectionClass($object);
+    $reflection = new ReflectionClass($object);
     $target = $reflection->getMethod($method);
     $target->setAccessible(true);
 
@@ -28,7 +25,7 @@ function invokeProtected(object $object, string $method, array $args = []): mixe
 
 function setProtected(object $object, string $property, mixed $value): void
 {
-    $reflection = new \ReflectionClass($object);
+    $reflection = new ReflectionClass($object);
     $target = $reflection->getProperty($property);
     $target->setAccessible(true);
     $target->setValue($object, $value);
@@ -69,8 +66,8 @@ test('parseMiddleware splits name and parameters', function (): void {
 
 test('resolveMiddlewareClass returns mapped class for alias', function (): void {
     $middleware = new PageSlugMiddleware();
-    /** @var Kernel&\Mockery\MockInterface $kernel */
-    $kernel = \Mockery::mock(Kernel::class);
+    /** @var Kernel&Mockery\MockInterface $kernel */
+    $kernel = Mockery::mock(Kernel::class);
     $kernel->allows([
         'getRouteMiddleware' => ['auth' => Authenticate::class],
     ]);

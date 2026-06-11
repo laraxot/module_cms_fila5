@@ -64,6 +64,7 @@ class Section extends Component
 
         /** @var ViewFactory $viewFactory */
         $viewFactory = app('view');
+
         return $viewFactory->make($view, $viewParams);
     }
 }

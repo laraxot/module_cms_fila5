@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
-use PHPUnit\Framework\Assert;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\RegisterComponent;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('RegisterComponent', function (): void {
@@ -39,10 +36,10 @@ describe('RegisterComponent', function (): void {
     });
 
     test('register component has register method', function (): void {
-            });
+    });
 
     test('register method returns redirect response', function (): void {
-        $reflection = new \ReflectionClass(RegisterComponent::class);
+        $reflection = new ReflectionClass(RegisterComponent::class);
         $method = $reflection->getMethod('register');
         $returnType = $method->getReturnType();
 

@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\Attachment;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Attachment model can be instantiated', function () {

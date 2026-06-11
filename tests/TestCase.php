@@ -7,8 +7,8 @@ namespace Modules\Cms\Tests;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\ServiceProvider;
 use Modules\Cms\Providers\CmsServiceProvider;
-use Modules\User\Providers\UserServiceProvider;
 use Modules\User\Database\Factories\UserFactory;
+use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotServiceProvider;
@@ -69,7 +69,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     protected static function createTestUser(array $attributes = []): UserContract
     {
@@ -80,7 +80,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     public static function pestCreateTestUser(array $attributes = []): UserContract
     {
@@ -90,7 +90,8 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @template T of object
      *
-     * @param  class-string<T>  $class
+     * @param class-string<T> $class
+     *
      * @return T&\PHPUnit\Framework\MockObject\MockObject
      */
     public function createPHPUnitMock(string $class): object

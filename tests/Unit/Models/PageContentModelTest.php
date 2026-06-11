@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\PageContent;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('PageContent Model', function (): void {
@@ -60,9 +59,8 @@ describe('PageContent Model', function (): void {
 
     test('page content model has getRows method', function (): void {
         $model = new PageContent();
-
-            });
+    });
 
     test('page content model has sluggable method', function (): void {
-            });
+    });
 });

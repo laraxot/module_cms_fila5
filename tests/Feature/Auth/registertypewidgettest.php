@@ -2,15 +2,13 @@
 
 declare(strict_types=1);
 
-
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Livewire;
-use Modules\User\Filament\Widgets\RegistrationWidget;
 use Modules\Cms\Tests\TestCase;
+use Modules\User\Filament\Widgets\RegistrationWidget;
 use PHPUnit\Framework\Assert;
 
-
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 beforeEach(function (): void {
     cmsMockXotData();
 });
@@ -40,7 +38,7 @@ describe('Registration Widget', function (): void {
             ->set('data.name', 'Test User')
             ->assertSet('data.email', $email)
             ->assertSet('data.name', 'Test User');
-        /** @var Testable<\Livewire\Component> $widget */
+        /* @var Testable<\Livewire\Component> $widget */
 
         Assert::assertSame($email, $widget->get('data.email'));
     });
@@ -69,18 +67,18 @@ describe('Registration Widget', function (): void {
             ->set('data.email', TestCase::pestGenerateUniqueEmail())
             ->set('data.name', 'Test User')
             ->set('data.password', 'TestPassword123!');
-        /** @var Testable<\Livewire\Component> $widget */
+        /* @var Testable<\Livewire\Component> $widget */
 
         try {
             $widget->call('register');
-        } catch (\Exception $e) {
-            Assert::assertInstanceOf(\Exception::class, $e);
+        } catch (Exception $e) {
+            Assert::assertInstanceOf(Exception::class, $e);
         }
     });
 
     test('widget is compatible with livewire testing', function (): void {
         $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
-        /** @var Testable<\Livewire\Component> $widget */
+        /* @var Testable<\Livewire\Component> $widget */
 
         $widget->assertStatus(200);
     });
@@ -91,12 +89,12 @@ describe('Registration Widget', function (): void {
                 ->set('data.email', TestCase::pestGenerateUniqueEmail())
                 ->set('data.name', "Test {$type}")
                 ->set('data.password', 'TestPassword123!');
-            /** @var Testable<\Livewire\Component> $widget */
+            /* @var Testable<\Livewire\Component> $widget */
 
             try {
                 $widget->call('register');
-            } catch (\Exception $e) {
-                Assert::assertInstanceOf(\Exception::class, $e);
+            } catch (Exception $e) {
+                Assert::assertInstanceOf(Exception::class, $e);
             }
         }
     });
@@ -108,7 +106,7 @@ describe('Registration Widget', function (): void {
         $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
             ->set('data.email', $email)
             ->set('data.name', $name);
-        /** @var Testable<\Livewire\Component> $widget */
+        /* @var Testable<\Livewire\Component> $widget */
 
         Assert::assertSame($email, $widget->get('data.email'));
         Assert::assertSame($name, $widget->get('data.name'));

@@ -2,15 +2,13 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Front\Pages\Home;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Home page can be instantiated', function () {
     $page = new Home();
-
 });
 
 test('Home page has view_type property', function () {
@@ -41,13 +39,13 @@ test('Home page has items property', function () {
 });
 
 test('Home page has mount method', function () {
-    });
+});
 
 test('Home page has getViewData method', function () {
-    });
+});
 
 test('Home page has initView method', function () {
-    });
+});
 
 test('Home page has url method', function () {
-    });
+});

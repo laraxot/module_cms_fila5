@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Filament\Blocks\ActionsBlock;
 use Modules\Cms\Filament\Blocks\ContactBlock;
 use Modules\Cms\Filament\Blocks\CtaBlock;
@@ -13,7 +12,6 @@ use Modules\Cms\Filament\Blocks\LogoBlock;
 use Modules\Cms\Filament\Blocks\NewsletterBlock;
 use Modules\Cms\Filament\Blocks\ParagraphBlock;
 use PHPUnit\Framework\Assert;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('ActionsBlock can be instantiated', function (): void {

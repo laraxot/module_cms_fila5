@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+
+use function Pest\Laravel\get;
+
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
-use function Pest\Laravel\get;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('blocks discovery returns a data collection', function (): void {
@@ -37,12 +39,11 @@ test('discovered blocks expose the expected metadata keys', function (): void {
 
         /** @var array<string, mixed> $blockArray */
         $blockArray = $block->toArray();
-
     });
 });
 
 test('homepage request is reachable when route is available', function (): void {
     $response = get('/');
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+    /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
 });
