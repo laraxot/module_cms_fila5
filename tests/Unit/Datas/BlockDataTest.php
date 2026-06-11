@@ -2,37 +2,41 @@
 
 declare(strict_types=1);
 
+use PHPUnit\Framework\Assert;
 use Livewire\Wireable;
 use Modules\Cms\Datas\BlockData;
 use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
+
+uses(Modules\Cms\Tests\TestCase::class);
 test('BlockData can be instantiated with type and data', function (): void {
     $blockData = new BlockData('hero', ['view' => 'ui::empty', 'title' => 'Test']);
 
-    expect($blockData)->toBeInstanceOf(BlockData::class)
-        ->and($blockData->type)->toBe('hero')
-        ->and($blockData->data)->toBeArray()
-        ->and($blockData->data['title'])->toBe('Test');
+    Assert::assertInstanceOf(BlockData::class, $blockData);
+
+    Assert::assertSame('hero', $blockData->type);
+
+    Assert::assertSame('Test', $blockData->data['title']);
 });
 
 test('BlockData uses WireableData trait', function (): void {
     $traits = class_uses_recursive(BlockData::class);
 
-    expect(array_values($traits))->toContain(WireableData::class);
+    Assert::assertContains(WireableData::class, array_values($traits));
 });
 
 test('BlockData extends Spatie Data', function (): void {
     $blockData = new BlockData('text', ['view' => 'ui::empty']);
 
-    expect($blockData)->toBeInstanceOf(Data::class);
+    Assert::assertInstanceOf(Data::class, $blockData);
 });
 
 test('BlockData implements Wireable interface', function (): void {
     $blockData = new BlockData('card', ['view' => 'ui::empty']);
 
-    expect($blockData)->toBeInstanceOf(Wireable::class);
+    Assert::assertInstanceOf(Wireable::class, $blockData);
 });
 
 test('BlockData collection method returns DataCollection', function (): void {
@@ -41,21 +45,21 @@ test('BlockData collection method returns DataCollection', function (): void {
         ['type' => 'text', 'data' => ['view' => 'ui::empty', 'content' => 'Text']],
     ];
 
-    $collection = BlockData::collection(collect($data)->map(fn ($item) => new BlockData($item['type'], $item['data'])));
+    $collection = BlockData::collection($data);
 
-    expect($collection)->toBeInstanceOf(DataCollection::class);
+    Assert::assertInstanceOf(DataCollection::class, $collection);
 });
 
 test('BlockData sets default view when not provided', function (): void {
     $blockData = new BlockData('simple', []);
 
-    expect($blockData->view)->toBe('ui::empty');
+    Assert::assertSame('ui::empty', $blockData->view);
 });
 
 test('BlockData stores type correctly', function (): void {
     $blockData = new BlockData('testimonial', ['view' => 'ui::empty']);
 
-    expect($blockData->type)->toBe('testimonial');
+    Assert::assertSame('testimonial', $blockData->type);
 });
 
 test('BlockData stores data array correctly', function (): void {
@@ -68,5 +72,5 @@ test('BlockData stores data array correctly', function (): void {
 
     $blockData = new BlockData('feature', $testData);
 
-    expect($blockData->data)->toEqual($testData);
+    Assert::assertEquals($testData, $blockData->data);
 });

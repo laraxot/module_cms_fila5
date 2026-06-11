@@ -2,14 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Http\Middleware;
+use ReflectionClass;
 
+
+use PHPUnit\Framework\Assert;
 use Illuminate\Auth\Middleware\Authenticate;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use Symfony\Component\HttpFoundation\Response;
 
+
+uses(Modules\Cms\Tests\TestCase::class);
+/**
+ * @param  array<int, mixed>  $args
+ */
 function invokeProtected(object $object, string $method, array $args = []): mixed
 {
     $reflection = new \ReflectionClass($object);
@@ -33,8 +40,9 @@ test('handle returns next response when slug is not a string', function (): void
 
     $response = $middleware->handle($request, fn (Request $req): Response => new Response('ok', 200));
 
-    expect($response->getStatusCode())->toBe(200)
-        ->and($response->getContent())->toBe('ok');
+    Assert::assertSame(200, $response->getStatusCode());
+
+    Assert::assertSame('ok', $response->getContent());
 });
 
 test('handle wraps non-response next value into 500 response when slug is not a string', function (): void {
@@ -43,8 +51,9 @@ test('handle wraps non-response next value into 500 response when slug is not a 
 
     $response = $middleware->handle($request, fn (Request $req) => 'not-a-response');
 
-    expect($response->getStatusCode())->toBe(500)
-        ->and($response->getContent())->toBe('Internal Server Error');
+    Assert::assertSame(500, $response->getStatusCode());
+
+    Assert::assertSame('Internal Server Error', $response->getContent());
 });
 
 test('parseMiddleware splits name and parameters', function (): void {
@@ -53,22 +62,24 @@ test('parseMiddleware splits name and parameters', function (): void {
     /** @var array{0:string,1:array<string>} $parsed */
     $parsed = invokeProtected($middleware, 'parseMiddleware', ['throttle:60,1']);
 
-    expect($parsed[0])->toBe('throttle')
-        ->and($parsed[1])->toBe(['60', '1']);
+    Assert::assertSame('throttle', $parsed[0]);
+
+    Assert::assertSame(['60', '1'], $parsed[1]);
 });
 
 test('resolveMiddlewareClass returns mapped class for alias', function (): void {
     $middleware = new PageSlugMiddleware();
+    /** @var Kernel&\Mockery\MockInterface $kernel */
     $kernel = \Mockery::mock(Kernel::class);
-    $kernel->shouldReceive('getRouteMiddleware')
-        ->once()
-        ->andReturn(['auth' => Authenticate::class]);
+    $kernel->allows([
+        'getRouteMiddleware' => ['auth' => Authenticate::class],
+    ]);
 
     setProtected($middleware, 'kernel', $kernel);
 
     $resolved = invokeProtected($middleware, 'resolveMiddlewareClass', ['auth']);
 
-    expect($resolved)->toBe(Authenticate::class);
+    Assert::assertSame(Authenticate::class, $resolved);
 });
 
 test('executeMiddlewareChain returns 500 when final closure does not return response', function (): void {
@@ -82,6 +93,7 @@ test('executeMiddlewareChain returns 500 when final closure does not return resp
         fn (Request $req) => 'not-a-response',
     ]);
 
-    expect($response->getStatusCode())->toBe(500)
-        ->and($response->getContent())->toBe('Internal Server Error');
+    Assert::assertSame(500, $response->getStatusCode());
+
+    Assert::assertSame('Internal Server Error', $response->getContent());
 });

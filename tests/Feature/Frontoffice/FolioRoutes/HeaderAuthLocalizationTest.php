@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 use Modules\Cms\Tests\TestCase;
 
-uses(TestCase::class);
-
+uses(Modules\Cms\Tests\TestCase::class);
 it('GET /de localizes guest auth labels in header', function (): void {
-    $this->get('/de')
+        cmsGet('/de')
         ->assertOk()
         ->assertSee('lang="de"', false)
         ->assertSeeText('Anmelden')
@@ -18,7 +17,7 @@ it('GET /de localizes guest auth labels in header', function (): void {
 });
 
 it('GET /en localizes guest auth labels in header', function (): void {
-    $this->get('/en')
+        cmsGet('/en')
         ->assertOk()
         ->assertSee('lang="en"', false)
         ->assertSeeText('Log in')

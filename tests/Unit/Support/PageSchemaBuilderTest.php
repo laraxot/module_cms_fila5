@@ -2,11 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Support;
 
 use Modules\Cms\Support\PageSchemaBuilder;
 use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
+use PHPUnit\Framework\Assert;
+
+
+uses(Modules\Cms\Tests\TestCase::class);
+/**
+ * @param  array<string, mixed>  $schema
+ * @return array<string, mixed>
+ */
+function pageSchemaMainEntity(array $schema): array
+{
+    $mainEntity = $schema['mainEntity'] ?? null;
+    /** @var array<string, mixed> $mainEntity */
+    return $mainEntity;
+}
 
 test('it resolves home as webpage', function (): void {
     $builder = new PageSchemaBuilder();
@@ -15,8 +28,10 @@ test('it resolves home as webpage', function (): void {
         routeName: 'home',
         path: '/',
     );
+    /** @var array<string, mixed> $schema */
 
-    expect($schema)->toHaveKey('@type', 'WebPage');
+    Assert::assertArrayHasKey('@type', $schema);
+    Assert::assertSame('WebPage', $schema['@type']);
 });
 
 test('it resolves events index as collection page', function (): void {
@@ -27,8 +42,10 @@ test('it resolves events index as collection page', function (): void {
         path: 'it/events',
         routeParameters: ['container0' => 'events'],
     );
+    /** @var array<string, mixed> $schema */
 
-    expect($schema)->toHaveKey('@type', 'CollectionPage');
+    Assert::assertArrayHasKey('@type', $schema);
+    Assert::assertSame('CollectionPage', $schema['@type']);
 });
 
 test('it resolves event detail as item page with main entity', function (): void {
@@ -42,11 +59,16 @@ test('it resolves event detail as item page with main entity', function (): void
             'slug0' => 'test-event-slug',
         ],
     );
+    /** @var array<string, mixed> $schema */
 
-    expect($schema)->toHaveKey('@type', 'ItemPage')
-        ->and($schema)->toHaveKey('mainEntity')
-        ->and($schema['mainEntity'])->toHaveKey('@type', 'Event')
-        ->and($schema['mainEntity']['url'])->toContain('/events/test-event-slug');
+    Assert::assertArrayHasKey('@type', $schema);
+    Assert::assertSame('ItemPage', $schema['@type']);
+    Assert::assertArrayHasKey('mainEntity', $schema);
+
+    $mainEntity = pageSchemaMainEntity($schema);
+    Assert::assertArrayHasKey('@type', $mainEntity);
+    Assert::assertSame('Event', $mainEntity['@type']);
+    Assert::assertStringContainsString('/events/test-event-slug', (string) ($mainEntity['url'] ?? ''));
 });
 
 test('it resolves profile route as profile page with person main entity', function (): void {
@@ -63,11 +85,17 @@ test('it resolves profile route as profile page with person main entity', functi
         path: 'profile/edit',
         user: $user,
     );
+    /** @var array<string, mixed> $schema */
 
-    expect($schema)->toHaveKey('@type', 'ProfilePage')
-        ->and($schema)->toHaveKey('mainEntity')
-        ->and($schema['mainEntity'])->toHaveKey('@type', 'Person')
-        ->and($schema['mainEntity'])->toHaveKey('name', 'Mario Rossi');
+    Assert::assertArrayHasKey('@type', $schema);
+    Assert::assertSame('ProfilePage', $schema['@type']);
+    Assert::assertArrayHasKey('mainEntity', $schema);
+
+    $mainEntity = pageSchemaMainEntity($schema);
+    Assert::assertArrayHasKey('@type', $mainEntity);
+    Assert::assertSame('Person', $mainEntity['@type']);
+    Assert::assertArrayHasKey('name', $mainEntity);
+    Assert::assertSame('Mario Rossi', $mainEntity['name']);
 });
 
 test('it resolves public profile detail route as profile page with person identifier', function (): void {
@@ -82,11 +110,17 @@ test('it resolves public profile detail route as profile page with person identi
             'slug0' => '019cca1b-1f72-700a-ba0b-0bb414ca0c88',
         ],
     );
+    /** @var array<string, mixed> $schema */
 
-    expect($schema)->toHaveKey('@type', 'ProfilePage')
-        ->and($schema)->toHaveKey('mainEntity')
-        ->and($schema['mainEntity'])->toHaveKey('@type', 'Person')
-        ->and($schema['mainEntity'])->toHaveKey('identifier', '019cca1b-1f72-700a-ba0b-0bb414ca0c88');
+    Assert::assertArrayHasKey('@type', $schema);
+    Assert::assertSame('ProfilePage', $schema['@type']);
+    Assert::assertArrayHasKey('mainEntity', $schema);
+
+    $mainEntity = pageSchemaMainEntity($schema);
+    Assert::assertArrayHasKey('@type', $mainEntity);
+    Assert::assertSame('Person', $mainEntity['@type']);
+    Assert::assertArrayHasKey('identifier', $mainEntity);
+    Assert::assertSame('019cca1b-1f72-700a-ba0b-0bb414ca0c88', $mainEntity['identifier']);
 });
 
 test('it keeps auth routes as generic webpage', function (): void {
@@ -96,6 +130,8 @@ test('it keeps auth routes as generic webpage', function (): void {
         routeName: 'auth.login',
         path: 'auth/login',
     );
+    /** @var array<string, mixed> $schema */
 
-    expect($schema)->toHaveKey('@type', 'WebPage');
+    Assert::assertArrayHasKey('@type', $schema);
+    Assert::assertSame('WebPage', $schema['@type']);
 });

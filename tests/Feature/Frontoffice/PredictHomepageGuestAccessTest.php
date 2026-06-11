@@ -3,13 +3,11 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Auth;
-use Modules\Cms\Tests\TestCase;
-use Modules\Predict\View\Composers\ThemeComposer as PredictThemeComposer;
 use Modules\Xot\Datas\XotData;
-
-uses(TestCase::class);
+use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {
+    /** @var \Modules\Cms\Tests\TestCase $this */
     config([
         'app.url' => 'http://predict.local',
         'xra.pub_theme' => 'TwentyOne',
@@ -20,7 +18,6 @@ beforeEach(function (): void {
         'pub_theme' => 'TwentyOne',
         'main_module' => 'Predict',
     ]);
-
     $this->withServerVariables([
         'HTTP_HOST' => 'predict.local',
         'HTTPS' => 'off',
@@ -28,7 +25,8 @@ beforeEach(function (): void {
 });
 
 it('serves /it for guests on predict.local without requiring login', function (): void {
-    expect(Auth::check())->toBeFalse();
+    /** @var \Modules\Cms\Tests\TestCase $this */
+    Assert::assertFalse(Auth::check());
 
     $response = $this->get('/it');
 
@@ -39,7 +37,15 @@ it('serves /it for guests on predict.local without requiring login', function ()
 });
 
 it('returns an empty slider dataset instead of crashing when Predict banners are unavailable', function (): void {
-    $data = app(PredictThemeComposer::class)->getMethodData('getBanner');
+    if (! class_exists('Modules\\Predict\\View\\Composers\\ThemeComposer')) {
+        cmsSkipTest('Predict ThemeComposer not available');
+    }
 
-    expect($data)->toBeArray();
+    $composer = app('Modules\\Predict\\View\\Composers\\ThemeComposer');
+    Assert::assertIsObject($composer);
+    Assert::assertTrue(method_exists($composer, 'getMethodData'));
+
+    /** @var array<string, mixed> $data */
+    $data = $composer->getMethodData('getBanner');
+    Assert::assertIsArray($data);
 });

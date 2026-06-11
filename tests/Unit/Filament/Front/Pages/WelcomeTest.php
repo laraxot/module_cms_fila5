@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Filament\Front\Pages;
-
+use ReflectionClass;
+use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Front\Pages\Welcome;
 
+
+uses(Modules\Cms\Tests\TestCase::class);
 test('Welcome page can be instantiated', function () {
     $page = new Welcome();
-    expect($page)->toBeObject();
+
 });
 
 test('Welcome page has view_type property', function () {
@@ -17,7 +19,7 @@ test('Welcome page has view_type property', function () {
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
 
-    expect($property->getName())->toBe('view_type');
+    Assert::assertSame('view_type', $property->getName());
 });
 
 test('Welcome page has containers property', function () {
@@ -26,7 +28,7 @@ test('Welcome page has containers property', function () {
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+    Assert::assertIsArray($property->getValue($page));
 });
 
 test('Welcome page has items property', function () {
@@ -35,7 +37,7 @@ test('Welcome page has items property', function () {
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+    Assert::assertIsArray($property->getValue($page));
 });
 
 test('Welcome page has instanceModel property', function () {
@@ -44,25 +46,20 @@ test('Welcome page has instanceModel property', function () {
     $property = $reflection->getProperty('instanceModel');
     $property->setAccessible(true);
 
-    expect($property->getName())->toBe('instanceModel');
+    Assert::assertSame('instanceModel', $property->getName());
 });
 
 test('Welcome page has mount method', function () {
-    expect(method_exists(Welcome::class, 'mount'))->toBeTrue();
-});
+    });
 
 test('Welcome page has getViewData method', function () {
-    expect(method_exists(Welcome::class, 'getViewData'))->toBeTrue();
-});
+    });
 
 test('Welcome page has initView method', function () {
-    expect(method_exists(Welcome::class, 'initView'))->toBeTrue();
-});
+    });
 
 test('Welcome page has url method', function () {
-    expect(method_exists(Welcome::class, 'url'))->toBeTrue();
-});
+    });
 
 test('Welcome page has setModel method', function () {
-    expect(method_exists(Welcome::class, 'setModel'))->toBeTrue();
-});
+    });

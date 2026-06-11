@@ -53,6 +53,12 @@ class FooterData extends Data implements Wireable
         return view($this->view, $view_params);
     }
 
+    /**
+     * @return array<string, mixed>
+     */
+    /**
+     * @return array<string, mixed>
+     */
     public static function rules(): array
     {
         return [
