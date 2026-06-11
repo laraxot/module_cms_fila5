@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
-use PHPUnit\Framework\Assert;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\ConfirmComponent;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('Password ConfirmComponent', function (): void {
@@ -27,10 +24,10 @@ describe('Password ConfirmComponent', function (): void {
     });
 
     test('confirm component has confirm method', function (): void {
-            });
+    });
 
     test('confirm method declares redirect response return type', function (): void {
-        $reflection = new \ReflectionClass(ConfirmComponent::class);
+        $reflection = new ReflectionClass(ConfirmComponent::class);
         $method = $reflection->getMethod('confirm');
         $returnType = $method->getReturnType();
 

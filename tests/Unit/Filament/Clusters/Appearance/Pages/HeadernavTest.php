@@ -2,18 +2,15 @@
 
 declare(strict_types=1);
 
-
-use ReflectionClass;
+use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
 use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 use function Safe\class_implements;
-use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Headernav page can be instantiated', function () {
     $page = new Headernav();
-
 });
 
 test('Headernav page has data property', function () {
@@ -37,19 +34,19 @@ test('Headernav page has headernavData property', function () {
 });
 
 test('Headernav page has mount method', function () {
-    });
+});
 
 test('Headernav page has schema method', function () {
-    });
+});
 
 test('Headernav page has updateData method', function () {
-    });
+});
 
 test('Headernav page has fillForms method', function () {
-    });
+});
 
 test('Headernav page has getUpdateFormActions method', function () {
-    });
+});
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);

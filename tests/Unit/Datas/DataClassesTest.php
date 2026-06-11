@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Datas\FooterData;
 use Modules\Cms\Datas\HeadernavData;
 use Modules\Cms\Datas\LinkData;
 use Modules\Cms\Datas\NavbarMenuData;
 use Modules\Cms\Datas\ThemeData;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('BlockData can be instantiated', function () {

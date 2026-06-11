@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Tenant\Models\Traits\SushiToJsons;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('page model can be instantiated', function (): void {
@@ -37,7 +36,7 @@ test('page has expected fillable fields', function (): void {
 test('page has expected casts', function (): void {
     $page = new Page();
     $casts = $page->getCasts();
-    /** @var array<string, mixed> $casts */
+    /* @var array<string, mixed> $casts */
     Assert::assertArrayHasKey('created_at', $casts);
 
     Assert::assertArrayHasKey('updated_at', $casts);
@@ -85,7 +84,7 @@ test('page has schema definition', function (): void {
     Assert::assertTrue($schemaProperty->isProtected());
 
     $schema = $schemaProperty->getValue($page);
-    /** @var array<string, mixed> $schema */
+    /* @var array<string, mixed> $schema */
     Assert::assertArrayHasKey('id', $schema);
     Assert::assertArrayHasKey('title', $schema);
     Assert::assertArrayHasKey('slug', $schema);
@@ -95,9 +94,9 @@ test('page has schema definition', function (): void {
 });
 
 test('page has getMiddlewareBySlug static method', function (): void {
-        // Test with non-existent slug returns empty array
+    // Test with non-existent slug returns empty array
     $result = Page::getMiddlewareBySlug('non-existent-slug');
-    /** @var array<string, mixed> $result */
+    /* @var array<string, mixed> $result */
 });
 
 test('page casts content_blocks to array', function (): void {

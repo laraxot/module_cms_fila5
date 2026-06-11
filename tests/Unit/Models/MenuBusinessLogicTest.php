@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Menu;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
+
+use function Safe\class_uses;
+
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
-use function Safe\class_uses;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('Menu Business Logic', function () {
     test('menu extends base model', function () {
-
     });
 
     test('menu implements recursive relationships contract', function () {
@@ -49,7 +49,7 @@ describe('Menu Business Logic', function () {
 
     test('menu can get tree options for hierarchical display', function () {
         $options = Menu::getTreeMenuOptions();
-    /** @var array<string, mixed> $options */
+        /* @var array<string, mixed> $options */
     });
 
     test('menu can get label', function () {
@@ -77,15 +77,14 @@ describe('Menu Business Logic', function () {
         Assert::assertTrue($schemaProperty->isProtected());
 
         $schema = $schemaProperty->getValue($menu);
-    /** @var array<string, mixed> $schema */
+        /* @var array<string, mixed> $schema */
         Assert::assertSame('string', $schema['title']);
         Assert::assertSame('integer', $schema['parent_id']);
     });
 
     test('menu can get rows for sushi functionality', function () {
         $menu = new Menu();
-
-            });
+    });
 
     test('menu can build tree queries', function () {
         $query = Menu::tree();

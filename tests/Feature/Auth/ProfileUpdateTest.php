@@ -18,16 +18,16 @@ test('profile settings page can be rendered', function () {
 });
 
 test('profile information can be updated', function () {
-    });
+});
 
 test('email verification status is reset if email changes', function () {
-    });
+});
 
 test('email verification status is not reset if email does not change', function () {
-    });
+});
 
 test('user account can be deleted', function () {
-    });
+});
 
 test('user account deletion fails with wrong password', function () {
-    });
+});

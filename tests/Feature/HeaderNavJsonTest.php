@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\File;
 use Modules\Tenant\Services\TenantService;
 use PHPUnit\Framework\Assert;
 
-
 uses(Modules\Cms\Tests\TestCase::class);
 /**
  * @return array<string, mixed>
@@ -16,12 +15,14 @@ function headerNavConfig(): array
     $path = TenantService::filePath('database/content/sections/header.json');
     Assert::assertTrue(file_exists($path));
     $config = File::json($path);
-    /** @var array<string, mixed> $config */
+
+    /* @var array<string, mixed> $config */
     return $config;
 }
 
 /**
- * @param  array<string, mixed>  $config
+ * @param array<string, mixed> $config
+ *
  * @return list<array<string, mixed>>
  */
 function primaryNavItems(array $config): array
@@ -31,12 +32,14 @@ function primaryNavItems(array $config): array
     $primaryNav = $sections['primary_nav'] ?? null;
     /** @var array<string, mixed> $primaryNav */
     $items = $primaryNav['items'] ?? [];
-    /** @var list<array<string, mixed>> $items */
+
+    /* @var list<array<string, mixed>> $items */
     return $items;
 }
 
 /**
- * @param  list<array<string, mixed>>  $items
+ * @param list<array<string, mixed>> $items
+ *
  * @return list<string>
  */
 function navItemSlugs(array $items): array

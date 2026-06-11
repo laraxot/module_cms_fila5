@@ -6,7 +6,6 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Cms\Http\Middleware\SetFolioLocale;
 use PHPUnit\Framework\Assert;
 
-
 uses(Modules\Cms\Tests\TestCase::class);
 /**
  * Tests that each supported locale route responds correctly.
@@ -28,7 +27,7 @@ function supportedTestLocales(): array
         return [];
     }
 
-    /** @var array<string, mixed> $config */
+    /* @var array<string, mixed> $config */
     return array_keys($config);
 }
 

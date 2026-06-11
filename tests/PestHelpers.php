@@ -20,7 +20,6 @@ use function Safe\json_decode;
  *
  * @see Modules/Gdpr/tests/PestHelpers.php
  */
-
 function cmsTest(): TestCase
 {
     $test = test();
@@ -35,7 +34,7 @@ function cmsGenerateUniqueEmail(): string
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function cmsCreateTestUser(array $attributes = []): UserContract
 {
@@ -43,7 +42,7 @@ function cmsCreateTestUser(array $attributes = []): UserContract
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function cmsCreateUnverifiedUser(array $attributes = []): User
 {
@@ -53,8 +52,9 @@ function cmsCreateUnverifiedUser(array $attributes = []): User
 /**
  * @template T of object
  *
- * @param  class-string<T>  $class
- * @return T&\PHPUnit\Framework\MockObject\MockObject
+ * @param class-string<T> $class
+ *
+ * @return T&PHPUnit\Framework\MockObject\MockObject
  */
 function cmsCreateMock(string $class): object
 {
@@ -66,9 +66,6 @@ function cmsMockXotData(): void
     XotData::make()->update(['main_module' => 'User']);
 }
 
-/**
- * @return string
- */
 function cmsReadFile(string $path): string
 {
     return file_get_contents($path);
@@ -86,7 +83,8 @@ function cmsJsonDecodeFile(string $path): array
 }
 
 /**
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsGet(string $uri, array $headers = []): TestResponse
@@ -95,8 +93,9 @@ function cmsGet(string $uri, array $headers = []): TestResponse
 }
 
 /**
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsPost(string $uri, array $data = [], array $headers = []): TestResponse
@@ -125,7 +124,8 @@ function cmsAssertGuest(?string $guard = null): void
 }
 
 /**
- * @param  array<string, mixed>  $data
+ * @param array<string, mixed> $data
+ *
  * @return TestResponse<Response>
  */
 function cmsActingAsGet(Authenticatable $user, string $uri, array $data = []): TestResponse

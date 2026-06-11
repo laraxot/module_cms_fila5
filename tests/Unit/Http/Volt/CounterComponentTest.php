@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Http\Volt\CounterComponent;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('CounterComponent', function (): void {
@@ -22,10 +21,10 @@ describe('CounterComponent', function (): void {
     });
 
     test('counter component has increment method', function (): void {
-            });
+    });
 
     test('counter component has decrement method', function (): void {
-            });
+    });
 
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);

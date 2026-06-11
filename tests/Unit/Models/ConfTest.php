@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\Conf;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Conf model can be instantiated', function () {

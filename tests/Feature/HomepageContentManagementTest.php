@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('Homepage Content Management', function () {
@@ -14,7 +15,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica che il contenuto JSON sia caricato correttamente
         $response->assertSee('<nome progetto> - Promozione della <slogan> per le gestanti');
@@ -24,7 +25,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica struttura blocchi
         $response->assertSee('landing-page');
@@ -36,7 +37,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica elementi hero block
         $response->assertSee('INIZIA ORA');
@@ -50,7 +51,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         // Questo test può essere espanso per verificare gestione errori
         $response = get('/'.$locale);
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
 
         // Verifica che la pagina si carichi anche con contenuto mancante
@@ -59,19 +60,19 @@ describe('Homepage Content Management', function () {
     it('displays localized content correctly', function () {
         // Test italiano
         $response = get('/it');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         $response->assertSee('Benvenuta su <nome progetto>');
 
         // Test inglese
         $response = get('/en');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica contenuto inglese
 
         // Test tedesco
         $response = get('/de');
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
 
         // Verifica contenuto tedesco
@@ -81,7 +82,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica CTA button
         $response->assertSee('INIZIA ORA');
@@ -93,7 +94,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica immagine hero
         $response->assertSee('Sorriso-Denti-bianchi-donna-apparecchio-denti-e-salute-1.jpg');
@@ -105,7 +106,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
         // Verifica classi CSS
         $response->assertSee('bg-white');
@@ -118,7 +119,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
         // For test environment, we accept 200 or 404 as valid responses
         // depending on whether content exists in test environment
         $status = $response->status();
@@ -129,7 +130,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
         $status = $response->getStatusCode();
         if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
@@ -147,7 +148,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
-    /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
         $status = $response->getStatusCode();
         if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));

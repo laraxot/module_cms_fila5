@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Routing\Route as IlluminateRoute;
@@ -10,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Modules\Cms\Http\View\Composers\XotComposer;
-use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 

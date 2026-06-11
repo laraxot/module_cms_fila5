@@ -2,14 +2,16 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Illuminate\Support\Facades\Auth;
-use Livewire\Volt\Volt as LivewireVolt;
 use Livewire\Features\SupportTesting\Testable;
+use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Xot\Datas\XotData;
+
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 use function Pest\Laravel\post;
+
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('login screen can be rendered', function (): void {
@@ -24,7 +26,7 @@ test('users can authenticate using the login screen', function (): void {
         ->set('email', (string) $user->email)
         ->set('password', 'password')
         ->call('authenticate');
-    /** @var Testable<\Livewire\Component> $response */
+    /* @var Testable<\Livewire\Component> $response */
 
     $response->assertHasNoErrors();
 });

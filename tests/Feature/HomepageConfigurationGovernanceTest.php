@@ -2,12 +2,9 @@
 
 declare(strict_types=1);
 
-
-
 use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('there is exactly one canonical home page slug in json content', function (): void {

@@ -5,9 +5,9 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 it('GET /it/auth/register/thank-you acceptable', function (): void {
-        $res = cmsGet('/it/auth/register/thank-you');
+    $res = cmsGet('/it/auth/register/thank-you');
     $status = (int) $res->getStatusCode();
     Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true));
 });

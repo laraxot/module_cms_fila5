@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use function Pest\Laravel\get;
 
-
 uses(Modules\Cms\Tests\TestCase::class);
 test('route home returns successful response with correct view', function (): void {
     get('/')->assertSuccessful()->assertViewIs('pub_theme::home');

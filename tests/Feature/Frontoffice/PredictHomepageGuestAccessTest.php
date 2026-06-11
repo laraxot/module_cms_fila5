@@ -7,7 +7,7 @@ use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {
-    /** @var \Modules\Cms\Tests\TestCase $this */
+    /* @var \Modules\Cms\Tests\TestCase $this */
     config([
         'app.url' => 'http://predict.local',
         'xra.pub_theme' => 'TwentyOne',
@@ -25,7 +25,7 @@ beforeEach(function (): void {
 });
 
 it('serves /it for guests on predict.local without requiring login', function (): void {
-    /** @var \Modules\Cms\Tests\TestCase $this */
+    /* @var \Modules\Cms\Tests\TestCase $this */
     Assert::assertFalse(Auth::check());
 
     $response = $this->get('/it');

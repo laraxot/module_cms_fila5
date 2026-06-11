@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Actions\ResolveBlockQueryAction;
 use Modules\Cms\Models\Page;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('ResolveBlockQueryAction can be instantiated', function () {
@@ -47,7 +46,7 @@ test('ResolveBlockQueryAction executes query with model', function () {
         'orderBy' => 'created_at',
         'direction' => 'desc',
     ]);
-    /** @var array<string, mixed> $result */
+    /* @var array<string, mixed> $result */
     Assert::assertArrayHasKey('items', $result);
     Assert::assertIsArray($result['items']);
 });
@@ -60,7 +59,7 @@ test('ResolveBlockQueryAction applies scopes', function () {
         'model' => Page::class,
         'scope' => 'published',
     ]);
-    /** @var array<string, mixed> $result */
+    /* @var array<string, mixed> $result */
 });
 
 test('ResolveBlockQueryAction applies scopes array', function () {
@@ -70,7 +69,7 @@ test('ResolveBlockQueryAction applies scopes array', function () {
         'model' => Page::class,
         'scopes' => [],
     ]);
-    /** @var array<string, mixed> $result */
+    /* @var array<string, mixed> $result */
 });
 
 test('ResolveBlockQueryAction applies orderBy and direction', function () {
@@ -81,7 +80,7 @@ test('ResolveBlockQueryAction applies orderBy and direction', function () {
         'orderBy' => 'updated_at',
         'direction' => 'asc',
     ]);
-    /** @var array<string, mixed> $result */
+    /* @var array<string, mixed> $result */
 });
 
 test('ResolveBlockQueryAction applies limit', function () {
@@ -91,7 +90,7 @@ test('ResolveBlockQueryAction applies limit', function () {
         'model' => Page::class,
         'limit' => 5,
     ]);
-    /** @var array<string, mixed> $result */
+    /* @var array<string, mixed> $result */
     Assert::assertArrayHasKey('items', $result);
 });
 

@@ -80,7 +80,7 @@ class PageSlugMiddleware
      * Execute middleware chain manually.
      */
     /**
-     * @param  array<int, string>  $middlewares
+     * @param array<int, string> $middlewares
      */
     protected function executeMiddlewareChain(Request $request, array $middlewares, \Closure $finalNext): Response
     {

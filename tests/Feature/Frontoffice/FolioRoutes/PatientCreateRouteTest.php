@@ -5,9 +5,9 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 it('GET /it/events acceptable (LaravelPizza Meetup)', function (): void {
-        $res = cmsGet('/it/events');
+    $res = cmsGet('/it/events');
 
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {

@@ -2,13 +2,10 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
-use PHPUnit\Framework\Assert;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\VerifyComponent;
-
+use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('VerifyComponent', function (): void {
@@ -19,10 +16,10 @@ describe('VerifyComponent', function (): void {
     });
 
     test('verify component has resend method', function (): void {
-            });
+    });
 
     test('resend method returns void', function (): void {
-        $reflection = new \ReflectionClass(VerifyComponent::class);
+        $reflection = new ReflectionClass(VerifyComponent::class);
         $method = $reflection->getMethod('resend');
         $returnType = $method->getReturnType();
 

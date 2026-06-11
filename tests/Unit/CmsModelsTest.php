@@ -8,7 +8,6 @@ use Modules\Cms\Models\Page;
 use Modules\Cms\Models\Section;
 use PHPUnit\Framework\Assert;
 
-
 uses(Modules\Cms\Tests\TestCase::class);
 it('can create a cms page via factory', function (): void {
     $page = PageFactory::new()->createOne([

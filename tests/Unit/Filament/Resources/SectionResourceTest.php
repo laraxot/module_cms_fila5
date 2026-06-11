@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Resources\SectionResource;
 use Modules\Cms\Models\Section;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('SectionResource', function (): void {
@@ -17,7 +16,7 @@ describe('SectionResource', function (): void {
 
     test('section resource has form schema', function (): void {
         $schema = SectionResource::getFormSchema();
-    /** @var array<string, mixed> $schema */
+        /* @var array<string, mixed> $schema */
         Assert::assertGreaterThan(0, count($schema));
     });
 
