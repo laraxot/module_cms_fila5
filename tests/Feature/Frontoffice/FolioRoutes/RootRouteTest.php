@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 use Modules\Cms\Tests\TestCase;
 
-uses(TestCase::class);
-
+uses(Modules\Cms\Tests\TestCase::class);
 it('GET / redirects to /{locale}', function (): void {
-    $locale = app()->getLocale();
-    $this->get('/')->assertRedirect('/'.$locale);
+        $locale = app()->getLocale();
+    cmsGet('/')->assertRedirect('/'.$locale);
 });

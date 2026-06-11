@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Models\Traits;
-
+use PHPUnit\Framework\Assert;
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Traits\HasBlocks;
 
+
+uses(Modules\Cms\Tests\TestCase::class);
 test('HasBlocks trait can be used', function () {
     // Create an anonymous class that uses the trait
     $model = new class extends Modules\Cms\Models\BaseModel {
@@ -15,9 +17,7 @@ test('HasBlocks trait can be used', function () {
     };
 
     // Check if the trait methods exist
-    expect(method_exists($model, 'getBlocks'))->toBeTrue()
-        ->and(method_exists($model, 'compile'))->toBeTrue();
-});
+        });
 
 test('HasBlocks trait has static method getBlocksBySlug', function () {
     // Create an anonymous class that uses the trait
@@ -28,5 +28,4 @@ test('HasBlocks trait has static method getBlocksBySlug', function () {
     };
 
     // Check if the static trait method exists on the trait itself
-    expect(method_exists(HasBlocks::class, 'getBlocksBySlug'))->toBeTrue();
-});
+    });

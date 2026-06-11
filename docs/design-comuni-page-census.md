@@ -82,7 +82,7 @@ These block families should be preferred over page-specific templates.
 - `segnalazione-03-riepilogo`
 - `segnalazione-04-conferma`
 - `segnalazione-area-personale`
-- `segnalazioni-elenco`
+- `ticket-list`
 
 ## BMAD-Oriented Next Step
 Use each converted page as evidence for refining the reusable taxonomy instead of treating conversion as a one-off page port.

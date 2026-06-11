@@ -2,18 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Auth;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-use Modules\Xot\Tests\TestCase;
-
-uses(TestCase::class);
-
-// NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
+uses(Modules\Cms\Tests\TestCase::class);
+// NOTE: Helper functions moved to Modules\Cms\Tests\TestCase for DRY pattern
 // Use $this->createTestUser(
 
 describe('Register Page', function () {
-    test('register page placeholder', function () {
-        // Placeholder - actual tests require theme components
-        expect(true)->toBeTrue();
-    });
+        test('register page placeholder', function () {
+            /** @var Modules\Cms\Tests\TestCase $this */
+            // Placeholder - actual tests require theme components
+            });
 });

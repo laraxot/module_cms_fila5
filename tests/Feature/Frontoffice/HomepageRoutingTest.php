@@ -2,30 +2,31 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Frontoffice;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-use Modules\Xot\Tests\TestCase;
-
+uses(Modules\Cms\Tests\TestCase::class);
 // Use the project's base TestCase
-uses(TestCase::class);
 
 beforeEach(function (): void {
-    if (! function_exists('moduleEnabled')) {
-        $this->markTestSkipped('moduleEnabled() helper not available.');
-    }
-    if (! moduleEnabled('Cms')) {
-        $this->markTestSkipped('Module Cms is disabled');
+    /** @var Modules\Cms\Tests\TestCase $this */
+    if (! \Nwidart\Modules\Facades\Module::isEnabled('Cms')) {
+        cmsSkipTest('Module Cms is disabled');
     }
 });
 
 it('redirects root / to /{locale}', function (): void {
-    $locale = app()->getLocale();
+        /** @var Modules\Cms\Tests\TestCase $this */
+        /** @var \Modules\Cms\Tests\TestCase $this */
+        $locale = app()->getLocale();
     $response = $this->get('/');
-    $response->assertRedirect('/'.$locale);
+    Assert::assertSame('/'.$locale, $response->headers->get('Location'));
 });
 
 it('serves localized homepage at /{locale}', function (): void {
-    $locale = app()->getLocale();
+        /** @var Modules\Cms\Tests\TestCase $this */
+        /** @var \Modules\Cms\Tests\TestCase $this */
+        $locale = app()->getLocale();
     $response = $this->get('/'.$locale);
-    $response->assertStatus(200);
+    Assert::assertSame(200, $response->status());
 });

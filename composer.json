@@ -30,7 +30,11 @@
     "autoload-dev": {
         "psr-4": {
             "Modules\\Cms\\Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "tests/PestHelpers.php",
+            "tests/PestStubs.php"
+        ]
     },
     "require": {
 

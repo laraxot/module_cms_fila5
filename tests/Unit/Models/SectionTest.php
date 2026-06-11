@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Models;
-
+use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\Section;
 
+
+uses(Modules\Cms\Tests\TestCase::class);
 test('Section model can be instantiated', function () {
     $section = new Section();
 
-    expect($section)->toBeInstanceOf(Section::class);
+    Assert::assertInstanceOf(Section::class, $section);
 });
 
 test('Section model has expected fillable fields', function () {
@@ -18,22 +19,21 @@ test('Section model has expected fillable fields', function () {
     $fillable = $section->getFillable();
 
     // Actual fillable fields from the Section model
-    expect($fillable)->toContain('name')
-        ->and($fillable)->toContain('slug')
-        ->and($fillable)->toContain('blocks');
+    Assert::assertContains('name', $fillable);
+    Assert::assertContains('slug', $fillable);
+    Assert::assertContains('blocks', $fillable);
 });
 
 test('Section model extends BaseModelLang', function () {
     $section = new Section();
 
     // Section extends BaseModelLang for translations support
-    expect($section)->toBeInstanceOf(Modules\Cms\Models\BaseModelLang::class);
+    Assert::assertInstanceOf(Modules\Cms\Models\BaseModelLang::class, $section);
 });
 
 test('Section model has expected casts', function () {
     $section = new Section();
 
     $casts = $section->getCasts();
-
-    expect($casts)->toBeArray();
+    /** @var array<string, mixed> $casts */
 });

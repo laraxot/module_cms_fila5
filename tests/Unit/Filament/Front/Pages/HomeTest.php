@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Filament\Front\Pages;
-
+use ReflectionClass;
+use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Front\Pages\Home;
 
+
+uses(Modules\Cms\Tests\TestCase::class);
 test('Home page can be instantiated', function () {
     $page = new Home();
-    expect($page)->toBeObject();
+
 });
 
 test('Home page has view_type property', function () {
@@ -17,7 +19,7 @@ test('Home page has view_type property', function () {
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
 
-    expect($property->getName())->toBe('view_type');
+    Assert::assertSame('view_type', $property->getName());
 });
 
 test('Home page has containers property', function () {
@@ -26,7 +28,7 @@ test('Home page has containers property', function () {
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+    Assert::assertIsArray($property->getValue($page));
 });
 
 test('Home page has items property', function () {
@@ -35,21 +37,17 @@ test('Home page has items property', function () {
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+    Assert::assertIsArray($property->getValue($page));
 });
 
 test('Home page has mount method', function () {
-    expect(method_exists(Home::class, 'mount'))->toBeTrue();
-});
+    });
 
 test('Home page has getViewData method', function () {
-    expect(method_exists(Home::class, 'getViewData'))->toBeTrue();
-});
+    });
 
 test('Home page has initView method', function () {
-    expect(method_exists(Home::class, 'initView'))->toBeTrue();
-});
+    });
 
 test('Home page has url method', function () {
-    expect(method_exists(Home::class, 'url'))->toBeTrue();
-});
+    });

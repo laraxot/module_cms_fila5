@@ -37,6 +37,9 @@ class ThemeComposer
         return $normalized;
     }
 
+    /**
+     * @param  array<string, mixed>  $menu
+     */
     public function getMenuUrl(array $menu): string
     {
         if ([] === $menu) {

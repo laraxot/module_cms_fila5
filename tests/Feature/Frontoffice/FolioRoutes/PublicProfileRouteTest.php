@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Frontoffice\FolioRoutes;
-
 use Modules\Cms\Tests\TestCase;
+use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
+use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
-
+uses(Modules\Cms\Tests\TestCase::class);
 it('renders the public profile route using the localized profile page', function (): void {
-    $user = User::factory()->create([
+        $user = UserFactory::new()->createOne([
         'name' => 'Mario Rossi',
         'email' => 'mario.rossi@example.test',
         'lang' => 'it',
     ]);
 
-    $response = $this->get('/it/profile/'.$user->getKey());
+    $userId = $user->getKey();
+    Assert::assertNotNull($userId);
+    $response = cmsGet('/it/profile/'.(string) $userId);
 
     $response->assertOk()
         ->assertSee('Mario Rossi')
