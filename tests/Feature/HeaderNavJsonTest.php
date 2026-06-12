@@ -21,9 +21,14 @@ final class HeaderNavJsonTest extends TestCase
             cmsSkipTest('header.json not found in this install: '.$path);
         }
 
-        $config = File::json($path);
+        $decoded = File::json($path);
+        if (! is_array($decoded)) {
+            cmsSkipTest('header.json is not a valid JSON object: '.$path);
+        }
 
-        /* @var array<string, mixed> $config */
+        /** @var array<string, mixed> $config */
+        $config = $decoded;
+
         return $config;
     }
 
@@ -35,13 +40,33 @@ final class HeaderNavJsonTest extends TestCase
     private static function primaryNavItems(array $config): array
     {
         $sections = $config['sections'] ?? null;
-        /** @var array<string, mixed> $sections */
-        $primaryNav = $sections['primary_nav'] ?? null;
-        /** @var array<string, mixed> $primaryNav */
-        $items = $primaryNav['items'] ?? [];
+        if (! is_array($sections)) {
+            return [];
+        }
 
-        /* @var list<array<string, mixed>> $items */
-        return $items;
+        $primaryNav = $sections['primary_nav'] ?? null;
+        if (! is_array($primaryNav)) {
+            return [];
+        }
+
+        $items = $primaryNav['items'] ?? null;
+        if (! is_array($items)) {
+            return [];
+        }
+
+        /** @var list<array<string, mixed>> $normalized */
+        $normalized = [];
+
+        foreach ($items as $item) {
+            if (! is_array($item)) {
+                continue;
+            }
+
+            /** @var array<string, mixed> $item */
+            $normalized[] = $item;
+        }
+
+        return $normalized;
     }
 
     /**

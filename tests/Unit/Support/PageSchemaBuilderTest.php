@@ -17,11 +17,14 @@ final class PageSchemaBuilderTest extends TestCase
      *
      * @return array<string, mixed>
      */
-    private static function pageSchemaMainEntity(array $schema): array
+    private static function pageSchemaMainEntity(array $schema)
     {
         $mainEntity = $schema['mainEntity'] ?? null;
+        if (! is_array($mainEntity)) {
+            Assert::fail('Expected mainEntity array in schema');
+        }
 
-        /* @var array<string, mixed> $mainEntity */
+        /** @var array<string, mixed> $mainEntity */
         return $mainEntity;
     }
 
