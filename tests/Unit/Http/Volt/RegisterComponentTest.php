@@ -52,7 +52,7 @@ final class RegisterComponentTest extends TestCase
         $returnType = $method->getReturnType();
 
         Assert::assertNotNull($returnType);
-        /* @var \ReflectionNamedType $returnType */
-        Assert::assertSame('Illuminate\Http\RedirectResponse', $returnType->getName());
+        $typeName = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+        Assert::assertSame('Illuminate\Http\RedirectResponse', $typeName);
     }
 }
