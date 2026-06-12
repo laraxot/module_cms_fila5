@@ -10,7 +10,6 @@ use Modules\Cms\Models\Policies\PageContentPolicy;
 use Modules\Cms\Models\Policies\PagePolicy;
 use Modules\Cms\Models\Policies\SectionPolicy;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('CmsBasePolicy is an abstract class', function () {

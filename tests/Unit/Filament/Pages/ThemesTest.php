@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Modules\Cms\Filament\Pages\Themes;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Themes page can be instantiated', function () {

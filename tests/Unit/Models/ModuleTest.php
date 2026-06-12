@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Modules\Cms\Models\Module;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Module model can be instantiated', function () {

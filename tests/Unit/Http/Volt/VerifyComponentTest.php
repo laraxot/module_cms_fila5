@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\VerifyComponent;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('VerifyComponent', function (): void {
