@@ -8,13 +8,12 @@ use Modules\Cms\Models\Page;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 use function Safe\class_uses;
 
 final class PageBusinessLogicTest extends TestCase
 {
-    public function test_page_has_expected_fillable_fields(): void
+    public function testPageHasExpectedFillableFields(): void
     {
         $page = new Page();
         $expectedFillable = [
@@ -31,14 +30,14 @@ final class PageBusinessLogicTest extends TestCase
         Assert::assertEquals($expectedFillable, $page->getFillable());
     }
 
-    public function test_page_has_sushi_to_json_trait(): void
+    public function testPageHasSushiToJsonTrait(): void
     {
         $traits = class_uses(Page::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
     }
 
-    public function test_page_has_correct_casts_for_blocks_and_arrays(): void
+    public function testPageHasCorrectCastsForBlocksAndArrays(): void
     {
         $page = new Page();
         $casts = $page->getCasts();
@@ -49,11 +48,11 @@ final class PageBusinessLogicTest extends TestCase
         Assert::assertSame('array', $casts['middleware']);
     }
 
-    public function test_page_has_schema_definition_for_structured_data(): void
+    public function testPageHasSchemaDefinitionForStructuredData(): void
     {
         $page = new Page();
 
-        $reflection = new ReflectionClass($page);
+        $reflection = new \ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());

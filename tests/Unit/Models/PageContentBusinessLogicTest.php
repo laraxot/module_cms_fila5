@@ -8,24 +8,23 @@ use Modules\Cms\Models\PageContent;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 use Spatie\Translatable\HasTranslations;
 
 final class PageContentBusinessLogicTest extends TestCase
 {
-    public function test_page_content_model_can_be_instantiated(): void
+    public function testPageContentModelCanBeInstantiated(): void
     {
         $pageContent = new PageContent();
         Assert::assertInstanceOf(PageContent::class, $pageContent);
     }
 
-    public function test_page_content_extends_base_model(): void
+    public function testPageContentExtendsBaseModel(): void
     {
         $pageContent = new PageContent();
         Assert::assertInstanceOf(\Modules\Cms\Models\BaseModel::class, $pageContent);
     }
 
-    public function test_page_content_uses_sushi_to_jsons_trait(): void
+    public function testPageContentUsesSushiToJsonsTrait(): void
     {
         $pageContent = new PageContent();
         $traits = class_uses_recursive($pageContent);
@@ -33,7 +32,7 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertContains(SushiToJsons::class, array_values($traits));
     }
 
-    public function test_page_content_uses_has_translations_trait(): void
+    public function testPageContentUsesHasTranslationsTrait(): void
     {
         $pageContent = new PageContent();
         $traits = class_uses_recursive($pageContent);
@@ -41,7 +40,7 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertContains(HasTranslations::class, array_values($traits));
     }
 
-    public function test_page_content_has_correct_translatable_attributes(): void
+    public function testPageContentHasCorrectTranslatableAttributes(): void
     {
         $pageContent = new PageContent();
 
@@ -50,7 +49,7 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertContains('blocks', $pageContent->translatable);
     }
 
-    public function test_page_content_has_correct_fillable_attributes(): void
+    public function testPageContentHasCorrectFillableAttributes(): void
     {
         $pageContent = new PageContent();
         $fillable = $pageContent->getFillable();
@@ -62,11 +61,11 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertContains('blocks', $fillable);
     }
 
-    public function test_page_content_has_correct_schema_definition(): void
+    public function testPageContentHasCorrectSchemaDefinition(): void
     {
         $pageContent = new PageContent();
 
-        $reflection = new ReflectionClass($pageContent);
+        $reflection = new \ReflectionClass($pageContent);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
@@ -82,7 +81,7 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertSame('string', $schema['slug']);
     }
 
-    public function test_page_content_has_correct_casts(): void
+    public function testPageContentHasCorrectCasts(): void
     {
         $pageContent = new PageContent();
         /** @var array<string, mixed> $casts */
@@ -98,14 +97,14 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertSame('array', $casts['blocks']);
     }
 
-    public function test_page_content_get_rows_method_returns_array(): void
+    public function testPageContentGetRowsMethodReturnsArray(): void
     {
         $pageContent = new PageContent();
         $rows = $pageContent->getRows();
         Assert::assertNotEmpty($rows);
     }
 
-    public function test_page_content_has_sluggable_configuration(): void
+    public function testPageContentHasSluggableConfiguration(): void
     {
         $pageContent = new PageContent();
         $sluggable = $pageContent->sluggable();
@@ -117,7 +116,7 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertSame('title', $slugConfig['source']);
     }
 
-    public function test_page_content_blocks_cast_to_array(): void
+    public function testPageContentBlocksCastToArray(): void
     {
         $pageContent = new PageContent();
         $casts = $pageContent->getCasts();
@@ -125,7 +124,7 @@ final class PageContentBusinessLogicTest extends TestCase
         Assert::assertSame('array', $casts['blocks']);
     }
 
-    public function test_page_content_has_datetime_casts_for_timestamps(): void
+    public function testPageContentHasDatetimeCastsForTimestamps(): void
     {
         $pageContent = new PageContent();
         $casts = $pageContent->getCasts();

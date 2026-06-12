@@ -21,7 +21,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         $this->markTestSkipped('Homepage Filament blocks architecture tests target legacy homepage fixtures.');
     }
 
-    public function test_homepage_renders_through_cms_page_component_system(): void
+    public function testHomepageRendersThroughCmsPageComponentSystem(): void
     {
         $response = $this->get('/'.$this->lang);
         $response->assertOk();
@@ -33,7 +33,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         Assert::assertStringContainsString('slug="home"', $content);
     }
 
-    public function test_json_content_structure_is_properly_loaded_by_cms(): void
+    public function testJsonContentStructureIsProperlyLoadedByCms(): void
     {
         $homepageJsonPath = config_path('local/fixcity/database/content/home.json');
 
@@ -57,7 +57,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_cms_blocks_discovery_system_works_correctly(): void
+    public function testCmsBlocksDiscoverySystemWorksCorrectly(): void
     {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
@@ -71,7 +71,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_ui_blocks_render_component_processes_homepage_blocks(): void
+    public function testUiBlocksRenderComponentProcessesHomepageBlocks(): void
     {
         /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
@@ -89,7 +89,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         Assert::assertEquals($blocks, $component->blocks);
     }
 
-    public function test_homepage_content_management_through_cms_works_correctly(): void
+    public function testHomepageContentManagementThroughCmsWorksCorrectly(): void
     {
         $response = $this->get('/'.$this->lang);
         $response->assertOk();
@@ -115,7 +115,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_cms_theme_integrates_renders_blocks_correctly(): void
+    public function testCmsThemeIntegratesRendersBlocksCorrectly(): void
     {
         $response = $this->get('/'.$this->lang);
         $response->assertOk();
@@ -141,7 +141,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_cms_handles_multilingual_content_correctly(): void
+    public function testCmsHandlesMultilingualContentCorrectly(): void
     {
         /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
@@ -163,7 +163,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         Assert::assertStringContainsString($title, $content);
     }
 
-    public function test_cms_page_component_passes_correct_data_to_blocks(): void
+    public function testCmsPageComponentPassesCorrectDataToBlocks(): void
     {
         $response = $this->get('/'.$this->lang);
         $response->assertOk();
@@ -178,7 +178,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_cms_json_storage_pattern_is_consistent(): void
+    public function testCmsJsonStoragePatternIsConsistent(): void
     {
         $pagesPath = config_path('local/fixcity/database/content/');
         $homepageJsonPath = $pagesPath.'home.json';
@@ -198,7 +198,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_cms_blade_syntax_processing_works_in_json(): void
+    public function testCmsBladeSyntaxProcessingWorksInJson(): void
     {
         /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
@@ -224,7 +224,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         }
     }
 
-    public function test_cms_renders_valid_html_structure(): void
+    public function testCmsRendersValidHtmlStructure(): void
     {
         $response = $this->get('/'.$this->lang);
         $response->assertOk();
@@ -240,7 +240,7 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         Assert::assertStringContainsString('<meta name="description"', $content);
     }
 
-    public function test_cms_performance_for_block_rendering_is_acceptable(): void
+    public function testCmsPerformanceForBlockRenderingIsAcceptable(): void
     {
         $startTime = microtime(true);
 

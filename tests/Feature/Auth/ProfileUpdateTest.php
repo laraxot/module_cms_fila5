@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Str;
-use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 function cmsProfileGenerateUniqueEmail(): string

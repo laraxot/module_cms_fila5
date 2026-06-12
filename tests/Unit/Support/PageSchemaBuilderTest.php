@@ -21,11 +21,11 @@ final class PageSchemaBuilderTest extends TestCase
     {
         $mainEntity = $schema['mainEntity'] ?? null;
 
-        /** @var array<string, mixed> $mainEntity */
+        /* @var array<string, mixed> $mainEntity */
         return $mainEntity;
     }
 
-    public function test_it_resolves_home_as_webpage(): void
+    public function testItResolvesHomeAsWebpage(): void
     {
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
@@ -38,7 +38,7 @@ final class PageSchemaBuilderTest extends TestCase
         Assert::assertSame('WebPage', $schema['@type']);
     }
 
-    public function test_it_resolves_events_index_as_collection_page(): void
+    public function testItResolvesEventsIndexAsCollectionPage(): void
     {
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
@@ -52,7 +52,7 @@ final class PageSchemaBuilderTest extends TestCase
         Assert::assertSame('CollectionPage', $schema['@type']);
     }
 
-    public function test_it_resolves_event_detail_as_item_page_with_main_entity(): void
+    public function testItResolvesEventDetailAsItemPageWithMainEntity(): void
     {
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
@@ -75,7 +75,7 @@ final class PageSchemaBuilderTest extends TestCase
         Assert::assertStringContainsString('/events/test-event-slug', (string) ($mainEntity['url'] ?? ''));
     }
 
-    public function test_it_resolves_profile_route_as_profile_page_with_person_main_entity(): void
+    public function testItResolvesProfileRouteAsProfilePageWithPersonMainEntity(): void
     {
         $builder = new PageSchemaBuilder();
         $user = new User([
@@ -102,7 +102,7 @@ final class PageSchemaBuilderTest extends TestCase
         Assert::assertSame('Mario Rossi', $mainEntity['name']);
     }
 
-    public function test_it_resolves_public_profile_detail_route_as_profile_page_with_person_identifier(): void
+    public function testItResolvesPublicProfileDetailRouteAsProfilePageWithPersonIdentifier(): void
     {
         $builder = new PageSchemaBuilder();
 
@@ -127,7 +127,7 @@ final class PageSchemaBuilderTest extends TestCase
         Assert::assertSame('019cca1b-1f72-700a-ba0b-0bb414ca0c88', $mainEntity['identifier']);
     }
 
-    public function test_it_keeps_auth_routes_as_generic_webpage(): void
+    public function testItKeepsAuthRoutesAsGenericWebpage(): void
     {
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(

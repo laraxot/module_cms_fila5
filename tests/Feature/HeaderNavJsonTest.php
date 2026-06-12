@@ -23,7 +23,7 @@ final class HeaderNavJsonTest extends TestCase
 
         $config = File::json($path);
 
-        /** @var array<string, mixed> $config */
+        /* @var array<string, mixed> $config */
         return $config;
     }
 
@@ -40,7 +40,7 @@ final class HeaderNavJsonTest extends TestCase
         /** @var array<string, mixed> $primaryNav */
         $items = $primaryNav['items'] ?? [];
 
-        /** @var list<array<string, mixed>> $items */
+        /* @var list<array<string, mixed>> $items */
         return $items;
     }
 
@@ -58,7 +58,7 @@ final class HeaderNavJsonTest extends TestCase
         }, $items);
     }
 
-    public function test_header_json_contiene_voci_di_navigazione_primarie(): void
+    public function testHeaderJsonContieneVociDiNavigazionePrimarie(): void
     {
         /** @var list<array<string, mixed>> $items */
         $items = self::primaryNavItems(self::headerNavConfig());
@@ -70,7 +70,7 @@ final class HeaderNavJsonTest extends TestCase
         Assert::assertGreaterThan(0, count($primary));
     }
 
-    public function test_header_json_ha_la_struttura_corretta_con_active_patterns(): void
+    public function testHeaderJsonHaLaStrutturaCorrettaConActivePatterns(): void
     {
         $config = self::headerNavConfig();
         $items = self::primaryNavItems($config);
@@ -83,7 +83,7 @@ final class HeaderNavJsonTest extends TestCase
         }
     }
 
-    public function test_header_json_contiene_link_specifici_richiesti(): void
+    public function testHeaderJsonContieneLinkSpecificiRichiesti(): void
     {
         $slugs = self::navItemSlugs(self::primaryNavItems(self::headerNavConfig()));
 
@@ -93,7 +93,7 @@ final class HeaderNavJsonTest extends TestCase
         Assert::assertContains('vivere-il-comune', $slugs);
     }
 
-    public function test_header_json_contiene_link_secondari_richiesti(): void
+    public function testHeaderJsonContieneLinkSecondariRichiesti(): void
     {
         /** @var list<array<string, mixed>> $items */
         $items = self::primaryNavItems(self::headerNavConfig());
@@ -110,7 +110,7 @@ final class HeaderNavJsonTest extends TestCase
         Assert::assertContains('polizia-locale', $slugs);
     }
 
-    public function test_header_json_ha_topics_url_configurato(): void
+    public function testHeaderJsonHaTopicsUrlConfigurato(): void
     {
         $config = self::headerNavConfig();
         $sections = $config['sections'] ?? null;

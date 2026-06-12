@@ -30,10 +30,10 @@ final class LocaleRoutingTest extends TestCase
         /** @var list<string> $locales */
         $locales = array_values(array_map(strval(...), array_keys($supported)));
 
-        return $locales !== [] ? $locales : ['de', 'en', 'it'];
+        return [] !== $locales ? $locales : ['de', 'en', 'it'];
     }
 
-    public function test_every_supported_locale_has_a_reachable_root_route(): void
+    public function testEverySupportedLocaleHasAReachableRootRoute(): void
     {
         foreach (self::supportedTestLocales() as $locale) {
             $response = cmsGet('/'.$locale);
@@ -48,7 +48,7 @@ final class LocaleRoutingTest extends TestCase
         }
     }
 
-    public function test_html_lang_attribute_matches_the_requested_locale(): void
+    public function testHtmlLangAttributeMatchesTheRequestedLocale(): void
     {
         foreach (self::supportedTestLocales() as $locale) {
             $response = cmsGet('/'.$locale);
@@ -71,7 +71,7 @@ final class LocaleRoutingTest extends TestCase
         }
     }
 
-    public function test_de_route_sets_german_locale(): void
+    public function testDeRouteSetsGermanLocale(): void
     {
         $response = cmsGet('/de');
 
@@ -94,7 +94,7 @@ final class LocaleRoutingTest extends TestCase
         Assert::assertSame('de', LaravelLocalization::getCurrentLocale());
     }
 
-    public function test_it_route_sets_italian_locale(): void
+    public function testItRouteSetsItalianLocale(): void
     {
         $response = cmsGet('/it');
 
@@ -117,7 +117,7 @@ final class LocaleRoutingTest extends TestCase
         Assert::assertSame('it', LaravelLocalization::getCurrentLocale());
     }
 
-    public function test_en_route_sets_english_locale(): void
+    public function testEnRouteSetsEnglishLocale(): void
     {
         $response = cmsGet('/en');
 
