@@ -13,5 +13,5 @@ it('GET /it/auth/login is reachable', function (): void {
         cmsSkipTest('Server error on /it/auth/login: '.$status);
     }
 
-    \PHPUnit\Framework\Assert::assertLessThan(500, $status);
+    PHPUnit\Framework\Assert::assertLessThan(500, $status);
 });

@@ -9,7 +9,7 @@ use PHPUnit\Framework\Assert;
 
 final class IndividualFolioRoutesTest extends TestCase
 {
-    public function test_cms_route_get_locale_homepage(): void
+    public function testCmsRouteGetLocaleHomepage(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
@@ -23,7 +23,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('slug="home"');
     }
 
-    public function test_cms_route_get_locale_auth_login(): void
+    public function testCmsRouteGetLocaleAuthLogin(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
@@ -38,7 +38,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<form');
     }
 
-    public function test_cms_route_get_locale_auth_register(): void
+    public function testCmsRouteGetLocaleAuthRegister(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register');
@@ -53,7 +53,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<form');
     }
 
-    public function test_cms_route_get_locale_auth_logout(): void
+    public function testCmsRouteGetLocaleAuthLogout(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout');
@@ -67,7 +67,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_logout_fixed(): void
+    public function testCmsRouteGetLocaleAuthLogoutFixed(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout_fixed');
@@ -81,7 +81,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_password_confirm(): void
+    public function testCmsRouteGetLocaleAuthPasswordConfirm(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/confirm');
@@ -95,7 +95,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_password_reset(): void
+    public function testCmsRouteGetLocaleAuthPasswordReset(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/reset');
@@ -109,7 +109,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_password_token(): void
+    public function testCmsRouteGetLocaleAuthPasswordToken(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/test-token');
@@ -123,7 +123,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_verify(): void
+    public function testCmsRouteGetLocaleAuthVerify(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/verify');
@@ -137,7 +137,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_thank_you(): void
+    public function testCmsRouteGetLocaleAuthThankYou(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/thank-you');
@@ -151,7 +151,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_register_thank_you(): void
+    public function testCmsRouteGetLocaleAuthRegisterThankYou(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register/thank-you');
@@ -165,7 +165,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_auth_type_register_patient(): void
+    public function testCmsRouteGetLocaleAuthTypeRegisterPatient(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/patient/register');
@@ -180,7 +180,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<form');
     }
 
-    public function test_cms_route_get_locale_auth_type_register_doctor(): void
+    public function testCmsRouteGetLocaleAuthTypeRegisterDoctor(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/doctor/register');
@@ -195,7 +195,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<form');
     }
 
-    public function test_cms_route_get_locale_pages(): void
+    public function testCmsRouteGetLocalePages(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/pages');
@@ -206,7 +206,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_slug(): void
+    public function testCmsRouteGetLocaleSlug(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/test-slug');
@@ -219,7 +219,7 @@ final class IndividualFolioRoutesTest extends TestCase
         }
     }
 
-    public function test_cms_route_get_locale_learn(): void
+    public function testCmsRouteGetLocaleLearn(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/learn');
@@ -233,7 +233,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_genesis_about(): void
+    public function testCmsRouteGetLocaleGenesisAbout(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/about');
@@ -247,7 +247,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_genesis_power_ups(): void
+    public function testCmsRouteGetLocaleGenesisPowerUps(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/power-ups');
@@ -261,7 +261,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_classi_css(): void
+    public function testCmsRouteGetLocaleClassiCss(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/classi-css');
@@ -275,7 +275,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_registration_thank_you(): void
+    public function testCmsRouteGetLocaleRegistrationThankYou(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/registration/thank-you');
@@ -289,7 +289,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_route_get_locale_errors_password_expired(): void
+    public function testCmsRouteGetLocaleErrorsPasswordExpired(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/errors/password-expired');
@@ -303,7 +303,7 @@ final class IndividualFolioRoutesTest extends TestCase
         $response->assertSee('<html');
     }
 
-    public function test_cms_verifies_json_content_loading_for_homepage(): void
+    public function testCmsVerifiesJsonContentLoadingForHomepage(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
@@ -318,7 +318,7 @@ final class IndividualFolioRoutesTest extends TestCase
         /** @var array<string, mixed> $homepageData */
         $locale = (string) app()->getLocale();
         $contentBlocks = $homepageData['content_blocks'] ?? null;
-        /** @var array<string, list<array<string, mixed>>>|null $contentBlocks */
+        /* @var array<string, list<array<string, mixed>>>|null $contentBlocks */
         Assert::assertNotNull($contentBlocks);
         Assert::assertArrayHasKey($locale, $contentBlocks);
 
@@ -336,7 +336,7 @@ final class IndividualFolioRoutesTest extends TestCase
         }
     }
 
-    public function test_cms_handles_theme_view_resolution_correctly(): void
+    public function testCmsHandlesThemeViewResolutionCorrectly(): void
     {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
@@ -363,7 +363,7 @@ final class IndividualFolioRoutesTest extends TestCase
         }
     }
 
-    public function test_cms_processes_blade_syntax_in_json_correctly(): void
+    public function testCmsProcessesBladeSyntaxInJsonCorrectly(): void
     {
         $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
         if (! file_exists($homepageJsonPath)) {
@@ -394,7 +394,7 @@ final class IndividualFolioRoutesTest extends TestCase
         }
     }
 
-    public function test_cms_homepage_renders_within_acceptable_time(): void
+    public function testCmsHomepageRendersWithinAcceptableTime(): void
     {
         $locale = (string) app()->getLocale();
         $startTime = microtime(true);
@@ -408,7 +408,7 @@ final class IndividualFolioRoutesTest extends TestCase
         Assert::assertLessThan(1500, $loadTime, 'CMS homepage should load within 1.5 seconds');
     }
 
-    public function test_cms_auth_pages_render_within_acceptable_time(): void
+    public function testCmsAuthPagesRenderWithinAcceptableTime(): void
     {
         $locale = (string) app()->getLocale();
         $authRoutes = [

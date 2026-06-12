@@ -16,7 +16,7 @@ final class PredictHomepageGuestAccessTest extends TestCase
         cmsSkipTest('Predict.local homepage tests not applicable to fixcity install.');
     }
 
-    public function test_serves_it_for_guests_on_predict_local_without_requiring_login(): void
+    public function testServesItForGuestsOnPredictLocalWithoutRequiringLogin(): void
     {
         Assert::assertFalse(Auth::check());
 
@@ -28,7 +28,7 @@ final class PredictHomepageGuestAccessTest extends TestCase
         $response->assertSee('lang="it"', false);
     }
 
-    public function test_returns_an_empty_slider_dataset_instead_of_crashing_when_predict_banners_are_unavailable(): void
+    public function testReturnsAnEmptySliderDatasetInsteadOfCrashingWhenPredictBannersAreUnavailable(): void
     {
         if (! class_exists('Modules\\Predict\\View\\Composers\\ThemeComposer')) {
             cmsSkipTest('Predict ThemeComposer not available');

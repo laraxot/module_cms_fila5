@@ -9,35 +9,35 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
-use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
-use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 use function Safe\class_uses;
 
+use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
+
 final class MenuBusinessLogicTest extends TestCase
 {
-    public function test_menu_implements_recursive_relationships_contract(): void
+    public function testMenuImplementsRecursiveRelationshipsContract(): void
     {
         $menu = new Menu();
         Assert::assertInstanceOf(HasRecursiveRelationshipsContract::class, $menu);
     }
 
-    public function test_menu_has_recursive_relationships_trait(): void
+    public function testMenuHasRecursiveRelationshipsTrait(): void
     {
         $traits = class_uses_recursive(Menu::class);
 
         Assert::assertContains(HasRecursiveRelationships::class, array_values($traits));
     }
 
-    public function test_menu_has_sushi_to_json_trait(): void
+    public function testMenuHasSushiToJsonTrait(): void
     {
         $traits = class_uses(Menu::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
     }
 
-    public function test_menu_has_expected_fillable_fields(): void
+    public function testMenuHasExpectedFillableFields(): void
     {
         $menu = new Menu();
         $expectedFillable = [
@@ -49,7 +49,7 @@ final class MenuBusinessLogicTest extends TestCase
         Assert::assertEquals($expectedFillable, $menu->getFillable());
     }
 
-    public function test_menu_can_get_label(): void
+    public function testMenuCanGetLabel(): void
     {
         $menu = new Menu();
         $menu->title = 'Test Menu';
@@ -57,7 +57,7 @@ final class MenuBusinessLogicTest extends TestCase
         Assert::assertSame('Test Menu', $menu->getLabel());
     }
 
-    public function test_menu_has_correct_casts_for_structured_data(): void
+    public function testMenuHasCorrectCastsForStructuredData(): void
     {
         $menu = new Menu();
         $casts = $menu->getCasts();
@@ -66,11 +66,11 @@ final class MenuBusinessLogicTest extends TestCase
         Assert::assertSame('string', $casts['id']);
     }
 
-    public function test_menu_has_schema_definition_for_structured_data(): void
+    public function testMenuHasSchemaDefinitionForStructuredData(): void
     {
         $menu = new Menu();
 
-        $reflection = new ReflectionClass($menu);
+        $reflection = new \ReflectionClass($menu);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
@@ -81,14 +81,14 @@ final class MenuBusinessLogicTest extends TestCase
         Assert::assertSame('integer', $schema['parent_id']);
     }
 
-    public function test_menu_can_build_tree_queries(): void
+    public function testMenuCanBuildTreeQueries(): void
     {
         $query = Menu::tree();
 
         Assert::assertInstanceOf(Builder::class, $query);
     }
 
-    public function test_menu_can_query_by_depth(): void
+    public function testMenuCanQueryByDepth(): void
     {
         $query = Menu::whereDepth(1);
 

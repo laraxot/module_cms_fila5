@@ -9,23 +9,22 @@ use Modules\Cms\Models\Page;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 final class PageTest extends TestCase
 {
-    public function test_page_model_can_be_instantiated(): void
+    public function testPageModelCanBeInstantiated(): void
     {
         $page = new Page();
         Assert::assertInstanceOf(Page::class, $page);
     }
 
-    public function test_page_extends_base_model_lang(): void
+    public function testPageExtendsBaseModelLang(): void
     {
         $page = new Page();
         Assert::assertInstanceOf(BaseModelLang::class, $page);
     }
 
-    public function test_page_has_expected_fillable_fields(): void
+    public function testPageHasExpectedFillableFields(): void
     {
         $page = new Page();
         $fillable = $page->getFillable();
@@ -40,7 +39,7 @@ final class PageTest extends TestCase
         Assert::assertContains('footer_blocks', $fillable);
     }
 
-    public function test_page_has_expected_casts(): void
+    public function testPageHasExpectedCasts(): void
     {
         $page = new Page();
         /** @var array<string, mixed> $casts */
@@ -58,7 +57,7 @@ final class PageTest extends TestCase
         Assert::assertArrayHasKey('middleware', $casts);
     }
 
-    public function test_page_has_translatable_fields_configured(): void
+    public function testPageHasTranslatableFieldsConfigured(): void
     {
         $page = new Page();
 
@@ -71,7 +70,7 @@ final class PageTest extends TestCase
         Assert::assertContains('footer_blocks', $page->translatable);
     }
 
-    public function test_page_has_sushi_to_jsons_trait(): void
+    public function testPageHasSushiToJsonsTrait(): void
     {
         $page = new Page();
         $traits = class_uses_recursive($page);
@@ -79,18 +78,18 @@ final class PageTest extends TestCase
         Assert::assertContains(SushiToJsons::class, array_values($traits));
     }
 
-    public function test_page_has_get_rows_method_for_sushi_functionality(): void
+    public function testPageHasGetRowsMethodForSushiFunctionality(): void
     {
         $page = new Page();
 
         Assert::assertNotEmpty($page->getRows());
     }
 
-    public function test_page_has_schema_definition(): void
+    public function testPageHasSchemaDefinition(): void
     {
         $page = new Page();
 
-        $reflection = new ReflectionClass($page);
+        $reflection = new \ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
@@ -105,12 +104,12 @@ final class PageTest extends TestCase
         Assert::assertArrayHasKey('content_blocks', $schema);
     }
 
-    public function test_page_has_get_middleware_by_slug_static_method(): void
+    public function testPageHasGetMiddlewareBySlugStaticMethod(): void
     {
         $result = Page::getMiddlewareBySlug('non-existent-slug');
     }
 
-    public function test_page_casts_content_blocks_to_array(): void
+    public function testPageCastsContentBlocksToArray(): void
     {
         $page = new Page();
         $casts = $page->getCasts();
@@ -118,7 +117,7 @@ final class PageTest extends TestCase
         Assert::assertSame('array', $casts['content_blocks']);
     }
 
-    public function test_page_casts_middleware_to_array(): void
+    public function testPageCastsMiddlewareToArray(): void
     {
         $page = new Page();
         $casts = $page->getCasts();

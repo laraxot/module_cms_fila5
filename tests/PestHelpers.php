@@ -11,7 +11,6 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
-use Pest\Support\HigherOrderTapProxy;
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
@@ -24,7 +23,7 @@ use function Safe\json_decode;
  */
 function cmsTest(): TestCase
 {
-    if (TestCase::$currentTest !== null) {
+    if (null !== TestCase::$currentTest) {
         return TestCase::$currentTest;
     }
 
