@@ -62,7 +62,7 @@ final class HeaderNavJsonTest extends TestCase
                 continue;
             }
 
-            /** @var array<string, mixed> $item */
+            /* @var array<string, mixed> $item */
             $normalized[] = $item;
         }
 
