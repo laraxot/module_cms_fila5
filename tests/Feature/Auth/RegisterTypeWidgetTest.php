@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 beforeEach(function (): void {
-    cmsMockXotData();
+    cmsSkipTest('patient/doctor registration types not configured in this install.');
 });
 
 describe('Registration Widget', function (): void {

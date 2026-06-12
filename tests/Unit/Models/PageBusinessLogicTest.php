@@ -2,25 +2,20 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Models;
+
 use Modules\Cms\Models\Page;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
 use function Safe\class_uses;
 
-uses(Modules\Cms\Tests\TestCase::class);
-describe('Page Business Logic', function (): void {
-    test('page extends base model lang for multilingual support', function (): void {
-    });
-
-    test('page has translatable fields configured', function (): void {
-        $page = new Page();
-        $page = new Page();
-    });
-
-    test('page has expected fillable fields', function (): void {
-        $page = new Page();
+final class PageBusinessLogicTest extends TestCase
+{
+    public function test_page_has_expected_fillable_fields(): void
+    {
         $page = new Page();
         $expectedFillable = [
             'content',
@@ -34,21 +29,17 @@ describe('Page Business Logic', function (): void {
         ];
 
         Assert::assertEquals($expectedFillable, $page->getFillable());
-    });
+    }
 
-    test('page has sushi to json trait', function (): void {
+    public function test_page_has_sushi_to_json_trait(): void
+    {
         $traits = class_uses(Page::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
-    });
+    }
 
-    test('page can get middleware by slug', function (): void {
-        $middleware = Page::getMiddlewareBySlug('non-existent-slug');
-        /* @var array<string, mixed> $middleware */
-    });
-
-    test('page has correct casts for blocks and arrays', function (): void {
-        $page = new Page();
+    public function test_page_has_correct_casts_for_blocks_and_arrays(): void
+    {
         $page = new Page();
         $casts = $page->getCasts();
 
@@ -56,27 +47,21 @@ describe('Page Business Logic', function (): void {
         Assert::assertSame('array', $casts['sidebar_blocks']);
         Assert::assertSame('array', $casts['footer_blocks']);
         Assert::assertSame('array', $casts['middleware']);
-    });
+    }
 
-    test('page has schema definition for structured data', function (): void {
-        $page = new Page();
+    public function test_page_has_schema_definition_for_structured_data(): void
+    {
         $page = new Page();
 
-        // Use reflection to access protected $schema property
         $reflection = new ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
 
+        /** @var array<string, mixed> $schema */
         $schema = $schemaProperty->getValue($page);
-        /* @var array<string, mixed> $schema */
         Assert::assertSame('json', $schema['content_blocks']);
         Assert::assertSame('json', $schema['sidebar_blocks']);
         Assert::assertSame('json', $schema['footer_blocks']);
-    });
-
-    test('page can get rows for sushi functionality', function (): void {
-        $page = new Page();
-        $page = new Page();
-    });
-});
+    }
+}

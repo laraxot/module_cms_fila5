@@ -2,79 +2,76 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Feature;
+
 use Modules\Cms\Tests\TestCase;
-
-use function Pest\Laravel\get;
-
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
-describe('CMS Individual Folio Routes Tests', function () {
-    // Test homepage dal punto di vista CMS
-    test('cms: route GET /{locale} (homepage)', function () {
+final class IndividualFolioRoutesTest extends TestCase
+{
+    public function test_cms_route_get_locale_homepage(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale);
+        $response = cmsGet('/'.$locale);
 
-        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
 
-        // Verifica integrazione CMS specifica
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
         $response->assertSee('x-page');
         $response->assertSee('side="content"');
         $response->assertSee('slug="home"');
-    });
+    }
 
-    // Test auth routes dal punto di vista CMS
-    test('cms: route GET /{locale}/auth/login', function () {
+    public function test_cms_route_get_locale_auth_login(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/login');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/login');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/login: '.$status);
         }
 
-        // Verifica che il CMS carichi correttamente i contenuti auth
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
         $response->assertSee('<form');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/register', function () {
+    public function test_cms_route_get_locale_auth_register(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/register');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/register');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/register: '.$status);
         }
 
-        // Verifica che il CMS gestisca correttamente la registrazione
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
         $response->assertSee('<form');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/logout', function () {
+    public function test_cms_route_get_locale_auth_logout(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/logout');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/logout');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/logout: '.$status);
         }
 
-        // Verifica rendering CMS per logout
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/logout_fixed', function () {
+    public function test_cms_route_get_locale_auth_logout_fixed(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/logout_fixed');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/logout_fixed');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/logout_fixed: '.$status);
@@ -82,12 +79,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/password/confirm', function () {
+    public function test_cms_route_get_locale_auth_password_confirm(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/password/confirm');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/password/confirm');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/password/confirm: '.$status);
@@ -95,12 +93,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/password/reset', function () {
+    public function test_cms_route_get_locale_auth_password_reset(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/password/reset');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/password/reset');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/password/reset: '.$status);
@@ -108,12 +107,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/password/{token}', function () {
+    public function test_cms_route_get_locale_auth_password_token(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/password/test-token');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/password/test-token');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/password/{token}: '.$status);
@@ -121,12 +121,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/verify', function () {
+    public function test_cms_route_get_locale_auth_verify(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/verify');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/verify');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/verify: '.$status);
@@ -134,12 +135,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/thank-you', function () {
+    public function test_cms_route_get_locale_auth_thank_you(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/thank-you');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/thank-you');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/thank-you: '.$status);
@@ -147,12 +149,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/register/thank-you', function () {
+    public function test_cms_route_get_locale_auth_register_thank_you(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/register/thank-you');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/register/thank-you');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/register/thank-you: '.$status);
@@ -160,27 +163,28 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/{type}/register - patient', function () {
+    public function test_cms_route_get_locale_auth_type_register_patient(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/patient/register');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/patient/register');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/{type}/register (patient): '.$status);
         }
 
-        // Verifica che CMS gestisca correttamente la registrazione per tipo
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
         $response->assertSee('<form');
-    });
+    }
 
-    test('cms: route GET /{locale}/auth/{type}/register - doctor', function () {
+    public function test_cms_route_get_locale_auth_type_register_doctor(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/auth/doctor/register');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/auth/doctor/register');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/{type}/register (doctor): '.$status);
@@ -189,40 +193,37 @@ describe('CMS Individual Folio Routes Tests', function () {
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
         $response->assertSee('<form');
-    });
+    }
 
-    // Test pagine CMS specifiche
-    test('cms: route GET /{locale}/pages', function () {
+    public function test_cms_route_get_locale_pages(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/pages');
+        $response = cmsGet('/'.$locale.'/pages');
 
-        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         Assert::assertSame(200, $response->status());
 
-        // Verifica che CMS gestisca l'indice delle pagine
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/{slug}', function () {
+    public function test_cms_route_get_locale_slug(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/test-slug');
+        $response = cmsGet('/'.$locale.'/test-slug');
 
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
-        // Le pagine dinamiche potrebbero non esistere
-
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         if (200 === $response->status()) {
-            // Verifica che CMS carichi correttamente la pagina dinamica
             $response->assertSee('<!DOCTYPE html>');
             $response->assertSee('<html');
             $response->assertSee('x-page');
         }
-    });
+    }
 
-    test('cms: route GET /{locale}/learn', function () {
+    public function test_cms_route_get_locale_learn(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/learn');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/learn');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/learn: '.$status);
@@ -230,12 +231,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/genesis/about', function () {
+    public function test_cms_route_get_locale_genesis_about(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/genesis/about');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/genesis/about');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/genesis/about: '.$status);
@@ -243,12 +245,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/genesis/power-ups', function () {
+    public function test_cms_route_get_locale_genesis_power_ups(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/genesis/power-ups');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/genesis/power-ups');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/genesis/power-ups: '.$status);
@@ -256,12 +259,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/classi-css', function () {
+    public function test_cms_route_get_locale_classi_css(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/classi-css');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/classi-css');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/classi-css: '.$status);
@@ -269,12 +273,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/registration/thank-you', function () {
+    public function test_cms_route_get_locale_registration_thank_you(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/registration/thank-you');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/registration/thank-you');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/registration/thank-you: '.$status);
@@ -282,12 +287,13 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    test('cms: route GET /{locale}/errors/password-expired', function () {
+    public function test_cms_route_get_locale_errors_password_expired(): void
+    {
         $locale = (string) app()->getLocale();
-        $response = get('/'.$locale.'/errors/password-expired');
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale.'/errors/password-expired');
+        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/errors/password-expired: '.$status);
@@ -295,122 +301,115 @@ describe('CMS Individual Folio Routes Tests', function () {
 
         $response->assertSee('<!DOCTYPE html>');
         $response->assertSee('<html');
-    });
+    }
 
-    // Test CMS con contenuti JSON
-    describe('CMS Content Management Routes', function () {
-        test('cms verifies json content loading for homepage', function () {
-            $locale = (string) app()->getLocale();
-            $response = get('/'.$locale);
-            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-            Assert::assertSame(200, $response->status());
+    public function test_cms_verifies_json_content_loading_for_homepage(): void
+    {
+        $locale = (string) app()->getLocale();
+        $response = cmsGet('/'.$locale);
+        Assert::assertSame(200, $response->status());
 
-            // Verifica che il JSON della homepage sia caricato correttamente
-            // Il sito funziona, quindi il path reale è config/local/laravelpizza/
-            $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
-            // Il file potrebbe non esistere in test environment, quindi accettiamo sia true che false
-            if (! file_exists($homepageJsonPath)) {
-                cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
+        $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+        if (! file_exists($homepageJsonPath)) {
+            cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
+        }
+
+        $homepageData = cmsJsonDecodeFile($homepageJsonPath);
+        /** @var array<string, mixed> $homepageData */
+        $locale = (string) app()->getLocale();
+        $contentBlocks = $homepageData['content_blocks'] ?? null;
+        /** @var array<string, list<array<string, mixed>>>|null $contentBlocks */
+        Assert::assertNotNull($contentBlocks);
+        Assert::assertArrayHasKey($locale, $contentBlocks);
+
+        $content = (string) $response->getContent();
+        $blocks = $contentBlocks[$locale];
+        foreach ($blocks as $block) {
+            $blockData = $block['data'] ?? null;
+            if (! is_array($blockData)) {
+                continue;
             }
+            $title = $blockData['title'] ?? null;
+            if (is_string($title)) {
+                Assert::assertStringContainsString($title, $content);
+            }
+        }
+    }
 
-            $homepageData = cmsJsonDecodeFile($homepageJsonPath);
-            /** @var array<string, mixed> $homepageData */
+    public function test_cms_handles_theme_view_resolution_correctly(): void
+    {
+        $locale = (string) app()->getLocale();
+        $response = cmsGet('/'.$locale);
+        Assert::assertSame(200, $response->status());
+
+        $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+        if (! file_exists($homepageJsonPath)) {
+            cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
+        }
+        $homepageData = cmsJsonDecodeFile($homepageJsonPath);
+        /** @var array<string, mixed> $homepageData */
+        $locale = (string) app()->getLocale();
+        $contentBlocks = $homepageData['content_blocks'] ?? null;
+        /** @var array<string, list<array<string, mixed>>> $contentBlocks */
+        $blocks = $contentBlocks[$locale] ?? [];
+
+        foreach ($blocks as $block) {
+            $blockData = $block['data'] ?? null;
+            Assert::assertIsArray($blockData);
+            $view = $blockData['view'] ?? null;
+            Assert::assertIsString($view);
+            Assert::assertStringStartsWith('pub_theme::', $view);
+            Assert::assertStringContainsString('components.blocks', $view);
+        }
+    }
+
+    public function test_cms_processes_blade_syntax_in_json_correctly(): void
+    {
+        $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+        if (! file_exists($homepageJsonPath)) {
+            cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
+        }
+        $homepageData = cmsJsonDecodeFile($homepageJsonPath);
+        /** @var array<string, mixed> $homepageData */
+        $locale = (string) app()->getLocale();
+        $contentBlocks = $homepageData['content_blocks'] ?? null;
+        /** @var array<string, list<array<string, mixed>>> $contentBlocks */
+        $blocks = $contentBlocks[$locale] ?? [];
+        $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
+
+        if (is_array($landingBlock)) {
+            $landingData = $landingBlock['data'] ?? null;
+            Assert::assertIsArray($landingData);
+            $ctaLink = $landingData['cta_link'] ?? null;
+            Assert::assertIsString($ctaLink);
+            Assert::assertStringContainsString("{{ route('register') }}", $ctaLink);
+
             $locale = (string) app()->getLocale();
-            $contentBlocks = $homepageData['content_blocks'] ?? null;
-            /* @var array<string, list<array<string, mixed>>> $contentBlocks */
-            Assert::assertArrayHasKey($locale, $contentBlocks);
-
+            $response = cmsGet('/'.$locale);
+            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
             $content = (string) $response->getContent();
-            $blocks = $contentBlocks[$locale];
-            foreach ($blocks as $block) {
-                $blockData = $block['data'] ?? null;
-                if (! is_array($blockData)) {
-                    continue;
-                }
-                $title = $blockData['title'] ?? null;
-                if (is_string($title)) {
-                    Assert::assertStringContainsString($title, $content);
-                }
-            }
-        });
 
-        test('cms handles theme view resolution correctly', function () {
-            $locale = (string) app()->getLocale();
-            $response = get('/'.$locale);
-            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-            Assert::assertSame(200, $response->status());
+            $expectedUrl = route('register');
+            Assert::assertStringContainsString($expectedUrl, $content);
+        }
+    }
 
-            // Il sito funziona, quindi il path reale è config/local/laravelpizza/
-            $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
-            if (! file_exists($homepageJsonPath)) {
-                cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
-            }
-            $homepageData = cmsJsonDecodeFile($homepageJsonPath);
-            /** @var array<string, mixed> $homepageData */
-            $locale = (string) app()->getLocale();
-            $contentBlocks = $homepageData['content_blocks'] ?? null;
-            /** @var array<string, list<array<string, mixed>>> $contentBlocks */
-            $blocks = $contentBlocks[$locale] ?? [];
-
-            foreach ($blocks as $block) {
-                $blockData = $block['data'] ?? null;
-                Assert::assertIsArray($blockData);
-                $view = $blockData['view'] ?? null;
-                Assert::assertIsString($view);
-                Assert::assertStringStartsWith('pub_theme::', $view);
-                Assert::assertStringContainsString('components.blocks', $view);
-            }
-        });
-
-        test('cms processes blade syntax in json correctly', function () {
-            // Il sito funziona, quindi il path reale è config/local/laravelpizza/
-            $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
-            if (! file_exists($homepageJsonPath)) {
-                cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
-            }
-            $homepageData = cmsJsonDecodeFile($homepageJsonPath);
-            /** @var array<string, mixed> $homepageData */
-            $locale = (string) app()->getLocale();
-            $contentBlocks = $homepageData['content_blocks'] ?? null;
-            /** @var array<string, list<array<string, mixed>>> $contentBlocks */
-            $blocks = $contentBlocks[$locale] ?? [];
-            $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
-
-            if (is_array($landingBlock)) {
-                $landingData = $landingBlock['data'] ?? null;
-                Assert::assertIsArray($landingData);
-                $ctaLink = $landingData['cta_link'] ?? null;
-                Assert::assertIsString($ctaLink);
-                Assert::assertStringContainsString("{{ route('register') }}", $ctaLink);
-
-                $locale = (string) app()->getLocale();
-                $response = get('/'.$locale);
-                /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
-                $content = (string) $response->getContent();
-
-                $expectedUrl = route('register');
-                Assert::assertStringContainsString($expectedUrl, $content);
-            }
-        });
-    });
-
-    // Test performance CMS
-    test('cms: homepage renders within acceptable time', function () {
+    public function test_cms_homepage_renders_within_acceptable_time(): void
+    {
         $locale = (string) app()->getLocale();
         $startTime = microtime(true);
 
-        $response = get('/'.$locale);
-        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        $response = cmsGet('/'.$locale);
         Assert::assertSame(200, $response->status());
 
         $endTime = microtime(true);
         $loadTime = ($endTime - $startTime) * 1000;
 
-        // CMS dovrebbe renderizzare la homepage velocemente
         Assert::assertLessThan(1500, $loadTime, 'CMS homepage should load within 1.5 seconds');
-    });
+    }
 
-    test('cms: auth pages render within acceptable time', function () {
+    public function test_cms_auth_pages_render_within_acceptable_time(): void
+    {
         $locale = (string) app()->getLocale();
         $authRoutes = [
             '/'.$locale.'/auth/login',
@@ -420,8 +419,7 @@ describe('CMS Individual Folio Routes Tests', function () {
         foreach ($authRoutes as $route) {
             $startTime = microtime(true);
 
-            $response = get($route);
-            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            $response = cmsGet($route);
             Assert::assertSame(200, $response->status());
 
             $endTime = microtime(true);
@@ -429,5 +427,5 @@ describe('CMS Individual Folio Routes Tests', function () {
 
             Assert::assertLessThan(1000, $loadTime, "CMS route {$route} should load within 1 second");
         }
-    });
-});
+    }
+}

@@ -15,7 +15,7 @@ final class ResolvePageActionTest extends TestCase
      *
      * @var array<int, string>
      */
-    protected $connectionsToTransact = ['mysql', 'meetup', 'user', 'tenant'];
+    protected $connectionsToTransact = ['sqlite', 'user'];
 
     public function testItResolvesADynamicModelFromKnownMappings(): void
     {
