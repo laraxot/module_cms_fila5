@@ -24,7 +24,7 @@ final class PageSchemaBuilderTest extends TestCase
             Assert::fail('Expected mainEntity array in schema');
         }
 
-        /** @var array<string, mixed> $mainEntity */
+        /* @var array<string, mixed> $mainEntity */
         return $mainEntity;
     }
 
