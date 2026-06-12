@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Breadcrumb page uses correct view', function () {

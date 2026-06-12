@@ -7,7 +7,6 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 use Symfony\Component\HttpFoundation\Response;
 
 uses(Modules\Cms\Tests\TestCase::class);

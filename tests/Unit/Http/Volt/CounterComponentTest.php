@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Modules\Cms\Http\Volt\CounterComponent;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('CounterComponent', function (): void {
