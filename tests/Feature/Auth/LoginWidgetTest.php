@@ -24,7 +24,10 @@ test('widget can be rendered', function (): void {
 test('widget initializes correctly', function (): void {
     $component = Livewire::test(LoginWidget::class);
     /* @var Testable<\Livewire\Component> $component */
-    $component->assertSet('data', []);
+    $component
+        ->assertSet('data.remember', false)
+        ->assertSet('data.email', null)
+        ->assertSet('data.password', null);
 });
 
 test('can set form data', function (): void {

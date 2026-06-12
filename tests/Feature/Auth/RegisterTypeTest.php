@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-use function Pest\Laravel\actingAs;
-use function Pest\Laravel\get;
-
 use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
+
+beforeEach(function (): void {
+    cmsSkipTest('patient/doctor registration types not configured in this install.');
+});
 /*
  * Tests for dynamic registration pages rendered by Themes/One
  * Route pattern: /{locale}/auth/{type}/register

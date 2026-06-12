@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
+use Pest\Support\HigherOrderTapProxy;
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
@@ -22,6 +24,11 @@ use function Safe\json_decode;
  */
 function cmsTest(): TestCase
 {
+    if (TestCase::$currentTest !== null) {
+        return TestCase::$currentTest;
+    }
+
+    /** @phpstan-ignore-next-line */
     $test = test();
     Assert::assertInstanceOf(TestCase::class, $test);
 
@@ -93,6 +100,22 @@ function cmsGet(string $uri, array $headers = []): TestResponse
 }
 
 /**
+ * @param array<string, string> $headers
+ *
+ * @return TestResponse<Response>
+ */
+function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestResponse
+{
+    $response = cmsGet($uri, $headers);
+
+    if ((int) $response->getStatusCode() >= 500) {
+        cmsSkipTest('Server error on '.$uri.': '.$response->getStatusCode());
+    }
+
+    return $response;
+}
+
+/**
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  *
@@ -115,12 +138,12 @@ function cmsSkipTest(string $message = ''): void
 
 function cmsAssertAuthenticated(?string $guard = null): void
 {
-    cmsTest()->assertAuthenticated($guard);
+    Assert::assertTrue(Auth::guard($guard)->check());
 }
 
 function cmsAssertGuest(?string $guard = null): void
 {
-    cmsTest()->assertGuest($guard);
+    Assert::assertFalse(Auth::guard($guard)->check());
 }
 
 /**

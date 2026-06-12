@@ -2,41 +2,43 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Models;
+
 use Modules\Cms\Models\Menu;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
-
-use function Safe\class_uses;
-
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(Modules\Cms\Tests\TestCase::class);
-describe('Menu Business Logic', function () {
-    test('menu extends base model', function () {
-    });
+use function Safe\class_uses;
 
-    test('menu implements recursive relationships contract', function () {
+final class MenuBusinessLogicTest extends TestCase
+{
+    public function test_menu_implements_recursive_relationships_contract(): void
+    {
         $menu = new Menu();
         Assert::assertInstanceOf(HasRecursiveRelationshipsContract::class, $menu);
-    });
+    }
 
-    test('menu has recursive relationships trait', function () {
+    public function test_menu_has_recursive_relationships_trait(): void
+    {
         $traits = class_uses_recursive(Menu::class);
 
-        // Menu uses HasRecursiveRelationships from staudenmeir/laravel-adjacency-list
         Assert::assertContains(HasRecursiveRelationships::class, array_values($traits));
-    });
+    }
 
-    test('menu has sushi to json trait', function () {
+    public function test_menu_has_sushi_to_json_trait(): void
+    {
         $traits = class_uses(Menu::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
-    });
+    }
 
-    test('menu has expected fillable fields', function () {
+    public function test_menu_has_expected_fillable_fields(): void
+    {
         $menu = new Menu();
         $expectedFillable = [
             'title',
@@ -45,56 +47,51 @@ describe('Menu Business Logic', function () {
         ];
 
         Assert::assertEquals($expectedFillable, $menu->getFillable());
-    });
+    }
 
-    test('menu can get tree options for hierarchical display', function () {
-        $options = Menu::getTreeMenuOptions();
-        /* @var array<string, mixed> $options */
-    });
-
-    test('menu can get label', function () {
+    public function test_menu_can_get_label(): void
+    {
         $menu = new Menu();
         $menu->title = 'Test Menu';
 
         Assert::assertSame('Test Menu', $menu->getLabel());
-    });
+    }
 
-    test('menu has correct casts for structured data', function () {
+    public function test_menu_has_correct_casts_for_structured_data(): void
+    {
         $menu = new Menu();
         $casts = $menu->getCasts();
 
         Assert::assertSame('array', $casts['items']);
         Assert::assertSame('string', $casts['id']);
-    });
+    }
 
-    test('menu has schema definition for structured data', function () {
+    public function test_menu_has_schema_definition_for_structured_data(): void
+    {
         $menu = new Menu();
 
-        // Use reflection to access protected $schema property
         $reflection = new ReflectionClass($menu);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
 
+        /** @var array<string, mixed> $schema */
         $schema = $schemaProperty->getValue($menu);
-        /* @var array<string, mixed> $schema */
         Assert::assertSame('string', $schema['title']);
         Assert::assertSame('integer', $schema['parent_id']);
-    });
+    }
 
-    test('menu can get rows for sushi functionality', function () {
-        $menu = new Menu();
-    });
-
-    test('menu can build tree queries', function () {
+    public function test_menu_can_build_tree_queries(): void
+    {
         $query = Menu::tree();
 
         Assert::assertInstanceOf(Builder::class, $query);
-    });
+    }
 
-    test('menu can query by depth', function () {
+    public function test_menu_can_query_by_depth(): void
+    {
         $query = Menu::whereDepth(1);
 
         Assert::assertInstanceOf(Builder::class, $query);
-    });
-});
+    }
+}
