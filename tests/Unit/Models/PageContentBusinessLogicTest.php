@@ -10,35 +10,35 @@ use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Spatie\Translatable\HasTranslations;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Page Content Business Logic', function (): void {
     test('page content model can be instantiated', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         Assert::assertInstanceOf(PageContent::class, $pageContent);
     });
 
     test('page content extends base model', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         Assert::assertInstanceOf(\Modules\Cms\Models\BaseModel::class, $pageContent);
     });
 
     test('page content uses sushi to jsons trait', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $traits = class_uses_recursive($pageContent);
 
         Assert::assertContains(SushiToJsons::class, array_values($traits));
     });
 
     test('page content uses has translations trait', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $traits = class_uses_recursive($pageContent);
 
         Assert::assertContains(HasTranslations::class, array_values($traits));
     });
 
     test('page content has correct translatable attributes', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
 
         Assert::assertContains('name', $pageContent->translatable);
 
@@ -46,7 +46,7 @@ $pageContent = new PageContent();
     });
 
     test('page content has correct fillable attributes', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $fillable = $pageContent->getFillable();
 
         Assert::assertContains('name', $fillable);
@@ -57,7 +57,7 @@ $pageContent = new PageContent();
     });
 
     test('page content has correct schema definition', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
 
         $reflection = new \ReflectionClass($pageContent);
         $schemaProperty = $reflection->getProperty('schema');
@@ -76,7 +76,7 @@ $pageContent = new PageContent();
     });
 
     test('page content has correct casts', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         /** @var array<string, mixed> $casts */
         $casts = $pageContent->getCasts();
         Assert::assertArrayHasKey('id', $casts);
@@ -91,13 +91,13 @@ $pageContent = new PageContent();
     });
 
     test('page content get rows method returns array', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $rows = $pageContent->getRows();
         Assert::assertNotEmpty($rows);
     });
 
     test('page content has sluggable configuration', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $sluggable = $pageContent->sluggable();
         Assert::assertArrayHasKey('slug', $sluggable);
         /** @var array<string, mixed> $slugConfig */
@@ -108,14 +108,14 @@ $pageContent = new PageContent();
     });
 
     test('page content blocks cast to array', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $casts = $pageContent->getCasts();
 
         Assert::assertSame('array', $casts['blocks']);
     });
 
     test('page content has datetime casts for timestamps', function (): void {
-$pageContent = new PageContent();
+        $pageContent = new PageContent();
         $casts = $pageContent->getCasts();
 
         Assert::assertSame('datetime', $casts['created_at']);

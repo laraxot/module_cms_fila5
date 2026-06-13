@@ -9,7 +9,7 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Services\TenantService;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * @return array<string, mixed>
@@ -62,7 +62,7 @@ function primaryNavItems(array $config): array
             continue;
         }
 
-        /** @var array<string, mixed> $item */
+        /* @var array<string, mixed> $item */
         $normalized[] = $item;
     }
 
@@ -85,7 +85,7 @@ function navItemSlugs(array $items): array
 
 describe('Header Nav Json', function (): void {
     test('header json contiene voci di navigazione primarie', function (): void {
-/** @var list<array<string, mixed>> $items */
+        /** @var list<array<string, mixed>> $items */
         $items = primaryNavItems(headerNavConfig());
 
         $primary = array_values(array_filter(
@@ -96,7 +96,7 @@ describe('Header Nav Json', function (): void {
     });
 
     test('header json ha la struttura corretta con active patterns', function (): void {
-$config = headerNavConfig();
+        $config = headerNavConfig();
         $items = primaryNavItems($config);
         foreach ($items as $item) {
             Assert::assertArrayHasKey('label', $item);
@@ -108,7 +108,7 @@ $config = headerNavConfig();
     });
 
     test('header json contiene link specifici richiesti', function (): void {
-$slugs = navItemSlugs(primaryNavItems(headerNavConfig()));
+        $slugs = navItemSlugs(primaryNavItems(headerNavConfig()));
 
         Assert::assertContains('amministrazione', $slugs);
         Assert::assertContains('novita', $slugs);
@@ -117,7 +117,7 @@ $slugs = navItemSlugs(primaryNavItems(headerNavConfig()));
     });
 
     test('header json contiene link secondari richiesti', function (): void {
-/** @var list<array<string, mixed>> $items */
+        /** @var list<array<string, mixed>> $items */
         $items = primaryNavItems(headerNavConfig());
 
         /** @var list<array<string, mixed>> $secondary */
@@ -133,7 +133,7 @@ $slugs = navItemSlugs(primaryNavItems(headerNavConfig()));
     });
 
     test('header json ha topics url configurato', function (): void {
-$config = headerNavConfig();
+        $config = headerNavConfig();
         $sections = $config['sections'] ?? null;
         /** @var array<string, mixed> $sections */
         $primaryNav = $sections['primary_nav'] ?? null;

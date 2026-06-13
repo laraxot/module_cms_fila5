@@ -8,7 +8,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 /**
  * @return list<string>
@@ -35,7 +35,7 @@ function supportedTestLocales(): array
 
 describe('Locale Routing', function (): void {
     test('every supported locale has areachable root route', function (): void {
-foreach (supportedTestLocales() as $locale) {
+        foreach (supportedTestLocales() as $locale) {
             $response = cmsGet('/'.$locale);
 
             $status = (int) $response->getStatusCode();
@@ -49,7 +49,7 @@ foreach (supportedTestLocales() as $locale) {
     });
 
     test('html lang attribute matches the requested locale', function (): void {
-foreach (supportedTestLocales() as $locale) {
+        foreach (supportedTestLocales() as $locale) {
             $response = cmsGet('/'.$locale);
 
             $status = (int) $response->getStatusCode();
@@ -71,7 +71,7 @@ foreach (supportedTestLocales() as $locale) {
     });
 
     test('de route sets german locale', function (): void {
-$response = cmsGet('/de');
+        $response = cmsGet('/de');
 
         $status = (int) $response->getStatusCode();
 
@@ -93,7 +93,7 @@ $response = cmsGet('/de');
     });
 
     test('it route sets italian locale', function (): void {
-$response = cmsGet('/it');
+        $response = cmsGet('/it');
 
         $status = (int) $response->getStatusCode();
 
@@ -115,7 +115,7 @@ $response = cmsGet('/it');
     });
 
     test('en route sets english locale', function (): void {
-$response = cmsGet('/en');
+        $response = cmsGet('/en');
 
         $status = (int) $response->getStatusCode();
 

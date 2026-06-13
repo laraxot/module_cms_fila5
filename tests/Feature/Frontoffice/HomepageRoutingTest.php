@@ -9,7 +9,7 @@ uses(TestCase::class);
 // Use the project's base TestCase
 
 beforeEach(function (): void {
-    /** @var \Modules\Cms\Tests\TestCase $this */
+    /* @var \Modules\Cms\Tests\TestCase $this */
     /* @var Modules\Cms\Tests\TestCase $this */
     if (! Nwidart\Modules\Facades\Module::isEnabled('Cms')) {
         cmsSkipTest('Module Cms is disabled');

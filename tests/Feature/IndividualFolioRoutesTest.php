@@ -7,11 +7,11 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Individual Folio Routes', function (): void {
     test('cms route get locale homepage', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
 
         Assert::assertSame(200, $response->status());
@@ -24,7 +24,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth login', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -38,7 +38,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth register', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -52,7 +52,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth logout', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -65,7 +65,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth logout fixed', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout_fixed');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -78,7 +78,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth password confirm', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/confirm');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -91,7 +91,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth password reset', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/reset');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -104,7 +104,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth password token', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/test-token');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -117,7 +117,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth verify', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/verify');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -130,7 +130,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth thank you', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/thank-you');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -143,7 +143,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth register thank you', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register/thank-you');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -156,7 +156,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth type register patient', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/patient/register');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -170,7 +170,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale auth type register doctor', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/doctor/register');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -184,7 +184,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale pages', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/pages');
 
         Assert::assertSame(200, $response->status());
@@ -194,7 +194,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale slug', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/test-slug');
 
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
@@ -206,7 +206,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale learn', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/learn');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -219,7 +219,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale genesis about', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/about');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -232,7 +232,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale genesis power ups', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/power-ups');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -245,7 +245,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale classi css', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/classi-css');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -258,7 +258,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale registration thank you', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/registration/thank-you');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -271,7 +271,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms route get locale errors password expired', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/errors/password-expired');
         /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
         $status = $response->status();
@@ -284,7 +284,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms verifies json content loading for homepage', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
         Assert::assertSame(200, $response->status());
 
@@ -301,7 +301,7 @@ $locale = (string) app()->getLocale();
             cmsSkipTest('Homepage content_blocks missing in JSON');
         }
 
-        /** @var array<string, mixed> $contentBlocks */
+        /* @var array<string, mixed> $contentBlocks */
         Assert::assertArrayHasKey($locale, $contentBlocks);
 
         $content = (string) $response->getContent();
@@ -329,7 +329,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms handles theme view resolution correctly', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
         Assert::assertSame(200, $response->status());
 
@@ -355,7 +355,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms processes blade syntax in json correctly', function (): void {
-$homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
+        $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json');
         if (! file_exists($homepageJsonPath)) {
             cmsSkipTest('Homepage JSON file not found in test environment: '.$homepageJsonPath);
         }
@@ -385,7 +385,7 @@ $homepageJsonPath = config_path('local/laravelpizza/database/content/home.json')
     });
 
     test('cms homepage renders within acceptable time', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $startTime = microtime(true);
 
         $response = cmsGet('/'.$locale);
@@ -398,7 +398,7 @@ $locale = (string) app()->getLocale();
     });
 
     test('cms auth pages render within acceptable time', function (): void {
-$locale = (string) app()->getLocale();
+        $locale = (string) app()->getLocale();
         $authRoutes = [
             '/'.$locale.'/auth/login',
             '/'.$locale.'/auth/register',
