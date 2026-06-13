@@ -7,22 +7,24 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-use PHPUnit\Framework\Assert;
-use Spatie\LaravelData\DataCollection;
+
 use function Pest\Laravel\get;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+use PHPUnit\Framework\Assert;
+use Spatie\LaravelData\DataCollection;
+
+uses(TestCase::class);
 
 beforeEach(function (): void {
-    /** @var \Modules\Cms\Tests\TestCase $this */
-$this->lang = app()->getLocale();
-        skip('Homepage Filament blocks architecture tests target legacy homepage fixtures.');
+    /* @var \Modules\Cms\Tests\TestCase $this */
+    $this->lang = app()->getLocale();
+    skip('Homepage Filament blocks architecture tests target legacy homepage fixtures.');
 });
 
 describe('Homepage Filament Blocks Architecture', function (): void {
     test('homepage renders through cms page component system', function (): void {
-        /** @var \Modules\Cms\Tests\TestCase $this */
-$response = get('/'.$this->lang);
+        /** @var TestCase $this */
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -33,7 +35,7 @@ $response = get('/'.$this->lang);
     });
 
     test('json content structure is properly loaded by cms', function (): void {
-$homepageJsonPath = config_path('local/fixcity/database/content/home.json');
+        $homepageJsonPath = config_path('local/fixcity/database/content/home.json');
 
         /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile($homepageJsonPath);
@@ -56,7 +58,7 @@ $homepageJsonPath = config_path('local/fixcity/database/content/home.json');
     });
 
     test('cms blocks discovery system works correctly', function (): void {
-$allBlocks = app(GetAllBlocksAction::class)->execute();
+        $allBlocks = app(GetAllBlocksAction::class)->execute();
 
         Assert::assertInstanceOf(DataCollection::class, $allBlocks);
         Assert::assertGreaterThan(0, $allBlocks->count());
@@ -69,7 +71,7 @@ $allBlocks = app(GetAllBlocksAction::class)->execute();
     });
 
     test('ui blocks render component processes homepage blocks', function (): void {
-/** @var array<string, mixed> $homepageData */
+        /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
 
         /** @var array<string, mixed> $contentBlocks */
@@ -86,7 +88,7 @@ $allBlocks = app(GetAllBlocksAction::class)->execute();
     });
 
     test('homepage content management through cms works correctly', function (): void {
-$response = get('/'.$this->lang);
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -111,7 +113,7 @@ $response = get('/'.$this->lang);
     });
 
     test('cms theme integrates renders blocks correctly', function (): void {
-$response = get('/'.$this->lang);
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -136,7 +138,7 @@ $response = get('/'.$this->lang);
     });
 
     test('cms handles multilingual content correctly', function (): void {
-/** @var array<string, mixed> $homepageData */
+        /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
 
         /** @var array<string, mixed> $contentBlocks */
@@ -157,7 +159,7 @@ $response = get('/'.$this->lang);
     });
 
     test('cms page component passes correct data to blocks', function (): void {
-$response = get('/'.$this->lang);
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -171,7 +173,7 @@ $response = get('/'.$this->lang);
     });
 
     test('cms json storage pattern is consistent', function (): void {
-$pagesPath = config_path('local/fixcity/database/content/');
+        $pagesPath = config_path('local/fixcity/database/content/');
         $homepageJsonPath = $pagesPath.'home.json';
 
         /** @var array<string, mixed> $homepageData */
@@ -190,7 +192,7 @@ $pagesPath = config_path('local/fixcity/database/content/');
     });
 
     test('cms blade syntax processing works in json', function (): void {
-/** @var array<string, mixed> $homepageData */
+        /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
 
         /** @var array<string, mixed> $contentBlocks */
@@ -215,7 +217,7 @@ $pagesPath = config_path('local/fixcity/database/content/');
     });
 
     test('cms renders valid html structure', function (): void {
-$response = get('/'.$this->lang);
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -230,7 +232,7 @@ $response = get('/'.$this->lang);
     });
 
     test('cms performance for block rendering is acceptable', function (): void {
-$startTime = microtime(true);
+        $startTime = microtime(true);
 
         $response = get('/'.$this->lang);
         $response->assertOk();

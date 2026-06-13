@@ -9,13 +9,14 @@ use Modules\Cms\Models\Traits\HasBlocks;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
+
 use function Safe\class_uses;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Section Business Logic', function (): void {
     test('section has expected fillable fields', function (): void {
-$section = new Section();
+        $section = new Section();
         $expectedFillable = [
             'name',
             'slug',
@@ -26,19 +27,19 @@ $section = new Section();
     });
 
     test('section has sushi to json trait', function (): void {
-$traits = class_uses(Section::class);
+        $traits = class_uses(Section::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
     });
 
     test('section has has blocks trait', function (): void {
-$traits = class_uses(Section::class);
+        $traits = class_uses(Section::class);
 
         Assert::assertArrayHasKey(HasBlocks::class, $traits);
     });
 
     test('section has correct casts for multilingual and structured data', function (): void {
-$section = new Section();
+        $section = new Section();
         $casts = $section->getCasts();
 
         Assert::assertSame('array', $casts['name']);
@@ -47,7 +48,7 @@ $section = new Section();
     });
 
     test('section has schema definition for structured data', function (): void {
-$section = new Section();
+        $section = new Section();
 
         $reflection = new \ReflectionClass($section);
         $schemaProperty = $reflection->getProperty('schema');
@@ -62,7 +63,7 @@ $section = new Section();
     });
 
     test('section can get rows for sushi functionality', function (): void {
-$section = new Section();
+        $section = new Section();
 
         Assert::assertNotEmpty($section->getRows());
     });

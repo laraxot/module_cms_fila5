@@ -10,12 +10,12 @@ use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Resolve Page Action', function (): void {
     test('it resolves adynamic model from known mappings', function (): void {
-        /** @var \Modules\Cms\Tests\TestCase $this */
-if (! class_exists('Modules\\Meetup\\Models\\Event')) {
+        /* @var \Modules\Cms\Tests\TestCase $this */
+        if (! class_exists('Modules\\Meetup\\Models\\Event')) {
             $this->skipTest('Meetup module not available.');
         }
 
@@ -23,7 +23,7 @@ if (! class_exists('Modules\\Meetup\\Models\\Event')) {
     });
 
     test('it resolves acms page with exact slug', function (): void {
-$slug = 'about.us-'.uniqid();
+        $slug = 'about.us-'.uniqid();
         PageFactory::new()->createOne(['slug' => $slug]);
 
         $action = app(ResolvePageAction::class);
@@ -34,7 +34,7 @@ $slug = 'about.us-'.uniqid();
     });
 
     test('it falls back to container view if slug not found', function (): void {
-$viewSlug = 'blog.view';
+        $viewSlug = 'blog.view';
         PageFactory::new()->createOne(['slug' => $viewSlug]);
 
         $container = (string) Str::before($viewSlug, '.');
@@ -46,7 +46,7 @@ $viewSlug = 'blog.view';
     });
 
     test('it returns full slug as final fallback', function (): void {
-$action = app(ResolvePageAction::class);
+        $action = app(ResolvePageAction::class);
         $result = $action->execute('unknown', 'page');
 
         Assert::assertSame('cms', $result->renderMode);

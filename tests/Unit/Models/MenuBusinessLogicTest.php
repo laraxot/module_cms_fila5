@@ -9,32 +9,34 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
+
 use function Safe\class_uses;
+
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Menu Business Logic', function (): void {
     test('menu implements recursive relationships contract', function (): void {
-$menu = new Menu();
+        $menu = new Menu();
         Assert::assertInstanceOf(HasRecursiveRelationshipsContract::class, $menu);
     });
 
     test('menu has recursive relationships trait', function (): void {
-$traits = class_uses_recursive(Menu::class);
+        $traits = class_uses_recursive(Menu::class);
 
         Assert::assertContains(HasRecursiveRelationships::class, array_values($traits));
     });
 
     test('menu has sushi to json trait', function (): void {
-$traits = class_uses(Menu::class);
+        $traits = class_uses(Menu::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
     });
 
     test('menu has expected fillable fields', function (): void {
-$menu = new Menu();
+        $menu = new Menu();
         $expectedFillable = [
             'title',
             'items',
@@ -45,14 +47,14 @@ $menu = new Menu();
     });
 
     test('menu can get label', function (): void {
-$menu = new Menu();
+        $menu = new Menu();
         $menu->title = 'Test Menu';
 
         Assert::assertSame('Test Menu', $menu->getLabel());
     });
 
     test('menu has correct casts for structured data', function (): void {
-$menu = new Menu();
+        $menu = new Menu();
         $casts = $menu->getCasts();
 
         Assert::assertSame('array', $casts['items']);
@@ -60,7 +62,7 @@ $menu = new Menu();
     });
 
     test('menu has schema definition for structured data', function (): void {
-$menu = new Menu();
+        $menu = new Menu();
 
         $reflection = new \ReflectionClass($menu);
         $schemaProperty = $reflection->getProperty('schema');
@@ -74,13 +76,13 @@ $menu = new Menu();
     });
 
     test('menu can build tree queries', function (): void {
-$query = Menu::tree();
+        $query = Menu::tree();
 
         Assert::assertInstanceOf(Builder::class, $query);
     });
 
     test('menu can query by depth', function (): void {
-$query = Menu::whereDepth(1);
+        $query = Menu::whereDepth(1);
 
         Assert::assertInstanceOf(Builder::class, $query);
     });

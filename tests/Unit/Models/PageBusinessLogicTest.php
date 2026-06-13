@@ -8,13 +8,14 @@ use Modules\Cms\Models\Page;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
+
 use function Safe\class_uses;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('Page Business Logic', function (): void {
     test('page has expected fillable fields', function (): void {
-$page = new Page();
+        $page = new Page();
         $expectedFillable = [
             'content',
             'description',
@@ -30,13 +31,13 @@ $page = new Page();
     });
 
     test('page has sushi to json trait', function (): void {
-$traits = class_uses(Page::class);
+        $traits = class_uses(Page::class);
 
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
     });
 
     test('page has correct casts for blocks and arrays', function (): void {
-$page = new Page();
+        $page = new Page();
         $casts = $page->getCasts();
 
         Assert::assertSame('array', $casts['content_blocks']);
@@ -46,7 +47,7 @@ $page = new Page();
     });
 
     test('page has schema definition for structured data', function (): void {
-$page = new Page();
+        $page = new Page();
 
         $reflection = new \ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');

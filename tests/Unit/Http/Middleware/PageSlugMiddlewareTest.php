@@ -45,7 +45,7 @@ test('resolveCmsPageSlug prefers folio route name when it matches a cms page', f
     $middleware = new PageSlugMiddleware();
     $request = Request::create('/it/tickets/create', 'GET');
     $request->setRouteResolver(static function () use ($request) {
-        return new \Illuminate\Routing\Route(['GET'], '/it/tickets/create', static fn (): string => 'ok')
+        return new Illuminate\Routing\Route(['GET'], '/it/tickets/create', static fn (): string => 'ok')
             ->name('tickets.create')
             ->bind($request);
     });
@@ -59,7 +59,7 @@ test('resolveCmsPageSlug builds container0.slug0 for nested folio pages', functi
     $middleware = new PageSlugMiddleware();
     $request = Request::create('/it/tickets/foo', 'GET');
     $request->setRouteResolver(static function () use ($request) {
-        $route = new \Illuminate\Routing\Route(['GET'], '/it/{container0}/{slug0}', static fn (): string => 'ok');
+        $route = new Illuminate\Routing\Route(['GET'], '/it/{container0}/{slug0}', static fn (): string => 'ok');
         $route->name('container0.view');
         $route->bind($request);
         $route->setParameter('container0', 'tickets');

@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 beforeEach(function (): void {
-    /** @var \Modules\Cms\Tests\TestCase $this */
+    /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('patient/doctor registration types not configured in this install.');
 });
 
