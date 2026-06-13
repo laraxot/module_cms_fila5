@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Actions;
+
 use Illuminate\Support\Str;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Database\Factories\PageFactory;

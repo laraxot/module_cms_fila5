@@ -30,7 +30,7 @@ function setProtected(object $object, string $property, mixed $value): void
     $target->setValue($object, $value);
 }
 
-test('handle returns next response when slug is not a string', function (): void {
+test('handle returns next response when cms page slug cannot be resolved', function (): void {
     $request = Request::create('/test', 'GET');
     $middleware = new PageSlugMiddleware();
 
@@ -39,6 +39,38 @@ test('handle returns next response when slug is not a string', function (): void
     Assert::assertSame(200, $response->getStatusCode());
 
     Assert::assertSame('ok', $response->getContent());
+});
+
+test('resolveCmsPageSlug prefers folio route name when it matches a cms page', function (): void {
+    $middleware = new PageSlugMiddleware();
+    $request = Request::create('/it/tickets/create', 'GET');
+    $request->setRouteResolver(static function () use ($request) {
+        return new \Illuminate\Routing\Route(['GET'], '/it/tickets/create', static fn (): string => 'ok')
+            ->name('tickets.create')
+            ->bind($request);
+    });
+
+    $resolved = invokeProtected($middleware, 'resolveCmsPageSlug', [$request]);
+
+    Assert::assertSame('tickets.create', $resolved);
+});
+
+test('resolveCmsPageSlug builds container0.slug0 for nested folio pages', function (): void {
+    $middleware = new PageSlugMiddleware();
+    $request = Request::create('/it/tickets/foo', 'GET');
+    $request->setRouteResolver(static function () use ($request) {
+        $route = new \Illuminate\Routing\Route(['GET'], '/it/{container0}/{slug0}', static fn (): string => 'ok');
+        $route->name('container0.view');
+        $route->bind($request);
+        $route->setParameter('container0', 'tickets');
+        $route->setParameter('slug0', 'view');
+
+        return $route;
+    });
+
+    $resolved = invokeProtected($middleware, 'resolveCmsPageSlug', [$request]);
+
+    Assert::assertSame('tickets.view', $resolved);
 });
 
 test('handle wraps non-response next value into 500 response when slug is not a string', function (): void {

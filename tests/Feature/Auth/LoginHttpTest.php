@@ -10,7 +10,7 @@ use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-final class LoginTest extends TestCase
+final class LoginHttpTest extends TestCase
 {
     public function testLoginPageCanBeRendered(): void
     {
