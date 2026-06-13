@@ -7,30 +7,29 @@ namespace Modules\Cms\Tests\Feature\Frontoffice;
 use Illuminate\Support\Facades\Auth;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use function Pest\Laravel\get;
 
-final class PredictHomepageGuestAccessTest extends TestCase
-{
-    protected function setUp(): void
-    {
-        parent::setUp();
-        cmsSkipTest('Predict.local homepage tests not applicable to fixcity install.');
-    }
+uses(\Modules\Cms\Tests\TestCase::class);
 
-    public function testServesItForGuestsOnPredictLocalWithoutRequiringLogin(): void
-    {
-        Assert::assertFalse(Auth::check());
+beforeEach(function (): void {
+    /** @var \Modules\Cms\Tests\TestCase $this */
+cmsSkipTest('Predict.local homepage tests not applicable to fixcity install.');
+});
 
-        $response = $this->get('/it');
+describe('Predict Homepage Guest Access', function (): void {
+    test('serves it for guests on predict local without requiring login', function (): void {
+Assert::assertFalse(Auth::check());
+
+        $response = get('/it');
 
         $response->assertOk();
         $response->assertDontSee('http-equiv="refresh"', false);
         $response->assertSee('<html', false);
         $response->assertSee('lang="it"', false);
-    }
+    });
 
-    public function testReturnsAnEmptySliderDatasetInsteadOfCrashingWhenPredictBannersAreUnavailable(): void
-    {
-        if (! class_exists('Modules\\Predict\\View\\Composers\\ThemeComposer')) {
+    test('returns an empty slider dataset instead of crashing when predict banners are unavailable', function (): void {
+if (! class_exists('Modules\\Predict\\View\\Composers\\ThemeComposer')) {
             cmsSkipTest('Predict ThemeComposer not available');
         }
 
@@ -42,5 +41,5 @@ final class PredictHomepageGuestAccessTest extends TestCase
         /** @var array<string, mixed> $data */
         $data = $composer->getMethodData('getBanner');
         Assert::assertIsArray($data);
-    }
-}
+    });
+});

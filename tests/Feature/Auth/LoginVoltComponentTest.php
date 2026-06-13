@@ -11,40 +11,35 @@ use Livewire\Features\SupportTesting\Testable;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use function Pest\Laravel\get;
+use function Pest\Laravel\put;
 
-final class LoginVoltComponentTest extends TestCase
-{
-    // ---- Volt Component Rendering ----
+uses(\Modules\Cms\Tests\TestCase::class);
 
-    public function testVoltLoginComponentCanBeRendered(): void
-    {
-        /** @var Testable<\Livewire\Component> $component */
+describe('Login Volt Component', function (): void {
+    test('volt login component can be rendered', function (): void {
+/** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
         $component->assertOk();
-    }
+    });
 
-    public function testVoltComponentHasInitialState(): void
-    {
-        /** @var Testable<\Livewire\Component> $component */
+    test('volt component has initial state', function (): void {
+/** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
         $component->assertSet('email', '')->assertSet('password', '')->assertSet('remember', false);
-    }
+    });
 
-    public function testVoltComponentRendersFormElements(): void
-    {
-        /** @var Testable<\Livewire\Component> $component */
+    test('volt component renders form elements', function (): void {
+/** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
         $component
             ->assertSee('wire:model="email"')
             ->assertSee('wire:model="password"')
             ->assertSee('wire:model="remember"');
-    }
+    });
 
-    // ---- Volt Component Authentication ----
-
-    public function testUserCanAuthenticateViaVoltComponent(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('user can authenticate via volt component', function (): void {
+$email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -58,11 +53,10 @@ final class LoginVoltComponentTest extends TestCase
 
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
-    }
+    });
 
-    public function testAuthenticationFailsWithWrongCredentials(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('authentication fails with wrong credentials', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -77,11 +71,10 @@ final class LoginVoltComponentTest extends TestCase
 
         $response->assertHasErrors(['email']);
         cmsAssertGuest();
-    }
+    });
 
-    public function testAuthenticationFailsWithNonExistentUser(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('authentication fails with non existent user', function (): void {
+$email = cmsGenerateUniqueEmail();
 
         cmsAssertGuest();
 
@@ -92,30 +85,25 @@ final class LoginVoltComponentTest extends TestCase
 
         $response->assertHasErrors(['email']);
         cmsAssertGuest();
-    }
+    });
 
-    // ---- Volt Component Validation ----
-
-    public function testEmailValidationWorks(): void
-    {
-        $response = LivewireVolt::test('auth.login')
+    test('email validation works', function (): void {
+$response = LivewireVolt::test('auth.login')
             ->set('email', 'invalid-email')
             ->set('password', 'password123')
             ->call('save');
 
         $response->assertHasErrors(['email']);
-    }
+    });
 
-    public function testRequiredFieldsValidation(): void
-    {
-        $response = LivewireVolt::test('auth.login')->call('save');
+    test('required fields validation', function (): void {
+$response = LivewireVolt::test('auth.login')->call('save');
 
         $response->assertHasErrors(['email', 'password']);
-    }
+    });
 
-    public function testPasswordMinimumLengthValidation(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('password minimum length validation', function (): void {
+$email = cmsGenerateUniqueEmail();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -123,13 +111,10 @@ final class LoginVoltComponentTest extends TestCase
             ->call('save');
 
         $response->assertHasErrors();
-    }
+    });
 
-    // ---- Volt Component Session Management ----
-
-    public function testRememberMeFunctionalityWorks(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('remember me functionality works', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -144,11 +129,10 @@ final class LoginVoltComponentTest extends TestCase
 
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
-    }
+    });
 
-    public function testSessionRegenerationOnLogin(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('session regeneration on login', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -163,11 +147,10 @@ final class LoginVoltComponentTest extends TestCase
         cmsAssertAuthenticated();
 
         Assert::assertNotSame($originalSessionId, session()->getId());
-    }
+    });
 
-    public function testSessionDataIsPreservedOnAuthentication(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('session data is preserved on authentication', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -182,13 +165,10 @@ final class LoginVoltComponentTest extends TestCase
         cmsAssertAuthenticated();
 
         Assert::assertSame('test_value', Session::get('test_key'));
-    }
+    });
 
-    // ---- Volt Component Security ----
-
-    public function testLoginAttemptsAreRateLimited(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('login attempts are rate limited', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -207,11 +187,10 @@ final class LoginVoltComponentTest extends TestCase
             ->call('save');
 
         $response->assertHasErrors();
-    }
+    });
 
-    public function testCsrfProtectionIsActive(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('csrf protection is active', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -223,11 +202,10 @@ final class LoginVoltComponentTest extends TestCase
             ->call('save');
 
         $response->assertHasNoErrors();
-    }
+    });
 
-    public function testInputSanitizationWorks(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('input sanitization works', function (): void {
+$email = cmsGenerateUniqueEmail();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', '<script>alert("xss")</script>'.$email)
@@ -235,13 +213,10 @@ final class LoginVoltComponentTest extends TestCase
             ->call('save');
 
         $response->assertHasErrors(['email']);
-    }
+    });
 
-    // ---- Volt Component State Management ----
-
-    public function testComponentStateUpdatesCorrectly(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('component state updates correctly', function (): void {
+$email = cmsGenerateUniqueEmail();
 
         /** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
@@ -252,11 +227,10 @@ final class LoginVoltComponentTest extends TestCase
             ->assertSet('password', 'password123')
             ->set('remember', true)
             ->assertSet('remember', true);
-    }
+    });
 
-    public function testComponentResetsAfterFailedAuthentication(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('component resets after failed authentication', function (): void {
+$email = cmsGenerateUniqueEmail();
 
         $component = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -264,11 +238,10 @@ final class LoginVoltComponentTest extends TestCase
             ->call('save');
 
         $component->assertSet('password', '');
-    }
+    });
 
-    public function testLoadingStateIsManagedCorrectly(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('loading state is managed correctly', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -281,13 +254,10 @@ final class LoginVoltComponentTest extends TestCase
         $component->call('save');
 
         $component->assertHasNoErrors();
-    }
+    });
 
-    // ---- Volt Component User Types Integration ----
-
-    public function testAnyUserTypeCanLoginViaVoltComponent(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('any user type can login via volt component', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -305,11 +275,10 @@ final class LoginVoltComponentTest extends TestCase
         $authenticatedUser = Auth::user();
         Assert::assertNotNull($authenticatedUser);
         Assert::assertSame($email, $authenticatedUser->email);
-    }
+    });
 
-    public function testComponentHandlesDifferentUserConfigurations(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('component handles different user configurations', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -326,13 +295,10 @@ final class LoginVoltComponentTest extends TestCase
 
         $authenticatedUser = Auth::user();
         Assert::assertSame('Test User', $authenticatedUser?->name);
-    }
+    });
 
-    // ---- Volt Component Redirects ----
-
-    public function testComponentRedirectsAfterSuccessfulAuthentication(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('component redirects after successful authentication', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -345,11 +311,10 @@ final class LoginVoltComponentTest extends TestCase
 
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
-    }
+    });
 
-    public function testComponentHandlesIntendedRedirect(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('component handles intended redirect', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -364,20 +329,16 @@ final class LoginVoltComponentTest extends TestCase
 
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
-    }
+    });
 
-    // ---- Volt Component Accessibility ----
-
-    public function testComponentHasProperAriaLabels(): void
-    {
-        /** @var Testable<\Livewire\Component> $component */
+    test('component has proper aria labels', function (): void {
+/** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
         $component->assertSee('aria-label')->assertSee('id="data.email"')->assertSee('id="data.password"');
-    }
+    });
 
-    public function testComponentHandlesKeyboardNavigation(): void
-    {
-        /** @var Testable<\Livewire\Component> $component */
+    test('component handles keyboard navigation', function (): void {
+/** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
-    }
-}
+    });
+});

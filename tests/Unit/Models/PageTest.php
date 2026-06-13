@@ -10,23 +10,21 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 
-final class PageTest extends TestCase
-{
-    public function testPageModelCanBeInstantiated(): void
-    {
-        $page = new Page();
+uses(\Modules\Cms\Tests\TestCase::class);
+
+describe('Page', function (): void {
+    test('page model can be instantiated', function (): void {
+$page = new Page();
         Assert::assertInstanceOf(Page::class, $page);
-    }
+    });
 
-    public function testPageExtendsBaseModelLang(): void
-    {
-        $page = new Page();
+    test('page extends base model lang', function (): void {
+$page = new Page();
         Assert::assertInstanceOf(BaseModelLang::class, $page);
-    }
+    });
 
-    public function testPageHasExpectedFillableFields(): void
-    {
-        $page = new Page();
+    test('page has expected fillable fields', function (): void {
+$page = new Page();
         $fillable = $page->getFillable();
 
         Assert::assertContains('title', $fillable);
@@ -37,11 +35,10 @@ final class PageTest extends TestCase
         Assert::assertContains('content_blocks', $fillable);
         Assert::assertContains('sidebar_blocks', $fillable);
         Assert::assertContains('footer_blocks', $fillable);
-    }
+    });
 
-    public function testPageHasExpectedCasts(): void
-    {
-        $page = new Page();
+    test('page has expected casts', function (): void {
+$page = new Page();
         /** @var array<string, mixed> $casts */
         $casts = $page->getCasts();
         Assert::assertArrayHasKey('created_at', $casts);
@@ -55,11 +52,10 @@ final class PageTest extends TestCase
         Assert::assertArrayHasKey('footer_blocks', $casts);
 
         Assert::assertArrayHasKey('middleware', $casts);
-    }
+    });
 
-    public function testPageHasTranslatableFieldsConfigured(): void
-    {
-        $page = new Page();
+    test('page has translatable fields configured', function (): void {
+$page = new Page();
 
         Assert::assertContains('title', $page->translatable);
 
@@ -68,26 +64,23 @@ final class PageTest extends TestCase
         Assert::assertContains('sidebar_blocks', $page->translatable);
 
         Assert::assertContains('footer_blocks', $page->translatable);
-    }
+    });
 
-    public function testPageHasSushiToJsonsTrait(): void
-    {
-        $page = new Page();
+    test('page has sushi to jsons trait', function (): void {
+$page = new Page();
         $traits = class_uses_recursive($page);
 
         Assert::assertContains(SushiToJsons::class, array_values($traits));
-    }
+    });
 
-    public function testPageHasGetRowsMethodForSushiFunctionality(): void
-    {
-        $page = new Page();
+    test('page has get rows method for sushi functionality', function (): void {
+$page = new Page();
 
         Assert::assertNotEmpty($page->getRows());
-    }
+    });
 
-    public function testPageHasSchemaDefinition(): void
-    {
-        $page = new Page();
+    test('page has schema definition', function (): void {
+$page = new Page();
 
         $reflection = new \ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');
@@ -102,26 +95,23 @@ final class PageTest extends TestCase
         Assert::assertArrayHasKey('content', $schema);
         Assert::assertArrayHasKey('description', $schema);
         Assert::assertArrayHasKey('content_blocks', $schema);
-    }
+    });
 
-    public function testPageHasGetMiddlewareBySlugStaticMethod(): void
-    {
-        $result = Page::getMiddlewareBySlug('non-existent-slug');
-    }
+    test('page has get middleware by slug static method', function (): void {
+$result = Page::getMiddlewareBySlug('non-existent-slug');
+    });
 
-    public function testPageCastsContentBlocksToArray(): void
-    {
-        $page = new Page();
+    test('page casts content blocks to array', function (): void {
+$page = new Page();
         $casts = $page->getCasts();
 
         Assert::assertSame('array', $casts['content_blocks']);
-    }
+    });
 
-    public function testPageCastsMiddlewareToArray(): void
-    {
-        $page = new Page();
+    test('page casts middleware to array', function (): void {
+$page = new Page();
         $casts = $page->getCasts();
 
         Assert::assertSame('array', $casts['middleware']);
-    }
-}
+    });
+});

@@ -7,6 +7,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 beforeEach(function (): void {
+    /** @var \Modules\Cms\Tests\TestCase $this */
     if (! \is_string(config('app.key')) || '' === config('app.key')) {
         $key = 'base64:'.base64_encode(str_repeat('x', 32));
         config()->set('app.key', $key);
