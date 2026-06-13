@@ -121,6 +121,6 @@ abstract class TestCase extends XotBaseTestCase
      */
     public function createPHPUnitMock(string $class): object
     {
-        return $this->createMock($class);
+        return $this->createUnitMock($class);
     }
 }

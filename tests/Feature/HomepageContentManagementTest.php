@@ -9,6 +9,7 @@ use PHPUnit\Framework\Assert;
 uses(Modules\Cms\Tests\TestCase::class);
 
 beforeEach(function (): void {
+    /** @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Homepage content tests target legacy predict/laravelpizza fixtures, not fixcity.');
 });
 

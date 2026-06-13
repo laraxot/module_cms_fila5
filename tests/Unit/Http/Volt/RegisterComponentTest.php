@@ -9,18 +9,17 @@ use Modules\Cms\Http\Volt\RegisterComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-final class RegisterComponentTest extends TestCase
-{
-    public function testRegisterComponentExtendsVoltComponent(): void
-    {
-        $component = new RegisterComponent();
+uses(\Modules\Cms\Tests\TestCase::class);
+
+describe('Register Component', function (): void {
+    test('register component extends volt component', function (): void {
+$component = new RegisterComponent();
 
         Assert::assertInstanceOf(VoltComponent::class, $component);
-    }
+    });
 
-    public function testRegisterComponentHasExpectedPublicPropertiesDefaults(): void
-    {
-        $component = new RegisterComponent();
+    test('register component has expected public properties defaults', function (): void {
+$component = new RegisterComponent();
 
         Assert::assertTrue((new \ReflectionClass($component))->hasProperty('name'));
 
@@ -37,22 +36,21 @@ final class RegisterComponentTest extends TestCase
         Assert::assertSame('', $component->password);
 
         Assert::assertSame('', $component->password_confirmation);
-    }
+    });
 
-    public function testRegisterComponentHasRegisterMethod(): void
-    {
-        /* @phpstan-ignore-next-line */
-        Assert::assertTrue(method_exists(RegisterComponent::class, 'register'));
-    }
+    test('register component has register method', function (): void {
+        $method = (new \ReflectionClass(RegisterComponent::class))->getMethod('register');
 
-    public function testRegisterMethodReturnsRedirectResponse(): void
-    {
-        $reflection = new \ReflectionClass(RegisterComponent::class);
+        Assert::assertSame('register', $method->getName());
+    });
+
+    test('register method returns redirect response', function (): void {
+$reflection = new \ReflectionClass(RegisterComponent::class);
         $method = $reflection->getMethod('register');
         $returnType = $method->getReturnType();
 
         Assert::assertNotNull($returnType);
         $typeName = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
         Assert::assertSame('Illuminate\Http\RedirectResponse', $typeName);
-    }
-}
+    });
+});

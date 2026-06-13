@@ -9,21 +9,20 @@ use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
+use function Pest\Laravel\get;
 
-final class HomepageFilamentBlocksArchitectureTest extends TestCase
-{
-    public string $lang = 'it';
+uses(\Modules\Cms\Tests\TestCase::class);
 
-    protected function setUp(): void
-    {
-        parent::setUp();
-        $this->lang = app()->getLocale();
-        $this->markTestSkipped('Homepage Filament blocks architecture tests target legacy homepage fixtures.');
-    }
+beforeEach(function (): void {
+    /** @var \Modules\Cms\Tests\TestCase $this */
+$this->lang = app()->getLocale();
+        skip('Homepage Filament blocks architecture tests target legacy homepage fixtures.');
+});
 
-    public function testHomepageRendersThroughCmsPageComponentSystem(): void
-    {
-        $response = $this->get('/'.$this->lang);
+describe('Homepage Filament Blocks Architecture', function (): void {
+    test('homepage renders through cms page component system', function (): void {
+        /** @var \Modules\Cms\Tests\TestCase $this */
+$response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -31,11 +30,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         Assert::assertStringContainsString('x-page', $content);
         Assert::assertStringContainsString('side="content"', $content);
         Assert::assertStringContainsString('slug="home"', $content);
-    }
+    });
 
-    public function testJsonContentStructureIsProperlyLoadedByCms(): void
-    {
-        $homepageJsonPath = config_path('local/fixcity/database/content/home.json');
+    test('json content structure is properly loaded by cms', function (): void {
+$homepageJsonPath = config_path('local/fixcity/database/content/home.json');
 
         /** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile($homepageJsonPath);
@@ -55,11 +53,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
             Assert::assertIsString($view);
             Assert::assertStringContainsString('::components.blocks.', $view);
         }
-    }
+    });
 
-    public function testCmsBlocksDiscoverySystemWorksCorrectly(): void
-    {
-        $allBlocks = app(GetAllBlocksAction::class)->execute();
+    test('cms blocks discovery system works correctly', function (): void {
+$allBlocks = app(GetAllBlocksAction::class)->execute();
 
         Assert::assertInstanceOf(DataCollection::class, $allBlocks);
         Assert::assertGreaterThan(0, $allBlocks->count());
@@ -69,11 +66,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
             $cmsBlocks->each(function ($block): void {
             });
         }
-    }
+    });
 
-    public function testUiBlocksRenderComponentProcessesHomepageBlocks(): void
-    {
-        /** @var array<string, mixed> $homepageData */
+    test('ui blocks render component processes homepage blocks', function (): void {
+/** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
 
         /** @var array<string, mixed> $contentBlocks */
@@ -87,11 +83,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
 
         $component = new Blocks($view, $blocks);
         Assert::assertEquals($blocks, $component->blocks);
-    }
+    });
 
-    public function testHomepageContentManagementThroughCmsWorksCorrectly(): void
-    {
-        $response = $this->get('/'.$this->lang);
+    test('homepage content management through cms works correctly', function (): void {
+$response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -113,11 +108,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
                 Assert::assertStringContainsString($data['subtitle'], $content);
             }
         }
-    }
+    });
 
-    public function testCmsThemeIntegratesRendersBlocksCorrectly(): void
-    {
-        $response = $this->get('/'.$this->lang);
+    test('cms theme integrates renders blocks correctly', function (): void {
+$response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -139,11 +133,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
             Assert::assertStringStartsWith('pub_theme::', $view);
             Assert::assertStringContainsString('components.blocks', $view);
         }
-    }
+    });
 
-    public function testCmsHandlesMultilingualContentCorrectly(): void
-    {
-        /** @var array<string, mixed> $homepageData */
+    test('cms handles multilingual content correctly', function (): void {
+/** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
 
         /** @var array<string, mixed> $contentBlocks */
@@ -154,18 +147,17 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         $titleByLocale = $homepageData['title'] ?? [];
         Assert::assertArrayHasKey($this->lang, $titleByLocale);
 
-        $response = $this->get('/'.$this->lang);
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
         $title = $titleByLocale[$this->lang] ?? null;
         Assert::assertIsString($title);
         Assert::assertStringContainsString($title, $content);
-    }
+    });
 
-    public function testCmsPageComponentPassesCorrectDataToBlocks(): void
-    {
-        $response = $this->get('/'.$this->lang);
+    test('cms page component passes correct data to blocks', function (): void {
+$response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -176,11 +168,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         if (auth()->check()) {
             Assert::assertStringContainsString('type=', $content);
         }
-    }
+    });
 
-    public function testCmsJsonStoragePatternIsConsistent(): void
-    {
-        $pagesPath = config_path('local/fixcity/database/content/');
+    test('cms json storage pattern is consistent', function (): void {
+$pagesPath = config_path('local/fixcity/database/content/');
         $homepageJsonPath = $pagesPath.'home.json';
 
         /** @var array<string, mixed> $homepageData */
@@ -196,11 +187,10 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
                 Assert::assertArrayHasKey('view', $data);
             }
         }
-    }
+    });
 
-    public function testCmsBladeSyntaxProcessingWorksInJson(): void
-    {
-        /** @var array<string, mixed> $homepageData */
+    test('cms blade syntax processing works in json', function (): void {
+/** @var array<string, mixed> $homepageData */
         $homepageData = cmsJsonDecodeFile(config_path('local/fixcity/database/content/home.json'));
 
         /** @var array<string, mixed> $contentBlocks */
@@ -216,17 +206,16 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
             Assert::assertIsString($ctaLink);
             Assert::assertStringContainsString("{{ route('register') }}", $ctaLink);
 
-            $response = $this->get('/'.$this->lang);
+            $response = get('/'.$this->lang);
             $content = (string) $response->getContent();
 
             $expectedUrl = route('register');
             Assert::assertStringContainsString($expectedUrl, $content);
         }
-    }
+    });
 
-    public function testCmsRendersValidHtmlStructure(): void
-    {
-        $response = $this->get('/'.$this->lang);
+    test('cms renders valid html structure', function (): void {
+$response = get('/'.$this->lang);
         $response->assertOk();
 
         $content = (string) $response->getContent();
@@ -238,17 +227,16 @@ final class HomepageFilamentBlocksArchitectureTest extends TestCase
         Assert::assertStringContainsString('<title>', $content);
         Assert::assertStringContainsString('<meta name="viewport"', $content);
         Assert::assertStringContainsString('<meta name="description"', $content);
-    }
+    });
 
-    public function testCmsPerformanceForBlockRenderingIsAcceptable(): void
-    {
-        $startTime = microtime(true);
+    test('cms performance for block rendering is acceptable', function (): void {
+$startTime = microtime(true);
 
-        $response = $this->get('/'.$this->lang);
+        $response = get('/'.$this->lang);
         $response->assertOk();
 
         $renderTime = microtime(true) - $startTime;
 
         Assert::assertLessThan(2.0, $renderTime, 'CMS block rendering should be fast');
-    }
-}
+    });
+});

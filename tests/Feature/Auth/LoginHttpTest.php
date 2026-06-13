@@ -9,50 +9,47 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
-final class LoginHttpTest extends TestCase
-{
-    public function testLoginPageCanBeRendered(): void
-    {
-        $locale = app()->getLocale();
+uses(\Modules\Cms\Tests\TestCase::class);
+
+describe('Login Http', function (): void {
+    test('login page can be rendered', function (): void {
+$locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         Assert::assertSame(200, $response->status());
-    }
+    });
 
-    public function testLoginPageContainsLoginWidget(): void
-    {
-        $locale = app()->getLocale();
+    test('login page contains login widget', function (): void {
+$locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         Assert::assertSame(200, $response->status());
-    }
+    });
 
-    public function testLoginPageHasRequiredFormElements(): void
-    {
-        $locale = app()->getLocale();
+    test('login page has required form elements', function (): void {
+$locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         Assert::assertSame(200, $response->status());
-    }
+    });
 
-    public function testLoginPageWorksInItalian(): void
-    {
-        app()->setLocale('it');
+    test('login page works in italian', function (): void {
+app()->setLocale('it');
         $response = cmsGet('/it/auth/login');
         Assert::assertSame(200, $response->status());
-    }
+    });
 
-    public function testLoginPageContainsLocalizedContent(): void
-    {
-        $response = cmsGet('/it/auth/login');
+    test('login page contains localized content', function (): void {
+$response = cmsGet('/it/auth/login');
         $response
             ->assertStatus(200)
             ->assertSee('Hai dimenticato la password?')
             ->assertSee(__('pub_theme::auth.login.title'))
             ->assertSee(__('pub_theme::auth.login.or'));
-    }
+    });
 
-    public function testUserCanAuthenticateViaFrontendLoginPage(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('user can authenticate via frontend login page', function (): void {
+$email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -67,29 +64,27 @@ final class LoginHttpTest extends TestCase
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
 
-        $this->actingAs($user);
+        actingAs($user);
 
         $locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
 
         Assert::assertSame('/', $response->headers->get('Location'));
-    }
+    });
 
-    public function testAuthenticatedUsersAreRedirectedFromLoginPage(): void
-    {
-        $user = cmsCreateTestUser();
+    test('authenticated users are redirected from login page', function (): void {
+$user = cmsCreateTestUser();
 
-        $this->actingAs($user);
+        actingAs($user);
 
         $locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
 
         Assert::assertSame(302, $response->status());
-    }
+    });
 
-    public function testRememberMeFunctionalityWorks(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('remember me functionality works', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -105,11 +100,10 @@ final class LoginHttpTest extends TestCase
 
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
-    }
+    });
 
-    public function testSessionRegenerationOnLogin(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('session regeneration on login', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -124,11 +118,10 @@ final class LoginHttpTest extends TestCase
         cmsAssertAuthenticated();
 
         Assert::assertNotSame($originalSessionId, session()->getId());
-    }
+    });
 
-    public function testLoginAttemptsAreRateLimited(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('login attempts are rate limited', function (): void {
+$email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -147,11 +140,10 @@ final class LoginHttpTest extends TestCase
             ->call('authenticate');
 
         Assert::assertNull($response);
-    }
+    });
 
-    public function testAnyUserTypeCanLoginViaFrontend(): void
-    {
-        $email = cmsGenerateUniqueEmail();
+    test('any user type can login via frontend', function (): void {
+$email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
@@ -169,5 +161,5 @@ final class LoginHttpTest extends TestCase
         $authenticatedUser = Auth::user();
         Assert::assertNotNull($authenticatedUser);
         Assert::assertSame($email, $authenticatedUser->email);
-    }
-}
+    });
+});
