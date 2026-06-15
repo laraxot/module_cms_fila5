@@ -24,8 +24,16 @@ function pageSchemaMainEntity(array $schema): array
         Assert::fail('Expected mainEntity array in schema');
     }
 
-    /* @var array<string, mixed> $mainEntity */
-    return $mainEntity;
+    $result = [];
+    foreach ($mainEntity as $key => $value) {
+        if (! is_string($key)) {
+            continue;
+        }
+
+        $result[$key] = $value;
+    }
+
+    return $result;
 }
 
 describe('Page Schema Builder', function (): void {
