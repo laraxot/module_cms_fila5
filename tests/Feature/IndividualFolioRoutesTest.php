@@ -393,7 +393,7 @@ describe('Individual Folio Routes', function (): void {
             $locale = (string) app()->getLocale();
             $response = cmsGet('/'.$locale);
             /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-            /* @var array<string, mixed> $contentBlocks = () ? $contentBlocks : [] */
+            $content = (string) $response->getContent();
 
             $expectedUrl = route('register');
             Assert::assertStringContainsString($expectedUrl, $content);
