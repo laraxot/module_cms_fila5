@@ -301,7 +301,7 @@ describe('Individual Folio Routes', function (): void {
             cmsSkipTest('Homepage content_blocks missing in JSON');
         }
 
-        /* @var array<string, mixed> $contentBlocks */
+        /** @var array<string, mixed> $contentBlocks */
         Assert::assertArrayHasKey($locale, $contentBlocks);
 
         $content = (string) $response->getContent();
