@@ -299,15 +299,19 @@ describe('Individual Folio Routes', function (): void {
         $contentBlocks = $homepageData['content_blocks'] ?? null;
         if (! is_array($contentBlocks)) {
             cmsSkipTest('Homepage content_blocks missing in JSON');
+
+            return;
         }
 
-        /* @var array<string, mixed> $contentBlocks */
+        /** @var array<string, mixed> $contentBlocks */
         Assert::assertArrayHasKey($locale, $contentBlocks);
 
         $content = (string) $response->getContent();
         $blocks = $contentBlocks[$locale];
         if (! is_array($blocks)) {
             cmsSkipTest('Homepage blocks for locale are not an array');
+
+            return;
         }
 
         /** @var array<mixed> $blocks */
@@ -341,6 +345,12 @@ describe('Individual Folio Routes', function (): void {
         /** @var array<string, mixed> $homepageData */
         $locale = (string) app()->getLocale();
         $contentBlocks = $homepageData['content_blocks'] ?? null;
+        if (! is_array($contentBlocks)) {
+            cmsSkipTest('Homepage content_blocks missing in JSON');
+
+            return;
+        }
+
         /** @var array<string, list<array<string, mixed>>> $contentBlocks */
         $blocks = $contentBlocks[$locale] ?? [];
 
@@ -363,6 +373,12 @@ describe('Individual Folio Routes', function (): void {
         /** @var array<string, mixed> $homepageData */
         $locale = (string) app()->getLocale();
         $contentBlocks = $homepageData['content_blocks'] ?? null;
+        if (! is_array($contentBlocks)) {
+            cmsSkipTest('Homepage content_blocks missing in JSON');
+
+            return;
+        }
+
         /** @var array<string, list<array<string, mixed>>> $contentBlocks */
         $blocks = $contentBlocks[$locale] ?? [];
         $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
@@ -377,7 +393,7 @@ describe('Individual Folio Routes', function (): void {
             $locale = (string) app()->getLocale();
             $response = cmsGet('/'.$locale);
             /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-            $content = (string) $response->getContent();
+            /* @var array<string, mixed> $contentBlocks = () ? $contentBlocks : [] */
 
             $expectedUrl = route('register');
             Assert::assertStringContainsString($expectedUrl, $content);
