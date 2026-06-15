@@ -7,3 +7,5 @@ declare(strict_types=1);
  * Ogni file test dichiara uses(Modules\Cms\Tests\TestCase::class).
  * Vietato uses()->in() qui (PHPStan method.internalClass).
  */
+
+require_once __DIR__.'/PestHelpers.php';
