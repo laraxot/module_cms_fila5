@@ -130,9 +130,6 @@ function cmsActingAs(Authenticatable $user, ?string $driver = null): TestCase
     return cmsTest()->actingAs($user, $driver);
 }
 
-/**
- * @return never
- */
 function cmsSkipTest(string $message = ''): void
 {
     cmsTest()->markTestSkipped($message);
