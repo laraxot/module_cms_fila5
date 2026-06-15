@@ -24,7 +24,7 @@ function pageSchemaMainEntity(array $schema): array
         Assert::fail('Expected mainEntity array in schema');
     }
 
-    /** @var array<string, mixed> $mainEntity */
+    /* @var array<string, mixed> $mainEntity */
     return $mainEntity;
 }
 
