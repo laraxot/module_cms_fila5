@@ -303,7 +303,7 @@ describe('Individual Folio Routes', function (): void {
             return;
         }
 
-        /** @var array<string, mixed> $contentBlocks */
+        /* @var array<string, mixed> $contentBlocks */
         Assert::assertArrayHasKey($locale, $contentBlocks);
 
         $content = (string) $response->getContent();
