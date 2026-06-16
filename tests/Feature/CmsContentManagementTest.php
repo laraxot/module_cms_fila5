@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use Modules\Cms\Database\Factories\PageContentFactory;
 use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\PageContent;
 use Modules\Cms\Models\Section;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 beforeEach(function (): void {
-        cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
+    /* @var \Modules\Cms\Tests\TestCase $this */
+    cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
 });
 
 test('cms module models work together in content management', function () {
-        $page = PageFactory::new()->createOne([
+    $page = PageFactory::new()->createOne([
         'slug' => 'home-page',
         'title' => ['en' => 'Home Page', 'it' => 'Pagina Home'],
         'content' => 'Welcome to our website',
@@ -52,7 +53,7 @@ test('cms module models work together in content management', function () {
 });
 
 test('cms module handles multilingual content correctly', function () {
-        $multilingualData = [
+    $multilingualData = [
         'en' => 'English content',
         'it' => 'Contenuto italiano',
         'es' => 'Contenido español',
@@ -92,11 +93,10 @@ test('cms module handles multilingual content correctly', function () {
     Assert::assertSame($multilingualData, $page->title);
     Assert::assertSame($multilingualData, $pageContent->name);
     Assert::assertSame($multilingualData, $section->name);
-
 });
 
 test('cms module handles complex block structures', function () {
-        $complexBlocks = [
+    $complexBlocks = [
         [
             'type' => 'advanced_grid',
             'title' => 'Advanced Content Grid',
@@ -319,7 +319,7 @@ test('cms module handles complex block structures', function () {
 });
 
 test('cms module handles bulk operations efficiently', function () {
-        $pagesData = [];
+    $pagesData = [];
     $pageContentsData = [];
     $sectionsData = [];
 
@@ -404,7 +404,7 @@ test('cms module supports complex query patterns', function () {
 });
 
 test('cms module handles data consistency across models', function () {
-        $page = PageFactory::new()->createOne([
+    $page = PageFactory::new()->createOne([
         'slug' => 'consistent-page',
         'title' => ['en' => 'Consistent Page'],
         'content_blocks' => [['type' => 'text', 'content' => 'Initial content']],

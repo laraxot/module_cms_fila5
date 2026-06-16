@@ -2,28 +2,20 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModelLang;
+namespace Modules\Cms\Tests\Unit\Models;
+
 use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
-use ReflectionClass;
+
 use function Safe\class_uses;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
+
 describe('Section Business Logic', function (): void {
-    test('section extends base model lang for multilingual support', function (): void {
-
-    });
-
-    test('section has translatable fields configured', function (): void {
-        $section = new Section();
-        $section = new Section();
-
-    });
-
     test('section has expected fillable fields', function (): void {
-        $section = new Section();
         $section = new Section();
         $expectedFillable = [
             'name',
@@ -48,7 +40,6 @@ describe('Section Business Logic', function (): void {
 
     test('section has correct casts for multilingual and structured data', function (): void {
         $section = new Section();
-        $section = new Section();
         $casts = $section->getCasts();
 
         Assert::assertSame('array', $casts['name']);
@@ -58,16 +49,14 @@ describe('Section Business Logic', function (): void {
 
     test('section has schema definition for structured data', function (): void {
         $section = new Section();
-        $section = new Section();
 
-        // Use reflection to access protected $schema property
-        $reflection = new ReflectionClass($section);
+        $reflection = new \ReflectionClass($section);
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
 
+        /** @var array<string, mixed> $schema */
         $schema = $schemaProperty->getValue($section);
-    /** @var array<string, mixed> $schema */
         Assert::assertSame('json', $schema['name']);
         Assert::assertSame('json', $schema['blocks']);
         Assert::assertSame('string', $schema['slug']);

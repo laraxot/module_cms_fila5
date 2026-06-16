@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\View\Composers\ThemeComposer;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('ThemeComposer can be instantiated', function () {
@@ -14,27 +13,27 @@ test('ThemeComposer can be instantiated', function () {
 
 test('ThemeComposer has getMenu method', function () {
     $composer = new ThemeComposer();
-    });
+});
 
 test('ThemeComposer has getMenuUrl method', function () {
     $composer = new ThemeComposer();
-    });
+});
 
 test('ThemeComposer has showPageContent method', function () {
     $composer = new ThemeComposer();
-    });
+});
 
 test('ThemeComposer has getPages method', function () {
     $composer = new ThemeComposer();
-    });
+});
 
 test('ThemeComposer has getPageModel method', function () {
     $composer = new ThemeComposer();
-    });
+});
 
 test('ThemeComposer has getUrlPage method', function () {
     $composer = new ThemeComposer();
-    });
+});
 
 test('ThemeComposer getMenuUrl returns hash for empty array', function () {
     $composer = new ThemeComposer();

@@ -2,15 +2,12 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Front\Pages\Welcome;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Welcome page can be instantiated', function () {
     $page = new Welcome();
-
 });
 
 test('Welcome page has view_type property', function () {
@@ -50,16 +47,16 @@ test('Welcome page has instanceModel property', function () {
 });
 
 test('Welcome page has mount method', function () {
-    });
+});
 
 test('Welcome page has getViewData method', function () {
-    });
+});
 
 test('Welcome page has initView method', function () {
-    });
+});
 
 test('Welcome page has url method', function () {
-    });
+});
 
 test('Welcome page has setModel method', function () {
-    });
+});

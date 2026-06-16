@@ -2,9 +2,13 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
+
+uses(TestCase::class);
+
 /*
  * Test that translations work correctly for each locale.
  *
@@ -17,7 +21,7 @@ use function Safe\file_get_contents;
  * @see \Modules\Cms\Http\Middleware\SetFolioLocale
  */
 test('auth buttons show correct translation for German locale on login page', function () {
-        $response = cmsGet('/de/auth/login');
+    $response = cmsGet('/de/auth/login');
 
     $status = (int) $response->getStatusCode();
 
@@ -43,7 +47,7 @@ test('auth buttons show correct translation for German locale on login page', fu
 });
 
 test('auth buttons show correct translation for Italian locale on login page', function () {
-        $response = cmsGet('/it/auth/login');
+    $response = cmsGet('/it/auth/login');
 
     $status = (int) $response->getStatusCode();
 
@@ -67,7 +71,7 @@ test('auth buttons show correct translation for Italian locale on login page', f
 });
 
 test('auth buttons show correct translation for English locale on login page', function () {
-        $response = cmsGet('/en/auth/login');
+    $response = cmsGet('/en/auth/login');
 
     $status = (int) $response->getStatusCode();
 
@@ -91,7 +95,7 @@ test('auth buttons show correct translation for English locale on login page', f
 });
 
 test('no hardcoded Italian strings in theme header components', function () {
-        $paths = [
+    $paths = [
         base_path('Themes/Meetup/resources/views/components/ui/header.blade.php'),
     ];
 

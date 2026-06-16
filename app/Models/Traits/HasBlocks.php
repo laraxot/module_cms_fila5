@@ -16,7 +16,7 @@ use Modules\Xot\Datas\XotData;
  *
  * @phpstan-require-extends Model
  *
- * @method mixed getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
+ * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
 trait HasBlocks
@@ -60,7 +60,7 @@ trait HasBlocks
         // which is needed for dynamic query resolution
         $blockDataInstances = [];
         foreach ($blocks as $key => $block) {
-            if (!is_array($block)) {
+            if (! is_array($block)) {
                 continue;
             }
             $type = (string) ($block['type'] ?? 'unknown');
@@ -79,7 +79,8 @@ trait HasBlocks
     }
 
     /**
-     * @param  array<int|string, mixed>  $blocks
+     * @param array<int|string, mixed> $blocks
+     *
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array

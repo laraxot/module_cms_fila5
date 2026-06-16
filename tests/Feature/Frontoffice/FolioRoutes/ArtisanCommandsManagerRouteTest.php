@@ -5,9 +5,9 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 it('GET /it/artisan-commands-manager returns acceptable status', function (): void {
-        $res = cmsGet('/it/artisan-commands-manager');
+    $res = cmsGet('/it/artisan-commands-manager');
     $status = (int) $res->getStatusCode();
     if ($status >= 500) {
         cmsSkipTest('Server error on /it/artisan-commands-manager: '.$status);

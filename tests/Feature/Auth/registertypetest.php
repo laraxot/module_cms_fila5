@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 /*
@@ -20,7 +20,7 @@ describe('Registration Page Access', function () use ($userTypes): void {
     foreach ($userTypes as $type) {
         test("guest can view {$type} registration page", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
             Assert::assertSame(200, $response->status());
         });
 
@@ -29,7 +29,7 @@ describe('Registration Page Access', function () use ($userTypes): void {
             actingAs($user);
 
             $response = get("/it/auth/{$type}/register");
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
             Assert::assertSame(302, $response->status());
         });
     }
@@ -39,7 +39,7 @@ describe('Registration Page Content', function () use ($userTypes): void {
     foreach ($userTypes as $type) {
         test("{$type} registration page contains expected elements", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
             Assert::assertSame(200, $response->status());
 
             $content = (string) $response->getContent();
@@ -49,7 +49,7 @@ describe('Registration Page Content', function () use ($userTypes): void {
 
         test("{$type} registration page has proper HTML structure", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
             $content = (string) $response->getContent();
             Assert::assertStringContainsString('<!DOCTYPE html>', $content);
             Assert::assertStringContainsString('<html', $content);
@@ -64,7 +64,7 @@ describe('Registration Page Localization', function () use ($userTypes): void {
     foreach ($userTypes as $type) {
         test("{$type} registration page uses Italian localization", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
             Assert::assertSame(200, $response->status());
 
             $content = (string) $response->getContent();
@@ -80,7 +80,7 @@ describe('Registration Page Performance', function () use ($userTypes): void {
             $startTime = microtime(true);
 
             $response = get("/it/auth/{$type}/register");
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
             $loadTime = microtime(true) - $startTime;
 
             Assert::assertSame(200, $response->status());

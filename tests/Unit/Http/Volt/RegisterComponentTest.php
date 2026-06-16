@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
+namespace Modules\Cms\Tests\Unit\Http\Volt;
 
-
-use PHPUnit\Framework\Assert;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\RegisterComponent;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 
-uses(Modules\Cms\Tests\TestCase::class);
-describe('RegisterComponent', function (): void {
+describe('Register Component', function (): void {
     test('register component extends volt component', function (): void {
         $component = new RegisterComponent();
 
@@ -21,13 +21,13 @@ describe('RegisterComponent', function (): void {
     test('register component has expected public properties defaults', function (): void {
         $component = new RegisterComponent();
 
-        Assert::assertTrue((new ReflectionClass($component))->hasProperty('name'));
+        Assert::assertTrue((new \ReflectionClass($component))->hasProperty('name'));
 
-        Assert::assertTrue((new ReflectionClass($component))->hasProperty('email'));
+        Assert::assertTrue((new \ReflectionClass($component))->hasProperty('email'));
 
-        Assert::assertTrue((new ReflectionClass($component))->hasProperty('password'));
+        Assert::assertTrue((new \ReflectionClass($component))->hasProperty('password'));
 
-        Assert::assertTrue((new ReflectionClass($component))->hasProperty('password_confirmation'));
+        Assert::assertTrue((new \ReflectionClass($component))->hasProperty('password_confirmation'));
 
         Assert::assertSame('', $component->name);
 
@@ -39,15 +39,18 @@ describe('RegisterComponent', function (): void {
     });
 
     test('register component has register method', function (): void {
-            });
+        $method = (new \ReflectionClass(RegisterComponent::class))->getMethod('register');
+
+        Assert::assertSame('register', $method->getName());
+    });
 
     test('register method returns redirect response', function (): void {
         $reflection = new \ReflectionClass(RegisterComponent::class);
         $method = $reflection->getMethod('register');
         $returnType = $method->getReturnType();
 
-        Assert::assertNull($returnType);
-
-        Assert::assertSame('Illuminate\Http\RedirectResponse', (string) $returnType);
+        Assert::assertNotNull($returnType);
+        $typeName = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+        Assert::assertSame('Illuminate\Http\RedirectResponse', $typeName);
     });
 });
