@@ -2,13 +2,9 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
-use PHPUnit\Framework\Assert;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\ResetComponent;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('Password ResetComponent', function (): void {
@@ -31,10 +27,10 @@ describe('Password ResetComponent', function (): void {
     });
 
     test('reset component has send reset password link method', function (): void {
-            });
+    });
 
     test('send reset password link method returns void', function (): void {
-        $reflection = new \ReflectionClass(ResetComponent::class);
+        $reflection = new ReflectionClass(ResetComponent::class);
         $method = $reflection->getMethod('sendResetPasswordLink');
         $returnType = $method->getReturnType();
 

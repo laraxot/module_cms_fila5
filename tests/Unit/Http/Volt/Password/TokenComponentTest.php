@@ -2,13 +2,9 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
-use PHPUnit\Framework\Assert;
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\TokenComponent;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('Password TokenComponent', function (): void {
@@ -45,10 +41,10 @@ describe('Password TokenComponent', function (): void {
     });
 
     test('token component has reset password method', function (): void {
-            });
+    });
 
     test('reset password method returns redirector or redirect response', function (): void {
-        $reflection = new \ReflectionClass(TokenComponent::class);
+        $reflection = new ReflectionClass(TokenComponent::class);
         $method = $reflection->getMethod('resetPassword');
         $returnType = $method->getReturnType();
 

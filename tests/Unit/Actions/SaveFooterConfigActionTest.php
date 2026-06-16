@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Actions\SaveFooterConfigAction;
 use Modules\Cms\Datas\FooterData;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('SaveFooterConfigAction can be executed', function () {
@@ -28,7 +27,7 @@ test('SaveFooterConfigAction can execute with FooterData', function () {
     try {
         $action->execute($footerData);
         cmsSkipTest('Covered by integration test'); // If we get here, no exception was thrown
-    } catch (\Exception $e) {
+    } catch (Exception $e) {
         // If an exception is thrown due to missing service, that's expected
-            }
+    }
 });

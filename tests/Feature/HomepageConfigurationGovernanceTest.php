@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-
-
 use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
-
 uses(Modules\Cms\Tests\TestCase::class);
+
+beforeEach(function (): void {
+    /* @var \Modules\Cms\Tests\TestCase $this */
+    cmsSkipTest('Homepage governance tests target predict JSON fixtures, not fixcity.');
+});
+
 test('there is exactly one canonical home page slug in json content', function (): void {
     $pagesPath = base_path('config/local/predict/database/content/pages');
     $globResult = glob($pagesPath.'/*.json');

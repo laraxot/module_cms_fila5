@@ -3,12 +3,9 @@
 declare(strict_types=1);
 
 use Livewire\Wireable;
-use Spatie\LaravelData\Data;
-
-
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Datas\HeadernavData;
-
+use PHPUnit\Framework\Assert;
+use Spatie\LaravelData\Data;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('HeadernavData can be instantiated', function (): void {
@@ -20,13 +17,13 @@ test('HeadernavData can be instantiated', function (): void {
 test('HeadernavData extends Spatie Data', function (): void {
     $headernavData = new HeadernavData();
 
-    Assert::assertInstanceOf(Spatie\LaravelData\Data::class, $headernavData);
+    Assert::assertInstanceOf(Data::class, $headernavData);
 });
 
 test('HeadernavData implements Wireable interface', function (): void {
     $headernavData = new HeadernavData();
 
-    Assert::assertInstanceOf(Livewire\Wireable::class, $headernavData);
+    Assert::assertInstanceOf(Wireable::class, $headernavData);
 });
 
 test('HeadernavData has default view path', function (): void {
@@ -73,7 +70,7 @@ test('HeadernavData has nullable style property', function (): void {
 
 test('HeadernavData rules method returns validation rules', function (): void {
     $rules = HeadernavData::rules();
-    /** @var array<string, mixed> $rules */
+    /* @var array<string, mixed> $rules */
     Assert::assertArrayHasKey('background_color', $rules);
 
     Assert::assertArrayHasKey('background', $rules);
@@ -116,7 +113,7 @@ test('HeadernavData can be converted to array', function (): void {
     ]);
 
     $array = $headernavData->toArray();
-    /** @var array<string, mixed> $array */
+    /* @var array<string, mixed> $array */
     Assert::assertArrayHasKey('background_color', $array);
 });
 

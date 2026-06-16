@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Livewire\Wireable;
 use Modules\Cms\Datas\BlockData;
+use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
-
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('BlockData can be instantiated with type and data', function (): void {

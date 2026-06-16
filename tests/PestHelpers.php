@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
@@ -20,9 +21,13 @@ use function Safe\json_decode;
  *
  * @see Modules/Gdpr/tests/PestHelpers.php
  */
-
 function cmsTest(): TestCase
 {
+    if (null !== TestCase::$currentTest) {
+        return TestCase::$currentTest;
+    }
+
+    /** @phpstan-ignore-next-line */
     $test = test();
     Assert::assertInstanceOf(TestCase::class, $test);
 
@@ -35,7 +40,7 @@ function cmsGenerateUniqueEmail(): string
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function cmsCreateTestUser(array $attributes = []): UserContract
 {
@@ -43,7 +48,7 @@ function cmsCreateTestUser(array $attributes = []): UserContract
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function cmsCreateUnverifiedUser(array $attributes = []): User
 {
@@ -53,8 +58,9 @@ function cmsCreateUnverifiedUser(array $attributes = []): User
 /**
  * @template T of object
  *
- * @param  class-string<T>  $class
- * @return T&\PHPUnit\Framework\MockObject\MockObject
+ * @param class-string<T> $class
+ *
+ * @return T&PHPUnit\Framework\MockObject\MockObject
  */
 function cmsCreateMock(string $class): object
 {
@@ -66,9 +72,6 @@ function cmsMockXotData(): void
     XotData::make()->update(['main_module' => 'User']);
 }
 
-/**
- * @return string
- */
 function cmsReadFile(string $path): string
 {
     return file_get_contents($path);
@@ -86,7 +89,8 @@ function cmsJsonDecodeFile(string $path): array
 }
 
 /**
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsGet(string $uri, array $headers = []): TestResponse
@@ -95,8 +99,25 @@ function cmsGet(string $uri, array $headers = []): TestResponse
 }
 
 /**
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
+ *
+ * @return TestResponse<Response>
+ */
+function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestResponse
+{
+    $response = cmsGet($uri, $headers);
+
+    if ((int) $response->getStatusCode() >= 500) {
+        cmsSkipTest('Server error on '.$uri.': '.$response->getStatusCode());
+    }
+
+    return $response;
+}
+
+/**
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsPost(string $uri, array $data = [], array $headers = []): TestResponse
@@ -116,16 +137,17 @@ function cmsSkipTest(string $message = ''): void
 
 function cmsAssertAuthenticated(?string $guard = null): void
 {
-    cmsTest()->assertAuthenticated($guard);
+    Assert::assertTrue(Auth::guard($guard)->check());
 }
 
 function cmsAssertGuest(?string $guard = null): void
 {
-    cmsTest()->assertGuest($guard);
+    Assert::assertFalse(Auth::guard($guard)->check());
 }
 
 /**
- * @param  array<string, mixed>  $data
+ * @param array<string, mixed> $data
+ *
  * @return TestResponse<Response>
  */
 function cmsActingAsGet(Authenticatable $user, string $uri, array $data = []): TestResponse

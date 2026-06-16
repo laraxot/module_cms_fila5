@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Models\Menu;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('MenuResource', function (): void {
@@ -17,7 +16,7 @@ describe('MenuResource', function (): void {
 
     test('menu resource has form schema', function (): void {
         $schema = MenuResource::getFormSchema();
-    /** @var array<string, mixed> $schema */
+        /* @var array<string, mixed> $schema */
         Assert::assertGreaterThan(0, count($schema));
     });
 
@@ -29,7 +28,7 @@ describe('MenuResource', function (): void {
         $hasItems = false;
 
         foreach ($schema as $item) {
-            if (! $item instanceof \Filament\Forms\Components\Field) {
+            if (! $item instanceof Filament\Forms\Components\Field) {
                 continue;
             }
             $name = $item->getName();

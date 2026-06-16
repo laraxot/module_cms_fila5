@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\Section;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Section model can be instantiated', function () {
@@ -35,5 +34,5 @@ test('Section model has expected casts', function () {
     $section = new Section();
 
     $casts = $section->getCasts();
-    /** @var array<string, mixed> $casts */
+    /* @var array<string, mixed> $casts */
 });

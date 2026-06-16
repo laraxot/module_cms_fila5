@@ -2,34 +2,27 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Actions;
+
 use Illuminate\Support\Str;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Database\Factories\PageFactory;
-use Modules\Cms\Datas\ResolvePageData;
-use Modules\Cms\Models\Page as PageModel;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-final class ResolvePageActionTest extends TestCase
-{
-    /**
-     * The connections that should be transacted.
-     *
-     * @var array<int, string>
-     */
-    protected $connectionsToTransact = ['mysql', 'meetup', 'user', 'tenant'];
+uses(TestCase::class);
 
-    public function testItResolvesADynamicModelFromKnownMappings(): void
-    {
+describe('Resolve Page Action', function (): void {
+    test('it resolves adynamic model from known mappings', function (): void {
+        /* @var \Modules\Cms\Tests\TestCase $this */
         if (! class_exists('Modules\\Meetup\\Models\\Event')) {
-            $this->markTestSkipped('Meetup module not available.');
+            $this->skipTest('Meetup module not available.');
         }
 
-        $this->markTestSkipped('Meetup EventFactory not configured in this workspace.');
-    }
+        $this->skipTest('Meetup EventFactory not configured in this workspace.');
+    });
 
-    public function testItResolvesACmsPageWithExactSlug(): void
-    {
+    test('it resolves acms page with exact slug', function (): void {
         $slug = 'about.us-'.uniqid();
         PageFactory::new()->createOne(['slug' => $slug]);
 
@@ -38,10 +31,9 @@ final class ResolvePageActionTest extends TestCase
 
         Assert::assertSame('cms', $result->renderMode);
         Assert::assertSame($slug, $result->pageSlug);
-    }
+    });
 
-    public function testItFallsBackToContainerViewIfSlugNotFound(): void
-    {
+    test('it falls back to container view if slug not found', function (): void {
         $viewSlug = 'blog.view';
         PageFactory::new()->createOne(['slug' => $viewSlug]);
 
@@ -51,14 +43,13 @@ final class ResolvePageActionTest extends TestCase
 
         Assert::assertSame('cms', $result->renderMode);
         Assert::assertSame($viewSlug, $result->pageSlug);
-    }
+    });
 
-    public function testItReturnsFullSlugAsFinalFallback(): void
-    {
+    test('it returns full slug as final fallback', function (): void {
         $action = app(ResolvePageAction::class);
         $result = $action->execute('unknown', 'page');
 
         Assert::assertSame('cms', $result->renderMode);
         Assert::assertSame('unknown.page', $result->pageSlug);
-    }
-}
+    });
+});

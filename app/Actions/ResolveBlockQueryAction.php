@@ -55,7 +55,7 @@ class ResolveBlockQueryAction
         // Assert::string($orderBy, '['.__LINE__.']['.__FILE__.']');
         $directionValue = data_get($queryConfig, 'direction', 'desc');
         $direction = in_array($directionValue, ['asc', 'desc'], true) ? (string) $directionValue : 'desc';
-        /** @var 'asc'|'desc' $direction */
+        /* @var 'asc'|'desc' $direction */
         $query->orderBy($orderBy, $direction);
 
         // Apply limit

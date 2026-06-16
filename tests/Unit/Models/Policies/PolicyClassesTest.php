@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Models\Policies\CmsBasePolicy;
 use Modules\Cms\Models\Policies\ConfPolicy;
 use Modules\Cms\Models\Policies\MenuPolicy;
@@ -11,7 +9,7 @@ use Modules\Cms\Models\Policies\ModulePolicy;
 use Modules\Cms\Models\Policies\PageContentPolicy;
 use Modules\Cms\Models\Policies\PagePolicy;
 use Modules\Cms\Models\Policies\SectionPolicy;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('CmsBasePolicy is an abstract class', function () {
@@ -58,5 +56,4 @@ test('ModulePolicy can be instantiated', function () {
 
 test('PagePolicy has expected methods', function () {
     $policy = new PagePolicy();
-
-                            });
+});

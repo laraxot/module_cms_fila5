@@ -2,15 +2,12 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Footer page can be instantiated', function () {
     $page = new Footer();
-
 });
 
 test('Footer page has data property', function () {
@@ -33,16 +30,16 @@ test('Footer page has footerData property', function () {
 });
 
 test('Footer page has mount method', function () {
-    });
+});
 
 test('Footer page has schema method', function () {
-    });
+});
 
 test('Footer page has updateData method', function () {
-    });
+});
 
 test('Footer page has fillForms method', function () {
-    });
+});
 
 test('Footer page has getUpdateFormActions method', function () {
-    });
+});

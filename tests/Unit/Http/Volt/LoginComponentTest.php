@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Http\Volt\LoginComponent;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 describe('LoginComponent', function (): void {
@@ -34,7 +32,7 @@ describe('LoginComponent', function (): void {
     });
 
     test('login component has authenticate method', function (): void {
-            });
+    });
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);

@@ -2,9 +2,6 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-
-
 use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 
@@ -25,7 +22,7 @@ uses(Modules\Cms\Tests\TestCase::class);
 
 describe('Page component contract — constructor signature', function () {
     test('has exactly four constructor params: side, slug, type, data', function () {
-        $reflection = new \ReflectionMethod(Page::class, '__construct');
+        $reflection = new ReflectionMethod(Page::class, '__construct');
         $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
 
         Assert::assertSame(['side', 'slug', 'type', 'data'], $paramNames);
@@ -33,21 +30,21 @@ describe('Page component contract — constructor signature', function () {
     });
 
     test('does not have container0 as constructor param', function () {
-        $reflection = new \ReflectionMethod(Page::class, '__construct');
+        $reflection = new ReflectionMethod(Page::class, '__construct');
         $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
 
         Assert::assertNotContains('container0', $paramNames);
     });
 
     test('does not have slug0 as constructor param', function () {
-        $reflection = new \ReflectionMethod(Page::class, '__construct');
+        $reflection = new ReflectionMethod(Page::class, '__construct');
         $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
 
         Assert::assertNotContains('slug0', $paramNames);
     });
 
     test('type param is nullable (optional)', function () {
-        $reflection = new \ReflectionMethod(Page::class, '__construct');
+        $reflection = new ReflectionMethod(Page::class, '__construct');
         $params = $reflection->getParameters();
         $typeParam = $params[2]; // third param = type
 
@@ -56,7 +53,7 @@ describe('Page component contract — constructor signature', function () {
     });
 
     test('data param defaults to empty array', function () {
-        $reflection = new \ReflectionMethod(Page::class, '__construct');
+        $reflection = new ReflectionMethod(Page::class, '__construct');
         $params = $reflection->getParameters();
         $dataParam = $params[3]; // fourth param = data
 
@@ -68,28 +65,28 @@ describe('Page component contract — constructor signature', function () {
 
 describe('Page component contract — public properties', function () {
     test('has public property: side', function () {
-        $reflection = new \ReflectionClass(Page::class);
+        $reflection = new ReflectionClass(Page::class);
 
         Assert::assertTrue($reflection->hasProperty('side'));
         Assert::assertTrue($reflection->getProperty('side')->isPublic());
     });
 
     test('has public property: slug', function () {
-        $reflection = new \ReflectionClass(Page::class);
+        $reflection = new ReflectionClass(Page::class);
 
         Assert::assertTrue($reflection->hasProperty('slug'));
         Assert::assertTrue($reflection->getProperty('slug')->isPublic());
     });
 
     test('has public property: data (the context carrier)', function () {
-        $reflection = new \ReflectionClass(Page::class);
+        $reflection = new ReflectionClass(Page::class);
 
         Assert::assertTrue($reflection->hasProperty('data'));
         Assert::assertTrue($reflection->getProperty('data')->isPublic());
     });
 
     test('data property defaults to empty array', function () {
-        $reflection = new \ReflectionClass(Page::class);
+        $reflection = new ReflectionClass(Page::class);
         $defaults = $reflection->getDefaultProperties();
 
         Assert::assertSame([], $defaults['data']);

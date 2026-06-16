@@ -2,15 +2,12 @@
 
 declare(strict_types=1);
 
-use ReflectionClass;
-use PHPUnit\Framework\Assert;
 use Modules\Cms\Filament\Pages\Themes;
-
+use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
 test('Themes page can be instantiated', function () {
     $page = new Themes();
-
 });
 
 test('Themes page has themes property', function () {
@@ -23,7 +20,7 @@ test('Themes page has themes property', function () {
 });
 
 test('Themes page has changePubTheme method', function () {
-    });
+});
 
 test('Themes page has getViewData method', function () {
-    });
+});
