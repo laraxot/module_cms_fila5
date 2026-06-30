@@ -12,10 +12,15 @@ use Modules\Xot\Services\ThemeService;
 
 class Show extends Component
 {
-    public string $slug;
+    public string $slug = '';
+
     public bool $cache = true;
+
     public ?string $theme = null;
+
     public bool $debug = false;
+
+    /** @var array<string, mixed> */
     public array $pageContent = [];
 
     public function mount(): void
@@ -31,6 +36,9 @@ class Show extends Component
         ]);
     }
 
+    /**
+     * @return array<string, string>
+     */
     protected function rules(): array
     {
         return [
@@ -46,14 +54,19 @@ class Show extends Component
         $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? ThemeService::getTheme());
 
         if ($this->cache) {
-            $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function () {
+            $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function (): array {
                 return $this->fetchPageContent();
             });
-        } else {
-            $this->pageContent = $this->fetchPageContent();
+
+            return;
         }
+
+        $this->pageContent = $this->fetchPageContent();
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     protected function fetchPageContent(): array
     {
         try {

@@ -1,77 +1,43 @@
-# 📚 Cms Module - Documentation Index
+# Cms Module Documentation
 
-**Path**: `laravel/Modules/Cms/docs/`  
-**Modulo**: @Modules/Cms
+## Overview
 
-## 🎯 Scopo
+Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi. Nel lavoro corrente sulla parity Design Comuni, il Cms governa la struttura della homepage di test, mentre la resa visuale viene rifinita nel tema Sixteen.
 
-Content management a blocchi: pagine dinamiche con sezioni componibili, menu gerarchici, rendering frontend con Folio/Volt, SEO multi-tenant. Gestione contenuti completa da Filament.
+## 📚 Design Comuni - Index Completo
 
-## 📦 Struttura
+- **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
 
-```
-docs/
-├── 00-INDEX.md          # Questo indice
-├── README.md            # Panoramica modulo
-├── architecture/        # Architettura CMS
-├── filament/            # Integrazione Filament
-├── blocks/              # Sistema blocchi
-├── folio/               # Laravel Folio routing
-└── [categorie]/        # Altre documentazioni
-```
+## Active design-comuni references
 
-## 📄 Documenti
+- [design-comuni-homepage.md](./design-comuni-homepage.md) - Coordinamento Cms per la homepage parity
+- [design-comuni-faq.md](./design-comuni-faq.md) - Pagina FAQ ✅ 90%
+- [design-comuni-argomenti.md](./design-comuni-argomenti.md) - Pagina argomenti
+- [design-comuni-risultati-ricerca.md](./design-comuni-risultati-ricerca.md) - Pagina risultati ricerca
+- [design-comuni-page-census.md](./design-comuni-page-census.md) - Censimento 38 pagine
+- [design-comuni-services-implementation.md](./design-comuni-services-implementation.md) - Implementazione servizi
+- [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) - Audit batch pagine
+- [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) - Verifica parity
+- [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Flusso runtime aggiornato della homepage di test
+- [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale componenti pagina
 
-### Panoramica
-| File | Scopo |
-|------|-------|
-| README.md | Panoramica completa modulo |
-| architecture.md | Architettura sistema |
-| philosophy.md | Filosofia di design |
+## Theme cross links
 
-### Filament Integration
-| File | Scopo |
-|------|-------|
-| filament-resources.md | Resource Filament |
-| filament-forms.md | Form per CMS |
-| filament-widgets.md | Widget per backoffice |
+- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema
+- [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
+- [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
+- [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso
+- [../../../docs/design-comuni/MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
 
-### Block System
-| File | Scopo |
-|------|-------|
-| block-system.md | Sistema blocchi |
-| content-blocks.md | Content blocks |
-| blocks-reference.md | Riferimento blocchi |
+## Runtime architecture
 
-### Frontend (Folio/Volt)
-| File | Scopo |
-|------|-------|
-| folio-routing.md | Routing Folio |
-| volt-components.md | Componenti Volt |
-| page-rendering.md | Rendering pagine |
+- La pagina di test e' servita da `Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`.
+- Il contenuto locale della homepage arriva da `config/local/fixcity/database/content/pages/tests.homepage.json`.
+- Il Cms mantiene il contratto dati e la struttura dei blocchi.
+- Il tema Sixteen mantiene layout, CSS e JS di parity visuale.
 
-### SEO & Localization
-| File | Scopo |
-|------|-------|
-| seo-integration.md | Integrazione SEO |
-| multi-language.md | Multilingua |
-| meta-tags.md | Meta tag management |
+## Operational rule for this workstream
 
-## 🔗 Riferimenti
-
-- [Xot Module](../Xot/docs/00-INDEX.md) - Base classes
-- [UI Module](../UI/docs/00-INDEX.md) - Blocchi UI
-- [AGENTS.md](../../../../AGENTS.md) - Project guidelines
-
-## 📊 Metriche Modulo
-
-| Aspetto | Valore |
-|---------|--------|
-| Modelli | 7 |
-| Azioni | 4 |
-| Resource Filament | 5 |
-| PHPStan Level | 10 |
-
----
-
-**Ultimo Aggiornamento**: 2026-03-24
+- Se il problema e' strutturale, verificare prima Cms JSON + routing.
+- Se il problema e' visivo, lavorare nel tema e documentare i risultati anche qui.
+- Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.

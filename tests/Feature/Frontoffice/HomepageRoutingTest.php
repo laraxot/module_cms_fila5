@@ -2,36 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Frontoffice;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-use Modules\Xot\Tests\TestCase;
-
-// Use the project's base TestCase
 uses(TestCase::class);
+// Use the project's base TestCase
 
 beforeEach(function (): void {
-    if (! function_exists('moduleEnabled')) {
-        /* @phpstan-ignore-next-line property.notFound, method.nonObject */
-        $this->markTestSkipped('moduleEnabled() helper not available.');
-    }
-    if (! moduleEnabled('Cms')) {
-        /* @phpstan-ignore-next-line property.notFound, method.nonObject */
-        $this->markTestSkipped('Module Cms is disabled');
+    /* @var \Modules\Cms\Tests\TestCase $this */
+    /* @var Modules\Cms\Tests\TestCase $this */
+    if (! Nwidart\Modules\Facades\Module::isEnabled('Cms')) {
+        cmsSkipTest('Module Cms is disabled');
     }
 });
 
 it('redirects root / to /{locale}', function (): void {
+    /** @var TestCase $this */
+    /** @var TestCase $this */
     $locale = app()->getLocale();
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/');
-    /* @phpstan-ignore-next-line method.nonObject */
-    $response->assertRedirect('/'.$locale);
+    Assert::assertSame('/'.$locale, $response->headers->get('Location'));
 });
 
 it('serves localized homepage at /{locale}', function (): void {
+    /** @var TestCase $this */
+    /** @var TestCase $this */
     $locale = app()->getLocale();
-    /** @phpstan-ignore-next-line property.notFound */
     $response = $this->get('/'.$locale);
-    /* @phpstan-ignore-next-line method.nonObject */
-    $response->assertStatus(200);
+    Assert::assertSame(200, $response->status());
 });
