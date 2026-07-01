@@ -23,7 +23,7 @@ function getFolioPaths(): array
 
     foreach (preg_split("/\r?\n/", $output) as $line) {
         /** @var string $line */
-        if (1 === preg_match('#\bGET\s+(/[^\s]+)#', $line, $m)) {
+        if (preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) === 1) {
             $paths[] = $m[1] ?? '';
         }
     }
@@ -36,30 +36,29 @@ function getFolioPaths(): array
 }
 
 it('validates Folio routes basic accessibility and localization', function (): void {
-    /** @var TestCase $this */
     $locale = app()->getLocale();
     $paths = getFolioPaths();
 
     foreach ($paths as $path) {
-        if ('/' === $path) {
-            $response = $this->get($path);
+        if ($path === '/') {
+            $response = cmsGet($path);
             $response->assertRedirect('/'.$locale);
 
             continue;
         }
 
         if (str_contains($path, '{')) {
-            $this->markTestSkipped("Dynamic Folio route requires fixture: {$path}");
+            cmsSkipTest("Dynamic Folio route requires fixture: {$path}");
         }
 
-        $response = $this->get($path);
-        $status = $response->getStatusCode();
+        $response = cmsGet($path);
+        $status = (int) $response->getStatusCode();
 
-        if (404 === $status) {
-            $this->markTestSkipped("Folio route not found (404): {$path}");
+        if ($status === 404) {
+            cmsSkipTest("Folio route not found (404): {$path}");
         }
         if ($status >= 500) {
-            $this->markTestSkipped("Folio route returned server error ({$status}): {$path}");
+            cmsSkipTest("Folio route returned server error ({$status}): {$path}");
         }
 
         Assert::assertContains($status, [200, 204, 301, 302, 303, 307, 308]);

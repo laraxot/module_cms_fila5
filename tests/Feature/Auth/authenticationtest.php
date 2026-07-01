@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Volt\Volt as LivewireVolt;
+use Modules\Cms\Tests\TestCase;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
     cmsGet('/'.$lang.'/auth/login');

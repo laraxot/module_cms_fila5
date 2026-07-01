@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature;
 
+use Illuminate\Http\Response;
+use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -26,7 +28,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth login', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/login: '.$status);
@@ -40,7 +42,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth register', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/register: '.$status);
@@ -54,7 +56,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth logout', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/logout: '.$status);
@@ -67,7 +69,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth logout fixed', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout_fixed');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/logout_fixed: '.$status);
@@ -80,7 +82,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth password confirm', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/confirm');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/password/confirm: '.$status);
@@ -93,7 +95,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth password reset', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/reset');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/password/reset: '.$status);
@@ -106,7 +108,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth password token', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/password/test-token');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/password/{token}: '.$status);
@@ -119,7 +121,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth verify', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/verify');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/verify: '.$status);
@@ -132,7 +134,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth thank you', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/thank-you');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/thank-you: '.$status);
@@ -145,7 +147,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth register thank you', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register/thank-you');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/register/thank-you: '.$status);
@@ -158,7 +160,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth type register patient', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/patient/register');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/{type}/register (patient): '.$status);
@@ -172,7 +174,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale auth type register doctor', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/doctor/register');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/auth/{type}/register (doctor): '.$status);
@@ -197,8 +199,8 @@ describe('Individual Folio Routes', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/test-slug');
 
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-        if (200 === $response->status()) {
+        /** @var TestResponse<Response> $response */
+        if ($response->status() === 200) {
             $response->assertSee('<!DOCTYPE html>');
             $response->assertSee('<html');
             $response->assertSee('x-page');
@@ -208,7 +210,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale learn', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/learn');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/learn: '.$status);
@@ -221,7 +223,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale genesis about', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/about');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/genesis/about: '.$status);
@@ -234,7 +236,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale genesis power ups', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/power-ups');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/genesis/power-ups: '.$status);
@@ -247,7 +249,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale classi css', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/classi-css');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/classi-css: '.$status);
@@ -260,7 +262,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale registration thank you', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/registration/thank-you');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/registration/thank-you: '.$status);
@@ -273,7 +275,7 @@ describe('Individual Folio Routes', function (): void {
     test('cms route get locale errors password expired', function (): void {
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/errors/password-expired');
-        /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->status();
         if ($status >= 500) {
             cmsSkipTest('Server error on /{locale}/errors/password-expired: '.$status);
@@ -392,7 +394,7 @@ describe('Individual Folio Routes', function (): void {
 
             $locale = (string) app()->getLocale();
             $response = cmsGet('/'.$locale);
-            /** @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+            /** @var TestResponse<Response> $response */
             $content = (string) $response->getContent();
 
             $expectedUrl = route('register');
