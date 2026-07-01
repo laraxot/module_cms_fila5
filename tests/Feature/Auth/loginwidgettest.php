@@ -1,8 +1,9 @@
 <?php
 
 declare(strict_types=1);
+use Modules\Cms\Tests\TestCase;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 // LOGIN WIDGET TESTS - Filament Component
 // ✅ Test del WIDGET Filament, non della pagina
 // ✅ Focus su: rendering, form interaction, authentication logic
@@ -10,35 +11,26 @@ uses(Modules\Cms\Tests\TestCase::class);
 
 // WIDGET STRUCTURE TESTS
 
-test('widget can be rendered', function (): void {
-});
+test('widget can be rendered', function (): void {});
 
-test('widget has correct view', function (): void {
-});
+test('widget has correct view', function (): void {});
 
-test('widget initializes correctly', function (): void {
-});
+test('widget initializes correctly', function (): void {});
 
 // WIDGET DATA BINDING TESTS
 
-test('can set form data', function (): void {
-});
+test('can set form data', function (): void {});
 
 // WIDGET AUTHENTICATION LOGIC TESTS
 
-test('authenticates user with valid credentials', function (): void {
-});
+test('authenticates user with valid credentials', function (): void {});
 
-test('handles invalid credentials gracefully', function (): void {
-});
+test('handles invalid credentials gracefully', function (): void {});
 
 // WIDGET XOTDATA INTEGRATION TESTS
 
-test('authentication works regardless of user type', function (): void {
-});
+test('authentication works regardless of user type', function (): void {});
 
-test('getUserClass returns valid class', function (): void {
-});
+test('getUserClass returns valid class', function (): void {});
 
-test('createTestUser creates valid instances', function (): void {
-});
+test('createTestUser creates valid instances', function (): void {});
