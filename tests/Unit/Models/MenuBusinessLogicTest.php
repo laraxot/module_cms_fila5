@@ -9,17 +9,16 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
-
-use function Safe\class_uses;
-
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
+
+use function Safe\class_uses;
 
 uses(TestCase::class);
 
 describe('Menu Business Logic', function (): void {
     test('menu implements recursive relationships contract', function (): void {
-        $menu = new Menu();
+        $menu = new Menu;
         Assert::assertInstanceOf(HasRecursiveRelationshipsContract::class, $menu);
     });
 
@@ -36,7 +35,7 @@ describe('Menu Business Logic', function (): void {
     });
 
     test('menu has expected fillable fields', function (): void {
-        $menu = new Menu();
+        $menu = new Menu;
         $expectedFillable = [
             'title',
             'items',
@@ -47,14 +46,14 @@ describe('Menu Business Logic', function (): void {
     });
 
     test('menu can get label', function (): void {
-        $menu = new Menu();
+        $menu = new Menu;
         $menu->title = 'Test Menu';
 
         Assert::assertSame('Test Menu', $menu->getLabel());
     });
 
     test('menu has correct casts for structured data', function (): void {
-        $menu = new Menu();
+        $menu = new Menu;
         $casts = $menu->getCasts();
 
         Assert::assertSame('array', $casts['items']);
@@ -62,7 +61,7 @@ describe('Menu Business Logic', function (): void {
     });
 
     test('menu has schema definition for structured data', function (): void {
-        $menu = new Menu();
+        $menu = new Menu;
 
         $reflection = new \ReflectionClass($menu);
         $schemaProperty = $reflection->getProperty('schema');
