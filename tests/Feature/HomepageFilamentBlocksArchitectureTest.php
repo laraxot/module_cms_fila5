@@ -7,10 +7,11 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-use PHPUnit\Framework\Assert;
-use Spatie\LaravelData\DataCollection;
 
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
+use Spatie\LaravelData\DataCollection;
 
 uses(TestCase::class);
 
@@ -62,9 +63,10 @@ describe('Homepage Filament Blocks Architecture', function (): void {
         Assert::assertInstanceOf(DataCollection::class, $allBlocks);
         Assert::assertGreaterThan(0, $allBlocks->count());
 
-        $cmsBlocks = $allBlocks->filter(fn ($block): bool => $block->module === 'Cms');
+        $cmsBlocks = $allBlocks->filter(fn ($block): bool => 'Cms' === $block->module);
         if ($cmsBlocks->count() > 0) {
-            $cmsBlocks->each(function ($block): void {});
+            $cmsBlocks->each(function ($block): void {
+            });
         }
     });
 
