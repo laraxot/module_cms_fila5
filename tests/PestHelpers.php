@@ -78,7 +78,6 @@ function cmsHasStringKeys(array $data): bool
 /**
  * Get homepage blocks for a specific locale.
  *
- * @param string $locale
  * @return array<string, mixed>
  */
 function cmsHomepageBlocksForLocale(string $locale): array
