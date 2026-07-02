@@ -93,6 +93,11 @@ abstract class TestCase extends XotBaseTestCase
         return parent::generateUniqueEmail();
     }
 
+    public function makeUniqueEmail(): string
+    {
+        return self::pestGenerateUniqueEmail();
+    }
+
     /**
      * @param array<string, mixed> $attributes
      */
@@ -102,6 +107,14 @@ abstract class TestCase extends XotBaseTestCase
         $user = UserFactory::new()->createOne($attributes);
 
         return $user;
+    }
+
+    /**
+     * @param array<string, mixed> $attributes
+     */
+    public function makeAuthUser(array $attributes = []): UserContract
+    {
+        return self::pestCreateTestUser($attributes);
     }
 
     /**
