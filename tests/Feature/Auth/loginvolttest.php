@@ -8,9 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\Xot\Datas\XotData;
 use Modules\Cms\Tests\TestCase;
-
+use Modules\Xot\Datas\XotData;
 
 uses(TestCase::class);
 
