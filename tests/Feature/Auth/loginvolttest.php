@@ -9,15 +9,13 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Xot\Datas\XotData;
-use Modules\Xot\Tests\TestCase;
+use Modules\Cms\Tests\TestCase;
 
-use function Pest\Laravel\assertAuthenticated;
-use function Pest\Laravel\assertGuest;
 
 uses(TestCase::class);
 
 // NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
-// Use $this->$this->generateUniqueEmail(), $this->getUserClass(), $this->$this->createTestUser()
+// Use $this->$this->generateUniqueEmail(), $this->getUserClass(), $this->$this->makeAuthUser()
 
 describe('Volt Component Rendering', function (): void {
     test('volt login component can be rendered', function (): void {
@@ -45,13 +43,13 @@ describe('Volt Component Rendering', function (): void {
 
 describe('Volt Component Authentication', function (): void {
     test('user can authenticate via volt component', function (): void {
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-        assertGuest();
+        $this->assertGuest();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -59,17 +57,17 @@ describe('Volt Component Authentication', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        $this->assertAuthenticated();
     });
 
     test('authentication fails with wrong credentials', function (): void {
-        $email = $this->generateUniqueEmail();
-        $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-        assertGuest();
+        $this->assertGuest();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -77,13 +75,13 @@ describe('Volt Component Authentication', function (): void {
             ->call('save');
 
         $response->assertHasErrors(['email']);
-        assertGuest();
+        $this->assertGuest();
     });
 
     test('authentication fails with non-existent user', function (): void {
-        $email = $this->generateUniqueEmail();
+        $email = $this->makeUniqueEmail();
 
-        assertGuest();
+        $this->assertGuest();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -91,7 +89,7 @@ describe('Volt Component Authentication', function (): void {
             ->call('save');
 
         $response->assertHasErrors(['email']);
-        assertGuest();
+        $this->assertGuest();
     });
 });
 
@@ -112,7 +110,7 @@ describe('Volt Component Validation', function (): void {
     });
 
     test('password minimum length validation', function (): void {
-        $email = $this->generateUniqueEmail();
+        $email = $this->makeUniqueEmail();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -126,13 +124,13 @@ describe('Volt Component Validation', function (): void {
 
 describe('Volt Component Session Management', function (): void {
     test('remember me functionality works', function (): void {
-        $email = $this->generateUniqueEmail();
-        $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-        assertGuest();
+        $this->assertGuest();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -141,12 +139,12 @@ describe('Volt Component Session Management', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        $this->assertAuthenticated();
     });
 
     test('session regeneration on login', function (): void {
-        $email = $this->generateUniqueEmail();
-        $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -159,15 +157,15 @@ describe('Volt Component Session Management', function (): void {
             ->set('password', 'password123')
             ->call('save');
 
-        assertAuthenticated();
+        $this->assertAuthenticated();
 
         // Session should be regenerated for security
         expect(session()->getId())->not->toBe($originalSessionId);
     });
 
     test('session data is preserved on authentication', function (): void {
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -180,7 +178,7 @@ describe('Volt Component Session Management', function (): void {
             ->set('password', 'password123')
             ->call('save');
 
-        assertAuthenticated();
+        $this->assertAuthenticated();
 
         // Session data should be preserved (session regenerated but data kept)
         expect(Session::get('test_key'))->toBe('test_value');
@@ -189,8 +187,8 @@ describe('Volt Component Session Management', function (): void {
 
 describe('Volt Component Security', function (): void {
     test('login attempts are rate limited', function (): void {
-        $email = $this->generateUniqueEmail();
-        $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -215,8 +213,8 @@ describe('Volt Component Security', function (): void {
 
     test('csrf protection is active', function (): void {
         // Volt components should automatically handle CSRF protection
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -231,7 +229,7 @@ describe('Volt Component Security', function (): void {
     });
 
     test('input sanitization works', function (): void {
-        $email = $this->generateUniqueEmail();
+        $email = $this->makeUniqueEmail();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', '<script>alert("xss")</script>'.$email)
@@ -245,7 +243,7 @@ describe('Volt Component Security', function (): void {
 
 describe('Volt Component State Management', function (): void {
     test('component state updates correctly', function (): void {
-        $email = $this->generateUniqueEmail();
+        $email = $this->makeUniqueEmail();
 
         $component = LivewireVolt::test('auth.login');
 
@@ -259,7 +257,7 @@ describe('Volt Component State Management', function (): void {
     });
 
     test('component resets after failed authentication', function (): void {
-        $email = $this->generateUniqueEmail();
+        $email = $this->makeUniqueEmail();
 
         $component = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -271,8 +269,8 @@ describe('Volt Component State Management', function (): void {
     });
 
     test('loading state is managed correctly', function (): void {
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -293,13 +291,13 @@ describe('Volt Component State Management', function (): void {
 describe('Volt Component User Types Integration', function (): void {
     test('any user type can login via volt component', function (): void {
         // Using XotData pattern ensures compatibility with any user type
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-        assertGuest();
+        $this->assertGuest();
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -307,7 +305,7 @@ describe('Volt Component User Types Integration', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        $this->assertAuthenticated();
 
         // Verify authenticated user
         $authenticatedUser = Auth::user();
@@ -317,8 +315,8 @@ describe('Volt Component User Types Integration', function (): void {
 
     test('component handles different user configurations', function (): void {
         // Test with various user attributes
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
             'name' => 'Test User',
@@ -330,7 +328,7 @@ describe('Volt Component User Types Integration', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        $this->assertAuthenticated();
 
         $authenticatedUser = Auth::user();
         expect($authenticatedUser?->name)->toBe('Test User');
@@ -339,8 +337,8 @@ describe('Volt Component User Types Integration', function (): void {
 
 describe('Volt Component Redirects', function (): void {
     test('component redirects after successful authentication', function (): void {
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -351,15 +349,15 @@ describe('Volt Component Redirects', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        $this->assertAuthenticated();
 
         // Component might trigger redirect via JavaScript/Alpine
         // This test ensures the authentication logic completes successfully
     });
 
     test('component handles intended redirect', function (): void {
-        $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $email = $this->makeUniqueEmail();
+        $user = $this->makeAuthUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -373,7 +371,7 @@ describe('Volt Component Redirects', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        $this->assertAuthenticated();
     });
 });
 
