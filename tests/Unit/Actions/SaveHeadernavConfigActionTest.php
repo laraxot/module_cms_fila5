@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Actions\SaveHeadernavConfigAction;
 
 test('SaveHeadernavConfigAction can be instantiated', function () {

@@ -27,7 +27,6 @@ uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
-
 /*
  * |--------------------------------------------------------------------------
  * | Functions
