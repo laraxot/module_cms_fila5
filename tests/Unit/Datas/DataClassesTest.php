@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Datas\FooterData;
 use Modules\Cms\Datas\HeadernavData;

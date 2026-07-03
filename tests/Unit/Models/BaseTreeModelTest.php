@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 use Modules\Cms\Models\BaseTreeModel;
 
 test('BaseTreeModel is abstract and extends BaseModel', function () {
