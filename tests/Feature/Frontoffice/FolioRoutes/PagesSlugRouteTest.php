@@ -6,7 +6,6 @@ use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
 
-/* @phpstan-ignore-next-line property.notFound */
+/** @phpstan-ignore method.internalClass */
 it('SKIP dynamic /it/{slug}', function (): void {
-    $this->markTestSkipped('Dynamic pages slug requires fixture.');
-});
+})->skip('Dynamic pages slug requires fixture.');

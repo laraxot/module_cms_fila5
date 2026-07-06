@@ -2,6 +2,15 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Models;
+
+use Modules\Cms\Models\BaseModelLang;
+use Modules\Cms\Models\Page;
+use Modules\Cms\Tests\TestCase;
+use Modules\Tenant\Models\Traits\SushiToJsons;
+
+uses(TestCase::class);
+
 test('page model can be instantiated', function (): void {
     $page = new Page();
     expect($page)->toBeInstanceOf(Page::class);
@@ -9,6 +18,7 @@ test('page model can be instantiated', function (): void {
 
 test('page extends BaseModelLang', function (): void {
     $page = new Page();
+    expect($page)->toBeInstanceOf(BaseModelLang::class);
 });
 
 test('page has expected fillable fields', function (): void {
@@ -52,19 +62,20 @@ test('page has translatable fields configured', function (): void {
 test('page has SushiToJsons trait', function (): void {
     $page = new Page();
     $traits = class_uses_recursive($page);
+
+    expect($traits)->toContain(SushiToJsons::class);
 });
 
 test('page has getRows method for sushi functionality', function (): void {
     $page = new Page();
 
-    expect(method_exists($page, 'getRows'))->toBeTrue();
     expect($page->getRows())->toBeArray();
 });
 
 test('page has schema definition', function (): void {
     $page = new Page();
 
-    $reflection = new ReflectionClass($page);
+    $reflection = new \ReflectionClass($page);
     $schemaProperty = $reflection->getProperty('schema');
 
     expect($schemaProperty->isProtected())->toBeTrue();
@@ -80,8 +91,6 @@ test('page has schema definition', function (): void {
 });
 
 test('page has getMiddlewareBySlug static method', function (): void {
-    expect(method_exists(Page::class, 'getMiddlewareBySlug'))->toBeTrue();
-
     // Test with non-existent slug returns empty array
     $result = Page::getMiddlewareBySlug('non-existent-slug');
     expect($result)->toBeArray();
