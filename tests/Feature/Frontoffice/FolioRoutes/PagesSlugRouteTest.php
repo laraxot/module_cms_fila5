@@ -7,5 +7,4 @@ use Modules\Cms\Tests\TestCase;
 uses(TestCase::class);
 
 /* @phpstan-ignore method.internalClass */
-it('SKIP dynamic /it/{slug}', function (): void {
-})->skip('Dynamic pages slug requires fixture.');
+it('SKIP dynamic /it/{slug}', function (): void {})->skip('Dynamic pages slug requires fixture.');
