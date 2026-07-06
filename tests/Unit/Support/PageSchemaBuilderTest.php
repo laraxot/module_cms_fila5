@@ -13,7 +13,8 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $schema
+ * @param array<string, mixed> $schema
+ *
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array
@@ -37,7 +38,7 @@ function pageSchemaMainEntity(array $schema): array
 
 describe('Page Schema Builder', function (): void {
     test('it resolves home as webpage', function (): void {
-        $builder = new PageSchemaBuilder;
+        $builder = new PageSchemaBuilder();
         $schema = $builder->build(
             meta: MetatagData::make(),
             routeName: 'home',
@@ -49,7 +50,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves events index as collection page', function (): void {
-        $builder = new PageSchemaBuilder;
+        $builder = new PageSchemaBuilder();
         $schema = $builder->build(
             meta: MetatagData::make(),
             routeName: 'container0.index',
@@ -62,7 +63,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves event detail as item page with main entity', function (): void {
-        $builder = new PageSchemaBuilder;
+        $builder = new PageSchemaBuilder();
         $schema = $builder->build(
             meta: MetatagData::make(),
             routeName: 'container0.view',
@@ -84,7 +85,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves profile route as profile page with person main entity', function (): void {
-        $builder = new PageSchemaBuilder;
+        $builder = new PageSchemaBuilder();
         $user = new User([
             'first_name' => 'Mario',
             'last_name' => 'Rossi',
@@ -110,7 +111,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves public profile detail route as profile page with person identifier', function (): void {
-        $builder = new PageSchemaBuilder;
+        $builder = new PageSchemaBuilder();
 
         $schema = $builder->build(
             meta: MetatagData::make(),
@@ -134,7 +135,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it keeps auth routes as generic webpage', function (): void {
-        $builder = new PageSchemaBuilder;
+        $builder = new PageSchemaBuilder();
         $schema = $builder->build(
             meta: MetatagData::make(),
             routeName: 'auth.login',
