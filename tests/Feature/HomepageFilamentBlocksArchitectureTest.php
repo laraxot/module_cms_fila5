@@ -7,6 +7,7 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
 use function Safe\file_get_contents;
@@ -30,8 +31,15 @@ function loadHomepageJsonForBlocksArchitectureTest(): array
 
     $data = json_decode($json, true);
 
-    /* @var array<string, mixed> $data */
-    return $data;
+    Assert::assertIsArray($data);
+
+    $result = [];
+    foreach ($data as $key => $value) {
+        Assert::assertIsString($key);
+        $result[$key] = $value;
+    }
+
+    return $result;
 }
 
 describe('Homepage Filament Builder Blocks - CMS Module', function () {
@@ -248,7 +256,10 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         if (null !== $landingBlock) {
             /** @var array<string, mixed> $landingBlock */
             $landingBlockData = $landingBlock['data'];
-            /* @var array<string, mixed> $landingBlockData */
+            Assert::assertIsArray($landingBlockData);
+
+            Assert::assertArrayHasKey('cta_link', $landingBlockData);
+            Assert::assertIsString($landingBlockData['cta_link']);
 
             // Verify Blade syntax exists in JSON
             expect($landingBlockData['cta_link'])->toContain("{{ route('register') }}");
