@@ -9,7 +9,6 @@ use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
 
 use function Pest\Laravel\get;
-
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 
@@ -31,7 +30,7 @@ function loadHomepageJsonForBlocksArchitectureTest(): array
 
     $data = json_decode($json, true);
 
-    /** @var array<string, mixed> $data */
+    /* @var array<string, mixed> $data */
     return $data;
 }
 
@@ -249,7 +248,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         if (null !== $landingBlock) {
             /** @var array<string, mixed> $landingBlock */
             $landingBlockData = $landingBlock['data'];
-            /** @var array<string, mixed> $landingBlockData */
+            /* @var array<string, mixed> $landingBlockData */
 
             // Verify Blade syntax exists in JSON
             expect($landingBlockData['cta_link'])->toContain("{{ route('register') }}");
