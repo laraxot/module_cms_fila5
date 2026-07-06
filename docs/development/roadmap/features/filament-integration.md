@@ -121,9 +121,3 @@ I form avanzati sono implementati utilizzando i componenti Filament:
 * [filament-integration.md](laravel/modules/xot/docs/laraxot/filament-integration.md)
 * [filament-integration.md](laravel/modules/cms/docs/roadmap/features/filament-integration.md)
 * [filament-integration.md](laravel/modules/cms/docs/filament-integration.md)
-- [XotBaseWidget](../../../Xot/docs/filament/widgets/xot-base-widget.md)
-
-## Collegamenti tra versioni di filament-integration.md
-* [filament-integration.md](laravel/Modules/Xot/docs/laraxot/filament-integration.md)
-* [filament-integration.md](laravel/Modules/Cms/docs/roadmap/features/filament-integration.md)
-* [filament-integration.md](laravel/Modules/Cms/docs/filament-integration.md)

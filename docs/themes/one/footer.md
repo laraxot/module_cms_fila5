@@ -4,7 +4,6 @@ Questo documento è un riferimento al componente Footer implementato nel tema On
 
 ## Collegamenti alla Documentazione
 
-- [Documentazione Completa del Footer](/laravel/Themes/One/docs/components/layouts/footer.md)
 - [Documentazione Completa del Footer](/laravel/themes/one/docs/components/layouts/footer.md)
 - [Documentazione Root](/laravel/docs/themes/one/components/footer.md)
 
@@ -45,9 +44,6 @@ return [
 
 ## Collegamenti Utili
 
-- [Tema One - Overview](/laravel/Themes/One/docs/README.md)
-- [CMS Module - Components](/laravel/Modules/Cms/docs/components.md)
-- [Integrazione Temi](/laravel/Modules/Cms/docs/themes.md)
 - [Tema One - Overview](/laravel/themes/one/docs/readme.md)
 - [CMS Module - Components](/laravel/modules/cms/docs/components.md)
 - [Integrazione Temi](/laravel/modules/cms/docs/themes.md)
@@ -61,9 +57,3 @@ return [
 * [footer.md](laravel/modules/cms/docs/components/footer.md)
 * [footer.md](laravel/themes/one/docs/components/layouts/footer.md)
 * [footer.md](laravel/themes/one/docs/sections/footer.md)
-* [footer.md](laravel/Modules/UI/docs/components/footer.md)
-* [footer.md](laravel/Modules/Cms/docs/blocks/footer.md)
-* [footer.md](laravel/Modules/Cms/docs/themes/one/footer.md)
-* [footer.md](laravel/Modules/Cms/docs/components/footer.md)
-* [footer.md](laravel/Themes/One/docs/components/layouts/footer.md)
-* [footer.md](laravel/Themes/One/docs/sections/footer.md)

@@ -64,6 +64,12 @@ class HeadernavData extends Data implements Wireable
         return $this->render();
     }
 
+    /**
+     * @return array<string, mixed>
+     */
+    /**
+     * @return array<string, mixed>
+     */
     public static function rules(): array
     {
         return [

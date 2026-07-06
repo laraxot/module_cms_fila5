@@ -150,7 +150,3 @@ it('should demonstrate this matcher`s usage', async () => {
 * [testing.md](laravel/modules/xot/docs/development/testing.md)
 * [testing.md](laravel/modules/cms/docs/frontoffice/testing.md)
 * [testing.md](laravel/themes/one/docs/testing.md)
-* [testing.md](laravel/Modules/Xot/docs/packages/testing.md)
-* [testing.md](laravel/Modules/Xot/docs/development/testing.md)
-* [testing.md](laravel/Modules/Cms/docs/frontoffice/testing.md)
-* [testing.md](laravel/Themes/One/docs/testing.md)

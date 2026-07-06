@@ -6,7 +6,6 @@ Il sistema di gestione dei contenuti di il progetto è basato su un'architettura
 ## Componenti Principali
 
 ### PageContent
-- **Modello**: [`Modules\Cms\Models\PageContent`](../laravel/Modules/Cms/project_docs/page-content-management.md)
 - **Modello**: [`Modules\Cms\Models\PageContent`](../laravel/modules/cms/project_docs/page-content-management.md)
 - **Gestione**: Interfaccia admin Filament
 - **Storage**: File JSON con supporto multilingua
@@ -86,8 +85,6 @@ laravel/
 - Monitorare le dimensioni
 
 ## Links
-- [Documentazione PageContent](../laravel/Modules/Cms/project_docs/page-content-management.md)
-- [Filament Resources](../laravel/Modules/Cms/project_docs/filament-resources.md)
 - [Documentazione PageContent](../laravel/modules/cms/project_docs/page-content-management.md)
 - [Filament Resources](../laravel/modules/cms/project_docs/filament-resources.md)
 - [Performance](performance.md)
@@ -96,7 +93,6 @@ laravel/
 Questa documentazione è parte del sistema di documentazione di il progetto. Per dettagli specifici sui singoli componenti, consultare la documentazione dei rispettivi moduli.
 
 ## Collegamenti Bidirezionali
-- [README](README.md) - Documentazione principale del modulo
 - [README](readme.md) - Documentazione principale del modulo
 - [Architettura](architecture.md) - Architettura del sistema CMS
 - [Gestione Pagine](page-management.md) - Sistema di gestione pagine
@@ -118,14 +114,3 @@ Questa documentazione è parte del sistema di documentazione di <main module>. P
 * [content-management.md](laravel/modules/cms/project_docs/content-management.md)
 * [content-management.md](laravel/modules/cms/project_docs/roadmap/features/content-management.md)
 
-- [Modulo UI](../UI/project_docs/README.md) - Componenti di interfaccia
-- [Modulo Lang](../Lang/project_docs/README.md) - Gestione traduzioni
-- [Modulo Theme](../Theme/project_docs/README.md) - Gestione temi
-- [Modulo Xot](../Xot/project_docs/README.md) - Classi base e utilities
-- [Documentazione Filament](https://filamentphp.com/docs) - Documentazione ufficiale
-- [Best Practices Laravel](https://laravel.com/project_docs/11.x/best-practices) - Best practices
-Questa documentazione è parte del sistema di documentazione di <main module>. Per dettagli specifici sui singoli componenti, consultare la documentazione dei rispettivi moduli.
-
-## Collegamenti tra versioni di content-management.md
-* [content-management.md](laravel/Modules/Cms/project_docs/content-management.md)
-* [content-management.md](laravel/Modules/Cms/project_docs/roadmap/features/content-management.md)

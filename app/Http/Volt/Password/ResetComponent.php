@@ -21,6 +21,7 @@ class ResetComponent extends Component
     /**
      * Summary of emailSentMessage.
      */
+    /** @var array<string, mixed>|bool|string */
     public bool|string|array $emailSentMessage = false;
 
     public function sendResetPasswordLink(): void

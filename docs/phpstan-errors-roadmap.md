@@ -1,6 +1,5 @@
 # PHPStan Level 10 Errors Roadmap - Cms Module
 
-**Data**: 2026-01-09  
 **Modulo**: Cms  
 **Livello PHPStan**: 10  
 **Status**: 🧘 **IN ANALISI**
@@ -162,5 +161,4 @@ return $page;
 
 **Status**: 🧘 **IN ANALISI**
 
-**Ultimo aggiornamento**: 2026-01-09
 **Ultimo aggiornamento**: [DATE]

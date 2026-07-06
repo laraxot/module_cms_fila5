@@ -61,12 +61,6 @@ Block::make('navigation')
 - Sidebar: Menu di navigazione contestuale con titolo opzionale
 
 ## Collegamenti
-- [Documentazione Blocchi](./README.md)
-- [Componente Header](../components/header.md)
-- [Componente Footer](../components/footer.md)
-- [Convenzioni Filament](../../../docs/filament-conventions.md)
-
-## Collegamenti tra versioni di navigation.md
 - [Documentazione Blocchi](./readme.md)
 - [Componente Header](../components/header.md)
 - [Componente Footer](../components/footer.md)
@@ -79,9 +73,3 @@ Block::make('navigation')
 * [navigation.md](laravel/modules/cms/docs/blocks/navigation.md)
 * [navigation.md](laravel/modules/cms/docs/navigation.md)
 * [navigation.md](laravel/modules/cms/docs/components/navigation.md)
-* [navigation.md](laravel/Modules/Gdpr/docs/navigation.md)
-* [navigation.md](laravel/Modules/Xot/docs/navigation.md)
-* [navigation.md](laravel/Modules/UI/docs/navigation.md)
-* [navigation.md](laravel/Modules/Cms/docs/blocks/navigation.md)
-* [navigation.md](laravel/Modules/Cms/docs/navigation.md)
-* [navigation.md](laravel/Modules/Cms/docs/components/navigation.md)

@@ -69,7 +69,6 @@ Lo script opera sul file `phpstan.neon` nella directory principale. La configura
    // Prima
    $result = $object->nonExistentMethod();
    
-   
    // Dopo
    $result = $object->existingMethod();
    ```
@@ -78,7 +77,6 @@ Lo script opera sul file `phpstan.neon` nella directory principale. La configura
    ```php
    // Prima
    $value = $object->nonExistentProperty;
-   
    
    // Dopo
    $value = $object->existingProperty;
@@ -89,7 +87,6 @@ Lo script opera sul file `phpstan.neon` nella directory principale. La configura
    // Prima
    public function process($data) {
    
-   
    // Dopo
    public function process(array $data): void {
    ```
@@ -99,12 +96,10 @@ Lo script opera sul file `phpstan.neon` nella directory principale. La configura
    // Prima
    public function getData() {
    
-   
    // Dopo
    public function getData(): array {
    ```
 
 ## Conclusione
 
-L'analisi incrementale ti consente di migliorare gradualmente la qualità del codice, affrontando i problemi in ordine di importanza e complessità. Una volta raggiunto il livello 9, il codice sarà conforme agli standard più elevati di qualità e tipo-sicurezza.
 L'analisi incrementale ti consente di migliorare gradualmente la qualità del codice, affrontando i problemi in ordine di importanza e complessità. Una volta raggiunto il livello 9, il codice sarà conforme agli standard più elevati di qualità e tipo-sicurezza. 

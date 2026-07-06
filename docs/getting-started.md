@@ -83,8 +83,3 @@ npm run dev
 * [getting-started.md](laravel/modules/tenant/project_docs/it/getting-started.md)
 * [getting-started.md](laravel/modules/cms/project_docs/getting-started.md)
 
-* [getting-started.md](laravel/Modules/Gdpr/project_docs/getting-started.md)
-* [getting-started.md](laravel/Modules/Xot/project_docs/getting-started.md)
-* [getting-started.md](laravel/Modules/UI/project_docs/getting-started.md)
-* [getting-started.md](laravel/Modules/Tenant/project_docs/it/getting-started.md)
-* [getting-started.md](laravel/Modules/Cms/project_docs/getting-started.md)

@@ -3,11 +3,6 @@
 ## Pacchetti Utilizzati
 
 ### Core
-- [laraxot/module_xot_fila3](../Xot/docs/packages.md) - Modulo base per funzionalità comuni
-- [laraxot/module_ui](../UI/docs/packages.md) - Componenti UI e temi
-- [laraxot/module_tenant_fila3](../Tenant/docs/packages.md) - Gestione multi-tenant
-- [laraxot/module_user_fila3](../User/docs/packages.md) - Gestione utenti e permessi
-- [laraxot/module_lang_fila3](../Lang/docs/packages.md) - Gestione lingue e traduzioni
 - [laraxot/module_xot_fila5](../xot/docs/packages.md) - Modulo base per funzionalità comuni
 - [laraxot/module_ui](../ui/docs/packages.md) - Componenti UI e temi
 - [laraxot/module_tenant_fila5](../tenant/docs/packages.md) - Gestione multi-tenant

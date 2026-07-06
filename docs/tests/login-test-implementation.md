@@ -274,8 +274,6 @@ expect($schema)->toHaveCount(3)
 ## 📚 Related Documentation
 
 ### Internal Links
-- [UserFactory Implementation](../../<nome progetto>/docs/factories/UserFactory-implementation-final.md)
-- [LoginWidget Documentation](../../User/docs/widgets/login-widget.md)
 - [UserFactory Implementation](../../<nome progetto>/docs/factories/userfactory-implementation-final.md)
 - [LoginWidget Documentation](../../user/docs/widgets/login-widget.md)
 - [STI Architecture](../../<nome progetto>/docs/models/sti-architecture.md)
@@ -287,7 +285,6 @@ expect($schema)->toHaveCount(3)
 
 ---
 
-**Created**: Gennaio 2025
 **Status**: ✅ PRODUCTION READY
 **Test Coverage**: 🎯 100% Login Functionality
 **Maintainer**: Modulo Cms Testing Team

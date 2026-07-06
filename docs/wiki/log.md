@@ -1,3 +1,4 @@
+- 2026-06-10: folio-filesystem-routing-no-web-php + troubleshooting folio-route-not-found
 ## [2026-06-05] docs | Folio routing — mount() tipizzato + @volt statico
 
 - `folio_routing_system.md`: `mount(string $container0, string $slug0 = '')`; anti-pattern senza `request()->route()`
@@ -78,3 +79,8 @@
 - **Causa**: frammenti corrotti (commenti inline su concatenazioni/array) lasciati dopo merge.
 - **Fix**: ripristino costruttore (`$slug`, `$class`, `$id`, `$tpl`), `getBlocksBySlug` su `$this->slug`, `render()` con `pub_theme::components.sections.{slug}.{tpl}` e `viewParams` validi (`blocks`, `section`).
 - **Verifica**: `curl http://127.0.0.1:8000/it/tests/segnalazione-crea` -> HTTP 200.
+
+## 2026-06-10 — Folio learnings documentati
+
+- `folio-list-vs-route-list.md`, patch filesystem routing + troubleshooting
+- INDEX concepts ripulito; cross-link User/Sixteen

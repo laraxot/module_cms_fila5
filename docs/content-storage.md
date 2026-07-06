@@ -48,7 +48,6 @@ Il processo è il seguente:
 3. Sushi carica i dati dal file JSON corrispondente (es. "1.json")
 4. I contenuti vengono renderizzati a partire dai blocchi definiti nel JSON
 
-Per approfondimenti tecnici su questo meccanismo, consulta la [documentazione dettagliata nel modulo CMS](../laravel/Modules/Cms/project_docs/content-storage.md).
 Per approfondimenti tecnici su questo meccanismo, consulta la [documentazione dettagliata nel modulo CMS](../laravel/modules/cms/project_docs/content-storage.md).
 
 ## Sezioni del FrontOffice
@@ -84,7 +83,6 @@ Una caratteristica fondamentale del sistema è la gestione delle pagine tramite 
 - Flessibilità nella composizione delle pagine
 - Facilità di manutenzione e aggiornamento
 
-Per maggiori dettagli sulla struttura dei blocchi di contenuto, consulta la [documentazione dei blocchi nel modulo CMS](../laravel/Modules/Cms/project_docs/content.md).
 Per maggiori dettagli sulla struttura dei blocchi di contenuto, consulta la [documentazione dei blocchi nel modulo CMS](../laravel/modules/cms/project_docs/content.md).
 
 ## Esempi Pratici
@@ -105,7 +103,6 @@ Per maggiori dettagli sulla struttura dei blocchi di contenuto, consulta la [doc
                 "data": {
                     "view": "ui::components.blocks.hero.simple",
                     "title": "Benvenuti",
-                    "subtitle": "Piattaforma per la <slogan>"
                     "subtitle": "Piattaforma per la salute orale"
                 }
             },
@@ -129,9 +126,6 @@ Per modificare la homepage:
 
 Per approfondire il funzionamento tecnico del sistema:
 
-- [Sistema di Archiviazione dei Contenuti](../laravel/Modules/Cms/project_docs/content-storage.md) - Documentazione tecnica completa
-- [Gestione dei Blocchi di Contenuto](../laravel/Modules/Cms/project_docs/content.md) - Come funzionano i blocchi di contenuto
-- [Struttura delle Pagine](../laravel/Modules/Cms/project_docs/page-resource.md) - Informazioni sulle risorse Page
 - [Sistema di Archiviazione dei Contenuti](../laravel/modules/cms/project_docs/content-storage.md) - Documentazione tecnica completa
 - [Gestione dei Blocchi di Contenuto](../laravel/modules/cms/project_docs/content.md) - Come funzionano i blocchi di contenuto
 - [Struttura delle Pagine](../laravel/modules/cms/project_docs/page-resource.md) - Informazioni sulle risorse Page

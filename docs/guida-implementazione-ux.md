@@ -31,25 +31,21 @@ Questa guida fornisce indicazioni pratiche su come implementare i principi UX do
   --primary-focus: hsl(220, 70%, 40%);
   --primary-content: hsl(220, 70%, 98%);
   
-  
   /* Colori secondari */
   --secondary: hsl(250, 60%, 50%);
   --secondary-focus: hsl(250, 60%, 40%);
   --secondary-content: hsl(250, 60%, 98%);
-  
   
   /* Colori neutrali */
   --neutral: hsl(220, 10%, 40%);
   --neutral-focus: hsl(220, 10%, 30%);
   --neutral-content: hsl(220, 10%, 98%);
   
-  
   /* Colori di stato */
   --success: hsl(150, 80%, 40%);
   --warning: hsl(40, 90%, 50%);
   --error: hsl(0, 90%, 60%);
   --info: hsl(200, 90%, 60%);
-  
   
   /* Background e testo */
   --base-100: hsl(220, 20%, 98%);
@@ -179,11 +175,6 @@ TextInput::make('name')
         <!-- contenuto card -->
     </x-dashboard.card>
     
-
-    <x-dashboard.card title="Appuntamenti">
-        <!-- contenuto card -->
-    </x-dashboard.card>
-
     <x-dashboard.card title="Dati ISEE">
         <!-- contenuto card -->
     </x-dashboard.card>
@@ -201,7 +192,6 @@ TextInput::make('name')
             <div>{{ $action }}</div>
         @endif
     </div>
-    
     
     <div>
         {{ $slot }}
@@ -236,7 +226,6 @@ Organizzare gli elementi dashboard in ordine di importanza:
         </div>
     </div>
     
-    
     <!-- Contenuto principale -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <!-- Colonna sinistra -->
@@ -249,10 +238,6 @@ Organizzare gli elementi dashboard in ordine di importanza:
             <!-- Altre sezioni -->
         </div>
         
-
-            <!-- Altre sezioni -->
-        </div>
-
         <!-- Colonna destra (sidebar) -->
         <div>
             <!-- Informazioni riassuntive e azioni -->
@@ -270,24 +255,18 @@ Organizzare gli elementi dashboard in ordine di importanza:
 <div x-data="{ activeTab: 'info' }">
     <div class="border-b mb-4">
         <nav class="flex -mb-px">
-            <button
-                @click="activeTab = 'info'"
             <button 
                 @click="activeTab = 'info'" 
                 :class="{'border-primary text-primary': activeTab === 'info', 'border-transparent': activeTab !== 'info'}"
                 class="px-4 py-2 border-b-2 font-medium text-sm">
                 Informazioni
             </button>
-            <button
-                @click="activeTab = 'documents'"
             <button 
                 @click="activeTab = 'documents'" 
                 :class="{'border-primary text-primary': activeTab === 'documents', 'border-transparent': activeTab !== 'documents'}"
                 class="px-4 py-2 border-b-2 font-medium text-sm">
                 Documenti
             </button>
-            <button
-                @click="activeTab = 'appointments'"
             <button 
                 @click="activeTab = 'appointments'" 
                 :class="{'border-primary text-primary': activeTab === 'appointments', 'border-transparent': activeTab !== 'appointments'}"
@@ -296,7 +275,6 @@ Organizzare gli elementi dashboard in ordine di importanza:
             </button>
         </nav>
     </div>
-    
     
     <div x-show="activeTab === 'info'">
         <!-- Contenuto tab info -->
@@ -473,7 +451,6 @@ Repeater::make('documents')
     ->schema([
         // campi documento
     ])
-    ->itemLabel(fn (array $state): ?string =>
     ->itemLabel(fn (array $state): ?string => 
         $state['title'] ?? null
     )
@@ -489,5 +466,4 @@ Per approfondimenti, consultare:
 - [Leggi di UX applicate a il progetto](/project_docs/07-frontend/leggi-ux.md)
 - [UX del Wizard di Registrazione](/project_docs/07-frontend/ux-wizard-registrazione-paziente.md)
 - [DaisyUI Documentation](https://daisyui.com/components/)
-- [Filament Documentation](https://filamentphp.com/project_docs/forms)
 - [Filament Documentation](https://filamentphp.com/project_docs/forms) 

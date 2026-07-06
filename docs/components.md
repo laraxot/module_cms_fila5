@@ -43,7 +43,6 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 
 ## Collegamenti Bidirezionali
 
-- [README](README.md) - Documentazione principale del modulo
 - [README](readme.md) - Documentazione principale del modulo
 - [DaisyUI Componenti](daisyui-componenti.md) - Componenti basati su DaisyUI
 - [Componenti Blocchi](componenti-blocchi-contenuto.md) - Componenti per i blocchi di contenuto
@@ -53,7 +52,6 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 - [Custom Components](custom-components.md) - Creazione di componenti personalizzati
 
 ## Vedi Anche
-- [Modulo UI](../UI/docs/README.md) - Componenti UI riutilizzabili
 - [Modulo UI](../ui/docs/readme.md) - Componenti UI riutilizzabili
 - [Namespace Componenti](namespace-componenti-blocchi.md) - Convenzioni di namespace
 - [Standard UI](standard_ui_components.md) - Standard per i componenti UI
@@ -72,7 +70,3 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 * [components.md](laravel/modules/ui/docs/themes/components.md)
 * [components.md](laravel/modules/cms/docs/components.md)
 * [components.md](laravel/themes/one/docs/components.md)
-* [components.md](laravel/Modules/UI/docs/components.md)
-* [components.md](laravel/Modules/UI/docs/themes/components.md)
-* [components.md](laravel/Modules/Cms/docs/components.md)
-* [components.md](laravel/Themes/One/docs/components.md)

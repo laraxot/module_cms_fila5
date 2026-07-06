@@ -3,7 +3,6 @@
 ## Fixed Issues
 
 ### 1. HTTP Client PromiseInterface|Response Union Type (Multiple Action files)
-**Date**: 2025-12-10
 **Date**: [DATE]
 **Files affected**:
 - app/Actions/Bing/GetAddressFromBingMapsAction.php

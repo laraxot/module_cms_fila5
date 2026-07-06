@@ -110,10 +110,6 @@ I blocchi sono l'unità base di contenuto. Ogni blocco:
 - [Componenti UI](../components/readme.md)
 - [Configurazione Blocchi](../blocks/readme.md)
 - [Ottimizzazione Performance](../performance/readme.md)
-- [Gestione dei Temi](../themes/README.md)
-- [Componenti UI](../components/README.md)
-- [Configurazione Blocchi](../blocks/README.md)
-- [Ottimizzazione Performance](../performance/README.md)
 
 ## Collegamenti tra versioni di architecture.md
 * [architecture.md](docs/tecnico/filament/architecture.md)
@@ -122,7 +118,3 @@ I blocchi sono l'unità base di contenuto. Ogni blocco:
 * [architecture.md](laravel/modules/cms/docs/frontoffice/architecture.md)
 * [architecture.md](laravel/modules/cms/docs/architecture.md)
 * [architecture.md](laravel/themes/one/docs/roadmap/inspiration/architecture.md)
-* [architecture.md](laravel/Modules/Gdpr/docs/architecture.md)
-* [architecture.md](laravel/Modules/Cms/docs/frontoffice/architecture.md)
-* [architecture.md](laravel/Modules/Cms/docs/architecture.md)
-* [architecture.md](laravel/Themes/One/docs/roadmap/inspiration/architecture.md)

@@ -121,13 +121,6 @@ Se nel `data` del blocco è presente la chiave **`livewire`** (stringa con il no
 @else
     @include($block->view, $merged)
 @endif
-### Livello 3: Componente Page (Rendering Diretto)
-
-```blade
-@foreach($blocks as $block)
-    {{-- BlockData garantisce tutto: vista esistente, data array valido --}}
-    @include($block->view, $block->data)
-@endforeach
 ```
 
 ## Utilizzo Corretto
@@ -247,8 +240,3 @@ Questa architettura garantisce:
 - [Page Component](/laravel/modules/cms/docs/components/page.md)
 - [Best Practices](/laravel/Modules/Cms/docs/best-practices/)
 - [Blade Components Rules](/laravel/modules/cms/docs/best-practices/blade-components.md)
-- [Architettura CMS](/laravel/Modules/Cms/docs/architecture.md)
-- [Blocks Documentation](/laravel/Modules/Cms/docs/blocks.md)
-- [Page Component](/laravel/Modules/Cms/docs/components/page.md)
-- [Best Practices](/laravel/Modules/Cms/docs/best-practices/)
-- [Blade Components Rules](/laravel/Modules/Cms/docs/best-practices/blade-components.md)

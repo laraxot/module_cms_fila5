@@ -46,6 +46,7 @@ Il sistema Content Blocks utilizza il Builder di Filament per creare pagine dina
 ## Tipi di Blocchi Disponibili
 
 ### 1. Hero Block
+
 Blocco principale della pagina con titolo, sottotitolo, immagine e call-to-action.
 
 ```json
@@ -66,6 +67,7 @@ Blocco principale della pagina con titolo, sottotitolo, immagine e call-to-actio
 ```
 
 ### 2. Feature Sections Block
+
 Sezioni con caratteristiche o FAQ organizzate.
 
 ```json
@@ -86,6 +88,7 @@ Sezioni con caratteristiche o FAQ organizzate.
 ```
 
 ### 3. Widget Block
+
 Blocco per includere widget Filament dinamici.
 
 ```json
@@ -99,6 +102,7 @@ Blocco per includere widget Filament dinamici.
 ```
 
 ### 4. Landing Page Block
+
 Blocco specializzato per landing page.
 
 ```json
@@ -219,5 +223,5 @@ Errore: Proprietà mancanti nel template
 - [Implementazione Register Disabled](./register_disabled_implementation.md)
 - [BlockData Implementation](../app/Datas/BlockData.php)
 - [Page Model](../app/Models/Page.php)
-*Ultimo aggiornamento: gennaio 2025*
 - [Theme Components](../../../Themes/Meetup/resources/views/components/blocks/)
+

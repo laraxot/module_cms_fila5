@@ -5,10 +5,6 @@
 - [Documentazione User](/laravel/modules/user/project_docs/header_language_selector_with_flags.md)
 - [Documentazione Sezioni](./sections_structure.md)
 - [Best Practices Chiavi di Traduzione](/laravel/modules/lang/project_docs/translation_keys_best_practices.md)
-- [README modulo Cms](../README.md)
-- [Documentazione User](/laravel/Modules/User/project_docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
-- [Documentazione Sezioni](./SECTIONS_STRUCTURE.md)
-- [Best Practices Chiavi di Traduzione](/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 - [Collegamenti Documentazione](/project_docs/collegamenti-documentazione.md)
 
 ## Panoramica

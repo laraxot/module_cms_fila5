@@ -115,9 +115,6 @@ Il footer è una sezione **generica** che consente di inserire e ordinare **qual
 Per dettagli su configurazione e template, consulta: [Documentazione Sezione Footer](../sections/footer-section.md)
 
 ## Collegamenti
-- [Gestione Blocchi](../blocks/README.md)
-- [Componenti UI](../components/README.md)
-- [Documentazione Root](../../../../docs/sections.md)
 - [Gestione Blocchi](../blocks/readme.md)
 - [Componenti UI](../components/readme.md)
 - [Documentazione Root](../../../../../docs/sections.md)

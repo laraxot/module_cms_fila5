@@ -34,69 +34,6 @@ function cmsTest(): TestCase
     return $test;
 }
 
-/**
- * Load homepage JSON content for testing.
- *
- * @return array<string, mixed>
- */
-function cmsLoadHomepageJson(): array
-{
-    $jsonPath = config_path('local/<nome progetto>/database/content/home.json');
-
-    if (! file_exists($jsonPath)) {
-        return [];
-    }
-
-    $content = file_get_contents($jsonPath);
-    $data = json_decode($content, true);
-
-    if (is_array($data) && cmsHasStringKeys($data)) {
-        return $data;
-    }
-
-    return [];
-}
-
-/**
- * Check if an array has only string keys.
- *
- * @phpstan-assert-if-true array<string, mixed> $data
- *
- * @param array<mixed> $data
- */
-function cmsHasStringKeys(array $data): bool
-{
-    foreach (array_keys($data) as $key) {
-        if (! is_string($key)) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-/**
- * Get homepage blocks for a specific locale.
- *
- * @return array<string, mixed>
- */
-function cmsHomepageBlocksForLocale(string $locale): array
-{
-    $homepageData = cmsLoadHomepageJson();
-    $contentBlocks = $homepageData['content_blocks'] ?? [];
-
-    if (! is_array($contentBlocks)) {
-        return [];
-    }
-
-    $blocks = $contentBlocks[$locale] ?? [];
-
-    /** @var array<string, mixed> $blocks */
-    $blocks = is_array($blocks) ? $blocks : [];
-
-    return $blocks;
-}
-
 function cmsGenerateUniqueEmail(): string
 {
     return TestCase::pestGenerateUniqueEmail();

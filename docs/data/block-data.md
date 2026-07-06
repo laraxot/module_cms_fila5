@@ -133,6 +133,7 @@ $blockDataCollection = BlockData::fromArray($jsonBlocks);
 ### Sintassi View Resolution
 
 Laravel utilizza la sintassi `modulo::percorso.vista` dove:
+
 - `modulo`: Nome del modulo (predict, ui, cms, etc.)
 - `percorso.vista`: Percorso relativo nella cartella `resources/views/` del modulo
 
@@ -161,6 +162,7 @@ Non fare affidamento su viste che potrebbero non esistere: nel runtime attuale `
 ### 4. Mantenere Coerenza nei Nomi
 
 Utilizzare convenzioni coerenti per i nomi delle viste:
+
 - `modulo::components.blocks.tipo.variante`
 - `modulo::blocks.categoria.nome`
 
@@ -203,6 +205,7 @@ Se una vista non viene trovata:
 ### Dati Mancanti
 
 Se i dati del blocco sono incompleti:
+
 1. `BlockData` usa valori di default
 2. La vista riceve un array vuoto se necessario
 3. Le viste devono gestire dati mancanti gracefully
