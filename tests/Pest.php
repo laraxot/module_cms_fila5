@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Tests\TestCase;
-
 /*
  * |--------------------------------------------------------------------------
  * | Test Case
@@ -14,7 +12,12 @@ use Tests\TestCase;
  * |
  */
 
-uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
+/*
+ * Ogni file test dichiara esplicitamente:
+ * uses(\Modules\Cms\Tests\TestCase::class);
+ *
+ * Non usare uses()->in(): PHPStan lo risolve come chiamata a API interna Pest.
+ */
 
 /*
  * |--------------------------------------------------------------------------

@@ -2,9 +2,15 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Models;
+
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\PageContent;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Spatie\Translatable\HasTranslations;
+
+uses(TestCase::class);
 
 test('page content model can be instantiated', function (): void {
     $pageContent = new PageContent();
@@ -13,7 +19,7 @@ test('page content model can be instantiated', function (): void {
 
 test('page content extends BaseModel', function (): void {
     $pageContent = new PageContent();
-    expect($pageContent)->toBeInstanceOf(Modules\Cms\Models\BaseModel::class);
+    expect($pageContent)->toBeInstanceOf(BaseModel::class);
 });
 
 test('page content uses SushiToJsons trait', function (): void {
@@ -50,11 +56,12 @@ test('page content has correct fillable attributes', function (): void {
 test('page content has correct schema definition', function (): void {
     $pageContent = new PageContent();
 
-    $reflection = new ReflectionClass($pageContent);
+    $reflection = new \ReflectionClass($pageContent);
     $schemaProperty = $reflection->getProperty('schema');
 
     expect($schemaProperty->isProtected())->toBeTrue();
 
+    /** @var array<string, string> $schema */
     $schema = $schemaProperty->getValue($pageContent);
     expect($schema)->toBeArray()
         ->and($schema)->toHaveKey('id')
