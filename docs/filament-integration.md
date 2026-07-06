@@ -125,14 +125,12 @@ public function test_filament_components_rendering()
 
 ## Collegamenti
 
-- [Documentazione CMS](../README.md)
 - [Documentazione CMS](../readme.md)
 - [Best Practices](../best_practices/theme-reusability.md)
 - [Configurazione](../config.md)
 - [Testing](../testing.md)
 
 ## Collegamenti Bidirezionali
-- [README](README.md) - Documentazione principale del modulo
 - [README](readme.md) - Documentazione principale del modulo
 - [Architettura](architecture.md) - Architettura del sistema CMS
 - [Componenti](filament-components.md) - Componenti Filament
@@ -155,15 +153,3 @@ public function test_filament_components_rendering()
 * [filament-integration.md](laravel/modules/cms/project_docs/roadmap/features/filament-integration.md)
 * [filament-integration.md](laravel/modules/cms/project_docs/filament-integration.md)
 
-- [Modulo UI](../UI/project_docs/README.md) - Componenti di interfaccia
-- [Modulo Xot](../Xot/project_docs/README.md) - Classi base e utilities
-- [Modulo Theme](../Theme/project_docs/README.md) - Gestione temi
-- [Documentazione Filament](https://filamentphp.com/docs) - Documentazione ufficiale
-- [Best Practices](https://filamentphp.com/project_docs/3.x/best-practices) - Best practices Filament
-- [Componenti Blade](https://filamentphp.com/project_docs/3.x/support/blade-components) - Componenti Blade
-- [Testing](../testing.md)
-
-## Collegamenti tra versioni di filament-integration.md
-* [filament-integration.md](laravel/Modules/Xot/project_docs/laraxot/filament-integration.md)
-* [filament-integration.md](laravel/Modules/Cms/project_docs/roadmap/features/filament-integration.md)
-* [filament-integration.md](laravel/Modules/Cms/project_docs/filament-integration.md)

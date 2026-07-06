@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
-
 it('SKIP dynamic /it/auth/{type}/register', function (): void {
-    $this->markTestSkipped('Dynamic type route requires fixture.');
+    cmsSkipTest('Dynamic type route requires fixture.');
 });

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
+use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
 use Modules\Cms\Datas\BlockData;
@@ -61,6 +62,9 @@ class Section extends Component
             'section' => $this,
         ];
 
-        return app('view')->make($view, $viewParams);
+        /** @var ViewFactory $viewFactory */
+        $viewFactory = app('view');
+
+        return $viewFactory->make($view, $viewParams);
     }
 }

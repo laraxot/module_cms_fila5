@@ -68,7 +68,6 @@ public function boot(): void
 {
     // Altre operazioni...
     
-    
     $this->registerFilamentWidgets();
 }
 

@@ -3,11 +3,13 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\Module;
+use PHPUnit\Framework\Assert;
 
+uses(Modules\Cms\Tests\TestCase::class);
 test('Module model can be instantiated', function () {
     $module = new Module();
 
-    expect($module)->toBeInstanceOf(Module::class);
+    Assert::assertInstanceOf(Module::class, $module);
 });
 
 test('Module model has expected fillable fields', function () {
@@ -15,25 +17,26 @@ test('Module model has expected fillable fields', function () {
 
     $fillable = $module->getFillable();
 
-    expect($fillable)->toContain('id')
-        ->and($fillable)->toContain('name');
+    Assert::assertContains('id', $fillable);
+
+    Assert::assertContains('name', $fillable);
 });
 
 test('Module model extends BaseModel', function () {
     $module = new Module();
 
-    expect($module)->toBeInstanceOf(Modules\Cms\Models\BaseModel::class);
+    Assert::assertInstanceOf(Modules\Cms\Models\BaseModel::class, $module);
 });
 
 test('Module model uses Sushi trait', function () {
     $reflection = new ReflectionClass(Module::class);
     $traits = $reflection->getTraitNames();
 
-    expect(in_array(Sushi\Sushi::class, $traits))->toBeTrue();
+    Assert::assertTrue(in_array(Sushi\Sushi::class, $traits));
 });
 
 test('Module model has id as route key', function () {
     $module = new Module();
 
-    expect($module->getRouteKeyName())->toBe('id');
+    Assert::assertSame('id', $module->getRouteKeyName());
 });

@@ -2,8 +2,6 @@
 
 **Versione**: il progetto usa Filament 5.x. Compatibilità e riferimenti: [filament-5x-compatibility.md](filament-5x-compatibility.md).
 
-**Versione**: il progetto usa Filament 5.x. Compatibilità e riferimenti: [filament-5x-compatibility.md](filament-5x-compatibility.md).
-
 ## Risorse (Resources)
 
 Tutte le risorse Filament nel modulo CMS devono seguire queste convenzioni:
@@ -112,11 +110,3 @@ Le pagine custom devono essere collocate in `app/Filament/Pages`:
 * [filament.md](laravel/modules/job/docs/filament.md)
 * [filament.md](laravel/modules/activity/docs/filament.md)
 * [filament.md](laravel/modules/cms/docs/filament.md)
-* [filament.md](laravel/Modules/Chart/docs/filament.md)
-* [filament.md](laravel/Modules/Gdpr/docs/filament.md)
-* [filament.md](laravel/Modules/Xot/docs/technical/filament.md)
-* [filament.md](laravel/Modules/Xot/docs/roadmap/integration/filament.md)
-* [filament.md](laravel/Modules/Lang/docs/filament.md)
-* [filament.md](laravel/Modules/Job/docs/filament.md)
-* [filament.md](laravel/Modules/Activity/docs/filament.md)
-* [filament.md](laravel/Modules/Cms/docs/filament.md)

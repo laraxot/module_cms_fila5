@@ -50,10 +50,12 @@ class ResolveBlockQueryAction
         }
 
         // Apply ordering
-        $orderBy = (string) data_get($queryConfig, 'orderBy', 'created_at');
+        $orderByValue = data_get($queryConfig, 'orderBy', 'created_at');
+        $orderBy = is_string($orderByValue) ? $orderByValue : 'created_at';
         // Assert::string($orderBy, '['.__LINE__.']['.__FILE__.']');
-        /** @var 'asc'|'desc' $direction */
-        $direction = in_array(data_get($queryConfig, 'direction', 'desc'), ['asc', 'desc'], true) ? (string) data_get($queryConfig, 'direction', 'desc') : 'desc';
+        $directionValue = data_get($queryConfig, 'direction', 'desc');
+        $direction = in_array($directionValue, ['asc', 'desc'], true) ? (string) $directionValue : 'desc';
+        /* @var 'asc'|'desc' $direction */
         $query->orderBy($orderBy, $direction);
 
         // Apply limit

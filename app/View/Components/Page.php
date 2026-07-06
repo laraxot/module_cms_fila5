@@ -21,7 +21,7 @@ final class Page extends Component
 
     public string $slug = '';
 
-    /** @var DataCollection<BlockData>|array */
+    /** @var DataCollection<int, BlockData>|array<string, BlockData> */
     public DataCollection|array $blocks;
 
     /** @var array<string, mixed> */

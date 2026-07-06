@@ -69,9 +69,6 @@ ls -la dist/
 - Verifica dell'integrità dei file compilati
 
 ## Collegamenti Correlati
-- [Documentazione Generale Errori](/project_docs/errors/README.md)
-- [Gestione Temi CMS](../themes/README.md)
-- [Processo di Deploy](../../project_docs/deployment/THEMES.md)
 - [Documentazione Generale Errori](/project_docs/errors/readme.md)
 - [Gestione Temi CMS](../themes/readme.md)
 - [Processo di Deploy](../../project_docs/deployment/themes.md)
@@ -117,5 +114,4 @@ npm install && npm run copy
 ## Manutenzione
 - Aggiornare regolarmente le dipendenze npm
 - Verificare la compatibilità con le versioni Laravel
-- Mantenere backup dei file di configurazione
 - Mantenere backup dei file di configurazione 

@@ -9,14 +9,6 @@
 - [Implementazione Logout](/laravel/modules/user/project_docs/logout_blade_implementation.md)
 - [Analisi Errore Logout](/laravel/modules/user/project_docs/logout_blade_error_analysis.md)
 - [Errore Eventi Logout](/laravel/modules/user/project_docs/logout_event_error.md)
-- [Documentazione centrale](/project_docs/README.md)
-- [Collegamenti documentazione](/project_docs/collegamenti-documentazione.md)
-- [Documentazione sezioni](/project_docs/sections.md)
-- [Sezioni CMS](/laravel/Modules/Cms/project_docs/sections.md)
-- [Sezioni Tema One](/laravel/Themes/One/project_docs/sections/HEADER_LANGUAGE_USER_DROPDOWN.md)
-- [Implementazione Logout](/laravel/Modules/User/project_docs/LOGOUT_BLADE_IMPLEMENTATION.md)
-- [Analisi Errore Logout](/laravel/Modules/User/project_docs/LOGOUT_BLADE_ERROR_ANALYSIS.md)
-- [Errore Eventi Logout](/laravel/Modules/User/project_docs/LOGOUT_EVENT_ERROR.md)
 
 ## Panoramica
 
@@ -53,8 +45,6 @@ Il modulo CMS è responsabile di:
 @props(['languages' => []])
 
 <div class="relative" x-data="{ open: false }">
-    <button
-        @click="open = !open"
     <button 
         @click="open = !open" 
         @click.away="open = false"
@@ -69,11 +59,6 @@ Il modulo CMS è responsabile di:
             <x-dynamic-component :component="'ui-flags.' . $currentFlag" class="w-7 h-7 object-cover" />
         </div>
         
-
-        <div class="flex items-center justify-center w-6 h-6 overflow-hidden rounded-full border border-gray-200">
-            <x-dynamic-component :component="'ui-flags.' . $currentFlag" class="w-7 h-7 object-cover" />
-        </div>
-
         <span class="hidden md:inline">{{ $languages[$currentLocale]['name'] ?? ucfirst($currentLocale) }}</span>
         <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -88,15 +73,6 @@ Il modulo CMS è responsabile di:
         x-transition:leave="transition ease-in duration-75" 
         x-transition:leave-start="transform opacity-100 scale-100" 
         x-transition:leave-end="transform opacity-0 scale-95" 
-
-    <div
-        x-show="open"
-        x-transition:enter="transition ease-out duration-100"
-        x-transition:enter-start="transform opacity-0 scale-95"
-        x-transition:enter-end="transform opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-75"
-        x-transition:leave-start="transform opacity-100 scale-100"
-        x-transition:leave-end="transform opacity-0 scale-95"
         class="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 divide-y divide-gray-100"
     >
         <div class="py-1">
@@ -104,8 +80,6 @@ Il modulo CMS è responsabile di:
                 @php
                     $flag = $code === 'en' ? 'gb' : $code;
                 @endphp
-                <a
-                    href="{{ url($code . substr(request()->getRequestUri(), 3)) }}"
                 <a 
                     href="{{ url($code . substr(request()->getRequestUri(), 3)) }}" 
                     class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -183,7 +157,6 @@ Il file JSON dell'header (`/config/local/<directory progetto>/database/content/s
 "blocks": {"it":[
     // Blocchi esistenti
     
-    
     // Nuovo blocco Selettore Lingua
     {
         "name": {
@@ -217,7 +190,6 @@ Il file JSON dell'header (`/config/local/<directory progetto>/database/content/s
             }
         }
     },
-    
     
     // Nuovo blocco Dropdown Utente
     {
@@ -282,7 +254,6 @@ Dove:
 - `flags` è la sottodirectory all'interno della cartella `svg`
 - `it`, `gb`, `fr` sono i codici ISO dei paesi
 
-Per maggiori dettagli, consultare la [documentazione sui componenti SVG delle bandiere](/laravel/Modules/UI/project_docs/FLAGS_COMPONENTS.md).
 Per maggiori dettagli, consultare la [documentazione sui componenti SVG delle bandiere](/laravel/modules/ui/project_docs/flags_components.md).
 
 ## Considerazioni Tecniche
@@ -292,7 +263,6 @@ Per maggiori dettagli, consultare la [documentazione sui componenti SVG delle ba
 Il componente Dropdown Utente deve essere compatibile con il sistema di gestione della sessione di Laravel:
 
 1. Il link di logout deve inviare una richiesta GET al percorso `/logout`
-2. Il file `logout.blade.php` deve gestire correttamente gli eventi di logout come descritto in [LOGOUT_EVENT_ERROR.md](/laravel/Modules/User/project_docs/LOGOUT_EVENT_ERROR.md)
 2. Il file `logout.blade.php` deve gestire correttamente gli eventi di logout come descritto in [LOGOUT_EVENT_ERROR.md](/laravel/modules/user/project_docs/logout_event_error.md)
 
 ### Sicurezza
@@ -313,5 +283,4 @@ L'implementazione del selettore di lingua e del dropdown utente nell'header migl
 Questa implementazione segue le convenzioni standard per la gestione dei contenuti statici e l'integrazione con i sistemi di autenticazione e localizzazione.
 Questa implementazione segue le convenzioni di <main module> per la gestione dei contenuti statici e l'integrazione con i sistemi di autenticazione e localizzazione.
 
-Per i dettagli specifici sull'implementazione nel tema One, consultare la [documentazione del tema](/laravel/Themes/One/project_docs/sections/HEADER_LANGUAGE_USER_DROPDOWN.md).
 Per i dettagli specifici sull'implementazione nel tema One, consultare la [documentazione del tema](/laravel/themes/one/project_docs/sections/header_language_user_dropdown.md).

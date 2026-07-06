@@ -22,6 +22,7 @@ class AppLayout extends Component
          *
          * $view .= '::components.app-layout';
          */
+        /** @var view-string $view */
         $view = 'pub_theme::layouts.app';
         $view_params = [];
 

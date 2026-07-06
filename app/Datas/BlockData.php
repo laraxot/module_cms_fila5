@@ -30,6 +30,7 @@ class BlockData extends Data implements Wireable
 
     public ?string $slug = null;
 
+    /** @var array<string, mixed> */
     public array $data;
 
     public string $view;
@@ -40,6 +41,9 @@ class BlockData extends Data implements Wireable
 
     public bool $active = true;
 
+    /**
+     * @param array<string, mixed> $data
+     */
     public function __construct(string $type, array $data, ?string $slug = null, bool $active = true)
     {
         $this->type = $type;
@@ -68,9 +72,17 @@ class BlockData extends Data implements Wireable
         $this->livewireComponentName = $this->normalizeComponentName($view);
     }
 
+    /**
+     * @param EloquentCollection<int, mixed>|Collection<int, mixed>|array<int, mixed> $data
+     *
+     * @return DataCollection<int, BlockData>|array<int, BlockData>
+     */
     public static function collection(EloquentCollection|Collection|array $data): DataCollection|array
     {
-        return self::collect($data, DataCollection::class);
+        /** @var DataCollection<int, BlockData> $collection */
+        $collection = self::collect($data, DataCollection::class);
+
+        return $collection;
     }
 
     private function detectLivewire(string $view): bool

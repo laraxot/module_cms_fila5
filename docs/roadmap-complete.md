@@ -377,9 +377,6 @@ La cartella `docs/` è ben organizzata con:
 
 ### Documentazione Correlata
 - [Roadmap Progetto](../../../docs/roadmap_project.md)
-- [Modulo User](../../User/docs/roadmap_complete.md)
-- [Modulo Media](../../Media/docs/README.md)
-- [Theme Sixteen](../../../Themes/Sixteen/docs/README.md)
 - [Modulo User](../../user/docs/roadmap_complete.md)
 - [Modulo Media](../../media/docs/readme.md)
 - [Theme Sixteen](../../../themes/sixteen/docs/readme.md)
@@ -393,10 +390,6 @@ La cartella `docs/` è ben organizzata con:
 ---
 
 **Versione**: 1.0.0
-**Ultimo Aggiornamento**: 2025-01-01
-**Maintainer**: CMS Team
-**Status**: 🚧 In Development (65% completo)
-**Prossima Revisione**: 2025-02-01
 **Maintainer**: CMS Team
 **Status**: 🚧 In Development (65% completo)
 **Prossima Revisione**: [DATE]

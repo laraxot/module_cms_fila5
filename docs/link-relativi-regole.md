@@ -7,7 +7,6 @@
 ### ❌ **VIETATO - Link Assoluti**
 ```markdown
 [Link errato](/var/www/html/_bases/<directory progetto>/docs/file.md)
-[Link errato](../../laravel/Modules/Cms/docs/file.md)
 [Link errato](../../laravel/modules/cms/docs/file.md)
 ```
 
@@ -91,16 +90,11 @@ Link: ./components/
 
 <!-- DOPO (CORRETTO) -->
 [Modulo User](../../user/docs/readme.md)
-[Modulo User](/var/www/html/_bases/<directory progetto>/laravel/Modules/User/docs/README.md)
-
-<!-- DOPO (CORRETTO) -->
-[Modulo User](../../User/docs/README.md)
 ```
 
 ### **Caso 3: Link interno al modulo**
 ```markdown
 <!-- PRIMA (ERRATO) -->
-[Componenti](../../laravel/Modules/Cms/docs/components/header.md)
 [Componenti](../../laravel/modules/cms/docs/components/header.md)
 
 <!-- DOPO (CORRETTO) -->

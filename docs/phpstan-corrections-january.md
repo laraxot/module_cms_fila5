@@ -117,10 +117,3 @@ public function sendEmailVerificationNotification(): void;
 
 ---
 
-- [PHPStan Code Quality Guide](../../Xot/docs/phpstan_code_quality_guide.md)
-- [Cms Module README](./README.md)
-- [DataCollection Best Practices](../../Xot/docs/spatie-data-best-practices.md)
-
----
-
-*Ultimo aggiornamento: 2025-01-10*

@@ -152,10 +152,3 @@ it('uses correct namespace for view models', function () {
 * [namespace-conventions.md](laravel/modules/xot/docs/namespace-conventions.md)
 * [namespace-conventions.md](laravel/modules/user/docs/namespace-conventions.md)
 * [namespace-conventions.md](laravel/modules/cms/docs/best-practices/namespace-conventions.md)
-- [Best Practices](/laravel/Modules/Cms/docs/best-practices/README.md)
-- [Architettura Modulare](/laravel/Modules/Cms/docs/architecture.md)
-
-## Collegamenti tra versioni di namespace-conventions.md
-* [namespace-conventions.md](laravel/Modules/Xot/docs/namespace-conventions.md)
-* [namespace-conventions.md](laravel/Modules/User/docs/namespace-conventions.md)
-* [namespace-conventions.md](laravel/Modules/Cms/docs/best-practices/namespace-conventions.md)

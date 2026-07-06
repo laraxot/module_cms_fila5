@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Auth;
+use Modules\Cms\Tests\TestCase;
 
-use Modules\Xot\Tests\TestCase;
+uses(TestCase::class);
 
+describe('Register Page', function () {
+    test('register page placeholder', function () {
+        // Placeholder - actual tests require theme components
     });
 });

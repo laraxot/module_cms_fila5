@@ -229,8 +229,6 @@ $resourceClass = XotData::make()->getUserResourceClassByType($type);
 - [Register Type Test Implementation](./register-type-test-implementation.md)
 
 ### **Documentazione Root**
-- [User Module: RegistrationWidget](../../../User/docs/widgets/registration-widget.md)
-- [Xot Module: Testing Infrastructure](../../../Xot/docs/testing/infrastructure.md)
 - [Testing Organization](../../../../../docs/testing-organization.md)
 - [PestPHP Best Practices](../../../../../docs/testing/pestphp-best-practices.md)
 
