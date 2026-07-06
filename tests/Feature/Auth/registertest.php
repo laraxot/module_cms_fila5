@@ -3,10 +3,11 @@
 declare(strict_types=1);
 
 use Modules\Cms\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 // NOTE: Helper functions moved to Modules\Cms\Tests\TestCase for DRY pattern
