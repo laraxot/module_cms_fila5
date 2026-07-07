@@ -7,9 +7,11 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
+
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 

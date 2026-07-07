@@ -13,13 +13,13 @@ uses(TestCase::class);
 
 describe('Register Component', function (): void {
     test('register component extends volt component', function (): void {
-        $component = new RegisterComponent;
+        $component = new RegisterComponent();
 
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
     test('register component has expected public properties defaults', function (): void {
-        $component = new RegisterComponent;
+        $component = new RegisterComponent();
 
         Assert::assertTrue((new \ReflectionClass($component))->hasProperty('name'));
 
