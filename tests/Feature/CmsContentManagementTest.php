@@ -339,7 +339,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
-    for ($i = 0; $i < 50; ++$i) {
+    for ($i = 0; $i < 50; $i++) {
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],
@@ -388,19 +388,19 @@ test('cms module handles bulk operations efficiently', function () {
 test('cms module supports complex query patterns', function () {
     $pages = Page::factory()
         ->count(10)
-        ->create([
+        ->createOne([
             'content_blocks' => [['type' => 'hero', 'title' => 'Hero Section']],
         ]);
 
     $pageContents = PageContent::factory()
         ->count(8)
-        ->create([
+        ->createOne([
             'blocks' => [['type' => 'features', 'title' => 'Features']],
         ]);
 
     $sections = Section::factory()
         ->count(6)
-        ->create([
+        ->createOne([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);
 

@@ -90,7 +90,7 @@ class PageContent extends BaseModel
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, array<string, string>>
      */
     public function sluggable(): array
     {
