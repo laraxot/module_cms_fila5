@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/background.php
 // Cms txt.fields.background — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Sfondo',
-  'placeholder' => 'Immagine o colore di sfondo',
-  'helper_text' => 'Sfondo della sezione (immagine, colore o gradiente)',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Sfondo',
+    'placeholder' => 'Immagine o colore di sfondo',
+    'helper_text' => 'Sfondo della sezione (immagine, colore o gradiente)',
+    'tooltip' => '',
+    'description' => '',
+];

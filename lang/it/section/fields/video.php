@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/video.php
 // Cms section.fields.video — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'video',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'video',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

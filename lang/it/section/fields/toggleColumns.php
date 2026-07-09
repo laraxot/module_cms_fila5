@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/toggleColumns.php
 // Cms section.fields.toggleColumns — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Mostra/Nascondi Colonne',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Mostra/Nascondi Colonne',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

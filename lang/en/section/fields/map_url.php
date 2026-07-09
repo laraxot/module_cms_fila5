@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/map_url.php
 // Cms section.fields.map_url — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Map URL',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Map URL',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
