@@ -1,16 +1,16 @@
 {
   "version": "0.2.2",
-  "timestamp": "2026-07-09T17:06:44.647Z",
+  "timestamp": "2026-07-09T19:26:03.511Z",
   "project": {
     "name": "Cms",
     "path": "/var/www/_bases/base_fixcity_fila5/laravel/Modules/Cms",
     "languages": {
-      "Markdown": 895,
-      "JSON": 13,
+      "Markdown": 911,
+      "JSON": 12,
       "YAML": 3,
       "Shell": 8,
       "XML": 2,
-      "PHP": 1090,
+      "PHP": 1255,
       "JavaScript": 4,
       "HTML": 1,
       "SCSS": 1,
@@ -19,8 +19,8 @@
     "frameworks": [
       "TailwindCSS"
     ],
-    "totalFiles": 2018,
-    "totalLines": 159582,
+    "totalFiles": 2198,
+    "totalLines": 168191,
     "hasTests": true,
     "hasDependencyFile": true,
     "dependencyFile": "package.json",
@@ -102,5 +102,5 @@
   "mediumCount": 0,
   "lowCount": 0,
   "aiPowered": false,
-  "durationMs": 755
+  "durationMs": 507
 }

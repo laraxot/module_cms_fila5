@@ -6,17 +6,6 @@
 // Cms Blade view — see Modules/Cms/docs/wiki.
 @endphp
 
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-@php
-// Cms Blade view — see Modules/Cms/docs/wiki.
-@endphp
-
-@php
-// Cms Blade view — see Modules/Cms/docs/wiki.
-@endphp
-
 @php
 // Cms Blade view — see Modules/Cms/docs/wiki.
 // Cms Blade view — see Modules/Cms/docs/wiki.
@@ -26,6 +15,9 @@
 // Cms Blade view — see Modules/Cms/docs/wiki.
 @endphp
 
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 {-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 {-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 <?php
