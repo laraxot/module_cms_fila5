@@ -6,6 +6,6 @@ declare(strict_types=1);
 // claude-audit static: split from txt.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/it/txt_label.php
-return array (
-  'label' => 'Txt',
-);
+return [
+    'label' => 'Txt',
+];

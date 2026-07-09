@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/social_links.php
 // Cms txt.fields.social_links — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Link Social',
-  'placeholder' => 'Aggiungi profili social media',
-  'helper_text' => 'Collegamenti ai profili social dell\'azienda',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Link Social',
+    'placeholder' => 'Aggiungi profili social media',
+    'helper_text' => 'Collegamenti ai profili social dell\'azienda',
+    'tooltip' => '',
+    'description' => '',
+];

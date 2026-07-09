@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/cta_color.php
 // Cms section.fields.cta_color — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Colore CTA',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore CTA',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

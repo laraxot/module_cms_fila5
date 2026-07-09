@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/background.php
 // Cms section.fields.background — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'background',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'background',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

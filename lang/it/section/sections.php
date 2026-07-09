@@ -6,15 +6,13 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability.
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/sections.php
-return array (
-  'info' => 
-  array (
-    'label' => 'info',
-    'heading' => 'info',
-  ),
-  'blocks' => 
-  array (
-    'label' => 'blocks',
-    'heading' => 'blocks',
-  ),
-);
+return [
+    'info' => [
+        'label' => 'info',
+        'heading' => 'info',
+    ],
+    'blocks' => [
+        'label' => 'blocks',
+        'heading' => 'blocks',
+    ],
+];
