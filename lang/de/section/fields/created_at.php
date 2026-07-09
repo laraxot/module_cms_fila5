@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/created_at.php
 // Cms section.fields.created_at — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Data di Creazione',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Data di Creazione',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

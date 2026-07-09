@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/icon.php
 // Cms txt.fields.icon — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Icona',
-  'help' => 'Seleziona un\'icona da visualizzare',
-  'placeholder' => 'Seleziona icona rappresentativa',
-  'helper_text' => 'Icona da mostrare accanto al testo o come elemento standalone',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Icona',
+    'help' => 'Seleziona un\'icona da visualizzare',
+    'placeholder' => 'Seleziona icona rappresentativa',
+    'helper_text' => 'Icona da mostrare accanto al testo o come elemento standalone',
+    'tooltip' => '',
+    'description' => '',
+];

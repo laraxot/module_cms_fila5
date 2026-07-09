@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/gap.php
 // Cms txt.fields.gap — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Spaziatura',
-  'placeholder' => '10px, 1rem, small',
-  'helper_text' => 'Spazio tra gli elementi',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Spaziatura',
+    'placeholder' => '10px, 1rem, small',
+    'helper_text' => 'Spazio tra gli elementi',
+    'tooltip' => '',
+    'description' => '',
+];
