@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/resetFilters.php
 // Cms section.fields.resetFilters — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Reimposta Filtri',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Reimposta Filtri',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

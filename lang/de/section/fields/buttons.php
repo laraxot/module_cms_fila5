@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/buttons.php
 // Cms section.fields.buttons — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'buttons',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'buttons',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

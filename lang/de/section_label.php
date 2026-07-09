@@ -6,6 +6,6 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/de/section_label.php
-return array (
-  'label' => 'Missing Label',
-);
+return [
+    'label' => 'Missing Label',
+];

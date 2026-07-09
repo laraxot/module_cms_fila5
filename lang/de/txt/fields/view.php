@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/view.php
 // Cms txt.fields.view — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Template',
-  'placeholder' => 'Seleziona template di visualizzazione',
-  'helper_text' => 'Template Blade utilizzato per renderizzare questo elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Template',
+    'placeholder' => 'Seleziona template di visualizzazione',
+    'helper_text' => 'Template Blade utilizzato per renderizzare questo elemento',
+    'tooltip' => '',
+    'description' => '',
+];

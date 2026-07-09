@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/level.php
 // Cms section.fields.level — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'level',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'level',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
