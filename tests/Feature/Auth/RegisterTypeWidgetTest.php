@@ -9,6 +9,7 @@ use Modules\User\Filament\Widgets\RegistrationWidget;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+// Laraxot module file — see docs/wiki for domain contract.
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('patient/doctor registration types not configured in this install.');

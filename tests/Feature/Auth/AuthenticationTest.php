@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
     $response = cmsGet('/'.$lang.'/auth/login');
@@ -24,7 +25,7 @@ test('users can authenticate using the login screen', function (): void {
 /*
  * test('users cannot authenticate with invalid password', function(): void {
  * $userClass = XotData::make()->getUserClass();
- * $user = $userClass::factory()->create();
+ * $user = $userClass::factory()->createOne();
  *
  * $response = LivewireVolt::test('auth.login')
  * ->set('email', $user->email)
@@ -38,7 +39,7 @@ test('users can authenticate using the login screen', function (): void {
  *
  * test('users can logout', function(): void {
  * $userClass = XotData::make()->getUserClass();
- * $user = $userClass::factory()->create();
+ * $user = $userClass::factory()->createOne();
  *
  * $response = actingAs($user)->post('/logout');
  *

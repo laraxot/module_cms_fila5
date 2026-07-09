@@ -145,6 +145,7 @@ final class PageSchemaBuilder
         if (! $publicUser instanceof User) {
             if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && '' !== $routeParameters['slug0']) {
                 return [
+// Laraxot module file — see docs/wiki for domain contract.
                     '@type' => 'Person',
                     'identifier' => $routeParameters['slug0'],
                     'url' => url('/profile/'.$routeParameters['slug0']),

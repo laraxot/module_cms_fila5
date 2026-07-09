@@ -2,31 +2,30 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
+namespace Modules\Cms\Tests\Feature\Auth;
+
+use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
-use PHPUnit\Framework\Assert;
-
 uses(TestCase::class);
-// NOTE: Helper functions moved to Modules\Cms\Tests\TestCase for DRY pattern
-// Use cmsCreateTestUser()
+
+// NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
+// Use $this->createTestUser()
 
 describe('Register Page', function () {
     test('register page renders for guest', function () {
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/register');
-        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-        Assert::assertSame(200, $response->status());
+        $response->assertStatus(200);
     });
 
     test('authenticated user is redirected away from register page', function () {
-        $user = cmsCreateTestUser();
+        $user = $this->createTestUser();
         actingAs($user);
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/register');
-        /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-        Assert::assertSame('/', $response->headers->get('Location'));
+        $response->assertRedirect('/');
     });
 });
