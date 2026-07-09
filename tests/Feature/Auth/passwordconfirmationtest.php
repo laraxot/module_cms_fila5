@@ -2,39 +2,44 @@
 
 declare(strict_types=1);
 
-use Livewire\Features\SupportTesting\Testable;
-use Livewire\Volt\Volt as LivewireVolt;
-use PHPUnit\Framework\Assert;
+namespace Modules\Cms\Tests\Feature\Auth;
 
-uses(Modules\Cms\Tests\TestCase::class);
-test('confirm password screen can be rendered', function (): void {
-    $user = cmsCreateTestUser();
+use Livewire\Volt\Volt as LivewireVolt;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Tests\TestCase;
+
+use function Pest\Laravel\actingAs;
+
+uses(TestCase::class);
+
+test('confirm password screen can be rendered', function () {
+    $userClass = XotData::make()->getUserClass();
+    $user = $userClass::factory()->create();
 
     $lang = app()->getLocale();
-    $response = cmsActingAsGet($user, '/'.$lang.'/confirm-password');
+    $response = actingAs($user)->get('/'.$lang.'/confirm-password');
 
-    Assert::assertSame(200, $response->status());
+    $response->assertStatus(200);
 });
 
-test('password can be confirmed', function (): void {
-    $user = cmsCreateTestUser();
+test('password can be confirmed', function () {
+    $userClass = XotData::make()->getUserClass();
+    $user = $userClass::factory()->create();
 
-    cmsActingAs($user);
+    actingAs($user);
 
-    $component = LivewireVolt::test('auth.confirm-password')->set('password', 'password')->call('confirmPassword');
-    Assert::assertInstanceOf(Testable::class, $component);
+    $response = LivewireVolt::test('auth.confirm-password')->set('password', 'password')->call('confirmPassword');
 
-    $component->assertHasNoErrors();
-    $component->assertRedirect(route('dashboard', absolute: false));
+    $response->assertHasNoErrors()->assertRedirect(route('dashboard', absolute: false));
 });
 
-test('password is not confirmed with invalid password', function (): void {
-    $user = cmsCreateTestUser();
+test('password is not confirmed with invalid password', function () {
+    $userClass = XotData::make()->getUserClass();
+    $user = $userClass::factory()->create();
 
-    cmsActingAs($user);
+    actingAs($user);
 
-    $component = LivewireVolt::test('auth.confirm-password')->set('password', 'wrong-password')->call('confirmPassword');
-    Assert::assertInstanceOf(Testable::class, $component);
+    $response = LivewireVolt::test('auth.confirm-password')->set('password', 'wrong-password')->call('confirmPassword');
 
-    $component->assertHasErrors(['password']);
+    $response->assertHasErrors(['password']);
 });

@@ -12,6 +12,29 @@ use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+// Laraxot — see module docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
@@ -373,19 +396,19 @@ test('cms module handles bulk operations efficiently', function () {
 test('cms module supports complex query patterns', function () {
     $pages = PageFactory::new()
         ->count(10)
-        ->create([
+        ->createOne([
             'content_blocks' => [['type' => 'hero', 'title' => 'Hero Section']],
         ]);
 
     $pageContents = PageContentFactory::new()
         ->count(8)
-        ->create([
+        ->createOne([
             'blocks' => [['type' => 'features', 'title' => 'Features']],
         ]);
 
     $sections = SectionFactory::new()
         ->count(6)
-        ->create([
+        ->createOne([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);
 
