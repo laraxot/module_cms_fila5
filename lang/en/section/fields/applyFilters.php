@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/applyFilters.php
 // Cms section.fields.applyFilters — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Applica Filtri',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Applica Filtri',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

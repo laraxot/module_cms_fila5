@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/gap.php
 // Cms section.fields.gap — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Spaziatura',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Spaziatura',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

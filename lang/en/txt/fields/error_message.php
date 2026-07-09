@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/error_message.php
 // Cms txt.fields.error_message — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Messaggio Errore',
-  'placeholder' => 'Si è verificato un errore',
-  'helper_text' => 'Messaggio mostrato in caso di errore',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Messaggio Errore',
+    'placeholder' => 'Si è verificato un errore',
+    'helper_text' => 'Messaggio mostrato in caso di errore',
+    'tooltip' => '',
+    'description' => '',
+];

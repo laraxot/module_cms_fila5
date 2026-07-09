@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/height.php
 // Cms section.fields.height — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Altezza',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Altezza',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

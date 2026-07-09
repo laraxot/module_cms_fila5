@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/method.php
 // Cms txt.fields.method — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Metodo',
-  'placeholder' => 'GET, POST, PUT, DELETE',
-  'helper_text' => 'Metodo HTTP per form o richieste API',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Metodo',
+    'placeholder' => 'GET, POST, PUT, DELETE',
+    'helper_text' => 'Metodo HTTP per form o richieste API',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/target.php
 // Cms txt.fields.target — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Destinazione',
-  'placeholder' => '_blank, _self, _parent, _top',
-  'helper_text' => 'Come aprire il collegamento (stessa finestra o nuova)',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Destinazione',
+    'placeholder' => '_blank, _self, _parent, _top',
+    'helper_text' => 'Come aprire il collegamento (stessa finestra o nuova)',
+    'tooltip' => '',
+    'description' => '',
+];
