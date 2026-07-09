@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/error_message.php
 // Cms section.fields.error_message — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'error_message',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'error_message',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

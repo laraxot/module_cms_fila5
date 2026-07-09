@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/success_message.php
 // Cms txt.fields.success_message — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Messaggio Successo',
-  'placeholder' => 'Operazione completata con successo',
-  'helper_text' => 'Messaggio mostrato quando un\'operazione ha successo',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Messaggio Successo',
+    'placeholder' => 'Operazione completata con successo',
+    'helper_text' => 'Messaggio mostrato quando un\'operazione ha successo',
+    'tooltip' => '',
+    'description' => '',
+];

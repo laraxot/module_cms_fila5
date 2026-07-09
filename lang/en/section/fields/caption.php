@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/caption.php
 // Cms section.fields.caption — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Caption',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Caption',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

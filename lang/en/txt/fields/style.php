@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/style.php
 // Cms txt.fields.style — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Stile',
-  'help' => 'Stile di visualizzazione',
-  'placeholder' => 'Seleziona stile di visualizzazione',
-  'helper_text' => 'Stile predefinito per la visualizzazione dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Stile',
+    'help' => 'Stile di visualizzazione',
+    'placeholder' => 'Seleziona stile di visualizzazione',
+    'helper_text' => 'Stile predefinito per la visualizzazione dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];
