@@ -178,3 +178,11 @@ _docs/
 *~head
 
 agentdb.rvf
+
+# Pest + audit-coverage bridge (claude-audit — path /tests/ nel matcher)
+!tests/
+!tests/**
+
+# claude-audit bridge (non committare)
+audit-coverage/
+tests/AuditCoverage/*

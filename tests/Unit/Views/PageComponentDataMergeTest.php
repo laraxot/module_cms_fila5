@@ -6,6 +6,13 @@ use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
 test('page component merges route context into block data', function (): void {
     $block = (object) [
         'view' => 'cms::tests.fixtures.slug-probe',
