@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/slug.php
 // Cms section.fields.slug — LangServiceProvider SSoT.
-return array (
-  'label' => 'Slug',
-  'placeholder' => 'Inserisci lo slug della sezione',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Slug',
+    'placeholder' => 'Inserisci lo slug della sezione',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

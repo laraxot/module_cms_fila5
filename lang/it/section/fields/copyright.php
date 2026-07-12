@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/copyright.php
 // Cms section.fields.copyright — LangServiceProvider SSoT.
-return array (
-  'label' => 'Copyright',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Copyright',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

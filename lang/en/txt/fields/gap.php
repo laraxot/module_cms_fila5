@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/gap.php
 // Cms txt.fields.gap — LangServiceProvider SSoT.
-return array (
-  'label' => 'Spaziatura',
-  'placeholder' => '10px, 1rem, small',
-  'helper_text' => 'Spazio tra gli elementi',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Spaziatura',
+    'placeholder' => '10px, 1rem, small',
+    'helper_text' => 'Spazio tra gli elementi',
+    'tooltip' => '',
+    'description' => '',
+];

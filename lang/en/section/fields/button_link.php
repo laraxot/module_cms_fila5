@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/button_link.php
 // Cms section.fields.button_link — LangServiceProvider SSoT.
-return array (
-  'label' => 'Button Link',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Button Link',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

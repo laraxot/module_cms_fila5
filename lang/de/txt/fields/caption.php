@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/caption.php
 // Cms txt.fields.caption — LangServiceProvider SSoT.
-return array (
-  'label' => 'Didascalia',
-  'placeholder' => 'Didascalia per immagine o video',
-  'helper_text' => 'Testo descrittivo mostrato sotto contenuti multimediali',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Didascalia',
+    'placeholder' => 'Didascalia per immagine o video',
+    'helper_text' => 'Testo descrittivo mostrato sotto contenuti multimediali',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/size.php
 // Cms txt.fields.size — LangServiceProvider SSoT.
-return array (
-  'label' => 'Dimensione',
-  'placeholder' => 'Piccolo, Medio, Grande',
-  'helper_text' => 'Dimensione relativa dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Dimensione',
+    'placeholder' => 'Piccolo, Medio, Grande',
+    'helper_text' => 'Dimensione relativa dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];

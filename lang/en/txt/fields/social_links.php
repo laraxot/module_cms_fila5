@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/social_links.php
 // Cms txt.fields.social_links — LangServiceProvider SSoT.
-return array (
-  'label' => 'Link Social',
-  'placeholder' => 'Aggiungi profili social media',
-  'helper_text' => 'Collegamenti ai profili social dell\'azienda',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Link Social',
+    'placeholder' => 'Aggiungi profili social media',
+    'helper_text' => 'Collegamenti ai profili social dell\'azienda',
+    'tooltip' => '',
+    'description' => '',
+];

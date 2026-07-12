@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/message.php
 // Cms section.fields.message — LangServiceProvider SSoT.
-return array (
-  'label' => 'Messaggio',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Messaggio',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

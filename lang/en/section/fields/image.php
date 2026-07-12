@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/image.php
 // Cms section.fields.image — LangServiceProvider SSoT.
-return array (
-  'label' => 'Image',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Image',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

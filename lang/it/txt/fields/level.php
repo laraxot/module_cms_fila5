@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/level.php
 // Cms txt.fields.level — LangServiceProvider SSoT.
-return array (
-  'label' => 'Livello',
-  'placeholder' => 'Livello gerarchico (1-6]',
-  'helper_text' => 'Livello di importanza nella gerarchia del contenuto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Livello',
+    'placeholder' => 'Livello gerarchico (1-6]',
+    'helper_text' => 'Livello di importanza nella gerarchia del contenuto',
+    'tooltip' => '',
+    'description' => '',
+];

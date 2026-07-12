@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/method.php
 // Cms txt.fields.method — LangServiceProvider SSoT.
-return array (
-  'label' => 'Metodo',
-  'placeholder' => 'GET, POST, PUT, DELETE',
-  'helper_text' => 'Metodo HTTP per form o richieste API',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Metodo',
+    'placeholder' => 'GET, POST, PUT, DELETE',
+    'helper_text' => 'Metodo HTTP per form o richieste API',
+    'tooltip' => '',
+    'description' => '',
+];

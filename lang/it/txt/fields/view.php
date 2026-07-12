@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/view.php
 // Cms txt.fields.view — LangServiceProvider SSoT.
-return array (
-  'label' => 'Template',
-  'placeholder' => 'Seleziona template di visualizzazione',
-  'helper_text' => 'Template Blade utilizzato per renderizzare questo elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Template',
+    'placeholder' => 'Seleziona template di visualizzazione',
+    'helper_text' => 'Template Blade utilizzato per renderizzare questo elemento',
+    'tooltip' => '',
+    'description' => '',
+];

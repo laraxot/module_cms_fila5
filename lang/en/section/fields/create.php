@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/create.php
 // Cms section.fields.create — LangServiceProvider SSoT.
-return array (
-  'label' => 'Create',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Create',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

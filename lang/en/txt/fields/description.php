@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/description.php
 // Cms txt.fields.description — LangServiceProvider SSoT.
-return array (
-  'label' => 'Descrizione',
-  'placeholder' => 'Inserisci una descrizione',
-  'help' => 'Testo descrittivo',
-  'helper_text' => 'Descrizione utilizzata per SEO e preview social',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Descrizione',
+    'placeholder' => 'Inserisci una descrizione',
+    'help' => 'Testo descrittivo',
+    'helper_text' => 'Descrizione utilizzata per SEO e preview social',
+    'tooltip' => '',
+    'description' => '',
+];

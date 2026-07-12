@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/target.php
 // Cms txt.fields.target — LangServiceProvider SSoT.
-return array (
-  'label' => 'Destinazione',
-  'placeholder' => '_blank, _self, _parent, _top',
-  'helper_text' => 'Come aprire il collegamento (stessa finestra o nuova)',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Destinazione',
+    'placeholder' => '_blank, _self, _parent, _top',
+    'helper_text' => 'Come aprire il collegamento (stessa finestra o nuova)',
+    'tooltip' => '',
+    'description' => '',
+];

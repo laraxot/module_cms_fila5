@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/links.php
 // Cms txt.fields.links — LangServiceProvider SSoT.
-return array (
-  'label' => 'Collegamenti',
-  'placeholder' => 'Lista di link di navigazione',
-  'helper_text' => 'Collezione di collegamenti per menu o footer',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Collegamenti',
+    'placeholder' => 'Lista di link di navigazione',
+    'helper_text' => 'Collezione di collegamenti per menu o footer',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/success_message.php
 // Cms txt.fields.success_message — LangServiceProvider SSoT.
-return array (
-  'label' => 'Messaggio Successo',
-  'placeholder' => 'Operazione completata con successo',
-  'helper_text' => 'Messaggio mostrato quando un\'operazione ha successo',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Messaggio Successo',
+    'placeholder' => 'Operazione completata con successo',
+    'helper_text' => 'Messaggio mostrato quando un\'operazione ha successo',
+    'tooltip' => '',
+    'description' => '',
+];

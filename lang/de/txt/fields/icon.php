@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/icon.php
 // Cms txt.fields.icon — LangServiceProvider SSoT.
-return array (
-  'label' => 'Icona',
-  'help' => 'Seleziona un\'icona da visualizzare',
-  'placeholder' => 'Seleziona icona rappresentativa',
-  'helper_text' => 'Icona da mostrare accanto al testo o come elemento standalone',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Icona',
+    'help' => 'Seleziona un\'icona da visualizzare',
+    'placeholder' => 'Seleziona icona rappresentativa',
+    'helper_text' => 'Icona da mostrare accanto al testo o come elemento standalone',
+    'tooltip' => '',
+    'description' => '',
+];

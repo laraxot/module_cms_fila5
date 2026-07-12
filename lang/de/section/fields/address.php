@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/address.php
 // Cms section.fields.address — LangServiceProvider SSoT.
-return array (
-  'label' => 'Indirizzo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Indirizzo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

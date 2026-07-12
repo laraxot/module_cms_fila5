@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/placeholder.php
 // Cms section.fields.placeholder — LangServiceProvider SSoT.
-return array (
-  'label' => 'placeholder',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'placeholder',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

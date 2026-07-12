@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/orientation.php
 // Cms txt.fields.orientation — LangServiceProvider SSoT.
-return array (
-  'label' => 'Orientamento',
-  'placeholder' => 'Orizzontale, Verticale',
-  'helper_text' => 'Orientamento del layout o degli elementi',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Orientamento',
+    'placeholder' => 'Orizzontale, Verticale',
+    'helper_text' => 'Orientamento del layout o degli elementi',
+    'tooltip' => '',
+    'description' => '',
+];

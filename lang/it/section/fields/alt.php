@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/alt.php
 // Cms section.fields.alt — LangServiceProvider SSoT.
-return array (
-  'label' => 'Testo alternativo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo alternativo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

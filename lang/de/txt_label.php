@@ -5,6 +5,6 @@ declare(strict_types=1);
 // Cms translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/de/txt_label.php
-return array (
-  'label' => 'Missing Label',
-);
+return [
+    'label' => 'Missing Label',
+];

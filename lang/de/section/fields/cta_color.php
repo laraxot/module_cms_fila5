@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/cta_color.php
 // Cms section.fields.cta_color — LangServiceProvider SSoT.
-return array (
-  'label' => 'Colore CTA',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore CTA',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

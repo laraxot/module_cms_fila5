@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/button_link.php
 // Cms txt.fields.button_link — LangServiceProvider SSoT.
-return array (
-  'label' => 'Collegamento del pulsante',
-  'placeholder' => 'https://esempio.com',
-  'help' => 'URL di destinazione del pulsante',
-  'helper_text' => 'URL di destinazione quando si clicca il pulsante',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Collegamento del pulsante',
+    'placeholder' => 'https://esempio.com',
+    'help' => 'URL di destinazione del pulsante',
+    'helper_text' => 'URL di destinazione quando si clicca il pulsante',
+    'tooltip' => '',
+    'description' => '',
+];

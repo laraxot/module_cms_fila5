@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/label.php
 // Cms txt.fields.label — LangServiceProvider SSoT.
-return array (
-  'label' => 'Etichetta',
-  'placeholder' => 'Testo dell\'etichetta',
-  'helper_text' => 'Testo visibile per link, pulsanti o elementi interattivi',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Etichetta',
+    'placeholder' => 'Testo dell\'etichetta',
+    'helper_text' => 'Testo visibile per link, pulsanti o elementi interattivi',
+    'tooltip' => '',
+    'description' => '',
+];

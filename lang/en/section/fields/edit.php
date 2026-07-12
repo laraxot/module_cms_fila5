@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/edit.php
 // Cms section.fields.edit — LangServiceProvider SSoT.
-return array (
-  'label' => 'Edit',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Edit',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

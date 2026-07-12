@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/alignment.php
 // Cms section.fields.alignment — LangServiceProvider SSoT.
-return array (
-  'label' => 'Alignment',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Alignment',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

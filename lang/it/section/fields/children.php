@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/children.php
 // Cms section.fields.children — LangServiceProvider SSoT.
-return array (
-  'label' => 'children',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'children',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

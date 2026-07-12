@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/placeholder.php
 // Cms txt.fields.placeholder — LangServiceProvider SSoT.
-return array (
-  'label' => 'Placeholder',
-  'placeholder' => 'Testo segnaposto per campi input',
-  'helper_text' => 'Testo mostrato nei campi vuoti come suggerimento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Placeholder',
+    'placeholder' => 'Testo segnaposto per campi input',
+    'helper_text' => 'Testo mostrato nei campi vuoti come suggerimento',
+    'tooltip' => '',
+    'description' => '',
+];

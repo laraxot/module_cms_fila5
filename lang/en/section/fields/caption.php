@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/caption.php
 // Cms section.fields.caption — LangServiceProvider SSoT.
-return array (
-  'label' => 'Caption',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Caption',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

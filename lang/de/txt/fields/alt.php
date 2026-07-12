@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/alt.php
 // Cms txt.fields.alt — LangServiceProvider SSoT.
-return array (
-  'label' => 'Testo Alternativo',
-  'placeholder' => 'Descrizione immagine per accessibilità',
-  'helper_text' => 'Testo letto dagli screen reader per utenti non vedenti',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo Alternativo',
+    'placeholder' => 'Descrizione immagine per accessibilità',
+    'helper_text' => 'Testo letto dagli screen reader per utenti non vedenti',
+    'tooltip' => '',
+    'description' => '',
+];

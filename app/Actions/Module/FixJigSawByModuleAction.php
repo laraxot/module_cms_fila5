@@ -31,7 +31,7 @@ final class FixJigSawByModuleAction
                 continue;
             }
 
-            if ($stub->getExtension() !== 'stub') {
+            if ('stub' !== $stub->getExtension()) {
                 continue;
             }
 

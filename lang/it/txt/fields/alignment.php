@@ -6,18 +6,17 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/alignment.php
 // Cms txt.fields.alignment — LangServiceProvider SSoT.
-return array (
-  'label' => 'Allineamento',
-  'help' => 'Allineamento del testo',
-  'options' => 
-  array (
-    'left' => 'Sinistra',
-    'center' => 'Centro',
-    'right' => 'Destra',
-    'justify' => 'Giustificato',
-  ),
-  'placeholder' => 'Sinistra, Centro, Destra',
-  'helper_text' => 'Allineamento del contenuto all\'interno dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Allineamento',
+    'help' => 'Allineamento del testo',
+    'options' => [
+        'left' => 'Sinistra',
+        'center' => 'Centro',
+        'right' => 'Destra',
+        'justify' => 'Giustificato',
+    ],
+    'placeholder' => 'Sinistra, Centro, Destra',
+    'helper_text' => 'Allineamento del contenuto all\'interno dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];

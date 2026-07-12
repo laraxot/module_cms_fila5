@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/style.php
 // Cms section.fields.style — LangServiceProvider SSoT.
-return array (
-  'label' => 'Stile',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Stile',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

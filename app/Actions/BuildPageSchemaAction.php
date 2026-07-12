@@ -6,17 +6,17 @@ namespace Modules\Cms\Actions;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Str;
-use Spatie\QueueableAction\QueueableAction;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
+use Spatie\QueueableAction\QueueableAction;
 
 final class BuildPageSchemaAction
 {
     use QueueableAction;
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
      *
      * @return array<string, mixed>
      */
@@ -62,7 +62,7 @@ final class BuildPageSchemaAction
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
      */
     private function resolvePageType(?string $routeName, string $path, array $routeParameters): string
     {
@@ -125,7 +125,7 @@ final class BuildPageSchemaAction
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
      *
      * @return array<string, mixed>|null
      */

@@ -5,7 +5,7 @@ declare(strict_types=1);
 // Cms translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/model.php
-return array (
-  'label' => 'Sezione',
-  'plural' => 'Sezioni',
-);
+return [
+    'label' => 'Sezione',
+    'plural' => 'Sezioni',
+];

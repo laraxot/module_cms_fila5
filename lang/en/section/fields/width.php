@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/width.php
 // Cms section.fields.width — LangServiceProvider SSoT.
-return array (
-  'label' => 'Width',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Width',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

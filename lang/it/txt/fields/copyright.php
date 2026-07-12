@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/copyright.php
 // Cms txt.fields.copyright — LangServiceProvider SSoT.
-return array (
-  'label' => 'Copyright',
-  'placeholder' => '2024 Nome Azienda. Tutti i diritti riservati.',
-  'helper_text' => 'Testo di copyright da visualizzare nel footer',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Copyright',
+    'placeholder' => '2024 Nome Azienda. Tutti i diritti riservati.',
+    'helper_text' => 'Testo di copyright da visualizzare nel footer',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/social_links.php
 // Cms section.fields.social_links — LangServiceProvider SSoT.
-return array (
-  'label' => 'social_links',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'social_links',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
