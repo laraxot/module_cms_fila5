@@ -7,6 +7,8 @@ use Modules\Cms\Models\Page;
 use PHPUnit\Framework\Assert;
 
 uses(Modules\Cms\Tests\TestCase::class);
+// Laraxot — see module docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
 test('ResolveBlockQueryAction can be instantiated', function () {
     $action = new ResolveBlockQueryAction();
 

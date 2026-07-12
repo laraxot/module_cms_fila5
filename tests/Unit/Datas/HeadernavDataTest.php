@@ -8,6 +8,12 @@ use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
 uses(Modules\Cms\Tests\TestCase::class);
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
 test('HeadernavData can be instantiated', function (): void {
     $headernavData = new HeadernavData();
 

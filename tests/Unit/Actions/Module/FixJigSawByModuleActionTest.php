@@ -42,10 +42,14 @@ test('FixJigSawByModuleAction execute method returns array', function () {
         ->with(Mockery::any())
         ->andReturn([new SplFileInfo($stubsDir.'/test.stub', '', 'test.stub')]);
 
+    File::shouldReceive('put')
+        ->with('/tmp/test-module/docs/test', 'This is a test stub for TestModule')
+        ->once();
+
     $action = new FixJigSawByModuleAction();
-    /** @var array<string, mixed> $result */
     $result = $action->execute($module);
-    Assert::assertArrayHasKey('files', $result);
+
+    Assert::assertSame(['/tmp/test-module/docs/test'], $result);
 
     unlink($stubsDir.'/test.stub');
     rmdir($stubsDir);

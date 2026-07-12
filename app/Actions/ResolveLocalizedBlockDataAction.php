@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace Modules\Cms\Actions;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\preg_match;
 
 final class ResolveLocalizedBlockDataAction
 {
+    use QueueableAction;
+
     /**
      * @param array<string, mixed> $data
      *

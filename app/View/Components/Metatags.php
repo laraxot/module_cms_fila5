@@ -6,7 +6,7 @@ namespace Modules\Cms\View\Components;
 
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
-use Modules\Cms\Support\PageSchemaBuilder;
+use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Xot\Actions\GetViewAction;
 use Modules\Xot\Datas\MetatagData;
 
@@ -32,7 +32,7 @@ class Metatags extends Component
 
         $view_params = [
             'meta' => $metatag,
-            'pageSchema' => app(PageSchemaBuilder::class)->build(
+            'pageSchema' => app(BuildPageSchemaAction::class)->execute(
                 meta: $metatag,
                 routeName: $routeName,
                 path: $path,

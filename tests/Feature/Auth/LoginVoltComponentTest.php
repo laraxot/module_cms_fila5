@@ -18,6 +18,13 @@ final class LoginVoltComponentTest extends TestCase
 
     public function testVoltLoginComponentCanBeRendered(): void
     {
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
+// Laraxot module file — see docs/wiki for domain contract.
         /** @var Testable<\Livewire\Component> $component */
         $component = LivewireVolt::test('auth.login');
         $component->assertOk();
