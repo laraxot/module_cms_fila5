@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/video.php
 // Cms txt.fields.video — LangServiceProvider SSoT.
-return array (
-  'label' => 'Video',
-  'placeholder' => 'URL video YouTube/Vimeo o carica file',
-  'helper_text' => 'Video da incorporare o collegare',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Video',
+    'placeholder' => 'URL video YouTube/Vimeo o carica file',
+    'helper_text' => 'Video da incorporare o collegare',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/background.php
 // Cms txt.fields.background — LangServiceProvider SSoT.
-return array (
-  'label' => 'Sfondo',
-  'placeholder' => 'Immagine o colore di sfondo',
-  'helper_text' => 'Sfondo della sezione (immagine, colore o gradiente)',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Sfondo',
+    'placeholder' => 'Immagine o colore di sfondo',
+    'helper_text' => 'Sfondo della sezione (immagine, colore o gradiente)',
+    'tooltip' => '',
+    'description' => '',
+];

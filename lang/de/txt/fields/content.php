@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/content.php
 // Cms txt.fields.content — LangServiceProvider SSoT.
-return array (
-  'label' => 'Contenuto',
-  'placeholder' => 'Scrivi il contenuto principale qui...',
-  'helper_text' => 'Contenuto principale dell\'articolo o pagina',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Contenuto',
+    'placeholder' => 'Scrivi il contenuto principale qui...',
+    'helper_text' => 'Contenuto principale dell\'articolo o pagina',
+    'tooltip' => '',
+    'description' => '',
+];

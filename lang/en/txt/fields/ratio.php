@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/ratio.php
 // Cms txt.fields.ratio — LangServiceProvider SSoT.
-return array (
-  'label' => 'Proporzioni',
-  'placeholder' => '16:9, 4:3, 1:1, 21:9',
-  'helper_text' => 'Rapporto di proporzione per immagini e video',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Proporzioni',
+    'placeholder' => '16:9, 4:3, 1:1, 21:9',
+    'helper_text' => 'Rapporto di proporzione per immagini e video',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/error_message.php
 // Cms txt.fields.error_message — LangServiceProvider SSoT.
-return array (
-  'label' => 'Messaggio Errore',
-  'placeholder' => 'Si è verificato un errore',
-  'helper_text' => 'Messaggio mostrato in caso di errore',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Messaggio Errore',
+    'placeholder' => 'Si è verificato un errore',
+    'helper_text' => 'Messaggio mostrato in caso di errore',
+    'tooltip' => '',
+    'description' => '',
+];

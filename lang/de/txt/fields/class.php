@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/class.php
 // Cms txt.fields.class — LangServiceProvider SSoT.
-return array (
-  'label' => 'Classe CSS',
-  'placeholder' => 'custom-class another-class',
-  'helper_text' => 'Classi CSS personalizzate per styling avanzato',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Classe CSS',
+    'placeholder' => 'custom-class another-class',
+    'helper_text' => 'Classi CSS personalizzate per styling avanzato',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/type.php
 // Cms txt.fields.type — LangServiceProvider SSoT.
-return array (
-  'label' => 'Tipo',
-  'placeholder' => 'Categoria o tipologia',
-  'helper_text' => 'Tipo di contenuto o categoria dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Tipo',
+    'placeholder' => 'Categoria o tipologia',
+    'helper_text' => 'Tipo di contenuto o categoria dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];

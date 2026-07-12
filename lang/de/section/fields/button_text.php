@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/button_text.php
 // Cms section.fields.button_text — LangServiceProvider SSoT.
-return array (
-  'label' => 'Testo Bottone',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo Bottone',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/subtitle.php
 // Cms txt.fields.subtitle — LangServiceProvider SSoT.
-return array (
-  'label' => 'Sottotitolo',
-  'placeholder' => 'Inserisci un sottotitolo',
-  'help' => 'Sottotitolo opzionale',
-  'helper_text' => 'Testo secondario che accompagna il titolo principale',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Sottotitolo',
+    'placeholder' => 'Inserisci un sottotitolo',
+    'help' => 'Sottotitolo opzionale',
+    'helper_text' => 'Testo secondario che accompagna il titolo principale',
+    'tooltip' => '',
+    'description' => '',
+];

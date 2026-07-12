@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/orientation.php
 // Cms section.fields.orientation — LangServiceProvider SSoT.
-return array (
-  'label' => 'orientation',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'orientation',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

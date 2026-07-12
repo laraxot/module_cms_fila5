@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/gallery.php
 // Cms txt.fields.gallery — LangServiceProvider SSoT.
-return array (
-  'label' => 'Galleria',
-  'placeholder' => 'Collezione di immagini',
-  'helper_text' => 'Galleria di immagini correlate',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Galleria',
+    'placeholder' => 'Collezione di immagini',
+    'helper_text' => 'Galleria di immagini correlate',
+    'tooltip' => '',
+    'description' => '',
+];

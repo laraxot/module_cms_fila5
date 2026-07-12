@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/cta_link.php
 // Cms txt.fields.cta_link — LangServiceProvider SSoT.
-return array (
-  'label' => 'Collegamento CTA',
-  'placeholder' => 'https://esempio.com',
-  'help' => 'URL di destinazione per la call-to-action',
-  'helper_text' => 'URL della pagina di destinazione per la CTA',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Collegamento CTA',
+    'placeholder' => 'https://esempio.com',
+    'help' => 'URL di destinazione per la call-to-action',
+    'helper_text' => 'URL della pagina di destinazione per la CTA',
+    'tooltip' => '',
+    'description' => '',
+];

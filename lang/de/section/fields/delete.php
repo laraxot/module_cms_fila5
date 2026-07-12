@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/delete.php
 // Cms section.fields.delete — LangServiceProvider SSoT.
-return array (
-  'label' => 'Elimina',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Elimina',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

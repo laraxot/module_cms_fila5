@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/name.php
 // Cms section.fields.name — LangServiceProvider SSoT.
-return array (
-  'label' => 'Nome',
-  'placeholder' => 'Inserisci il nome della sezione',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Nome',
+    'placeholder' => 'Inserisci il nome della sezione',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

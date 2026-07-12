@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/height.php
 // Cms section.fields.height — LangServiceProvider SSoT.
-return array (
-  'label' => 'Altezza',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Altezza',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

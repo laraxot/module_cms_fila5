@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/error_message.php
 // Cms section.fields.error_message — LangServiceProvider SSoT.
-return array (
-  'label' => 'error_message',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'error_message',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

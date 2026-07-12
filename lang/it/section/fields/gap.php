@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/gap.php
 // Cms section.fields.gap — LangServiceProvider SSoT.
-return array (
-  'label' => 'Spaziatura',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Spaziatura',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

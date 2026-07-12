@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/platform.php
 // Cms section.fields.platform — LangServiceProvider SSoT.
-return array (
-  'label' => 'platform',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'platform',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

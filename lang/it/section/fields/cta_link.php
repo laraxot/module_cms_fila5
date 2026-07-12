@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/cta_link.php
 // Cms section.fields.cta_link — LangServiceProvider SSoT.
-return array (
-  'label' => 'Link CTA',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Link CTA',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

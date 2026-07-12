@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/number.php
 // Cms txt.fields.number — LangServiceProvider SSoT.
-return array (
-  'label' => 'Numero',
-  'placeholder' => 'Valore numerico',
-  'helper_text' => 'Valore numerico per contatori o statistiche',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Numero',
+    'placeholder' => 'Valore numerico',
+    'helper_text' => 'Valore numerico per contatori o statistiche',
+    'tooltip' => '',
+    'description' => '',
+];

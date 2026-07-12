@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/logo.php
 // Cms section.fields.logo — LangServiceProvider SSoT.
-return array (
-  'label' => 'Logo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Logo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

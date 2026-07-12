@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/sections.php
 // Cms txt.fields.sections — LangServiceProvider SSoT.
-return array (
-  'label' => 'Sezioni',
-  'help' => 'Elenco delle sezioni',
-  'placeholder' => 'Sezioni che compongono la pagina',
-  'helper_text' => 'Sezioni principali che strutturano il contenuto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Sezioni',
+    'help' => 'Elenco delle sezioni',
+    'placeholder' => 'Sezioni che compongono la pagina',
+    'helper_text' => 'Sezioni principali che strutturano il contenuto',
+    'tooltip' => '',
+    'description' => '',
+];

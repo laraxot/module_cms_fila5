@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/background_color.php
 // Cms txt.fields.background_color — LangServiceProvider SSoT.
-return array (
-  'label' => 'Colore di sfondo',
-  'help' => 'Seleziona un colore di sfondo',
-  'placeholder' => '#FFFFFF, bianco, transparent',
-  'helper_text' => 'Colore di sfondo dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore di sfondo',
+    'help' => 'Seleziona un colore di sfondo',
+    'placeholder' => '#FFFFFF, bianco, transparent',
+    'helper_text' => 'Colore di sfondo dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];

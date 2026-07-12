@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/map_url.php
 // Cms section.fields.map_url — LangServiceProvider SSoT.
-return array (
-  'label' => 'URL Mappa',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'URL Mappa',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

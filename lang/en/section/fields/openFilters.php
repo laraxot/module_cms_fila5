@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/openFilters.php
 // Cms section.fields.openFilters — LangServiceProvider SSoT.
-return array (
-  'label' => 'Apri Filtri',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Apri Filtri',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

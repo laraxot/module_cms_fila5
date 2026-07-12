@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/email.php
 // Cms txt.fields.email — LangServiceProvider SSoT.
-return array (
-  'label' => 'Email',
-  'placeholder' => 'esempio@dominio.com',
-  'help' => 'Indirizzo email valido',
-  'helper_text' => 'Indirizzo email principale per contatti',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Email',
+    'placeholder' => 'esempio@dominio.com',
+    'help' => 'Indirizzo email valido',
+    'helper_text' => 'Indirizzo email principale per contatti',
+    'tooltip' => '',
+    'description' => '',
+];

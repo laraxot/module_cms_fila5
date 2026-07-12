@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/title.php
 // Cms section.fields.title — LangServiceProvider SSoT.
-return array (
-  'label' => 'Title',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Title',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

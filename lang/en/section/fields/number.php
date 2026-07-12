@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/number.php
 // Cms section.fields.number — LangServiceProvider SSoT.
-return array (
-  'label' => 'number',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'number',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

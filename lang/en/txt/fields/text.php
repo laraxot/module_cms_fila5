@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/text.php
 // Cms txt.fields.text — LangServiceProvider SSoT.
-return array (
-  'label' => 'Testo',
-  'placeholder' => 'Inserisci il testo',
-  'helper_text' => 'Contenuto testuale semplice senza formattazione',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo',
+    'placeholder' => 'Inserisci il testo',
+    'helper_text' => 'Contenuto testuale semplice senza formattazione',
+    'tooltip' => '',
+    'description' => '',
+];

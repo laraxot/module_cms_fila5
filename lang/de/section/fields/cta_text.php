@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/cta_text.php
 // Cms section.fields.cta_text — LangServiceProvider SSoT.
-return array (
-  'label' => 'Testo CTA',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo CTA',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/version.php
 // Cms txt.fields.version — LangServiceProvider SSoT.
-return array (
-  'label' => 'Versione',
-  'placeholder' => '1.0.0, v2.1, beta',
-  'helper_text' => 'Versione del contenuto o componente',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Versione',
+    'placeholder' => '1.0.0, v2.1, beta',
+    'helper_text' => 'Versione del contenuto o componente',
+    'tooltip' => '',
+    'description' => '',
+];

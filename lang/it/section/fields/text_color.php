@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/text_color.php
 // Cms section.fields.text_color — LangServiceProvider SSoT.
-return array (
-  'label' => 'Colore Testo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore Testo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/link.php
 // Cms txt.fields.link — LangServiceProvider SSoT.
-return array (
-  'label' => 'Collegamento',
-  'placeholder' => 'https://link-destinazione.it',
-  'helper_text' => 'URL generico di collegamento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Collegamento',
+    'placeholder' => 'https://link-destinazione.it',
+    'helper_text' => 'URL generico di collegamento',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/stats.php
 // Cms txt.fields.stats — LangServiceProvider SSoT.
-return array (
-  'label' => 'Statistiche',
-  'placeholder' => 'Dati numerici da evidenziare',
-  'helper_text' => 'Statistiche o metriche da mostrare',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Statistiche',
+    'placeholder' => 'Dati numerici da evidenziare',
+    'helper_text' => 'Statistiche o metriche da mostrare',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/background_color.php
 // Cms section.fields.background_color — LangServiceProvider SSoT.
-return array (
-  'label' => 'Colore Sfondo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore Sfondo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

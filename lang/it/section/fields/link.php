@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/link.php
 // Cms section.fields.link — LangServiceProvider SSoT.
-return array (
-  'label' => 'link',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'link',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

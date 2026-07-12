@@ -6,8 +6,8 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/filament.php
 return [
-// Cms — translation keys (no business logic).
-// Cms — translation keys (no business logic).
+    // Cms — translation keys (no business logic).
+    // Cms — translation keys (no business logic).
     'resources' => [
         'section' => [
             'label' => 'Sezione',

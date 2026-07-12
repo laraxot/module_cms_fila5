@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/fields/width.php
 // Cms txt.fields.width — LangServiceProvider SSoT.
-return array (
-  'label' => 'Larghezza',
-  'placeholder' => '100%, 500px, auto',
-  'helper_text' => 'Larghezza dell\'elemento in pixel, percentuale o auto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Larghezza',
+    'placeholder' => '100%, 500px, auto',
+    'helper_text' => 'Larghezza dell\'elemento in pixel, percentuale o auto',
+    'tooltip' => '',
+    'description' => '',
+];

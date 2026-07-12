@@ -6,11 +6,11 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/image.php
 // Cms txt.fields.image — LangServiceProvider SSoT.
-return array (
-  'label' => 'Immagine',
-  'help' => 'Carica un\'immagine',
-  'placeholder' => 'Seleziona o carica immagine',
-  'helper_text' => 'Immagine principale associata al contenuto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Immagine',
+    'help' => 'Carica un\'immagine',
+    'placeholder' => 'Seleziona o carica immagine',
+    'helper_text' => 'Immagine principale associata al contenuto',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/fields/label.php
 // Cms section.fields.label — LangServiceProvider SSoT.
-return array (
-  'label' => 'Etichetta',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Etichetta',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

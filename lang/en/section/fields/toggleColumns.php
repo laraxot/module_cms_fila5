@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/toggleColumns.php
 // Cms section.fields.toggleColumns — LangServiceProvider SSoT.
-return array (
-  'label' => 'Mostra/Nascondi Colonne',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Mostra/Nascondi Colonne',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

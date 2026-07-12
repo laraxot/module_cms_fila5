@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/fields/sections.php
 // Cms section.fields.sections — LangServiceProvider SSoT.
-return array (
-  'label' => 'Sections',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Sections',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

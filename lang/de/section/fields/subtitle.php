@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/subtitle.php
 // Cms section.fields.subtitle — LangServiceProvider SSoT.
-return array (
-  'label' => 'Sottotitolo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Sottotitolo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

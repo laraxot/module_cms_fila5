@@ -6,9 +6,9 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/section/fields/gallery.php
 // Cms section.fields.gallery — LangServiceProvider SSoT.
-return array (
-  'label' => 'gallery',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'gallery',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/txt/fields/cta_text.php
 // Cms txt.fields.cta_text — LangServiceProvider SSoT.
-return array (
-  'label' => 'Testo Call-to-Action',
-  'placeholder' => 'Inizia ora, Contattaci oggi',
-  'helper_text' => 'Testo persuasivo per invitare all\'azione',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo Call-to-Action',
+    'placeholder' => 'Inizia ora, Contattaci oggi',
+    'helper_text' => 'Testo persuasivo per invitare all\'azione',
+    'tooltip' => '',
+    'description' => '',
+];

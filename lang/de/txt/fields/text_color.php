@@ -6,10 +6,10 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/de/txt/fields/text_color.php
 // Cms txt.fields.text_color — LangServiceProvider SSoT.
-return array (
-  'label' => 'Colore Testo',
-  'placeholder' => '#000000, nero, inherit',
-  'helper_text' => 'Colore del testo dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore Testo',
+    'placeholder' => '#000000, nero, inherit',
+    'helper_text' => 'Colore del testo dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];
