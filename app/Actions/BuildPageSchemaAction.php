@@ -7,6 +7,7 @@ namespace Modules\Cms\Actions;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Str;
 use Modules\User\Models\User;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
 use Spatie\QueueableAction\QueueableAction;
@@ -191,7 +192,7 @@ final class BuildPageSchemaAction
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.(string) $publicUser->getKey()),
+            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
