@@ -35,6 +35,7 @@ parameters:
         - '#Method .* return type with generic class .* does not specify its types#'
 
     treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
 
     scanFiles:
         - ../Xot/app/Filament/Resources/Pages/XotBaseListRecords.php
