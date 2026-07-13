@@ -6,7 +6,7 @@ namespace Modules\Cms\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
 use Modules\Cms\Tests\TestCase;
-use Modules\Tenant\Services\TenantService;
+use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
@@ -16,7 +16,7 @@ uses(TestCase::class);
  */
 function headerNavConfig(): array
 {
-    $path = TenantService::filePath('database/content/sections/header.json');
+    $path = app(GetTenantFilePathAction::class)->execute('database/content/sections/header.json');
     if (! file_exists($path)) {
         cmsSkipTest('header.json not found in this install: '.$path);
     }
