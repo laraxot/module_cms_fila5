@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions;
 
-use Spatie\QueueableAction\QueueableAction;
-
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 use function Safe\preg_match;
+
+use Spatie\QueueableAction\QueueableAction;
 
 final class ResolveLocalizedBlockDataAction
 {
