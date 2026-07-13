@@ -38,5 +38,5 @@ cd laravel
 ## Completamento
 
 - [ ] Implementare test Register FO reali (placeholder attuale)
-- [ ] Feature test header navigation JSON ([STORY hub](../../../../docs/chat/2026-06-11-st351-phpstan-pest-hub.md))
+- [ ] Feature test header navigation JSON ([STORY hub](../../../../docs/chat/st351-phpstan-pest-hub.md))
 - [ ] Verificare `<x-page>` solo data bag su pagine CMS-driven

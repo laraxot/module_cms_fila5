@@ -14,7 +14,6 @@ use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes;
 use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
 use Modules\Cms\Http\Middleware\SetFolioLocale;
-use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
 
@@ -133,7 +132,7 @@ class FolioVoltServiceProvider extends ServiceProvider
                 return ['web'];
             }
 
-            $middleware = TenantService::config('middleware');
+            $middleware = app(\Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction::class)->execute('middleware');
             if (! is_array($middleware)) {
                 return ['web'];
             }

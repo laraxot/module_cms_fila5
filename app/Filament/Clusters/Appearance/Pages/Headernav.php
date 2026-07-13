@@ -17,7 +17,6 @@ use Illuminate\Support\Arr;
 use Modules\Cms\Actions\SaveHeadernavConfigAction;
 use Modules\Cms\Datas\HeadernavData;
 use Modules\Cms\Filament\Clusters\Appearance;
-use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Webmozart\Assert\Assert;
@@ -113,7 +112,7 @@ class Headernav extends XotBasePage implements HasForms
      */
     protected function fillForms(): void
     {
-        $appearanceConfig = TenantService::config('appearance');
+        $appearanceConfig = app(\Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction::class)->execute('appearance');
         Assert::isArray($appearanceConfig);
 
         $headernavConfig = Arr::get($appearanceConfig, 'headernav', []);
