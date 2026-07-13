@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Support;
 
-use Modules\Cms\Support\PageSchemaBuilder;
+use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
@@ -38,8 +38,12 @@ function pageSchemaMainEntity(array $schema): array
 
 describe('Page Schema Builder', function (): void {
     test('it resolves home as webpage', function (): void {
+<<<<<<< HEAD
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
+=======
+        $schema = app(BuildPageSchemaAction::class)->execute(
+>>>>>>> d836bba (Ignore audit-coverage/)
             meta: MetatagData::make(),
             routeName: 'home',
             path: '/',
@@ -50,8 +54,12 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves events index as collection page', function (): void {
+<<<<<<< HEAD
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
+=======
+        $schema = app(BuildPageSchemaAction::class)->execute(
+>>>>>>> d836bba (Ignore audit-coverage/)
             meta: MetatagData::make(),
             routeName: 'container0.index',
             path: 'it/events',
@@ -63,8 +71,12 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves event detail as item page with main entity', function (): void {
+<<<<<<< HEAD
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
+=======
+        $schema = app(BuildPageSchemaAction::class)->execute(
+>>>>>>> d836bba (Ignore audit-coverage/)
             meta: MetatagData::make(),
             routeName: 'container0.view',
             path: 'it/events/test-event-slug',
@@ -85,14 +97,18 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves profile route as profile page with person main entity', function (): void {
+<<<<<<< HEAD
         $builder = new PageSchemaBuilder();
+=======
+        $builder = app(BuildPageSchemaAction::class);
+>>>>>>> d836bba (Ignore audit-coverage/)
         $user = new User([
             'first_name' => 'Mario',
             'last_name' => 'Rossi',
             'name' => 'Mario Rossi',
         ]);
 
-        $schema = $builder->build(
+        $schema = app(BuildPageSchemaAction::class)->execute(
             meta: MetatagData::make(),
             routeName: 'profile.edit',
             path: 'profile/edit',
@@ -111,9 +127,13 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves public profile detail route as profile page with person identifier', function (): void {
+<<<<<<< HEAD
         $builder = new PageSchemaBuilder();
+=======
+        $builder = app(BuildPageSchemaAction::class);
+>>>>>>> d836bba (Ignore audit-coverage/)
 
-        $schema = $builder->build(
+        $schema = app(BuildPageSchemaAction::class)->execute(
             meta: MetatagData::make(),
             routeName: 'container0.view',
             path: 'it/profile/019cca1b-1f72-700a-ba0b-0bb414ca0c88',
@@ -135,8 +155,12 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it keeps auth routes as generic webpage', function (): void {
+<<<<<<< HEAD
         $builder = new PageSchemaBuilder();
         $schema = $builder->build(
+=======
+        $schema = app(BuildPageSchemaAction::class)->execute(
+>>>>>>> d836bba (Ignore audit-coverage/)
             meta: MetatagData::make(),
             routeName: 'auth.login',
             path: 'auth/login',
