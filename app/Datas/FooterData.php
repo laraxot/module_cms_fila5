@@ -7,7 +7,6 @@ namespace Modules\Cms\Datas;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
 use Livewire\Wireable;
-use Modules\Tenant\Services\TenantService;
 use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 
@@ -33,7 +32,7 @@ class FooterData extends Data implements Wireable
     public static function make(): self
     {
         if (! self::$instance instanceof FooterData) {
-            $data = TenantService::getConfig('appearance');
+            $data = app(\Modules\Tenant\Actions\Config\GetTenantConfigArrayAction::class)->execute('appearance');
             $data = Arr::get($data, 'footer', []);
             self::$instance = self::from($data);
         }
