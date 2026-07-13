@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions;
 
-use Spatie\QueueableAction\QueueableAction;
-
 use Modules\Cms\Datas\HeadernavData;
 use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
+use Spatie\QueueableAction\QueueableAction;
 
 class SaveHeadernavConfigAction
 {
