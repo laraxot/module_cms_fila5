@@ -91,6 +91,6 @@ final class HeaderNavBlock extends XotBaseBlock
 
     public static function getBlockLabel(): string
     {
-        return trans_string('cms::blocks.header_nav.label');
+        return trans_string('cms::blocks.header_nav.label') ?: 'Header Navigation Block';
     }
 }

@@ -30,7 +30,10 @@ class Show extends Component
 
     public function render(): View
     {
-        return view('cms::livewire.page.show', [
+        /** @phpstan-var view-string */
+        $viewName = 'cms::livewire.page.show';
+
+        return view($viewName, [
             'pageContent' => $this->pageContent,
             'theme' => $this->theme ?? app(GetThemeAction::class)->execute(),
         ]);
