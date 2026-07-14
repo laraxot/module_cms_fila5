@@ -54,6 +54,7 @@ class PageContent extends Component
          * ,'paths'=>$paths
          * ]);
          */
+        /** @phpstan-var view-string */
         $view = 'cms::components.page-content';
         $view_params = [];
 

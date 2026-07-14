@@ -180,3 +180,5 @@ _docs/
 agentdb.rvf
 audit-coverage/
 tests/AuditCoverage/
+.vscode/
+.devcontainer/

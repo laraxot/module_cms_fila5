@@ -58,7 +58,10 @@ final class Page extends Component
 
     public function render(): ViewContract
     {
-        return view('cms::components.page', array_merge($this->data, [
+        /** @phpstan-var view-string */
+        $viewName = 'cms::components.page';
+
+        return view($viewName, array_merge($this->data, [
             'blocks' => $this->blocks,
             'side' => $this->side,
             'slug' => $this->slug,

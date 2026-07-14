@@ -27,6 +27,6 @@ final class InfoBlock extends XotBaseBlock
 
     public static function getBlockLabel(): string
     {
-        return \trans_string('cms::blocks.info.label');
+        return \trans_string('cms::blocks.info.label') ?: 'Info Block';
     }
 }

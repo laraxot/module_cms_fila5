@@ -35,3 +35,8 @@ Depending on where your site is hosted, you may need to configure your server to
 * [custom-404-page.md](laravel/modules/ui/docs/custom-404-page.md)
 * [custom-404-page.md](laravel/modules/tenant/docs/it/custom-404-page.md)
 * [custom-404-page.md](laravel/modules/cms/docs/custom-404-page.md)
+* [custom-404-page.md](laravel/Modules/Gdpr/docs/custom-404-page.md)
+* [custom-404-page.md](laravel/Modules/Xot/docs/custom-404-page.md)
+* [custom-404-page.md](laravel/Modules/UI/docs/custom-404-page.md)
+* [custom-404-page.md](laravel/Modules/Tenant/docs/it/custom-404-page.md)
+* [custom-404-page.md](laravel/Modules/Cms/docs/custom-404-page.md)
