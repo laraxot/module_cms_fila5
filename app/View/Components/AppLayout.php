@@ -12,8 +12,6 @@ class AppLayout extends Component
 {
     /**
      * Get the view / contents that represents the component.
-     *
-     * @return Factory|View
      */
     public function render(): Factory|View
     {
