@@ -38,11 +38,12 @@ class SetFolioLocale
         if (in_array($firstSegment, $supportedLocales, true)) {
             $locale = $firstSegment;
         // Priority 2: If user is logged in and has a saved language, use that
-        } elseif ($request->user() && property_exists($request->user(), 'lang') && is_string($request->user()->lang)) {
-            $locale = $request->user()->lang;
-        // Priority 3: Use default locale
         } else {
-            $locale = $defaultLocale;
+            $user = $request->user();
+            $locale = match (true) {
+                $user !== null && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
+                default => $defaultLocale,
+            };
         }
 
         // CRITICAL: Set locale on BOTH app AND LaravelLocalization facade.
