@@ -12,35 +12,35 @@ use PHPUnit\Framework\Assert;
 
 final class LoginTest extends TestCase
 {
-    public function test_login_page_can_be_rendered(): void
+    public function testLoginPageCanBeRendered(): void
     {
         $locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         Assert::assertSame(200, $response->status());
     }
 
-    public function test_login_page_contains_login_widget(): void
+    public function testLoginPageContainsLoginWidget(): void
     {
         $locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         Assert::assertSame(200, $response->status());
     }
 
-    public function test_login_page_has_required_form_elements(): void
+    public function testLoginPageHasRequiredFormElements(): void
     {
         $locale = app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         Assert::assertSame(200, $response->status());
     }
 
-    public function test_login_page_works_in_italian(): void
+    public function testLoginPageWorksInItalian(): void
     {
         app()->setLocale('it');
         $response = cmsGet('/it/auth/login');
         Assert::assertSame(200, $response->status());
     }
 
-    public function test_login_page_contains_localized_content(): void
+    public function testLoginPageContainsLocalizedContent(): void
     {
         $response = cmsGet('/it/auth/login');
         $response
@@ -50,7 +50,7 @@ final class LoginTest extends TestCase
             ->assertSee(__('pub_theme::auth.login.or'));
     }
 
-    public function test_user_can_authenticate_via_frontend_login_page(): void
+    public function testUserCanAuthenticateViaFrontendLoginPage(): void
     {
         $email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
@@ -75,7 +75,7 @@ final class LoginTest extends TestCase
         Assert::assertSame('/', $response->headers->get('Location'));
     }
 
-    public function test_authenticated_users_are_redirected_from_login_page(): void
+    public function testAuthenticatedUsersAreRedirectedFromLoginPage(): void
     {
         $user = cmsCreateTestUser();
 
@@ -87,7 +87,7 @@ final class LoginTest extends TestCase
         Assert::assertSame(302, $response->status());
     }
 
-    public function test_remember_me_functionality_works(): void
+    public function testRememberMeFunctionalityWorks(): void
     {
         $email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
@@ -107,7 +107,7 @@ final class LoginTest extends TestCase
         cmsAssertAuthenticated();
     }
 
-    public function test_session_regeneration_on_login(): void
+    public function testSessionRegenerationOnLogin(): void
     {
         $email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
@@ -126,7 +126,7 @@ final class LoginTest extends TestCase
         Assert::assertNotSame($originalSessionId, session()->getId());
     }
 
-    public function test_login_attempts_are_rate_limited(): void
+    public function testLoginAttemptsAreRateLimited(): void
     {
         $email = cmsGenerateUniqueEmail();
         cmsCreateTestUser([
@@ -134,7 +134,7 @@ final class LoginTest extends TestCase
             'password' => Hash::make('password123'),
         ]);
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             LivewireVolt::test('auth.login')
                 ->set('email', $email)
                 ->set('password', 'wrong_password')
@@ -149,7 +149,7 @@ final class LoginTest extends TestCase
         Assert::assertNull($response);
     }
 
-    public function test_any_user_type_can_login_via_frontend(): void
+    public function testAnyUserTypeCanLoginViaFrontend(): void
     {
         $email = cmsGenerateUniqueEmail();
         $user = cmsCreateTestUser([
