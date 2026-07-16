@@ -42,8 +42,6 @@ class PageContent extends Component
 
     /**
      * Get the view / contents that represents the component.
-     *
-     * @return Factory|ViewContract
      */
     public function render(): Factory|ViewContract
     {
