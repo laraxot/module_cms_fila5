@@ -41,7 +41,7 @@ class SetFolioLocale
         } else {
             $user = $request->user();
             $locale = match (true) {
-                $user !== null && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
+                null !== $user && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
                 default => $defaultLocale,
             };
         }

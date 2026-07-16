@@ -22,7 +22,7 @@ return [
 
     'collections' => [
         'posts' => [
-            /** @param object{getFilename(): string} $page */
+            /* @param object{getFilename(): string} $page */
             'path' => function ($page) {
                 // return $page->lang.'/posts/'.Str::slug($page->getFilename());
                 // return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
@@ -31,7 +31,7 @@ return [
             },
         ],
         'docs' => [
-            /** @param object{getFilename(): string} $page */
+            /* @param object{getFilename(): string} $page */
             'path' => function ($page) {
                 // return $page->lang.'/docs/'.Str::slug($page->getFilename());
                 return 'docs/'.Str::slug($page->getFilename());
@@ -47,17 +47,17 @@ return [
     'navigation' => file_exists(__DIR__.'/navigation.php') ? require __DIR__.'/navigation.php' : [],
 
     // helpers
-    /** @param object{getPath(): string} $page */
+    /* @param object{getPath(): string} $page */
     'isActive' => function ($page, $path) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($path));
     },
-    /** @param object{getPath(): string} $page */
+    /* @param object{getPath(): string} $page */
     'isItemActive' => function ($page, $item) {
         return Str::endsWith(trimPath($page->getPath()), trimPath($item->getPath()));
     },
-    /** @param object{getPath(): string, children: \Illuminate\Support\Collection} $page */
+    /* @param object{getPath(): string, children: \Illuminate\Support\Collection} $page */
     'isActiveParent' => function ($page, $menuItem) {
-        if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof \Illuminate\Support\Collection) {
+        if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof Illuminate\Support\Collection) {
             return $menuItem->children->contains(function ($child) use ($page) {
                 return trimPath($page->getPath()) == trimPath($child);
             });
@@ -78,9 +78,9 @@ return [
         return url('/'.trimPath($path));
     },
 
-    /** @param object{id: mixed} $page */
+    /* @param object{id: mixed} $page */
     'children' => function ($page, $docs) {
-        if ($docs instanceof \Illuminate\Support\Collection) {
+        if ($docs instanceof Illuminate\Support\Collection) {
             return $docs->where('parent_id', $page->id);
         }
 
