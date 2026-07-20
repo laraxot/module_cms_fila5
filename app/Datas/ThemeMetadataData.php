@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Datas;
 
-use InvalidArgumentException;
 use Spatie\LaravelData\Data;
 
 /**
@@ -30,12 +29,12 @@ class ThemeMetadataData extends Data
     /**
      * Retrieves the spacing unit for a given scale key.
      *
-     * @throws InvalidArgumentException if the key does not exist
+     * @throws \InvalidArgumentException if the key does not exist
      */
     public function getSpacing(string $key): string
     {
         if (! isset($this->spacingUnits[$key])) {
-            throw new InvalidArgumentException("Invalid spacing unit key: {$key}");
+            throw new \InvalidArgumentException("Invalid spacing unit key: {$key}");
         }
 
         return $this->spacingUnits[$key];

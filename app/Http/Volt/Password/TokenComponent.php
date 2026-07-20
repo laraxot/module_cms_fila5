@@ -14,7 +14,6 @@ use Illuminate\Support\Str;
 use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
 use Modules\Xot\Contracts\UserContract;
-use RuntimeException;
 use Webmozart\Assert\Assert;
 
 /**
