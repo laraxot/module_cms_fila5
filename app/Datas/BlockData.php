@@ -12,7 +12,6 @@ use Illuminate\View\Factory;
 use Illuminate\View\FileViewFinder;
 use Livewire\Wireable;
 use Modules\Cms\Actions\ResolveBlockQueryAction;
-use RuntimeException;
 
 use function Safe\fclose;
 use function Safe\fopen;
@@ -64,7 +63,7 @@ class BlockData extends Data implements Wireable
         $view = $viewRaw;
 
         if (! view()->exists($view)) {
-            throw new RuntimeException('view not found: '.$view);
+            throw new \RuntimeException('view not found: '.$view);
         }
 
         $this->data = $data;

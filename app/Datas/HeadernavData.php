@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Datas;
 
-use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Support\Arr;
 use Livewire\Wireable;
@@ -51,7 +50,7 @@ class HeadernavData extends Data implements Wireable
         $view = $this->view;
         if (! view()->exists($view)) {
             $message = 'The view ['.$view.'] does not exist';
-            throw new Exception($message);
+            throw new \Exception($message);
         }
 
         /** @var array<string, mixed> $view_params */
