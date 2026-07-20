@@ -1,3 +1,23 @@
+---
+title: "Cms — Frontoffice"
+type: index
+tags: [module, cms, frontoffice, index]
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "cms frontoffice homepage struttura contenuti errori documentazione"
+issues:
+  - "https://github.com/laraxot/module_cms_fila5/issues/44"
+discussions:
+  - "https://github.com/laraxot/module_cms_fila5/discussions/45"
+related:
+  - ../README.md
+  - ../INDEX.md
+  - ../components/README.md
+  - ../content/README.md
+  - ../standards/README.md
+  - ../frontend-architecture/index.md
+---
+
 # Frontoffice
 
 Questa cartella contiene la documentazione relativa al frontoffice del sito.

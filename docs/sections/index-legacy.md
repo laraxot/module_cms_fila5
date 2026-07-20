@@ -1,22 +1,23 @@
 ---
-title: "Cms — Indice Sezioni"
+title: "Cms — Indice Sezioni (legacy)"
 type: index
-tags: [module, cms, sections, index]
+tags: [module, cms, sections, index, legacy]
 created: 2026-07-20
 updated: 2026-07-20
-qmd: "cms sezioni indice header footer json struttura localizzazione blocchi"
+qmd: "cms sezioni indice legacy variante precedente header footer"
 issues:
   - "https://github.com/laraxot/module_cms_fila5/issues/44"
 discussions:
   - "https://github.com/laraxot/module_cms_fila5/discussions/45"
 related:
-  - ./index-legacy.md
+  - ./index.md
   - ./index-legacy-2.md
   - ../blocks/index.md
   - ../README.md
   - ../INDEX.md
   - ../roadmap/README.md
 ---
+<!-- ponytail: variante legacy con contenuto duplicato/divergente dal canonico index.md, conservata per non perdere link storici. Consolidare manualmente e poi rimuovere. -->
 
 # Indice della Documentazione - Sezioni CMS
 
@@ -26,14 +27,12 @@ related:
 - [Sezioni](../sections.md)
 - [Gestione Sezioni](../section-management.md)
 - [Documentazione Generale](../../../../../../docs/readme.md)
-- [Documentazione Generale <nome progetto>](../../../../../../docs/readme.md)
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 - [Implementazione nell'UI](../../../ui/docs/sections/index.md)
 - [Implementazione nel Tema One](../../../../themes/one/docs/sections/index.md)
 
 ## Panoramica
 Le sezioni sono componenti strutturali che compongono le pagine del sito. Ogni sezione può contenere diversi blocchi e viene definita tramite file JSON di configurazione.
-Le sezioni sono componenti strutturali che compongono le pagine del sito <nome progetto>. Ogni sezione può contenere diversi blocchi e viene definita tramite file JSON di configurazione.
 
 ## Sezioni Principali
 
@@ -52,7 +51,6 @@ Le sezioni sono componenti strutturali che compongono le pagine del sito <nome p
 Ogni sezione segue una struttura standardizzata:
 
 1. **File di Configurazione**: `config/local/<directory progetto>/database/content/sections/[id].json`
-1. **File di Configurazione**: `config/local/<nome progetto>/database/content/sections/[id].json`
 2. **Blocchi**: Componenti riutilizzabili che compongono la sezione
 3. **Stili**: Definiti nei file CSS del tema
 
@@ -111,4 +109,5 @@ La struttura JSON tipica di una sezione include:
 - Utilizzare sempre percorsi relativi per i collegamenti
 - I riferimenti ai blocchi devono sempre utilizzare la notazione `cms::blocks.nome-blocco`
 - I valori tradotti devono essere organizzati per lingua come nell'esempio sopra
+
 

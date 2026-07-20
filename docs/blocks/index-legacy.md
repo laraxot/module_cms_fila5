@@ -1,22 +1,23 @@
 ---
-title: "Cms — Indice Blocchi"
+title: "Cms — Indice Blocchi (legacy)"
 type: index
-tags: [module, cms, blocks, index]
+tags: [module, cms, blocks, index, legacy]
 created: 2026-07-20
 updated: 2026-07-20
-qmd: "cms blocchi indice header footer navigation hero text cta gallery video form map social search"
+qmd: "cms blocchi indice legacy variante precedente header footer hero text"
 issues:
   - "https://github.com/laraxot/module_cms_fila5/issues/44"
 discussions:
   - "https://github.com/laraxot/module_cms_fila5/discussions/45"
 related:
-  - ./index-legacy.md
+  - ./index.md
   - ./index-legacy-2.md
   - ../sections/index.md
   - ../README.md
   - ../INDEX.md
   - ../roadmap/README.md
 ---
+<!-- ponytail: variante legacy con contenuto duplicato/divergente dal canonico index.md, conservata per non perdere link storici. Consolidare manualmente e poi rimuovere. -->
 
 # Indice della Documentazione - Blocchi CMS
 
@@ -31,11 +32,6 @@ related:
 
 ## Panoramica
 I blocchi sono componenti riutilizzabili che compongono le sezioni del sito. Ogni blocco ha uno scopo specifico e può essere inserito in diverse sezioni tramite i file JSON di configurazione.
-- [Documentazione Generale <nome progetto>](../../../../../../docs/readme.md)
-- [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
-
-## Panoramica
-I blocchi sono componenti riutilizzabili che compongono le sezioni del sito <nome progetto>. Ogni blocco ha uno scopo specifico e può essere inserito in diverse sezioni tramite i file JSON di configurazione.
 
 ## Blocchi Disponibili
 
@@ -73,7 +69,6 @@ Ogni blocco segue una struttura standardizzata:
 
 1. **View Blade**: `Modules/Cms/resources/views/blocks/[nome-blocco].blade.php`
 2. **Configurazione JSON**: Definita nei file `config/local/<directory progetto>/database/content/sections/[id].json`
-2. **Configurazione JSON**: Definita nei file `config/local/<nome progetto>/database/content/sections/[id].json`
 3. **Stili CSS**: Definiti in `Themes/One/resources/css/blocks/[nome-blocco].css`
 
 ## Implementazione
@@ -99,4 +94,5 @@ L'implementazione di un blocco richiede:
 - Ogni blocco deve essere autocontenuto e non dipendere da altri blocchi
 - I blocchi devono supportare la localizzazione tramite le chiavi del file JSON
 - L'implementazione deve seguire le convenzioni di naming del progetto
+
 

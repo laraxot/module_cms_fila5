@@ -3,7 +3,20 @@ title: "Cms Module Documentation"
 type: documentation
 tags: [module, documentation, cms, content-management]
 created: 2026-07-14
-updated: 2026-07-14
+updated: 2026-07-20
+qmd: "cms module readme overview page section block filament builder folio content storage json multilanguage"
+issues:
+  - "https://github.com/laraxot/module_cms_fila5/issues/44"
+discussions:
+  - "https://github.com/laraxot/module_cms_fila5/discussions/45"
+related:
+  - ./INDEX.md
+  - ./architecture.md
+  - ./content-management.md
+  - ./block-system.md
+  - ./frontend-rendering.md
+  - ./folio-integration.md
+  - ./troubleshooting.md
 ---
 
 # Modulo Cms

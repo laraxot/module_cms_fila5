@@ -1,3 +1,23 @@
+---
+title: "Cms — Raw Sources Index"
+type: index
+tags: [module, cms, raw, sources, index]
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "cms raw sources index fonti grezze immutabili wiki sintesi schema"
+issues:
+  - "https://github.com/laraxot/module_cms_fila5/issues/44"
+discussions:
+  - "https://github.com/laraxot/module_cms_fila5/discussions/45"
+related:
+  - ./README.md
+  - ../README.md
+  - ../INDEX.md
+  - ../wiki/index.md
+  - ../outputs/README.md
+  - ../roadmap/README.md
+---
+
 # Raw Sources — Cms
 
 Questo layer contiene le fonti grezze: documenti immutabili che l'LLM legge ma non modifica.

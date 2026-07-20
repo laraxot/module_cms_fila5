@@ -1,3 +1,23 @@
+---
+title: "Cms — Componenti"
+type: index
+tags: [module, cms, components, frontend, index]
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "cms componenti frontend forms navigation layout"
+issues:
+  - "https://github.com/laraxot/module_cms_fila5/issues/44"
+discussions:
+  - "https://github.com/laraxot/module_cms_fila5/discussions/45"
+related:
+  - ../README.md
+  - ../INDEX.md
+  - ../content/README.md
+  - ../frontoffice/README.md
+  - ../standards/README.md
+  - ../frontend-architecture/index.md
+---
+
 # Componenti
 
 Questa cartella contiene la documentazione relativa ai componenti del frontend.
