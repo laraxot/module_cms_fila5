@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions\View;
 
+use Exception;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -28,7 +29,7 @@ class GetCmsViewAction
         Assert::stringNotEmpty($viewName, 'View name cannot be empty.');
 
         if (! view()->exists($viewName)) {
-            throw new \Exception('View not found: '.$viewName);
+            throw new Exception('View not found: '.$viewName);
         }
 
         // The @return view-string PHPDoc on the method itself is the key

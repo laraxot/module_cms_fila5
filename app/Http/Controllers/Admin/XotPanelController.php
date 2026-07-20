@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Http\Controllers\Admin;
 
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Modules\Cms\Http\Controllers\BaseController;
@@ -46,13 +47,13 @@ class XotPanelController extends BaseController
 
         $action = app($act);
         if (! \is_object($action) || ! method_exists($action, 'execute')) {
-            throw new \Exception("Action {$act} is not a valid object with execute method");
+            throw new Exception("Action {$act} is not a valid object with execute method");
         }
 
         $panel = $action->execute($arg[1], $data);
 
         if (! \is_object($panel) || ! method_exists($panel, 'out')) {
-            throw new \Exception('Panel is not a valid object with out method');
+            throw new Exception('Panel is not a valid object with out method');
         }
 
         return $panel->out();
