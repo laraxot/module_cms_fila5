@@ -1,3 +1,23 @@
+---
+title: "Cms Module — Roadmap"
+type: index
+tags: [module, cms, roadmap, planning]
+created: 2026-07-20
+updated: 2026-07-20
+qmd: "cms module roadmap phases blocks pages theme integration dependencies testing strategy"
+issues:
+  - "https://github.com/laraxot/module_cms_fila5/issues/44"
+discussions:
+  - "https://github.com/laraxot/module_cms_fila5/discussions/45"
+related:
+  - ../README.md
+  - ./00-index.md
+  - ./index.md
+  - ../blocks/index.md
+  - ../sections/index.md
+  - ../standards/README.md
+---
+
 # CMS Module - Roadmap
 
 ## 🎯 Module Purpose
