@@ -139,7 +139,7 @@ it('rate limits login attempts', function (): void {
 
 it('allows any user type to login via frontend', function (): void {
     $email = cmsGenerateUniqueEmail();
-    $user = cmsCreateTestUser([
+    cmsCreateTestUser([
         'email' => $email,
         'password' => Hash::make('password123'),
     ]);
