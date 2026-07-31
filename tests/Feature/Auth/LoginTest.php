@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
+use Modules\Quaeris\Models\User;
 
 uses(TestCase::class);
 
@@ -121,7 +122,7 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
-    for ($i = 0; $i < 5; ++$i) {
+    for ($i = 0; $i < 5; $i++) {
         LivewireVolt::test('auth.login')
             ->set('email', $email)
             ->set('password', 'wrong_password')
@@ -154,5 +155,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
+    assert($authenticatedUser instanceof User);
     expect($authenticatedUser->email)->toBe($email);
 });
