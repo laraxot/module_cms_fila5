@@ -9,6 +9,7 @@ use Illuminate\Support\Str;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 final class PageSchemaBuilder
 {
@@ -188,7 +189,7 @@ final class PageSchemaBuilder
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.(string) $publicUser->getKey()),
+            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
