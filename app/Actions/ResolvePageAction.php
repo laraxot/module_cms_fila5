@@ -28,7 +28,7 @@ final class ResolvePageAction
     {
         $item = $this->loadDynamicModel($container0, $slug0);
 
-        if (null !== $item) {
+        if ($item !== null) {
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -93,7 +93,7 @@ final class ResolvePageAction
 
         foreach ($possibleModels as $modelClass) {
             $item = $this->queryModel($modelClass, $slug0);
-            if (null !== $item) {
+            if ($item !== null) {
                 return $item;
             }
         }
