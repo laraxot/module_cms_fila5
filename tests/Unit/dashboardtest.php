@@ -3,6 +3,8 @@
 declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 
+namespace Modules\Cms\Tests\Unit;
+
 use function Pest\Laravel\get;
 
 uses(TestCase::class);
