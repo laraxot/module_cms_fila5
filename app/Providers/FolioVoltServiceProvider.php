@@ -18,8 +18,6 @@ use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
 
-use function Safe\realpath;
-
 use Webmozart\Assert\Assert;
 
 use function Safe\realpath;
