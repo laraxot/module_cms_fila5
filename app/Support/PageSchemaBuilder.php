@@ -9,10 +9,7 @@ use Illuminate\Support\Str;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
-<<<<<<< .merge_file_UUMIoc
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-=======
->>>>>>> .merge_file_sNGnuD
 
 final class PageSchemaBuilder
 {
@@ -192,11 +189,7 @@ final class PageSchemaBuilder
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-<<<<<<< .merge_file_UUMIoc
             'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
-=======
-            'url' => url('/profile/'.(string) $publicUser->getKey()),
->>>>>>> .merge_file_sNGnuD
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
