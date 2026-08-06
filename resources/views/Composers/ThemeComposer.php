@@ -31,10 +31,20 @@ class ThemeComposer
             return null;
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e1ecbe9 (.)
         /** @var array<string, mixed> $normalized */
         $normalized = $items;
 
         return $normalized;
+<<<<<<< HEAD
+=======
+=======
+        return $items;
+>>>>>>> 1aff77744 (.)
+>>>>>>> e1ecbe9 (.)
     }
 
     /**
