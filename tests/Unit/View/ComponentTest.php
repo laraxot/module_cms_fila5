@@ -13,19 +13,19 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 test('AppLayout can be instantiated', function () {
-    $component = new AppLayout;
+    $component = new AppLayout();
 
     Assert::assertInstanceOf(AppLayout::class, $component);
 });
 
 test('GuestLayout can be instantiated', function () {
-    $component = new GuestLayout;
+    $component = new GuestLayout();
 
     Assert::assertInstanceOf(GuestLayout::class, $component);
 });
 
 test('Metatags can be instantiated', function () {
-    $component = new Metatags;
+    $component = new Metatags();
 
     Assert::assertInstanceOf(Metatags::class, $component);
 });
