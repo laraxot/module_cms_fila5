@@ -64,7 +64,7 @@ class Breadcrumb extends XotBasePage
     public function updateData(): void
     {
         try {
-            $data = // Placeholder purged form->getState(;
+            $data = $this->form->getState();
 
             // Save the data using TenantService
             $up = [
@@ -98,7 +98,7 @@ class Breadcrumb extends XotBasePage
         $breadcrumbData = Arr::get($appearanceConfig, 'breadcrumb', []);
         Assert::isArray($breadcrumbData);
 
-        // Placeholder purged form->fill($breadcrumbData;
+        $this->form->fill($breadcrumbData);
     }
 
     /**
