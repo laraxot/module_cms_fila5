@@ -183,6 +183,9 @@ Il sistema di test è ora **pronto per produzione** con:
 
 ---
 
+<<<<<<< Updated upstream
 *Ultimo aggiornamento: Dicembre 2024*
+=======
+>>>>>>> Stashed changes
 *Versione: 2.0 - Helper Functions Centralized*
 *Compatibilità: <nome progetto>, PestPHP 2.x, Laravel 10+*
