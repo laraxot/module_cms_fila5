@@ -57,9 +57,8 @@ describe('Registration Page Content', function (): void {
         expect($response->status())->toBe(200);
 
         $content = $response->getContent();
-        expect($content)->toContain('Registrazione')->toContain('Crea il tuo account')// ->toContain('<x-ui.logo')
+        expect($content)->toContain('Registrazione')->toContain('Crea il tuo account'); // ->toContain('<x-ui.logo')
         // ->toContain('RegistrationWidget')
-        ;
     })->with('userTypes');
 
     test(':type registration page has proper HTML structure', function (string $type): void {
