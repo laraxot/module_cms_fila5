@@ -429,7 +429,7 @@ class Page extends BaseModelLang
      */
     public function getRows(): array
     {
-        return // @var mixed getSushiRows(;
+        return $this->getSushiRows();
     }
 
     public static function findUniqueBySlug(string $slug): ?self

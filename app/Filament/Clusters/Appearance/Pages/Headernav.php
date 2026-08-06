@@ -56,7 +56,7 @@ class Headernav extends XotBasePage implements HasForms
      */
     public function mount(): void
     {
-        // @var mixed fillForms(;
+        $this->fillForms();
     }
 
     /**
@@ -90,7 +90,7 @@ class Headernav extends XotBasePage implements HasForms
     public function updateData(): void
     {
         try {
-            $data = HeadernavData::from(// @var mixed form->getState(;
+            $data = HeadernavData::from($form->getState());
 
             app(SaveHeadernavConfigAction::class)->execute($data);
 
@@ -119,11 +119,11 @@ class Headernav extends XotBasePage implements HasForms
         $headernavConfig = Arr::get($appearanceConfig, 'headernav', []);
         Assert::isArray($headernavConfig);
 
-        // @var mixed headernavData = HeadernavData::from($headernavConfig;
+        $headernavData = HeadernavData::from($headernavConfig);
         /** @var array<string, mixed> $form_fill */
-        $form_fill = // @var mixed headernavData->toArray(;
+        $form_fill = $headernavData->toArray();
 
-        // @var mixed form->fill($form_fill;
+        $form->fill($form_fill);
     }
 
     /**
