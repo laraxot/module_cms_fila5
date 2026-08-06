@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Cms\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -60,7 +62,7 @@ class PageFactory extends Factory
     {
         return $this->afterCreating(function (Page $page) {
             $page->seo()->create([
-                'meta_title' => $page->title . ' - SEO Title',
+                'meta_title' => $page->title.' - SEO Title',
                 'meta_description' => $page->meta_description,
                 'meta_keywords' => $page->meta_keywords,
                 'og_title' => $page->title,
