@@ -1,6 +1,5 @@
 # Cms Module - Content Management Roadmap
 
-**Data**: 2026-01-31
 **Status**: 🟡 In Progress (75% Completato)
 **Priorità**: Alta
 **Obiettivo**: 100% completamento con advanced blocks, SEO e versioning
@@ -213,5 +212,4 @@
 ---
 
 **Responsabile**: TBD
-**Last Updated**: 2026-01-31
-**Next Review**: 2026-02-07
+
