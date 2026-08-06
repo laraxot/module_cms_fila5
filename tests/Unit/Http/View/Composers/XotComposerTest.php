@@ -17,7 +17,7 @@ test('compose returns early when no authenticated user', function (): void {
 
     $view = cmsCreateMock(View::class);
 
-    $composer = new XotComposer();
+    $composer = new XotComposer;
     $composer->compose($view);
 });
 
@@ -27,7 +27,7 @@ test('compose returns early when authenticated user is not user contract', funct
 
     $view = cmsCreateMock(View::class);
 
-    $composer = new XotComposer();
+    $composer = new XotComposer;
     $composer->compose($view);
 });
 
@@ -69,6 +69,6 @@ test('compose shares params lang and profile when user contract is authenticated
         }
     );
 
-    $composer = new XotComposer();
+    $composer = new XotComposer;
     $composer->compose($view);
 });
