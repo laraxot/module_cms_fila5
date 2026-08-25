@@ -11,61 +11,61 @@ use Spatie\LaravelData\Data;
 
 uses(TestCase::class);
 test('HeadernavData can be instantiated', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertInstanceOf(HeadernavData::class, $headernavData);
 });
 
 test('HeadernavData extends Spatie Data', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertInstanceOf(Data::class, $headernavData);
 });
 
 test('HeadernavData implements Wireable interface', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertInstanceOf(Wireable::class, $headernavData);
 });
 
 test('HeadernavData has default view path', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertSame('cms::components.headernav', $headernavData->view);
 });
 
 test('HeadernavData has nullable background_color property', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertNull($headernavData->background_color);
 });
 
 test('HeadernavData has nullable background property', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertNull($headernavData->background);
 });
 
 test('HeadernavData has nullable overlay_color property', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertNull($headernavData->overlay_color);
 });
 
 test('HeadernavData has nullable overlay_opacity property', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertNull($headernavData->overlay_opacity);
 });
 
 test('HeadernavData has nullable class property', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertNull($headernavData->class);
 });
 
 test('HeadernavData has nullable style property', function (): void {
-    $headernavData = new HeadernavData;
+    $headernavData = new HeadernavData();
 
     Assert::assertNull($headernavData->style);
 });
