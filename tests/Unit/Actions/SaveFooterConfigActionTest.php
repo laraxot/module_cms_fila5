@@ -27,7 +27,11 @@ test('SaveFooterConfigAction can execute with FooterData', function () {
     // This may fail due to TenantService dependency, so we catch any exception
     try {
         $action->execute($footerData);
+<<<<<<< HEAD
+       cmsSkipTest('Covered by integration test'); // If we get here, no exception was thrown
+=======
         cmsSkipTest('Covered by integration test'); // If we get here, no exception was thrown
+>>>>>>> laraxot/dev
     } catch (Exception $e) {
         // If an exception is thrown due to missing service, that's expected
     }

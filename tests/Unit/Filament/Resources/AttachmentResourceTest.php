@@ -17,18 +17,42 @@ describe('AttachmentResource', function (): void {
 
     test('attachment resource has form schema', function (): void {
         $schema = AttachmentResource::getFormSchema();
+<<<<<<< .merge_file_cME2Im
 /* @var array<string, mixed> $schema */
+=======
+<<<<<<< HEAD
+       /* @var array<string, mixed> $schema */
+=======
+        /* @var array<string, mixed> $schema */
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_wI8OYM
         Assert::assertGreaterThan(0, count($schema));
     });
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
+<<<<<<< .merge_file_cME2Im
 /* @var array<string, mixed> $relations */
+=======
+<<<<<<< HEAD
+       /* @var array<string, mixed> $relations */
+=======
+        /* @var array<string, mixed> $relations */
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_wI8OYM
     });
 
     test('attachment resource has pages', function (): void {
         $pages = AttachmentResource::getPages();
+<<<<<<< .merge_file_cME2Im
 /* @var array<string, mixed> $pages */
+=======
+<<<<<<< HEAD
+       /* @var array<string, mixed> $pages */
+=======
+        /* @var array<string, mixed> $pages */
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_wI8OYM
         Assert::assertArrayHasKey('index', $pages);
         Assert::assertArrayHasKey('create', $pages);
         Assert::assertArrayHasKey('edit', $pages);
@@ -46,6 +70,15 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
+<<<<<<< .merge_file_cME2Im
 test('attachment resource has plural label', function (): void {
     })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+=======
+<<<<<<< HEAD
+    test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+=======
+    test('attachment resource has plural label', function (): void {
+    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_wI8OYM
 });

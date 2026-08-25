@@ -60,6 +60,9 @@ Se un callback puo' restituire collezioni, array o singoli record, conviene pass
 
 ## Nota operativa
 
+<<<<<<< HEAD
+**
+=======
 Su questi due file non e' stata applicata una patch di codice in questa sessione, perche' il gate PHPStan corrente e' gia' verde e una modifica cosmetica ai legacy script avrebbe aumentato il rischio senza chiudere un errore reale.
 ### ⏳ In Lavoro
 
@@ -97,3 +100,7 @@ Su questi due file non e' stata applicata una patch di codice in questa sessione
 ---
 
 **
+<<<<<<< .merge_file_SdVjCO
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_LT5Q4s
