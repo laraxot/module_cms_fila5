@@ -21,13 +21,21 @@ describe('Registration Widget', function (): void {
             ->assertViewIs('pub_theme::filament.widgets.registration');
     });
 
+<<<<<<< HEAD
+   test('doctor widget renders correctly', function (): void {
+=======
     test('doctor widget renders correctly', function (): void {
+>>>>>>> laraxot/dev
         Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
             ->assertStatus(200)
             ->assertViewIs('pub_theme::filament.widgets.registration');
     });
 
+<<<<<<< HEAD
+   test('widget without type throws exception', function (): void {
+=======
     test('widget without type throws exception', function (): void {
+>>>>>>> laraxot/dev
         cmsSkipTest('Widget type validation covered by Livewire integration');
     });
 
@@ -39,7 +47,11 @@ describe('Registration Widget', function (): void {
             ->set('data.name', 'Test User')
             ->assertSet('data.email', $email)
             ->assertSet('data.name', 'Test User');
+<<<<<<< HEAD
+       /* @var Testable<\Livewire\Component> $widget */
+=======
         /* @var Testable<\Livewire\Component> $widget */
+>>>>>>> laraxot/dev
 
         Assert::assertSame($email, $widget->get('data.email'));
     });
@@ -52,14 +64,22 @@ describe('Registration Widget', function (): void {
         ];
 
         $widget = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
+<<<<<<< HEAD
+       Assert::assertInstanceOf(Testable::class, $widget);
+=======
         Assert::assertInstanceOf(Testable::class, $widget);
+>>>>>>> laraxot/dev
 
         foreach ($testData as $field => $value) {
             $widget->set("data.{$field}", $value);
         }
 
         foreach ($testData as $field => $value) {
+<<<<<<< HEAD
+           Assert::assertSame($value, $widget->get("data.{$field}"));
+=======
             Assert::assertSame($value, $widget->get("data.{$field}"));
+>>>>>>> laraxot/dev
         }
     });
 
@@ -100,7 +120,11 @@ describe('Registration Widget', function (): void {
         }
     });
 
+<<<<<<< HEAD
+   test('widget preserves data after invalid input', function (): void {
+=======
     test('widget preserves data after invalid input', function (): void {
+>>>>>>> laraxot/dev
         $email = 'invalid-email';
         $name = 'Test User';
 

@@ -21,7 +21,11 @@ final class ResolveLocalizedBlockDataAction
      */
     public function execute(array $data): array
     {
+<<<<<<< HEAD
+       /** @var array<string, mixed> $res */
+=======
         /** @var array<string, mixed> $res */
+>>>>>>> laraxot/dev
         $res = $this->walkArray($data);
 
         return $res;
@@ -47,7 +51,11 @@ final class ResolveLocalizedBlockDataAction
                 continue;
             }
 
+<<<<<<< HEAD
+           if (is_array($item)) {
+=======
             if (is_array($item)) {
+>>>>>>> laraxot/dev
                 /* @var array<array-key, mixed> $item */
                 $resolved[$key] = $this->walkArray($item);
 
@@ -62,7 +70,11 @@ final class ResolveLocalizedBlockDataAction
 
     private function isPublicUrlKey(string $key): bool
     {
+<<<<<<< HEAD
+       /** @var list<string> $urlKeys */
+=======
         /** @var list<string> $urlKeys */
+>>>>>>> laraxot/dev
         static $urlKeys = [
             'url',
             'link',

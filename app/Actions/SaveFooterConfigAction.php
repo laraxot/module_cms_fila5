@@ -15,6 +15,10 @@ class SaveFooterConfigAction
     public function execute(FooterData $data): void
     {
         $config = ['footer' => $data->toArray()];
+<<<<<<< HEAD
+       app(SaveTenantConfigAction::class)->execute('appearance', $config);
+=======
         app(SaveTenantConfigAction::class)->execute('appearance', $config);
+>>>>>>> laraxot/dev
     }
 }
