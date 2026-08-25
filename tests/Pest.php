@@ -26,7 +26,9 @@ declare(strict_types=1);
  * |
  */
 
-require_once __DIR__.'/PestHelpers.php';
+// `tests/PestHelpers.php` e' dichiarato in `autoload-dev.files` del composer.json del
+// modulo: il `require_once` qui lo rendeva visibile solo a Pest, non all'autoload, quindi
+// PHPStan leggeva le sue funzioni come inesistenti.
 /*
  * |--------------------------------------------------------------------------
  * | Functions
@@ -37,4 +39,4 @@ require_once __DIR__.'/PestHelpers.php';
  * |
  */
 
-pest()->extend(\Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');

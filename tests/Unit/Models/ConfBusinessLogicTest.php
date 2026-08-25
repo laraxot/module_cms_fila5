@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\Conf;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Sushi\Sushi;
 
 use function Safe\class_uses;
+
+use Sushi\Sushi;
 
 uses(TestCase::class);
 describe('Conf Business Logic', function (): void {

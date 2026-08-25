@@ -30,7 +30,7 @@ final class PageSchemaBuilder
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => $pageType,
-            'name' => $meta->getBrandName(),
+           'name' => $meta->getBrandName(),
             'description' => $meta->getDescription(limit: 160),
             'url' => $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),
@@ -109,7 +109,7 @@ final class PageSchemaBuilder
         }
 
         if (
-            null !== $routeName && Str::startsWith($routeName, 'auth.')
+           null !== $routeName && Str::startsWith($routeName, 'auth.')
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')
@@ -189,7 +189,7 @@ final class PageSchemaBuilder
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
+           'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {

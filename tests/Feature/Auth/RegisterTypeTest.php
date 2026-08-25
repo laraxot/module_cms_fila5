@@ -5,9 +5,10 @@ declare(strict_types=1);
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 

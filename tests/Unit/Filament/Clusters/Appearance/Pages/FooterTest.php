@@ -8,7 +8,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 test('Footer page can be instantiated', function () {
-    $page = new Footer;
+    $page = new Footer();
 });
 
 test('Footer page has data property', function () {
@@ -30,12 +30,17 @@ test('Footer page has footerData property', function () {
     Assert::assertSame('footerData', $property->getName());
 });
 
-test('Footer page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Footer page has mount method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Footer page has schema method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Footer page has updateData method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Footer page has fillForms method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('Footer page has getUpdateFormActions method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

@@ -23,7 +23,7 @@ use Spatie\Translatable\HasTranslations;
  * @property string|null                  $created_by
  * @property string|null                  $updated_by
  * @property ProfileContract|null         $creator
- * @property mixed                        $translations
+ * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|PageContent newModelQuery()
