@@ -41,7 +41,11 @@ abstract class TestCase extends XotBaseTestCase
     {
         parent::setUp();
 
+<<<<<<< HEAD
        self::$currentTest = $this;
+=======
+        self::$currentTest = $this;
+>>>>>>> laraxot/dev
 
         $database = database_path('fixcity_data.sqlite');
 
@@ -70,7 +74,11 @@ abstract class TestCase extends XotBaseTestCase
         // DatabaseTransactions trait handles rollback automatically between tests
     }
 
+<<<<<<< HEAD
    protected function tearDown(): void
+=======
+    protected function tearDown(): void
+>>>>>>> laraxot/dev
     {
         self::$currentTest = null;
         parent::tearDown();
@@ -87,6 +95,10 @@ abstract class TestCase extends XotBaseTestCase
             CmsServiceProvider::class,
         ];
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> laraxot/dev
     public static function pestGenerateUniqueEmail(): string
     {
         return parent::generateUniqueEmail();

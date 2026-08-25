@@ -14,7 +14,12 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
+<<<<<<< HEAD
  * @param  array<string, mixed>  $schema
+=======
+ * @param array<string, mixed> $schema
+ *
+>>>>>>> laraxot/dev
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array

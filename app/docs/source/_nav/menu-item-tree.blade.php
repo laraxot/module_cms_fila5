@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 --
+=======
+---
+>>>>>>> laraxot/dev
 module: theme
 topic: menu-item-tree.blade
 canonical: ../../../../../../Themes/docs/shared-components/menu-item-tree.blade.php.stub

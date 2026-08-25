@@ -12,5 +12,9 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord;
  */
 class CreatePage extends LangBaseCreateRecord
 {
+<<<<<<< HEAD
    public static string $resource = PageResource::class;
+=======
+    public static string $resource = PageResource::class;
+>>>>>>> laraxot/dev
 }

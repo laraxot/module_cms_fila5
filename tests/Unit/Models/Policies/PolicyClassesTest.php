@@ -22,37 +22,61 @@ test('CmsBasePolicy is an abstract class', function () {
 test('PagePolicy can be instantiated', function () {
     $policy = new PagePolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(PagePolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(PagePolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('SectionPolicy can be instantiated', function () {
     $policy = new SectionPolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(SectionPolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(SectionPolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('PageContentPolicy can be instantiated', function () {
     $policy = new PageContentPolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(PageContentPolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(PageContentPolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('ConfPolicy can be instantiated', function () {
     $policy = new ConfPolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(ConfPolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(ConfPolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('MenuPolicy can be instantiated', function () {
     $policy = new MenuPolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(MenuPolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(MenuPolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('ModulePolicy can be instantiated', function () {
     $policy = new ModulePolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(ModulePolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(ModulePolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('PagePolicy has expected methods', function () {

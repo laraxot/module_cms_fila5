@@ -4,4 +4,8 @@ topic: customizing_your_site
 canonical: ../../../Themes/docs/shared-components/customizing-your-site.md
 ---
 
+<<<<<<< HEAD
 See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site.md
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site.md
+>>>>>>> laraxot/dev

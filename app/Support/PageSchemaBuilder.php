@@ -7,6 +7,7 @@ namespace Modules\Cms\Support;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Str;
 use Modules\User\Models\User;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
@@ -30,7 +31,11 @@ final class PageSchemaBuilder
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => $pageType,
+<<<<<<< HEAD
            'name' => $meta->getBrandName(),
+=======
+            'name' => $meta->getBrandName(),
+>>>>>>> laraxot/dev
             'description' => $meta->getDescription(limit: 160),
             'url' => $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),
@@ -109,7 +114,11 @@ final class PageSchemaBuilder
         }
 
         if (
+<<<<<<< HEAD
            null !== $routeName && Str::startsWith($routeName, 'auth.')
+=======
+            null !== $routeName && Str::startsWith($routeName, 'auth.')
+>>>>>>> laraxot/dev
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')
@@ -189,7 +198,11 @@ final class PageSchemaBuilder
         $schema = [
             '@type' => 'Person',
             'name' => $name,
+<<<<<<< HEAD
            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
+=======
+            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
+>>>>>>> laraxot/dev
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
