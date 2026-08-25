@@ -26,11 +26,7 @@ declare(strict_types=1);
  * |
  */
 
-require_once __DIR__.'/../../Xot/tests/XotBasePest.php';
-
 require_once __DIR__.'/PestHelpers.php';
-require_once __DIR__.'/PestStubs.php';
-
 /*
  * |--------------------------------------------------------------------------
  * | Functions
@@ -40,3 +36,5 @@ require_once __DIR__.'/PestStubs.php';
  * | Queste funzioni saranno disponibili in tutti i test.
  * |
  */
+
+pest()->extend(\Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');

@@ -190,7 +190,8 @@ class PageSlugMiddleware
         // Try to get from route middleware (custom middleware)
         // method_exists will always be true for Http\Kernel, so we can remove the check
         /** @var array<string, class-string> $routeMiddleware */
-        $routeMiddleware = $this->kernel->getRouteMiddleware();
+        // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
+        $routeMiddleware = $this->kernel->getMiddlewareAliases();
         if (isset($routeMiddleware[$middleware])) {
             /* @var class-string */
             return $routeMiddleware[$middleware];

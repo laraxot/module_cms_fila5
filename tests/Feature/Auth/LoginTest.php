@@ -122,19 +122,23 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
-    for ($i = 0; $i < 5; ++$i) {
+    for ($i = 0; $i < 5; $i++) {
         LivewireVolt::test('auth.login')
             ->set('email', $email)
             ->set('password', 'wrong_password')
             ->call('authenticate');
     }
 
-    $response = LivewireVolt::test('auth.login')
+    // Sesto tentativo, con la password giusta: il rate limiter deve fermarlo lo stesso.
+    // `call()` restituisce un Testable, mai null: `expect($response)->toBeNull()` non
+    // poteva passare e non diceva niente sul throttling.
+    LivewireVolt::test('auth.login')
         ->set('email', $email)
         ->set('password', 'password123')
-        ->call('authenticate');
+        ->call('authenticate')
+        ->assertHasErrors('email');
 
-    expect($response)->toBeNull();
+    cmsAssertGuest();
 });
 
 it('allows any user type to login via frontend', function (): void {
