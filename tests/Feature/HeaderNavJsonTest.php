@@ -34,17 +34,8 @@ function headerNavConfig(): array
 }
 
 /**
-<<<<<<< .merge_file_DpR2Io
  * @param array<string, mixed> $config
  *
-=======
-<<<<<<< HEAD
- * @param  array<string, mixed>  $config
-=======
- * @param array<string, mixed> $config
- *
->>>>>>> laraxot/dev
->>>>>>> .merge_file_8j7xUS
  * @return list<array<string, mixed>>
  */
 function primaryNavItems(array $config): array
@@ -71,17 +62,8 @@ function primaryNavItems(array $config): array
 }
 
 /**
-<<<<<<< .merge_file_DpR2Io
  * @param list<array<string, mixed>> $items
  *
-=======
-<<<<<<< HEAD
- * @param  list<array<string, mixed>>  $items
-=======
- * @param list<array<string, mixed>> $items
- *
->>>>>>> laraxot/dev
->>>>>>> .merge_file_8j7xUS
  * @return list<string>
  */
 function navItemSlugs(array $items): array

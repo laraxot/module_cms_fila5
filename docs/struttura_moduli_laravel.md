@@ -4,12 +4,4 @@ topic: struttura_moduli_laravel
 canonical: ../../../Themes/docs/shared-components/struttura-moduli-laravel.md
 ---
 
-<<<<<<< .merge_file_1lDbzS
 See canonical documentation: ../../../Themes/docs/shared-components/struttura-moduli-laravel.md
-=======
-<<<<<<< HEAD
-See canonical documentation: ../../../Themes/docs/shared-components/struttura-moduli-laravel.md
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/struttura-moduli-laravel.md
->>>>>>> laraxot/dev
->>>>>>> .merge_file_hr6Fbw

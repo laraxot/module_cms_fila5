@@ -12,11 +12,7 @@ use Modules\Cms\Models\Page as PageModel;
 use Spatie\LaravelData\DataCollection;
 
 /**
-<<<<<<< HEAD
 * CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
-=======
- * CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
->>>>>>> laraxot/dev
  *
  * @SuppressWarnings("PHPMD.StaticAccess")
  */
@@ -24,11 +20,7 @@ final class Page extends Component
 {
     public string $side;
 
-<<<<<<< HEAD
-   public string $slug = '';
-=======
     public string $slug = '';
->>>>>>> laraxot/dev
 
     /** @var DataCollection<int, BlockData>|array<string, BlockData> */
     public DataCollection|array $blocks;
@@ -37,11 +29,7 @@ final class Page extends Component
     public array $data = [];
 
     /**
-<<<<<<< HEAD
     * @param array<string, mixed> $data Opaque context bag (container0, slug0, models, …)
-=======
-     * @param array<string, mixed> $data Opaque context bag (container0, slug0, models, …)
->>>>>>> laraxot/dev
      */
     public function __construct(
         string $side = 'content',
@@ -66,11 +54,7 @@ final class Page extends Component
 
         $this->slug = $slug;
 
-<<<<<<< HEAD
-       $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
-=======
         $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
->>>>>>> laraxot/dev
     }
 
     public function render(): ViewContract|Factory
@@ -82,10 +66,6 @@ final class Page extends Component
             'side' => $this->side,
             'slug' => $this->slug,
             'data' => $this->data,
-<<<<<<< HEAD
-       ]));
-=======
         ]));
->>>>>>> laraxot/dev
     }
 }

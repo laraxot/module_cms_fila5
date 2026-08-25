@@ -14,11 +14,7 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 beforeEach(function (): void {
-<<<<<<< HEAD
-   /* @var \Modules\Cms\Tests\TestCase $this */
-=======
     /* @var \Modules\Cms\Tests\TestCase $this */
->>>>>>> laraxot/dev
     cmsSkipTest('Predict.local homepage tests not applicable to fixcity install.');
 });
 

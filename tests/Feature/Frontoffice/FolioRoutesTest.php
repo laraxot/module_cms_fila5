@@ -40,22 +40,14 @@ it('validates Folio routes basic accessibility and localization', function (): v
     $paths = getFolioPaths();
 
     foreach ($paths as $path) {
-<<<<<<< HEAD
-       if ('/' === $path) {
-=======
         if ('/' === $path) {
->>>>>>> laraxot/dev
             $response = cmsGet($path);
             $response->assertRedirect('/'.$locale);
 
             continue;
         }
 
-<<<<<<< HEAD
-       if (str_contains($path, '{')) {
-=======
         if (str_contains($path, '{')) {
->>>>>>> laraxot/dev
             cmsSkipTest("Dynamic Folio route requires fixture: {$path}");
         }
 

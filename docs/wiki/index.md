@@ -74,12 +74,4 @@ related:
 | [cms-page-shell-data-bag](../../../../docs/wiki/architecture/cms-page-shell-data-bag.md) | Architecture (root wiki) | Folio→Volt→data bag — link progetto | 2026-06-04 |
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
 | [composer-lessons-learned](./concepts/composer-lessons-learned.md) | Concept | ThemeComposer syntax error fix + view composer criticality | 2026-04-23 |
-<<<<<<< .merge_file_IweRJZ
 | [header-section-component](./concepts/header-section-component.md) | Concept | **NUOVO**: Section.php component architecture, Blade SSoT, JSON config, Filament Builder | 2026-05-04 |
-=======
-<<<<<<< HEAD
-| [header-section-component](./concepts/header-section-component.md) | Concept | **NUOVO**: Section.php component architecture, Blade SSoT, JSON config, Filament Builder | 2026-05-04 |
-=======
-| [header-section-component](./concepts/header-section-component.md) | Concept | **NUOVO**: Section.php component architecture, Blade SSoT, JSON config, Filament Builder | 2026-05-04 |
->>>>>>> laraxot/dev
->>>>>>> .merge_file_S1NkjT

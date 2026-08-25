@@ -11,11 +11,7 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseViewRecord;
 
 class ViewSection extends LangBaseViewRecord
 {
-<<<<<<< HEAD
-   public static string $resource = SectionResource::class;
-=======
     public static string $resource = SectionResource::class;
->>>>>>> laraxot/dev
 
     #[\Override]
     protected function getInfolistSchema(): array

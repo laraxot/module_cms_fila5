@@ -18,11 +18,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\BaseTreeModel.
  *
-<<<<<<< HEAD
 * @property int                    $id
-=======
- * @property int                    $id
->>>>>>> laraxot/dev
  * @property string                 $name
  * @property array<int, mixed>|null $items
  * @property Carbon|null            $created_at
@@ -48,11 +44,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|Menu withTrashed()
  * @method static Builder|Menu withoutTrashed()
  *
-<<<<<<< HEAD
 * @property string                                     $title
-=======
- * @property string                                     $title
->>>>>>> laraxot/dev
  * @property int|null                                   $parent_id
  * @property Collection<int, static>|array<int, static> $children
  * @property int|null                                   $children_count
@@ -94,11 +86,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu whereDepth($operator, $value = null)
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu whereParentId($value)
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu whereTitle($value)
-<<<<<<< HEAD
-* @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu withGlobalScopes(array<string, mixed> $scopes)
-=======
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu withGlobalScopes(array<string, mixed> $scopes)
->>>>>>> laraxot/dev
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu withRelationshipExpression($direction, callable $constraint, $initialDepth, $from = null, $maxDepth = null)
  * @method static Collection<int, static>                                 all($columns = ['*'])
  * @method static Collection<int, static>                                 get($columns = ['*'])
@@ -159,16 +147,8 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
         'parent_id',
     ];
 
-<<<<<<< HEAD
-   /** @var array<string, string> */
-=======
     /** @var array<string, string> */
-<<<<<<< .merge_file_fh98XQ
     protected array $schema = [
-=======
->>>>>>> laraxot/dev
-    protected $schema = [
->>>>>>> .merge_file_AKr0F4
         'id' => 'integer',
         'title' => 'string',
         'parent_id' => 'integer',

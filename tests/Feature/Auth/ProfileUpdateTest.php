@@ -11,11 +11,7 @@ function cmsProfileGenerateUniqueEmail(): string
     return 'test+'.Str::uuid()->toString().'@example.com';
 }
 
-<<<<<<< HEAD
-est('profile settings page can be rendered', function (): void {
-=======
 test('profile settings page can be rendered', function (): void {
->>>>>>> laraxot/dev
     cmsSkipTest('Route /it/settings/profile not available in this install.');
 });
 

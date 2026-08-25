@@ -19,12 +19,4 @@
 ## Notes
 
 - Inventory generated from `rg -l "^(<<<<<<<|=======|>>>>>>>)"`.
-<<<<<<< .merge_file_BBpTln
 - Use this list as a volatile coordination map; re-open each file before editing because other agents may resolve items in parallel.
-=======
-<<<<<<< HEAD
-- Use this list as a volatile coordination map; re-open each file before editing because other agents may resolve items in parallel.
-=======
-- Use this list as a volatile coordination map; re-open each file before editing because other agents may resolve items in parallel.
->>>>>>> laraxot/dev
->>>>>>> .merge_file_4VPntk

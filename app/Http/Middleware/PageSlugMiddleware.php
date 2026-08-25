@@ -15,11 +15,7 @@ class PageSlugMiddleware
 
     public function handle(Request $request, \Closure $next): Response
     {
-<<<<<<< HEAD
-       $slug = $this->resolveCmsPageSlug($request);
-=======
         $slug = $this->resolveCmsPageSlug($request);
->>>>>>> laraxot/dev
 
         if (null === $slug) {
             $response = $next($request);
@@ -32,11 +28,7 @@ class PageSlugMiddleware
 
         try {
             $middlewares = Page::getMiddlewareBySlug($slug);
-<<<<<<< HEAD
-       } catch (\Throwable) {
-=======
         } catch (\Throwable) {
->>>>>>> laraxot/dev
             $middlewares = [];
         }
         // Should return ["auth", "Modules\User\Http\Middleware\EnsureUserHasType:doctor"]
@@ -57,11 +49,7 @@ class PageSlugMiddleware
     }
 
     /**
-<<<<<<< HEAD
     * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
-=======
-     * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
->>>>>>> laraxot/dev
      */
     protected function resolveCmsPageSlug(Request $request): ?string
     {
@@ -133,11 +121,7 @@ class PageSlugMiddleware
     /**
      * Execute middleware chain manually.
      */
-<<<<<<< HEAD
-   /**
-=======
     /**
->>>>>>> laraxot/dev
      * @param array<int, string> $middlewares
      */
     protected function executeMiddlewareChain(Request $request, array $middlewares, \Closure $finalNext): Response
@@ -206,15 +190,7 @@ class PageSlugMiddleware
         // Try to get from route middleware (custom middleware)
         // method_exists will always be true for Http\Kernel, so we can remove the check
         /** @var array<string, class-string> $routeMiddleware */
-<<<<<<< .merge_file_GpvC60
         // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
-=======
-<<<<<<< HEAD
-       // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
-=======
-        // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
->>>>>>> laraxot/dev
->>>>>>> .merge_file_B2k8Qt
         $routeMiddleware = $this->kernel->getMiddlewareAliases();
         if (isset($routeMiddleware[$middleware])) {
             /* @var class-string */

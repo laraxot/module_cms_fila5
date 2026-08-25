@@ -11,11 +11,7 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 
 class ListAttachments extends LangBaseListRecords
 {
-<<<<<<< HEAD
-   public static string $resource = AttachmentResource::class;
-=======
     public static string $resource = AttachmentResource::class;
->>>>>>> laraxot/dev
 
     /**
      * @return array<string, Column>
