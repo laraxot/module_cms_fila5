@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 return [
     'fields' => [
+<<<<<<< HEAD
+       'sidebar_blocks' => ['label' => 'sidebar_blocks', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
+=======
         'sidebar_blocks' => ['label' => 'sidebar_blocks', 'tooltip' => '', 'helper_text' => '', 'description' => ''],
+>>>>>>> laraxot/dev
         'test_field' => ['label' => 'test_field', 'placeholder' => 'test_field', 'helper_text' => 'test_field', 'description' => 'test_field'],
         'sidebar_content' => ['label' => 'sidebar_content', 'placeholder' => 'sidebar_content', 'helper_text' => 'sidebar_content', 'description' => 'sidebar_content'],
         'test' => ['label' => 'test', 'placeholder' => 'test', 'helper_text' => 'test', 'description' => 'test'],
@@ -16,7 +20,11 @@ return [
     'navigation' => [
         'name' => 'Left Sidebar Content',
         'plural' => 'Left Sidebar Content',
+<<<<<<< HEAD
+       'group' => ['name' => 'General', 'description' => 'General Settings'],
+=======
         'group' => ['name' => 'General', 'description' => 'General Settings'],
+>>>>>>> laraxot/dev
         'label' => 'Left Sidebar Content',
         'sort' => 1,
         'icon' => 'heroicon-o-rectangle-stack',
