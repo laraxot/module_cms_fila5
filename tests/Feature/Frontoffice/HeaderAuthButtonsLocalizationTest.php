@@ -11,11 +11,7 @@ it('renders localized auth labels and links on localized homepages', function ()
     $status = $response->getStatusCode();
 
     if ($status >= 500) {
-<<<<<<< HEAD
-       cmsSkipTest('Italian homepage returned server error in this install.');
-=======
         cmsSkipTest('Italian homepage returned server error in this install.');
->>>>>>> laraxot/dev
 
         return;
     }
@@ -26,11 +22,7 @@ it('renders localized auth labels and links on localized homepages', function ()
     $response->assertSee('/it/auth/login');
     $response->assertSee('/it/auth/register');
 
-<<<<<<< HEAD
-   $response = cmsGet('/de');
-=======
     $response = cmsGet('/de');
->>>>>>> laraxot/dev
     $status = $response->getStatusCode();
 
     if ($status >= 500) {

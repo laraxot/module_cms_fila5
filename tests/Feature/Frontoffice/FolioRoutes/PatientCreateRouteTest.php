@@ -16,9 +16,5 @@ it('GET /it/events acceptable (LaravelPizza Meetup)', function (): void {
         return;
     }
 
-<<<<<<< HEAD
-   Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 401, 403, 404], true));
-=======
     Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 401, 403, 404], true));
->>>>>>> laraxot/dev
 });

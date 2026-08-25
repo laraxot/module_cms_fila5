@@ -11,11 +11,7 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 
 class ListSections extends LangBaseListRecords
 {
-<<<<<<< HEAD
-   public static string $resource = SectionResource::class;
-=======
     public static string $resource = SectionResource::class;
->>>>>>> laraxot/dev
 
     /**
      * @return array<string, Column>

@@ -20,11 +20,7 @@ test('Menu model has expected fillable fields', function () {
 
     $fillable = $menu->getFillable();
 
-<<<<<<< HEAD
-   Assert::assertContains('title', $fillable);
-=======
     Assert::assertContains('title', $fillable);
->>>>>>> laraxot/dev
 
     Assert::assertContains('parent_id', $fillable);
 });
@@ -33,20 +29,12 @@ test('Menu model implements HasRecursiveRelationships', function () {
     $reflection = new ReflectionClass(Menu::class);
     $traits = $reflection->getTraitNames();
 
-<<<<<<< HEAD
-   Assert::assertTrue(in_array(HasRecursiveRelationships::class, $traits));
-=======
     Assert::assertTrue(in_array(HasRecursiveRelationships::class, $traits));
->>>>>>> laraxot/dev
 });
 
 test('Menu model uses SushiToJsons trait', function () {
     $reflection = new ReflectionClass(Menu::class);
     $traits = $reflection->getTraitNames();
 
-<<<<<<< HEAD
-   Assert::assertTrue(in_array(SushiToJsons::class, $traits));
-=======
     Assert::assertTrue(in_array(SushiToJsons::class, $traits));
->>>>>>> laraxot/dev
 });

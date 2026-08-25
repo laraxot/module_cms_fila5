@@ -8,11 +8,7 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 test('Home page can be instantiated', function () {
-<<<<<<< HEAD
-    $page = new Home;
-=======
     $page = new Home();
->>>>>>> laraxot/dev
 });
 
 test('Home page has view_type property', function () {
@@ -21,11 +17,7 @@ test('Home page has view_type property', function () {
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
 
-<<<<<<< HEAD
-   Assert::assertSame('view_type', $property->getName());
-=======
     Assert::assertSame('view_type', $property->getName());
->>>>>>> laraxot/dev
 });
 
 test('Home page has containers property', function () {
@@ -34,11 +26,7 @@ test('Home page has containers property', function () {
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
 
-<<<<<<< HEAD
-   Assert::assertIsArray($property->getValue($page));
-=======
     Assert::assertIsArray($property->getValue($page));
->>>>>>> laraxot/dev
 });
 
 test('Home page has items property', function () {
@@ -47,16 +35,6 @@ test('Home page has items property', function () {
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);
 
-<<<<<<< HEAD
-   Assert::assertIsArray($property->getValue($page));
-});
-
-test('Home page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Home page has getViewData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Home page has initView method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
     Assert::assertIsArray($property->getValue($page));
 });
 
@@ -68,10 +46,6 @@ test('Home page has getViewData method', function () {
 
 test('Home page has initView method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-<<<<<<< .merge_file_aAmWgm
-=======
->>>>>>> laraxot/dev
->>>>>>> .merge_file_JLfTNH
 
 // Rimosso `test('Home page has url method')`: la closure era vuota e il metodo non
 // esiste. `Home` estende `XotBasePage` -> `Filament\Pages\Page`, che espone `getUrl()`

@@ -44,11 +44,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static Builder<static>|Attachment whereDisk($value)
  * @method static Builder<static>|Attachment whereId($value)
  * @method static Builder<static>|Attachment whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
-<<<<<<< HEAD
-* @method static Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
-=======
  * @method static Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
->>>>>>> laraxot/dev
  * @method static Builder<static>|Attachment whereLocale(string $column, string $locale)
  * @method static Builder<static>|Attachment whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Attachment whereSlug($value)
@@ -69,22 +65,14 @@ class Attachment extends BaseModelLang implements HasMedia
     use InteractsWithMedia;
     use SushiToJsons;
 
-<<<<<<< HEAD
-   /** @var list<string> */
-=======
     /** @var list<string> */
->>>>>>> laraxot/dev
     public array $translatable = [
         'title',
         'description',
         'attachment',
     ];
 
-<<<<<<< HEAD
-   /** @var list<string> */
-=======
     /** @var list<string> */
->>>>>>> laraxot/dev
     protected $fillable = [
         'title',
         'description',
@@ -93,16 +81,8 @@ class Attachment extends BaseModelLang implements HasMedia
         'attachment',
     ];
 
-<<<<<<< HEAD
-   /** @var array<string, string> */
-=======
     /** @var array<string, string> */
-<<<<<<< .merge_file_Wt8RNV
     protected array $schema = [
-=======
->>>>>>> laraxot/dev
-    protected $schema = [
->>>>>>> .merge_file_5Upcp8
         'id' => 'integer',
         'title' => 'json',
         'description' => 'json',
@@ -144,11 +124,7 @@ class Attachment extends BaseModelLang implements HasMedia
      * }
      */
 
-<<<<<<< HEAD
-   /**
-=======
     /**
->>>>>>> laraxot/dev
      * @return array<int, array<string, mixed>>
      */
     public function getRows(): array

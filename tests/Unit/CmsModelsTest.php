@@ -17,11 +17,7 @@ it('can create a cms page via factory', function (): void {
         'content' => 'Welcome to our website',
     ]);
 
-<<<<<<< HEAD
-   Assert::assertInstanceOf(Page::class, $page);
-=======
     Assert::assertInstanceOf(Page::class, $page);
->>>>>>> laraxot/dev
     Assert::assertSame('home', $page->slug);
     Assert::assertSame('Welcome to our website', $page->content);
 });
