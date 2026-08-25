@@ -8,11 +8,11 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 test('Welcome page can be instantiated', function () {
-    $page = new Welcome();
+    $page = new Welcome;
 });
 
 test('Welcome page has view_type property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
@@ -21,7 +21,7 @@ test('Welcome page has view_type property', function () {
 });
 
 test('Welcome page has containers property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
@@ -30,7 +30,7 @@ test('Welcome page has containers property', function () {
 });
 
 test('Welcome page has items property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);
@@ -39,7 +39,7 @@ test('Welcome page has items property', function () {
 });
 
 test('Welcome page has instanceModel property', function () {
-    $page = new Welcome();
+    $page = new Welcome;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('instanceModel');
     $property->setAccessible(true);
@@ -47,17 +47,14 @@ test('Welcome page has instanceModel property', function () {
     Assert::assertSame('instanceModel', $property->getName());
 });
 
-test('Welcome page has mount method', function () {
-});
+test('Welcome page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Welcome page has getViewData method', function () {
-});
+test('Welcome page has getViewData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Welcome page has initView method', function () {
-});
+test('Welcome page has initView method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Welcome page has url method', function () {
-});
-
-test('Welcome page has setModel method', function () {
-});
+// Rimossi `test('Welcome page has url method')` e `test('... setModel method')`: le
+// closure erano vuote e nessuno dei due metodi esiste. `Welcome` dichiara solo `mount`,
+// `getViewData` e `initView`; la catena `XotBasePage` -> `Filament\Pages\Page` espone
+// `getUrl()` statico, non `url()`, e non ha `setModel()`. Riempirli li avrebbe resi
+// rossi, rinominarli sarebbe stato inventare l'intento.
