@@ -39,7 +39,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null         $creator
  * @property ProfileContract|null         $updater
  * @property ProfileContract|null         $deleter
- * @property mixed                        $translations
+ * @property array<string, array<string, mixed>> $translations
  *
  * @method static Builder<static>|Page                                  newModelQuery()
  * @method static Builder<static>|Page                                  newQuery()

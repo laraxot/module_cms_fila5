@@ -11,26 +11,12 @@ use function Pest\Laravel\get;
 
 uses(TestCase::class);
 beforeEach(function (): void {
-    /* @var \Modules\Cms\Tests\TestCase $this */
-    if (! \is_string(config('app.key')) || '' === config('app.key')) {
-        $key = 'base64:'.base64_encode(str_repeat('x', 32));
-        config()->set('app.key', $key);
-        $_ENV['APP_KEY'] = $key;
-    }
-
-    cmsSkipTest('Filament blocks homepage integration requires full theme + block wiring in this install.');
-});
-
-describe('Filament Blocks Integration', function () {
-    it('integrates with PageContentBuilder correctly', function () {
-        $response = get('/');
-
-        /** @var TestResponse<Response> $response */
-        $status = $response->getStatusCode();
-        Assert::assertTrue(in_array($status, [200, 302], true));
-
-        // Verifica che il PageContentBuilder funzioni correttamente
-        // Questo test verifica l'integrazione tra CMS e frontend
+        /* @var \Modules\Cms\Tests\TestCase $this */
+        if (! \is_string(config('app.key')) || '' === config('app.key')) {
+            $key = 'base64:'.base64_encode(str_repeat('x', 32));
+            config()->set('app.key', $key);
+            $_ENV['APP_KEY'] = $key;
+        }
     });
 
     it('displays blocks with correct data structure', function () {
@@ -156,4 +142,3 @@ describe('Filament Blocks Integration', function () {
         // Verifica che i blocchi si carichino entro tempi accettabili
         Assert::assertLessThan(500, $loadTime);
     });
-});

@@ -24,7 +24,7 @@ use function Safe\json_decode;
  */
 function cmsTest(): TestCase
 {
-    if (TestCase::$currentTest !== null) {
+    if (null !== TestCase::$currentTest) {
         return TestCase::$currentTest;
     }
 
@@ -40,7 +40,7 @@ function cmsGenerateUniqueEmail(): string
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function cmsCreateTestUser(array $attributes = []): UserContract
 {
@@ -48,7 +48,7 @@ function cmsCreateTestUser(array $attributes = []): UserContract
 }
 
 /**
- * @param  array<string, mixed>  $attributes
+ * @param array<string, mixed> $attributes
  */
 function cmsCreateUnverifiedUser(array $attributes = []): User
 {
@@ -61,7 +61,8 @@ function cmsCreateUnverifiedUser(array $attributes = []): User
 /**
  * @template T of object
  *
- * @param  class-string<T>  $class
+ * @param class-string<T> $class
+ *
  * @return T&MockObject
  */
 function cmsCreateMock(string $class): object
@@ -91,7 +92,22 @@ function cmsJsonDecodeFile(string $path): array
 }
 
 /**
- * @param  array<string, string>  $headers
+ * Contenuto della homepage di fixcity, decodificato.
+ *
+ * Il path e' fissato qui e non passato dal chiamante: i test di architettura dei
+ * blocchi verificano *quella* homepage, e ripetere la stringa in sei punti e' il
+ * modo piu' rapido perche' cinque restino indietro quando il file si sposta.
+ *
+ * @return array<string, mixed> Con le chiavi `id`, `slug`, `content_blocks`
+ */
+function loadHomepageJsonForBlocksArchitectureTest(): array
+{
+    return cmsJsonDecodeFile(config_path('local/fixcity/database/content/pages/home.json'));
+}
+
+/**
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsGet(string $uri, array $headers = []): TestResponse
@@ -100,7 +116,8 @@ function cmsGet(string $uri, array $headers = []): TestResponse
 }
 
 /**
- * @param  array<string, string>  $headers
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestResponse
@@ -115,8 +132,9 @@ function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestRespon
 }
 
 /**
- * @param  array<string, mixed>  $data
- * @param  array<string, string>  $headers
+ * @param array<string, mixed>  $data
+ * @param array<string, string> $headers
+ *
  * @return TestResponse<Response>
  */
 function cmsPost(string $uri, array $data = [], array $headers = []): TestResponse
@@ -145,7 +163,8 @@ function cmsAssertGuest(?string $guard = null): void
 }
 
 /**
- * @param  array<string, mixed>  $data
+ * @param array<string, mixed> $data
+ *
  * @return TestResponse<Response>
  */
 function cmsActingAsGet(Authenticatable $user, string $uri, array $data = []): TestResponse

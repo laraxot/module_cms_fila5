@@ -29,12 +29,13 @@ test('Metatags can be instantiated', function () {
     Assert::assertInstanceOf(Metatags::class, $component);
 });
 
-test('Page can be instantiated', function () {})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
+test('Page can be instantiated', function () {
+})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');
 
-    Assert::assertInstanceOf(PageContent::class, $component);
+Assert::assertInstanceOf(PageContent::class, $component);
 
     Assert::assertSame('test-slug', $component->slug);
 });
@@ -42,5 +43,5 @@ test('PageContent can be instantiated with slug', function () {
 test('Section can be instantiated with slug', function () {
     // This test may fail due to database dependencies during instantiation
     // Let's just check if the class is instantiable in general
-    Assert::assertTrue(class_exists(Section::class));
+Assert::assertTrue(class_exists(Section::class));
 });
