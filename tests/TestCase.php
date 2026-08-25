@@ -87,6 +87,7 @@ abstract class TestCase extends XotBaseTestCase
             CmsServiceProvider::class,
         ];
     }
+
     public static function pestGenerateUniqueEmail(): string
     {
         return parent::generateUniqueEmail();
