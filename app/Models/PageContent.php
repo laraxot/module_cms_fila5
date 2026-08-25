@@ -34,7 +34,11 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|PageContent whereCreatedBy($value)
  * @method static Builder<static>|PageContent whereId($value)
  * @method static Builder<static>|PageContent whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
+<<<<<<< HEAD
+* @method static Builder<static>|PageContent whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
+=======
  * @method static Builder<static>|PageContent whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
+>>>>>>> laraxot/dev
  * @method static Builder<static>|PageContent whereLocale(string $column, string $locale)
  * @method static Builder<static>|PageContent whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|PageContent whereName($value)
@@ -55,7 +59,11 @@ class PageContent extends BaseModel
     use HasTranslations;
     use SushiToJsons;
 
+<<<<<<< HEAD
+   /** @var list<string> */
+=======
     /** @var list<string> */
+>>>>>>> laraxot/dev
     public array $translatable = [
         'name',
         'blocks',
@@ -68,8 +76,16 @@ class PageContent extends BaseModel
         'blocks',
     ];
 
+<<<<<<< HEAD
+   /** @var array<string, string> */
+=======
     /** @var array<string, string> */
+<<<<<<< .merge_file_ONA54g
     protected array $schema = [
+=======
+>>>>>>> laraxot/dev
+    protected $schema = [
+>>>>>>> .merge_file_uYLg9j
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',

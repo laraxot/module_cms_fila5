@@ -41,7 +41,11 @@ test('italian header navigation uses mercati label', function (): void {
     /** @var array<string, string> $translations */
     $translations = require base_path('Themes/TwentyOne/lang/it/headernav.php');
 
+<<<<<<< HEAD
+   Assert::assertSame('Mercati', $translations['markets'] ?? null);
+=======
     Assert::assertSame('Mercati', $translations['markets'] ?? null);
+>>>>>>> laraxot/dev
 });
 
 test('canonical homepage starts with a clear hero and contains onboarding blocks', function (): void {

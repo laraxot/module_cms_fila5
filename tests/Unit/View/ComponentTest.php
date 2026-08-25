@@ -29,13 +29,32 @@ test('Metatags can be instantiated', function () {
     Assert::assertInstanceOf(Metatags::class, $component);
 });
 
+<<<<<<< HEAD
+test('Page can be instantiated', function () {})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
+=======
 test('Page can be instantiated', function () {
 })->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
+<<<<<<< .merge_file_3UugBP
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_gN1Mxm
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');
 
+<<<<<<< .merge_file_PoAFtO
     Assert::assertInstanceOf(PageContent::class, $component);
+=======
+<<<<<<< .merge_file_3UugBP
+Assert::assertInstanceOf(PageContent::class, $component);
+=======
+<<<<<<< HEAD
+   Assert::assertInstanceOf(PageContent::class, $component);
+=======
+    Assert::assertInstanceOf(PageContent::class, $component);
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_gN1Mxm
+>>>>>>> .merge_file_4PG80o
 
     Assert::assertSame('test-slug', $component->slug);
 });
@@ -43,5 +62,17 @@ test('PageContent can be instantiated with slug', function () {
 test('Section can be instantiated with slug', function () {
     // This test may fail due to database dependencies during instantiation
     // Let's just check if the class is instantiable in general
+<<<<<<< .merge_file_PoAFtO
     Assert::assertTrue(class_exists(Section::class));
+=======
+<<<<<<< .merge_file_3UugBP
+Assert::assertTrue(class_exists(Section::class));
+=======
+<<<<<<< HEAD
+   Assert::assertTrue(class_exists(Section::class));
+=======
+    Assert::assertTrue(class_exists(Section::class));
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_gN1Mxm
+>>>>>>> .merge_file_4PG80o
 });

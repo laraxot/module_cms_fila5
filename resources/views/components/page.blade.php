@@ -19,6 +19,10 @@ declare(strict_types=1);
         @if (property_exists($block, 'active') && !$block->active)
             @continue
         @endif
+<<<<<<< HEAD
+       @include($block->view, array_merge($data, $block->data, ['data' => $block->data]))
+=======
         @include($block->view, array_merge($data, $block->data, ['data' => $block->data]))
+>>>>>>> laraxot/dev
     @endforeach
 @endif
