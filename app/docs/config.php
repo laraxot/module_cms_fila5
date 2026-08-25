@@ -62,6 +62,7 @@ return [
                 return trimPath($page->getPath()) == trimPath($child);
             });
         }
+
         return false;
     }, /*
     'url' => function ($page, $path) {
