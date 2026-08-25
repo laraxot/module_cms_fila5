@@ -100,4 +100,12 @@ La pagina servizi deve comunicare:
 - [Content Management](content-management.md)
 - [UI Components](../ui/project_docs/components.md)
 - [Theme Blocks](../../themes/one/project_docs/blocks.md)
+<<<<<<< .merge_file_wrPYct
 - [User Experience](../../../../docs/project/frontend/ux-guidelines.md)
+=======
+<<<<<<< HEAD
+- [User Experience](../../../../docs/project/frontend/ux-guidelines.md)
+=======
+- [User Experience](../../../../docs/project/frontend/ux-guidelines.md)
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_2mMWWJ

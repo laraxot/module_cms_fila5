@@ -21,7 +21,11 @@ test('GetStyleClassAction handles exceptions gracefully', function () {
     // so we need to test that it's handled appropriately
     try {
         $result = $action->execute();
+<<<<<<< HEAD
+   } catch (Exception $e) {
+=======
     } catch (Exception $e) {
+>>>>>>> laraxot/dev
         // If an exception is thrown, it's expected due to missing dependencies
     }
 });
@@ -34,5 +38,9 @@ test('GetStyleClassAction with mocked config', function () {
     $action = new GetStyleClassAction();
 
     // This should still fail as the action expects specific view structure
+<<<<<<< HEAD
+   Assert::assertInstanceOf(GetStyleClassAction::class, $action);
+=======
     Assert::assertInstanceOf(GetStyleClassAction::class, $action);
+>>>>>>> laraxot/dev
 });

@@ -16,12 +16,20 @@ beforeEach(function (): void {
 
 it('redirects root / to /{locale}', function (): void {
     $locale = app()->getLocale();
+<<<<<<< HEAD
+   $response = cmsGet('/');
+=======
     $response = cmsGet('/');
+>>>>>>> laraxot/dev
     Assert::assertSame('/'.$locale, $response->headers->get('Location'));
 });
 
 it('serves localized homepage at /{locale}', function (): void {
     $locale = app()->getLocale();
+<<<<<<< HEAD
+   $response = cmsGet('/'.$locale);
+=======
     $response = cmsGet('/'.$locale);
+>>>>>>> laraxot/dev
     Assert::assertSame(200, $response->status());
 });

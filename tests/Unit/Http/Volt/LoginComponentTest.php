@@ -33,12 +33,29 @@ describe('LoginComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('remember'));
     });
 
+<<<<<<< .merge_file_litOlc
 test('login component has authenticate method', function (): void {
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+<<<<<<< HEAD
+    test('login component has authenticate method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+    test('login component has authenticate method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_QlbJHu
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);
 
+<<<<<<< .merge_file_litOlc
 Assert::assertSame('Modules\Cms\Http\Volt', $reflector->getNamespaceName());
+=======
+<<<<<<< HEAD
+       Assert::assertSame('Modules\Cms\Http\Volt', $reflector->getNamespaceName());
+=======
+        Assert::assertSame('Modules\Cms\Http\Volt', $reflector->getNamespaceName());
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_QlbJHu
     });
 });

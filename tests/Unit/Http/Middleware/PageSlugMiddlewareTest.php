@@ -27,19 +27,31 @@ function invokeProtected(object $object, string $method, array $args = []): mixe
 
 function setProtected(object $object, string $property, mixed $value): void
 {
+<<<<<<< HEAD
+   $reflection = new ReflectionClass($object);
+=======
     $reflection = new ReflectionClass($object);
+>>>>>>> laraxot/dev
     $target = $reflection->getProperty($property);
     $target->setAccessible(true);
     $target->setValue($object, $value);
 }
 
+<<<<<<< HEAD
+est('handle returns next response when cms page slug cannot be resolved', function (): void {
+=======
 test('handle returns next response when cms page slug cannot be resolved', function (): void {
+>>>>>>> laraxot/dev
     $request = Request::create('/test', 'GET');
     $middleware = new PageSlugMiddleware();
 
     $response = $middleware->handle($request, fn (Request $req): Response => new Response('ok', 200));
 
+<<<<<<< HEAD
+   Assert::assertSame(200, $response->getStatusCode());
+=======
     Assert::assertSame(200, $response->getStatusCode());
+>>>>>>> laraxot/dev
 
     Assert::assertSame('ok', $response->getContent());
 });
@@ -82,7 +94,11 @@ test('handle wraps non-response next value into 500 response when slug is not a 
 
     $response = $middleware->handle($request, fn (Request $req) => 'not-a-response');
 
+<<<<<<< HEAD
+   Assert::assertSame(500, $response->getStatusCode());
+=======
     Assert::assertSame(500, $response->getStatusCode());
+>>>>>>> laraxot/dev
 
     Assert::assertSame('Internal Server Error', $response->getContent());
 });
@@ -93,14 +109,22 @@ test('parseMiddleware splits name and parameters', function (): void {
     /** @var array{0:string,1:array<string>} $parsed */
     $parsed = invokeProtected($middleware, 'parseMiddleware', ['throttle:60,1']);
 
+<<<<<<< HEAD
+   Assert::assertSame('throttle', $parsed[0]);
+=======
     Assert::assertSame('throttle', $parsed[0]);
+>>>>>>> laraxot/dev
 
     Assert::assertSame(['60', '1'], $parsed[1]);
 });
 
 test('resolveMiddlewareClass returns mapped class for alias', function (): void {
     $middleware = new PageSlugMiddleware();
+<<<<<<< HEAD
+   /** @var Kernel&MockInterface $kernel */
+=======
     /** @var Kernel&MockInterface $kernel */
+>>>>>>> laraxot/dev
     $kernel = Mockery::mock(Kernel::class);
     $kernel->allows([
         'getRouteMiddleware' => ['auth' => Authenticate::class],
@@ -110,7 +134,11 @@ test('resolveMiddlewareClass returns mapped class for alias', function (): void 
 
     $resolved = invokeProtected($middleware, 'resolveMiddlewareClass', ['auth']);
 
+<<<<<<< HEAD
+   Assert::assertSame(Authenticate::class, $resolved);
+=======
     Assert::assertSame(Authenticate::class, $resolved);
+>>>>>>> laraxot/dev
 });
 
 test('executeMiddlewareChain returns 500 when final closure does not return response', function (): void {
@@ -124,7 +152,11 @@ test('executeMiddlewareChain returns 500 when final closure does not return resp
         fn (Request $req) => 'not-a-response',
     ]);
 
+<<<<<<< HEAD
+   Assert::assertSame(500, $response->getStatusCode());
+=======
     Assert::assertSame(500, $response->getStatusCode());
+>>>>>>> laraxot/dev
 
     Assert::assertSame('Internal Server Error', $response->getContent());
 });
