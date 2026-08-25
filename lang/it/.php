@@ -450,11 +450,7 @@ return array (
     'empty' => 
     array (
       'heading' => '',
-<<<<<<< HEAD
-     'label' => 'empty2',
-=======
       'label' => 'empty2',
->>>>>>> laraxot/dev
     ),
   ),
   'navigation' => 

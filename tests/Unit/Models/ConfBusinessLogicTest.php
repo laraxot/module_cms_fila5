@@ -6,18 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\Conf;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-<<<<<<< HEAD
-use Sushi\Sushi;
-
-use function Safe\class_uses;
-
-=======
 
 use function Safe\class_uses;
 
 use Sushi\Sushi;
 
->>>>>>> laraxot/dev
 uses(TestCase::class);
 describe('Conf Business Logic', function (): void {
     test('conf extends eloquent model', function (): void {
@@ -29,11 +22,7 @@ describe('Conf Business Logic', function (): void {
     test('conf uses sushi trait for in-memory data', function (): void {
         $traits = class_uses(Conf::class);
 
-<<<<<<< HEAD
-       Assert::assertArrayHasKey(Sushi::class, $traits);
-=======
         Assert::assertArrayHasKey(Sushi::class, $traits);
->>>>>>> laraxot/dev
     });
 
     test('conf has expected fillable fields', function (): void {
@@ -43,11 +32,7 @@ describe('Conf Business Logic', function (): void {
             'name',
         ];
 
-<<<<<<< HEAD
-       Assert::assertEquals($expectedFillable, $conf->getFillable());
-=======
         Assert::assertEquals($expectedFillable, $conf->getFillable());
->>>>>>> laraxot/dev
     });
 
     test('conf uses name as route key', function (): void {

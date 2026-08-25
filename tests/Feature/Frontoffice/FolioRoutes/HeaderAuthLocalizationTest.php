@@ -5,11 +5,7 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
-<<<<<<< HEAD
-t('GET /de localizes guest auth labels in header', function (): void {
-=======
 it('GET /de localizes guest auth labels in header', function (): void {
->>>>>>> laraxot/dev
     $response = cmsGet('/de');
     $status = (int) $response->getStatusCode();
 
@@ -31,11 +27,7 @@ it('GET /de localizes guest auth labels in header', function (): void {
 });
 
 it('GET /en localizes guest auth labels in header', function (): void {
-<<<<<<< HEAD
-   $response = cmsGet('/en');
-=======
     $response = cmsGet('/en');
->>>>>>> laraxot/dev
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {

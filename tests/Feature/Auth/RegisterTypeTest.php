@@ -5,25 +5,14 @@ declare(strict_types=1);
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
-<<<<<<< .merge_file_ZaD6PJ
-=======
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
-=======
->>>>>>> laraxot/dev
->>>>>>> .merge_file_IYuhJw
 
 use function Pest\Laravel\get;
 
-use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-<<<<<<< HEAD
-eforeEach(function (): void {
-=======
 beforeEach(function (): void {
->>>>>>> laraxot/dev
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('patient/doctor registration types not configured in this install.');
 });

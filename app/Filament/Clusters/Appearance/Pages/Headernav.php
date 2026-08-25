@@ -37,11 +37,7 @@ class Headernav extends XotBasePage implements HasForms
     public ?HeadernavData $headernavData = null;
 
     /**
-<<<<<<< HEAD
-    * Data for the form state.
-=======
      * Data for the form state.
->>>>>>> laraxot/dev
      *
      * @var array<string, mixed>
      */
@@ -117,11 +113,7 @@ class Headernav extends XotBasePage implements HasForms
      */
     protected function fillForms(): void
     {
-<<<<<<< HEAD
-       $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
-=======
         $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
->>>>>>> laraxot/dev
         Assert::isArray($appearanceConfig);
 
         $headernavConfig = Arr::get($appearanceConfig, 'headernav', []);

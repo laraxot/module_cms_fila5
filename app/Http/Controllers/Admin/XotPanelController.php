@@ -13,11 +13,7 @@ use Modules\Cms\Http\Controllers\BaseController;
  */
 class XotPanelController extends BaseController
 {
-<<<<<<< HEAD
-   /**
-=======
     /**
->>>>>>> laraxot/dev
      * @param array<int, mixed> $arg
      */
     public function __call($method, $arg)

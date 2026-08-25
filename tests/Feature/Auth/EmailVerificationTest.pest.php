@@ -34,7 +34,8 @@ test('email can be verified', function (): void {
     $freshUser = $user->fresh();
     Assert::assertInstanceOf(User::class, $freshUser);
     Assert::assertTrue($freshUser->hasVerifiedEmail());
-    Assert::assertSame(route('dashboard', absolute: false).'?verified=1', $response->headers->get('Location'));
+    $location = $response->headers->get('Location');
+    Assert::assertSame(route('dashboard', absolute: false).'?verified=1', $location);
 });
 
 test('email is not verified with invalid hash', function (): void {

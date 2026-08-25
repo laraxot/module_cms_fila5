@@ -9,9 +9,5 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord;
 
 class CreateSection extends LangBaseCreateRecord
 {
-<<<<<<< HEAD
-   public static string $resource = SectionResource::class;
-=======
     public static string $resource = SectionResource::class;
->>>>>>> laraxot/dev
 }

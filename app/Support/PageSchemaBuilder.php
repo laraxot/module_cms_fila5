@@ -7,13 +7,9 @@ namespace Modules\Cms\Support;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Str;
 use Modules\User\Models\User;
-<<<<<<< .merge_file_0yy1N1
-=======
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
->>>>>>> .merge_file_iqllsY
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 final class PageSchemaBuilder
 {
@@ -34,15 +30,7 @@ final class PageSchemaBuilder
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => $pageType,
-<<<<<<< .merge_file_0yy1N1
-           'name' => $meta->getBrandName(),
-=======
-<<<<<<< HEAD
-           'name' => $meta->getBrandName(),
-=======
             'name' => $meta->getBrandName(),
->>>>>>> laraxot/dev
->>>>>>> .merge_file_iqllsY
             'description' => $meta->getDescription(limit: 160),
             'url' => $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),
@@ -121,15 +109,7 @@ final class PageSchemaBuilder
         }
 
         if (
-<<<<<<< .merge_file_0yy1N1
-           null !== $routeName && Str::startsWith($routeName, 'auth.')
-=======
-<<<<<<< HEAD
-           null !== $routeName && Str::startsWith($routeName, 'auth.')
-=======
             null !== $routeName && Str::startsWith($routeName, 'auth.')
->>>>>>> laraxot/dev
->>>>>>> .merge_file_iqllsY
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')
@@ -209,15 +189,7 @@ final class PageSchemaBuilder
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-<<<<<<< .merge_file_0yy1N1
-           'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
-=======
-<<<<<<< HEAD
-           'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
-=======
             'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
->>>>>>> laraxot/dev
->>>>>>> .merge_file_iqllsY
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {

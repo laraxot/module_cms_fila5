@@ -6,25 +6,14 @@ use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-<<<<<<< .merge_file_Gq5XjJ
-=======
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert;
-=======
->>>>>>> laraxot/dev
->>>>>>> .merge_file_4mVJFh
 
 use function Pest\Laravel\get;
 
-use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-<<<<<<< HEAD
-eforeEach(function (): void {
-=======
 beforeEach(function (): void {
->>>>>>> laraxot/dev
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Homepage content tests target legacy predict/laravelpizza fixtures, not fixcity.');
 });
@@ -37,11 +26,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica che il contenuto JSON sia caricato correttamente
         $response->assertSee('<nome progetto> - Promozione della <slogan> per le gestanti');
@@ -51,11 +36,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica struttura blocchi
         $response->assertSee('landing-page');
@@ -67,11 +48,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica elementi hero block
         $response->assertSee('INIZIA ORA');
@@ -85,11 +62,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         // Questo test può essere espanso per verificare gestione errori
         $response = get('/'.$locale);
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
 
         // Verifica che la pagina si carichi anche con contenuto mancante
@@ -98,31 +71,19 @@ describe('Homepage Content Management', function () {
     it('displays localized content correctly', function () {
         // Test italiano
         $response = get('/it');
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         $response->assertSee('Benvenuta su <nome progetto>');
 
         // Test inglese
         $response = get('/en');
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica contenuto inglese
 
         // Test tedesco
         $response = get('/de');
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
 
         // Verifica contenuto tedesco
@@ -132,11 +93,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica CTA button
         $response->assertSee('INIZIA ORA');
@@ -148,11 +105,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica immagine hero
         $response->assertSee('Sorriso-Denti-bianchi-donna-apparecchio-denti-e-salute-1.jpg');
@@ -164,11 +117,7 @@ describe('Homepage Content Management', function () {
         $locale = (string) (app()->getLocale() ?? 'it');
         $response = get('/'.$locale);
 
-<<<<<<< HEAD
-       /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
-=======
         /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
->>>>>>> laraxot/dev
         Assert::assertSame(200, $response->status());
         // Verifica classi CSS
         $response->assertSee('bg-white');
@@ -178,11 +127,7 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-<<<<<<< HEAD
-       $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
-=======
         $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
->>>>>>> laraxot/dev
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -198,25 +143,13 @@ describe('Homepage Content Management', function () {
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-<<<<<<< .merge_file_Gq5XjJ
         if (200 !== $status) {
-=======
-<<<<<<< HEAD
-        if ($status !== 200) {
-=======
-        if (200 !== $status) {
->>>>>>> laraxot/dev
->>>>>>> .merge_file_4mVJFh
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
         }
 
-<<<<<<< HEAD
-       Assert::assertSame(200, $response->status());
-=======
         Assert::assertSame(200, $response->status());
->>>>>>> laraxot/dev
         // Avoid brittle copy-order assertions; just ensure HTML is present.
         $content = (string) $response->getContent();
         Assert::assertNotSame('', trim($content));
@@ -228,25 +161,13 @@ describe('Homepage Content Management', function () {
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-<<<<<<< .merge_file_Gq5XjJ
         if (200 !== $status) {
-=======
-<<<<<<< HEAD
-        if ($status !== 200) {
-=======
-        if (200 !== $status) {
->>>>>>> laraxot/dev
->>>>>>> .merge_file_4mVJFh
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
         }
 
-<<<<<<< HEAD
-       Assert::assertSame(200, $response->status());
-=======
         Assert::assertSame(200, $response->status());
->>>>>>> laraxot/dev
         $content = (string) $response->getContent();
         Assert::assertStringContainsString('class="', $content);
     });
