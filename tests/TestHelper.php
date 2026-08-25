@@ -50,7 +50,7 @@ abstract class TestHelper extends BaseTestCase
     public function getMainAdminNavigationUrlItems(): Collection
     {
         return collect(app(GetModulesNavigationItems::class)->execute())
-            ->map(fn ($item): ?string => $item->getUrl());
+            ->map(fn (mixed $item): ?string => $item->getUrl());
     }
 
     /**

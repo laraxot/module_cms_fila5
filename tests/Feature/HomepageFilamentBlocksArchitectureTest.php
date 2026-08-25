@@ -27,9 +27,9 @@ it('discovers and validates cms and ui blocks', function () {
     expect($allBlocks->count())->toBeGreaterThan(0);
 
     // Verify CMS blocks are discovered
-    $cmsBlocks = $allBlocks->toCollection()->filter(fn ($block) => 'Cms' === $block->module);
+    $cmsBlocks = $allBlocks->toCollection()->filter(fn (mixed $block) => 'Cms' === $block->module);
     if ($cmsBlocks->count() > 0) {
-        $cmsBlocks->each(function ($block) {
+        $cmsBlocks->each(function (mixed $block) {
             expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
             expect(class_exists($block->class))->toBeTrue();
         });

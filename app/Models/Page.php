@@ -407,7 +407,7 @@ class Page extends BaseModelLang
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'title' => 'json',
         'slug' => 'string',

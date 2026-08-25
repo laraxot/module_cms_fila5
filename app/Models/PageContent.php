@@ -69,7 +69,7 @@ class PageContent extends BaseModel
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',
