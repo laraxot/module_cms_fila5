@@ -82,7 +82,7 @@ class Attachment extends BaseModelLang implements HasMedia
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'title' => 'json',
         'description' => 'json',

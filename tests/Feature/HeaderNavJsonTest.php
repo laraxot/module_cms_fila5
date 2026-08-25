@@ -56,7 +56,7 @@ function primaryNavItems(array $config): array
     }
 
     /** @var list<array<string, mixed>> $normalized */
-    $normalized = array_values(array_filter($items, static fn ($item): bool => is_array($item)));
+    $normalized = array_values(array_filter($items, static fn (mixed $item): bool => is_array($item)));
 
     return $normalized;
 }
