@@ -13,7 +13,11 @@ abstract class BaseModelLang extends BaseModel
 {
     use HasTranslations;
 
+<<<<<<< HEAD
+   /** @var list<string> */
+=======
     /** @var list<string> */
+>>>>>>> laraxot/dev
     public array $translatable = [
         'name',
         'blocks',
@@ -46,7 +50,11 @@ abstract class BaseModelLang extends BaseModel
     /**
      * The attributes that should be mutated to dates.
      *
+<<<<<<< HEAD
+    * @return array<string, string>
+=======
      * @return array<string, string>
+>>>>>>> laraxot/dev
      */
     #[\Override]
     protected function casts(): array

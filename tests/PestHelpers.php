@@ -24,7 +24,11 @@ use function Safe\json_decode;
  */
 function cmsTest(): TestCase
 {
+<<<<<<< HEAD
+    if (TestCase::$currentTest !== null) {
+=======
     if (null !== TestCase::$currentTest) {
+>>>>>>> laraxot/dev
         return TestCase::$currentTest;
     }
 
@@ -40,7 +44,11 @@ function cmsGenerateUniqueEmail(): string
 }
 
 /**
+<<<<<<< HEAD
+ * @param  array<string, mixed>  $attributes
+=======
  * @param array<string, mixed> $attributes
+>>>>>>> laraxot/dev
  */
 function cmsCreateTestUser(array $attributes = []): UserContract
 {
@@ -48,7 +56,11 @@ function cmsCreateTestUser(array $attributes = []): UserContract
 }
 
 /**
+<<<<<<< HEAD
+ * @param  array<string, mixed>  $attributes
+=======
  * @param array<string, mixed> $attributes
+>>>>>>> laraxot/dev
  */
 function cmsCreateUnverifiedUser(array $attributes = []): User
 {
@@ -61,8 +73,12 @@ function cmsCreateUnverifiedUser(array $attributes = []): User
 /**
  * @template T of object
  *
+<<<<<<< HEAD
+ * @param  class-string<T>  $class
+=======
  * @param class-string<T> $class
  *
+>>>>>>> laraxot/dev
  * @return T&MockObject
  */
 function cmsCreateMock(string $class): object
@@ -92,6 +108,7 @@ function cmsJsonDecodeFile(string $path): array
 }
 
 /**
+<<<<<<< .merge_file_VAsh9l
  * Contenuto della homepage di fixcity, decodificato.
  *
  * Il path e' fissato qui e non passato dal chiamante: i test di architettura dei
@@ -106,8 +123,14 @@ function loadHomepageJsonForBlocksArchitectureTest(): array
 }
 
 /**
+=======
+<<<<<<< HEAD
+ * @param  array<string, string>  $headers
+=======
+>>>>>>> .merge_file_hwONim
  * @param array<string, string> $headers
  *
+>>>>>>> laraxot/dev
  * @return TestResponse<Response>
  */
 function cmsGet(string $uri, array $headers = []): TestResponse
@@ -116,8 +139,12 @@ function cmsGet(string $uri, array $headers = []): TestResponse
 }
 
 /**
+<<<<<<< HEAD
+ * @param  array<string, string>  $headers
+=======
  * @param array<string, string> $headers
  *
+>>>>>>> laraxot/dev
  * @return TestResponse<Response>
  */
 function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestResponse
@@ -132,9 +159,14 @@ function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestRespon
 }
 
 /**
+<<<<<<< HEAD
+ * @param  array<string, mixed>  $data
+ * @param  array<string, string>  $headers
+=======
  * @param array<string, mixed>  $data
  * @param array<string, string> $headers
  *
+>>>>>>> laraxot/dev
  * @return TestResponse<Response>
  */
 function cmsPost(string $uri, array $data = [], array $headers = []): TestResponse
@@ -163,8 +195,12 @@ function cmsAssertGuest(?string $guard = null): void
 }
 
 /**
+<<<<<<< HEAD
+ * @param  array<string, mixed>  $data
+=======
  * @param array<string, mixed> $data
  *
+>>>>>>> laraxot/dev
  * @return TestResponse<Response>
  */
 function cmsActingAsGet(Authenticatable $user, string $uri, array $data = []): TestResponse

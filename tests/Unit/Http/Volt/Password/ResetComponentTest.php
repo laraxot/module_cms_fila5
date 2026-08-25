@@ -27,8 +27,17 @@ describe('Password ResetComponent', function (): void {
         Assert::assertFalse($component->emailSentMessage);
     });
 
+<<<<<<< .merge_file_QVgRlw
 test('reset component has send reset password link method', function (): void {
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+<<<<<<< HEAD
+    test('reset component has send reset password link method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+    test('reset component has send reset password link method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_LJhnqT
 
     test('send reset password link method returns void', function (): void {
         $reflection = new ReflectionClass(ResetComponent::class);

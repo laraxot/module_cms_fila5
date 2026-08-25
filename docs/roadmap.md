@@ -287,4 +287,12 @@ Cms Module
 
 ---
 
+<<<<<<< .merge_file_1L8OMQ
 *Questa roadmap è specifica per il modulo Cms e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
+=======
+<<<<<<< HEAD
+*Questa roadmap è specifica per il modulo Cms e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
+=======
+*Questa roadmap è specifica per il modulo Cms e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_jXMZix

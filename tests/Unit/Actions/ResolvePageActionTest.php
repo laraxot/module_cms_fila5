@@ -29,7 +29,11 @@ describe('Resolve Page Action', function (): void {
         $action = app(ResolvePageAction::class);
         $result = $action->execute('about', (string) Str::after($slug, 'about.'));
 
+<<<<<<< HEAD
+       Assert::assertSame('cms', $result->renderMode);
+=======
         Assert::assertSame('cms', $result->renderMode);
+>>>>>>> laraxot/dev
         Assert::assertSame($slug, $result->pageSlug);
     });
 
@@ -41,7 +45,11 @@ describe('Resolve Page Action', function (): void {
         $action = app(ResolvePageAction::class);
         $result = $action->execute($container, 'non-existent');
 
+<<<<<<< HEAD
+       Assert::assertSame('cms', $result->renderMode);
+=======
         Assert::assertSame('cms', $result->renderMode);
+>>>>>>> laraxot/dev
         Assert::assertSame($viewSlug, $result->pageSlug);
     });
 

@@ -26,9 +26,13 @@ declare(strict_types=1);
  * |
  */
 
+<<<<<<< .merge_file_1FM1FY
 // `tests/PestHelpers.php` e' dichiarato in `autoload-dev.files` del composer.json del
 // modulo: il `require_once` qui lo rendeva visibile solo a Pest, non all'autoload, quindi
 // PHPStan leggeva le sue funzioni come inesistenti.
+=======
+require_once __DIR__.'/PestHelpers.php';
+>>>>>>> .merge_file_AEIfXa
 /*
  * |--------------------------------------------------------------------------
  * | Functions
@@ -39,4 +43,12 @@ declare(strict_types=1);
  * |
  */
 
+<<<<<<< .merge_file_1FM1FY
 pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+=======
+<<<<<<< HEAD
+pest()->extend(\Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+=======
+pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_AEIfXa
