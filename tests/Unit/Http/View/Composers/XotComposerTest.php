@@ -15,7 +15,11 @@ use PHPUnit\Framework\Assert;
 test('compose returns early when no authenticated user', function (): void {
     Auth::shouldReceive('user')->once()->andReturn(null);
 
+<<<<<<< HEAD
    $view = cmsCreateMock(View::class);
+=======
+    $view = cmsCreateMock(View::class);
+>>>>>>> laraxot/dev
 
     $composer = new XotComposer();
     $composer->compose($view);
@@ -35,7 +39,11 @@ test('compose shares params lang and profile when user contract is authenticated
     app()->setLocale('it');
 
     $profile = (object) ['id' => 123];
+<<<<<<< HEAD
    $testCase = cmsTest();
+=======
+    $testCase = cmsTest();
+>>>>>>> laraxot/dev
 
     $profileRelation = $testCase->createPHPUnitMock(HasOne::class);
     $profileRelation->method('first')->willReturn($profile);

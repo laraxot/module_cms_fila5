@@ -15,7 +15,11 @@ class SectionResource extends LangBaseResource
     protected static ?string $model = Section::class;
 
     /**
+<<<<<<< HEAD
     * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
+=======
+     * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
+>>>>>>> laraxot/dev
      *
      * @return array<string, Component>
      */

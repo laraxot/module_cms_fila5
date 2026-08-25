@@ -41,7 +41,11 @@ class Module extends BaseModel
         'name',
     ];
 
+<<<<<<< HEAD
    /**
+=======
+    /**
+>>>>>>> laraxot/dev
      * @return array<int, array<string, mixed>>
      */
     public function getRows(): array

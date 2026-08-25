@@ -20,26 +20,46 @@ test('BlockData can be instantiated', function () {
 test('FooterData can be instantiated', function () {
     $footerData = FooterData::from([]);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(FooterData::class, $footerData);
+=======
+    Assert::assertInstanceOf(FooterData::class, $footerData);
+>>>>>>> laraxot/dev
 });
 
 test('HeadernavData can be instantiated', function () {
     $headernavData = HeadernavData::from([]);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(HeadernavData::class, $headernavData);
+=======
+    Assert::assertInstanceOf(HeadernavData::class, $headernavData);
+>>>>>>> laraxot/dev
 });
 
 test('LinkData can be instantiated', function () {
     // Check if LinkData class exists
+<<<<<<< HEAD
    Assert::assertTrue(class_exists(LinkData::class));
+=======
+    Assert::assertTrue(class_exists(LinkData::class));
+>>>>>>> laraxot/dev
 });
 
 test('NavbarMenuData can be instantiated', function () {
     // Check if NavbarMenuData class exists
+<<<<<<< HEAD
    Assert::assertTrue(class_exists(NavbarMenuData::class));
+=======
+    Assert::assertTrue(class_exists(NavbarMenuData::class));
+>>>>>>> laraxot/dev
 });
 
 test('ThemeData can be instantiated', function () {
     // Check if ThemeData class exists
+<<<<<<< HEAD
    Assert::assertTrue(class_exists(ThemeData::class));
+=======
+    Assert::assertTrue(class_exists(ThemeData::class));
+>>>>>>> laraxot/dev
 });

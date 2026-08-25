@@ -34,7 +34,12 @@ function headerNavConfig(): array
 }
 
 /**
+<<<<<<< HEAD
  * @param  array<string, mixed>  $config
+=======
+ * @param array<string, mixed> $config
+ *
+>>>>>>> laraxot/dev
  * @return list<array<string, mixed>>
  */
 function primaryNavItems(array $config): array
@@ -61,7 +66,12 @@ function primaryNavItems(array $config): array
 }
 
 /**
+<<<<<<< HEAD
  * @param  list<array<string, mixed>>  $items
+=======
+ * @param list<array<string, mixed>> $items
+ *
+>>>>>>> laraxot/dev
  * @return list<string>
  */
 function navItemSlugs(array $items): array

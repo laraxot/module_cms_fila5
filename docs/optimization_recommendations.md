@@ -4,4 +4,8 @@ topic: optimization_recommendations
 canonical: ../../../Themes/docs/shared-components/optimization-recommendations-Modules.md
 ---
 
+<<<<<<< HEAD
 See canonical documentation: ../../../Themes/docs/shared-components/optimization-recommendations-Modules.md
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/optimization-recommendations-Modules.md
+>>>>>>> laraxot/dev

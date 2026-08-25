@@ -21,7 +21,11 @@ describe('Register Component', function (): void {
     test('register component has expected public properties defaults', function (): void {
         $component = new RegisterComponent();
 
+<<<<<<< HEAD
        Assert::assertTrue((new \ReflectionClass($component))->hasProperty('name'));
+=======
+        Assert::assertTrue((new \ReflectionClass($component))->hasProperty('name'));
+>>>>>>> laraxot/dev
 
         Assert::assertTrue((new \ReflectionClass($component))->hasProperty('email'));
 
@@ -49,7 +53,11 @@ describe('Register Component', function (): void {
         $method = $reflection->getMethod('register');
         $returnType = $method->getReturnType();
 
+<<<<<<< HEAD
        Assert::assertNotNull($returnType);
+=======
+        Assert::assertNotNull($returnType);
+>>>>>>> laraxot/dev
         // Il cast a stringa di `ReflectionType` e' deprecato: il ramo alternativo serviva
         // solo ai tipi union/intersection, che qui non ci sono. Si asserisce il tipo.
         Assert::assertInstanceOf(\ReflectionNamedType::class, $returnType);
