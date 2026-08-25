@@ -25,7 +25,11 @@ test('FixJigSawByModuleAction can be instantiated', function () {
 
 test('FixJigSawByModuleAction execute method returns array', function () {
     // Mock a module instance
+<<<<<<< HEAD
+   /** @var Module&MockInterface $module */
+=======
     /** @var Module&MockInterface $module */
+>>>>>>> laraxot/dev
     $module = Mockery::mock(Module::class);
     $module->allows([
         'getPath' => '/tmp/test-module',
@@ -45,7 +49,11 @@ test('FixJigSawByModuleAction execute method returns array', function () {
         ->andReturn([new SplFileInfo($stubsDir.'/test.stub', '', 'test.stub')]);
 
     $action = new FixJigSawByModuleAction();
+<<<<<<< HEAD
+   /** @var array<string, mixed> $result */
+=======
     /** @var array<string, mixed> $result */
+>>>>>>> laraxot/dev
     $result = $action->execute($module);
     Assert::assertArrayHasKey('files', $result);
 

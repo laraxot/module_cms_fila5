@@ -13,7 +13,11 @@ test('headernav auth ctas use theme localization keys and not legacy auth keys',
     ];
 
     foreach ($paths as $path) {
+<<<<<<< HEAD
+       $content = cmsReadFile($path);
+=======
         $content = cmsReadFile($path);
+>>>>>>> laraxot/dev
 
         Assert::assertStringContainsString("@include('pub_theme::components.ui.auth-buttons'", $content);
         Assert::assertStringNotContainsString("__('user::auth.login-in')", $content);
@@ -30,7 +34,11 @@ test('headernav auth ctas delegate rendering to theme auth-buttons partial', fun
     ];
 
     foreach ($paths as $path) {
+<<<<<<< HEAD
+       $content = cmsReadFile($path);
+=======
         $content = cmsReadFile($path);
+>>>>>>> laraxot/dev
 
         Assert::assertStringContainsString("@include('pub_theme::components.ui.auth-buttons', ['showLabels' => true, 'size' => 'md'])", $content);
     }

@@ -4,4 +4,12 @@ topic: frontoffice_flow
 canonical: ../../../Themes/docs/shared-components/frontoffice-flow.md
 ---
 
+<<<<<<< .merge_file_hAyoFT
 See canonical documentation: ../../../Themes/docs/shared-components/frontoffice-flow.md
+=======
+<<<<<<< HEAD
+See canonical documentation: ../../../Themes/docs/shared-components/frontoffice-flow.md
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/frontoffice-flow.md
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_vMxPWj

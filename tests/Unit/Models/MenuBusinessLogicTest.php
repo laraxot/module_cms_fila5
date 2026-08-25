@@ -15,7 +15,11 @@ use function Safe\class_uses;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
+<<<<<<< HEAD
+ses(TestCase::class);
+=======
 uses(TestCase::class);
+>>>>>>> laraxot/dev
 
 describe('Menu Business Logic', function (): void {
     test('menu implements recursive relationships contract', function (): void {
@@ -43,7 +47,11 @@ describe('Menu Business Logic', function (): void {
             'parent_id',
         ];
 
+<<<<<<< HEAD
+       Assert::assertEquals($expectedFillable, $menu->getFillable());
+=======
         Assert::assertEquals($expectedFillable, $menu->getFillable());
+>>>>>>> laraxot/dev
     });
 
     test('menu can get label', function (): void {
