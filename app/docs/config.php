@@ -52,11 +52,7 @@ return [
     'docsearchIndexName' => env('DOCSEARCH_INDEX'),
 
     // navigation menu
-<<<<<<< HEAD
-   'navigation' => file_exists(__DIR__.'/navigation.php') ? require __DIR__.'/navigation.php' : [],
-=======
     'navigation' => file_exists(__DIR__.'/navigation.php') ? require __DIR__.'/navigation.php' : [],
->>>>>>> laraxot/dev
 
     // helpers
     /* @param object{getPath(): string} $page */
