@@ -13,7 +13,11 @@ class AppLayout extends Component
     /**
      * Get the view / contents that represents the component.
      */
+<<<<<<< HEAD
+   public function render(): Factory|View
+=======
     public function render(): Factory|View
+>>>>>>> laraxot/dev
     {
         $view = 'pub_theme::layouts.app';
         $view_params = [];

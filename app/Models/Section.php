@@ -38,7 +38,11 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Section whereCreatedBy($value)
  * @method static Builder<static>|Section whereId($value)
  * @method static Builder<static>|Section whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
+<<<<<<< HEAD
+* @method static Builder<static>|Section whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
+=======
  * @method static Builder<static>|Section whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
+>>>>>>> laraxot/dev
  * @method static Builder<static>|Section whereLocale(string $column, string $locale)
  * @method static Builder<static>|Section whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Section whereName($value)
@@ -60,7 +64,11 @@ class Section extends BaseModelLang
     use HasBlocks;
     use SushiToJsons;
 
+<<<<<<< HEAD
+   /** @var list<string> */
+=======
     /** @var list<string> */
+>>>>>>> laraxot/dev
     public array $translatable = [
         'name',
         'blocks',
@@ -73,8 +81,16 @@ class Section extends BaseModelLang
         'blocks',
     ];
 
+<<<<<<< HEAD
+   /** @var array<string, string> */
+=======
     /** @var array<string, string> */
+<<<<<<< .merge_file_M4jmds
     protected array $schema = [
+=======
+>>>>>>> laraxot/dev
+    protected $schema = [
+>>>>>>> .merge_file_G2YKbH
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',

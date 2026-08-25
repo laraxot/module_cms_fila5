@@ -37,7 +37,15 @@ class ThemeComposer
         return $normalized;
     }
 
+<<<<<<< .merge_file_4kTuDg
     /**
+=======
+<<<<<<< HEAD
+   /**
+=======
+    /**
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_noGjLD
      * @param array<string, mixed> $menu
      */
     public function getMenuUrl(array $menu): string
@@ -111,7 +119,15 @@ class ThemeComposer
 
         $blocks = $page->blocks;
         if (! is_array($blocks)) {
+<<<<<<< .merge_file_4kTuDg
             /** @phpstan-var view-string */
+=======
+<<<<<<< HEAD
+           /** @phpstan-var view-string */
+=======
+            /** @phpstan-var view-string */
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_noGjLD
             $emptyView = 'ui::empty';
 
             return view($emptyView);
@@ -126,7 +142,15 @@ class ThemeComposer
         return $blocksComponent->render();
     }
 
+<<<<<<< .merge_file_4kTuDg
     /**
+=======
+<<<<<<< HEAD
+   /**
+=======
+    /**
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_noGjLD
      * @return Collection<int, Page>
      */
     public function getPages(): Collection
