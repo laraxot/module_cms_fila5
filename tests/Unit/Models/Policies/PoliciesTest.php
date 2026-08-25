@@ -18,11 +18,19 @@ test('PagePolicy can be instantiated', function () {
 test('MenuPolicy can be instantiated', function () {
     $policy = new MenuPolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(MenuPolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(MenuPolicy::class, $policy);
+>>>>>>> laraxot/dev
 });
 
 test('SectionPolicy can be instantiated', function () {
     $policy = new SectionPolicy();
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(SectionPolicy::class, $policy);
+=======
+    Assert::assertInstanceOf(SectionPolicy::class, $policy);
+>>>>>>> laraxot/dev
 });

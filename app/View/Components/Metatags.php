@@ -21,7 +21,11 @@ class Metatags extends Component
         $metatag = MetatagData::make();
         $view = app(GetViewAction::class)->execute();
         $route = request()->route();
+<<<<<<< HEAD
        $routeName = $route ? $route->getName() : null;
+=======
+        $routeName = $route ? $route->getName() : null;
+>>>>>>> laraxot/dev
         /** @var array<string, mixed> $routeParameters */
         $routeParameters = [];
         if (is_object($route)) {
@@ -31,7 +35,11 @@ class Metatags extends Component
         }
         $path = request()->path();
 
+<<<<<<< HEAD
        $authUser = auth()->user();
+=======
+        $authUser = auth()->user();
+>>>>>>> laraxot/dev
         $user = $authUser instanceof Authenticatable ? $authUser : null;
         $view_params = [
             'meta' => $metatag,
@@ -40,7 +48,11 @@ class Metatags extends Component
                 routeName: $routeName,
                 path: $path,
                 routeParameters: $routeParameters,
+<<<<<<< HEAD
                user: $user,
+=======
+                user: $user,
+>>>>>>> laraxot/dev
             ),
         ];
         if (! view()->exists($view)) {

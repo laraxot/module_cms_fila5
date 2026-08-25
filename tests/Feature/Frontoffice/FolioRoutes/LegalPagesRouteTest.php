@@ -25,7 +25,11 @@ it('renders the italian privacy page from cms json content', function (): void {
 });
 
 it('renders the italian terms page from cms json content', function (): void {
+<<<<<<< HEAD
    $response = cmsGet('/it/terms');
+=======
+    $response = cmsGet('/it/terms');
+>>>>>>> laraxot/dev
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {

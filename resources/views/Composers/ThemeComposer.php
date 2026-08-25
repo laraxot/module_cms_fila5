@@ -37,7 +37,11 @@ class ThemeComposer
         return $normalized;
     }
 
+<<<<<<< HEAD
    /**
+=======
+    /**
+>>>>>>> laraxot/dev
      * @param array<string, mixed> $menu
      */
     public function getMenuUrl(array $menu): string
@@ -111,7 +115,11 @@ class ThemeComposer
 
         $blocks = $page->blocks;
         if (! is_array($blocks)) {
+<<<<<<< HEAD
            /** @phpstan-var view-string */
+=======
+            /** @phpstan-var view-string */
+>>>>>>> laraxot/dev
             $emptyView = 'ui::empty';
 
             return view($emptyView);
@@ -126,7 +134,11 @@ class ThemeComposer
         return $blocksComponent->render();
     }
 
+<<<<<<< HEAD
    /**
+=======
+    /**
+>>>>>>> laraxot/dev
      * @return Collection<int, Page>
      */
     public function getPages(): Collection

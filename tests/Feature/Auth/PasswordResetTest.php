@@ -6,7 +6,11 @@ use Modules\Cms\Tests\TestCase;
 uses(TestCase::class);
 
 test('reset password link screen can be rendered', function (): void {
+<<<<<<< HEAD
    cmsSkipTest('Route /it/auth/password/reset not available in this install.');
+=======
+    cmsSkipTest('Route /it/auth/password/reset not available in this install.');
+>>>>>>> laraxot/dev
 });
 
 test('reset password link can be requested', function (): void {

@@ -13,12 +13,20 @@ describe('MenuResource', function (): void {
     test('menu resource has correct model', function (): void {
         $resource = new MenuResource();
 
+<<<<<<< HEAD
        Assert::assertSame(Menu::class, $resource::getModel());
+=======
+        Assert::assertSame(Menu::class, $resource::getModel());
+>>>>>>> laraxot/dev
     });
 
     test('menu resource has form schema', function (): void {
         $schema = MenuResource::getFormSchema();
+<<<<<<< HEAD
        /* @var array<string, mixed> $schema */
+=======
+        /* @var array<string, mixed> $schema */
+>>>>>>> laraxot/dev
         Assert::assertGreaterThan(0, count($schema));
     });
 
@@ -30,7 +38,11 @@ describe('MenuResource', function (): void {
         $hasItems = false;
 
         foreach ($schema as $item) {
+<<<<<<< HEAD
            if (! $item instanceof Field) {
+=======
+            if (! $item instanceof Field) {
+>>>>>>> laraxot/dev
                 continue;
             }
             $name = $item->getName();
@@ -42,7 +54,11 @@ describe('MenuResource', function (): void {
             }
         }
 
+<<<<<<< HEAD
        Assert::assertTrue($hasTitle);
+=======
+        Assert::assertTrue($hasTitle);
+>>>>>>> laraxot/dev
         Assert::assertTrue($hasItems);
     });
 

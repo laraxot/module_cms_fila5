@@ -4,4 +4,8 @@ topic: daisyui_componenti
 canonical: ../../../Themes/docs/shared-components/daisyui-componenti.md
 ---
 
+<<<<<<< HEAD
 See canonical documentation: ../../../Themes/docs/shared-components/daisyui-componenti.md
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/daisyui-componenti.md
+>>>>>>> laraxot/dev

@@ -17,18 +17,30 @@ describe('AttachmentResource', function (): void {
 
     test('attachment resource has form schema', function (): void {
         $schema = AttachmentResource::getFormSchema();
+<<<<<<< HEAD
        /* @var array<string, mixed> $schema */
+=======
+        /* @var array<string, mixed> $schema */
+>>>>>>> laraxot/dev
         Assert::assertGreaterThan(0, count($schema));
     });
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
+<<<<<<< HEAD
        /* @var array<string, mixed> $relations */
+=======
+        /* @var array<string, mixed> $relations */
+>>>>>>> laraxot/dev
     });
 
     test('attachment resource has pages', function (): void {
         $pages = AttachmentResource::getPages();
+<<<<<<< HEAD
        /* @var array<string, mixed> $pages */
+=======
+        /* @var array<string, mixed> $pages */
+>>>>>>> laraxot/dev
         Assert::assertArrayHasKey('index', $pages);
         Assert::assertArrayHasKey('create', $pages);
         Assert::assertArrayHasKey('edit', $pages);
@@ -46,5 +58,10 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
+<<<<<<< HEAD
     test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+=======
+    test('attachment resource has plural label', function (): void {
+    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+>>>>>>> laraxot/dev
 });

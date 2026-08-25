@@ -15,7 +15,11 @@ class DownloadAttachmentPlaceHolder extends XotBaseTextEntry
     protected function setUp(): void
     {
         parent::setUp();
+<<<<<<< HEAD
        // `Placeholder::content()` accettava un HtmlString e lo rendeva come HTML;
+=======
+        // `Placeholder::content()` accettava un HtmlString e lo rendeva come HTML;
+>>>>>>> laraxot/dev
         // `TextEntry::state()` no, serve `html()` esplicito.
         $this->label('')->html()->state($this->generateContent(...))->columnSpanFull();
     }

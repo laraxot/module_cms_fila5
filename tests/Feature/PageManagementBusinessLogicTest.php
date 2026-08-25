@@ -17,7 +17,11 @@ it('can work with pages using SushiToJsons system', function (): void {
         'slug' => 'test-page',
     ]);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(Page::class, $newPage);
+=======
+    Assert::assertInstanceOf(Page::class, $newPage);
+>>>>>>> laraxot/dev
     Assert::assertSame('test-page', $newPage->slug);
 
     $retrievedPage = Page::where('slug', 'test-page')->first();
@@ -33,7 +37,11 @@ it('can work with page content using SushiToJsons system', function (): void {
         ],
     ]);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(PageContent::class, $newContent);
+=======
+    Assert::assertInstanceOf(PageContent::class, $newContent);
+>>>>>>> laraxot/dev
     Assert::assertSame('test-content', $newContent->slug);
 
     $retrievedContent = PageContent::where('slug', 'test-content')->first();
@@ -49,7 +57,11 @@ it('can work with sections using SushiToJsons system', function (): void {
         ],
     ]);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(Section::class, $newSection);
+=======
+    Assert::assertInstanceOf(Section::class, $newSection);
+>>>>>>> laraxot/dev
     Assert::assertSame('test-section', $newSection->slug);
 
     $retrievedSection = Section::where('slug', 'test-section')->first();
@@ -67,7 +79,11 @@ it('can update page content', function (): void {
     ]);
 
     $freshPage = $page->fresh();
+<<<<<<< HEAD
    Assert::assertInstanceOf(Page::class, $freshPage);
+=======
+    Assert::assertInstanceOf(Page::class, $freshPage);
+>>>>>>> laraxot/dev
 
     if (is_string($freshPage->title)) {
         Assert::assertStringContainsString('Updated Title', $freshPage->title);
@@ -85,7 +101,11 @@ it('can delete a page', function (): void {
     ]);
 
     $id = $page->id;
+<<<<<<< HEAD
    $page->delete();
+=======
+    $page->delete();
+>>>>>>> laraxot/dev
 
     $deletedPage = Page::find($id);
     Assert::assertNull($deletedPage);
@@ -109,7 +129,11 @@ it('can handle page relationships and data structure', function (): void {
         ],
     ]);
 
+<<<<<<< HEAD
    /** @var array<int, array<string, mixed>> $contentBlocks */
+=======
+    /** @var array<int, array<string, mixed>> $contentBlocks */
+>>>>>>> laraxot/dev
     $contentBlocks = $page->content_blocks ?? [];
     Assert::assertCount(2, $contentBlocks);
     Assert::assertSame('hero', $contentBlocks[0]['type'] ?? null);
@@ -124,7 +148,11 @@ it('can manage page description and content', function (): void {
         'content' => 'This is the main content of the page',
     ]);
 
+<<<<<<< HEAD
    Assert::assertSame('This is a test page description', $page->description);
+=======
+    Assert::assertSame('This is a test page description', $page->description);
+>>>>>>> laraxot/dev
     Assert::assertSame('This is the main content of the page', $page->content);
 });
 
@@ -149,7 +177,11 @@ it('can handle multilingual content', function (): void {
         ],
     ]);
 
+<<<<<<< HEAD
    if (is_string($page->title)) {
+=======
+    if (is_string($page->title)) {
+>>>>>>> laraxot/dev
         Assert::assertStringContainsString('Titolo Italiano', $page->title);
     } else {
         /** @var array<string, string>|array<int, string> $title */
@@ -188,7 +220,11 @@ it('can manage page sections', function (): void {
         ],
     ]);
 
+<<<<<<< HEAD
    /** @var array<int, array<string, mixed>> $contentBlocks */
+=======
+    /** @var array<int, array<string, mixed>> $contentBlocks */
+>>>>>>> laraxot/dev
     $contentBlocks = $page->content_blocks ?? [];
     Assert::assertCount(2, $contentBlocks);
     Assert::assertSame('section', $contentBlocks[0]['type'] ?? null);
@@ -230,7 +266,11 @@ it('can handle page templates and layouts', function (): void {
         ],
     ]);
 
+<<<<<<< HEAD
    /** @var array<int, array<string, mixed>> $contentBlocks */
+=======
+    /** @var array<int, array<string, mixed>> $contentBlocks */
+>>>>>>> laraxot/dev
     $contentBlocks = $page->content_blocks ?? [];
     Assert::assertSame('default', $contentBlocks[0]['template'] ?? null);
     $sidebarBlocks = $page->sidebar_blocks ?? [];
@@ -246,7 +286,11 @@ it('can handle page permissions and access control', function (): void {
         'middleware' => ['auth', 'verified'],
     ]);
 
+<<<<<<< HEAD
    /** @var list<string> $middleware */
+=======
+    /** @var list<string> $middleware */
+>>>>>>> laraxot/dev
     $middleware = $page->middleware ?? [];
     Assert::assertContains('auth', $middleware);
     Assert::assertContains('verified', $middleware);
@@ -258,6 +302,10 @@ it('can manage page timestamps', function (): void {
         'slug' => 'page-with-timestamps',
     ]);
 
+<<<<<<< HEAD
    Assert::assertNull($page->created_at);
+=======
+    Assert::assertNull($page->created_at);
+>>>>>>> laraxot/dev
     Assert::assertNull($page->updated_at);
 });

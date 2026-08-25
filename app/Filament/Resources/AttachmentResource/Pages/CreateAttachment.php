@@ -10,7 +10,11 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseCreateRecord;
 
 class CreateAttachment extends LangBaseCreateRecord
 {
+<<<<<<< HEAD
    public static string $resource = AttachmentResource::class;
+=======
+    public static string $resource = AttachmentResource::class;
+>>>>>>> laraxot/dev
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
@@ -30,6 +34,10 @@ class CreateAttachment extends LangBaseCreateRecord
             ];
         }
 
+<<<<<<< HEAD
        return parent::mutateFormDataBeforeCreate($data);
+=======
+        return parent::mutateFormDataBeforeCreate($data);
+>>>>>>> laraxot/dev
     }
 }

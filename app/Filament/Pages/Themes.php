@@ -29,7 +29,11 @@ class Themes extends XotBasePage
     {
         $data = [];
         $data['pub_theme'] = $name;
+<<<<<<< HEAD
        app(SaveTenantConfigAction::class)->execute('xra', $data);
+=======
+        app(SaveTenantConfigAction::class)->execute('xra', $data);
+>>>>>>> laraxot/dev
         Notification::make()
             ->title('Saved successfully')
             ->success()
