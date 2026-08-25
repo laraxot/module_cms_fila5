@@ -44,31 +44,7 @@ return [
         ],
         'label' => 'Stats',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
-    ],
-    'actions' => [
-        'create' => [
-            'label' => 'Crea Stats',
-        ],
-        'edit' => [
-            'label' => 'Modifica Stats',
-        ],
-        'delete' => [
-            'label' => 'Elimina Stats',
-        ],
-    ],
-    'label' => 'Stats',
-    'plural_label' => 'Stats (Plurale)',
-    'navigation' => [
-        'name' => 'Stats',
-        'plural' => 'Stats',
-        'group' => [
-            'name' => 'General',
-            'description' => 'General Settings',
-        ],
-        'label' => 'Stats',
-        'sort' => 1,
-        'icon' => 'heroicon-o-collection',
+       'icon' => 'heroicon-o-rectangle-stack',
     ],
     'actions' => [
         'create' => [

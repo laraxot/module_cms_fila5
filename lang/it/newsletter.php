@@ -58,31 +58,7 @@ return [
         ],
         'label' => 'Newsletter',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
-    ],
-    'actions' => [
-        'create' => [
-            'label' => 'Crea Newsletter',
-        ],
-        'edit' => [
-            'label' => 'Modifica Newsletter',
-        ],
-        'delete' => [
-            'label' => 'Elimina Newsletter',
-        ],
-    ],
-    'label' => 'Newsletter',
-    'plural_label' => 'Newsletter (Plurale)',
-    'navigation' => [
-        'name' => 'Newsletter',
-        'plural' => 'Newsletter',
-        'group' => [
-            'name' => 'General',
-            'description' => 'General Settings',
-        ],
-        'label' => 'Newsletter',
-        'sort' => 1,
-        'icon' => 'heroicon-o-collection',
+       'icon' => 'heroicon-o-rectangle-stack',
     ],
     'actions' => [
         'create' => [

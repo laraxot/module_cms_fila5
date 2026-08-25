@@ -44,9 +44,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static Builder<static>|Attachment whereDisk($value)
  * @method static Builder<static>|Attachment whereId($value)
  * @method static Builder<static>|Attachment whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Attachment whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
+* @method static Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
  * @method static Builder<static>|Attachment whereLocale(string $column, string $locale)
- * @method static Builder<static>|Attachment whereLocales(string $column, array $locales)
+ * @method static Builder<static>|Attachment whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Attachment whereSlug($value)
  * @method static Builder<static>|Attachment whereTitle($value)
  * @method static Builder<static>|Attachment whereUpdatedAt($value)
@@ -65,13 +65,14 @@ class Attachment extends BaseModelLang implements HasMedia
     use InteractsWithMedia;
     use SushiToJsons;
 
-    /** @var array<int, string> */
-    public $translatable = [
+   /** @var list<string> */
+    public array $translatable = [
         'title',
         'description',
         'attachment',
     ];
 
+   /** @var list<string> */
     protected $fillable = [
         'title',
         'description',
@@ -80,7 +81,8 @@ class Attachment extends BaseModelLang implements HasMedia
         'attachment',
     ];
 
-    protected array $schema = [
+   /** @var array<string, string> */
+    protected $schema = [
         'id' => 'integer',
         'title' => 'json',
         'description' => 'json',
@@ -122,6 +124,9 @@ class Attachment extends BaseModelLang implements HasMedia
      * }
      */
 
+   /**
+     * @return array<int, array<string, mixed>>
+     */
     public function getRows(): array
     {
         return $this->getSushiRows();

@@ -10,7 +10,6 @@
 
 ## Legacy / existing roadmap docs
 
-<<<<<<< HEAD
 - [module-implementation-roadmap.md](module-implementation-roadmap.md)
 - [phpstan-errors-roadmap.md](phpstan-errors-roadmap.md)
 - [phpstan-fixes-roadmap.md](phpstan-fixes-roadmap.md)
@@ -291,4 +290,3 @@ Cms Module
 ---
 
 *Questa roadmap è specifica per il modulo Cms e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
->>>>>>> 7a08650 (.)

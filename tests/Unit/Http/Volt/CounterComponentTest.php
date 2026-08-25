@@ -2,40 +2,38 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Http\Volt;
-
+use Livewire\Volt\Component;
 use Modules\Cms\Http\Volt\CounterComponent;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('CounterComponent', function (): void {
     test('counter component extends volt component', function (): void {
-        $component = new CounterComponent();
+        $component = new CounterComponent;
 
-        expect($component)->toBeInstanceOf(Livewire\Volt\Component::class);
+        Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('counter component has count property', function (): void {
-        $component = new CounterComponent();
+        $component = new CounterComponent;
 
-        expect(property_exists($component, 'count'))->toBeTrue();
+        Assert::assertTrue((new ReflectionClass($component))->hasProperty('count'));
     });
 
-    test('counter component has increment method', function (): void {
-        expect(method_exists(CounterComponent::class, 'increment'))->toBeTrue();
-    });
+    test('counter component has increment method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-    test('counter component has decrement method', function (): void {
-        expect(method_exists(CounterComponent::class, 'decrement'))->toBeTrue();
-    });
+    test('counter component has decrement method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);
 
-        expect($reflector->getNamespaceName())->toBe('Modules\Cms\Http\Volt');
+       Assert::assertSame('Modules\Cms\Http\Volt', $reflector->getNamespaceName());
     });
 
     test('counter component count starts at zero', function (): void {
-        $component = new CounterComponent();
+        $component = new CounterComponent;
 
-        expect($component->count)->toBe(0);
+        Assert::assertSame(0, $component->count);
     });
 });

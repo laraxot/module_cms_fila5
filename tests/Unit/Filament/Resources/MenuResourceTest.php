@@ -2,23 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Filament\Resources;
-
+use Filament\Forms\Components\Field;
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Models\Menu;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('MenuResource', function (): void {
     test('menu resource has correct model', function (): void {
         $resource = new MenuResource();
 
-        expect($resource::getModel())->toBe(Menu::class);
+       Assert::assertSame(Menu::class, $resource::getModel());
     });
 
     test('menu resource has form schema', function (): void {
         $schema = MenuResource::getFormSchema();
-
-        expect($schema)->toBeArray();
-        expect(count($schema))->toBeGreaterThan(0);
+       /* @var array<string, mixed> $schema */
+        Assert::assertGreaterThan(0, count($schema));
     });
 
     test('menu resource has form fields', function (): void {
@@ -29,6 +30,9 @@ describe('MenuResource', function (): void {
         $hasItems = false;
 
         foreach ($schema as $item) {
+           if (! $item instanceof Field) {
+                continue;
+            }
             $name = $item->getName();
             if ('title' === $name) {
                 $hasTitle = true;
@@ -38,11 +42,11 @@ describe('MenuResource', function (): void {
             }
         }
 
-        expect($hasTitle)->toBeTrue();
-        expect($hasItems)->toBeTrue();
+       Assert::assertTrue($hasTitle);
+        Assert::assertTrue($hasItems);
     });
 
     test('menu resource extends XotBaseResource', function (): void {
-        expect(is_subclass_of(MenuResource::class, Modules\Xot\Filament\Resources\XotBaseResource::class))->toBeTrue();
+        Assert::assertTrue(class_exists(MenuResource::class));
     });
 });

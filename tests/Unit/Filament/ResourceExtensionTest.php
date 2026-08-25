@@ -1,12 +1,9 @@
 <?php
 
 declare(strict_types=1);
+use Modules\Cms\Tests\TestCase;
 
-namespace Modules\Cms\Tests\Unit\Filament;
-
+uses(TestCase::class);
 describe('CMS Resource Extension', function () {
-    test('resource extension placeholder', function () {
-        // Placeholder - actual tests require full setup
-        expect(true)->toBeTrue();
-    });
+    test('resource extension placeholder', function () {})->todo('Segnaposto senza asserzioni: serve il setup completo del pannello Filament.');
 });

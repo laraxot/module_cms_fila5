@@ -33,8 +33,6 @@ return [
             'tooltip' => '',
         ],
     ],
-    'label' => 'Feature Sections',
-    'plural_label' => 'Feature Sections (Plurale)',
     'navigation' => [
         'name' => 'Feature Sections',
         'plural' => 'Feature Sections',
@@ -44,32 +42,10 @@ return [
         ],
         'label' => 'Feature Sections',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
-    ],
-    'actions' => [
-        'create' => [
-            'label' => 'Crea Feature Sections',
-        ],
-        'edit' => [
-            'label' => 'Modifica Feature Sections',
-        ],
-        'delete' => [
-            'label' => 'Elimina Feature Sections',
-        ],
+       'icon' => 'heroicon-o-rectangle-stack',
     ],
     'label' => 'Feature Sections',
     'plural_label' => 'Feature Sections (Plurale)',
-    'navigation' => [
-        'name' => 'Feature Sections',
-        'plural' => 'Feature Sections',
-        'group' => [
-            'name' => 'General',
-            'description' => 'General Settings',
-        ],
-        'label' => 'Feature Sections',
-        'sort' => 1,
-        'icon' => 'heroicon-o-collection',
-    ],
     'actions' => [
         'create' => [
             'label' => 'Crea Feature Sections',

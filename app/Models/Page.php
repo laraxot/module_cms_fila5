@@ -52,9 +52,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  whereFooterBlocks($value)
  * @method static Builder<static>|Page                                  whereId($value)
  * @method static Builder<static>|Page                                  whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Page                                  whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Page                                  whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
  * @method static Builder<static>|Page                                  whereLocale(string $column, string $locale)
- * @method static Builder<static>|Page                                  whereLocales(string $column, array $locales)
+ * @method static Builder<static>|Page                                  whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Page                                  whereMiddleware($value)
  * @method static Builder<static>|Page                                  whereSidebarBlocks($value)
  * @method static Builder<static>|Page                                  whereSlug($value)
@@ -64,16 +64,16 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  where($column, $operator = null, $value = null, $boolean = 'and')
  * @method static static|null                                           first(array|string $columns = ['*'])
  * @method static static|null                                           firstWhere(string $column, mixed $operator = null, mixed $value = null)
- * @method static static                                                firstOrCreate(array $attributes, array $values = [])
- * @method static static                                                create(array $attributes = [])
- * @method static static                                                updateOrCreate(array $attributes, array $values = [])
+ * @method static static                                                firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
+ * @method static static                                                create(array<string, mixed> $attributes = [])
+ * @method static static                                                updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
  * @method static Builder<static>|Page                                  delete()
  * @method static Builder<static>|Page                                  whereIn($column, $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotIn($column, $values, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereNull($columns, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotNull($columns, $boolean = 'and')
- * @method static Builder<static>|Page                                  whereBetween($column, array $values, $boolean = 'and', $not = false)
- * @method static Builder<static>|Page                                  whereNotBetween($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereNotBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereDate($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereMonth($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereDay($column, string $operator, string $value, $boolean = 'and')
@@ -117,17 +117,17 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  findOrFail($id, $columns = ['*'])
  * @method static static                                                findOrFail($id, $columns = ['*'])
  * @method static static                                                firstOrFail($columns = ['*'])
- * @method static static                                                firstOrCreate(array $attributes, array $values = [])
- * @method static static                                                create(array $attributes = [])
- * @method static static                                                updateOrCreate(array $attributes, array $values = [])
+ * @method static static                                                firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
+ * @method static static                                                create(array<string, mixed> $attributes = [])
+ * @method static static                                                updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
  * @method static static                                                update($attributes)
  * @method static Builder<static>|Page                                  where($column, $operator = null, $value = null, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereIn($column, $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotIn($column, $values, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereNull($columns, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotNull($columns, $boolean = 'and')
- * @method static Builder<static>|Page                                  whereBetween($column, array $values, $boolean = 'and', $not = false)
- * @method static Builder<static>|Page                                  whereNotBetween($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereNotBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereDate($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereMonth($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereDay($column, string $operator, string $value, $boolean = 'and')
@@ -171,9 +171,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  findOrFail($id, $columns = ['*'])
  * @method static static                                                findOrFail($id, $columns = ['*'])
  * @method static static                                                firstOrFail($columns = ['*'])
- * @method static static                                                firstOrCreate(array $attributes, array $values = [])
- * @method static static                                                create(array $attributes = [])
- * @method static static                                                updateOrCreate(array $attributes, array $values = [])
+ * @method static static                                                firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
+ * @method static static                                                create(array<string, mixed> $attributes = [])
+ * @method static static                                                updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
  * @method static static                                                update($attributes)
  * @method static int                                                   increment($column, $amount = 1, $extra = [])
  * @method static int                                                   decrement($column, $amount = 1, $extra = [])
@@ -188,7 +188,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Collection<int, static>                               get($columns = ['*'])
  * @method static static|null                                           first($columns = ['*'])
  * @method static static|null                                           find($id, $columns = ['*'])
- *                                                                                                                                                                     =======
  * @method static Builder<static>|Page                                  newModelQuery()
  * @method static Builder<static>|Page                                  newQuery()
  * @method static Builder<static>|Page                                  query()
@@ -200,9 +199,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  whereFooterBlocks($value)
  * @method static Builder<static>|Page                                  whereId($value)
  * @method static Builder<static>|Page                                  whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Page                                  whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Page                                  whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
  * @method static Builder<static>|Page                                  whereLocale(string $column, string $locale)
- * @method static Builder<static>|Page                                  whereLocales(string $column, array $locales)
+ * @method static Builder<static>|Page                                  whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Page                                  whereMiddleware($value)
  * @method static Builder<static>|Page                                  whereSidebarBlocks($value)
  * @method static Builder<static>|Page                                  whereSlug($value)
@@ -212,16 +211,16 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  where($column, $operator = null, $value = null, $boolean = 'and')
  * @method static static|null                                           first(array|string $columns = ['*'])
  * @method static static|null                                           firstWhere(string $column, mixed $operator = null, mixed $value = null)
- * @method static static                                                firstOrCreate(array $attributes, array $values = [])
- * @method static static                                                create(array $attributes = [])
- * @method static static                                                updateOrCreate(array $attributes, array $values = [])
+ * @method static static                                                firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
+ * @method static static                                                create(array<string, mixed> $attributes = [])
+ * @method static static                                                updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
  * @method static Builder<static>|Page                                  delete()
  * @method static Builder<static>|Page                                  whereIn($column, $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotIn($column, $values, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereNull($columns, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotNull($columns, $boolean = 'and')
- * @method static Builder<static>|Page                                  whereBetween($column, array $values, $boolean = 'and', $not = false)
- * @method static Builder<static>|Page                                  whereNotBetween($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereNotBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereDate($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereMonth($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereDay($column, string $operator, string $value, $boolean = 'and')
@@ -265,17 +264,17 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  findOrFail($id, $columns = ['*'])
  * @method static static                                                findOrFail($id, $columns = ['*'])
  * @method static static                                                firstOrFail($columns = ['*'])
- * @method static static                                                firstOrCreate(array $attributes, array $values = [])
- * @method static static                                                create(array $attributes = [])
- * @method static static                                                updateOrCreate(array $attributes, array $values = [])
+ * @method static static                                                firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
+ * @method static static                                                create(array<string, mixed> $attributes = [])
+ * @method static static                                                updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
  * @method static static                                                update($attributes)
  * @method static Builder<static>|Page                                  where($column, $operator = null, $value = null, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereIn($column, $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotIn($column, $values, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereNull($columns, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereNotNull($columns, $boolean = 'and')
- * @method static Builder<static>|Page                                  whereBetween($column, array $values, $boolean = 'and', $not = false)
- * @method static Builder<static>|Page                                  whereNotBetween($column, array $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
+ * @method static Builder<static>|Page                                  whereNotBetween($column, array<int, mixed> $values, $boolean = 'and', $not = false)
  * @method static Builder<static>|Page                                  whereDate($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereMonth($column, string $operator, string $value, $boolean = 'and')
  * @method static Builder<static>|Page                                  whereDay($column, string $operator, string $value, $boolean = 'and')
@@ -319,9 +318,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                                  findOrFail($id, $columns = ['*'])
  * @method static static                                                findOrFail($id, $columns = ['*'])
  * @method static static                                                firstOrFail($columns = ['*'])
- * @method static static                                                firstOrCreate(array $attributes, array $values = [])
- * @method static static                                                create(array $attributes = [])
- * @method static static                                                updateOrCreate(array $attributes, array $values = [])
+ * @method static static                                                firstOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
+ * @method static static                                                create(array<string, mixed> $attributes = [])
+ * @method static static                                                updateOrCreate(array<string, mixed> $attributes, array<string, mixed> $values = [])
  * @method static static                                                update($attributes)
  * @method static int                                                   increment($column, $amount = 1, $extra = [])
  * @method static int                                                   decrement($column, $amount = 1, $extra = [])
@@ -336,7 +335,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static \Illuminate\Database\Eloquent\Collection<int, static> get($columns = ['*'])
  * @method static static|null                                           first($columns = ['*'])
  * @method static static|null                                           find($id, $columns = ['*'])
- *                                                                                                                                                                     >>>>>>> 5580e39 (.)
  *
  * @property ProfileContract|null $deleter
  *
@@ -348,8 +346,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method        array<int, array<string, mixed>>            getSushiRows()
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
- *                                                                                                                                                           >>>>>>> 5580e39 (.)
- *                                                                                                                                                           =======
  * @method static PageFactory                                 factory($count = null, $state = [])
  * @method static Builder<static>|Page                        newModelQuery()
  * @method static Builder<static>|Page                        newQuery()
@@ -369,9 +365,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                        whereUpdatedAt($value)
  * @method static Builder<static>|Page                        whereUpdatedBy($value)
  * @method static Builder<static>|Page                        whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Page                        whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Page                        whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
  * @method static Builder<static>|Page                        whereLocale(string $column, string $locale)
- * @method static Builder<static>|Page                        whereLocales(string $column, array $locales)
+ * @method static Builder<static>|Page                        whereLocales(string $column, array<int, string> $locales)
  * @method static Collection<int, static>                     all($columns = ['*'])
  * @method static Collection<int, static>                     get($columns = ['*'])
  * @method static static|null                                 first($columns = ['*'])
@@ -379,7 +375,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
  * @method        array<int, array<string, mixed>>            getSushiRows()
- *                                                                                                                                                           >>>>>>> Stashed changes
  *
  * @mixin \Eloquent
  */
@@ -388,8 +383,8 @@ class Page extends BaseModelLang
     use HasBlocks;
     use SushiToJsons;
 
-    /** @var array<int, string> */
-    public $translatable = [
+    /** @var list<string> */
+    public array $translatable = [
         'title',
         // 'description',
         'blocks',
@@ -398,6 +393,7 @@ class Page extends BaseModelLang
         'footer_blocks',
     ];
 
+    /** @var list<string> */
     protected $fillable = [
         'content',
         'description',
@@ -410,7 +406,8 @@ class Page extends BaseModelLang
         'footer_blocks',
     ];
 
-    protected array $schema = [
+    /** @var array<string, string> */
+    protected $schema = [
         'id' => 'integer',
         'title' => 'json',
         'slug' => 'string',
@@ -427,25 +424,26 @@ class Page extends BaseModelLang
         'updated_by' => 'string',
     ];
 
+    /**
+     * @return array<int, array<string, mixed>>
+     */
     public function getRows(): array
     {
-        $rows = $this->getSushiRows();
-
-        return $rows;
+        return $this->getSushiRows();
     }
 
     public static function findUniqueBySlug(string $slug): ?self
     {
         try {
-            /** @var self $page */
-            $page = self::query()->where('slug', $slug)->sole();
-
-            return $page;
+            return self::query()->where('slug', $slug)->sole();
         } catch (ModelNotFoundException) {
             return null;
         }
     }
 
+    /**
+     * @return array<int, string>
+     */
     public static function getMiddlewareBySlug(string $slug): array
     {
         $page = self::findUniqueBySlug($slug);
@@ -456,7 +454,14 @@ class Page extends BaseModelLang
 
         $middleware = $page->middleware;
 
-        return \is_array($middleware) ? $middleware : [];
+        if (! \is_array($middleware)) {
+            return [];
+        }
+
+        /** @var array<int, string> $result */
+        $result = array_values(array_filter($middleware, static fn (mixed $value): bool => \is_string($value)));
+
+        return $result;
     }
 
     /**

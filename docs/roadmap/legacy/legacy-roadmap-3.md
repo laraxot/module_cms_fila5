@@ -213,8 +213,5 @@
 ---
 
 **Responsabile**: TBD
-<<<<<<< HEAD
-=======
-**
->>>>>>> 7a08650 (.)
+**Last Updated**: 2026-01-31
 **Next Review**: 2026-02-07

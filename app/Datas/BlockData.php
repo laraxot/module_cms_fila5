@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Illuminate\View\Factory;
+use Illuminate\View\FileViewFinder;
 use Livewire\Wireable;
 use Modules\Cms\Actions\ResolveBlockQueryAction;
 
@@ -28,6 +30,7 @@ class BlockData extends Data implements Wireable
 
     public ?string $slug = null;
 
+    /** @var array<string, mixed> */
     public array $data;
 
     public string $view;
@@ -38,6 +41,9 @@ class BlockData extends Data implements Wireable
 
     public bool $active = true;
 
+    /**
+     * @param array<string, mixed> $data
+     */
     public function __construct(string $type, array $data, ?string $slug = null, bool $active = true)
     {
         $this->type = $type;
@@ -66,6 +72,19 @@ class BlockData extends Data implements Wireable
         $this->livewireComponentName = $this->normalizeComponentName($view);
     }
 
+    /**
+     * @param EloquentCollection<int, mixed>|Collection<int, mixed>|array<int, mixed> $data
+     *
+     * @return DataCollection<int, BlockData>|array<int, BlockData>
+     */
+    public static function collection(EloquentCollection|Collection|array $data): DataCollection|array
+    {
+        /** @var DataCollection<int, BlockData> $collection */
+        $collection = self::collect($data, DataCollection::class);
+
+        return $collection;
+    }
+
     private function detectLivewire(string $view): bool
     {
         if (! view()->exists($view)) {
@@ -73,9 +92,9 @@ class BlockData extends Data implements Wireable
         }
 
         // Usa un approccio più performante per recuperare il path della view
-        /** @var \Illuminate\View\Factory $viewFactory */
+        /** @var Factory $viewFactory */
         $viewFactory = view();
-        /** @var \Illuminate\View\FileViewFinder $finder */
+        /** @var FileViewFinder $finder */
         $finder = $viewFactory->getFinder();
         $path = $finder->find($view);
 
@@ -107,10 +126,5 @@ class BlockData extends Data implements Wireable
         }
 
         return $name;
-    }
-
-    public static function collection(EloquentCollection|Collection|array $data): DataCollection|array
-    {
-        return self::collect($data, DataCollection::class);
     }
 }

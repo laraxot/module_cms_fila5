@@ -33,8 +33,6 @@ return [
             'tooltip' => '',
         ],
     ],
-    'label' => 'Cta',
-    'plural_label' => 'Cta (Plurale)',
     'navigation' => [
         'name' => 'Cta',
         'plural' => 'Cta',
@@ -44,32 +42,10 @@ return [
         ],
         'label' => 'Cta',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
-    ],
-    'actions' => [
-        'create' => [
-            'label' => 'Crea Cta',
-        ],
-        'edit' => [
-            'label' => 'Modifica Cta',
-        ],
-        'delete' => [
-            'label' => 'Elimina Cta',
-        ],
+       'icon' => 'heroicon-o-rectangle-stack',
     ],
     'label' => 'Cta',
     'plural_label' => 'Cta (Plurale)',
-    'navigation' => [
-        'name' => 'Cta',
-        'plural' => 'Cta',
-        'group' => [
-            'name' => 'General',
-            'description' => 'General Settings',
-        ],
-        'label' => 'Cta',
-        'sort' => 1,
-        'icon' => 'heroicon-o-collection',
-    ],
     'actions' => [
         'create' => [
             'label' => 'Crea Cta',

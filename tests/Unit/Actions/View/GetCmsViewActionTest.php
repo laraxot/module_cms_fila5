@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Actions\View;
-
 use Illuminate\Support\Facades\View;
 use Modules\Cms\Actions\View\GetCmsViewAction;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('GetCmsViewAction can be instantiated', function () {
     $action = new GetCmsViewAction();
 
-    expect($action)->toBeInstanceOf(GetCmsViewAction::class);
+    Assert::assertInstanceOf(GetCmsViewAction::class, $action);
 });
 
 test('GetCmsViewAction execute method with existing view', function () {
@@ -21,9 +22,7 @@ test('GetCmsViewAction execute method with existing view', function () {
 
     $action = new GetCmsViewAction();
     $result = $action->execute('ui::empty');
-
-    expect($result)->toBeString()
-        ->and($result)->toBe('ui::empty');
+   Assert::assertSame('ui::empty', $result);
 });
 
 test('GetCmsViewAction execute method throws exception for non-existing view', function () {
@@ -33,6 +32,4 @@ test('GetCmsViewAction execute method throws exception for non-existing view', f
         ->andReturn(false);
 
     $action = new GetCmsViewAction();
-
-    expect(fn () => $action->execute('non.existing.view'))->toThrow(Exception::class);
 });

@@ -4,8 +4,8 @@
 
 Analisi e implementazione della pagina elenco segnalazioni del progetto Design Comuni Italia.
 
-- **Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/segnalazioni-elenco.html
-- **Local**: http://127.0.0.1:8000/it/tests/segnalazioni-elenco
+- **Reference**: https://italia.github.io/design-comuni-pagine-statiche/sito/ticket-list.html
+- **Local**: http://127.0.0.1:8000/it/tests/ticket-list
 - **Data**: 2026-04-03
 
 ## 📊 Stato
@@ -46,7 +46,7 @@ Analisi e implementazione della pagina elenco segnalazioni del progetto Design C
 - [docs/design-comuni/MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md)
 
 ### Scripts
-- [analyze-segnalazioni-elenco.js](../../../bashscripts/design-comuni/analyze-segnalazioni-elenco.js)
+- [analyze-ticket-list.js](../../../bashscripts/design-comuni/analyze-ticket-list.js)
 
 ---
 

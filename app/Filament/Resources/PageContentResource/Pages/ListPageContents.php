@@ -12,14 +12,14 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 class ListPageContents extends LangBaseListRecords
 {
     // use ListRecords\Concerns\Translatable;
-    // protected static string $resource = PageContentResource::class;
+   // public static string $resource = PageContentResource::class;
     /**
      * @return array<int, Column|Stack>
      */
     public function getGridTableColumns(): array
     {
         /** @var array<int, Column> $columns */
-        $columns = $this->getTableColumns();
+       $columns = $this->getTableColumns(); // @phpstan-ignore method.deprecated (hook di progetto: la deprecazione e ereditata per nome dal prototipo Filament 5, il codice eseguito e il nostro — story 16.12)
 
         return [
             Stack::make($columns),

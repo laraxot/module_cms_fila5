@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Cms\Datas\ResolvePageData;
@@ -151,10 +152,11 @@ final class ResolvePageAction
     }
 
     /**
-     * @return array<int, \Illuminate\Database\Eloquent\Builder<Model>>
+     * @return array<int, Builder<Model>>
      */
     private function buildCandidateQueries(Model $model): array
     {
+        /** @var array<int, Builder<Model>> $queries */
         $queries = [$model->newQuery()];
 
         try {
@@ -162,19 +164,12 @@ final class ResolvePageAction
         } catch (\Throwable) {
         }
 
-        $usesSoftDeletes = in_array(SoftDeletes::class, class_uses_recursive($model), true);
-
-        if ($usesSoftDeletes) {
-            foreach ($queries as $index => $query) {
-                try {
-                    $queries[] = (clone $query)->withTrashed();
-                } catch (\Throwable) {
-                    unset($queries[$index]);
-                }
-            }
+        if (in_array(SoftDeletes::class, class_uses_recursive($model), true)) {
+            // Soft deleted records are already covered by the fallback DB query branch.
+            return $queries;
         }
 
-        return array_values($queries);
+        return $queries;
     }
 
     private function resolvePublicProfileItem(string $identifier): ?object
