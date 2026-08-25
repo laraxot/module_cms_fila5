@@ -18,42 +18,70 @@ test('FooterData can be instantiated', function (): void {
 test('FooterData extends Spatie Data', function (): void {
     $footerData = new FooterData();
 
+<<<<<<< HEAD
+   Assert::assertInstanceOf(Data::class, $footerData);
+=======
     Assert::assertInstanceOf(Data::class, $footerData);
+>>>>>>> laraxot/dev
 });
 
 test('FooterData implements Wireable interface', function (): void {
     $footerData = new FooterData();
 
+<<<<<<< HEAD
+   Assert::assertInstanceOf(Wireable::class, $footerData);
+=======
     Assert::assertInstanceOf(Wireable::class, $footerData);
+>>>>>>> laraxot/dev
 });
 
 test('FooterData has default view path', function (): void {
     $footerData = new FooterData();
 
+<<<<<<< HEAD
+   Assert::assertSame('cms::components.footer', $footerData->view);
+=======
     Assert::assertSame('cms::components.footer', $footerData->view);
+>>>>>>> laraxot/dev
 });
 
 test('FooterData has nullable background_color property', function (): void {
     $footerData = new FooterData();
 
+<<<<<<< HEAD
+   Assert::assertNull($footerData->background_color);
+=======
     Assert::assertNull($footerData->background_color);
+>>>>>>> laraxot/dev
 });
 
 test('FooterData has nullable background property', function (): void {
     $footerData = new FooterData();
 
+<<<<<<< HEAD
+   Assert::assertNull($footerData->background);
+=======
     Assert::assertNull($footerData->background);
+>>>>>>> laraxot/dev
 });
 
 test('FooterData has nullable overlay_color property', function (): void {
     $footerData = new FooterData();
 
+<<<<<<< HEAD
+   Assert::assertNull($footerData->overlay_color);
+=======
     Assert::assertNull($footerData->overlay_color);
+>>>>>>> laraxot/dev
 });
 
 test('FooterData rules method returns validation rules', function (): void {
     $rules = FooterData::rules();
+<<<<<<< HEAD
+   /* @var array<string, mixed> $rules */
+=======
     /* @var array<string, mixed> $rules */
+>>>>>>> laraxot/dev
     Assert::assertArrayHasKey('background_color', $rules);
 
     Assert::assertArrayHasKey('background', $rules);
@@ -72,7 +100,11 @@ test('FooterData can be created from array using from method', function (): void
 
     $footerData = FooterData::from($data);
 
+<<<<<<< HEAD
+   Assert::assertInstanceOf(FooterData::class, $footerData);
+=======
     Assert::assertInstanceOf(FooterData::class, $footerData);
+>>>>>>> laraxot/dev
 
     Assert::assertSame('#ffffff', $footerData->background_color);
 
@@ -87,6 +119,10 @@ test('FooterData can be converted to array', function (): void {
     ]);
 
     $array = $footerData->toArray();
+<<<<<<< HEAD
+   /* @var array<string, mixed> $array */
+=======
     /* @var array<string, mixed> $array */
+>>>>>>> laraxot/dev
     Assert::assertArrayHasKey('background_color', $array);
 });

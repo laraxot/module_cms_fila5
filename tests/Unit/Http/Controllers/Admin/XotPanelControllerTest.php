@@ -15,16 +15,31 @@ describe('XotPanelController', function (): void {
         Assert::assertInstanceOf(BaseController::class, $controller);
     });
 
+<<<<<<< HEAD
+    test('xot panel controller has __call method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
     test('xot panel controller has __call method', function (): void {
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+<<<<<<< .merge_file_x3NpSZ
+=======
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_zMEASr
 
     test('xot panel controller uses correct namespace', function (): void {
         $reflector = new ReflectionClass(XotPanelController::class);
 
+<<<<<<< HEAD
+       Assert::assertSame('Modules\Cms\Http\Controllers\Admin', $reflector->getNamespaceName());
+    });
+
+    test('xot panel controller is not instantiable via constructor without params', function (): void {
+        $controller = new XotPanelController;
+=======
         Assert::assertSame('Modules\Cms\Http\Controllers\Admin', $reflector->getNamespaceName());
     });
 
     test('xot panel controller is not instantiable via constructor without params', function (): void {
         $controller = new XotPanelController();
+>>>>>>> laraxot/dev
     });
 });

@@ -31,5 +31,9 @@ test('GetViewThemeByViewAction returns original view when view does not exist', 
     $view = 'nonexistent::view';
     $result = $action->execute($view);
 
+<<<<<<< HEAD
+   Assert::assertSame($view, $result);
+=======
     Assert::assertSame($view, $result);
+>>>>>>> laraxot/dev
 });

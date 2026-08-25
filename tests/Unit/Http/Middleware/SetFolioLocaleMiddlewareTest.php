@@ -18,7 +18,11 @@ test('it uses user language with highest priority', function (): void {
 
     $middleware = new SetFolioLocale();
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
+<<<<<<< HEAD
+   Assert::assertInstanceOf(Response::class, $response);
+=======
     Assert::assertInstanceOf(Response::class, $response);
+>>>>>>> laraxot/dev
 
     Assert::assertSame(200, $response->getStatusCode());
 
@@ -38,7 +42,11 @@ test('it uses first url segment when locale is supported', function (): void {
 
     $middleware = new SetFolioLocale();
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
+<<<<<<< HEAD
+   Assert::assertInstanceOf(Response::class, $response);
+=======
     Assert::assertInstanceOf(Response::class, $response);
+>>>>>>> laraxot/dev
 
     Assert::assertSame(200, $response->getStatusCode());
 
@@ -60,7 +68,11 @@ test('it falls back to default app locale when url segment is not supported', fu
 
     $middleware = new SetFolioLocale();
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
+<<<<<<< HEAD
+   Assert::assertInstanceOf(Response::class, $response);
+=======
     Assert::assertInstanceOf(Response::class, $response);
+>>>>>>> laraxot/dev
 
     Assert::assertSame(200, $response->getStatusCode());
 

@@ -36,7 +36,11 @@ class FolioVoltServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+<<<<<<< HEAD
+       // Folio registra una rotta catch-all marcata `fallback`. Laravel, fra piu'
+=======
         // Folio registra una rotta catch-all marcata `fallback`. Laravel, fra piu'
+>>>>>>> laraxot/dev
         // fallback, sceglie la PRIMA registrata. Filament marca come fallback la
         // home di un pannello con multi-tenancy (`/{panelPath}/{tenant}`, vedi
         // Filament\Pages\Concerns\HasRoutes): se Folio si registra prima, la home
@@ -71,7 +75,11 @@ class FolioVoltServiceProvider extends ServiceProvider
                 // con la risoluzione di "env" come classe. Usiamo array vuoto come fallback.
                 $base_middleware = [];
             } else {
+<<<<<<< HEAD
+               $middleware = app(ResolveTenantConfigValueAction::class)->execute('middleware');
+=======
                 $middleware = app(ResolveTenantConfigValueAction::class)->execute('middleware');
+>>>>>>> laraxot/dev
                 if (is_array($middleware)) {
                     $base_middleware = Arr::get($middleware, 'base', []);
                     if (! is_array($base_middleware)) {
@@ -142,6 +150,13 @@ class FolioVoltServiceProvider extends ServiceProvider
             if (! File::exists($path) || ! File::isDirectory($path)) {
                 continue;
             }
+<<<<<<< .merge_file_UfunF2
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> laraxot/dev
+>>>>>>> .merge_file_xUmtg0
             $apiPath = $path.'/api';
             if (File::exists($apiPath) && File::isDirectory($apiPath)) {
                 Folio::path($apiPath)
