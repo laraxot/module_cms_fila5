@@ -11,7 +11,11 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 
 class ListPages extends LangBaseListRecords
 {
+<<<<<<< HEAD
    public static string $resource = PageResource::class;
+=======
+    public static string $resource = PageResource::class;
+>>>>>>> laraxot/dev
 
     /**
      * @return array<string, Column>

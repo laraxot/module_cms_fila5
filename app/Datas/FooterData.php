@@ -23,7 +23,11 @@ class FooterData extends Data implements Wireable
 
     /**
      * The view path.
+<<<<<<< HEAD
     */
+=======
+     */
+>>>>>>> laraxot/dev
     public string $view = 'cms::components.footer';
 
     public ?string $_tpl = null;
@@ -33,7 +37,11 @@ class FooterData extends Data implements Wireable
     public static function make(): self
     {
         if (! self::$instance instanceof FooterData) {
+<<<<<<< HEAD
            $data = app(GetTenantConfigArrayAction::class)->execute('appearance');
+=======
+            $data = app(GetTenantConfigArrayAction::class)->execute('appearance');
+>>>>>>> laraxot/dev
             $data = Arr::get($data, 'footer', []);
             self::$instance = self::from($data);
         }
@@ -53,7 +61,11 @@ class FooterData extends Data implements Wireable
         return view($this->view, $view_params);
     }
 
+<<<<<<< HEAD
    /**
+=======
+    /**
+>>>>>>> laraxot/dev
      * @return array<string, mixed>
      */
     /**

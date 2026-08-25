@@ -25,7 +25,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('slug="home"');
     });
 
+<<<<<<< HEAD
    test('cms route get locale auth login', function (): void {
+=======
+    test('cms route get locale auth login', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/login');
         /** @var TestResponse<Response> $response */
@@ -39,7 +43,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<form');
     });
 
+<<<<<<< HEAD
    test('cms route get locale auth register', function (): void {
+=======
+    test('cms route get locale auth register', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/register');
         /** @var TestResponse<Response> $response */
@@ -66,7 +74,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms route get locale auth logout fixed', function (): void {
+=======
+    test('cms route get locale auth logout fixed', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/auth/logout_fixed');
         /** @var TestResponse<Response> $response */
@@ -207,7 +219,11 @@ describe('Individual Folio Routes', function (): void {
         }
     });
 
+<<<<<<< HEAD
    test('cms route get locale learn', function (): void {
+=======
+    test('cms route get locale learn', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/learn');
         /** @var TestResponse<Response> $response */
@@ -220,7 +236,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms route get locale genesis about', function (): void {
+=======
+    test('cms route get locale genesis about', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/about');
         /** @var TestResponse<Response> $response */
@@ -233,7 +253,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms route get locale genesis power ups', function (): void {
+=======
+    test('cms route get locale genesis power ups', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/genesis/power-ups');
         /** @var TestResponse<Response> $response */
@@ -246,7 +270,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms route get locale classi css', function (): void {
+=======
+    test('cms route get locale classi css', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/classi-css');
         /** @var TestResponse<Response> $response */
@@ -259,7 +287,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms route get locale registration thank you', function (): void {
+=======
+    test('cms route get locale registration thank you', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/registration/thank-you');
         /** @var TestResponse<Response> $response */
@@ -272,7 +304,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms route get locale errors password expired', function (): void {
+=======
+    test('cms route get locale errors password expired', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale.'/errors/password-expired');
         /** @var TestResponse<Response> $response */
@@ -285,7 +321,11 @@ describe('Individual Folio Routes', function (): void {
         $response->assertSee('<html');
     });
 
+<<<<<<< HEAD
    test('cms verifies json content loading for homepage', function (): void {
+=======
+    test('cms verifies json content loading for homepage', function (): void {
+>>>>>>> laraxot/dev
         $locale = (string) app()->getLocale();
         $response = cmsGet('/'.$locale);
         Assert::assertSame(200, $response->status());
@@ -412,7 +452,11 @@ describe('Individual Folio Routes', function (): void {
         $endTime = microtime(true);
         $loadTime = ($endTime - $startTime) * 1000;
 
+<<<<<<< HEAD
        Assert::assertLessThan(1500, $loadTime, 'CMS homepage should load within 1.5 seconds');
+=======
+        Assert::assertLessThan(1500, $loadTime, 'CMS homepage should load within 1.5 seconds');
+>>>>>>> laraxot/dev
     });
 
     test('cms auth pages render within acceptable time', function (): void {
@@ -425,13 +469,21 @@ describe('Individual Folio Routes', function (): void {
         foreach ($authRoutes as $route) {
             $startTime = microtime(true);
 
+<<<<<<< HEAD
            $response = cmsGet($route);
+=======
+            $response = cmsGet($route);
+>>>>>>> laraxot/dev
             Assert::assertSame(200, $response->status());
 
             $endTime = microtime(true);
             $loadTime = ($endTime - $startTime) * 1000;
 
+<<<<<<< HEAD
            Assert::assertLessThan(1000, $loadTime, "CMS route {$route} should load within 1 second");
+=======
+            Assert::assertLessThan(1000, $loadTime, "CMS route {$route} should load within 1 second");
+>>>>>>> laraxot/dev
         }
     });
 });

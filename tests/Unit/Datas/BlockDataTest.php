@@ -10,7 +10,11 @@ use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\DataCollection;
 
+<<<<<<< HEAD
 ses(TestCase::class);
+=======
+uses(TestCase::class);
+>>>>>>> laraxot/dev
 test('BlockData can be instantiated with type and data', function (): void {
     $blockData = new BlockData('hero', ['view' => 'ui::empty', 'title' => 'Test']);
 
@@ -24,19 +28,31 @@ test('BlockData can be instantiated with type and data', function (): void {
 test('BlockData uses WireableData trait', function (): void {
     $traits = class_uses_recursive(BlockData::class);
 
+<<<<<<< HEAD
    Assert::assertContains(WireableData::class, array_values($traits));
+=======
+    Assert::assertContains(WireableData::class, array_values($traits));
+>>>>>>> laraxot/dev
 });
 
 test('BlockData extends Spatie Data', function (): void {
     $blockData = new BlockData('text', ['view' => 'ui::empty']);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(Data::class, $blockData);
+=======
+    Assert::assertInstanceOf(Data::class, $blockData);
+>>>>>>> laraxot/dev
 });
 
 test('BlockData implements Wireable interface', function (): void {
     $blockData = new BlockData('card', ['view' => 'ui::empty']);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(Wireable::class, $blockData);
+=======
+    Assert::assertInstanceOf(Wireable::class, $blockData);
+>>>>>>> laraxot/dev
 });
 
 test('BlockData collection method returns DataCollection', function (): void {
@@ -45,7 +61,11 @@ test('BlockData collection method returns DataCollection', function (): void {
         ['type' => 'text', 'data' => ['view' => 'ui::empty', 'content' => 'Text']],
     ];
 
+<<<<<<< HEAD
    $collection = BlockData::collection($data);
+=======
+    $collection = BlockData::collection($data);
+>>>>>>> laraxot/dev
 
     Assert::assertInstanceOf(DataCollection::class, $collection);
 });
@@ -53,13 +73,21 @@ test('BlockData collection method returns DataCollection', function (): void {
 test('BlockData sets default view when not provided', function (): void {
     $blockData = new BlockData('simple', []);
 
+<<<<<<< HEAD
    Assert::assertSame('ui::empty', $blockData->view);
+=======
+    Assert::assertSame('ui::empty', $blockData->view);
+>>>>>>> laraxot/dev
 });
 
 test('BlockData stores type correctly', function (): void {
     $blockData = new BlockData('testimonial', ['view' => 'ui::empty']);
 
+<<<<<<< HEAD
    Assert::assertSame('testimonial', $blockData->type);
+=======
+    Assert::assertSame('testimonial', $blockData->type);
+>>>>>>> laraxot/dev
 });
 
 test('BlockData stores data array correctly', function (): void {
@@ -72,5 +100,9 @@ test('BlockData stores data array correctly', function (): void {
 
     $blockData = new BlockData('feature', $testData);
 
+<<<<<<< HEAD
    Assert::assertEquals($testData, $blockData->data);
+=======
+    Assert::assertEquals($testData, $blockData->data);
+>>>>>>> laraxot/dev
 });

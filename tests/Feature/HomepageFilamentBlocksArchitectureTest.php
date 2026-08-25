@@ -10,6 +10,12 @@ use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
+<<<<<<< HEAD
+=======
+
+use PHPUnit\Framework\Assert;
+
+>>>>>>> laraxot/dev
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 
@@ -58,7 +64,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('json content structure is properly loaded by cms', function () {
+<<<<<<< HEAD
        $homepageJsonPath = config_path('local/fixcity/database/content/pages/home.json');
+=======
+        $homepageJsonPath = config_path('local/fixcity/database/content/pages/home.json');
+>>>>>>> laraxot/dev
         expect(file_exists($homepageJsonPath))->toBeTrue();
 
         $homepageData = loadHomepageJsonForBlocksArchitectureTest();
@@ -66,6 +76,10 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         // Verify CMS-specific JSON structure
         expect($homepageData)->toHaveKeys(['id', 'slug', 'content_blocks']);
         expect($homepageData['slug'])->toBe('home');
+<<<<<<< HEAD
+=======
+
+>>>>>>> laraxot/dev
         /** @var array<string, mixed> $contentBlocks */
         $contentBlocks = $homepageData['content_blocks'];
         expect($contentBlocks)->toHaveKey($this->lang);
@@ -86,10 +100,17 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     test('cms blocks discovery system works correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
+<<<<<<< HEAD
        expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
         $cmsBlocks = $allBlocks->toCollection()->filter(fn ($block) => $block->module === 'Cms');
+=======
+        expect($allBlocks->count())->toBeGreaterThan(0);
+
+        // Verify CMS blocks are discovered
+        $cmsBlocks = $allBlocks->toCollection()->filter(fn ($block) => 'Cms' === $block->module);
+>>>>>>> laraxot/dev
         if ($cmsBlocks->count() > 0) {
             $cmsBlocks->each(function ($block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
@@ -101,7 +122,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     test('ui blocks render component processes homepage blocks', function () {
         // Verify the UI Blocks render component exists and works
         $blocksClass = Blocks::class;
+<<<<<<< HEAD
        expect(class_exists($blocksClass))->toBeTrue();
+=======
+        expect(class_exists($blocksClass))->toBeTrue();
+>>>>>>> laraxot/dev
 
         // Load homepage blocks
         $homepageData = loadHomepageJsonForBlocksArchitectureTest();
@@ -123,7 +148,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         $content = $response->getContent();
 
         // Load expected content from JSON
+<<<<<<< HEAD
        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+=======
+        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+>>>>>>> laraxot/dev
 
         /** @var array<string, mixed> $contentBlocks */
         $contentBlocks = $homepageData['content_blocks'];
@@ -153,7 +182,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($content)->toContain('pub_theme::');
 
         // Load blocks to verify theme views
+<<<<<<< HEAD
        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+=======
+        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+>>>>>>> laraxot/dev
 
         /** @var array<string, mixed> $contentBlocks */
         $contentBlocks = $homepageData['content_blocks'];
@@ -170,13 +203,21 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('cms handles multilingual content correctly', function () {
+<<<<<<< HEAD
        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+=======
+        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+>>>>>>> laraxot/dev
 
         // Verify CMS multilingual structure
         expect($homepageData['content_blocks'])->toBeArray();
         expect($homepageData['title'])->toBeArray();
 
+<<<<<<< HEAD
        /** @var array<string, mixed> $contentBlocks */
+=======
+        /** @var array<string, mixed> $contentBlocks */
+>>>>>>> laraxot/dev
         $contentBlocks = $homepageData['content_blocks'];
         /** @var array<string, mixed> $title */
         $title = $homepageData['title'];
@@ -190,7 +231,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         $response->assertOk();
 
         $content = $response->getContent();
+<<<<<<< HEAD
        expect($content)->toContain($title[$this->lang]);
+=======
+        expect($content)->toContain($title[$this->lang]);
+>>>>>>> laraxot/dev
     });
 
     test('cms page component passes correct data to blocks', function () {
@@ -210,7 +255,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('cms json storage pattern is consistent', function () {
+<<<<<<< HEAD
        $pagesPath = config_path('local/fixcity/database/content/pages/');
+=======
+        $pagesPath = config_path('local/fixcity/database/content/pages/');
+>>>>>>> laraxot/dev
         expect(file_exists($pagesPath))->toBeTrue();
 
         $homepageJsonPath = $pagesPath.'home.json';
@@ -222,7 +271,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($homepageData)->toHaveKeys(['id', 'slug', 'content_blocks']);
         expect($homepageData['slug'])->toBe('home');
 
+<<<<<<< HEAD
        /** @var array<string, mixed> $contentBlocks */
+=======
+        /** @var array<string, mixed> $contentBlocks */
+>>>>>>> laraxot/dev
         $contentBlocks = $homepageData['content_blocks'];
 
         // Verify blocks structure
@@ -241,7 +294,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('cms blade syntax processing works in json', function () {
+<<<<<<< HEAD
        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+=======
+        $homepageData = loadHomepageJsonForBlocksArchitectureTest();
+>>>>>>> laraxot/dev
 
         /** @var array<string, mixed> $contentBlocks */
         $contentBlocks = $homepageData['content_blocks'];
@@ -249,7 +306,11 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         $blocks = $contentBlocks[$this->lang];
         $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
+<<<<<<< HEAD
         if ($landingBlock !== null) {
+=======
+        if (null !== $landingBlock) {
+>>>>>>> laraxot/dev
             /** @var array<string, mixed> $landingBlock */
             $landingBlockData = $landingBlock['data'];
             Assert::assertIsArray($landingBlockData);
@@ -296,6 +357,10 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         $renderTime = microtime(true) - $startTime;
 
         // CMS should render blocks efficiently
+<<<<<<< HEAD
        expect($renderTime)->toBeLessThan(2.0);
+=======
+        expect($renderTime)->toBeLessThan(2.0);
+>>>>>>> laraxot/dev
     });
 });
