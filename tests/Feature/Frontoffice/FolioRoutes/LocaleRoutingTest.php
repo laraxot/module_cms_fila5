@@ -15,11 +15,7 @@ uses(TestCase::class);
  */
 function supportedTestLocales(): array
 {
-<<<<<<< HEAD
-   $configPath = dirname(__DIR__, 7).'/config/laravellocalization.php';
-=======
     $configPath = dirname(__DIR__, 7).'/config/laravellocalization.php';
->>>>>>> laraxot/dev
     if (! is_file($configPath)) {
         return ['de', 'en', 'it'];
     }

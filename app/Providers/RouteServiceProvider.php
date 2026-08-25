@@ -106,11 +106,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
          * dddx([
          * 'lang_pattern' => $lang_pattern,
          * 'container0_pattern' => $container0_pattern,
-<<<<<<< HEAD
         * 'config_path' => app(\Modules\Tenant\Actions\Config\GetTenantConfigPathAction::class)->execute('morph_map'),
-=======
-         * 'config_path' => app(\Modules\Tenant\Actions\Config\GetTenantConfigPathAction::class)->execute('morph_map'),
->>>>>>> laraxot/dev
          * ]);
          */
         // da erore livewire ?

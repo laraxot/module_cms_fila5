@@ -19,11 +19,7 @@ test('Attachment model has expected fillable fields', function () {
 
     $fillable = $attachment->getFillable();
 
-<<<<<<< HEAD
-   Assert::assertContains('title', $fillable);
-=======
     Assert::assertContains('title', $fillable);
->>>>>>> laraxot/dev
 
     Assert::assertContains('description', $fillable);
 
@@ -39,11 +35,7 @@ test('Attachment model has expected casts', function () {
 
     $casts = $attachment->getCasts();
 
-<<<<<<< HEAD
-   Assert::assertArrayHasKey('attachment', $casts);
-=======
     Assert::assertArrayHasKey('attachment', $casts);
->>>>>>> laraxot/dev
 
     Assert::assertSame('array', $casts['attachment']);
 });
@@ -51,9 +43,5 @@ test('Attachment model has expected casts', function () {
 test('Attachment model implements HasMedia interface', function () {
     $attachment = new Attachment();
 
-<<<<<<< HEAD
-   Assert::assertInstanceOf(HasMedia::class, $attachment);
-=======
     Assert::assertInstanceOf(HasMedia::class, $attachment);
->>>>>>> laraxot/dev
 });

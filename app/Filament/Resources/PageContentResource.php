@@ -19,11 +19,7 @@ class PageContentResource extends LangBaseResource
     protected static ?string $model = PageContent::class;
 
     /**
-<<<<<<< HEAD
     * Schema legacy del form: la sorgente di verità è PageContentForm::getFormSchema().
-=======
-     * Schema legacy del form: la sorgente di verità è PageContentForm::getFormSchema().
->>>>>>> laraxot/dev
      *
      * @return array<int|string, Component>
      */

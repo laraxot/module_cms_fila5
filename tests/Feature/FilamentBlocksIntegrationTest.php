@@ -9,35 +9,15 @@ use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
 
-<<<<<<< .merge_file_nReHdx
-uses(TestCase::class);
-beforeEach(function (): void {
-        /* @var \Modules\Cms\Tests\TestCase $this */
-        if (! \is_string(config('app.key')) || '' === config('app.key')) {
-            $key = 'base64:'.base64_encode(str_repeat('x', 32));
-            config()->set('app.key', $key);
-            $_ENV['APP_KEY'] = $key;
-        }
-=======
-<<<<<<< HEAD
-uses(TestCase::class);
-eforeEach(function (): void {
-=======
-use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 beforeEach(function (): void {
->>>>>>> laraxot/dev
     /* @var \Modules\Cms\Tests\TestCase $this */
     if (! \is_string(config('app.key')) || '' === config('app.key')) {
         $key = 'base64:'.base64_encode(str_repeat('x', 32));
         config()->set('app.key', $key);
         $_ENV['APP_KEY'] = $key;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> laraxot/dev
     cmsSkipTest('Filament blocks homepage integration requires full theme + block wiring in this install.');
 });
 
@@ -45,27 +25,18 @@ describe('Filament Blocks Integration', function () {
     it('integrates with PageContentBuilder correctly', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
 
         // Verifica che il PageContentBuilder funzioni correttamente
         // Questo test verifica l'integrazione tra CMS e frontend
->>>>>>> .merge_file_vy68mg
     });
 
     it('displays blocks with correct data structure', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
         // Verifica struttura dati blocchi
@@ -74,11 +45,7 @@ describe('Filament Blocks Integration', function () {
     it('renders blocks using correct view templates', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
 
@@ -89,11 +56,7 @@ describe('Filament Blocks Integration', function () {
     it('handles block configuration correctly', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
         // Avoid brittle CSS class assertions in this base install
@@ -102,11 +65,7 @@ describe('Filament Blocks Integration', function () {
     it('displays block content with proper formatting', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
 
@@ -117,11 +76,7 @@ describe('Filament Blocks Integration', function () {
     it('handles block relationships correctly', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
 
@@ -132,11 +87,7 @@ describe('Filament Blocks Integration', function () {
     it('renders blocks with correct styling', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
         // Avoid brittle markup assertions in this base install
@@ -146,11 +97,7 @@ describe('Filament Blocks Integration', function () {
     it('handles block validation correctly', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
 
@@ -161,11 +108,7 @@ describe('Filament Blocks Integration', function () {
     it('displays blocks with correct localization', function () {
         // Test italiano
         $response = get('/');
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
         // Avoid brittle project-name assertions in this base install
@@ -178,11 +121,7 @@ describe('Filament Blocks Integration', function () {
 
         // Test tedesco
         $response = get('/de');
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302, 404], true));
 
@@ -192,11 +131,7 @@ describe('Filament Blocks Integration', function () {
     it('handles block errors gracefully', function () {
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $status = $response->getStatusCode();
         Assert::assertTrue(in_array($status, [200, 302], true));
 
@@ -209,23 +144,16 @@ describe('Filament Blocks Integration', function () {
 
         $response = get('/');
 
-<<<<<<< HEAD
-       /** @var TestResponse<Response> $response */
-=======
         /** @var TestResponse<Response> $response */
->>>>>>> laraxot/dev
         $endTime = microtime(true);
         $loadTime = ($endTime - $startTime) * 1000;
 
         $status = $response->getStatusCode();
         if (200 !== $status) {
-<<<<<<< HEAD
-           cmsSkipTest('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
-=======
             cmsSkipTest('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
->>>>>>> laraxot/dev
         }
 
         // Verifica che i blocchi si carichino entro tempi accettabili
         Assert::assertLessThan(500, $loadTime);
     });
+});

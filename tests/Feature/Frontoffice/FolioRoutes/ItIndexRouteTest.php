@@ -13,20 +13,12 @@ it('GET /{locale} uses the requested locale in the html lang attribute', functio
         $status = (int) $response->getStatusCode();
 
         if ($status >= 500) {
-<<<<<<< HEAD
-           cmsSkipTest("Localized index route returned server error for [{$locale}] in this install.");
-=======
             cmsSkipTest("Localized index route returned server error for [{$locale}] in this install.");
->>>>>>> laraxot/dev
 
             return;
         }
 
-<<<<<<< HEAD
-       Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true));
-=======
         Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true));
->>>>>>> laraxot/dev
 
         if (200 === $status) {
             $response->assertSee('<html', false);

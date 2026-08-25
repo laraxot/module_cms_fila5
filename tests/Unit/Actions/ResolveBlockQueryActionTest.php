@@ -19,11 +19,7 @@ test('ResolveBlockQueryAction returns empty array when model is null', function 
 
     $result = $action->execute([]);
 
-<<<<<<< HEAD
-   Assert::assertSame([], $result);
-=======
     Assert::assertSame([], $result);
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction returns empty array when model class does not exist', function () {
@@ -31,11 +27,7 @@ test('ResolveBlockQueryAction returns empty array when model class does not exis
 
     $result = $action->execute(['model' => 'NonExistentModelClass']);
 
-<<<<<<< HEAD
-   Assert::assertSame([], $result);
-=======
     Assert::assertSame([], $result);
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction returns empty array when model class is invalid', function () {
@@ -43,11 +35,7 @@ test('ResolveBlockQueryAction returns empty array when model class is invalid', 
 
     $result = $action->execute(['model' => '']);
 
-<<<<<<< HEAD
-   Assert::assertSame([], $result);
-=======
     Assert::assertSame([], $result);
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction executes query with model', function () {
@@ -59,11 +47,7 @@ test('ResolveBlockQueryAction executes query with model', function () {
         'orderBy' => 'created_at',
         'direction' => 'desc',
     ]);
-<<<<<<< HEAD
-   /* @var array<string, mixed> $result */
-=======
     /* @var array<string, mixed> $result */
->>>>>>> laraxot/dev
     Assert::assertArrayHasKey('items', $result);
     Assert::assertIsArray($result['items']);
 });
@@ -76,11 +60,7 @@ test('ResolveBlockQueryAction applies scopes', function () {
         'model' => Page::class,
         'scope' => 'published',
     ]);
-<<<<<<< HEAD
-   /* @var array<string, mixed> $result */
-=======
     /* @var array<string, mixed> $result */
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction applies scopes array', function () {
@@ -90,11 +70,7 @@ test('ResolveBlockQueryAction applies scopes array', function () {
         'model' => Page::class,
         'scopes' => [],
     ]);
-<<<<<<< HEAD
-   /* @var array<string, mixed> $result */
-=======
     /* @var array<string, mixed> $result */
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction applies orderBy and direction', function () {
@@ -105,11 +81,7 @@ test('ResolveBlockQueryAction applies orderBy and direction', function () {
         'orderBy' => 'updated_at',
         'direction' => 'asc',
     ]);
-<<<<<<< HEAD
-   /* @var array<string, mixed> $result */
-=======
     /* @var array<string, mixed> $result */
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction applies limit', function () {
@@ -119,11 +91,7 @@ test('ResolveBlockQueryAction applies limit', function () {
         'model' => Page::class,
         'limit' => 5,
     ]);
-<<<<<<< HEAD
-   /* @var array<string, mixed> $result */
-=======
     /* @var array<string, mixed> $result */
->>>>>>> laraxot/dev
     Assert::assertArrayHasKey('items', $result);
 });
 
@@ -134,11 +102,7 @@ test('ResolveBlockQueryAction uses default wrap_in value', function () {
         'model' => Page::class,
     ]);
 
-<<<<<<< HEAD
-   Assert::assertArrayHasKey('items', $result);
-=======
     Assert::assertArrayHasKey('items', $result);
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction uses custom wrap_in value', function () {
@@ -149,11 +113,7 @@ test('ResolveBlockQueryAction uses custom wrap_in value', function () {
         'wrap_in' => 'pages',
     ]);
 
-<<<<<<< HEAD
-   Assert::assertArrayHasKey('pages', $result);
-=======
     Assert::assertArrayHasKey('pages', $result);
->>>>>>> laraxot/dev
 });
 
 test('ResolveBlockQueryAction handles non-string wrap_in', function () {
@@ -164,9 +124,5 @@ test('ResolveBlockQueryAction handles non-string wrap_in', function () {
         'wrap_in' => 123,
     ]);
 
-<<<<<<< HEAD
-   Assert::assertArrayHasKey('items', $result);
-=======
     Assert::assertArrayHasKey('items', $result);
->>>>>>> laraxot/dev
 });

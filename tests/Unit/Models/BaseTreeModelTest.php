@@ -23,11 +23,7 @@ test('BaseTreeModel implements HasRecursiveRelationships', function () {
     $reflection = new ReflectionClass(BaseTreeModel::class);
     $traits = $reflection->getTraitNames();
 
-<<<<<<< HEAD
-   Assert::assertTrue(in_array(HasRecursiveRelationships::class, $traits));
-=======
     Assert::assertTrue(in_array(HasRecursiveRelationships::class, $traits));
->>>>>>> laraxot/dev
 });
 
 test('BaseTreeModel has expected fillable fields', function () {
@@ -38,11 +34,7 @@ test('BaseTreeModel has expected fillable fields', function () {
 
     $fillable = $model->getFillable();
 
-<<<<<<< HEAD
-   Assert::assertContains('title', $fillable);
-=======
     Assert::assertContains('title', $fillable);
->>>>>>> laraxot/dev
 
     Assert::assertContains('items', $fillable);
 
@@ -57,11 +49,7 @@ test('BaseTreeModel has expected casts', function () {
 
     $casts = $model->getCasts();
 
-<<<<<<< HEAD
-   Assert::assertArrayHasKey('items', $casts);
-=======
     Assert::assertArrayHasKey('items', $casts);
->>>>>>> laraxot/dev
 
     Assert::assertSame('array', $casts['items']);
 });

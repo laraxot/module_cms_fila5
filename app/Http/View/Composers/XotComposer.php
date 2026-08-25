@@ -30,11 +30,7 @@ final class XotComposer
             return;
         }
 
-<<<<<<< HEAD
-       /** @var HasOne<\Modules\User\Models\Profile, \Modules\User\Models\User> $profileRelation */
-=======
         /** @var HasOne<\Modules\User\Models\Profile, \Modules\User\Models\User> $profileRelation */
->>>>>>> laraxot/dev
         $profileRelation = $user->profile();
         $profile = $profileRelation->first();
         $lang = app()->getLocale();

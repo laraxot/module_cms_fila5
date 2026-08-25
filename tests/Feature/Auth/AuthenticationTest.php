@@ -37,11 +37,7 @@ test('users can authenticate using the login screen', function (): void {
  * expect(Auth::guest())->toBeTrue();
  * });
  *
-<<<<<<< HEAD
 * test('users can logout', function(): void {
-=======
- * test('users can logout', function(): void {
->>>>>>> laraxot/dev
  * $userClass = XotData::make()->getUserClass();
  * $user = $userClass::factory()->createOne();
  *

@@ -50,11 +50,7 @@ class ResolveBlockQueryAction
         }
 
         // Apply ordering
-<<<<<<< HEAD
-       $orderByValue = data_get($queryConfig, 'orderBy', 'created_at');
-=======
         $orderByValue = data_get($queryConfig, 'orderBy', 'created_at');
->>>>>>> laraxot/dev
         $orderBy = is_string($orderByValue) ? $orderByValue : 'created_at';
         // Assert::string($orderBy, '['.__LINE__.']['.__FILE__.']');
         $directionValue = data_get($queryConfig, 'direction', 'desc');
@@ -73,11 +69,7 @@ class ResolveBlockQueryAction
         // Transform results if model has toBlockArray
         $transformedItems = $results->map(function (Model $item): array {
             if (method_exists($item, 'toBlockArray')) {
-<<<<<<< HEAD
-               $res = $item->toBlockArray();
-=======
                 $res = $item->toBlockArray();
->>>>>>> laraxot/dev
                 if (! is_array($res)) {
                     return $item->toArray();
                 }

@@ -37,11 +37,7 @@ class ThemeComposer
         return $normalized;
     }
 
-<<<<<<< HEAD
-   /**
-=======
     /**
->>>>>>> laraxot/dev
      * @param array<string, mixed> $menu
      */
     public function getMenuUrl(array $menu): string
@@ -138,11 +134,7 @@ class ThemeComposer
         return $blocksComponent->render();
     }
     */
-<<<<<<< HEAD
-   /**
-=======
     /**
->>>>>>> laraxot/dev
      * @return Collection<int, Page>
      */
     public function getPages(): Collection

@@ -15,11 +15,7 @@ use Webmozart\Assert\Assert;
 
 class PageContent extends Component
 {
-<<<<<<< HEAD
-   /** @var array<int, BlockData> */
-=======
     /** @var array<int, BlockData> */
->>>>>>> laraxot/dev
     public array $blocks = [];
 
     public function __construct(public string $slug)
@@ -38,11 +34,7 @@ class PageContent extends Component
         if (! is_array($blocks)) {
             $blocks = [];
         }
-<<<<<<< HEAD
-       $collected = BlockData::collect($blocks);
-=======
         $collected = BlockData::collect($blocks);
->>>>>>> laraxot/dev
         /** @var array<int, BlockData> $indexedBlocks */
         $indexedBlocks = array_values($collected instanceof DataCollection ? $collected->all() : (array) $collected);
         $this->blocks = $indexedBlocks;
@@ -51,11 +43,7 @@ class PageContent extends Component
     /**
      * Get the view / contents that represents the component.
      */
-<<<<<<< HEAD
-   public function render(): Factory|ViewContract
-=======
     public function render(): Factory|ViewContract
->>>>>>> laraxot/dev
     {
         $view = 'cms::components.page-content';
         $view_params = [];

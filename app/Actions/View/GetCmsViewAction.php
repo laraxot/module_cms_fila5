@@ -21,11 +21,7 @@ class GetCmsViewAction
      *
      * @throws \Exception If the view does not exist
      *
-<<<<<<< HEAD
     * @return string The resolved and existing view name
-=======
-     * @return string The resolved and existing view name
->>>>>>> laraxot/dev
      */
     public function execute(string $viewName): string
     {

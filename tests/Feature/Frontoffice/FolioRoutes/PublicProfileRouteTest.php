@@ -24,15 +24,7 @@ it('renders the public profile route using the localized profile page', function
         cmsSkipTest('Public profile route returned server error in this install.');
     }
 
-<<<<<<< .merge_file_e6qrSd
     if (200 !== $status) {
-=======
-<<<<<<< HEAD
-    if ($status !== 200) {
-=======
-    if (200 !== $status) {
->>>>>>> laraxot/dev
->>>>>>> .merge_file_K4xAdw
         cmsSkipTest("Public profile route returned {$status} — profile FO page not configured.");
     }
 

@@ -29,11 +29,7 @@ class HeadernavData extends Data implements Wireable
 
     /**
      * The view path.
-<<<<<<< HEAD
     */
-=======
-     */
->>>>>>> laraxot/dev
     public string $view = 'cms::components.headernav';
 
     private static ?self $instance = null;
@@ -41,11 +37,7 @@ class HeadernavData extends Data implements Wireable
     public static function make(): self
     {
         if (! self::$instance instanceof self) {
-<<<<<<< HEAD
-           $data = app(GetTenantConfigArrayAction::class)->execute('appearance');
-=======
             $data = app(GetTenantConfigArrayAction::class)->execute('appearance');
->>>>>>> laraxot/dev
             $data = Arr::get($data, 'headernav', []);
             self::$instance = self::from($data);
         }
@@ -72,11 +64,7 @@ class HeadernavData extends Data implements Wireable
         return $this->render();
     }
 
-<<<<<<< HEAD
-   /**
-=======
     /**
->>>>>>> laraxot/dev
      * @return array<string, mixed>
      */
     /**

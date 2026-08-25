@@ -22,11 +22,7 @@ test('GetCmsViewAction execute method with existing view', function () {
 
     $action = new GetCmsViewAction();
     $result = $action->execute('ui::empty');
-<<<<<<< HEAD
-   Assert::assertSame('ui::empty', $result);
-=======
     Assert::assertSame('ui::empty', $result);
->>>>>>> laraxot/dev
 });
 
 test('GetCmsViewAction execute method throws exception for non-existing view', function () {

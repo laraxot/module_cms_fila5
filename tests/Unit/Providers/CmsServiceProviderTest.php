@@ -27,11 +27,7 @@ test('CmsServiceProvider extends XotBaseServiceProvider', function () {
 
 test('EventServiceProvider has empty event listeners', function () {
     $provider = new EventServiceProvider(app());
-<<<<<<< HEAD
-   $reflection = new ReflectionClass($provider);
-=======
     $reflection = new ReflectionClass($provider);
->>>>>>> laraxot/dev
     $property = $reflection->getProperty('listen');
     $property->setAccessible(true);
 
@@ -40,11 +36,7 @@ test('EventServiceProvider has empty event listeners', function () {
 
 test('EventServiceProvider has shouldDiscoverEvents enabled', function () {
     $provider = new EventServiceProvider(app());
-<<<<<<< HEAD
-   $reflection = new ReflectionClass($provider);
-=======
     $reflection = new ReflectionClass($provider);
->>>>>>> laraxot/dev
     $property = $reflection->getProperty('shouldDiscoverEvents');
     $property->setAccessible(true);
 
@@ -53,11 +45,7 @@ test('EventServiceProvider has shouldDiscoverEvents enabled', function () {
 
 test('RouteServiceProvider has correct module namespace', function () {
     $provider = new RouteServiceProvider(app());
-<<<<<<< HEAD
-   $reflection = new ReflectionClass($provider);
-=======
     $reflection = new ReflectionClass($provider);
->>>>>>> laraxot/dev
     $property = $reflection->getProperty('moduleNamespace');
     $property->setAccessible(true);
 
@@ -66,11 +54,7 @@ test('RouteServiceProvider has correct module namespace', function () {
 
 test('RouteServiceProvider has correct name', function () {
     $provider = new RouteServiceProvider(app());
-<<<<<<< HEAD
-   $reflection = new ReflectionClass($provider);
-=======
     $reflection = new ReflectionClass($provider);
->>>>>>> laraxot/dev
     $property = $reflection->getProperty('name');
     $property->setAccessible(true);
 

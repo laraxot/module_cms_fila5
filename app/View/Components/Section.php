@@ -62,11 +62,7 @@ class Section extends Component
             'section' => $this,
         ];
 
-<<<<<<< HEAD
-       /** @var ViewFactory $viewFactory */
-=======
         /** @var ViewFactory $viewFactory */
->>>>>>> laraxot/dev
         $viewFactory = app('view');
 
         return $viewFactory->make($view, $viewParams);

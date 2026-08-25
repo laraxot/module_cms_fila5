@@ -34,10 +34,6 @@ class LogoBlock extends XotBaseBlock
 
     public static function getBlockLabel(): string
     {
-<<<<<<< HEAD
-       return \trans_string('cms::blocks.logo.label') ?: 'Logo Block';
-=======
         return \trans_string('cms::blocks.logo.label') ?: 'Logo Block';
->>>>>>> laraxot/dev
     }
 }

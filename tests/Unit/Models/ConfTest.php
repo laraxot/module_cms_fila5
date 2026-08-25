@@ -18,11 +18,7 @@ test('Conf model has expected fillable fields', function () {
 
     $fillable = $conf->getFillable();
 
-<<<<<<< HEAD
-   Assert::assertContains('id', $fillable);
-=======
     Assert::assertContains('id', $fillable);
->>>>>>> laraxot/dev
 
     Assert::assertContains('name', $fillable);
 });
@@ -30,20 +26,12 @@ test('Conf model has expected fillable fields', function () {
 test('Conf model has name as route key', function () {
     $conf = new Conf();
 
-<<<<<<< HEAD
-   Assert::assertSame('name', $conf->getRouteKeyName());
-=======
     Assert::assertSame('name', $conf->getRouteKeyName());
->>>>>>> laraxot/dev
 });
 
 test('Conf model uses Sushi trait', function () {
     $reflection = new ReflectionClass(Conf::class);
     $traits = $reflection->getTraitNames();
 
-<<<<<<< HEAD
-   Assert::assertTrue(in_array(Sushi\Sushi::class, $traits));
-=======
     Assert::assertTrue(in_array(Sushi\Sushi::class, $traits));
->>>>>>> laraxot/dev
 });
