@@ -4,18 +4,24 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Http\Livewire\Page;
 
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Cache;
 use Livewire\Component;
 use Modules\Cms\Models\Page;
-use Modules\Xot\Services\ThemeService;
+use Modules\Xot\Actions\Theme\GetThemeAction;
 
 class Show extends Component
 {
-    public string $slug;
+    public string $slug = '';
+
     public bool $cache = true;
+
     public ?string $theme = null;
+
     public bool $debug = false;
+
+   /** @var array<string, mixed> */
     public array $pageContent = [];
 
     public function mount(): void
@@ -23,14 +29,19 @@ class Show extends Component
         $this->loadPageContent();
     }
 
-    public function render(): View
+   public function render(): View|Factory
     {
-        return view('cms::livewire.page.show', [
+        $viewName = 'cms::livewire.page.show';
+
+        return view($viewName, [
             'pageContent' => $this->pageContent,
-            'theme' => $this->theme ?? ThemeService::getTheme(),
+            'theme' => $this->theme ?? app(GetThemeAction::class)->execute(),
         ]);
     }
 
+    /**
+     * @return array<string, string>
+     */
     protected function rules(): array
     {
         return [
@@ -43,16 +54,27 @@ class Show extends Component
 
     protected function loadPageContent(): void
     {
-        $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? ThemeService::getTheme());
+       $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? app(GetThemeAction::class)->execute());
 
         if ($this->cache) {
-            $this->pageContent = Cache::remember($cacheKey, now()->addHours(24), function () {
+            $cached = Cache::remember($cacheKey, now()->addHours(24), function (): array {
                 return $this->fetchPageContent();
             });
+            $content = [];
+            foreach (is_array($cached) ? $cached : [] as $key => $value) {
+                $content[(string) $key] = $value;
+            }
+            $this->pageContent = $content;
+
+            return;
         }
-        // @var mixed pageContent = $this->fetchPageContent(;
+
+        $this->pageContent = $this->fetchPageContent();
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     protected function fetchPageContent(): array
     {
         try {

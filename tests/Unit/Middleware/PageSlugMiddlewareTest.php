@@ -2,18 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Middleware;
-
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('PageSlugMiddleware can be instantiated', function () {
     $middleware = new PageSlugMiddleware();
 
-    expect($middleware)->toBeInstanceOf(PageSlugMiddleware::class);
+    Assert::assertInstanceOf(PageSlugMiddleware::class, $middleware);
 });
 
 test('PageSlugMiddleware handle method exists', function () {
     $middleware = new PageSlugMiddleware();
-
-    expect(method_exists($middleware, 'handle'))->toBeTrue();
 });

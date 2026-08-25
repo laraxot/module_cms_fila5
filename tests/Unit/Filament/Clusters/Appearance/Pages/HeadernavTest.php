@@ -2,60 +2,57 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Filament\Clusters\Appearance\Pages;
-
+use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+use function Safe\class_implements;
+
+uses(TestCase::class);
 test('Headernav page can be instantiated', function () {
-    $page = new Headernav();
-    expect($page)->toBeObject();
+    $page = new Headernav;
 });
 
 test('Headernav page has data property', function () {
-    $page = new Headernav();
+    $page = new Headernav;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+   /** @var array<string, mixed> $dataValue */
+    $dataValue = $property->getValue($page);
+    Assert::assertArrayHasKey('sections', $dataValue);
 });
 
 test('Headernav page has headernavData property', function () {
-    $page = new Headernav();
+    $page = new Headernav;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('headernavData');
     $property->setAccessible(true);
 
-    expect($property->getName())->toBe('headernavData');
+   Assert::assertSame('headernavData', $property->getName());
 });
 
-test('Headernav page has mount method', function () {
-    expect(method_exists(Headernav::class, 'mount'))->toBeTrue();
-});
+test('Headernav page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Headernav page has schema method', function () {
-    expect(method_exists(Headernav::class, 'schema'))->toBeTrue();
-});
+test('Headernav page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Headernav page has updateData method', function () {
-    expect(method_exists(Headernav::class, 'updateData'))->toBeTrue();
-});
+test('Headernav page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Headernav page has fillForms method', function () {
-    expect(method_exists(Headernav::class, 'fillForms'))->toBeTrue();
-});
+test('Headernav page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Headernav page has getUpdateFormActions method', function () {
-    expect(method_exists(Headernav::class, 'getUpdateFormActions'))->toBeTrue();
-});
+test('Headernav page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
-    expect($interfaces)->toContain(Filament\Forms\Contracts\HasForms::class);
+    Assert::assertNotFalse($interfaces);
+    Assert::assertContains(HasForms::class, $interfaces);
 });
 
 test('Headernav page uses InteractsWithForms trait', function () {
     $reflection = new ReflectionClass(Headernav::class);
     $traits = $reflection->getTraitNames();
-    expect($traits)->toContain(Filament\Forms\Concerns\InteractsWithForms::class);
+   Assert::assertContains(InteractsWithForms::class, $traits);
 });

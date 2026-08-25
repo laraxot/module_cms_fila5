@@ -2,50 +2,40 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Filament\Clusters\Appearance\Pages;
-
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('Footer page can be instantiated', function () {
-    $page = new Footer();
-    expect($page)->toBeObject();
+    $page = new Footer;
 });
 
 test('Footer page has data property', function () {
-    $page = new Footer();
+    $page = new Footer;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+   Assert::assertIsArray($property->getValue($page));
 });
 
 test('Footer page has footerData property', function () {
-    $page = new Footer();
+    $page = new Footer;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('footerData');
     $property->setAccessible(true);
 
     // Property exists but is null by default
-    expect($property->getName())->toBe('footerData');
+   Assert::assertSame('footerData', $property->getName());
 });
 
-test('Footer page has mount method', function () {
-    expect(method_exists(Footer::class, 'mount'))->toBeTrue();
-});
+test('Footer page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has schema method', function () {
-    expect(method_exists(Footer::class, 'schema'))->toBeTrue();
-});
+test('Footer page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has updateData method', function () {
-    expect(method_exists(Footer::class, 'updateData'))->toBeTrue();
-});
+test('Footer page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has fillForms method', function () {
-    expect(method_exists(Footer::class, 'fillForms'))->toBeTrue();
-});
+test('Footer page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Footer page has getUpdateFormActions method', function () {
-    expect(method_exists(Footer::class, 'getUpdateFormActions'))->toBeTrue();
-});
+test('Footer page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

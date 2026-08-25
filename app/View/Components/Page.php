@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
 use Modules\Cms\Datas\BlockData;
@@ -11,46 +12,38 @@ use Modules\Cms\Models\Page as PageModel;
 use Spatie\LaravelData\DataCollection;
 
 /**
+* CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
+ *
  * @SuppressWarnings("PHPMD.StaticAccess")
  */
 final class Page extends Component
 {
     public string $side;
 
-    public string $slug;
+   public string $slug = '';
 
-    public string $container0 = '';
-
-    public string $slug0 = '';
-
-    /** @var DataCollection<BlockData>|array */
+    /** @var DataCollection<int, BlockData>|array<string, BlockData> */
     public DataCollection|array $blocks;
 
     /** @var array<string, mixed> */
     public array $data = [];
 
     /**
-     * @param array<string, mixed> $data
+    * @param array<string, mixed> $data Opaque context bag (container0, slug0, models, …)
      */
     public function __construct(
-        array $data = [],
         string $side = 'content',
         ?string $slug = null,
         ?string $type = null,
-        string $container0 = '',
-        string $slug0 = '',
+        array $data = [],
     ) {
         $this->side = $side;
         $this->data = $data;
-        $this->container0 = $container0;
-        $this->slug0 = $slug0;
 
-        // Resolve slug from data if not passed explicitly
-        if (null === $slug && isset($data['slug'])) {
-            $slug = (string) $data['slug'];
+        if (null === $slug && isset($data['slug']) && is_string($data['slug'])) {
+            $slug = $data['slug'];
         }
 
-        // Fallback or composition
         if (null === $slug) {
             $slug = '';
         }
@@ -61,31 +54,18 @@ final class Page extends Component
 
         $this->slug = $slug;
 
-        // BlockData construction handles URL localization automatically via LocalizeBlockDataAction
-        $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
+       $this->blocks = PageModel::getBlocksBySlug($this->slug, $this->side);
     }
 
-    /**
-     * Get the view / contents that represents the component.
-     */
-    public function render(): ViewContract
+    public function render(): ViewContract|Factory
     {
-        $view = 'cms::components.page';
-        $viewParams = [
-            ...$this->data,
+        $viewName = 'cms::components.page';
+
+        return view($viewName, array_merge($this->data, [
             'blocks' => $this->blocks,
             'side' => $this->side,
             'slug' => $this->slug,
             'data' => $this->data,
-            'container0' => $this->container0,
-            'slug0' => $this->slug0,
-        ];
-
-        // @phpstan-ignore-next-line
-        if (! view()->exists($view)) {
-            throw new \Exception('view not found: '.$view);
-        }
-
-        return view($view, $viewParams);
+       ]));
     }
 }

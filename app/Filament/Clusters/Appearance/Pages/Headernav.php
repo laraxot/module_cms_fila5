@@ -17,7 +17,7 @@ use Illuminate\Support\Arr;
 use Modules\Cms\Actions\SaveHeadernavConfigAction;
 use Modules\Cms\Datas\HeadernavData;
 use Modules\Cms\Filament\Clusters\Appearance;
-use Modules\Tenant\Services\TenantService;
+use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 use Modules\Xot\Actions\Filament\Block\GetViewBlocksOptionsByTypeAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Webmozart\Assert\Assert;
@@ -37,15 +37,7 @@ class Headernav extends XotBasePage implements HasForms
     public ?HeadernavData $headernavData = null;
 
     /**
-     * <<<<<<< Updated upstream
-     * <<<<<<< Updated upstream
-     * =======
-     * Data for the form state.
-     *
-     * >>>>>>> Stashed changes
-     * =======
-     * Stato del form Livewire usato da `statePath('data')`.
-     * >>>>>>> Stashed changes
+    * Data for the form state.
      *
      * @var array<string, mixed>
      */
@@ -121,7 +113,7 @@ class Headernav extends XotBasePage implements HasForms
      */
     protected function fillForms(): void
     {
-        $appearanceConfig = TenantService::config('appearance');
+       $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
         Assert::isArray($appearanceConfig);
 
         $headernavConfig = Arr::get($appearanceConfig, 'headernav', []);

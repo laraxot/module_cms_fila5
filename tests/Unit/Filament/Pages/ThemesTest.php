@@ -2,28 +2,24 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Filament\Pages;
-
 use Modules\Cms\Filament\Pages\Themes;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('Themes page can be instantiated', function () {
-    $page = new Themes();
-    expect($page)->toBeObject();
+    $page = new Themes;
 });
 
 test('Themes page has themes property', function () {
-    $page = new Themes();
+    $page = new Themes;
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('themes');
     $property->setAccessible(true);
 
-    expect($property->getValue($page))->toBeArray();
+   Assert::assertIsArray($property->getValue($page));
 });
 
-test('Themes page has changePubTheme method', function () {
-    expect(method_exists(Themes::class, 'changePubTheme'))->toBeTrue();
-});
+test('Themes page has changePubTheme method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Themes page has getViewData method', function () {
-    expect(method_exists(Themes::class, 'getViewData'))->toBeTrue();
-});
+test('Themes page has getViewData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

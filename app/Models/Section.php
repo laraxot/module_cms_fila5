@@ -19,7 +19,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
  *
  * @property string                       $id
- *                                                      >>>>>>> 5580e39 (.)
  * @property array<array-key, mixed>|null $name
  * @property string|null                  $slug
  * @property array<array-key, mixed>|null $blocks
@@ -39,9 +38,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Section whereCreatedBy($value)
  * @method static Builder<static>|Section whereId($value)
  * @method static Builder<static>|Section whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static Builder<static>|Section whereJsonContainsLocales(string $column, array $locales, ?mixed $value, string $operand = '=')
+* @method static Builder<static>|Section whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
  * @method static Builder<static>|Section whereLocale(string $column, string $locale)
- * @method static Builder<static>|Section whereLocales(string $column, array $locales)
+ * @method static Builder<static>|Section whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Section whereName($value)
  * @method static Builder<static>|Section whereSlug($value)
  * @method static Builder<static>|Section whereUpdatedAt($value)
@@ -61,8 +60,8 @@ class Section extends BaseModelLang
     use HasBlocks;
     use SushiToJsons;
 
-    /** @var array<int, string> */
-    public $translatable = [
+   /** @var list<string> */
+    public array $translatable = [
         'name',
         'blocks',
     ];
@@ -74,7 +73,8 @@ class Section extends BaseModelLang
         'blocks',
     ];
 
-    protected array $schema = [
+   /** @var array<string, string> */
+    protected $schema = [
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',
@@ -91,8 +91,6 @@ class Section extends BaseModelLang
     public function getRows(): array
     {
         return $this->getSushiRows();
-
-        /* @var array<int, array<string, mixed>> $typedRows */
     }
 
     /**
