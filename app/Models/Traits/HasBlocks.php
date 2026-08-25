@@ -15,7 +15,11 @@ use Modules\Xot\Datas\XotData;
  * Trait for Models that have blocks.
  *
  * @phpstan-require-extends Model
+<<<<<<< HEAD
+*
+=======
  *
+>>>>>>> laraxot/dev
  * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
@@ -60,7 +64,11 @@ trait HasBlocks
         // which is needed for dynamic query resolution
         $blockDataInstances = [];
         foreach ($blocks as $key => $block) {
+<<<<<<< HEAD
+           if (! is_array($block)) {
+=======
             if (! is_array($block)) {
+>>>>>>> laraxot/dev
                 continue;
             }
             $rawType = $block['type'] ?? 'unknown';
@@ -81,7 +89,11 @@ trait HasBlocks
     }
 
     /**
+<<<<<<< HEAD
+    * @param array<int|string, mixed> $blocks
+=======
      * @param array<int|string, mixed> $blocks
+>>>>>>> laraxot/dev
      *
      * @return array<string, mixed>
      */

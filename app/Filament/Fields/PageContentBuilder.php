@@ -46,7 +46,11 @@ class PageContentBuilder
                     context: $context,
                 );
             } catch (\Error $e) {
+<<<<<<< HEAD
+               if (app()->environment('testing')) {
+=======
                 if (app()->environment('testing')) {
+>>>>>>> laraxot/dev
                     continue;
                 }
 

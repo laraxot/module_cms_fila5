@@ -40,7 +40,11 @@ class SetFolioLocale
         if (in_array($firstSegment, $supportedLocales, true)) {
             $locale = $firstSegment;
         // Priority 2: If user is logged in and has a saved language, use that
+<<<<<<< HEAD
+       } else {
+=======
         } else {
+>>>>>>> laraxot/dev
             $user = $request->user();
             $locale = match (true) {
                 null !== $user && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
@@ -52,7 +56,11 @@ class SetFolioLocale
         // Without calling LaravelLocalization::setLocale(), helpers like
         // localizeUrl(), getLocalizedURL(), getCurrentLocale() will not
         // reflect the correct locale, causing all links to default to 'it'.
+<<<<<<< HEAD
+       if (is_string($locale)) {
+=======
         if (is_string($locale)) {
+>>>>>>> laraxot/dev
             app()->setLocale($locale);
             LaravelLocalization::setLocale($locale);
         }
