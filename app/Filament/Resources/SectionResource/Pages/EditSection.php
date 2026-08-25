@@ -9,9 +9,5 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseEditRecord;
 
 class EditSection extends LangBaseEditRecord
 {
-<<<<<<< HEAD
-   public static string $resource = SectionResource::class;
-=======
     public static string $resource = SectionResource::class;
->>>>>>> laraxot/dev
 }

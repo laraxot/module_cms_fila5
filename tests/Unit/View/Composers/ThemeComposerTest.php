@@ -39,19 +39,11 @@ test('ThemeComposer has getUrlPage method', function () {
 test('ThemeComposer getMenuUrl returns hash for empty array', function () {
     $composer = new ThemeComposer();
     $result = $composer->getMenuUrl([]);
-<<<<<<< HEAD
-   Assert::assertSame('#', $result);
-=======
     Assert::assertSame('#', $result);
->>>>>>> laraxot/dev
 });
 
 test('ThemeComposer getUrlPage returns hash for non-existent page', function () {
     $composer = new ThemeComposer();
     $result = $composer->getUrlPage('non-existent-page-'.uniqid());
-<<<<<<< HEAD
-   Assert::assertSame('#', $result);
-=======
     Assert::assertSame('#', $result);
->>>>>>> laraxot/dev
 });

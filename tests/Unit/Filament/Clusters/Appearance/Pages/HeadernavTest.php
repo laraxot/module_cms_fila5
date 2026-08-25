@@ -12,11 +12,7 @@ use function Safe\class_implements;
 
 uses(TestCase::class);
 test('Headernav page can be instantiated', function () {
-<<<<<<< HEAD
-    $page = new Headernav;
-=======
     $page = new Headernav();
->>>>>>> laraxot/dev
 });
 
 test('Headernav page has data property', function () {
@@ -25,11 +21,7 @@ test('Headernav page has data property', function () {
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
 
-<<<<<<< HEAD
-   /** @var array<string, mixed> $dataValue */
-=======
     /** @var array<string, mixed> $dataValue */
->>>>>>> laraxot/dev
     $dataValue = $property->getValue($page);
     Assert::assertArrayHasKey('sections', $dataValue);
 });
@@ -40,20 +32,6 @@ test('Headernav page has headernavData property', function () {
     $property = $reflection->getProperty('headernavData');
     $property->setAccessible(true);
 
-<<<<<<< HEAD
-   Assert::assertSame('headernavData', $property->getName());
-});
-
-test('Headernav page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
     Assert::assertSame('headernavData', $property->getName());
 });
 
@@ -71,10 +49,6 @@ test('Headernav page has fillForms method', function () {
 
 test('Headernav page has getUpdateFormActions method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-<<<<<<< .merge_file_7YCzwi
-=======
->>>>>>> laraxot/dev
->>>>>>> .merge_file_TtcGlq
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
@@ -85,9 +59,5 @@ test('Headernav page implements HasForms', function () {
 test('Headernav page uses InteractsWithForms trait', function () {
     $reflection = new ReflectionClass(Headernav::class);
     $traits = $reflection->getTraitNames();
-<<<<<<< HEAD
-   Assert::assertContains(InteractsWithForms::class, $traits);
-=======
     Assert::assertContains(InteractsWithForms::class, $traits);
->>>>>>> laraxot/dev
 });

@@ -23,40 +23,24 @@ describe('Section Business Logic', function (): void {
             'blocks',
         ];
 
-<<<<<<< HEAD
-       Assert::assertEquals($expectedFillable, $section->getFillable());
-=======
         Assert::assertEquals($expectedFillable, $section->getFillable());
->>>>>>> laraxot/dev
     });
 
     test('section has sushi to json trait', function (): void {
         $traits = class_uses(Section::class);
 
-<<<<<<< HEAD
-       Assert::assertArrayHasKey(SushiToJsons::class, $traits);
-=======
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
->>>>>>> laraxot/dev
     });
 
     test('section has has blocks trait', function (): void {
         $traits = class_uses(Section::class);
 
-<<<<<<< HEAD
-       Assert::assertArrayHasKey(HasBlocks::class, $traits);
-=======
         Assert::assertArrayHasKey(HasBlocks::class, $traits);
->>>>>>> laraxot/dev
     });
 
     test('section has correct casts for multilingual and structured data', function (): void {
         $section = new Section();
-<<<<<<< HEAD
-       $casts = $section->getCasts();
-=======
         $casts = $section->getCasts();
->>>>>>> laraxot/dev
 
         Assert::assertSame('array', $casts['name']);
         Assert::assertSame('array', $casts['blocks']);
@@ -66,11 +50,7 @@ describe('Section Business Logic', function (): void {
     test('section has schema definition for structured data', function (): void {
         $section = new Section();
 
-<<<<<<< HEAD
-       $reflection = new \ReflectionClass($section);
-=======
         $reflection = new \ReflectionClass($section);
->>>>>>> laraxot/dev
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());
@@ -85,10 +65,6 @@ describe('Section Business Logic', function (): void {
     test('section can get rows for sushi functionality', function (): void {
         $section = new Section();
 
-<<<<<<< HEAD
-       Assert::assertNotEmpty($section->getRows());
-=======
         Assert::assertNotEmpty($section->getRows());
->>>>>>> laraxot/dev
     });
 });

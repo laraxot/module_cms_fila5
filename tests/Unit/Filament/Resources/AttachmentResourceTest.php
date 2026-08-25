@@ -17,54 +17,18 @@ describe('AttachmentResource', function (): void {
 
     test('attachment resource has form schema', function (): void {
         $schema = AttachmentResource::getFormSchema();
-<<<<<<< .merge_file_wy1dPa
         /* @var array<string, mixed> $schema */
-=======
-<<<<<<< .merge_file_cME2Im
-/* @var array<string, mixed> $schema */
-=======
-<<<<<<< HEAD
-       /* @var array<string, mixed> $schema */
-=======
-        /* @var array<string, mixed> $schema */
->>>>>>> laraxot/dev
->>>>>>> .merge_file_wI8OYM
->>>>>>> .merge_file_G1yNR5
         Assert::assertGreaterThan(0, count($schema));
     });
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
-<<<<<<< .merge_file_wy1dPa
         /* @var array<string, mixed> $relations */
-=======
-<<<<<<< .merge_file_cME2Im
-/* @var array<string, mixed> $relations */
-=======
-<<<<<<< HEAD
-       /* @var array<string, mixed> $relations */
-=======
-        /* @var array<string, mixed> $relations */
->>>>>>> laraxot/dev
->>>>>>> .merge_file_wI8OYM
->>>>>>> .merge_file_G1yNR5
     });
 
     test('attachment resource has pages', function (): void {
         $pages = AttachmentResource::getPages();
-<<<<<<< .merge_file_wy1dPa
         /* @var array<string, mixed> $pages */
-=======
-<<<<<<< .merge_file_cME2Im
-/* @var array<string, mixed> $pages */
-=======
-<<<<<<< HEAD
-       /* @var array<string, mixed> $pages */
-=======
-        /* @var array<string, mixed> $pages */
->>>>>>> laraxot/dev
->>>>>>> .merge_file_wI8OYM
->>>>>>> .merge_file_G1yNR5
         Assert::assertArrayHasKey('index', $pages);
         Assert::assertArrayHasKey('create', $pages);
         Assert::assertArrayHasKey('edit', $pages);
@@ -82,19 +46,8 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
-<<<<<<< .merge_file_wy1dPa
-    test('attachment resource has plural label', function (): void {
-=======
-<<<<<<< .merge_file_cME2Im
 test('attachment resource has plural label', function (): void {
->>>>>>> .merge_file_G1yNR5
     })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-=======
-<<<<<<< HEAD
-    test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-=======
     test('attachment resource has plural label', function (): void {
     })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
->>>>>>> laraxot/dev
->>>>>>> .merge_file_wI8OYM
 });

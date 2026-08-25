@@ -8,11 +8,7 @@ use Spatie\LaravelData\Data;
 
 class LinkData extends Data
 {
-<<<<<<< HEAD
-   public string $title = '';
-=======
     public string $title = '';
->>>>>>> laraxot/dev
 
     public string $icon;
 

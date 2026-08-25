@@ -4,17 +4,8 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 
 uses(TestCase::class);
-<<<<<<< HEAD
-test('password can be updated', function (): void {})->todo('Il flusso di aggiornamento password vive nel tema pubblico: il test richiede il pannello montato.');
-
-test('current password must be correct', function (): void {})->todo('Come sopra: senza il form del tema non c\'e\' nessuna validazione da esercitare.');
-=======
 test('password can be updated', function (): void {
 })->todo('Il flusso di aggiornamento password vive nel tema pubblico: il test richiede il pannello montato.');
 
 test('current password must be correct', function (): void {
 })->todo('Come sopra: senza il form del tema non c\'e\' nessuna validazione da esercitare.');
-<<<<<<< .merge_file_01K9ad
-=======
->>>>>>> laraxot/dev
->>>>>>> .merge_file_en1Mp5

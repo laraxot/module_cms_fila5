@@ -188,11 +188,7 @@ return [
             'description' => 'Carica o seleziona un file',
         ],
         'empty' => [
-<<<<<<< HEAD
-           'heading' => 'empty3',
-=======
             'heading' => 'empty3',
->>>>>>> laraxot/dev
             'label' => 'empty4',
         ],
     ],

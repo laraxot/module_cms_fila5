@@ -27,11 +27,7 @@ test('cms module models work together in content management', function () {
         ],
     ]);
 
-<<<<<<< HEAD
-   $pageContent = PageContentFactory::new()->createOne([
-=======
     $pageContent = PageContentFactory::new()->createOne([
->>>>>>> laraxot/dev
         'slug' => 'home-content',
         'name' => ['en' => 'Home Content', 'it' => 'Contenuto Home'],
         'blocks' => [
@@ -39,11 +35,7 @@ test('cms module models work together in content management', function () {
         ],
     ]);
 
-<<<<<<< HEAD
-   $section = SectionFactory::new()->createOne([
-=======
     $section = SectionFactory::new()->createOne([
->>>>>>> laraxot/dev
         'slug' => 'hero-section',
         'name' => ['en' => 'Hero Section', 'it' => 'Sezione Hero'],
         'blocks' => [
@@ -55,11 +47,7 @@ test('cms module models work together in content management', function () {
     $pageContents = PageContent::where('slug', 'home-content')->get();
     $sections = Section::where('slug', 'hero-section')->get();
 
-<<<<<<< HEAD
-   Assert::assertCount(1, $pages);
-=======
     Assert::assertCount(1, $pages);
->>>>>>> laraxot/dev
     Assert::assertCount(1, $pageContents);
     Assert::assertCount(1, $sections);
 });
@@ -72,11 +60,7 @@ test('cms module handles multilingual content correctly', function () {
         'fr' => 'Contenu français',
     ];
 
-<<<<<<< HEAD
-   $page = PageFactory::new()->createOne([
-=======
     $page = PageFactory::new()->createOne([
->>>>>>> laraxot/dev
         'title' => $multilingualData,
         'content_blocks' => [
             'en' => [['type' => 'text', 'content' => 'English text']],
@@ -86,11 +70,7 @@ test('cms module handles multilingual content correctly', function () {
         ],
     ]);
 
-<<<<<<< HEAD
-   $pageContent = PageContentFactory::new()->createOne([
-=======
     $pageContent = PageContentFactory::new()->createOne([
->>>>>>> laraxot/dev
         'name' => $multilingualData,
         'blocks' => [
             'en' => [['type' => 'card', 'title' => 'English card']],
@@ -100,11 +80,7 @@ test('cms module handles multilingual content correctly', function () {
         ],
     ]);
 
-<<<<<<< HEAD
-   $section = SectionFactory::new()->createOne([
-=======
     $section = SectionFactory::new()->createOne([
->>>>>>> laraxot/dev
         'name' => $multilingualData,
         'blocks' => [
             'en' => [['type' => 'banner', 'title' => 'English banner']],
@@ -114,11 +90,7 @@ test('cms module handles multilingual content correctly', function () {
         ],
     ]);
 
-<<<<<<< HEAD
-   Assert::assertSame($multilingualData, $page->title);
-=======
     Assert::assertSame($multilingualData, $page->title);
->>>>>>> laraxot/dev
     Assert::assertSame($multilingualData, $pageContent->name);
     Assert::assertSame($multilingualData, $section->name);
 });
@@ -329,11 +301,7 @@ test('cms module handles complex block structures', function () {
         ],
     ];
 
-<<<<<<< HEAD
-   $page = PageFactory::new()->createOne(['content_blocks' => $complexBlocks]);
-=======
     $page = PageFactory::new()->createOne(['content_blocks' => $complexBlocks]);
->>>>>>> laraxot/dev
     $pageContent = PageContentFactory::new()->createOne(['blocks' => $complexBlocks]);
     $section = SectionFactory::new()->createOne(['blocks' => $complexBlocks]);
 
@@ -390,11 +358,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContents = PageContent::where('slug', 'like', 'content-%')->get();
     $sections = Section::where('slug', 'like', 'section-%')->get();
 
-<<<<<<< HEAD
-   Assert::assertCount(50, $pages);
-=======
     Assert::assertCount(50, $pages);
->>>>>>> laraxot/dev
     Assert::assertCount(50, $pageContents);
     Assert::assertCount(50, $sections);
 
@@ -413,21 +377,13 @@ test('cms module supports complex query patterns', function () {
             'content_blocks' => [['type' => 'hero', 'title' => 'Hero Section']],
         ]);
 
-<<<<<<< HEAD
-   $pageContents = PageContentFactory::new()
-=======
     $pageContents = PageContentFactory::new()
->>>>>>> laraxot/dev
         ->count(8)
         ->create([
             'blocks' => [['type' => 'features', 'title' => 'Features']],
         ]);
 
-<<<<<<< HEAD
-   $sections = SectionFactory::new()
-=======
     $sections = SectionFactory::new()
->>>>>>> laraxot/dev
         ->count(6)
         ->create([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
@@ -440,11 +396,7 @@ test('cms module supports complex query patterns', function () {
 
     $results = $complexQuery->get();
 
-<<<<<<< HEAD
-   Assert::assertCount(10, $results);
-=======
     Assert::assertCount(10, $results);
->>>>>>> laraxot/dev
 
     $heroPages = $results->filter(fn (mixed $page) => collect($page->content_blocks)->contains('type', 'hero'));
 
@@ -458,31 +410,19 @@ test('cms module handles data consistency across models', function () {
         'content_blocks' => [['type' => 'text', 'content' => 'Initial content']],
     ]);
 
-<<<<<<< HEAD
-   $pageContent = PageContentFactory::new()->createOne([
-=======
     $pageContent = PageContentFactory::new()->createOne([
->>>>>>> laraxot/dev
         'slug' => 'consistent-content',
         'name' => ['en' => 'Consistent Content'],
         'blocks' => [['type' => 'card', 'title' => 'Initial card']],
     ]);
 
-<<<<<<< HEAD
-   $section = SectionFactory::new()->createOne([
-=======
     $section = SectionFactory::new()->createOne([
->>>>>>> laraxot/dev
         'slug' => 'consistent-section',
         'name' => ['en' => 'Consistent Section'],
         'blocks' => [['type' => 'banner', 'title' => 'Initial banner']],
     ]);
 
-<<<<<<< HEAD
-   $pageBlocks = is_array($page->content_blocks) ? $page->content_blocks : [];
-=======
     $pageBlocks = is_array($page->content_blocks) ? $page->content_blocks : [];
->>>>>>> laraxot/dev
     $pageContentBlocks = is_array($pageContent->blocks) ? $pageContent->blocks : [];
     $sectionBlocks = is_array($section->blocks) ? $section->blocks : [];
 
@@ -501,11 +441,7 @@ test('cms module handles data consistency across models', function () {
     $freshPage = $page->fresh();
     $freshPageContent = $pageContent->fresh();
     $freshSection = $section->fresh();
-<<<<<<< HEAD
-   Assert::assertInstanceOf(Page::class, $freshPage);
-=======
     Assert::assertInstanceOf(Page::class, $freshPage);
->>>>>>> laraxot/dev
     Assert::assertInstanceOf(PageContent::class, $freshPageContent);
     Assert::assertInstanceOf(Section::class, $freshSection);
 

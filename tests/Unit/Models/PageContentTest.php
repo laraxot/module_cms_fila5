@@ -19,11 +19,7 @@ test('PageContent model has expected fillable fields', function () {
 
     $fillable = $pageContent->getFillable();
 
-<<<<<<< HEAD
-   Assert::assertContains('name', $fillable);
-=======
     Assert::assertContains('name', $fillable);
->>>>>>> laraxot/dev
 
     Assert::assertContains('slug', $fillable);
 
@@ -33,20 +29,12 @@ test('PageContent model has expected fillable fields', function () {
 test('PageContent model extends BaseModel', function () {
     $pageContent = new PageContent();
 
-<<<<<<< HEAD
-   Assert::assertInstanceOf(BaseModel::class, $pageContent);
-=======
     Assert::assertInstanceOf(BaseModel::class, $pageContent);
->>>>>>> laraxot/dev
 });
 
 test('PageContent model has translatable fields', function () {
     $pageContent = new PageContent();
 
-<<<<<<< HEAD
-   Assert::assertContains('name', $pageContent->translatable);
-=======
     Assert::assertContains('name', $pageContent->translatable);
->>>>>>> laraxot/dev
     Assert::assertContains('blocks', $pageContent->translatable);
 });
