@@ -41,11 +41,7 @@ abstract class TestCase extends XotBaseTestCase
     {
         parent::setUp();
 
-<<<<<<< HEAD
-       self::$currentTest = $this;
-=======
         self::$currentTest = $this;
->>>>>>> laraxot/dev
 
         $database = database_path('fixcity_data.sqlite');
 
@@ -74,11 +70,7 @@ abstract class TestCase extends XotBaseTestCase
         // DatabaseTransactions trait handles rollback automatically between tests
     }
 
-<<<<<<< HEAD
-   protected function tearDown(): void
-=======
     protected function tearDown(): void
->>>>>>> laraxot/dev
     {
         self::$currentTest = null;
         parent::tearDown();
@@ -95,10 +87,6 @@ abstract class TestCase extends XotBaseTestCase
             CmsServiceProvider::class,
         ];
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> laraxot/dev
     public static function pestGenerateUniqueEmail(): string
     {
         return parent::generateUniqueEmail();
@@ -133,5 +121,38 @@ abstract class TestCase extends XotBaseTestCase
     public function createPHPUnitMock(string $class): object
     {
         return $this->createUnitMock($class);
+    }
+
+    /**
+     * Contenuto della homepage di fixcity, decodificato.
+     *
+     * Il path è fissato qui e non passato dal chiamante: i test di architettura dei
+     * blocchi verificano *quella* homepage, e ripetere la stringa in sei punti è il
+     * modo più rapido perché cinque restino indietro quando il file si sposta.
+     *
+     * Sta su `TestCase` e non in `tests/PestHelpers.php`, dove era stato scritto la
+     * prima volta: là è già andato perso una volta, in un merge che ha risolto verso
+     * il lato che non lo aveva (`d3f3aed`, 2026-08-25). Una funzione dentro un file
+     * incluso con `require_once` si perde da sola; un metodo su una classe risolta dal
+     * PSR-4 no. Stesso rimedio adottato in `Lang\Tests\TestCase::createTranslationFile()`
+     * per lo stesso problema. Story ROOT-17.10.
+     *
+     * @return array<string, mixed> Con le chiavi `id`, `slug`, `content_blocks`
+     */
+    public static function homepageJsonForBlocksArchitecture(): array
+    {
+        return cmsJsonDecodeFile(
+            config_path('local/fixcity/database/content/pages/home.json'),
+        );
+    }
+
+    /**
+     * Wrapper per evitare che il helper vada perso nei merge (come cmsJsonDecodeFile in PestHelpers).
+     *
+     * @return array<string, mixed>
+     */
+    public static function pestJsonDecodeFile(string $path): array
+    {
+        return cmsJsonDecodeFile($path);
     }
 }

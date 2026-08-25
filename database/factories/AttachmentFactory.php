@@ -14,11 +14,7 @@ class AttachmentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
-<<<<<<< HEAD
-    *
-=======
      *
->>>>>>> laraxot/dev
      * @var class-string<Attachment>
      */
     protected $model = Attachment::class;

@@ -22,11 +22,7 @@ return [
 
     'collections' => [
         'posts' => [
-<<<<<<< HEAD
-           /* @param object{getFilename(): string} $page */
-=======
             /* @param object{getFilename(): string} $page */
->>>>>>> laraxot/dev
             'path' => function ($page) {
                 // return $page->lang.'/posts/'.Str::slug($page->getFilename());
                 // return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
@@ -35,11 +31,7 @@ return [
             },
         ],
         'docs' => [
-<<<<<<< HEAD
-           /* @param object{getFilename(): string} $page */
-=======
             /* @param object{getFilename(): string} $page */
->>>>>>> laraxot/dev
             'path' => function ($page) {
                 // return $page->lang.'/docs/'.Str::slug($page->getFilename());
                 return 'docs/'.Str::slug($page->getFilename());
@@ -52,11 +44,7 @@ return [
     'docsearchIndexName' => env('DOCSEARCH_INDEX'),
 
     // navigation menu
-<<<<<<< HEAD
-   'navigation' => file_exists(__DIR__.'/navigation.php') ? require __DIR__.'/navigation.php' : [],
-=======
     'navigation' => file_exists(__DIR__.'/navigation.php') ? require __DIR__.'/navigation.php' : [],
->>>>>>> laraxot/dev
 
     // helpers
     /* @param object{getPath(): string} $page */
@@ -74,10 +62,6 @@ return [
                 return trimPath($page->getPath()) == trimPath($child);
             });
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> laraxot/dev
         return false;
     }, /*
     'url' => function ($page, $path) {
@@ -93,11 +77,7 @@ return [
         return url('/'.trimPath($path));
     },
 
-<<<<<<< HEAD
-   /* @param object{id: mixed} $page */
-=======
     /* @param object{id: mixed} $page */
->>>>>>> laraxot/dev
     'children' => function ($page, $docs) {
         if ($docs instanceof Illuminate\Support\Collection) {
             return $docs->where('parent_id', $page->id);

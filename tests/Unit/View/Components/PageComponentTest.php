@@ -23,16 +23,9 @@ uses(TestCase::class);
 
 describe('Page component contract — constructor signature', function () {
     test('has exactly four constructor params: side, slug, type, data', function () {
-<<<<<<< HEAD
-       $reflection = new ReflectionMethod(Page::class, '__construct');
-=======
         $reflection = new ReflectionMethod(Page::class, '__construct');
-<<<<<<< .merge_file_UH1UAE
         $paramNames = array_map(fn (\ReflectionParameter $p): string => $p->getName(), $reflection->getParameters());
-=======
->>>>>>> laraxot/dev
         $paramNames = array_map(fn ($p) => $p->getName(), $reflection->getParameters());
->>>>>>> .merge_file_WJ72G1
 
         Assert::assertSame(['side', 'slug', 'type', 'data'], $paramNames);
         Assert::assertCount(4, $reflection->getParameters());
@@ -74,11 +67,7 @@ describe('Page component contract — constructor signature', function () {
 
 describe('Page component contract — public properties', function () {
     test('has public property: side', function () {
-<<<<<<< HEAD
-       $reflection = new ReflectionClass(Page::class);
-=======
         $reflection = new ReflectionClass(Page::class);
->>>>>>> laraxot/dev
 
         Assert::assertTrue($reflection->hasProperty('side'));
         Assert::assertTrue($reflection->getProperty('side')->isPublic());
@@ -116,10 +105,6 @@ describe('Page component contract — public properties', function () {
 
 describe('Page component contract — removed methods', function () {
     test('resolveContext() has been removed', function () {
-<<<<<<< HEAD
-       Assert::assertFalse((new ReflectionClass(Page::class))->hasMethod('resolveContext'));
-=======
         Assert::assertFalse((new ReflectionClass(Page::class))->hasMethod('resolveContext'));
->>>>>>> laraxot/dev
     });
 });

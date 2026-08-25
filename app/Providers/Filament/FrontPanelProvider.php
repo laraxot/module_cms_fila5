@@ -27,11 +27,7 @@ class FrontPanelProvider extends XotBasePanelProvider
         return $panel
             ->id('cms::front')
             ->path('{lang}/front')
-<<<<<<< HEAD
-           ->colors(MetatagData::make()->getFilamentColors())
-=======
             ->colors(MetatagData::make()->getFilamentColors())
->>>>>>> laraxot/dev
             ->discoverResources(
                 in: app_path('Filament/Front/Resources'),
                 for: 'App\\Filament\\Front\\Resources',
@@ -60,15 +56,7 @@ class FrontPanelProvider extends XotBasePanelProvider
                 StartSession::class,
                 AuthenticateSession::class,
                 ShareErrorsFromSession::class,
-<<<<<<< .merge_file_KmM7k5
                 PreventRequestForgery::class,
-=======
-<<<<<<< HEAD
-               PreventRequestForgery::class,
-=======
-                PreventRequestForgery::class,
->>>>>>> laraxot/dev
->>>>>>> .merge_file_q9ZZrV
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,

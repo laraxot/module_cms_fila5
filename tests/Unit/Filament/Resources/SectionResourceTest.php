@@ -12,20 +12,12 @@ describe('SectionResource', function (): void {
     test('section resource has correct model', function (): void {
         $resource = new SectionResource();
 
-<<<<<<< HEAD
-       Assert::assertSame(Section::class, $resource::getModel());
-=======
         Assert::assertSame(Section::class, $resource::getModel());
->>>>>>> laraxot/dev
     });
 
     test('section resource has form schema', function (): void {
         $schema = SectionResource::getFormSchema();
-<<<<<<< HEAD
-       /* @var array<string, mixed> $schema */
-=======
         /* @var array<string, mixed> $schema */
->>>>>>> laraxot/dev
         Assert::assertGreaterThan(0, count($schema));
     });
 
@@ -33,11 +25,7 @@ describe('SectionResource', function (): void {
         $schema = SectionResource::getFormSchema();
 
         // Check that form has required components (check array keys)
-<<<<<<< HEAD
-       Assert::assertContains('info', array_keys($schema));
-=======
         Assert::assertContains('info', array_keys($schema));
->>>>>>> laraxot/dev
         Assert::assertContains('blocks', array_keys($schema));
     });
 
