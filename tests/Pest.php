@@ -37,4 +37,4 @@ require_once __DIR__.'/PestHelpers.php';
  * |
  */
 
-pest()->extend(\Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');

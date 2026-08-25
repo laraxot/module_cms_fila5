@@ -7,9 +7,9 @@ namespace Modules\Cms\Support;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Support\Str;
 use Modules\User\Models\User;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 final class PageSchemaBuilder
 {
