@@ -70,7 +70,11 @@ class Breadcrumb extends XotBasePage
             $up = [
                 'breadcrumb' => $data,
             ];
+<<<<<<< HEAD
            app(SaveTenantConfigAction::class)->execute('appearance', $up);
+=======
+            app(SaveTenantConfigAction::class)->execute('appearance', $up);
+>>>>>>> laraxot/dev
 
             Notification::make()
                 ->title(trans_string('Saved successfully'))
@@ -91,7 +95,11 @@ class Breadcrumb extends XotBasePage
      */
     protected function fillForms(): void
     {
+<<<<<<< HEAD
        $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
+=======
+        $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
+>>>>>>> laraxot/dev
         Assert::isArray($appearanceConfig);
 
         /** @var array<string, mixed> */

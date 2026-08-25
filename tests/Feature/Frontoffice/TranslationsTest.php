@@ -21,23 +21,39 @@ uses(TestCase::class);
  * @see \Modules\Cms\Http\Middleware\SetFolioLocale
  */
 test('auth buttons show correct translation for German locale on login page', function () {
+<<<<<<< HEAD
    $response = cmsGet('/de/auth/login');
+=======
+    $response = cmsGet('/de/auth/login');
+>>>>>>> laraxot/dev
 
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
+<<<<<<< HEAD
        cmsSkipTest("Route /de/auth/login returned server error ({$status}).");
+=======
+        cmsSkipTest("Route /de/auth/login returned server error ({$status}).");
+>>>>>>> laraxot/dev
 
         return;
     }
 
     if (200 !== $status) {
+<<<<<<< HEAD
        cmsSkipTest("Route /de/auth/login returned {$status} (redirect). Cannot verify translations.");
+=======
+        cmsSkipTest("Route /de/auth/login returned {$status} (redirect). Cannot verify translations.");
+>>>>>>> laraxot/dev
 
         return;
     }
 
+<<<<<<< HEAD
    $content = (string) $response->getContent();
+=======
+    $content = (string) $response->getContent();
+>>>>>>> laraxot/dev
 
     // Assert translations work correctly
     Assert::assertStringContainsString('Anmelden', $content);
@@ -52,18 +68,30 @@ test('auth buttons show correct translation for Italian locale on login page', f
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
+<<<<<<< HEAD
        cmsSkipTest("Route /it/auth/login returned server error ({$status}).");
+=======
+        cmsSkipTest("Route /it/auth/login returned server error ({$status}).");
+>>>>>>> laraxot/dev
 
         return;
     }
 
     if (200 !== $status) {
+<<<<<<< HEAD
        cmsSkipTest("Route /it/auth/login returned {$status} (redirect). Cannot verify translations.");
+=======
+        cmsSkipTest("Route /it/auth/login returned {$status} (redirect). Cannot verify translations.");
+>>>>>>> laraxot/dev
 
         return;
     }
 
+<<<<<<< HEAD
    $content = (string) $response->getContent();
+=======
+    $content = (string) $response->getContent();
+>>>>>>> laraxot/dev
 
     Assert::assertStringContainsString('>Accedi<', $content);
     Assert::assertStringContainsString('>Registrati<', $content);
@@ -76,18 +104,30 @@ test('auth buttons show correct translation for English locale on login page', f
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
+<<<<<<< HEAD
        cmsSkipTest("Route /en/auth/login returned server error ({$status}).");
+=======
+        cmsSkipTest("Route /en/auth/login returned server error ({$status}).");
+>>>>>>> laraxot/dev
 
         return;
     }
 
     if (200 !== $status) {
+<<<<<<< HEAD
        cmsSkipTest("Route /en/auth/login returned {$status} (redirect). Cannot verify translations.");
+=======
+        cmsSkipTest("Route /en/auth/login returned {$status} (redirect). Cannot verify translations.");
+>>>>>>> laraxot/dev
 
         return;
     }
 
+<<<<<<< HEAD
    $content = (string) $response->getContent();
+=======
+    $content = (string) $response->getContent();
+>>>>>>> laraxot/dev
 
     Assert::assertStringNotContainsString('>Accedi<', $content);
     Assert::assertStringContainsString('>Log in<', $content);
@@ -104,7 +144,11 @@ test('no hardcoded Italian strings in theme header components', function () {
             continue;
         }
 
+<<<<<<< HEAD
        $raw = file_get_contents($path);
+=======
+        $raw = file_get_contents($path);
+>>>>>>> laraxot/dev
         Assert::assertNotFalse($raw);
         $content = $raw;
 

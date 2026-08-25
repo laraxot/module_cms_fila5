@@ -72,7 +72,11 @@ test('HeadernavData has nullable style property', function (): void {
 
 test('HeadernavData rules method returns validation rules', function (): void {
     $rules = HeadernavData::rules();
+<<<<<<< HEAD
    /* @var array<string, mixed> $rules */
+=======
+    /* @var array<string, mixed> $rules */
+>>>>>>> laraxot/dev
     Assert::assertArrayHasKey('background_color', $rules);
 
     Assert::assertArrayHasKey('background', $rules);
@@ -100,7 +104,11 @@ test('HeadernavData can be created from array using from method', function (): v
 
     $headernavData = HeadernavData::from($data);
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(HeadernavData::class, $headernavData);
+=======
+    Assert::assertInstanceOf(HeadernavData::class, $headernavData);
+>>>>>>> laraxot/dev
 
     Assert::assertSame('#ffffff', $headernavData->background_color);
 
@@ -115,14 +123,22 @@ test('HeadernavData can be converted to array', function (): void {
     ]);
 
     $array = $headernavData->toArray();
+<<<<<<< HEAD
    /* @var array<string, mixed> $array */
+=======
+    /* @var array<string, mixed> $array */
+>>>>>>> laraxot/dev
     Assert::assertArrayHasKey('background_color', $array);
 });
 
 test('HeadernavData overlay_opacity validates numeric range', function (): void {
     $rules = HeadernavData::rules();
 
+<<<<<<< HEAD
    Assert::assertStringContainsString(SafeStringCastAction::cast('numeric'), SafeStringCastAction::cast($rules['overlay_opacity']));
+=======
+    Assert::assertStringContainsString(SafeStringCastAction::cast('numeric'), SafeStringCastAction::cast($rules['overlay_opacity']));
+>>>>>>> laraxot/dev
 
     Assert::assertStringContainsString(SafeStringCastAction::cast('min:0'), SafeStringCastAction::cast($rules['overlay_opacity']));
 

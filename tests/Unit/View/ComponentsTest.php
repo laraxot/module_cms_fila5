@@ -18,11 +18,19 @@ uses(TestCase::class);
 test('Section component can be instantiated', function () {
     $component = new Section('test-slug');
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(Section::class, $component);
+=======
+    Assert::assertInstanceOf(Section::class, $component);
+>>>>>>> laraxot/dev
 });
 
 test('PageContent component can be instantiated', function () {
     $component = new PageContent('test-slug');
 
+<<<<<<< HEAD
    Assert::assertInstanceOf(PageContent::class, $component);
+=======
+    Assert::assertInstanceOf(PageContent::class, $component);
+>>>>>>> laraxot/dev
 });

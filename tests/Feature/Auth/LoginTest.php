@@ -122,7 +122,11 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
+<<<<<<< HEAD
     for ($i = 0; $i < 5; $i++) {
+=======
+    for ($i = 0; $i < 5; ++$i) {
+>>>>>>> laraxot/dev
         LivewireVolt::test('auth.login')
             ->set('email', $email)
             ->set('password', 'wrong_password')

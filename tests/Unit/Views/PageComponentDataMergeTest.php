@@ -27,7 +27,11 @@ test('page component merges route context into block data', function (): void {
         ],
     ])->render();
 
+<<<<<<< HEAD
    Assert::assertStringContainsString('slug0=event-slug-123', $html);
+=======
+    Assert::assertStringContainsString('slug0=event-slug-123', $html);
+>>>>>>> laraxot/dev
 
     Assert::assertStringContainsString('container0=events', $html);
 
@@ -52,7 +56,11 @@ test('page render exposes nested context', function (): void {
         ],
     );
 
+<<<<<<< HEAD
    Assert::assertArrayHasKey('container0', $component->data);
+=======
+    Assert::assertArrayHasKey('container0', $component->data);
+>>>>>>> laraxot/dev
 
     Assert::assertSame('events', $component->data['container0']);
 
@@ -71,7 +79,11 @@ test('page render exposes nested context', function (): void {
     $view = $component->render();
     $viewData = $view->getData();
 
+<<<<<<< HEAD
    Assert::assertArrayHasKey('container0', $viewData);
+=======
+    Assert::assertArrayHasKey('container0', $viewData);
+>>>>>>> laraxot/dev
 
     Assert::assertSame('events', $viewData['container0']);
 
@@ -102,7 +114,11 @@ test('page component internal view keys override conflicting data keys', functio
 
     $viewData = $component->render()->getData();
 
+<<<<<<< HEAD
    Assert::assertArrayHasKey('side', $viewData);
+=======
+    Assert::assertArrayHasKey('side', $viewData);
+>>>>>>> laraxot/dev
 
     Assert::assertSame('content', $viewData['side']);
 

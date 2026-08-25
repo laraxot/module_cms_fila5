@@ -27,18 +27,30 @@ describe('Page Business Logic', function (): void {
             'footer_blocks',
         ];
 
+<<<<<<< HEAD
        Assert::assertEquals($expectedFillable, $page->getFillable());
+=======
+        Assert::assertEquals($expectedFillable, $page->getFillable());
+>>>>>>> laraxot/dev
     });
 
     test('page has sushi to json trait', function (): void {
         $traits = class_uses(Page::class);
 
+<<<<<<< HEAD
        Assert::assertArrayHasKey(SushiToJsons::class, $traits);
+=======
+        Assert::assertArrayHasKey(SushiToJsons::class, $traits);
+>>>>>>> laraxot/dev
     });
 
     test('page has correct casts for blocks and arrays', function (): void {
         $page = new Page();
+<<<<<<< HEAD
        $casts = $page->getCasts();
+=======
+        $casts = $page->getCasts();
+>>>>>>> laraxot/dev
 
         Assert::assertSame('array', $casts['content_blocks']);
         Assert::assertSame('array', $casts['sidebar_blocks']);
@@ -49,7 +61,11 @@ describe('Page Business Logic', function (): void {
     test('page has schema definition for structured data', function (): void {
         $page = new Page();
 
+<<<<<<< HEAD
        $reflection = new \ReflectionClass($page);
+=======
+        $reflection = new \ReflectionClass($page);
+>>>>>>> laraxot/dev
         $schemaProperty = $reflection->getProperty('schema');
 
         Assert::assertTrue($schemaProperty->isProtected());

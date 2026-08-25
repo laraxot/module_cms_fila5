@@ -8,7 +8,11 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 test('Welcome page can be instantiated', function () {
+<<<<<<< HEAD
     $page = new Welcome;
+=======
+    $page = new Welcome();
+>>>>>>> laraxot/dev
 });
 
 test('Welcome page has view_type property', function () {
@@ -17,7 +21,11 @@ test('Welcome page has view_type property', function () {
     $property = $reflection->getProperty('view_type');
     $property->setAccessible(true);
 
+<<<<<<< HEAD
    Assert::assertSame('view_type', $property->getName());
+=======
+    Assert::assertSame('view_type', $property->getName());
+>>>>>>> laraxot/dev
 });
 
 test('Welcome page has containers property', function () {
@@ -26,7 +34,11 @@ test('Welcome page has containers property', function () {
     $property = $reflection->getProperty('containers');
     $property->setAccessible(true);
 
+<<<<<<< HEAD
    Assert::assertIsArray($property->getValue($page));
+=======
+    Assert::assertIsArray($property->getValue($page));
+>>>>>>> laraxot/dev
 });
 
 test('Welcome page has items property', function () {
@@ -35,7 +47,11 @@ test('Welcome page has items property', function () {
     $property = $reflection->getProperty('items');
     $property->setAccessible(true);
 
+<<<<<<< HEAD
    Assert::assertIsArray($property->getValue($page));
+=======
+    Assert::assertIsArray($property->getValue($page));
+>>>>>>> laraxot/dev
 });
 
 test('Welcome page has instanceModel property', function () {
@@ -44,6 +60,7 @@ test('Welcome page has instanceModel property', function () {
     $property = $reflection->getProperty('instanceModel');
     $property->setAccessible(true);
 
+<<<<<<< HEAD
    Assert::assertSame('instanceModel', $property->getName());
 });
 
@@ -52,6 +69,19 @@ test('Welcome page has mount method', function () {})->todo('Serve una asserzion
 test('Welcome page has getViewData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Welcome page has initView method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+    Assert::assertSame('instanceModel', $property->getName());
+});
+
+test('Welcome page has mount method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Welcome page has getViewData method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Welcome page has initView method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> laraxot/dev
 
 // Rimossi `test('Welcome page has url method')` e `test('... setModel method')`: le
 // closure erano vuote e nessuno dei due metodi esiste. `Welcome` dichiara solo `mount`,

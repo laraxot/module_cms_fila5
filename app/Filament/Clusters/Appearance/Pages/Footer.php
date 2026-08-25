@@ -104,7 +104,11 @@ class Footer extends XotBasePage
      */
     protected function fillForms(): void
     {
+<<<<<<< HEAD
        $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
+=======
+        $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
+>>>>>>> laraxot/dev
         Assert::isArray($appearanceConfig);
 
         $footerConfig = Arr::get($appearanceConfig, 'footer', []);

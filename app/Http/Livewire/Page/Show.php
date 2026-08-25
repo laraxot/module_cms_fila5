@@ -21,7 +21,11 @@ class Show extends Component
 
     public bool $debug = false;
 
+<<<<<<< HEAD
    /** @var array<string, mixed> */
+=======
+    /** @var array<string, mixed> */
+>>>>>>> laraxot/dev
     public array $pageContent = [];
 
     public function mount(): void
@@ -29,7 +33,11 @@ class Show extends Component
         $this->loadPageContent();
     }
 
+<<<<<<< HEAD
    public function render(): View|Factory
+=======
+    public function render(): View|Factory
+>>>>>>> laraxot/dev
     {
         $viewName = 'cms::livewire.page.show';
 
@@ -54,7 +62,11 @@ class Show extends Component
 
     protected function loadPageContent(): void
     {
+<<<<<<< HEAD
        $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? app(GetThemeAction::class)->execute());
+=======
+        $cacheKey = 'page_content_'.$this->slug.'_'.($this->theme ?? app(GetThemeAction::class)->execute());
+>>>>>>> laraxot/dev
 
         if ($this->cache) {
             $cached = Cache::remember($cacheKey, now()->addHours(24), function (): array {
