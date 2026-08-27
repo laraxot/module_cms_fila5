@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+use Filament\Forms\Components\Field;
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Models\Menu;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('MenuResource', function (): void {
     test('menu resource has correct model', function (): void {
         $resource = new MenuResource();
@@ -28,7 +30,7 @@ describe('MenuResource', function (): void {
         $hasItems = false;
 
         foreach ($schema as $item) {
-            if (! $item instanceof Filament\Forms\Components\Field) {
+            if (! $item instanceof Field) {
                 continue;
             }
             $name = $item->getName();

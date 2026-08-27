@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
@@ -16,7 +17,7 @@ it('renders the public profile route using the localized profile page', function
 
     $userId = $user->getKey();
     Assert::assertNotNull($userId);
-    $response = cmsGet('/it/profile/'.(string) $userId);
+    $response = cmsGet('/it/profile/'.SafeStringCastAction::cast($userId));
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {

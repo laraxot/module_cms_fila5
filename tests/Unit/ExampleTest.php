@@ -11,7 +11,7 @@ beforeEach(function (): void {
 });
 
 it('user admin can view main dashboard', function (): void {
-});
+})->todo('Il beforeEach salta gia\' il test: servono pannello admin e seeding dei ruoli, assenti dal bootstrap minimo di Cms.');
 
 it('guest user can view main dashboard', function (): void {
-});
+})->todo('Come sopra: senza pannello admin non c\'e\' nessuna dashboard da chiedere.');
