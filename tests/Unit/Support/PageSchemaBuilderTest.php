@@ -14,7 +14,12 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 /**
+<<<<<<< .merge_file_Vmx0gD
  * @param  array<string, mixed>  $schema
+=======
+ * @param array<string, mixed> $schema
+ *
+>>>>>>> .merge_file_yd9Ch2
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array

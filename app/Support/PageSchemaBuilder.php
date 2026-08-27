@@ -108,7 +108,11 @@ final class PageSchemaBuilder
         }
 
         if (
+<<<<<<< .merge_file_ha1MZ2
             $routeName !== null && Str::startsWith($routeName, 'auth.')
+=======
+            null !== $routeName && Str::startsWith($routeName, 'auth.')
+>>>>>>> .merge_file_LHDq7u
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')

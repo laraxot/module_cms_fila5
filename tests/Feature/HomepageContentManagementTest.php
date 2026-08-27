@@ -142,7 +142,11 @@ describe('Homepage Content Management', function () {
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
+<<<<<<< .merge_file_6Saf1C
         if ($status !== 200) {
+=======
+        if (200 !== $status) {
+>>>>>>> .merge_file_VhXkit
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
@@ -160,7 +164,11 @@ describe('Homepage Content Management', function () {
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
+<<<<<<< .merge_file_6Saf1C
         if ($status !== 200) {
+=======
+        if (200 !== $status) {
+>>>>>>> .merge_file_VhXkit
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;

@@ -21,6 +21,11 @@ class GetCmsViewAction
      * @return string The resolved and existing view name
      *
      * @throws \Exception If the view does not exist
+<<<<<<< .merge_file_mofzY1
+=======
+     *
+    * @return string The resolved and existing view name
+>>>>>>> .merge_file_yC1szh
      */
     public function execute(string $viewName): string
     {

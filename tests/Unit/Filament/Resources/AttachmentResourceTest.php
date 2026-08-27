@@ -46,6 +46,13 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
+<<<<<<< .merge_file_qWZK7K
     test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
     test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+=======
+test('attachment resource has plural label', function (): void {
+    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+    test('attachment resource has plural label', function (): void {
+    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+>>>>>>> .merge_file_lnVXaH
 });
