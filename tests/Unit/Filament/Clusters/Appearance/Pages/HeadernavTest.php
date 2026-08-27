@@ -35,6 +35,7 @@ test('Headernav page has headernavData property', function () {
     Assert::assertSame('headernavData', $property->getName());
 });
 
+<<<<<<< .merge_file_ec9KHv
 test('Headernav page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
@@ -44,6 +45,22 @@ test('Headernav page has updateData method', function () {})->todo('Serve una as
 test('Headernav page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+test('Headernav page has mount method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has schema method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has updateData method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has fillForms method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+
+test('Headernav page has getUpdateFormActions method', function () {
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> .merge_file_tnpzxG
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);

@@ -15,8 +15,15 @@ describe('VerifyComponent', function (): void {
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
+<<<<<<< .merge_file_ge3lZO
     test('verify component has resend method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     test('verify component has resend method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+test('verify component has resend method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('verify component has resend method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> .merge_file_ivf1fE
 
     test('resend method returns void', function (): void {
         $reflection = new ReflectionClass(VerifyComponent::class);
