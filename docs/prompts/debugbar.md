@@ -1,3 +1,5 @@
+# Debugbar
+
 studia a fondo 
 https://github.com/fruitcake/laravel-debugbar
 https://laravelmodules.com/docs/13/getting-started/introduction

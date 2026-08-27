@@ -1,3 +1,5 @@
+# Wcag
+
 studia a fondo
 https://www.w3.org/WAI/WCAG21/Techniques/html/H44
 https://www.w3.org/WAI/WCAG21/Techniques/failures/F78

@@ -15,11 +15,11 @@ class SectionResource extends LangBaseResource
     protected static ?string $model = Section::class;
 
     /**
-    * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
+     * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
      *
      * @return array<string, Component>
      */
-    public static function getFormSchemaOld(): array
+    public static function getFormSchema(): array
     {
         return [
             'info' => \Filament\Schemas\Components\Section::make('info')->schema([

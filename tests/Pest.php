@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+use Modules\Cms\Tests\TestCase;
 
 /*
  * |--------------------------------------------------------------------------
@@ -37,4 +38,4 @@ require_once __DIR__.'/PestHelpers.php';
  * |
  */
 
-pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+pest()->extend(TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');

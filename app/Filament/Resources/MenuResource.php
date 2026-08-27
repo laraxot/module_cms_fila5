@@ -18,11 +18,11 @@ class MenuResource extends XotBaseResource
     protected static ?string $model = Menu::class;
 
     /**
-    * Schema legacy del form: la sorgente di verità è MenuForm::getFormSchema().
+     * Schema legacy del form: la sorgente di verità è MenuForm::getFormSchema().
      *
      * @return array<int, Component>
      */
-    public static function getFormSchemaOld(): array
+    public static function getFormSchema(): array
     {
         return [
             TextInput::make('title')->required()->maxLength(2048),

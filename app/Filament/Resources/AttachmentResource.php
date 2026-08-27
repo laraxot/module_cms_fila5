@@ -22,11 +22,11 @@ class AttachmentResource extends LangBaseResource
     protected static ?string $model = Attachment::class;
 
     /**
-    * Schema legacy del form: la sorgente di verità è AttachmentForm::getFormSchema().
+     * Schema legacy del form: la sorgente di verità è AttachmentForm::getFormSchema().
      *
      * @return array<string, BaseComponent>
      */
-    public static function getFormSchemaOld(): array
+    public static function getFormSchema(): array
     {
         return [
             'title' => TextInput::make('title')->required(),
