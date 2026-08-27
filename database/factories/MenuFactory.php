@@ -23,7 +23,11 @@ class MenuFactory extends Factory
     /**
      * Define the model's default state.
      *
+<<<<<<< .merge_file_0fB6Nc
      * @return array<string, mixed>
+=======
+    * @return array<string, mixed>
+>>>>>>> .merge_file_y20w6F
      */
     public function definition(): array
     {

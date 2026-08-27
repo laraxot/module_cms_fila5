@@ -22,7 +22,11 @@ class AttachmentResource extends LangBaseResource
     protected static ?string $model = Attachment::class;
 
     /**
+<<<<<<< .merge_file_W1jFHa
      * Schema legacy del form: la sorgente di verità è AttachmentForm::getFormSchema().
+=======
+    * Schema legacy del form: la sorgente di verità è AttachmentForm::getFormSchema().
+>>>>>>> .merge_file_FeKHVQ
      *
      * @return array<string, BaseComponent>
      */

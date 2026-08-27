@@ -34,7 +34,12 @@ function headerNavConfig(): array
 }
 
 /**
+<<<<<<< .merge_file_kPlsf0
  * @param  array<string, mixed>  $config
+=======
+ * @param array<string, mixed> $config
+ *
+>>>>>>> .merge_file_rluW83
  * @return list<array<string, mixed>>
  */
 function primaryNavItems(array $config): array
@@ -61,7 +66,12 @@ function primaryNavItems(array $config): array
 }
 
 /**
+<<<<<<< .merge_file_kPlsf0
  * @param  list<array<string, mixed>>  $items
+=======
+ * @param list<array<string, mixed>> $items
+ *
+>>>>>>> .merge_file_rluW83
  * @return list<string>
  */
 function navItemSlugs(array $items): array

@@ -38,4 +38,8 @@ require_once __DIR__.'/PestHelpers.php';
  * |
  */
 
+<<<<<<< .merge_file_2p1eiD
 pest()->extend(TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+=======
+pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+>>>>>>> .merge_file_DswU4b
