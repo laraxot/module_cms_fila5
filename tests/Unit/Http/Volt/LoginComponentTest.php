@@ -33,8 +33,15 @@ describe('LoginComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('remember'));
     });
 
+<<<<<<< .merge_file_x3Ob3V
     test('login component has authenticate method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     test('login component has authenticate method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+test('login component has authenticate method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('login component has authenticate method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> .merge_file_czapv8
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);

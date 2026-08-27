@@ -124,7 +124,11 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
+<<<<<<< .merge_file_nFBStm
     for ($i = 0; $i < 5; $i++) {
+=======
+    for ($i = 0; $i < 5; ++$i) {
+>>>>>>> .merge_file_wqoPcv
         LivewireVolt::test('auth.login')
             ->set('email', $email)
             ->set('password', 'wrong_password')

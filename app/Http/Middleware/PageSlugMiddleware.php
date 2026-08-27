@@ -49,7 +49,11 @@ class PageSlugMiddleware
     }
 
     /**
+<<<<<<< .merge_file_yxrVvJ
      * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
+=======
+    * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
+>>>>>>> .merge_file_UWQCXA
      */
     protected function resolveCmsPageSlug(Request $request): ?string
     {
@@ -122,7 +126,11 @@ class PageSlugMiddleware
      * Execute middleware chain manually.
      */
     /**
+<<<<<<< .merge_file_yxrVvJ
      * @param  array<int, string>  $middlewares
+=======
+     * @param array<int, string> $middlewares
+>>>>>>> .merge_file_UWQCXA
      */
     protected function executeMiddlewareChain(Request $request, array $middlewares, \Closure $finalNext): Response
     {
