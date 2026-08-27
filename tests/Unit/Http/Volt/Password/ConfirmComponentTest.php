@@ -23,8 +23,15 @@ describe('Password ConfirmComponent', function (): void {
         Assert::assertSame('', $component->password);
     });
 
+<<<<<<< .merge_file_7Nlxyv
     test('confirm component has confirm method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     test('confirm component has confirm method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+test('confirm component has confirm method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('confirm component has confirm method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> .merge_file_odevZB
 
     test('confirm method declares redirect response return type', function (): void {
         $reflection = new ReflectionClass(ConfirmComponent::class);

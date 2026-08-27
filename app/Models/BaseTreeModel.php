@@ -18,8 +18,13 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\BaseTreeModel.
  *
+<<<<<<< .merge_file_S32gbD
  * @property int $id
  * @property string $name
+=======
+* @property int                    $id
+ * @property string                 $name
+>>>>>>> .merge_file_wqVj9b
  * @property array<int, mixed>|null $items
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -44,8 +49,13 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Builder|Menu withTrashed()
  * @method static Builder|Menu withoutTrashed()
  *
+<<<<<<< .merge_file_S32gbD
  * @property string $title
  * @property int|null $parent_id
+=======
+* @property string                                     $title
+ * @property int|null                                   $parent_id
+>>>>>>> .merge_file_wqVj9b
  * @property Collection<int, static>|array<int, static> $children
  * @property int|null $children_count
  * @property MediaCollection<int, Media> $media
