@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Traits\HasBlocks;
+use Modules\Cms\Tests\TestCase;
 
-uses(Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('HasBlocks trait can be used', function () {
     // Create an anonymous class that uses the trait
     $model = new class extends BaseModel {
