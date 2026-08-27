@@ -6,7 +6,6 @@ namespace Modules\Cms\Tests\Feature;
 
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
-use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
@@ -32,7 +31,7 @@ it('discovers and validates cms and ui blocks', function () {
     expect($homepageData['slug'])->toBe('home');
     expect($allBlocks->count())->toBeGreaterThan(0);
 
-    $cmsBlocks = $allBlocks->toCollection()->filter(fn (mixed $block) => 'Cms' === $block->module);
+    $cmsBlocks = $allBlocks->toCollection()->filter(fn (mixed $block) => $block->module === 'Cms');
     if ($cmsBlocks->count() > 0) {
         $cmsBlocks->each(function (mixed $block) {
             expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
@@ -182,7 +181,7 @@ test('cms blade syntax processing works in json', function () {
     $blocks = $contentBlocks[$this->lang];
     $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
-    if (null !== $landingBlock) {
+    if ($landingBlock !== null) {
         /** @var array<string, mixed> $landingBlock */
         $landingBlockData = $landingBlock['data'];
         Assert::assertIsArray($landingBlockData);

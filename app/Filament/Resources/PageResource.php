@@ -22,11 +22,11 @@ class PageResource extends LangBaseResource
     protected static ?string $model = Page::class;
 
     /**
-    * Schema legacy del form: la sorgente di verità è PageForm::getFormSchema().
+     * Schema legacy del form: la sorgente di verità è PageForm::getFormSchema().
      *
      * @return array<int|string, Component>
      */
-    public static function getFormSchemaOld(): array
+    public static function getFormSchema(): array
     {
         return [
             'title' => TextInput::make('title')

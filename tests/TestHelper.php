@@ -62,7 +62,7 @@ abstract class TestHelper extends BaseTestCase
         $urls = $user
             ->getRoleNames()
             ->map(function (mixed $item): ?string {
-                if (! is_string($item) || 'super-admin' === $item) {
+                if (! is_string($item) || $item === 'super-admin') {
                     return null;
                 }
 
