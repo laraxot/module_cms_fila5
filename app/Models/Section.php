@@ -27,7 +27,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property string|null                  $created_by
  * @property string|null                  $updated_by
  * @property ProfileContract|null         $creator
- * @property mixed                        $translations
+ * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Section newModelQuery()
@@ -74,7 +74,7 @@ class Section extends BaseModelLang
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'name' => 'json',
         'slug' => 'string',
