@@ -24,11 +24,7 @@ it('renders the public profile route using the localized profile page', function
         cmsSkipTest('Public profile route returned server error in this install.');
     }
 
-<<<<<<< .merge_file_VSpkEp
     if ($status !== 200) {
-=======
-    if (200 !== $status) {
->>>>>>> .merge_file_incnRJ
         cmsSkipTest("Public profile route returned {$status} — profile FO page not configured.");
     }
 
