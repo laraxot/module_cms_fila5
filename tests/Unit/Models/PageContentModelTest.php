@@ -64,5 +64,10 @@ describe('PageContent Model', function (): void {
         $model = new PageContent();
     });
 
+<<<<<<< .merge_file_ZMRPqN
     test('page content model has sluggable method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+    test('page content model has sluggable method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+>>>>>>> .merge_file_iouo6k
 });

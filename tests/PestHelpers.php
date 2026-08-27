@@ -28,6 +28,10 @@ use function Safe\json_decode;
  *
  * @see Modules/Gdpr/tests/PestHelpers.php
  */
+<<<<<<< .merge_file_woOMJP
+=======
+
+>>>>>>> .merge_file_MR6HHA
 if (! function_exists('cmsTest')) {
     function cmsTest(): TestCase
     {
