@@ -31,7 +31,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property ProfileContract|null         $creator
  * @property MediaCollection<int, Media>  $media
  * @property int|null                     $media_count
- * @property mixed                        $translations
+ * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Attachment newModelQuery()
@@ -82,7 +82,7 @@ class Attachment extends BaseModelLang implements HasMedia
     ];
 
     /** @var array<string, string> */
-    protected $schema = [
+    protected array $schema = [
         'id' => 'integer',
         'title' => 'json',
         'description' => 'json',
