@@ -6,19 +6,13 @@
 # Mai: filter=lfs / diff=lfs / merge=lfs
 
 * text=auto
-<<<<<<< .merge_file_kauOBg
-=======
 
->>>>>>> .merge_file_T9szAN
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
 
 CHANGELOG.md export-ignore
-<<<<<<< .merge_file_kauOBg
-=======
 
->>>>>>> .merge_file_T9szAN
 # Binary files (regular git blobs — NO git-lfs)
 # `binary` + `!filter` azzera eventuali filtri LFS ereditati
 *.png binary !filter

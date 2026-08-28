@@ -8,8 +8,6 @@ use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
 
-uses(TestCase::class);
-
 it('renders the login page', function (): void {
     $locale = app()->getLocale();
     $response = cmsGetOrSkipOnServerError('/'.$locale.'/auth/login');
@@ -89,7 +87,7 @@ it('remember me functionality works', function (): void {
 
     cmsAssertGuest();
 
-    $response = LivewireVolt::test('auth.login')
+    $response = LivewireVolt::test('auth.login #2')
         ->set('email', $email)
         ->set('password', 'password123')
         ->set('remember', true)
@@ -108,7 +106,7 @@ it('regenerates the session on login', function (): void {
 
     $originalSessionId = session()->getId();
 
-    LivewireVolt::test('auth.login')
+    LivewireVolt::test('auth.login #3')
         ->set('email', $email)
         ->set('password', 'password123')
         ->call('authenticate');
@@ -124,12 +122,8 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
-<<<<<<< .merge_file_nFBStm
     for ($i = 0; $i < 5; $i++) {
-=======
-    for ($i = 0; $i < 5; ++$i) {
->>>>>>> .merge_file_wqoPcv
-        LivewireVolt::test('auth.login')
+        LivewireVolt::test('auth.login #4')
             ->set('email', $email)
             ->set('password', 'wrong_password')
             ->call('authenticate');
@@ -138,7 +132,7 @@ it('rate limits login attempts', function (): void {
     // Sesto tentativo, con la password giusta: il rate limiter deve fermarlo lo stesso.
     // `call()` restituisce un Testable, mai null: `expect($response)->toBeNull()` non
     // poteva passare e non diceva niente sul throttling.
-    LivewireVolt::test('auth.login')
+    LivewireVolt::test('auth.login #5')
         ->set('email', $email)
         ->set('password', 'password123')
         ->call('authenticate')
@@ -155,7 +149,7 @@ it('allows any user type to login via frontend', function (): void {
     ]);
     cmsAssertGuest();
 
-    $response = LivewireVolt::test('auth.login')
+    $response = LivewireVolt::test('auth.login #6')
         ->set('email', $email)
         ->set('password', 'password123')
         ->call('authenticate');

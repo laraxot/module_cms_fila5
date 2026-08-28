@@ -5,21 +5,13 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Support;
 
 use Modules\Cms\Actions\BuildPageSchemaAction;
-use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
-
 /**
-<<<<<<< .merge_file_Vmx0gD
  * @param  array<string, mixed>  $schema
-=======
- * @param array<string, mixed> $schema
- *
->>>>>>> .merge_file_yd9Ch2
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array
