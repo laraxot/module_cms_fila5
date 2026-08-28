@@ -3,10 +3,8 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('Breadcrumb page uses correct view', function () {
     $page = new Breadcrumb();
     // Access protected property via reflection
@@ -30,19 +28,8 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-<<<<<<< .merge_file_w6FCFA
 test('Breadcrumb page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Breadcrumb page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Breadcrumb page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-test('Breadcrumb page has mount method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Breadcrumb page has schema method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Breadcrumb page has updateData method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
->>>>>>> .merge_file_8XiYgN

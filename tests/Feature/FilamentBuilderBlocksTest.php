@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
 
-uses(TestCase::class);
 test('blocks discovery returns a data collection', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 

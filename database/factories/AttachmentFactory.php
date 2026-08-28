@@ -14,11 +14,7 @@ class AttachmentFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
-<<<<<<< .merge_file_KObbjG
-     *
-=======
     *
->>>>>>> .merge_file_mn65Cj
      * @var class-string<Attachment>
      */
     protected $model = Attachment::class;

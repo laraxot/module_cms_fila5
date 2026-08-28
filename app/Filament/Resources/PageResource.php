@@ -22,11 +22,7 @@ class PageResource extends LangBaseResource
     protected static ?string $model = Page::class;
 
     /**
-<<<<<<< .merge_file_y3t0ho
-     * Schema legacy del form: la sorgente di verità è PageForm::getFormSchema().
-=======
     * Schema legacy del form: la sorgente di verità è PageForm::getFormSchema().
->>>>>>> .merge_file_K03caO
      *
      * @return array<int|string, Component>
      */

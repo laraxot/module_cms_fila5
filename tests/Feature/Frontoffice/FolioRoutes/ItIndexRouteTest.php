@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 it('GET /{locale} uses the requested locale in the html lang attribute', function (): void {
     foreach (['it', 'en', 'de'] as $locale) {
         $response = cmsGet('/'.$locale);
@@ -20,7 +18,7 @@ it('GET /{locale} uses the requested locale in the html lang attribute', functio
 
         Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true));
 
-        if (200 === $status) {
+        if ($status === 200) {
             $response->assertSee('<html', false);
             $response->assertSee(' lang="'.$locale.'"', false);
         }

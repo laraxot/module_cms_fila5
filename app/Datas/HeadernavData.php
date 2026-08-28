@@ -29,11 +29,7 @@ class HeadernavData extends Data implements Wireable
 
     /**
      * The view path.
-<<<<<<< .merge_file_uI1Ze7
-     */
-=======
     */
->>>>>>> .merge_file_Pcc4hn
     public string $view = 'cms::components.headernav';
 
     private static ?self $instance = null;
