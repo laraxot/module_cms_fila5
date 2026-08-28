@@ -6,10 +6,7 @@ namespace Modules\Cms\Tests\Feature;
 
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
-<<<<<<< .merge_file_aEOLYN
-=======
 use Modules\UI\View\Components\Render\Blocks;
->>>>>>> .merge_file_3XVswy
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
@@ -190,11 +187,7 @@ test('cms blade syntax processing works in json', function () {
     $blocks = $contentBlocks[$this->lang];
     $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
-<<<<<<< .merge_file_aEOLYN
     if ($landingBlock !== null) {
-=======
-    if (null !== $landingBlock) {
->>>>>>> .merge_file_3XVswy
         /** @var array<string, mixed> $landingBlock */
         $landingBlockData = $landingBlock['data'];
         Assert::assertIsArray($landingBlockData);
