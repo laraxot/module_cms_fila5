@@ -46,11 +46,7 @@ abstract class BaseModelLang extends BaseModel
     /**
      * The attributes that should be mutated to dates.
      *
-<<<<<<< .merge_file_wdqbdz
-     * @return array<string, string>
-=======
     * @return array<string, string>
->>>>>>> .merge_file_eqDj3t
      */
     #[\Override]
     protected function casts(): array
