@@ -4,16 +4,10 @@ declare(strict_types=1);
 
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
 
-<<<<<<< .merge_file_6Wu4xw
-=======
-
->>>>>>> .merge_file_1pxJBy
-uses(TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     if (! \is_string(config('app.key')) || config('app.key') === '') {
@@ -152,11 +146,7 @@ describe('Filament Blocks Integration', function () {
         $loadTime = ($endTime - $startTime) * 1000;
 
         $status = $response->getStatusCode();
-<<<<<<< .merge_file_6Wu4xw
         if ($status !== 200) {
-=======
-        if (200 !== $status) {
->>>>>>> .merge_file_1pxJBy
             cmsSkipTest('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
         }
 

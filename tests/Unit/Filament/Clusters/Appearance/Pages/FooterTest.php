@@ -3,10 +3,8 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('Footer page can be instantiated', function () {
     $page = new Footer();
 });
@@ -30,7 +28,6 @@ test('Footer page has footerData property', function () {
     Assert::assertSame('footerData', $property->getName());
 });
 
-<<<<<<< .merge_file_vhVBBT
 test('Footer page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
@@ -40,19 +37,3 @@ test('Footer page has updateData method', function () {})->todo('Serve una asser
 test('Footer page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-test('Footer page has mount method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Footer page has schema method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Footer page has updateData method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Footer page has fillForms method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Footer page has getUpdateFormActions method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
->>>>>>> .merge_file_sw88Km

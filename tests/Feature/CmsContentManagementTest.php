@@ -8,10 +8,8 @@ use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\PageContent;
 use Modules\Cms\Models\Section;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
