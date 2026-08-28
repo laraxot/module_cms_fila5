@@ -3,10 +3,8 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Front\Pages\Welcome;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('Welcome page can be instantiated', function () {
     $page = new Welcome();
 });
@@ -47,22 +45,11 @@ test('Welcome page has instanceModel property', function () {
     Assert::assertSame('instanceModel', $property->getName());
 });
 
-<<<<<<< .merge_file_wniZIK
 test('Welcome page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Welcome page has getViewData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Welcome page has initView method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-test('Welcome page has mount method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Welcome page has getViewData method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Welcome page has initView method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
->>>>>>> .merge_file_NxKduf
 
 // Rimossi `test('Welcome page has url method')` e `test('... setModel method')`: le
 // closure erano vuote e nessuno dei due metodi esiste. `Welcome` dichiara solo `mount`,

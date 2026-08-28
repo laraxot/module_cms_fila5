@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\AppLayout;
 use Modules\Cms\View\Components\GuestLayout;
 use Modules\Cms\View\Components\Metatags;
@@ -10,7 +9,6 @@ use Modules\Cms\View\Components\PageContent;
 use Modules\Cms\View\Components\Section;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 test('AppLayout can be instantiated', function () {
     $component = new AppLayout();
 
@@ -29,12 +27,7 @@ test('Metatags can be instantiated', function () {
     Assert::assertInstanceOf(Metatags::class, $component);
 });
 
-<<<<<<< .merge_file_ywpRqw
 test('Page can be instantiated', function () {})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
-=======
-test('Page can be instantiated', function () {
-})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
->>>>>>> .merge_file_QXHX53
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');

@@ -12,11 +12,7 @@ use Modules\Cms\Models\Page as PageModel;
 use Spatie\LaravelData\DataCollection;
 
 /**
-<<<<<<< .merge_file_2nQRmD
- * CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
-=======
 * CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
->>>>>>> .merge_file_DEuL2q
  *
  * @SuppressWarnings("PHPMD.StaticAccess")
  */
@@ -33,11 +29,7 @@ final class Page extends Component
     public array $data = [];
 
     /**
-<<<<<<< .merge_file_2nQRmD
-     * @param  array<string, mixed>  $data  Opaque context bag (container0, slug0, models, …)
-=======
     * @param array<string, mixed> $data Opaque context bag (container0, slug0, models, …)
->>>>>>> .merge_file_DEuL2q
      */
     public function __construct(
         string $side = 'content',

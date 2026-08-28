@@ -4,21 +4,11 @@ declare(strict_types=1);
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\Conf;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-<<<<<<< .merge_file_r6xMEE
 use Sushi\Sushi;
 
 use function Safe\class_uses;
 
-=======
-
-use function Safe\class_uses;
-
-use Sushi\Sushi;
-
->>>>>>> .merge_file_MCmoml
-uses(TestCase::class);
 describe('Conf Business Logic', function (): void {
     test('conf extends eloquent model', function (): void {
         Assert::assertTrue(

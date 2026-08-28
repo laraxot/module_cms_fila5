@@ -7,13 +7,9 @@ namespace Modules\Cms\Tests\Feature\Auth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\Cms\Tests\TestCase;
-
-use function Pest\Laravel\actingAs;
-
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
+use function Pest\Laravel\actingAs;
 
 describe('Login Http', function (): void {
     test('login page can be rendered', function (): void {
@@ -93,7 +89,7 @@ describe('Login Http', function (): void {
 
         cmsAssertGuest();
 
-        $response = LivewireVolt::test('auth.login')
+        $response = LivewireVolt::test('auth.login #2')
             ->set('email', $email)
             ->set('password', 'password123')
             ->set('remember', true)
@@ -112,7 +108,7 @@ describe('Login Http', function (): void {
 
         $originalSessionId = session()->getId();
 
-        LivewireVolt::test('auth.login')
+        LivewireVolt::test('auth.login #3')
             ->set('email', $email)
             ->set('password', 'password123')
             ->call('authenticate');
@@ -128,14 +124,14 @@ describe('Login Http', function (): void {
             'password' => Hash::make('password123'),
         ]);
 
-        for ($i = 0; $i < 5; ++$i) {
-            LivewireVolt::test('auth.login')
+        for ($i = 0; $i < 5; $i++) {
+            LivewireVolt::test('auth.login #4')
                 ->set('email', $email)
                 ->set('password', 'wrong_password')
                 ->call('authenticate');
         }
 
-        $response = LivewireVolt::test('auth.login')
+        $response = LivewireVolt::test('auth.login #5')
             ->set('email', $email)
             ->set('password', 'password123')
             ->call('authenticate');
@@ -151,7 +147,7 @@ describe('Login Http', function (): void {
         ]);
         cmsAssertGuest();
 
-        $response = LivewireVolt::test('auth.login')
+        $response = LivewireVolt::test('auth.login #6')
             ->set('email', $email)
             ->set('password', 'password123')
             ->call('authenticate');
