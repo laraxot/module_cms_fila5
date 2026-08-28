@@ -15,11 +15,7 @@ class SectionResource extends LangBaseResource
     protected static ?string $model = Section::class;
 
     /**
-<<<<<<< .merge_file_4b5wRW
-     * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
-=======
     * Schema legacy del form: la sorgente di verità è SectionForm::getFormSchema().
->>>>>>> .merge_file_CTt8DL
      *
      * @return array<string, Component>
      */

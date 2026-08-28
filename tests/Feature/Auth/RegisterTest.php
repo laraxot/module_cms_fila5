@@ -2,18 +2,7 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
-
-uses(TestCase::class);
-
 describe('Register Page', function () {
-<<<<<<< .merge_file_BdUTV3
     test('register page placeholder', function () {})->todo('Servono i componenti del tema pubblico per rendere la pagina di registrazione.');
-    test('register page placeholder', function () {})->todo('Servono i componenti del tema pubblico per rendere la pagina di registrazione.');
-=======
-test('register page placeholder', function () {
-    })->todo('Servono i componenti del tema pubblico per rendere la pagina di registrazione.');
-    test('register page placeholder', function () {
-    })->todo('Servono i componenti del tema pubblico per rendere la pagina di registrazione.');
->>>>>>> .merge_file_QIj184
+    test('register page placeholder #2', function () {})->todo('Servono i componenti del tema pubblico per rendere la pagina di registrazione.');
 });
