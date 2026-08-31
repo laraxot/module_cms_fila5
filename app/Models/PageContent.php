@@ -6,8 +6,8 @@ namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
-use Modules\TechPlanner\Models\Profile;
 use Modules\Tenant\Models\Traits\SushiToJsons;
+use Modules\Xot\Contracts\ProfileContract;
 use Spatie\Translatable\HasTranslations;
 
 /**
@@ -21,10 +21,10 @@ use Spatie\Translatable\HasTranslations;
  * @property Carbon|null $updated_at
  * @property string|null $created_by
  * @property string|null $updated_by
- * @property-read Profile|null $creator
+ * @property-read ProfileContract|null $creator
  * @property-read array<int|string, mixed> $translatable_columns_from
  * @property-read mixed $translations
- * @property-read Profile|null $updater
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|PageContent newModelQuery()
  * @method static Builder<static>|PageContent newQuery()
