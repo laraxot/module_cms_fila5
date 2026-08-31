@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\TechPlanner\Models\Profile;
 use Modules\Tenant\Actions\Config\GetTenantConfigNamesAction;
+use Modules\Xot\Contracts\ProfileContract;
 use Sushi\Sushi;
 
 /**
@@ -14,8 +14,8 @@ use Sushi\Sushi;
  *
  * @property string $id
  * @property string|null $name
- * @property-read Profile|null $creator
- * @property-read Profile|null $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|Conf newModelQuery()
  * @method static Builder<static>|Conf newQuery()
