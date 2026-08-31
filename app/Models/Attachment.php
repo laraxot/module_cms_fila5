@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Modules\Media\Models\Media;
-use Modules\TechPlanner\Models\Profile;
 use Modules\Tenant\Models\Traits\SushiToJsons;
+use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
@@ -27,12 +27,12 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property Carbon|null $updated_at
  * @property string|null $created_by
  * @property string|null $updated_by
- * @property-read Profile|null $creator
+ * @property-read ProfileContract|null $creator
  * @property-read array<int|string, mixed> $translatable_columns_from
  * @property-read MediaCollection<int, Media> $media
  * @property-read int|null $media_count
  * @property-read mixed $translations
- * @property-read Profile|null $updater
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|Attachment newModelQuery()
  * @method static Builder<static>|Attachment newQuery()
