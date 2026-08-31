@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\TechPlanner\Models\Profile;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Actions\Tree\GetTreeOptionsByModelClassAction;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
+use Modules\Xot\Contracts\ProfileContract;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
@@ -25,9 +25,9 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @property string|null $updated_by
  * @property-read Collection<int, Menu> $children
  * @property-read int|null $children_count
- * @property-read Profile|null $creator
+ * @property-read ProfileContract|null $creator
  * @property-read Menu|null $parent
- * @property-read Profile|null $updater
+ * @property-read ProfileContract|null $updater
  * @property-read int $depth
  * @property-read string $path
  * @property-read Collection<int, Menu> $ancestors The model's recursive parents.
