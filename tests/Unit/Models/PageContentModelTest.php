@@ -8,7 +8,7 @@ use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Spatie\Translatable\HasTranslations;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
         $model = new PageContent();
@@ -64,5 +64,6 @@ describe('PageContent Model', function (): void {
         $model = new PageContent();
     });
 
-    test('page content model has sluggable method', function (): void {})->todo();
+    test('page content model has sluggable method', function (): void {
+    })->todo();
 });

@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\VerifyComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('VerifyComponent', function (): void {
     test('verify component extends volt component', function (): void {
         $component = new VerifyComponent();
@@ -15,7 +15,8 @@ describe('VerifyComponent', function (): void {
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
-    test('verify component has resend method', function (): void {})->todo();
+    test('verify component has resend method', function (): void {
+    })->todo();
     test('resend method returns void', function (): void {
         $reflection = new ReflectionClass(VerifyComponent::class);
         $method = $reflection->getMethod('resend');
