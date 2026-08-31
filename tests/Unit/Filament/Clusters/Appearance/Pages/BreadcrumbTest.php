@@ -6,7 +6,7 @@ use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Breadcrumb page uses correct view', function () {
     $page = new Breadcrumb();
     // Access protected property via reflection
@@ -30,6 +30,9 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-test('Breadcrumb page has mount method', function (): void {})->todo();
-test('Breadcrumb page has schema method', function (): void {})->todo();
-test('Breadcrumb page has updateData method', function (): void {})->todo();
+test('Breadcrumb page has mount method', function (): void {
+})->todo();
+test('Breadcrumb page has schema method', function (): void {
+})->todo();
+test('Breadcrumb page has updateData method', function (): void {
+})->todo();

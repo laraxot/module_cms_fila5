@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\Password\ConfirmComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('Password ConfirmComponent', function (): void {
     test('confirm component extends volt component', function (): void {
         $component = new ConfirmComponent();
@@ -23,7 +23,8 @@ describe('Password ConfirmComponent', function (): void {
         Assert::assertSame('', $component->password);
     });
 
-    test('confirm component has confirm method', function (): void {})->todo();
+    test('confirm component has confirm method', function (): void {
+    })->todo();
     test('confirm method declares redirect response return type', function (): void {
         $reflection = new ReflectionClass(ConfirmComponent::class);
         $method = $reflection->getMethod('confirm');
