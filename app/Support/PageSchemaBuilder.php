@@ -108,7 +108,7 @@ final class PageSchemaBuilder
         }
 
         if (
-            null !== $routeName && Str::startsWith($routeName, 'auth.')
+            $routeName !== null && Str::startsWith($routeName, 'auth.')
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')
