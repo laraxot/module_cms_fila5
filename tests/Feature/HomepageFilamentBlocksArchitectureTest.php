@@ -6,10 +6,10 @@ namespace Modules\Cms\Tests\Feature;
 
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
-use Modules\UI\View\Components\Render\Blocks;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
 
 /*
  * Homepage JSON: solo TestCase::homepageJsonForBlocksArchitecture() (PSR-4).
@@ -32,7 +32,7 @@ it('discovers and validates cms and ui blocks', function () {
     expect($homepageData['slug'])->toBe('home');
     expect($allBlocks->count())->toBeGreaterThan(0);
 
-    $cmsBlocks = $allBlocks->toCollection()->filter(fn (mixed $block) => $block->module === 'Cms');
+    $cmsBlocks = $allBlocks->toCollection()->filter(fn (mixed $block) => 'Cms' === $block->module);
     if ($cmsBlocks->count() > 0) {
         $cmsBlocks->each(function (mixed $block) {
             expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
@@ -187,7 +187,7 @@ test('cms blade syntax processing works in json', function () {
     $blocks = $contentBlocks[$this->lang];
     $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
-    if ($landingBlock !== null) {
+    if (null !== $landingBlock) {
         /** @var array<string, mixed> $landingBlock */
         $landingBlockData = $landingBlock['data'];
         Assert::assertIsArray($landingBlockData);
