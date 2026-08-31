@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\CounterComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('CounterComponent', function (): void {
     test('counter component extends volt component', function (): void {
         $component = new CounterComponent();
@@ -21,8 +21,10 @@ describe('CounterComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('count'));
     });
 
-    test('counter component has increment method', function (): void {})->todo();
-    test('counter component has decrement method', function (): void {})->todo();
+    test('counter component has increment method', function (): void {
+    })->todo();
+    test('counter component has decrement method', function (): void {
+    })->todo();
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);
 
