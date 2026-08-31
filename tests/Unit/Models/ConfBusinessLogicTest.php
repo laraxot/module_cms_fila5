@@ -10,7 +10,7 @@ use function Safe\class_uses;
 
 use Sushi\Sushi;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('Conf Business Logic', function (): void {
     test('conf extends eloquent model', function (): void {
     });
