@@ -17,7 +17,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 
-/**
+/*
  * Helper Pest/PHPStan — modulo Cms.
  *
  * Funzioni globali (autoload-dev.files). Nessun namespace: i test devono
@@ -31,7 +31,7 @@ use function Safe\json_decode;
 if (! function_exists('cmsTest')) {
     function cmsTest(): TestCase
     {
-        if (TestCase::$currentTest !== null) {
+        if (null !== TestCase::$currentTest) {
             return TestCase::$currentTest;
         }
 
@@ -51,7 +51,7 @@ if (! function_exists('cmsGenerateUniqueEmail')) {
 
 if (! function_exists('cmsCreateTestUser')) {
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     function cmsCreateTestUser(array $attributes = []): UserContract
     {
@@ -61,7 +61,7 @@ if (! function_exists('cmsCreateTestUser')) {
 
 if (! function_exists('cmsCreateUnverifiedUser')) {
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     function cmsCreateUnverifiedUser(array $attributes = []): User
     {
@@ -76,7 +76,8 @@ if (! function_exists('cmsCreateMock')) {
     /**
      * @template T of object
      *
-     * @param  class-string<T>  $class
+     * @param class-string<T> $class
+     *
      * @return T&MockObject
      */
     function cmsCreateMock(string $class): object
@@ -114,7 +115,8 @@ if (! function_exists('cmsJsonDecodeFile')) {
 
 if (! function_exists('cmsGet')) {
     /**
-     * @param  array<string, string>  $headers
+     * @param array<string, string> $headers
+     *
      * @return TestResponse<Response>
      */
     function cmsGet(string $uri, array $headers = []): TestResponse
@@ -125,7 +127,8 @@ if (! function_exists('cmsGet')) {
 
 if (! function_exists('cmsGetOrSkipOnServerError')) {
     /**
-     * @param  array<string, string>  $headers
+     * @param array<string, string> $headers
+     *
      * @return TestResponse<Response>
      */
     function cmsGetOrSkipOnServerError(string $uri, array $headers = []): TestResponse
@@ -142,8 +145,9 @@ if (! function_exists('cmsGetOrSkipOnServerError')) {
 
 if (! function_exists('cmsPost')) {
     /**
-     * @param  array<string, mixed>  $data
-     * @param  array<string, string>  $headers
+     * @param array<string, mixed>  $data
+     * @param array<string, string> $headers
+     *
      * @return TestResponse<Response>
      */
     function cmsPost(string $uri, array $data = [], array $headers = []): TestResponse
@@ -163,7 +167,8 @@ if (! function_exists('cmsActingAsGet')) {
     /**
      * Autenticato + GET in un passo (verify-email e route signed).
      *
-     * @param  array<string, string>  $headers
+     * @param array<string, string> $headers
+     *
      * @return TestResponse<Response>
      */
     function cmsActingAsGet(Authenticatable $user, string $uri, array $headers = []): TestResponse

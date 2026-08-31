@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 
 describe('Resolve Page Action', function (): void {
     test('it resolves adynamic model from known mappings', function (): void {
-        /** @var TestCase $this */
+        /* @var TestCase $this */
         if (! class_exists('Modules\\Meetup\\Models\\Event')) {
             $this->skipTest('Meetup module not available.');
         }
