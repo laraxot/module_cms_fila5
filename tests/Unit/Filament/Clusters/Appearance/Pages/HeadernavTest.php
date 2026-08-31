@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('Headernav page can be instantiated', function () {
     $page = new Headernav();
 });
@@ -35,11 +35,16 @@ test('Headernav page has headernavData property', function () {
     Assert::assertSame('headernavData', $property->getName());
 });
 
-test('Headernav page has mount method', function (): void {})->todo();
-test('Headernav page has schema method', function (): void {})->todo();
-test('Headernav page has updateData method', function (): void {})->todo();
-test('Headernav page has fillForms method', function (): void {})->todo();
-test('Headernav page has getUpdateFormActions method', function (): void {})->todo();
+test('Headernav page has mount method', function (): void {
+})->todo();
+test('Headernav page has schema method', function (): void {
+})->todo();
+test('Headernav page has updateData method', function (): void {
+})->todo();
+test('Headernav page has fillForms method', function (): void {
+})->todo();
+test('Headernav page has getUpdateFormActions method', function (): void {
+})->todo();
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
     Assert::assertNotFalse($interfaces);

@@ -6,12 +6,11 @@ use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\AppLayout;
 use Modules\Cms\View\Components\GuestLayout;
 use Modules\Cms\View\Components\Metatags;
-use Modules\Cms\View\Components\Page;
 use Modules\Cms\View\Components\PageContent;
 use Modules\Cms\View\Components\Section;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 test('AppLayout can be instantiated', function () {
     $component = new AppLayout();
 
@@ -30,7 +29,8 @@ test('Metatags can be instantiated', function () {
     Assert::assertInstanceOf(Metatags::class, $component);
 });
 
-test('Page can be instantiated', function (): void {})->todo();
+test('Page can be instantiated', function (): void {
+})->todo();
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');
 
