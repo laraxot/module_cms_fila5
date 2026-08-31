@@ -7,7 +7,7 @@ use Modules\Cms\Http\Volt\Password\ResetComponent;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(\Modules\Cms\Tests\TestCase::class);
+uses(TestCase::class);
 describe('Password ResetComponent', function (): void {
     test('reset component extends volt component', function (): void {
         $component = new ResetComponent();
@@ -27,7 +27,8 @@ describe('Password ResetComponent', function (): void {
         Assert::assertFalse($component->emailSentMessage);
     });
 
-    test('reset component has send reset password link method', function (): void {})->todo();
+    test('reset component has send reset password link method', function (): void {
+    })->todo();
     test('send reset password link method returns void', function (): void {
         $reflection = new ReflectionClass(ResetComponent::class);
         $method = $reflection->getMethod('sendResetPasswordLink');
