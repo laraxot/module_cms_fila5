@@ -12,8 +12,11 @@ use PHPUnit\Framework\Assert;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
+<<<<<<< .merge_file_nVOgw2
 use function Safe\class_uses;
 
+=======
+>>>>>>> .merge_file_WukJgO
 uses(TestCase::class);
 
 describe('Menu Business Logic', function (): void {
