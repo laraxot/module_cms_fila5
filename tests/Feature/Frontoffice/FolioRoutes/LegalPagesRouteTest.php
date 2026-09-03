@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
+
+uses(TestCase::class);
 it('renders the italian privacy page from cms json content', function (): void {
     $response = cmsGet('/it/privacy');
     $status = (int) $response->getStatusCode();
@@ -10,7 +13,7 @@ it('renders the italian privacy page from cms json content', function (): void {
         cmsSkipTest("Route /it/privacy returned server error ({$status}).");
     }
 
-    if ($status !== 200) {
+    if (200 !== $status) {
         cmsSkipTest("Route /it/privacy returned {$status} — CMS legal page not configured in this install.");
     }
 
@@ -29,7 +32,7 @@ it('renders the italian terms page from cms json content', function (): void {
         cmsSkipTest("Route /it/terms returned server error ({$status}).");
     }
 
-    if ($status !== 200) {
+    if (200 !== $status) {
         cmsSkipTest("Route /it/terms returned {$status} — CMS legal page not configured in this install.");
     }
 

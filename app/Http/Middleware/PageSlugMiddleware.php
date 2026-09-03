@@ -17,7 +17,7 @@ class PageSlugMiddleware
     {
         $slug = $this->resolveCmsPageSlug($request);
 
-        if ($slug === null) {
+        if (null === $slug) {
             $response = $next($request);
             if (! $response instanceof Response) {
                 return new Response('Internal Server Error', 500);
@@ -49,12 +49,12 @@ class PageSlugMiddleware
     }
 
     /**
-    * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
+     * Resolve CMS page slug from Folio route (name, container+segment, or single slug).
      */
     protected function resolveCmsPageSlug(Request $request): ?string
     {
         $route = $request->route();
-        if ($route === null) {
+        if (null === $route) {
             return null;
         }
 
@@ -62,34 +62,34 @@ class PageSlugMiddleware
         $candidates = [];
 
         $name = $route->getName();
-        if (\is_string($name) && $name !== '') {
+        if (\is_string($name) && '' !== $name) {
             $candidates[] = $name;
         }
 
         $container0 = $route->parameter('container0');
         $slug0 = $route->parameter('slug0');
-        if (\is_string($container0) && $container0 !== '' && \is_string($slug0) && $slug0 !== '') {
+        if (\is_string($container0) && '' !== $container0 && \is_string($slug0) && '' !== $slug0) {
             $candidates[] = $container0.'.'.$slug0;
         }
 
         $container = $route->parameter('container');
         $slug = $route->parameter('slug');
-        if (\is_string($container) && $container !== '' && \is_string($slug) && $slug !== '') {
+        if (\is_string($container) && '' !== $container && \is_string($slug) && '' !== $slug) {
             $candidates[] = $container.'.'.$slug;
         }
-        if (\is_string($container0) && $container0 !== '' && \is_string($slug) && $slug !== '') {
+        if (\is_string($container0) && '' !== $container0 && \is_string($slug) && '' !== $slug) {
             $candidates[] = $container0.'.'.$slug;
         }
 
         foreach (['slug0', 'slug'] as $param) {
             $value = $route->parameter($param);
-            if (\is_string($value) && $value !== '') {
+            if (\is_string($value) && '' !== $value) {
                 $candidates[] = $value;
             }
         }
 
         foreach (array_unique($candidates) as $candidate) {
-            if (Page::findUniqueBySlug($candidate) !== null) {
+            if (null !== Page::findUniqueBySlug($candidate)) {
                 return $candidate;
             }
         }
@@ -190,8 +190,7 @@ class PageSlugMiddleware
         // Try to get from route middleware (custom middleware)
         // method_exists will always be true for Http\Kernel, so we can remove the check
         /** @var array<string, class-string> $routeMiddleware */
-        // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
-        $routeMiddleware = $this->kernel->getMiddlewareAliases();
+        $routeMiddleware = $this->kernel->getRouteMiddleware();
         if (isset($routeMiddleware[$middleware])) {
             /* @var class-string */
             return $routeMiddleware[$middleware];

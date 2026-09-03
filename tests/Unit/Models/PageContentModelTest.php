@@ -3,10 +3,12 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\PageContent;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
 use Spatie\Translatable\HasTranslations;
 
+uses(TestCase::class);
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
         $model = new PageContent();
@@ -62,5 +64,5 @@ describe('PageContent Model', function (): void {
         $model = new PageContent();
     });
 
-    test('page content model has sluggable method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    it('page content model has sluggable method')->todo();
 });

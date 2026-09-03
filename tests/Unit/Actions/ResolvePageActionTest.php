@@ -10,9 +10,11 @@ use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
+
 describe('Resolve Page Action', function (): void {
     test('it resolves adynamic model from known mappings', function (): void {
-        /** @var TestCase $this */
+        /* @var \Modules\Cms\Tests\TestCase $this */
         if (! class_exists('Modules\\Meetup\\Models\\Event')) {
             $this->skipTest('Meetup module not available.');
         }

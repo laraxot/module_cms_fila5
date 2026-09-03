@@ -3,13 +3,11 @@
     "description": "",
     "homepage": "https://laraxot.github.io/module_cms",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
     "extra": {
         "laravel": {
             "providers": [
@@ -17,7 +15,9 @@
                 "Modules\\Cms\\Providers\\Filament\\AdminPanelProvider",
                 "Modules\\Cms\\Providers\\FolioVoltServiceProvider"
             ],
-            "aliases": {}
+            "aliases": {
+
+            }
         }
     },
     "autoload": {
@@ -30,12 +30,11 @@
     "autoload-dev": {
         "psr-4": {
             "Modules\\Cms\\Tests\\": "tests/"
-        },
-        "files": [
-            "tests/PestHelpers.php"
-        ]
+        }
     },
-    "require": {},
+    "require": {
+
+    },
     "repositories": [
         {
             "type": "path",
@@ -71,4 +70,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+
 }

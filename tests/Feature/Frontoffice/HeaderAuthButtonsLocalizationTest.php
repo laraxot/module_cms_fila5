@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
+
+uses(TestCase::class);
 it('renders localized auth labels and links on localized homepages', function (): void {
     $response = cmsGet('/it');
 

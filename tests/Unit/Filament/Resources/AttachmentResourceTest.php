@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use Modules\Cms\Filament\Resources\AttachmentResource;
 use Modules\Cms\Models\Attachment;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('AttachmentResource', function (): void {
     test('attachment resource has correct model', function (): void {
         $resource = new AttachmentResource();
@@ -44,6 +46,5 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
-    test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-    test('attachment resource has plural label #2', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+    it('attachment resource has plural label')->todo();
 });
