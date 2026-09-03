@@ -10,11 +10,6 @@ use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
 
-<<<<<<< .merge_file_BBd5Vo
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> .merge_file_Oqewt1
 uses(TestCase::class);
 
 beforeEach(function (): void {

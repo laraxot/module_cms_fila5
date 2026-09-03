@@ -9,11 +9,6 @@ use Sushi\Sushi;
 
 use function Safe\class_uses;
 
-<<<<<<< .merge_file_gqPjDh
-=======
-use Sushi\Sushi;
-
->>>>>>> .merge_file_HfHs56
 uses(TestCase::class);
 describe('Conf Business Logic', function (): void {
     it('conf extends eloquent model')->todo();

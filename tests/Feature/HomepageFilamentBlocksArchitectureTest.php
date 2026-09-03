@@ -15,11 +15,6 @@ use function Pest\Laravel\get;
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 
-<<<<<<< .merge_file_UlIzVG
-=======
-use Spatie\LaravelData\DataCollection;
-
->>>>>>> .merge_file_V9ed72
 uses(TestCase::class);
 
 /**
