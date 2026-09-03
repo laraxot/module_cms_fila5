@@ -50,7 +50,17 @@ describe('Register Component', function (): void {
         $returnType = $method->getReturnType();
 
         Assert::assertNotNull($returnType);
-        $typeName = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+        if ($returnType instanceof \ReflectionNamedType) {
+            $typeName = $returnType->getName();
+        } elseif ($returnType instanceof \ReflectionUnionType) {
+            $firstType = $returnType->getTypes()[0];
+            $typeName = $firstType instanceof \ReflectionNamedType ? $firstType->getName() : '';
+        } elseif ($returnType instanceof \ReflectionIntersectionType) {
+            $firstType = $returnType->getTypes()[0];
+            $typeName = $firstType instanceof \ReflectionNamedType ? $firstType->getName() : '';
+        } else {
+            $typeName = '';
+        }
         Assert::assertSame('Illuminate\Http\RedirectResponse', $typeName);
     });
 });
