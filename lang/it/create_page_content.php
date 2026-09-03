@@ -141,6 +141,6 @@ return [
         ],
         'label' => 'Create Page Content',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
 ];

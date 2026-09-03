@@ -6,7 +6,10 @@ namespace Modules\Cms\Tests\Unit\Http\Volt;
 
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\RegisterComponent;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 describe('Register Component', function (): void {
     test('register component extends volt component', function (): void {
@@ -47,9 +50,7 @@ describe('Register Component', function (): void {
         $returnType = $method->getReturnType();
 
         Assert::assertNotNull($returnType);
-        // Il cast a stringa di `ReflectionType` e' deprecato: il ramo alternativo serviva
-        // solo ai tipi union/intersection, che qui non ci sono. Si asserisce il tipo.
-        Assert::assertInstanceOf(\ReflectionNamedType::class, $returnType);
-        Assert::assertSame('Illuminate\Http\RedirectResponse', $returnType->getName());
+        $typeName = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+        Assert::assertSame('Illuminate\Http\RedirectResponse', $typeName);
     });
 });

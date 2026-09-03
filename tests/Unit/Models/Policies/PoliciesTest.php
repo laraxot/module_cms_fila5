@@ -5,8 +5,10 @@ declare(strict_types=1);
 use Modules\Cms\Models\Policies\MenuPolicy;
 use Modules\Cms\Models\Policies\PagePolicy;
 use Modules\Cms\Models\Policies\SectionPolicy;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 test('PagePolicy can be instantiated', function () {
     $policy = new PagePolicy();
 

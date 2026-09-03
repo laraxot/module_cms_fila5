@@ -42,7 +42,7 @@ return [
         ],
         'label' => 'Feature Sections',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'label' => 'Feature Sections',
     'plural_label' => 'Feature Sections (Plurale)',

@@ -5,23 +5,29 @@ declare(strict_types=1);
 namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Modules\TechPlanner\Models\Profile;
+use Modules\Cms\Database\Factories\ConfFactory;
 use Modules\Tenant\Actions\Config\GetTenantConfigNamesAction;
+use Modules\Xot\Contracts\ProfileContract;
 use Sushi\Sushi;
 
 /**
  * Modules\Cms\Models\Conf.
  *
- * @property string $id
+ * @property int         $id
  * @property string|null $name
- * @property-read Profile|null $creator
- * @property-read Profile|null $updater
  *
  * @method static Builder<static>|Conf newModelQuery()
  * @method static Builder<static>|Conf newQuery()
  * @method static Builder<static>|Conf query()
  * @method static Builder<static>|Conf whereId($value)
  * @method static Builder<static>|Conf whereName($value)
+ * @method static int                  count()
+ *
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $deleter
+ * @property ProfileContract|null $updater
+ *
+ * @method static ConfFactory factory($count = null, $state = [])
  *
  * @mixin \Eloquent
  */

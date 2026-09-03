@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\TokenComponent;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
         $component = new TokenComponent();
@@ -39,9 +41,7 @@ describe('Password TokenComponent', function (): void {
         Assert::assertSame('', $component->email);
     });
 
-    test('token component has reset password method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    test('token component has reset password method #2', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
+    it('token component has reset password method')->todo();
     test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new ReflectionClass(TokenComponent::class);
         $method = $reflection->getMethod('resetPassword');

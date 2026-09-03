@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Mockery\MockInterface;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
+uses(TestCase::class);
 /**
- * @param  array<int, mixed>  $args
+ * @param array<int, mixed> $args
  */
 function invokeProtected(object $object, string $method, array $args = []): mixed
 {

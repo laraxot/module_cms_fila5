@@ -22,10 +22,9 @@ class AttachmentResource extends LangBaseResource
     protected static ?string $model = Attachment::class;
 
     /**
-    * Schema legacy del form: la sorgente di verità è AttachmentForm::getFormSchema().
-     *
      * @return array<string, BaseComponent>
      */
+    #[\Override]
     public static function getFormSchema(): array
     {
         return [

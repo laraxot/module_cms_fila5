@@ -5,10 +5,12 @@ declare(strict_types=1);
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
+uses(TestCase::class);
 test('Headernav page can be instantiated', function () {
     $page = new Headernav();
 });
@@ -33,16 +35,11 @@ test('Headernav page has headernavData property', function () {
     Assert::assertSame('headernavData', $property->getName());
 });
 
-test('Headernav page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has fillForms method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
-test('Headernav page has getUpdateFormActions method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
+it('Headernav page has mount method')->todo();
+it('Headernav page has schema method')->todo();
+it('Headernav page has updateData method')->todo();
+it('Headernav page has fillForms method')->todo();
+it('Headernav page has getUpdateFormActions method')->todo();
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
     Assert::assertNotFalse($interfaces);

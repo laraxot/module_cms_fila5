@@ -7,32 +7,32 @@ namespace Modules\Cms\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
-use Modules\Media\Models\Media;
-use Modules\TechPlanner\Models\Profile;
+use Modules\Cms\Database\Factories\AttachmentFactory;
 use Modules\Tenant\Models\Traits\SushiToJsons;
+use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * ---.
  *
- * @property string $id
+ * @property string                       $id
  * @property array<array-key, mixed>|null $title
  * @property array<array-key, mixed>|null $description
- * @property string|null $slug
- * @property string|null $disk
+ * @property string|null                  $slug
+ * @property string|null                  $disk
  * @property array<array-key, mixed>|null $attachment
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property-read Profile|null $creator
- * @property-read array<int|string, mixed> $translatable_columns_from
- * @property-read MediaCollection<int, Media> $media
- * @property-read int|null $media_count
- * @property-read mixed $translations
- * @property-read Profile|null $updater
+ * @property Carbon|null                  $created_at
+ * @property Carbon|null                  $updated_at
+ * @property string|null                  $created_by
+ * @property string|null                  $updated_by
+ * @property ProfileContract|null         $creator
+ * @property MediaCollection<int, Media>  $media
+ * @property int|null                     $media_count
+ * @property mixed                        $translations
+ * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Attachment newModelQuery()
  * @method static Builder<static>|Attachment newQuery()
@@ -43,14 +43,20 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|Attachment whereDescription($value)
  * @method static Builder<static>|Attachment whereDisk($value)
  * @method static Builder<static>|Attachment whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int|string, mixed> $locales, ?mixed $value, string $operand = '=')
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereLocale(string $column, string $locale)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereLocales(string $column, array<int|string, mixed> $locales)
+ * @method static Builder<static>|Attachment whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Attachment whereLocale(string $column, string $locale)
+ * @method static Builder<static>|Attachment whereLocales(string $column, array<int, string> $locales)
  * @method static Builder<static>|Attachment whereSlug($value)
  * @method static Builder<static>|Attachment whereTitle($value)
  * @method static Builder<static>|Attachment whereUpdatedAt($value)
  * @method static Builder<static>|Attachment whereUpdatedBy($value)
+ * @method static static|null                firstWhere(string $column, mixed $operator = null, mixed $value = null)
+ *
+ * @property ProfileContract|null $deleter
+ *
+ * @method static AttachmentFactory                factory($count = null, $state = [])
+ * @method        array<int, array<string, mixed>> getSushiRows()
  *
  * @mixin \Eloquent
  */
@@ -76,7 +82,7 @@ class Attachment extends BaseModelLang implements HasMedia
     ];
 
     /** @var array<string, string> */
-    protected array $schema = [
+    protected $schema = [
         'id' => 'integer',
         'title' => 'json',
         'description' => 'json',

@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\ConfirmComponent;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 describe('Password ConfirmComponent', function (): void {
     test('confirm component extends volt component', function (): void {
         $component = new ConfirmComponent();
@@ -21,9 +23,7 @@ describe('Password ConfirmComponent', function (): void {
         Assert::assertSame('', $component->password);
     });
 
-    test('confirm component has confirm method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    test('confirm component has confirm method #2', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-
+    it('confirm component has confirm method')->todo();
     test('confirm method declares redirect response return type', function (): void {
         $reflection = new ReflectionClass(ConfirmComponent::class);
         $method = $reflection->getMethod('confirm');

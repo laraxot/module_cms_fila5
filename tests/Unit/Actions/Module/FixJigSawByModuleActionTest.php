@@ -5,15 +5,18 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\File;
 use Mockery\MockInterface;
 use Modules\Cms\Actions\Module\FixJigSawByModuleAction;
+use Modules\Cms\Tests\TestCase;
 use Nwidart\Modules\Laravel\Module;
 use PHPUnit\Framework\Assert;
-use Symfony\Component\Finder\SplFileInfo;
 
 use function Safe\file_put_contents;
 use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
 
+use Symfony\Component\Finder\SplFileInfo;
+
+uses(TestCase::class);
 test('FixJigSawByModuleAction can be instantiated', function () {
     $action = new FixJigSawByModuleAction();
 

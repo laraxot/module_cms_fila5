@@ -14,7 +14,6 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
-use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * Base test case for Cms module.
@@ -50,7 +49,7 @@ abstract class TestCase extends XotBaseTestCase
         $connections = config('database.connections', []);
 
         foreach (array_keys($connections) as $connection) {
-            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
+            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
                 continue;
             }
 
@@ -95,7 +94,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     protected static function createTestUser(array $attributes = []): UserContract
     {
@@ -106,7 +105,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     public static function pestCreateTestUser(array $attributes = []): UserContract
     {
@@ -116,44 +115,12 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @template T of object
      *
-     * @param  class-string<T>  $class
-     * @return T&MockObject
+     * @param class-string<T> $class
+     *
+     * @return T&\PHPUnit\Framework\MockObject\MockObject
      */
     public function createPHPUnitMock(string $class): object
     {
         return $this->createUnitMock($class);
-    }
-
-    /**
-     * Contenuto della homepage di fixcity, decodificato.
-     *
-     * Il path è fissato qui e non passato dal chiamante: i test di architettura dei
-     * blocchi verificano *quella* homepage, e ripetere la stringa in sei punti è il
-     * modo più rapido perché cinque restino indietro quando il file si sposta.
-     *
-     * Sta su `TestCase` e non in `tests/PestHelpers.php`, dove era stato scritto la
-     * prima volta: là è già andato perso una volta, in un merge che ha risolto verso
-     * il lato che non lo aveva (`d3f3aed`, 2026-08-25). Una funzione dentro un file
-     * incluso con `require_once` si perde da sola; un metodo su una classe risolta dal
-     * PSR-4 no. Stesso rimedio adottato in `Lang\Tests\TestCase::createTranslationFile()`
-     * per lo stesso problema. Story ROOT-17.10.
-     *
-     * @return array<string, mixed> Con le chiavi `id`, `slug`, `content_blocks`
-     */
-    public static function homepageJsonForBlocksArchitecture(): array
-    {
-        return cmsJsonDecodeFile(
-            config_path('local/fixcity/database/content/pages/home.json'),
-        );
-    }
-
-    /**
-     * Wrapper per evitare che il helper vada perso nei merge (come cmsJsonDecodeFile in PestHelpers).
-     *
-     * @return array<string, mixed>
-     */
-    public static function pestJsonDecodeFile(string $path): array
-    {
-        return cmsJsonDecodeFile($path);
     }
 }

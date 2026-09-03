@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 use Livewire\Wireable;
 use Modules\Cms\Datas\HeadernavData;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
+uses(TestCase::class);
 test('HeadernavData can be instantiated', function (): void {
     $headernavData = new HeadernavData();
 
@@ -120,9 +121,9 @@ test('HeadernavData can be converted to array', function (): void {
 test('HeadernavData overlay_opacity validates numeric range', function (): void {
     $rules = HeadernavData::rules();
 
-    Assert::assertStringContainsString(SafeStringCastAction::cast('numeric'), SafeStringCastAction::cast($rules['overlay_opacity']));
+    Assert::assertStringContainsString((string) 'numeric', (string) $rules['overlay_opacity']);
 
-    Assert::assertStringContainsString(SafeStringCastAction::cast('min:0'), SafeStringCastAction::cast($rules['overlay_opacity']));
+    Assert::assertStringContainsString((string) 'min:0', (string) $rules['overlay_opacity']);
 
-    Assert::assertStringContainsString(SafeStringCastAction::cast('max:100'), SafeStringCastAction::cast($rules['overlay_opacity']));
+    Assert::assertStringContainsString((string) 'max:100', (string) $rules['overlay_opacity']);
 });
