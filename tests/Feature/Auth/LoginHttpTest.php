@@ -12,11 +12,6 @@ use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
 
-<<<<<<< .merge_file_fSvSjA
-=======
-use PHPUnit\Framework\Assert;
-
->>>>>>> .merge_file_kaSqXa
 uses(TestCase::class);
 
 describe('Login Http', function (): void {

@@ -15,11 +15,6 @@ use function Safe\mkdir;
 use function Safe\rmdir;
 use function Safe\unlink;
 
-<<<<<<< .merge_file_B8qUqE
-=======
-use Symfony\Component\Finder\SplFileInfo;
-
->>>>>>> .merge_file_Zq4iCS
 uses(TestCase::class);
 test('FixJigSawByModuleAction can be instantiated', function () {
     $action = new FixJigSawByModuleAction();
