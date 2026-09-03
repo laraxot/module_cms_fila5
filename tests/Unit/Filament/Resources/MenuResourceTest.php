@@ -34,10 +34,10 @@ describe('MenuResource', function (): void {
                 continue;
             }
             $name = $item->getName();
-            if ('title' === $name) {
+            if ($name === 'title') {
                 $hasTitle = true;
             }
-            if ('items' === $name) {
+            if ($name === 'items') {
                 $hasItems = true;
             }
         }
