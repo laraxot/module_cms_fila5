@@ -157,6 +157,10 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
+<<<<<<< .merge_file_BpzY0E
     Assert::assertInstanceOf(User::class, $authenticatedUser);
+=======
+    PHPUnit\Framework\Assert::assertInstanceOf(Modules\User\Models\User::class, $authenticatedUser);
+>>>>>>> .merge_file_FHxbBN
     expect($authenticatedUser->email)->toBe($email);
 });
