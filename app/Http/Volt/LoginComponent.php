@@ -7,7 +7,6 @@ namespace Modules\Cms\Http\Volt;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
@@ -43,7 +42,7 @@ class LoginComponent extends Component
 
         $guard = 'web';
 
-        /** @var Builder<Model> $query */
+        /** @var Builder<User> $query */
         $query = User::query()->where('email', $this->email);
         $user = $query->first();
 

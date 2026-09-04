@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Cms\Http\Volt;
 
 use Illuminate\Auth\Events\Verified;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Livewire\Volt\Component;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
@@ -29,9 +28,7 @@ class VerifyComponent extends Component
 
         $user->sendEmailVerificationNotification();
 
-        if ($user instanceof MustVerifyEmail) {
-            event(new Verified($user));
-        }
+        event(new Verified($user));
 
         $this->dispatch('resent');
         session()->flash('resent');
