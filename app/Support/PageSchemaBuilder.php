@@ -156,7 +156,13 @@ final class PageSchemaBuilder
             return null;
         }
 
-        $profile = property_exists($publicUser, 'profile') ? $publicUser->profile : null;
+        $profile = null;
+        if ($publicUser instanceof Model) {
+            $profileAttr = $publicUser->getAttribute('profile');
+            if ($profileAttr instanceof ProfileContract) {
+                $profile = $profileAttr;
+            }
+        }
         $profileFirstName = '';
         $profileLastName = '';
         $profileEmail = '';
