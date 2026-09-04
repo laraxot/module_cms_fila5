@@ -39,8 +39,10 @@ describe('Password TokenComponent', function (): void {
         Assert::assertSame('', $component->email);
     });
 
-    test('token component has reset password method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    test('token component has reset password method #2', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('token component has reset password method', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('token component has reset password method #2', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
     test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new ReflectionClass(TokenComponent::class);

@@ -12,10 +12,10 @@ use Sushi\Sushi;
 /**
  * Modules\Cms\Models\Module.
  *
- * @property string $id
- * @property string|null $name
- * @property-read ProfileContract|null $creator
- * @property-read ProfileContract|null $updater
+ * @property string               $id
+ * @property string|null          $name
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
  *
  * @method static Builder<static>|Module newModelQuery()
  * @method static Builder<static>|Module newQuery()
