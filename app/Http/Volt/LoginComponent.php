@@ -42,9 +42,7 @@ class LoginComponent extends Component
 
         $guard = 'web';
 
-        /** @var Builder<User> $query */
-        $query = User::query()->where('email', $this->email);
-        $user = $query->first();
+        $user = User::query()->where('email', $this->email)->first();
 
         Assert::isInstanceOf($user, Authenticatable::class);
         $remember = $this->remember;

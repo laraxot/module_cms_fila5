@@ -184,20 +184,25 @@ final class BuildPageSchemaAction
             }
         }
 
-        $publicName = property_exists($publicUser, 'name') ? $publicUser->name : null;
-        /** @var ?string $publicName */
-        $publicFirstName = property_exists($publicUser, 'first_name') ? $publicUser->first_name : null;
-        /** @var ?string $publicFirstName */
-        $publicLastName = property_exists($publicUser, 'last_name') ? $publicUser->last_name : null;
-        /** @var ?string $publicLastName */
-        $publicEmail = property_exists($publicUser, 'email') ? $publicUser->email : null;
-        /** @var ?string $publicEmail */
+        $publicNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('name') : null;
+        $publicFirstNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('first_name') : null;
+        $publicLastNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('last_name') : null;
+        $publicEmailRaw = $publicUser instanceof Model ? $publicUser->getAttribute('email') : null;
 
-        $name = is_string($publicName) ? trim($publicName) : '';
+        /** @var string $publicName */
+        $publicName = is_string($publicNameRaw) ? $publicNameRaw : '';
+        /** @var string $publicFirstName */
+        $publicFirstName = is_string($publicFirstNameRaw) ? $publicFirstNameRaw : '';
+        /** @var string $publicLastName */
+        $publicLastName = is_string($publicLastNameRaw) ? $publicLastNameRaw : '';
+        /** @var string $publicEmail */
+        $publicEmail = is_string($publicEmailRaw) ? $publicEmailRaw : '';
+
+        $name = trim($publicName);
 
         if ($name === '') {
-            $firstName = is_string($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
-            $lastName = is_string($publicLastName) ? trim($publicLastName) : $profileLastName;
+            $firstName = trim($publicFirstName) !== '' ? trim($publicFirstName) : $profileFirstName;
+            $lastName = trim($publicLastName) !== '' ? trim($publicLastName) : $profileLastName;
             $name = trim($firstName.' '.$lastName);
         }
 
@@ -219,9 +224,9 @@ final class BuildPageSchemaAction
             $schema['identifier'] = $publicIdentifier;
         }
 
-        $givenName = is_string($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
-        $familyName = is_string($publicLastName) ? trim($publicLastName) : $profileLastName;
-        $email = is_string($publicEmail) ? trim($publicEmail) : $profileEmail;
+        $givenName = trim($publicFirstName) !== '' ? trim($publicFirstName) : $profileFirstName;
+        $familyName = trim($publicLastName) !== '' ? trim($publicLastName) : $profileLastName;
+        $email = trim($publicEmail);
         $description = $profileBio;
         $image = $profileImage;
 
