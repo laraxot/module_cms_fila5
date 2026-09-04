@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
-use Modules\User\Models\User;
-use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Contracts\UserContract as XotUserContract;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -53,7 +52,7 @@ if (! function_exists('cmsCreateTestUser')) {
     /**
      * @param  array<string, mixed>  $attributes
      */
-    function cmsCreateTestUser(array $attributes = []): UserContract
+    function cmsCreateTestUser(array $attributes = []): XotUserContract
     {
         return TestCase::pestCreateTestUser($attributes);
     }
@@ -63,10 +62,10 @@ if (! function_exists('cmsCreateUnverifiedUser')) {
     /**
      * @param  array<string, mixed>  $attributes
      */
-    function cmsCreateUnverifiedUser(array $attributes = []): User
+    function cmsCreateUnverifiedUser(array $attributes = []): XotUserContract
     {
         $user = UserFactory::new()->unverified()->createOne($attributes);
-        assert($user instanceof User);
+        assert($user instanceof XotUserContract);
 
         return $user;
     }
