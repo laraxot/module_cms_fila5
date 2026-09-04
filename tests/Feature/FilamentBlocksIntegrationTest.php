@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
-use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
 
+use PHPUnit\Framework\Assert;
+
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
-    if (! \is_string(config('app.key')) || config('app.key') === '') {
+    if (! \is_string(config('app.key')) || '' === config('app.key')) {
         $key = 'base64:'.base64_encode(str_repeat('x', 32));
         config()->set('app.key', $key);
         $_ENV['APP_KEY'] = $key;
@@ -146,7 +147,7 @@ describe('Filament Blocks Integration', function () {
         $loadTime = ($endTime - $startTime) * 1000;
 
         $status = $response->getStatusCode();
-        if ($status !== 200) {
+        if (200 !== $status) {
             cmsSkipTest('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
         }
 

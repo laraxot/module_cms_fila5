@@ -27,7 +27,8 @@ test('Metatags can be instantiated', function () {
     Assert::assertInstanceOf(Metatags::class, $component);
 });
 
-test('Page can be instantiated', function () {})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
+test('Page can be instantiated', function () {
+})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');
