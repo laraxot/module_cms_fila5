@@ -54,3 +54,18 @@ del framework).
 **Pest**: nessun `Modules/Cms/phpunit.xml` presente nel modulo — comando canonico non eseguibile per questo modulo (nessuna suite dedicata da lanciare con `-c`).
 
 Story: `docs/stories/cms-mixed-type-reduction.story.md`.
+## 2026-09-04 — instanceof contro classe concreta sbagliata (test)
+
+`tests/Feature/Auth/LoginTest.php` verificava
+`assert($authenticatedUser instanceof \Modules\Quaeris\Models\User)` —
+stesso anti-pattern gia' trovato in produzione in
+`Modules\User\app\View\Pages\ProfileEditVoltComponent.php` (story
+`user-profile-volt-instanceof-wrong-user-class.md`): funziona per caso
+solo perche' `config('auth.providers.users.model')` punta oggi a quella
+classe specifica. Corretto in `instanceof
+Modules\Xot\Contracts\UserContract`. **Non verificato a runtime**: la
+suite Feature di Cms non e' eseguibile in questo checkout
+(`Themes/TwentyOne` mancante, blocca la risoluzione Folio prima ancora
+di arrivare all'asserzione) — vedi
+`Modules/Quaeris/docs/stories/quaeris-user-profile-hardcoded-to-contract.story.md`
+per il dettaglio. `phpstan analyse Modules/Cms`: 0 errori.
