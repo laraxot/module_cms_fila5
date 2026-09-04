@@ -15,6 +15,7 @@ use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
 use PHPUnit\Framework\MockObject\MockObject;
+use Modules\User\Models\User;
 
 /**
  * Base test case for Cms module.
