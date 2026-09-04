@@ -46,7 +46,7 @@ abstract class BaseModelLang extends BaseModel
     /**
      * The attributes that should be mutated to dates.
      *
-    * @return array<string, string>
+     * @return array<string, string>
      */
     #[\Override]
     protected function casts(): array
