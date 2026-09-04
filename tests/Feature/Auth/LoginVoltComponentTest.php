@@ -11,6 +11,7 @@ use Livewire\Component;
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Volt\Volt as LivewireVolt;
 use PHPUnit\Framework\Assert;
+use Modules\User\Models\User;
 
 // ---- Volt Component Rendering ----
 

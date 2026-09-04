@@ -7,6 +7,7 @@ namespace Modules\Cms\Http\Volt;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Livewire\Volt\Component;
+use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use Webmozart\Assert\Assert;
 
@@ -19,9 +20,8 @@ class VerifyComponent extends Component
 {
     public function resend(): void
     {
-        Assert::notNull($user = auth()->guard('web')->user());
-        /** @var User $user */
-        $user = $user;
+        $user = auth()->guard('web')->user();
+        Assert::isInstanceOf($user, User::class);
 
         if ($user->hasVerifiedEmail()) {
             redirect('/');
@@ -29,7 +29,6 @@ class VerifyComponent extends Component
 
         $user->sendEmailVerificationNotification();
 
-        // Cast to MustVerifyEmail for the Verified event
         if ($user instanceof MustVerifyEmail) {
             event(new Verified($user));
         }

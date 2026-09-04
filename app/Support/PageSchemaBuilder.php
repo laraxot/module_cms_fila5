@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace Modules\Cms\Support;
 
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
+use Modules\Xot\Datas\XotData;
 
 final class PageSchemaBuilder
 {
@@ -127,21 +128,23 @@ final class PageSchemaBuilder
      */
     private function resolveProfileMainEntity(array $routeParameters, ?Authenticatable $user): ?array
     {
+        /** @var class-string<Model&Authenticatable> $userClass */
+        $userClass = XotData::make()->getUserClass();
         $publicUser = null;
 
         $publicIdentifier = $routeParameters['id'] ?? $routeParameters['slug0'] ?? null;
 
         if (is_string($publicIdentifier) && $publicIdentifier !== '') {
-            $publicUser = User::query()
+            $publicUser = $userClass::query()
                 ->with('profile')
                 ->find($publicIdentifier);
         }
 
-        if (! $publicUser instanceof User && $user instanceof User) {
+        if (! $publicUser instanceof Authenticatable && $user instanceof Authenticatable) {
             $publicUser = $user->loadMissing('profile');
         }
 
-        if (! $publicUser instanceof User) {
+        if (! $publicUser instanceof Authenticatable) {
             if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && $routeParameters['slug0'] !== '') {
                 return [
                     '@type' => 'Person',
@@ -153,7 +156,7 @@ final class PageSchemaBuilder
             return null;
         }
 
-        $profile = $publicUser->profile;
+        $profile = property_exists($publicUser, 'profile') ? $publicUser->profile : null;
         $profileFirstName = '';
         $profileLastName = '';
         $profileEmail = '';
@@ -172,11 +175,16 @@ final class PageSchemaBuilder
             }
         }
 
-        $name = trim((string) ($publicUser->name ?? ''));
+        $publicName = property_exists($publicUser, 'name') ? $publicUser->name : null;
+        $publicFirstName = property_exists($publicUser, 'first_name') ? $publicUser->first_name : null;
+        $publicLastName = property_exists($publicUser, 'last_name') ? $publicUser->last_name : null;
+        $publicEmail = property_exists($publicUser, 'email') ? $publicUser->email : null;
+
+        $name = is_string($publicName) ? trim($publicName) : '';
 
         if ($name === '') {
-            $firstName = trim((string) ($publicUser->first_name ?? $profileFirstName));
-            $lastName = trim((string) ($publicUser->last_name ?? $profileLastName));
+            $firstName = is_string($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
+            $lastName = is_string($publicLastName) ? trim($publicLastName) : $profileLastName;
             $name = trim($firstName.' '.$lastName);
         }
 
@@ -184,20 +192,23 @@ final class PageSchemaBuilder
             $name = 'Profile';
         }
 
+        $publicKey = $publicUser->getAuthIdentifier();
+        $publicKeyStr = is_int($publicKey) || is_string($publicKey) ? (string) $publicKey : '';
+
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
+            'url' => url('/profile/'.$publicKeyStr),
         ];
 
         if (is_string($publicIdentifier) && $publicIdentifier !== '') {
             $schema['identifier'] = $publicIdentifier;
         }
 
-        $givenName = trim((string) ($publicUser->first_name ?? $profileFirstName));
-        $familyName = trim((string) ($publicUser->last_name ?? $profileLastName));
-        $email = trim((string) ($publicUser->email ?? $profileEmail));
-        $description = trim((string) $profileBio);
+        $givenName = is_string($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
+        $familyName = is_string($publicLastName) ? trim($publicLastName) : $profileLastName;
+        $email = is_string($publicEmail) ? trim($publicEmail) : $profileEmail;
+        $description = $profileBio;
         $image = $profileImage;
 
         if ($givenName !== '') {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Support;
 
 use Modules\Cms\Actions\BuildPageSchemaAction;
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
