@@ -7,6 +7,7 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+use Modules\Xot\Datas\ComponentFileData;
 use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
@@ -32,9 +33,9 @@ it('discovers and validates cms and ui blocks', function () {
     expect($homepageData['slug'])->toBe('home');
     expect($allBlocks->count())->toBeGreaterThan(0);
 
-    $cmsBlocks = $allBlocks->toCollection()->filter(fn (mixed $block) => 'Cms' === $block->module);
+    $cmsBlocks = $allBlocks->toCollection()->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
     if ($cmsBlocks->count() > 0) {
-        $cmsBlocks->each(function (mixed $block) {
+        $cmsBlocks->each(function (ComponentFileData $block) {
             expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
             expect(class_exists($block->class))->toBeTrue();
         });
