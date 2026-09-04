@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
+use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 
 it('renders the login page', function (): void {

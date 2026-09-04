@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
 use Modules\Cms\Tests\TestCase;
+use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
