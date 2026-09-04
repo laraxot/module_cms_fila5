@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Modules\User\Models\Profile;
+use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
 

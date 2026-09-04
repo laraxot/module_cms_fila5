@@ -7,28 +7,29 @@ namespace Modules\Cms\Tests;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Support\Collection;
 use Modules\Cms\Models\Module;
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User as CmsUser;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
+use Modules\Xot\Contracts\UserContract;
 
 abstract class TestHelper extends BaseTestCase
 {
-    public ?User $super_admin_user = null;
+    public ?CmsUser $super_admin_user = null;
 
-    public ?User $no_super_admin_user = null;
+    public ?CmsUser $no_super_admin_user = null;
 
-    public function getSuperAdminUser(): ?User
+    public function getSuperAdminUser(): ?CmsUser
     {
-        /** @var User|null $user */
-        $user = User::role('super-admin')->first();
+        /** @var CmsUser|null $user */
+        $user = CmsUser::role('super-admin')->first();
 
         return $user;
     }
 
-    public function getNoSuperAdminUser(): ?User
+    public function getNoSuperAdminUser(): ?CmsUser
     {
-        /** @var User|null $user */
-        $user = User::all()
-            ->first(fn (User $item): bool => ! $item->hasRole('super-admin'));
+        /** @var CmsUser|null $user */
+        $user = CmsUser::all()
+            ->first(fn (CmsUser $item): bool => ! $item->hasRole('super-admin'));
 
         return $user;
     }
@@ -56,7 +57,7 @@ abstract class TestHelper extends BaseTestCase
     /**
      * @return Collection<int, string>
      */
-    public function getUserNavigationItemUrlRoles(User $user): Collection
+    public function getUserNavigationItemUrlRoles(CmsUser $user): Collection
     {
         /** @var Collection<int, string> $urls */
         $urls = $user
