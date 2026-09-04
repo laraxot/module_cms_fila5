@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
-use Modules\Quaeris\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 uses(TestCase::class);
 
@@ -159,6 +159,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
-    assert($authenticatedUser instanceof User);
+    assert($authenticatedUser instanceof UserContract);
     expect($authenticatedUser->email)->toBe($email);
 });
