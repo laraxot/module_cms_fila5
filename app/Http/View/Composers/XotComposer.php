@@ -30,7 +30,7 @@ final class XotComposer
             return;
         }
 
-        /** @var HasOne<\Modules\User\Models\Profile, \Modules\User\Models\User> $profileRelation */
+        /** @var HasOne<\Modules\Xot\Contracts\ProfileContract, \Modules\Xot\Contracts\UserContract> $profileRelation */
         $profileRelation = $user->profile();
         $profile = $profileRelation->first();
         $lang = app()->getLocale();

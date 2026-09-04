@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 /**
  * @see https://github.com/thedevdojo/genesis/blob/main/stubs/class/resources/views/auth/register.blade.php

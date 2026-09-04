@@ -7,7 +7,7 @@ namespace Modules\Cms\Http\Volt;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Livewire\Volt\Component;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Webmozart\Assert\Assert;
 
 /**
