@@ -159,19 +159,13 @@ final class BuildPageSchemaAction
             return null;
         }
 
-        if (! $publicUser instanceof Authenticatable) {
-            if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && $routeParameters['slug0'] !== '') {
-                return [
-                    '@type' => 'Person',
-                    'identifier' => $routeParameters['slug0'],
-                    'url' => url('/profile/'.$routeParameters['slug0']),
-                ];
+        $profile = null;
+        if ($publicUser instanceof Model) {
+            $profileAttr = $publicUser->getAttribute('profile');
+            if ($profileAttr instanceof ProfileContract) {
+                $profile = $profileAttr;
             }
-
-            return null;
         }
-
-        $profile = property_exists($publicUser, 'profile') ? $publicUser->profile : null;
         $profileFirstName = '';
         $profileLastName = '';
         $profileEmail = '';
@@ -191,9 +185,13 @@ final class BuildPageSchemaAction
         }
 
         $publicName = property_exists($publicUser, 'name') ? $publicUser->name : null;
+        /** @var ?string $publicName */
         $publicFirstName = property_exists($publicUser, 'first_name') ? $publicUser->first_name : null;
+        /** @var ?string $publicFirstName */
         $publicLastName = property_exists($publicUser, 'last_name') ? $publicUser->last_name : null;
+        /** @var ?string $publicLastName */
         $publicEmail = property_exists($publicUser, 'email') ? $publicUser->email : null;
+        /** @var ?string $publicEmail */
 
         $name = is_string($publicName) ? trim($publicName) : '';
 
@@ -208,6 +206,7 @@ final class BuildPageSchemaAction
         }
 
         $publicKey = $publicUser->getAuthIdentifier();
+        /** @var int|string $publicKey */
         $publicKeyStr = is_int($publicKey) || is_string($publicKey) ? (string) $publicKey : '';
 
         $schema = [
