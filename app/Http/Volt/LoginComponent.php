@@ -7,10 +7,12 @@ namespace Modules\Cms\Http\Volt;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
+use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 use Webmozart\Assert\Assert;
 
@@ -41,8 +43,8 @@ class LoginComponent extends Component
 
         $guard = 'web';
 
-        /** @var Builder<User> $query */
-        $query = User::where('email', $this->email);
+        /** @var Builder<Model> $query */
+        $query = User::query()->where('email', $this->email);
         $user = $query->first();
 
         Assert::isInstanceOf($user, Authenticatable::class);
