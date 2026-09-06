@@ -127,14 +127,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-<<<<<<< .merge_file_IhQ2gb
         $localeValue = config('app.locale');
         $locale = is_string($localeValue) ? $localeValue : 'it';
-=======
-        /** @var string $localeValue */
-        $localeValue = config('app.locale') ?? 'it';
-        $locale = $localeValue;
->>>>>>> .merge_file_3zKqhH
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -145,14 +139,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
-<<<<<<< .merge_file_IhQ2gb
         $localeValue = config('app.locale');
         $locale = is_string($localeValue) ? $localeValue : 'it';
-=======
-        /** @var string $localeValue */
-        $localeValue = config('app.locale') ?? 'it';
-        $locale = $localeValue;
->>>>>>> .merge_file_3zKqhH
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -170,14 +158,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('renders responsive design elements', function () {
-<<<<<<< .merge_file_IhQ2gb
         $localeValue = config('app.locale');
         $locale = is_string($localeValue) ? $localeValue : 'it';
-=======
-        /** @var string $localeValue */
-        $localeValue = config('app.locale') ?? 'it';
-        $locale = $localeValue;
->>>>>>> .merge_file_3zKqhH
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
