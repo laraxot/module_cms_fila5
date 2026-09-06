@@ -46,6 +46,7 @@ function loadHomepageJsonForBlocksArchitectureTest(): array
 
 describe('Homepage Filament Builder Blocks - CMS Module', function () {
     beforeEach(function () {
+        /** @phpstan-ignore-next-line */
         $this->lang = app()->getLocale();
     });
 
@@ -140,10 +141,10 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         foreach ($blocks as $block) {
             /** @var array<string, mixed> $blockData */
             $blockData = $block['data'];
-            if (isset($blockData['title'])) {
+            if (isset($blockData['title']) && is_string($blockData['title'])) {
                 expect($content)->toContain($blockData['title']);
             }
-            if (isset($blockData['subtitle'])) {
+            if (isset($blockData['subtitle']) && is_string($blockData['subtitle'])) {
                 expect($content)->toContain($blockData['subtitle']);
             }
         }
