@@ -78,7 +78,7 @@ describe('Page Schema Builder', function (): void {
         $mainEntity = pageSchemaMainEntity($schema);
         Assert::assertArrayHasKey('@type', $mainEntity);
         Assert::assertSame('Event', $mainEntity['@type']);
-        Assert::assertStringContainsString('/events/test-event-slug', (string) ($mainEntity['url'] ?? ''));
+        Assert::assertStringContainsString('/events/test-event-slug', is_string($mainEntity['url'] ?? null) ? $mainEntity['url'] : '');
     });
 
     test('it resolves profile route as profile page with person main entity', function (): void {
