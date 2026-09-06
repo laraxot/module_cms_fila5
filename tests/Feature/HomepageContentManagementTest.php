@@ -5,10 +5,11 @@ declare(strict_types=1);
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
 
-use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
@@ -126,8 +127,14 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
+<<<<<<< .merge_file_IhQ2gb
         $localeValue = config('app.locale');
         $locale = is_string($localeValue) ? $localeValue : 'it';
+=======
+        /** @var string $localeValue */
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = $localeValue;
+>>>>>>> .merge_file_3zKqhH
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -138,8 +145,14 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
+<<<<<<< .merge_file_IhQ2gb
         $localeValue = config('app.locale');
         $locale = is_string($localeValue) ? $localeValue : 'it';
+=======
+        /** @var string $localeValue */
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = $localeValue;
+>>>>>>> .merge_file_3zKqhH
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -157,8 +170,14 @@ describe('Homepage Content Management', function () {
     });
 
     it('renders responsive design elements', function () {
+<<<<<<< .merge_file_IhQ2gb
         $localeValue = config('app.locale');
         $locale = is_string($localeValue) ? $localeValue : 'it';
+=======
+        /** @var string $localeValue */
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = $localeValue;
+>>>>>>> .merge_file_3zKqhH
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
