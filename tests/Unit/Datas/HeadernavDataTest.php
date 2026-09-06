@@ -122,19 +122,9 @@ test('HeadernavData can be converted to array', function (): void {
 test('HeadernavData overlay_opacity validates numeric range', function (): void {
     $rules = HeadernavData::rules();
 
-<<<<<<< .merge_file_JkxhSx
-    $opacityRule = is_string($rules['overlay_opacity'] ?? null) ? $rules['overlay_opacity'] : '';
-
-    Assert::assertStringContainsString('numeric', $opacityRule);
-
-    Assert::assertStringContainsString('min:0', $opacityRule);
-
-    Assert::assertStringContainsString('max:100', $opacityRule);
-=======
     Assert::assertStringContainsString(SafeStringCastAction::cast('numeric'), SafeStringCastAction::cast($rules['overlay_opacity']));
 
     Assert::assertStringContainsString(SafeStringCastAction::cast('min:0'), SafeStringCastAction::cast($rules['overlay_opacity']));
 
     Assert::assertStringContainsString(SafeStringCastAction::cast('max:100'), SafeStringCastAction::cast($rules['overlay_opacity']));
->>>>>>> .merge_file_6xPLZF
 });
