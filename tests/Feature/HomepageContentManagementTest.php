@@ -127,9 +127,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-        /** @var string $localeValue */
-        $localeValue = config('app.locale') ?? 'it';
-        $locale = $localeValue;
+        $localeValue = config('app.locale');
+        $locale = is_string($localeValue) ? $localeValue : 'it';
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -140,9 +139,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
-        /** @var string $localeValue */
-        $localeValue = config('app.locale') ?? 'it';
-        $locale = $localeValue;
+        $localeValue = config('app.locale');
+        $locale = is_string($localeValue) ? $localeValue : 'it';
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -160,9 +158,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('renders responsive design elements', function () {
-        /** @var string $localeValue */
-        $localeValue = config('app.locale') ?? 'it';
-        $locale = $localeValue;
+        $localeValue = config('app.locale');
+        $locale = is_string($localeValue) ? $localeValue : 'it';
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
