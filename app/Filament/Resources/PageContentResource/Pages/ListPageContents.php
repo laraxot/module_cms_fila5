@@ -18,8 +18,11 @@ class ListPageContents extends LangBaseListRecords
      */
     public function getGridTableColumns(): array
     {
+        /** @var array<int, Column> $columns */
+        $columns = $this->getTableColumns();
+
         return [
-            Stack::make($this->getPageContentColumns()),
+            Stack::make($columns),
         ];
     }
 
@@ -27,14 +30,6 @@ class ListPageContents extends LangBaseListRecords
      * @return array<int, TextColumn>
      */
     public function getTableColumns(): array
-    {
-        return $this->getPageContentColumns();
-    }
-
-    /**
-     * @return array<int, TextColumn>
-     */
-    private function getPageContentColumns(): array
     {
         return [
             TextColumn::make('name')->sortable()->searchable(),

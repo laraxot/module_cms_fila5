@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Models;
 
 use Modules\Cms\Models\Menu;
-use function Safe\class_uses;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
+
+use function Safe\class_uses;
+
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
@@ -22,8 +24,7 @@ describe('Menu Business Logic', function (): void {
     });
 
     test('menu has recursive relationships trait', function (): void {
-        $traits = class_uses(Menu::class);
-        Assert::assertNotEmpty($traits);
+        $traits = class_uses_recursive(Menu::class);
 
         Assert::assertContains(HasRecursiveRelationships::class, array_values($traits));
     });
