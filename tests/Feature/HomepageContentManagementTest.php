@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 use function Pest\Laravel\get;
 
@@ -127,7 +126,7 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
+        $locale = (string) (config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -138,12 +137,12 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
-        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
+        $locale = (string) (config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-        if ($status !== 200) {
+        if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
@@ -151,24 +150,24 @@ describe('Homepage Content Management', function () {
 
         Assert::assertSame(200, $response->status());
         // Avoid brittle copy-order assertions; just ensure HTML is present.
-        $content = SafeStringCastAction::cast($response->getContent());
+        $content = (string) $response->getContent();
         Assert::assertNotSame('', trim($content));
     });
 
     it('renders responsive design elements', function () {
-        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
+        $locale = (string) (config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-        if ($status !== 200) {
+        if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
         }
 
         Assert::assertSame(200, $response->status());
-        $content = SafeStringCastAction::cast($response->getContent());
+        $content = (string) $response->getContent();
         Assert::assertStringContainsString('class="', $content);
     });
 });
