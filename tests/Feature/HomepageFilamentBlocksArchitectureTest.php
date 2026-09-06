@@ -46,7 +46,9 @@ function loadHomepageJsonForBlocksArchitectureTest(): array
 
 describe('Homepage Filament Builder Blocks - CMS Module', function () {
     beforeEach(function () {
-        $this->lang = app()->getLocale();
+        /** @var string $lang */
+        $lang = app()->getLocale();
+        $this->lang = $lang;
     });
 
     test('homepage renders through cms page component system', function () {
