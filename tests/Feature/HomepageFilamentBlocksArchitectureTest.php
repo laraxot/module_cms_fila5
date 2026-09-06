@@ -92,7 +92,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
-        $cmsBlocks = $allBlocks->filter(fn ($block) => $block->module === 'Cms');
+        $cmsBlocks = $allBlocks->toCollection()->filter(fn ($block) => $block->module === 'Cms');
         if ($cmsBlocks->count() > 0) {
             $cmsBlocks->each(function ($block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
