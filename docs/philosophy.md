@@ -1,66 +1,133 @@
-# Cms Module: Content Management
+# Cms Module: Content Management Philosophy
 
-> **Page & Block Management** — Flexible content builder, multilingual blocks, schema-driven.
+> **Block-Based Page Builder** — Custom Filament Builder integration. Zero external deps (Xot, UI, Tenant only).
 
 ---
 
 ## Zen
 
-**"Content is data. Pages are grids of blocks. Blocks are reusable."**
+**"Content is blocks. Blocks are registered by UI. Cms orchestrates them."**
 
 ---
 
-## Quick
+## Architecture
+
+### Core Pattern
+
+```
+UI Module (defines block types)
+  ↓
+UI::GetAllBlocksAction (discover ComponentFileData blocks)
+  ↓
+Cms::PageContentBuilder (wraps Filament\Forms\Components\Builder)
+  ↓
+PageContent model (stores block[] data JSON)
+  ↓
+PageContentResource (edit UI)
+```
 
 ### Models (12)
-- **Page** — Content page (slug, title, blocks)
-- **Block** — Reusable content unit (type, data, template)
-- **Attachment** — Media file (polymorphic)
 
-### Pattern
-```
-Page
-  └─ Block[] (position, type, data)
-       └─ Block.data (schema-driven, validated)
-```
+- **PageContent** — Page with blocks array (JSON)
+- **Block** — Metadata only (blocks live in blocks array)
+- **Attachment** — Polymorphic media
+
+### Filament Pattern
+
+**PageContentResource** extends **LangBaseResource** (i18n support)
+- Custom form: `PageContentBuilder::make('blocks')`
+- `Builder::blocks([...])` — Filament native component (NOT Fabricator)
+- Each block registered by UI module as ComponentFileData
+- Block schema + validation built into each block class
 
 ### Actions (8)
-- `BuildPageSchemaAction` — Merge block schemas into page schema
-- `ResolveBlockQueryAction` — Execute block query (e.g., latest posts)
-- `GetViewThemeByViewAction` — Resolve template
 
-### Forms (1)
-- `DownloadAttachmentPlaceHolder` — File download
+- `BuildPageSchemaAction` — Merge block schemas
+- `ResolveBlockQueryAction` — Execute block queries (e.g., latest posts)
+- `GetViewThemeByViewAction` — Resolve template path
+- Utilities for rendering, schema validation
+
+### Integrations
+
+**UI Module** (critical):
+- UI defines all block types
+- UI::GetAllBlocksAction discovers blocks
+- Cms loads blocks dynamically (no hardcoding)
+- Blocks implement Filament\Forms\Components\Builder\Block interface
+
+**Lang Module**:
+- PageContentResource extends LangBaseResource (translatable pages)
+
+**Xot, Tenant**:
+- BaseModel, tenant scoping
 
 ---
 
-## Best/Bad
+## Dependencies
 
-✓ Block reusability (no copy-paste)
-✓ Schema validation per block type
-❌ Storing unresolved data (resolve at render time)
+| Dep | Version | Use |
+|-----|---------|-----|
+| **(None)** | — | Zero external packages |
+| Xot | Path | Base classes |
+| UI | Path | Block discovery |
+| Tenant | Path | Scoping |
+
+**Design Decision**: No Filament Fabricator. Custom PageContentBuilder wrapper provides:
+- Dynamic block registration (via UI)
+- Schema-driven validation (per-block)
+- JSON persistence (blocks array)
+- Full control over render logic
+
+---
+
+## Best/Bad Practices
+
+✓ **Block registration via UI**
+```php
+// UI module registers blocks
+GetAllBlocksAction::execute() → discovers all Block\*.php
+```
+
+✓ **Schema-driven per block**
+```php
+// Each block class defines getFormSchema()
+Block::make('name')->schema([...])
+```
+
+✓ **PageContent is dumb** (stores blocks[], doesn't interpret)
+
+❌ **Hardcoding block types** (violates extensibility)
+❌ **Block logic in PageContent** (violates separation)
+❌ **External page builder** (Fabricator dependency unwanted here)
 
 ---
 
 ## Roadmap
 
-- Block versioning
-- Scheduled publish/unpublish
-- A/B testing blocks
+- Block versioning (migrate old blocks)
+- Block templates (layouts)
+- A/B testing block variants
+- SEO fields per block
+- Block-level revisions (history)
 
 ---
 
+## Summary
+
 ```
-┌──────────────────────┐
-│ Cms (Content Mgmt)   │
-├──────────────────────┤
-│ Models: 12           │
-│ Migrations: 3        │
-│ Status: Stable       │
-└──────────────────────┘
+┌──────────────────────────────┐
+│ Cms (Block Page Builder)     │
+├──────────────────────────────┤
+│ Pattern: Custom Builder      │
+│ Models: 12                   │
+│ Actions: 8                   │
+│ External deps: 0             │
+│ Block discovery: UI::Action  │
+│ Status: Stable               │
+└──────────────────────────────┘
 ```
 
 ---
 
-- **Generated**: 2026-09-06
-
+- **Generated**: 2026-09-06 (verified + revised)
+- **Author**: Claude (code-verified)
