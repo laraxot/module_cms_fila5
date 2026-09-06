@@ -14,7 +14,6 @@ use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotServiceProvider;
 use Modules\Xot\Tests\XotBaseTestCase;
-use PHPUnit\Framework\MockObject\MockObject;
 
 /**
  * Base test case for Cms module.
@@ -50,7 +49,7 @@ abstract class TestCase extends XotBaseTestCase
         $connections = config('database.connections', []);
 
         foreach (array_keys($connections) as $connection) {
-            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
+            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
                 continue;
             }
 
@@ -95,7 +94,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     protected static function createTestUser(array $attributes = []): UserContract
     {
@@ -106,7 +105,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param  array<string, mixed>  $attributes
+     * @param array<string, mixed> $attributes
      */
     public static function pestCreateTestUser(array $attributes = []): UserContract
     {
@@ -116,8 +115,9 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @template T of object
      *
-     * @param  class-string<T>  $class
-     * @return T&MockObject
+     * @param class-string<T> $class
+     *
+     * @return T&\PHPUnit\Framework\MockObject\MockObject
      */
     public function createPHPUnitMock(string $class): object
     {

@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 uses(TestCase::class);
 it('renders the public profile route using the localized profile page', function (): void {
@@ -17,14 +16,14 @@ it('renders the public profile route using the localized profile page', function
 
     $userId = $user->getKey();
     Assert::assertNotNull($userId);
-    $response = cmsGet('/it/profile/'.SafeStringCastAction::cast($userId));
+    $response = cmsGet('/it/profile/'.(string) $userId);
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
         cmsSkipTest('Public profile route returned server error in this install.');
     }
 
-    if ($status !== 200) {
+    if (200 !== $status) {
         cmsSkipTest("Public profile route returned {$status} — profile FO page not configured.");
     }
 

@@ -37,11 +37,11 @@ class SetFolioLocale
         // Priority 1: Check if first segment is a supported locale (URL Overrides User Preference)
         if (in_array($firstSegment, $supportedLocales, true)) {
             $locale = $firstSegment;
-            // Priority 2: If user is logged in and has a saved language, use that
+        // Priority 2: If user is logged in and has a saved language, use that
         } else {
             $user = $request->user();
             $locale = match (true) {
-                $user !== null && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
+                null !== $user && is_object($user) && property_exists($user, 'lang') && is_string($user->lang) => $user->lang,
                 default => $defaultLocale,
             };
         }

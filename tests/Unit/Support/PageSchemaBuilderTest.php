@@ -9,12 +9,12 @@ use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
 use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 uses(TestCase::class);
 
 /**
- * @param  array<string, mixed>  $schema
+ * @param array<string, mixed> $schema
+ *
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array
@@ -78,7 +78,7 @@ describe('Page Schema Builder', function (): void {
         $mainEntity = pageSchemaMainEntity($schema);
         Assert::assertArrayHasKey('@type', $mainEntity);
         Assert::assertSame('Event', $mainEntity['@type']);
-        Assert::assertStringContainsString('/events/test-event-slug', SafeStringCastAction::cast($mainEntity['url'] ?? ''));
+        Assert::assertStringContainsString('/events/test-event-slug', (string) ($mainEntity['url'] ?? ''));
     });
 
     test('it resolves profile route as profile page with person main entity', function (): void {
