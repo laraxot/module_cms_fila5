@@ -7,15 +7,15 @@ namespace Modules\Cms\Filament\Forms\Components;
 use Illuminate\Support\HtmlString;
 use Modules\Cms\Models\Attachment;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use Modules\Xot\Filament\Forms\Components\XotBaseTextEntry;
+use Modules\Xot\Filament\Forms\Components\XotBasePlaceholder;
 use Webmozart\Assert\Assert;
 
-class DownloadAttachmentPlaceHolder extends XotBaseTextEntry
+class DownloadAttachmentPlaceHolder extends XotBasePlaceholder
 {
     protected function setUp(): void
     {
         parent::setUp();
-        $this->label('')->html()->state($this->generateContent(...))->columnSpanFull();
+        $this->label('')->content($this->generateContent(...))->columnSpanFull();
     }
 
     protected function generateContent(): HtmlString
@@ -32,7 +32,7 @@ class DownloadAttachmentPlaceHolder extends XotBaseTextEntry
             '<a href="%s" class="underline" target="_blank" rel="noopener noreferrer">%s</a>%s',
             htmlspecialchars($asset, ENT_QUOTES, 'UTF-8'),
             htmlspecialchars($title, ENT_QUOTES, 'UTF-8'),
-            $description !== ''
+            '' !== $description
                 ? '<div class="text-sm text-gray-600">'.htmlspecialchars($description, ENT_QUOTES, 'UTF-8').'</div>'
                 : ''
         );
