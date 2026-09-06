@@ -17,14 +17,8 @@ it('renders the public profile route using the localized profile page', function
     if (! is_numeric($userId) && ! is_string($userId)) {
         cmsSkipTest('User ID is not a valid type');
     }
-<<<<<<< .merge_file_IhrkWQ
-    /** @var string $userIdString */
-    $userIdString = is_string($userId) ? $userId : (string) $userId;
-    $response = cmsGet('/it/profile/'.$userIdString);
-=======
     /** @var numeric-string|int $userId */
     $response = cmsGet('/it/profile/'.$userId);
->>>>>>> .merge_file_wPcTIu
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
