@@ -127,7 +127,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = is_string($localeValue) ? $localeValue : (string) $localeValue;
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -138,7 +139,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
-        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = is_string($localeValue) ? $localeValue : (string) $localeValue;
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -156,7 +158,8 @@ describe('Homepage Content Management', function () {
     });
 
     it('renders responsive design elements', function () {
-        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
+        $localeValue = config('app.locale') ?? 'it';
+        $locale = is_string($localeValue) ? $localeValue : (string) $localeValue;
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
