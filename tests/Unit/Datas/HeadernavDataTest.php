@@ -120,6 +120,8 @@ test('HeadernavData can be converted to array', function (): void {
 
 test('HeadernavData overlay_opacity validates numeric range', function (): void {
     $rules = HeadernavData::rules();
+    $opacityRules = $rules['overlay_opacity'] ?? '';
+    Assert::assertIsString($opacityRules);
 
     $opacityRule = is_string($rules['overlay_opacity'] ?? null) ? $rules['overlay_opacity'] : '';
 
