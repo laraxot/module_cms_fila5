@@ -42,8 +42,31 @@ it('discovers and validates cms and ui blocks', function () {
     }
 });
 
+<<<<<<< .merge_file_R6tu00
+    return $result;
+}
+
+describe('Homepage Filament Builder Blocks - CMS Module', function () {
+    beforeEach(function () {
+        /** @phpstan-ignore-next-line */
+        $this->lang = app()->getLocale();
+    });
+
+    test('homepage renders through cms page component system', function () {
+        $response = get('/'.$this->lang);
+        $response->assertOk();
+
+        $content = $response->getContent();
+
+        // Verify CMS page component integration
+        expect($content)->toContain('x-page');
+        expect($content)->toContain('side="content"');
+        expect($content)->toContain('slug="home"');
+    });
+=======
 test('homepage content management through cms works correctly', function () {
     $homepageData = TestCase::homepageJsonForBlocksArchitecture();
+>>>>>>> .merge_file_3JF8WG
 
     /** @var array<string, mixed> $contentBlocks */
     $contentBlocks = $homepageData['content_blocks'];
@@ -75,8 +98,23 @@ test('homepage content management through cms works correctly', function () {
 test('cms theme integration renders blocks correctly', function () {
     $homepageData = TestCase::homepageJsonForBlocksArchitecture();
 
+<<<<<<< .merge_file_R6tu00
+        // Verify that CMS-managed content appears on page
+        foreach ($blocks as $block) {
+            /** @var array<string, mixed> $blockData */
+            $blockData = $block['data'];
+            if (isset($blockData['title']) && is_string($blockData['title'])) {
+                expect($content)->toContain($blockData['title']);
+            }
+            if (isset($blockData['subtitle']) && is_string($blockData['subtitle'])) {
+                expect($content)->toContain($blockData['subtitle']);
+            }
+        }
+    });
+=======
     /** @var array<string, mixed> $contentBlocks */
     $contentBlocks = $homepageData['content_blocks'];
+>>>>>>> .merge_file_3JF8WG
 
     if (! isset($contentBlocks[$this->lang])) {
         $this->markTestSkipped('No content blocks for language '.$this->lang);

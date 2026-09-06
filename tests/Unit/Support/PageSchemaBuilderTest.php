@@ -7,7 +7,6 @@ namespace Modules\Cms\Tests\Unit\Support;
 use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
 
@@ -79,7 +78,7 @@ describe('Page Schema Builder', function (): void {
         $mainEntity = pageSchemaMainEntity($schema);
         Assert::assertArrayHasKey('@type', $mainEntity);
         Assert::assertSame('Event', $mainEntity['@type']);
-        Assert::assertStringContainsString('/events/test-event-slug', SafeStringCastAction::cast($mainEntity['url'] ?? ''));
+        Assert::assertStringContainsString('/events/test-event-slug', is_string($mainEntity['url'] ?? null) ? $mainEntity['url'] : '');
     });
 
     test('it resolves profile route as profile page with person main entity', function (): void {
