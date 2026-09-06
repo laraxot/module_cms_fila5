@@ -5,66 +5,67 @@ declare(strict_types=1);
 use Livewire\Wireable;
 use Modules\Cms\Datas\HeadernavData;
 use Modules\Cms\Tests\TestCase;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
 uses(TestCase::class);
 test('HeadernavData can be instantiated', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertInstanceOf(HeadernavData::class, $headernavData);
 });
 
 test('HeadernavData extends Spatie Data', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertInstanceOf(Data::class, $headernavData);
 });
 
 test('HeadernavData implements Wireable interface', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertInstanceOf(Wireable::class, $headernavData);
 });
 
 test('HeadernavData has default view path', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertSame('cms::components.headernav', $headernavData->view);
 });
 
 test('HeadernavData has nullable background_color property', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertNull($headernavData->background_color);
 });
 
 test('HeadernavData has nullable background property', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertNull($headernavData->background);
 });
 
 test('HeadernavData has nullable overlay_color property', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertNull($headernavData->overlay_color);
 });
 
 test('HeadernavData has nullable overlay_opacity property', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertNull($headernavData->overlay_opacity);
 });
 
 test('HeadernavData has nullable class property', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertNull($headernavData->class);
 });
 
 test('HeadernavData has nullable style property', function (): void {
-    $headernavData = new HeadernavData();
+    $headernavData = new HeadernavData;
 
     Assert::assertNull($headernavData->style);
 });
@@ -121,9 +122,9 @@ test('HeadernavData can be converted to array', function (): void {
 test('HeadernavData overlay_opacity validates numeric range', function (): void {
     $rules = HeadernavData::rules();
 
-    Assert::assertStringContainsString((string) 'numeric', (string) $rules['overlay_opacity']);
+    Assert::assertStringContainsString(SafeStringCastAction::cast('numeric'), SafeStringCastAction::cast($rules['overlay_opacity']));
 
-    Assert::assertStringContainsString((string) 'min:0', (string) $rules['overlay_opacity']);
+    Assert::assertStringContainsString(SafeStringCastAction::cast('min:0'), SafeStringCastAction::cast($rules['overlay_opacity']));
 
-    Assert::assertStringContainsString((string) 'max:100', (string) $rules['overlay_opacity']);
+    Assert::assertStringContainsString(SafeStringCastAction::cast('max:100'), SafeStringCastAction::cast($rules['overlay_opacity']));
 });
