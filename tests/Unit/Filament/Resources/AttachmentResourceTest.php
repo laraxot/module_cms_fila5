@@ -48,6 +48,4 @@ describe('AttachmentResource', function (): void {
 
 test('attachment resource has plural label', function (): void {
     })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-    test('attachment resource has plural label', function (): void {
-    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
 });
