@@ -17,10 +17,9 @@ it('renders the public profile route using the localized profile page', function
     if (! is_numeric($userId) && ! is_string($userId)) {
         cmsSkipTest('User ID is not a valid type');
     }
-    if (! is_int($userId) && ! is_string($userId)) {
-        return; // redundant after guard above, but narrows for PHPStan
-    }
-    $response = cmsGet('/it/profile/'.$userId);
+    /** @var string $userIdStr */
+    $userIdStr = is_string($userId) ? $userId : /* @phpstan-ignore cast.string */ (string) $userId;
+    $response = cmsGet('/it/profile/'.$userIdStr);
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
