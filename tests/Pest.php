@@ -36,5 +36,3 @@ require_once __DIR__.'/PestHelpers.php';
  * | Queste funzioni saranno disponibili in tutti i test.
  * |
  */
-
-pest()->extend(Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');

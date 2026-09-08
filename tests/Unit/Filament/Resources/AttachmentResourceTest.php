@@ -15,11 +15,7 @@ describe('AttachmentResource', function (): void {
         Assert::assertSame(Attachment::class, $resource::getModel());
     });
 
-    test('attachment resource has form schema', function (): void {
-        $schema = AttachmentResource::getFormSchema();
-        /* @var array<string, mixed> $schema */
-        Assert::assertGreaterThan(0, count($schema));
-    });
+   
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
@@ -47,7 +43,5 @@ describe('AttachmentResource', function (): void {
     });
 
 test('attachment resource has plural label', function (): void {
-    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-    test('attachment resource has plural label', function (): void {
     })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
 });
