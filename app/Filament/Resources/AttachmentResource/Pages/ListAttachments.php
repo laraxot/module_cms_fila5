@@ -12,16 +12,4 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 class ListAttachments extends LangBaseListRecords
 {
     public static string $resource = AttachmentResource::class;
-
-    /**
-     * @return array<string, Column>
-     */
-    public function getTableColumns(): array
-    {
-        return [
-            'title' => TextColumn::make('title')->searchable(),
-            'slug' => TextColumn::make('slug')->searchable(),
-            'attachment' => TextColumn::make('attachment')->searchable(),
-        ];
-    }
 }
