@@ -25,18 +25,6 @@ class ListPageContents extends LangBaseListRecords
             Stack::make($columns),
         ];
     }
-
-    /**
-     * @return array<int, TextColumn>
-     */
-    public function getTableColumns(): array
-    {
-        return [
-            TextColumn::make('name')->sortable()->searchable(),
-            TextColumn::make('slug')->sortable()->searchable(),
-        ];
-    }
-
     /*
      * protected function getHeaderActions(): array
      * {
