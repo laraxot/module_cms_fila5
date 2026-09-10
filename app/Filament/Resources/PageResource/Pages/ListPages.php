@@ -12,15 +12,4 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 class ListPages extends LangBaseListRecords
 {
     public static string $resource = PageResource::class;
-
-    /**
-     * @return array<string, Column>
-     */
-    public function getTableColumns(): array
-    {
-        return [
-            'title' => TextColumn::make('title')->searchable(),
-            'slug' => TextColumn::make('slug')->searchable(),
-        ];
-    }
 }
