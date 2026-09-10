@@ -12,15 +12,4 @@ use Modules\Lang\Filament\Resources\Pages\LangBaseListRecords;
 class ListSections extends LangBaseListRecords
 {
     public static string $resource = SectionResource::class;
-
-    /**
-     * @return array<string, Column>
-     */
-    public function getTableColumns(): array
-    {
-        return [
-            'name' => TextColumn::make('name')->sortable()->searchable(),
-            'slug' => TextColumn::make('slug')->sortable()->searchable(),
-        ];
-    }
 }
