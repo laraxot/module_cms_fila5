@@ -6,10 +6,16 @@ namespace Modules\Cms\Filament\Resources\AttachmentResource\Tables;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
+use Modules\Cms\Models\Attachment;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class AttachmentsTable extends XotBaseResourceTable
 {
+    /**
+     * @var class-string<Attachment>
+     */
+    protected static string $model = Attachment::class;
+
     /**
      * @return array<string, Column>
      */

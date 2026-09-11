@@ -6,10 +6,16 @@ namespace Modules\Cms\Filament\Resources\PageResource\Tables;
 
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
+use Modules\Cms\Models\Page;
 use Modules\Xot\Filament\Resources\Tables\XotBaseResourceTable;
 
 class PagesTable extends XotBaseResourceTable
 {
+    /**
+     * @var class-string<Page>
+     */
+    protected static string $model = Page::class;
+
     /**
      * @return array<string, Column>
      */
