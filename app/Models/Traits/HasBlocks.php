@@ -15,7 +15,7 @@ use Modules\Xot\Datas\XotData;
  * Trait for Models that have blocks.
  *
  * @phpstan-require-extends Model
-*
+ *
  * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
@@ -81,7 +81,7 @@ trait HasBlocks
     }
 
     /**
-    * @param array<int|string, mixed> $blocks
+     * @param array<int|string, mixed> $blocks
      *
      * @return array<string, mixed>
      */
@@ -113,8 +113,9 @@ trait HasBlocks
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
      * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
      *
-     * @param  string  $slug  The section/page slug
-     * @param  string|null  $side  The side to get blocks for (null for all blocks)
+     * @param string      $slug The section/page slug
+     * @param string|null $side The side to get blocks for (null for all blocks)
+     *
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array

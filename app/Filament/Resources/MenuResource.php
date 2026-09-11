@@ -18,7 +18,7 @@ class MenuResource extends XotBaseResource
     protected static ?string $model = Menu::class;
 
     /**
-    * Schema legacy del form: la sorgente di verità è MenuForm::getFormSchema().
+     * Schema legacy del form: la sorgente di verità è MenuForm::getFormSchema().
      *
      * @return array<int, Component>
      */
