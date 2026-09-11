@@ -9,7 +9,6 @@ use Illuminate\Support\Collection;
 use Modules\Cms\Models\Module;
 use Modules\User\Models\User as CmsUser;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
-use Modules\Xot\Contracts\UserContract;
 
 abstract class TestHelper extends BaseTestCase
 {
@@ -63,7 +62,7 @@ abstract class TestHelper extends BaseTestCase
         $urls = $user
             ->getRoleNames()
             ->map(function (mixed $item): ?string {
-                if (! is_string($item) || $item === 'super-admin') {
+                if (! is_string($item) || 'super-admin' === $item) {
                     return null;
                 }
 

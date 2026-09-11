@@ -6,13 +6,11 @@ namespace Modules\Cms\Http\Volt;
 
 use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
 use Modules\User\Models\User;
-use Modules\Xot\Contracts\UserContract;
 use Webmozart\Assert\Assert;
 
 /**
