@@ -28,7 +28,7 @@ test('auth buttons show correct translation for German locale on login page', fu
         return;
     }
 
-    if ($status !== 200) {
+    if (200 !== $status) {
         cmsSkipTest("Route /de/auth/login returned {$status} (redirect). Cannot verify translations.");
 
         return;
@@ -54,7 +54,7 @@ test('auth buttons show correct translation for Italian locale on login page', f
         return;
     }
 
-    if ($status !== 200) {
+    if (200 !== $status) {
         cmsSkipTest("Route /it/auth/login returned {$status} (redirect). Cannot verify translations.");
 
         return;
@@ -78,7 +78,7 @@ test('auth buttons show correct translation for English locale on login page', f
         return;
     }
 
-    if ($status !== 200) {
+    if (200 !== $status) {
         cmsSkipTest("Route /en/auth/login returned {$status} (redirect). Cannot verify translations.");
 
         return;
