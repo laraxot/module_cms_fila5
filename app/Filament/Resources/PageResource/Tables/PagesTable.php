@@ -24,7 +24,7 @@ class PagesTable extends XotBaseResourceTable
         return [
             'title' => TextColumn::make('title')->searchable()->sortable(),
             'slug' => TextColumn::make('slug')->searchable()->sortable()->copyable(),
-            'description' => TextColumn::make('description')->limit(50),
+            'description' => TextColumn::make('description')->limit(50)->searchable(),
             'middleware' => TextColumn::make('middleware'),
         ];
     }
