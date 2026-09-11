@@ -23,7 +23,7 @@ class AttachmentsTable extends XotBaseResourceTable
     {
         return [
             'title' => TextColumn::make('title')->searchable()->sortable(),
-            'description' => TextColumn::make('description')->limit(50),
+            'description' => TextColumn::make('description')->limit(50)->searchable(),
             'slug' => TextColumn::make('slug')->searchable()->sortable()->copyable(),
             'disk' => TextColumn::make('disk')->toggleable(isToggledHiddenByDefault: true),
         ];
