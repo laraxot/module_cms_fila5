@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Modules\User\Models\User;
-use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Class XotComposer.
