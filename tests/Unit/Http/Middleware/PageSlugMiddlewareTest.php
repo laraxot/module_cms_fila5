@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * @param  array<int, mixed>  $args
+ * @param array<int, mixed> $args
  */
 function invokeProtected(object $object, string $method, array $args = []): mixed
 {
