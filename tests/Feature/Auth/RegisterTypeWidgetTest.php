@@ -15,15 +15,19 @@ beforeEach(function (): void {
 
 describe('Registration Widget', function (): void {
     test('patient widget renders correctly', function (): void {
+        /** @var view-string $view */
+        $view = 'pub_theme::filament.widgets.registration';
         Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
             ->assertStatus(200)
-            ->assertViewIs('pub_theme::filament.widgets.registration');
+            ->assertViewIs($view);
     });
 
     test('doctor widget renders correctly', function (): void {
+        /** @var view-string $view */
+        $view = 'pub_theme::filament.widgets.registration';
         Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
             ->assertStatus(200)
-            ->assertViewIs('pub_theme::filament.widgets.registration');
+            ->assertViewIs($view);
     });
 
     test('widget without type throws exception', function (): void {

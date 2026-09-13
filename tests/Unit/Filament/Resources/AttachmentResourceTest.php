@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Modules\Cms\Filament\Resources\AttachmentResource;
+use Modules\Cms\Filament\Resources\AttachmentResource\Schemas\AttachmentForm;
 use Modules\Cms\Models\Attachment;
 use PHPUnit\Framework\Assert;
 
@@ -14,7 +15,7 @@ describe('AttachmentResource', function (): void {
     });
 
     test('attachment resource has form schema', function (): void {
-        $schema = AttachmentResource::getFormSchema();
+        $schema = app(AttachmentForm::class)->getFormSchema();
         /* @var array<string, mixed> $schema */
         Assert::assertGreaterThan(0, count($schema));
     });
