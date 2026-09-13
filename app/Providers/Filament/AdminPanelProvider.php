@@ -11,6 +11,7 @@ use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Cms';
+
     public function panel(Panel $panel): Panel
     {
         $panel->plugins([

@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Models\User;
-use Modules\Xot\Contracts\UserContract;
 
 it('renders the login page', function (): void {
     $locale = app()->getLocale();
@@ -123,7 +122,7 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i < 5; ++$i) {
         LivewireVolt::test('auth.login #4')
             ->set('email', $email)
             ->set('password', 'wrong_password')
