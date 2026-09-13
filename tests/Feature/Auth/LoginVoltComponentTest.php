@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Session;
 use Livewire\Component;
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Volt\Volt as LivewireVolt;
-use PHPUnit\Framework\Assert;
 use Modules\User\Models\User;
+use PHPUnit\Framework\Assert;
 
 // ---- Volt Component Rendering ----
 
@@ -180,7 +180,7 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i < 5; ++$i) {
         LivewireVolt::test('auth.login #13')
             ->set('email', $email)
             ->set('password', 'wrong_password')
