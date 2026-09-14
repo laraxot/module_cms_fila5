@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Models;
 
 use Modules\Cms\Models\Menu;
-use function Safe\class_uses;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;
+
+use function Safe\class_uses;
+
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
