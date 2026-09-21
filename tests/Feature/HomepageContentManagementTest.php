@@ -1,14 +1,12 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\get;
-
-use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -140,7 +138,7 @@ describe('Homepage Content Management', function () {
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-        if (200 !== $status) {
+        if ($status !== 200) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
@@ -158,7 +156,7 @@ describe('Homepage Content Management', function () {
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-        if (200 !== $status) {
+        if ($status !== 200) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;

@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 it('GET /it/registration/thank-you acceptable', function (): void {
     $res = cmsGet('/it/registration/thank-you');
     $status = (int) $res->getStatusCode();

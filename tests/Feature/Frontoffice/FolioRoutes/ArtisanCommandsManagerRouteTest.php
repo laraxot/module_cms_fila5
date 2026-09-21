@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use PHPUnit\Framework\Assert;
 
 it('GET /it/artisan-commands-manager returns acceptable status', function (): void {

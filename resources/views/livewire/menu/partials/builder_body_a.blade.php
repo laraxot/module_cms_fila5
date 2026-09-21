@@ -1,71 +1,71 @@
-@php
-// Cms Blade view — see Modules/Cms/docs/wiki.
-@endphp
-
-@php
-// Cms Blade view — see Modules/Cms/docs/wiki.
-@endphp
-
-@php
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-// Cms Blade view — see Modules/Cms/docs/wiki.
-@endphp
-
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
-{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 <?php
 
 declare(strict_types=1);
 
 ?>
+@php
+// Cms Blade view — see Modules/Cms/docs/wiki.
+@endphp
+
+@php
+// Cms Blade view — see Modules/Cms/docs/wiki.
+@endphp
+
+@php
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+// Cms Blade view — see Modules/Cms/docs/wiki.
+@endphp
+
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
+{-- Cms Blade — i18n via LangServiceProvider; see docs/wiki. --}
 <div>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">

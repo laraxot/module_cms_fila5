@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Cms\Filament\Forms\Components\DownloadAttachmentPlaceHolder;
 use Modules\Xot\Filament\Forms\Components\XotBaseTextEntry;
 use PHPUnit\Framework\Assert;
@@ -14,8 +13,6 @@ test('DownloadAttachmentPlaceHolder extends XotBaseTextEntry', function () {
     );
 });
 
-test('DownloadAttachmentPlaceHolder has setUp method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('DownloadAttachmentPlaceHolder has setUp method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('DownloadAttachmentPlaceHolder has generateContent method', function () {
-})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+test('DownloadAttachmentPlaceHolder has generateContent method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

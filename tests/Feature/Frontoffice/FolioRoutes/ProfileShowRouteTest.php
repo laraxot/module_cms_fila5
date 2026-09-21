@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 it('GET /it/profile/show acceptable (likely auth required)', function (): void {
     $res = cmsGet('/it/profile/show');
     $status = (int) $res->getStatusCode();

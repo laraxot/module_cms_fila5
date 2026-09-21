@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use PHPUnit\Framework\Assert;
 
 it('GET /it/auth/register/thank-you acceptable', function (): void {

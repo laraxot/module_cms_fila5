@@ -1,3 +1,8 @@
+<?php
+
+declare(strict_types=1);
+
+?>
 @props([
     'title' => 'Esplora per Categoria',
     'subtitle' => 'Filtra gli articoli per area di interesse',
