@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Cms\Database\Factories\PageContentFactory;
 use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Database\Factories\SectionFactory;
@@ -105,7 +104,7 @@ test('cms module handles complex block structures', function () {
                 'mobile' => 1,
             ],
             'items' => array_map(
-                fn (mixed $i) => [
+                fn (int $i) => [
                     'id' => $i,
                     'type' => 'content_card',
                     'title' => "Card {$i}",
@@ -321,7 +320,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
-    for ($i = 0; $i < 50; ++$i) {
+    for ($i = 0; $i < 50; $i++) {
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],
@@ -396,7 +395,7 @@ test('cms module supports complex query patterns', function () {
 
     Assert::assertCount(10, $results);
 
-    $heroPages = $results->filter(fn (mixed $page) => collect($page->content_blocks)->contains('type', 'hero'));
+    $heroPages = $results->filter(fn (Page $page): bool => collect($page->content_blocks)->contains('type', 'hero'));
 
     Assert::assertCount(10, $heroPages);
 });

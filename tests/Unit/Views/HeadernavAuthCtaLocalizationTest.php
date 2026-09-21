@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use PHPUnit\Framework\Assert;
 
 test('headernav auth ctas use theme localization keys and not legacy auth keys', function (): void {

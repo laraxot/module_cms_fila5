@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Database\Query\Expression;
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
@@ -9,7 +8,8 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 /*
  * Class CreateCmsPagesTable.
  */
-return new class extends XotBaseMigration {
+return new class extends XotBaseMigration
+{
     /**
      * db up.
      */

@@ -66,3 +66,22 @@ altri model (`Attachment`, `Menu`, `PageContent`, `Section`) restano intoccate: 
 generate meccanicamente e rispecchiano firme vendor (`Builder::whereJsonContains`,
 `pluck`, ecc.) — un narrowing manuale li disallineerebbe dal vero contratto e verrebbe
 sovrascritto al prossimo giro di ide-helper generate. Fuori scope per questo task.
+
+## Follow-up: `declare(strict_types=1)` sulle blade Cms
+
+Campagna root `docs/chat/strict-types-mixed-campaign.md`. Sulle viste/docs source
+elencate si **prepende** il blocco PHP chiuso; non si toccano Livewire Page/Show.
+Il narrowing `mixed` sopra resta valido: strict_types e mixed sono due superfici
+dello stesso contratto di tipo.
+
+## Follow-up — `mixed` restanti in app/ (confermati ultima spiaggia)
+
+- `Page::getMiddlewareBySlug`: `$page->middleware` è JSON
+  `array<array-key, mixed>|null`. `array_filter` + `is_string` è il narrowing;
+  il param della closure resta `mixed` (lista eterogenea, non `list<string>`).
+- `ResetComponent` `array_map`: `trans()` può tornare `array|string` nidificato,
+  non una lista di scalar. `is_scalar` è il narrowing; restringere a `string`
+  cambierebbe il runtime (TypeError al posto di `''`).
+
+Nessun file `app/` Cms toccato in questo follow-up. `gh` non autenticato:
+**DA CREARE** `gh issue list --repo laraxot/module_cms_fila5 --search "mixed" --state all`.
