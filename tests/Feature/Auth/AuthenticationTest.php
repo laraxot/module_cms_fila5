@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use PHPUnit\Framework\Assert;
 
 test('login screen can be rendered', function (): void {

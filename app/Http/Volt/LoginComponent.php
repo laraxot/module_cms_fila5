@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Modules\Cms\Http\Volt;
 
 use Illuminate\Auth\Events\Login;
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Datas\XotData;
 use Webmozart\Assert\Assert;
 
 /**
@@ -40,9 +40,10 @@ class LoginComponent extends Component
 
         $guard = 'web';
 
-        $user = User::query()->where('email', $this->email)->first();
+        $userClass = XotData::make()->getUserClass();
+        $user = $userClass::query()->where('email', $this->email)->first();
 
-        Assert::isInstanceOf($user, Authenticatable::class);
+        Assert::isInstanceOf($user, UserContract::class);
         $remember = $this->remember;
         event(new Login($guard, $user, $remember));
 

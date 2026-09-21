@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use PHPUnit\Framework\Assert;
 
 it('GET /it/dashboard acceptable for unauthenticated (redirect/401/403)', function (): void {

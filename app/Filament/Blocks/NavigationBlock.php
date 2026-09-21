@@ -37,7 +37,7 @@ class NavigationBlock extends XotBaseBlock
                             'secondary' => 'Secondario',
                         ])
                         ->default('default')
-                        ->visible(fn (Get $get) => 'button' === $get('type')),
+                        ->visible(fn (Get $get) => $get('type') === 'button'),
                     Repeater::make('children')
                         ->label('Sottomenu')
                         ->schema([
@@ -51,7 +51,7 @@ class NavigationBlock extends XotBaseBlock
                                 ])
                                 ->default('link'),
                         ])
-                        ->visible(fn (Get $get) => 'dropdown' === $get('type'))
+                        ->visible(fn (Get $get) => $get('type') === 'dropdown')
                         ->collapsible(),
                 ])
                 ->collapsible()

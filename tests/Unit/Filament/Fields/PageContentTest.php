@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Filament\Forms\Components\Builder;
 use Modules\Cms\Filament\Fields\PageContent;
 use PHPUnit\Framework\Assert;
