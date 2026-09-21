@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
-use Modules\User\Models\User;
+use Modules\User\Models\BaseUser;
 
 it('renders the login page', function (): void {
     $locale = app()->getLocale();
@@ -159,6 +159,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
-    assert($authenticatedUser instanceof User);
+    assert($authenticatedUser instanceof BaseUser);
     expect($authenticatedUser->email)->toBe($email);
 });
