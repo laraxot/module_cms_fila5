@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Cms\Filament\Resources\PageResource;
 use Modules\Cms\Filament\Resources\PageResource\Schemas\PageForm;
 use Modules\Cms\Models\Page;
@@ -9,7 +8,7 @@ use PHPUnit\Framework\Assert;
 
 describe('PageResource', function (): void {
     test('page resource has correct model', function (): void {
-        $resource = new PageResource();
+        $resource = new PageResource;
 
         Assert::assertSame(Page::class, $resource::getModel());
     });

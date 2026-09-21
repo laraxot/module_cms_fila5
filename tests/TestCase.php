@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -50,7 +51,7 @@ abstract class TestCase extends XotBaseTestCase
         $connections = config('database.connections', []);
 
         foreach (array_keys($connections) as $connection) {
-            if ('sqlite' !== config("database.connections.{$connection}.driver")) {
+            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
                 continue;
             }
 
@@ -80,7 +81,7 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @return array<int, class-string<ServiceProvider>>
      */
-    protected function getPackageProviders(mixed $app): array
+    protected function getPackageProviders(Application $app): array
     {
         return [
             XotServiceProvider::class,
@@ -95,7 +96,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     protected static function createTestUser(array $attributes = []): UserContract
     {
@@ -106,7 +107,7 @@ abstract class TestCase extends XotBaseTestCase
     }
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     public static function pestCreateTestUser(array $attributes = []): UserContract
     {
@@ -116,8 +117,7 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @template T of object
      *
-     * @param class-string<T> $class
-     *
+     * @param  class-string<T>  $class
      * @return T&MockObject
      */
     public function createPHPUnitMock(string $class): object

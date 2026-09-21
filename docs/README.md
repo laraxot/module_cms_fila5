@@ -226,7 +226,7 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 
 1. **Always extend Xot base classes** — Never extend Laravel/Filament directly
 2. **Use namespace `Modules\Cms`** — Never `app\Cms`
-3. **Strict typing** — `declare(strict_types=1);` in all files
+3. **Strict typing** — `declare(strict_types=1);` is the first statement after `<?php` in every `.php` and `.blade.php`. Blade without a PHP opener: **prepend** the closed block (never replace the first bytes — that already ate `@extends` / `<!DOCTYPE` elsewhere). Do not convert Livewire Page/Show. `mixed` only as last resort (JSON, vendor signatures).
 4. **Relative links only** — All doc links must be relative paths
 5. **No placeholder text** — Remove PROJECT_NAME, [CHANGE_ME], etc
 6. **JSON validation** — Validate block data structure before storage

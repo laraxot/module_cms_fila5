@@ -1,19 +1,18 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Cms\Actions\ResolveBlockQueryAction;
 use Modules\Cms\Models\Page;
 use PHPUnit\Framework\Assert;
 
 test('ResolveBlockQueryAction can be instantiated', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     Assert::assertInstanceOf(ResolveBlockQueryAction::class, $action);
 });
 
 test('ResolveBlockQueryAction returns empty array when model is null', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([]);
 
@@ -21,7 +20,7 @@ test('ResolveBlockQueryAction returns empty array when model is null', function 
 });
 
 test('ResolveBlockQueryAction returns empty array when model class does not exist', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute(['model' => 'NonExistentModelClass']);
 
@@ -29,7 +28,7 @@ test('ResolveBlockQueryAction returns empty array when model class does not exis
 });
 
 test('ResolveBlockQueryAction returns empty array when model class is invalid', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute(['model' => '']);
 
@@ -37,7 +36,7 @@ test('ResolveBlockQueryAction returns empty array when model class is invalid', 
 });
 
 test('ResolveBlockQueryAction executes query with model', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,
@@ -51,7 +50,7 @@ test('ResolveBlockQueryAction executes query with model', function () {
 });
 
 test('ResolveBlockQueryAction applies scopes', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     // Test with singular scope
     $result = $action->execute([
@@ -62,7 +61,7 @@ test('ResolveBlockQueryAction applies scopes', function () {
 });
 
 test('ResolveBlockQueryAction applies scopes array', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,
@@ -72,7 +71,7 @@ test('ResolveBlockQueryAction applies scopes array', function () {
 });
 
 test('ResolveBlockQueryAction applies orderBy and direction', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,
@@ -83,7 +82,7 @@ test('ResolveBlockQueryAction applies orderBy and direction', function () {
 });
 
 test('ResolveBlockQueryAction applies limit', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,
@@ -94,7 +93,7 @@ test('ResolveBlockQueryAction applies limit', function () {
 });
 
 test('ResolveBlockQueryAction uses default wrap_in value', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,
@@ -104,7 +103,7 @@ test('ResolveBlockQueryAction uses default wrap_in value', function () {
 });
 
 test('ResolveBlockQueryAction uses custom wrap_in value', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,
@@ -115,7 +114,7 @@ test('ResolveBlockQueryAction uses custom wrap_in value', function () {
 });
 
 test('ResolveBlockQueryAction handles non-string wrap_in', function () {
-    $action = new ResolveBlockQueryAction();
+    $action = new ResolveBlockQueryAction;
 
     $result = $action->execute([
         'model' => Page::class,

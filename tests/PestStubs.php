@@ -1,7 +1,6 @@
 <?php
 
 declare(strict_types=1);
-
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
@@ -21,8 +20,7 @@ if (! function_exists('actingAs')) {
 
 if (! function_exists('livewire')) {
     /**
-     * @param array<string, mixed> $params
-     *
+     * @param  array<string, mixed>  $params
      * @return Testable<Component>
      */
     function livewire(string $component, array $params = []): Testable

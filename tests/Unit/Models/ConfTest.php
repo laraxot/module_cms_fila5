@@ -1,18 +1,17 @@
 <?php
 
 declare(strict_types=1);
-
 use Modules\Cms\Models\Conf;
 use PHPUnit\Framework\Assert;
 
 test('Conf model can be instantiated', function () {
-    $conf = new Conf();
+    $conf = new Conf;
 
     Assert::assertInstanceOf(Conf::class, $conf);
 });
 
 test('Conf model has expected fillable fields', function () {
-    $conf = new Conf();
+    $conf = new Conf;
 
     $fillable = $conf->getFillable();
 
@@ -22,7 +21,7 @@ test('Conf model has expected fillable fields', function () {
 });
 
 test('Conf model has name as route key', function () {
-    $conf = new Conf();
+    $conf = new Conf;
 
     Assert::assertSame('name', $conf->getRouteKeyName());
 });
