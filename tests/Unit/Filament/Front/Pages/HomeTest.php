@@ -57,7 +57,6 @@ test('Home page has getViewData method', function (): void {
 test('Home page has initView method', function (): void {
     Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
->>>>>>> laraxot/dev
 
 // Rimosso `test('Home page has url method')`: la closure era vuota e il metodo non
 // esiste. `Home` estende `XotBasePage` -> `Filament\Pages\Page`, che espone `getUrl()`
