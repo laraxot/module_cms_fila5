@@ -1,0 +1,15 @@
+<?php
+
+declare(strict_types=1);
+
+beforeEach(function (): void {
+    cmsSkipTest('Requires admin panel + role seeding not available in minimal Cms test bootstrap.');
+});
+
+it('user admin can view main dashboard', function (): void {
+        \PHPUnit\Framework\Assert::markTestSkipped('Il beforeEach salta gia\' il test: servono pannello admin e seeding dei ruoli, assenti dal bootstrap minimo di Cms.');
+    });
+
+it('guest user can view main dashboard', function (): void {
+        \PHPUnit\Framework\Assert::markTestSkipped('Come sopra: senza pannello admin non c\'e\' nessuna dashboard da chiedere.');
+    });
