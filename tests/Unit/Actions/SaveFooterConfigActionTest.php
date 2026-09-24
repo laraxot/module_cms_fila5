@@ -6,7 +6,6 @@ use Modules\Cms\Actions\SaveFooterConfigAction;
 use Modules\Cms\Datas\FooterData;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('SaveFooterConfigAction can be executed', function () {
     $action = new SaveFooterConfigAction();
 
