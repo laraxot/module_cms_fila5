@@ -36,7 +36,6 @@ test('Home page has items property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-<<<<<<< HEAD
 test('Home page has mount method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
@@ -45,18 +44,6 @@ test('Home page has getViewData method', function () {
 
 test('Home page has initView method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-test('Home page has mount method', function (): void {
-    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-});
-
-test('Home page has getViewData method', function (): void {
-    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-});
-
-test('Home page has initView method', function (): void {
-    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-});
 
 // Rimosso `test('Home page has url method')`: la closure era vuota e il metodo non
 // esiste. `Home` estende `XotBasePage` -> `Filament\Pages\Page`, che espone `getUrl()`

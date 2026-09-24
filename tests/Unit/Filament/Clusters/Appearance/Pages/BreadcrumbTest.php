@@ -28,7 +28,6 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
-<<<<<<< HEAD
 test('Breadcrumb page has mount method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
@@ -37,15 +36,3 @@ test('Breadcrumb page has schema method', function () {
 
 test('Breadcrumb page has updateData method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-test('Breadcrumb page has mount method', function (): void {
-    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-});
-
-test('Breadcrumb page has schema method', function (): void {
-    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-});
-
-test('Breadcrumb page has updateData method', function (): void {
-    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-});
