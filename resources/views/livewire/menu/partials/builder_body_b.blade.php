@@ -1,8 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
 @php
 // Cms Blade view — see Modules/Cms/docs/wiki.
 @endphp

@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 test('reset password link screen can be rendered', function (): void {
     cmsSkipTest('Route /it/auth/password/reset not available in this install.');
 });
