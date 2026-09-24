@@ -34,24 +34,24 @@ test('Headernav page has headernavData property', function () {
 });
 
 test('Headernav page has mount method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Headernav page has schema method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Headernav page has updateData method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Headernav page has fillForms method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Headernav page has getUpdateFormActions method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
