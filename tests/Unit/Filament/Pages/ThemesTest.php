@@ -18,8 +18,18 @@ test('Themes page has themes property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
+<<<<<<< HEAD
 test('Themes page has changePubTheme method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Themes page has getViewData method', function () {
 })->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+test('Themes page has changePubTheme method', function (): void {
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
+
+test('Themes page has getViewData method', function (): void {
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
+>>>>>>> laraxot/dev
