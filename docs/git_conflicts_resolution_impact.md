@@ -65,11 +65,7 @@ Il modulo Cms è stato coinvolto indirettamente nella risoluzione di conflitti G
 ```php
 // SEMPRE verificare dipendenze
 use Modules\Geo\Models\Address;
-<<<<<<< .merge_file_WarR5J
-use Modules\User\Models\User;
-=======
 use Modules\Xot\Contracts\UserContract;
->>>>>>> .merge_file_sxBJYD
 
 // SEMPRE usare tipizzazione rigorosa
 declare(strict_types=1);
