@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/caption.php
 // Cms txt.fields.caption — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Didascalia',
-  'placeholder' => 'Didascalia per immagine o video',
-  'helper_text' => 'Testo descrittivo mostrato sotto contenuti multimediali',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Didascalia',
+    'placeholder' => 'Didascalia per immagine o video',
+    'helper_text' => 'Testo descrittivo mostrato sotto contenuti multimediali',
+    'tooltip' => '',
+    'description' => '',
+];

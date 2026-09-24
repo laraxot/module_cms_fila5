@@ -6,12 +6,11 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/en/section_navigation.php
-return array (
-  'navigation' => 
-  array (
-    'label' => 'Sections',
-    'group' => 'Content Management',
-    'icon' => 'heroicon-o-rectangle-stack',
-    'sort' => '85',
-  ),
-);
+return [
+    'navigation' => [
+        'label' => 'Sections',
+        'group' => 'Content Management',
+        'icon' => 'heroicon-o-rectangle-stack',
+        'sort' => '85',
+    ],
+];

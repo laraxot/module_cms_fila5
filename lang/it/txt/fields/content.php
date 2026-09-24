@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/content.php
 // Cms txt.fields.content — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Contenuto',
-  'placeholder' => 'Scrivi il contenuto principale qui...',
-  'helper_text' => 'Contenuto principale dell\'articolo o pagina',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Contenuto',
+    'placeholder' => 'Scrivi il contenuto principale qui...',
+    'helper_text' => 'Contenuto principale dell\'articolo o pagina',
+    'tooltip' => '',
+    'description' => '',
+];

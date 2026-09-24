@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/social_links.php
 // Cms section.fields.social_links — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'social_links',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'social_links',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

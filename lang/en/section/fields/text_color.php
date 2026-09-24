@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/text_color.php
 // Cms section.fields.text_color — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Text Color',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Text Color',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

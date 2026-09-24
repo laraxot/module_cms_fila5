@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/url.php
 // Cms txt.fields.url — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'URL',
-  'placeholder' => 'https://esempio.com',
-  'help' => 'Inserisci un URL valido (inizia con http:// o https://)',
-  'helper_text' => 'Indirizzo web completo di destinazione',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'URL',
+    'placeholder' => 'https://esempio.com',
+    'help' => 'Inserisci un URL valido (inizia con http:// o https://)',
+    'helper_text' => 'Indirizzo web completo di destinazione',
+    'tooltip' => '',
+    'description' => '',
+];

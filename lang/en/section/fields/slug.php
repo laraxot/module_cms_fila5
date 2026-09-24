@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/section/fields/slug.php
 // Cms section.fields.slug — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Slug',
-  'placeholder' => 'Inserisci lo slug della sezione',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Slug',
+    'placeholder' => 'Inserisci lo slug della sezione',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

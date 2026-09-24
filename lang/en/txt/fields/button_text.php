@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/button_text.php
 // Cms txt.fields.button_text — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Testo del pulsante',
-  'placeholder' => 'Scopri di più',
-  'help' => 'Testo visualizzato sul pulsante',
-  'helper_text' => 'Testo che apparirà sul pulsante',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo del pulsante',
+    'placeholder' => 'Scopri di più',
+    'help' => 'Testo visualizzato sul pulsante',
+    'helper_text' => 'Testo che apparirà sul pulsante',
+    'tooltip' => '',
+    'description' => '',
+];

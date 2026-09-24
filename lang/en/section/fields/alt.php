@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/alt.php
 // Cms section.fields.alt — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Alt text',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Alt text',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

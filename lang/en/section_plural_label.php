@@ -6,6 +6,6 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/en/section_plural_label.php
-return array (
-  'plural_label' => 'Missing Plural label',
-);
+return [
+    'plural_label' => 'Missing Plural label',
+];

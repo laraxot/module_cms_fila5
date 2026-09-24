@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/email.php
 // Cms txt.fields.email — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Email',
-  'placeholder' => 'esempio@dominio.com',
-  'help' => 'Indirizzo email valido',
-  'helper_text' => 'Indirizzo email principale per contatti',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Email',
+    'placeholder' => 'esempio@dominio.com',
+    'help' => 'Indirizzo email valido',
+    'helper_text' => 'Indirizzo email principale per contatti',
+    'tooltip' => '',
+    'description' => '',
+];

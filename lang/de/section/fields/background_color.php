@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/background_color.php
 // Cms section.fields.background_color — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Colore Sfondo',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore Sfondo',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

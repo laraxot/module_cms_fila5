@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/footer_blocks.php
 // Cms txt.fields.footer_blocks — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Blocchi Footer',
-  'placeholder' => 'Contenuti del piè di pagina',
-  'helper_text' => 'Elementi da includere nel footer del sito',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Blocchi Footer',
+    'placeholder' => 'Contenuti del piè di pagina',
+    'helper_text' => 'Elementi da includere nel footer del sito',
+    'tooltip' => '',
+    'description' => '',
+];

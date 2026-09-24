@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/text.php
 // Cms txt.fields.text — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Testo',
-  'placeholder' => 'Inserisci il testo',
-  'helper_text' => 'Contenuto testuale semplice senza formattazione',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Testo',
+    'placeholder' => 'Inserisci il testo',
+    'helper_text' => 'Contenuto testuale semplice senza formattazione',
+    'tooltip' => '',
+    'description' => '',
+];

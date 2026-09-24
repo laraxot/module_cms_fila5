@@ -6,13 +6,12 @@ declare(strict_types=1);
 // claude-audit static: split from txt.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/en/txt_navigation.php
-return array (
-  'navigation' => 
-  array (
-    'label' => 'Missing Navigation Label',
-    'plural_label' => 'Missing Navigation Plural Label',
-    'group' => 'Missing Group',
-    'icon' => 'heroicon-o-puzzle-piece',
-    'sort' => 100,
-  ),
-);
+return [
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+];

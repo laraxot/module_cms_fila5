@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/gallery.php
 // Cms txt.fields.gallery — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Galleria',
-  'placeholder' => 'Collezione di immagini',
-  'helper_text' => 'Galleria di immagini correlate',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Galleria',
+    'placeholder' => 'Collezione di immagini',
+    'helper_text' => 'Galleria di immagini correlate',
+    'tooltip' => '',
+    'description' => '',
+];

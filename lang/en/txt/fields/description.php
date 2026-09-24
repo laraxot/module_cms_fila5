@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/description.php
 // Cms txt.fields.description — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Descrizione',
-  'placeholder' => 'Inserisci una descrizione',
-  'help' => 'Testo descrittivo',
-  'helper_text' => 'Descrizione utilizzata per SEO e preview social',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Descrizione',
+    'placeholder' => 'Inserisci una descrizione',
+    'help' => 'Testo descrittivo',
+    'helper_text' => 'Descrizione utilizzata per SEO e preview social',
+    'tooltip' => '',
+    'description' => '',
+];

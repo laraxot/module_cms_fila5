@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/orientation.php
 // Cms section.fields.orientation — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'orientation',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'orientation',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

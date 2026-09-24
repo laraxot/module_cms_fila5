@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/copyright.php
 // Cms section.fields.copyright — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Copyright',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Copyright',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
