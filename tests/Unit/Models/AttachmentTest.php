@@ -1,18 +1,19 @@
 <?php
 
 declare(strict_types=1);
+
 use Modules\Cms\Models\Attachment;
 use PHPUnit\Framework\Assert;
 use Spatie\MediaLibrary\HasMedia;
 
 test('Attachment model can be instantiated', function () {
-    $attachment = new Attachment;
+    $attachment = new Attachment();
 
     Assert::assertInstanceOf(Attachment::class, $attachment);
 });
 
 test('Attachment model has expected fillable fields', function () {
-    $attachment = new Attachment;
+    $attachment = new Attachment();
 
     $fillable = $attachment->getFillable();
 
@@ -28,7 +29,7 @@ test('Attachment model has expected fillable fields', function () {
 });
 
 test('Attachment model has expected casts', function () {
-    $attachment = new Attachment;
+    $attachment = new Attachment();
 
     $casts = $attachment->getCasts();
 
@@ -38,7 +39,7 @@ test('Attachment model has expected casts', function () {
 });
 
 test('Attachment model implements HasMedia interface', function () {
-    $attachment = new Attachment;
+    $attachment = new Attachment();
 
     Assert::assertInstanceOf(HasMedia::class, $attachment);
 });

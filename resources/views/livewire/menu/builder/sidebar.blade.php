@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 ?>
 <div id="menu-settings-column" class="metabox-holder">
 
