@@ -15,9 +15,9 @@ test('DownloadAttachmentPlaceHolder extends XotBaseTextEntry', function () {
 });
 
 test('DownloadAttachmentPlaceHolder has setUp method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('DownloadAttachmentPlaceHolder has generateContent method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
