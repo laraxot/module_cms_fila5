@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Cms\Http\Middleware\SetFolioLocale;
 use PHPUnit\Framework\Assert;
+use Symfony\Component\HttpFoundation\Response;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('it uses user language with highest priority', function (): void {
     LaravelLocalization::shouldReceive('setLocale')->once()->with('fr');
 
@@ -16,7 +16,7 @@ test('it uses user language with highest priority', function (): void {
 
     $middleware = new SetFolioLocale();
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
-    Assert::assertInstanceOf(Symfony\Component\HttpFoundation\Response::class, $response);
+    Assert::assertInstanceOf(Response::class, $response);
 
     Assert::assertSame(200, $response->getStatusCode());
 
@@ -36,7 +36,7 @@ test('it uses first url segment when locale is supported', function (): void {
 
     $middleware = new SetFolioLocale();
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
-    Assert::assertInstanceOf(Symfony\Component\HttpFoundation\Response::class, $response);
+    Assert::assertInstanceOf(Response::class, $response);
 
     Assert::assertSame(200, $response->getStatusCode());
 
@@ -58,7 +58,7 @@ test('it falls back to default app locale when url segment is not supported', fu
 
     $middleware = new SetFolioLocale();
     $response = $middleware->handle($request, fn (Request $req) => response('ok'));
-    Assert::assertInstanceOf(Symfony\Component\HttpFoundation\Response::class, $response);
+    Assert::assertInstanceOf(Response::class, $response);
 
     Assert::assertSame(200, $response->getStatusCode());
 

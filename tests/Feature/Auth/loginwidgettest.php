@@ -1,6 +1,11 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< .merge_file_gXguLV
+use Modules\Cms\Tests\TestCase;
+
+uses(TestCase::class);
+=======
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
@@ -8,6 +13,7 @@ use Modules\Xot\Tests\TestCase;
 
 uses(TestCase::class);
 
+>>>>>>> .merge_file_AqUEZ7
 // LOGIN WIDGET TESTS - Filament Component
 // ✅ Test del WIDGET Filament, non della pagina
 // ✅ Focus su: rendering, form interaction, authentication logic
@@ -16,6 +22,14 @@ uses(TestCase::class);
 // WIDGET STRUCTURE TESTS
 
 test('widget can be rendered', function (): void {
+<<<<<<< .merge_file_gXguLV
+});
+
+test('widget has correct view', function (): void {
+});
+
+test('widget initializes correctly', function (): void {
+=======
     $this->assertTrue(true);
 });
 
@@ -25,27 +39,45 @@ test('widget has correct view', function (): void {
 
 test('widget initializes correctly', function (): void {
     $this->assertTrue(true);
+>>>>>>> .merge_file_AqUEZ7
 });
 
 // WIDGET DATA BINDING TESTS
 
 test('can set form data', function (): void {
+<<<<<<< .merge_file_gXguLV
+=======
     $this->assertTrue(true);
+>>>>>>> .merge_file_AqUEZ7
 });
 
 // WIDGET AUTHENTICATION LOGIC TESTS
 
 test('authenticates user with valid credentials', function (): void {
+<<<<<<< .merge_file_gXguLV
+});
+
+test('handles invalid credentials gracefully', function (): void {
+=======
     $this->assertTrue(true);
 });
 
 test('handles invalid credentials gracefully', function (): void {
     $this->assertTrue(true);
+>>>>>>> .merge_file_AqUEZ7
 });
 
 // WIDGET XOTDATA INTEGRATION TESTS
 
 test('authentication works regardless of user type', function (): void {
+<<<<<<< .merge_file_gXguLV
+});
+
+test('getUserClass returns valid class', function (): void {
+});
+
+test('createTestUser creates valid instances', function (): void {
+=======
     $this->assertTrue(true);
 });
 
@@ -55,4 +87,5 @@ test('getUserClass returns valid class', function (): void {
 
 test('createTestUser creates valid instances', function (): void {
     $this->assertTrue(true);
+>>>>>>> .merge_file_AqUEZ7
 });

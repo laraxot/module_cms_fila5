@@ -3,9 +3,8 @@
 declare(strict_types=1);
 
 // Cms translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
-// claude-audit static: split from txt.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/de/txt_plural_label.php
-return array (
-  'plural_label' => 'Missing Plural label',
-);
+return [
+    'plural_label' => 'Missing Plural label',
+];

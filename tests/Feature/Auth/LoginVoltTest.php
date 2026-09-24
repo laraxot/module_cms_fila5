@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-uses(Modules\Cms\Tests\TestCase::class);
-// Placeholder tests - full feature tests require Volt components
+// Placeholder — full feature tests require Volt components
 describe('Login Volt Component', function () {
     test('volt component tests require full setup', function () {
-        // Placeholder - actual tests require Volt auth.login component
-    });
+    })->todo('Serve il componente Volt auth.login registrato dal tema: senza, non c\'e\' niente da montare.');
 });

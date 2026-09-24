@@ -5,13 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Feature\Frontoffice\FolioRoutes;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-
-uses(TestCase::class);
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
 
 /**
  * @return list<string>

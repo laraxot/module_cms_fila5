@@ -2,12 +2,9 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
-
-uses(TestCase::class);
-
 describe('Register Page', function () {
     test('register page placeholder', function () {
-        // Placeholder - actual tests require theme components
-    });
+    })->todo('Requires public theme components');
+    test('register page placeholder #2', function () {
+    })->todo('Requires public theme components');
 });

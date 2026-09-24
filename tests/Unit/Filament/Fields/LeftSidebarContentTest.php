@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Modules\Cms\Filament\Fields\LeftSidebarContent;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('LeftSidebarContent creates builder with empty blocks', function () {
     $result = LeftSidebarContent::make('test_field', 'form');
 

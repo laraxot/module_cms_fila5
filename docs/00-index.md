@@ -1,3 +1,18 @@
+---
+title: "Cms — indice della documentazione"
+description: "Documentazione del modulo Cms: gestione contenuti e pagine."
+module: Cms
+tags: [cms, documentazione, modulo, laraxot]
+status: active
+repository: https://github.com/laraxot/module_cms_fila5
+related:
+  - ./00-index.md
+  - ./index.md
+  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
+issues: https://github.com/laraxot/module_cms_fila5/issues
+discussions: https://github.com/laraxot/module_cms_fila5/discussions
+---
+
 # Cms Module Documentation
 
 ## Overview

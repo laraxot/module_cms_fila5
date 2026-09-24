@@ -3,9 +3,10 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\PageContent;
+use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
+use Spatie\Translatable\HasTranslations;
 
-uses(Modules\Cms\Tests\TestCase::class);
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
         $model = new PageContent();
@@ -48,13 +49,13 @@ describe('PageContent Model', function (): void {
     test('page content model uses HasTranslations trait', function (): void {
         $model = new PageContent();
 
-        Assert::assertTrue(in_array(Spatie\Translatable\HasTranslations::class, class_uses_recursive($model)));
+        Assert::assertTrue(in_array(HasTranslations::class, class_uses_recursive($model)));
     });
 
     test('page content model uses SushiToJsons trait', function (): void {
         $model = new PageContent();
 
-        Assert::assertTrue(in_array(Modules\Tenant\Models\Traits\SushiToJsons::class, class_uses_recursive($model)));
+        Assert::assertTrue(in_array(SushiToJsons::class, class_uses_recursive($model)));
     });
 
     test('page content model has getRows method', function (): void {
@@ -62,5 +63,5 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has sluggable method', function (): void {
-    });
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
