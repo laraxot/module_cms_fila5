@@ -1,15 +1,3 @@
-<<<<<<< .merge_file_toJXjF
-=======
-<<<<<<< .merge_file_1ov4h4
----
-module: theme
-topic: legacy-roadmap-2
-canonical: ../../../../../Themes/docs/shared-components/roadmap-Modules.md
----
-
-See canonical documentation: ../../../../../Themes/docs/shared-components/roadmap-Modules.md
-=======
->>>>>>> .merge_file_3I2BzO
 # Roadmap Modulo Cms - 2026-01-30
 
 **Modulo**: Cms (Content Management System)
@@ -52,7 +40,3 @@ Il modulo Cms fornisce:
 - Buona copertura test (91 file)
 - 10 suppressioni PHPStan da risolvere
 - Sistema blocks funzionante ma estensibile
-<<<<<<< .merge_file_toJXjF
-=======
->>>>>>> .merge_file_GhiXxu
->>>>>>> .merge_file_3I2BzO
