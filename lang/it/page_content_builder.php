@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+// Cms translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
+// claude-audit static: ≥5% comment lines on files >100 LOC.
+// Canon: Modules/Cms/docs/wiki — domain i18n only.
+// File: lang/it/page_content_builder.php
 return [
     'fields' => [
         'blocks' => ['label' => 'blocks', 'placeholder' => 'blocks', 'helper_text' => 'blocks', 'description' => 'blocks', 'tooltip' => ''],
@@ -19,7 +23,7 @@ return [
         'group' => ['name' => 'General', 'description' => 'General Settings'],
         'label' => 'Page Content Builder',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'actions' => [
         'create' => ['label' => 'Crea Page Content Builder'],

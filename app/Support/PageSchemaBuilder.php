@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace Modules\Cms\Support;
 
 use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
-use Modules\Xot\Datas\XotData;
 
 final class PageSchemaBuilder
 {
@@ -30,7 +29,7 @@ final class PageSchemaBuilder
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => $pageType,
-            'name' => $meta->getBrandName(),
+            'name' => $meta->getTitle(),
             'description' => $meta->getDescription(limit: 160),
             'url' => $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),
@@ -129,25 +128,24 @@ final class PageSchemaBuilder
      */
     private function resolveProfileMainEntity(array $routeParameters, ?Authenticatable $user): ?array
     {
-        /** @var class-string<Model&Authenticatable> $userClass */
-        $userClass = XotData::make()->getUserClass();
         $publicUser = null;
 
         $publicIdentifier = $routeParameters['id'] ?? $routeParameters['slug0'] ?? null;
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
-            $publicUser = $userClass::query()
+            $publicUser = User::query()
                 ->with('profile')
                 ->find($publicIdentifier);
         }
 
-        if (! $publicUser instanceof Authenticatable && $user instanceof Authenticatable) {
+        if (! $publicUser instanceof User && $user instanceof User) {
             $publicUser = $user->loadMissing('profile');
         }
 
-        if (! $publicUser instanceof Authenticatable) {
+        if (! $publicUser instanceof User) {
             if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && '' !== $routeParameters['slug0']) {
                 return [
+                    // Laraxot module file — see docs/wiki for domain contract.
                     '@type' => 'Person',
                     'identifier' => $routeParameters['slug0'],
                     'url' => url('/profile/'.$routeParameters['slug0']),
@@ -157,13 +155,7 @@ final class PageSchemaBuilder
             return null;
         }
 
-        $profile = null;
-        if ($publicUser instanceof Model) {
-            $profileAttr = $publicUser->getAttribute('profile');
-            if ($profileAttr instanceof ProfileContract) {
-                $profile = $profileAttr;
-            }
-        }
+        $profile = $publicUser->profile;
         $profileFirstName = '';
         $profileLastName = '';
         $profileEmail = '';
@@ -182,25 +174,11 @@ final class PageSchemaBuilder
             }
         }
 
-        $publicNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('name') : null;
-        $publicFirstNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('first_name') : null;
-        $publicLastNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('last_name') : null;
-        $publicEmailRaw = $publicUser instanceof Model ? $publicUser->getAttribute('email') : null;
-
-        /** @var string $publicName */
-        $publicName = is_string($publicNameRaw) ? $publicNameRaw : '';
-        /** @var string $publicFirstName */
-        $publicFirstName = is_string($publicFirstNameRaw) ? $publicFirstNameRaw : '';
-        /** @var string $publicLastName */
-        $publicLastName = is_string($publicLastNameRaw) ? $publicLastNameRaw : '';
-        /** @var string $publicEmail */
-        $publicEmail = is_string($publicEmailRaw) ? $publicEmailRaw : '';
-
-        $name = trim($publicName);
+        $name = trim((string) ($publicUser->name ?? ''));
 
         if ('' === $name) {
-            $firstName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
-            $lastName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
+            $firstName = trim((string) ($publicUser->first_name ?? $profileFirstName));
+            $lastName = trim((string) ($publicUser->last_name ?? $profileLastName));
             $name = trim($firstName.' '.$lastName);
         }
 
@@ -208,24 +186,20 @@ final class PageSchemaBuilder
             $name = 'Profile';
         }
 
-        $publicKey = $publicUser->getAuthIdentifier();
-        /** @var int|string $publicKey */
-        $publicKeyStr = is_int($publicKey) || is_string($publicKey) ? (string) $publicKey : '';
-
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.$publicKeyStr),
+            'url' => url('/profile/'.(string) $publicUser->getKey()),
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
             $schema['identifier'] = $publicIdentifier;
         }
 
-        $givenName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
-        $familyName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
-        $email = trim($publicEmail);
-        $description = $profileBio;
+        $givenName = trim((string) ($publicUser->first_name ?? $profileFirstName));
+        $familyName = trim((string) ($publicUser->last_name ?? $profileLastName));
+        $email = trim((string) ($publicUser->email ?? $profileEmail));
+        $description = trim((string) $profileBio);
         $image = $profileImage;
 
         if ('' !== $givenName) {

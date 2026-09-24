@@ -24,13 +24,14 @@ describe('Menu Business Logic', function (): void {
     });
 
     test('menu has recursive relationships trait', function (): void {
-        $traits = class_uses(Menu::class);
-        Assert::assertNotEmpty($traits);
+        $traits = class_uses_recursive(Menu::class);
+
         Assert::assertContains(HasRecursiveRelationships::class, array_values($traits));
     });
 
     test('menu has sushi to json trait', function (): void {
         $traits = class_uses(Menu::class);
+
         Assert::assertArrayHasKey(SushiToJsons::class, $traits);
     });
 

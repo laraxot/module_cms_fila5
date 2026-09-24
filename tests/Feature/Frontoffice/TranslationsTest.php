@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
+
+uses(TestCase::class);
 
 /*
  * Test that translations work correctly for each locale.
