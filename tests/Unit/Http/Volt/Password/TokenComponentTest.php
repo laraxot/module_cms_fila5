@@ -8,13 +8,13 @@ use PHPUnit\Framework\Assert;
 
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
-        $component = new TokenComponent();
+        $component = new TokenComponent;
 
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
     test('token component has expected public properties', function (): void {
-        $component = new TokenComponent();
+        $component = new TokenComponent;
 
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('token'));
 
@@ -30,7 +30,7 @@ describe('Password TokenComponent', function (): void {
     });
 
     test('mount method sets token and email values', function (): void {
-        $component = new TokenComponent();
+        $component = new TokenComponent;
 
         $component->mount('abc-token');
 
@@ -40,9 +40,8 @@ describe('Password TokenComponent', function (): void {
     });
 
     test('token component has reset password method', function (): void {
-    })->todo('Add behavior assertion: method existence is statically decidable');
-    test('token component has reset password method #2', function (): void {
-    })->todo('Add behavior assertion: method existence is statically decidable');
+        Assert::assertTrue((new ReflectionClass(TokenComponent::class))->hasMethod('resetPassword'));
+    });
 
     test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new ReflectionClass(TokenComponent::class);

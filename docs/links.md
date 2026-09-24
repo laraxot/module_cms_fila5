@@ -49,14 +49,3 @@ https://laravel-bootstrap-components.com/themes/liara/features
 
 
 
-
-
-## Contenuto originale (txt)
-
----
-module: theme
-topic: links
-canonical: ../../../Themes/docs/shared-components/links-Modules.md
----
-
-See canonical documentation: ../../../Themes/docs/shared-components/links-Modules.md

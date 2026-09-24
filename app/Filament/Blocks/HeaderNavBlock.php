@@ -23,6 +23,7 @@ final class HeaderNavBlock extends XotBaseBlock
     /**
      * @return array<Component>
      */
+    #[\Override]
     public static function getBlockSchema(): array
     {
         return [

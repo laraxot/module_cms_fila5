@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Xot\Datas\XotData;
-use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertGuest;
-
-uses(TestCase::class);
 
 // NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
 // Use $this->$this->generateUniqueEmail(), $this->getUserClass(), $this->$this->createTestUser()
@@ -196,7 +193,7 @@ describe('Volt Component Security', function (): void {
         ]);
 
         // Multiple failed attempts
-        for ($i = 0; $i < 5; ++$i) {
+        for ($i = 0; $i < 5; $i++) {
             LivewireVolt::test('auth.login')
                 ->set('email', $email)
                 ->set('password', 'wrong_password')
