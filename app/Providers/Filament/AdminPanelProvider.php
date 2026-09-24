@@ -12,10 +12,7 @@ class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Cms';
 
-<<<<<<< HEAD
     #[\Override]
-=======
->>>>>>> laraxot/dev
     public function panel(Panel $panel): Panel
     {
         $panel->plugins([
