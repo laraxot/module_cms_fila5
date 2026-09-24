@@ -22,12 +22,4 @@ class ViewPageContent extends XotBaseViewRecord
             // 'locale-switcher' => LocaleSwitcher::make(), // Temporarily disabled until lara-zeus package is working
         ];
     }
-
-    /**
-     * @return array<string, \Filament\Schemas\Components\Component>
-     */
-    {
-        return [];
-    }
-
 }
