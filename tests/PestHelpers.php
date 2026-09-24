@@ -30,14 +30,9 @@ use function Safe\json_decode;
 if (! function_exists('cmsTest')) {
     function cmsTest(): TestCase
     {
-        if (null !== TestCase::$currentTest) {
-            return TestCase::$currentTest;
-        }
+        Assert::assertInstanceOf(TestCase::class, TestCase::$currentTest);
 
-        $test = test();
-        Assert::assertInstanceOf(TestCase::class, $test);
-
-        return $test;
+        return TestCase::$currentTest;
     }
 }
 
