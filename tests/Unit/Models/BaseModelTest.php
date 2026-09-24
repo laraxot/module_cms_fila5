@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\BaseModel;
 use PHPUnit\Framework\Assert;
 
+uses(Modules\Cms\Tests\TestCase::class);
 /**
  * @return BaseModel&Model
  */

@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Features\SupportTesting\Testable;
@@ -15,6 +14,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
+uses(TestCase::class);
 test('widget can be rendered', function (): void {
     $component = Livewire::test(LoginWidget::class);
     /* @var Testable<\Livewire\Component> $component */
@@ -105,7 +105,7 @@ test('getUserClass returns valid class', function (): void {
 
 test('createTestUser creates valid instances', function (): void {
     $user = TestCase::pestCreateTestUser();
-    /** @var class-string<Model&UserContract> $userClass */
+    /** @var class-string<Illuminate\Database\Eloquent\Model&UserContract> $userClass */
     $userClass = XotData::make()->getUserClass();
     $foundUser = $userClass::query()->where('email', $user->email)->first();
     Assert::assertInstanceOf(UserContract::class, $foundUser);

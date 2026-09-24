@@ -8,12 +8,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 use function Safe\preg_match;
 
-use Spatie\QueueableAction\QueueableAction;
-
 final class ResolveLocalizedBlockDataAction
 {
-    use QueueableAction;
-
     /**
      * @param array<string, mixed> $data
      *

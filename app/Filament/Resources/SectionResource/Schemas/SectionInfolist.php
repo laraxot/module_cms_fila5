@@ -13,7 +13,7 @@ class SectionInfolist extends XotBaseResourceInfolist
     /**
      * @return array<string, Component>
      */
-    public function getInfolistSchema(): array
+    public static function getInfolistSchema(): array
     {
         return [
             'name' => TextEntry::make('name'),

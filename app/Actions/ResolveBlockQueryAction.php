@@ -59,8 +59,7 @@ class ResolveBlockQueryAction
         $query->orderBy($orderBy, $direction);
 
         // Apply limit
-        $limitValue = data_get($queryConfig, 'limit', 10);
-        $limit = is_int($limitValue) ? $limitValue : 10;
+        $limit = (int) data_get($queryConfig, 'limit', 10);
         $query->limit($limit);
 
         /** @var Collection<int, Model> $results */

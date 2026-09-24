@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+uses(Modules\Cms\Tests\TestCase::class);
+
 test('reset password link screen can be rendered', function (): void {
     cmsSkipTest('Route /it/auth/password/reset not available in this install.');
 });

@@ -6,6 +6,8 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
+uses(Modules\Cms\Tests\TestCase::class);
+
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Homepage governance tests target predict JSON fixtures, not fixcity.');

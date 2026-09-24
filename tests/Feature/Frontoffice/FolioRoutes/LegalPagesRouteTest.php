@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
+
+uses(TestCase::class);
 it('renders the italian privacy page from cms json content', function (): void {
     $response = cmsGet('/it/privacy');
     $status = (int) $response->getStatusCode();
