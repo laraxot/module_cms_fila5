@@ -34,7 +34,7 @@ if (! function_exists('cmsTest')) {
             return TestCase::$currentTest;
         }
 
-        throw new \RuntimeException('cmsTest() richiede un test attivo (TestCase::$currentTest).');
+        throw new RuntimeException('cmsTest() richiede un test attivo (TestCase::$currentTest).');
     }
 }
 
