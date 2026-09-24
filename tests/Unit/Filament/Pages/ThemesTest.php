@@ -32,4 +32,3 @@ test('Themes page has changePubTheme method', function (): void {
 test('Themes page has getViewData method', function (): void {
     Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
->>>>>>> laraxot/dev

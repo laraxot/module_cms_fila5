@@ -66,7 +66,6 @@ test('Welcome page has getViewData method', function (): void {
 test('Welcome page has initView method', function (): void {
     Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
->>>>>>> laraxot/dev
 
 // Rimossi `test('Welcome page has url method')` e `test('... setModel method')`: le
 // closure erano vuote e nessuno dei due metodi esiste. `Welcome` dichiara solo `mount`,

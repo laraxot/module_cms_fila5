@@ -14,11 +14,6 @@ describe('VerifyComponent', function (): void {
     });
 
     test('verify component has resend method', function (): void {
-<<<<<<< HEAD
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    test('verify component has resend method #2', function (): void {
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
         Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     });
     test('verify component has resend method #2', function (): void {
