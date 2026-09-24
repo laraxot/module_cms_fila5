@@ -6,7 +6,6 @@ use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\TokenComponent;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
         $component = new TokenComponent();
@@ -41,7 +40,9 @@ describe('Password TokenComponent', function (): void {
     });
 
     test('token component has reset password method', function (): void {
-    });
+    })->todo('Add behavior assertion: method existence is statically decidable');
+    test('token component has reset password method #2', function (): void {
+    })->todo('Add behavior assertion: method existence is statically decidable');
 
     test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new ReflectionClass(TokenComponent::class);
