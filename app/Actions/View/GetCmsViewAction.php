@@ -21,9 +21,7 @@ class GetCmsViewAction
      *
      * @throws \Exception If the view does not exist
      *
-     * @return string The resolved and existing view name
-     * @return string The resolved and existing view name
-     * @return string The resolved and existing view name
+     * @return view-string The resolved and existing view name
      */
     public function execute(string $viewName): string
     {
@@ -33,8 +31,6 @@ class GetCmsViewAction
             throw new \Exception('View not found: '.$viewName);
         }
 
-        // The @return view-string PHPDoc on the method itself is the key
-        // to satisfying PHPStan's type analysis for view paths in this project.
         return $viewName;
     }
 }
