@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
 it('GET /it/auth/login is reachable', function (): void {
     $res = cmsGet('/it/auth/login');
     $status = (int) $res->getStatusCode();
@@ -13,5 +12,5 @@ it('GET /it/auth/login is reachable', function (): void {
         cmsSkipTest('Server error on /it/auth/login: '.$status);
     }
 
-    PHPUnit\Framework\Assert::assertLessThan(500, $status);
+    Assert::assertLessThan(500, $status);
 });

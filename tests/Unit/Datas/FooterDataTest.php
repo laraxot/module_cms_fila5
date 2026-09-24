@@ -7,7 +7,6 @@ use Modules\Cms\Datas\FooterData;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('FooterData can be instantiated', function (): void {
     $footerData = new FooterData();
 
