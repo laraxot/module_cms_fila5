@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/size.php
 // Cms txt.fields.size — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Dimensione',
-  'placeholder' => 'Piccolo, Medio, Grande',
-  'helper_text' => 'Dimensione relativa dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Dimensione',
+    'placeholder' => 'Piccolo, Medio, Grande',
+    'helper_text' => 'Dimensione relativa dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];

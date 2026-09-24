@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/logo.php
 // Cms txt.fields.logo — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Logo',
-  'placeholder' => 'Carica logo aziendale',
-  'helper_text' => 'Logo rappresentativo dell\'azienda o brand',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Logo',
+    'placeholder' => 'Carica logo aziendale',
+    'helper_text' => 'Logo rappresentativo dell\'azienda o brand',
+    'tooltip' => '',
+    'description' => '',
+];

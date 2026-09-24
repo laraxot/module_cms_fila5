@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/placeholder.php
 // Cms txt.fields.placeholder — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Placeholder',
-  'placeholder' => 'Testo segnaposto per campi input',
-  'helper_text' => 'Testo mostrato nei campi vuoti come suggerimento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Placeholder',
+    'placeholder' => 'Testo segnaposto per campi input',
+    'helper_text' => 'Testo mostrato nei campi vuoti come suggerimento',
+    'tooltip' => '',
+    'description' => '',
+];

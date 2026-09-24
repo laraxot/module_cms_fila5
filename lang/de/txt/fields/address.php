@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/address.php
 // Cms txt.fields.address — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Indirizzo',
-  'placeholder' => 'Via Roma 1, 00100 Roma RM',
-  'help' => 'Indirizzo completo',
-  'helper_text' => 'Indirizzo fisico completo dell\'azienda',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Indirizzo',
+    'placeholder' => 'Via Roma 1, 00100 Roma RM',
+    'help' => 'Indirizzo completo',
+    'helper_text' => 'Indirizzo fisico completo dell\'azienda',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/style.php
 // Cms section.fields.style — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Style',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Style',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

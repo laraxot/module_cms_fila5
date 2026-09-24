@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/icon.php
 // Cms section.fields.icon — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Icona',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Icona',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/email.php
 // Cms section.fields.email — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Email',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Email',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

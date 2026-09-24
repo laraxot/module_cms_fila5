@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/text_color.php
 // Cms txt.fields.text_color — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Colore Testo',
-  'placeholder' => '#000000, nero, inherit',
-  'helper_text' => 'Colore del testo dell\'elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Colore Testo',
+    'placeholder' => '#000000, nero, inherit',
+    'helper_text' => 'Colore del testo dell\'elemento',
+    'tooltip' => '',
+    'description' => '',
+];

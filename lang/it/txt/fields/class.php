@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/class.php
 // Cms txt.fields.class — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Classe CSS',
-  'placeholder' => 'custom-class another-class',
-  'helper_text' => 'Classi CSS personalizzate per styling avanzato',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Classe CSS',
+    'placeholder' => 'custom-class another-class',
+    'helper_text' => 'Classi CSS personalizzate per styling avanzato',
+    'tooltip' => '',
+    'description' => '',
+];

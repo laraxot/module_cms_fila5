@@ -6,7 +6,7 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability.
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/model.php
-return array (
-  'label' => 'Sezione',
-  'plural' => 'Sezioni',
-);
+return [
+    'label' => 'Sezione',
+    'plural' => 'Sezioni',
+];

@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/placeholder.php
 // Cms section.fields.placeholder — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'placeholder',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'placeholder',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
