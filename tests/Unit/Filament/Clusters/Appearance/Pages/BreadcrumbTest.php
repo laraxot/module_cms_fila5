@@ -49,4 +49,3 @@ test('Breadcrumb page has schema method', function (): void {
 test('Breadcrumb page has updateData method', function (): void {
     Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
->>>>>>> laraxot/dev
