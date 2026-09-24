@@ -6,11 +6,11 @@ use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use PHPUnit\Framework\Assert;
 
 test('PageSlugMiddleware can be instantiated', function () {
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
 
     Assert::assertInstanceOf(PageSlugMiddleware::class, $middleware);
 });
 
 test('PageSlugMiddleware handle method exists', function () {
-    $middleware = new PageSlugMiddleware();
+    $middleware = new PageSlugMiddleware;
 });

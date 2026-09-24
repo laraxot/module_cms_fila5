@@ -42,7 +42,7 @@ return [
         ],
         'label' => 'Cta',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'label' => 'Cta',
     'plural_label' => 'Cta (Plurale)',

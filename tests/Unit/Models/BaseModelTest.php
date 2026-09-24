@@ -11,7 +11,8 @@ use PHPUnit\Framework\Assert;
  */
 function createCmsBaseModelTestDouble(): BaseModel
 {
-    return new class extends BaseModel {
+    return new class extends BaseModel
+    {
         protected $table = 'test_cms_table';
     };
 }

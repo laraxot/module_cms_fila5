@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Facades\Blade;
 use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 
@@ -13,7 +14,7 @@ test('page component merges route context into block data', function (): void {
         ],
     ];
 
-    $html = view('cms::components.page', [
+    $html = Blade::render("@include('cms::components.page')", [
         'blocks' => [$block],
         'side' => 'content',
         'slug' => 'events.view',
@@ -23,7 +24,7 @@ test('page component merges route context into block data', function (): void {
             'slug1' => 'speaker-slug-456',
             'container1' => 'speakers',
         ],
-    ])->render();
+    ]);
 
     Assert::assertStringContainsString('slug0=event-slug-123', $html);
 
