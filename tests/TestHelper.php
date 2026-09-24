@@ -4,31 +4,32 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests;
 
+use Filament\Navigation\NavigationItem;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Support\Collection;
 use Modules\Cms\Models\Module;
-use Modules\User\Models\User as CmsUser;
+use Modules\User\Models\User;
 use Modules\Xot\Actions\Filament\GetModulesNavigationItems;
 
 abstract class TestHelper extends BaseTestCase
 {
-    public ?CmsUser $super_admin_user = null;
+    public ?User $super_admin_user = null;
 
-    public ?CmsUser $no_super_admin_user = null;
+    public ?User $no_super_admin_user = null;
 
-    public function getSuperAdminUser(): ?CmsUser
+    public function getSuperAdminUser(): ?User
     {
-        /** @var CmsUser|null $user */
-        $user = CmsUser::role('super-admin')->first();
+        /** @var User|null $user */
+        $user = User::role('super-admin')->first();
 
         return $user;
     }
 
-    public function getNoSuperAdminUser(): ?CmsUser
+    public function getNoSuperAdminUser(): ?User
     {
-        /** @var CmsUser|null $user */
-        $user = CmsUser::all()
-            ->first(fn (CmsUser $item): bool => ! $item->hasRole('super-admin'));
+        /** @var User|null $user */
+        $user = User::all()
+            ->first(fn (User $item): bool => ! $item->hasRole('super-admin'));
 
         return $user;
     }
@@ -50,19 +51,19 @@ abstract class TestHelper extends BaseTestCase
     public function getMainAdminNavigationUrlItems(): Collection
     {
         return collect(app(GetModulesNavigationItems::class)->execute())
-            ->map(fn (mixed $item): ?string => $item->getUrl());
+            ->map(fn (NavigationItem $item): ?string => $item->getUrl());
     }
 
     /**
      * @return Collection<int, string>
      */
-    public function getUserNavigationItemUrlRoles(CmsUser $user): Collection
+    public function getUserNavigationItemUrlRoles(User $user): Collection
     {
         /** @var Collection<int, string> $urls */
         $urls = $user
             ->getRoleNames()
             ->map(function (mixed $item): ?string {
-                if (! is_string($item) || 'super-admin' === $item) {
+                if (! is_string($item) || $item === 'super-admin') {
                     return null;
                 }
 

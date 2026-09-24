@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
 use Modules\Cms\Actions\BuildPageSchemaAction;
@@ -31,8 +30,6 @@ class Metatags extends Component
         }
         $path = request()->path();
 
-        $authUser = auth()->user();
-        $user = $authUser instanceof Authenticatable ? $authUser : null;
         $view_params = [
             'meta' => $metatag,
             'pageSchema' => app(BuildPageSchemaAction::class)->execute(
@@ -40,7 +37,7 @@ class Metatags extends Component
                 routeName: $routeName,
                 path: $path,
                 routeParameters: $routeParameters,
-                user: $user,
+                user: auth()->user(),
             ),
         ];
         if (! view()->exists($view)) {

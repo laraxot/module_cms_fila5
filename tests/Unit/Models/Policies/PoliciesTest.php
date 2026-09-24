@@ -8,19 +8,19 @@ use Modules\Cms\Models\Policies\SectionPolicy;
 use PHPUnit\Framework\Assert;
 
 test('PagePolicy can be instantiated', function () {
-    $policy = new PagePolicy();
+    $policy = new PagePolicy;
 
     Assert::assertInstanceOf(PagePolicy::class, $policy);
 });
 
 test('MenuPolicy can be instantiated', function () {
-    $policy = new MenuPolicy();
+    $policy = new MenuPolicy;
 
     Assert::assertInstanceOf(MenuPolicy::class, $policy);
 });
 
 test('SectionPolicy can be instantiated', function () {
-    $policy = new SectionPolicy();
+    $policy = new SectionPolicy;
 
     Assert::assertInstanceOf(SectionPolicy::class, $policy);
 });

@@ -18,41 +18,41 @@ test('CmsBasePolicy is an abstract class', function () {
 });
 
 test('PagePolicy can be instantiated', function () {
-    $policy = new PagePolicy();
+    $policy = new PagePolicy;
 
     Assert::assertInstanceOf(PagePolicy::class, $policy);
 });
 
 test('SectionPolicy can be instantiated', function () {
-    $policy = new SectionPolicy();
+    $policy = new SectionPolicy;
 
     Assert::assertInstanceOf(SectionPolicy::class, $policy);
 });
 
 test('PageContentPolicy can be instantiated', function () {
-    $policy = new PageContentPolicy();
+    $policy = new PageContentPolicy;
 
     Assert::assertInstanceOf(PageContentPolicy::class, $policy);
 });
 
 test('ConfPolicy can be instantiated', function () {
-    $policy = new ConfPolicy();
+    $policy = new ConfPolicy;
 
     Assert::assertInstanceOf(ConfPolicy::class, $policy);
 });
 
 test('MenuPolicy can be instantiated', function () {
-    $policy = new MenuPolicy();
+    $policy = new MenuPolicy;
 
     Assert::assertInstanceOf(MenuPolicy::class, $policy);
 });
 
 test('ModulePolicy can be instantiated', function () {
-    $policy = new ModulePolicy();
+    $policy = new ModulePolicy;
 
     Assert::assertInstanceOf(ModulePolicy::class, $policy);
 });
 
 test('PagePolicy has expected methods', function () {
-    $policy = new PagePolicy();
+    $policy = new PagePolicy;
 });

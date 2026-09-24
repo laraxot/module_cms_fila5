@@ -10,13 +10,13 @@ use PHPUnit\Framework\Assert;
 
 describe('Register Component', function (): void {
     test('register component extends volt component', function (): void {
-        $component = new RegisterComponent();
+        $component = new RegisterComponent;
 
         Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
     test('register component has expected public properties defaults', function (): void {
-        $component = new RegisterComponent();
+        $component = new RegisterComponent;
 
         Assert::assertTrue((new \ReflectionClass($component))->hasProperty('name'));
 
@@ -47,9 +47,7 @@ describe('Register Component', function (): void {
         $returnType = $method->getReturnType();
 
         Assert::assertNotNull($returnType);
-        // Il cast a stringa di `ReflectionType` e' deprecato: il ramo alternativo serviva
-        // solo ai tipi union/intersection, che qui non ci sono. Si asserisce il tipo.
-        Assert::assertInstanceOf(\ReflectionNamedType::class, $returnType);
-        Assert::assertSame('Illuminate\Http\RedirectResponse', $returnType->getName());
+        $typeName = $returnType instanceof \ReflectionNamedType ? $returnType->getName() : (string) $returnType;
+        Assert::assertSame('Illuminate\Http\RedirectResponse', $typeName);
     });
 });
