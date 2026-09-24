@@ -63,12 +63,10 @@ trait HasBlocks
             if (! is_array($block)) {
                 continue;
             }
-            $rawType = $block['type'] ?? 'unknown';
-            $type = is_string($rawType) ? $rawType : 'unknown';
+            $type = (string) ($block['type'] ?? 'unknown');
             /** @var array<string, mixed> $data */
             $data = (array) ($block['data'] ?? []);
-            $rawSlug = $block['slug'] ?? null;
-            $slug = is_string($rawSlug) ? $rawSlug : null;
+            $slug = isset($block['slug']) ? (string) $block['slug'] : null;
             $active = (bool) ($block['active'] ?? true);
 
             $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug, $active);

@@ -11,7 +11,7 @@ namespace Modules\Cms\Filament\Pages;
 use Filament\Notifications\Notification;
 use Illuminate\Support\Facades\File;
 use Modules\Cms\Datas\ThemeData;
-use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
+use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Filament\Pages\XotBasePage;
 
 use function Safe\json_decode;
@@ -29,7 +29,7 @@ class Themes extends XotBasePage
     {
         $data = [];
         $data['pub_theme'] = $name;
-        app(SaveTenantConfigAction::class)->execute('xra', $data);
+        TenantService::saveConfig('xra', $data);
         Notification::make()
             ->title('Saved successfully')
             ->success()

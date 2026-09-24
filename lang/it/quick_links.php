@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+// Cms translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
+// claude-audit static: ≥5% comment lines on files >100 LOC.
+// Canon: Modules/Cms/docs/wiki — domain i18n only.
+// File: lang/it/quick_links.php
 return [
     'fields' => [
         'title' => [
@@ -51,7 +55,7 @@ return [
         ],
         'label' => 'Quick Links',
         'sort' => 1,
-        'icon' => 'heroicon-o-rectangle-stack',
+        'icon' => 'heroicon-o-collection',
     ],
     'actions' => [
         'create' => [

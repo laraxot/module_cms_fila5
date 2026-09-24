@@ -5,16 +5,18 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Feature;
 
 use Illuminate\Support\Facades\File;
-use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Modules\Cms\Tests\TestCase;
+use Modules\Tenant\Services\TenantService;
 use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 /**
  * @return array<string, mixed>
  */
 function headerNavConfig(): array
 {
-    $path = app(GetTenantFilePathAction::class)->execute('database/content/sections/header.json');
+    $path = TenantService::filePath('database/content/sections/header.json');
     if (! file_exists($path)) {
         cmsSkipTest('header.json not found in this install: '.$path);
     }
@@ -53,7 +55,7 @@ function primaryNavItems(array $config): array
     }
 
     /** @var list<array<string, mixed>> $normalized */
-    $normalized = array_values(array_filter($items, static fn (mixed $item): bool => is_array($item)));
+    $normalized = array_values(array_filter($items, static fn ($item): bool => is_array($item)));
 
     return $normalized;
 }
@@ -129,6 +131,6 @@ describe('Header Nav Json', function (): void {
         /** @var array<string, mixed> $primaryNav */
         $topicsUrl = $primaryNav['topics_url'] ?? null;
         Assert::assertNotNull($topicsUrl);
-        Assert::assertStringContainsString('argomenti', SafeStringCastAction::cast($topicsUrl));
+        Assert::assertStringContainsString('argomenti', (string) $topicsUrl);
     });
 });

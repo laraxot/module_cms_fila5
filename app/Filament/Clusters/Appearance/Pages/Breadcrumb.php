@@ -11,8 +11,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Exceptions\Halt;
 use Illuminate\Support\Arr;
 use Modules\Cms\Filament\Clusters\Appearance;
-use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
-use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
+use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Webmozart\Assert\Assert;
 
@@ -70,7 +69,7 @@ class Breadcrumb extends XotBasePage
             $up = [
                 'breadcrumb' => $data,
             ];
-            app(SaveTenantConfigAction::class)->execute('appearance', $up);
+            TenantService::saveConfig('appearance', $up);
 
             Notification::make()
                 ->title(trans_string('Saved successfully'))
@@ -91,7 +90,7 @@ class Breadcrumb extends XotBasePage
      */
     protected function fillForms(): void
     {
-        $appearanceConfig = app(ResolveTenantConfigValueAction::class)->execute('appearance');
+        $appearanceConfig = TenantService::config('appearance');
         Assert::isArray($appearanceConfig);
 
         /** @var array<string, mixed> */
