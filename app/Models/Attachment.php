@@ -7,12 +7,13 @@ namespace Modules\Cms\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
-use Modules\Media\Models\Media;
+use Modules\Cms\Database\Factories\AttachmentFactory;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
  * ---.
@@ -28,29 +29,34 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @property string|null                  $created_by
  * @property string|null                  $updated_by
  * @property ProfileContract|null         $creator
- * @property array<int|string, mixed>     $translatable_columns_from
  * @property MediaCollection<int, Media>  $media
  * @property int|null                     $media_count
  * @property mixed                        $translations
  * @property ProfileContract|null         $updater
  *
- * @method static Builder<static>|Attachment                               newModelQuery()
- * @method static Builder<static>|Attachment                               newQuery()
- * @method static Builder<static>|Attachment                               query()
- * @method static Builder<static>|Attachment                               whereAttachment($value)
- * @method static Builder<static>|Attachment                               whereCreatedAt($value)
- * @method static Builder<static>|Attachment                               whereCreatedBy($value)
- * @method static Builder<static>|Attachment                               whereDescription($value)
- * @method static Builder<static>|Attachment                               whereDisk($value)
- * @method static Builder<static>|Attachment                               whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int|string, mixed> $locales, ?mixed $value, string $operand = '=')
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereLocale(string $column, string $locale)
- * @method static \Illuminate\Database\Eloquent\Builder<static>|Attachment whereLocales(string $column, array<int|string, mixed> $locales)
- * @method static Builder<static>|Attachment                               whereSlug($value)
- * @method static Builder<static>|Attachment                               whereTitle($value)
- * @method static Builder<static>|Attachment                               whereUpdatedAt($value)
- * @method static Builder<static>|Attachment                               whereUpdatedBy($value)
+ * @method static Builder<static>|Attachment newModelQuery()
+ * @method static Builder<static>|Attachment newQuery()
+ * @method static Builder<static>|Attachment query()
+ * @method static Builder<static>|Attachment whereAttachment($value)
+ * @method static Builder<static>|Attachment whereCreatedAt($value)
+ * @method static Builder<static>|Attachment whereCreatedBy($value)
+ * @method static Builder<static>|Attachment whereDescription($value)
+ * @method static Builder<static>|Attachment whereDisk($value)
+ * @method static Builder<static>|Attachment whereId($value)
+ * @method static Builder<static>|Attachment whereJsonContainsLocale(string $column, string $locale, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Attachment whereJsonContainsLocales(string $column, array<int, string> $locales, ?mixed $value, string $operand = '=')
+ * @method static Builder<static>|Attachment whereLocale(string $column, string $locale)
+ * @method static Builder<static>|Attachment whereLocales(string $column, array<int, string> $locales)
+ * @method static Builder<static>|Attachment whereSlug($value)
+ * @method static Builder<static>|Attachment whereTitle($value)
+ * @method static Builder<static>|Attachment whereUpdatedAt($value)
+ * @method static Builder<static>|Attachment whereUpdatedBy($value)
+ * @method static static|null                firstWhere(string $column, mixed $operator = null, mixed $value = null)
+ *
+ * @property ProfileContract|null $deleter
+ *
+ * @method static AttachmentFactory                factory($count = null, $state = [])
+ * @method        array<int, array<string, mixed>> getSushiRows()
  *
  * @mixin \Eloquent
  */
@@ -76,7 +82,7 @@ class Attachment extends BaseModelLang implements HasMedia
     ];
 
     /** @var array<string, string> */
-    protected array $schema = [
+    protected $schema = [
         'id' => 'integer',
         'title' => 'json',
         'description' => 'json',
@@ -190,6 +196,7 @@ class Attachment extends BaseModelLang implements HasMedia
      * The attributes that should be mutated to dates.
      *
      * @return array<string, string> */
+    #[\Override]
     protected function casts(): array
     {
         return [

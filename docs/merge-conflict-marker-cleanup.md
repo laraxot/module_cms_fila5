@@ -1,27 +1,25 @@
 # Merge Conflict Marker Cleanup
 
-## Perché
+> Updated: 2026-04-21
 
-I marker di merge committati nei `.php` rompono il bootstrap (ParseError) e
-mascherano il gate PHPStan. Nei `.md` avvelenano il second brain.
+## Current Rule
 
-## Sessione ROOT-17.14 (2026-08-25)
+Cms runtime files with conflict markers must be resolved before running broad quality gates because Filament discovery and model autoloading load them during `php artisan` bootstrap.
 
-Risolti ~300 file Cms (PHP + docs). Pattern tipici:
+## Decisions Applied
 
-- indentazione 3 vs 4 spazi (whitespace-only → PSR-12)
-- conflitti **annidati** (marker dentro un lato)
-- `$schema` duplicato dopo unwrap incompleto → tenuto `protected array $schema`
-
-Verifica: `php -l` su tutti i `.php` non-blade; `analyse Modules` a zero.
+- `Home.php`: kept the simple valid `initView()` flow and discarded placeholder fragments that contained invalid pseudo-code.
+- `PageContent.php` and `Attachment.php`: kept the `getSushiRows()` docblock method reference and removed only conflict markers.
+- `HasBlocks.php`: restored dynamic property access through `$this->{$field}` and kept the already constructed `BlockData` return path.
+- `Page.php`: removed docblock conflict markers while preserving method annotations.
 
 ## Verification
 
-```bash
-/bin/grep -rIln --exclude-dir=vendor '^<<<<<<< ' Modules/Cms
-find Modules/Cms -name '*.php' ! -name '*.blade.php' -print0 | xargs -0 -n1 php -l
-```
+Run targeted checks after touching Cms PHP files:
 
-Vedi anche: [no-conflict-markers-anywhere](../../../../docs/rules/no-conflict-markers-anywhere.md),
-story [ROOT-17.14](../../../../docs/stories/17-14-phpstan-modules-merge-markers-prerequisito.md).
+```bash
+php -l Modules/Cms/app/Filament/Front/Pages/Home.php
+php -l Modules/Cms/app/Models/PageContent.php
+php -l Modules/Cms/app/Models/Attachment.php
+```
 

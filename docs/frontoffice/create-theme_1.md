@@ -292,7 +292,7 @@ namespace Modules\User\Filament\Widgets\Auth;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget;
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User;
 
 class RegisterWidget extends Widget
 {

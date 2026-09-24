@@ -12,6 +12,7 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 class NavigationBlock extends XotBaseBlock
 {
+    #[\Override]
     public static function getBlockSchema(): array
     {
         return [
