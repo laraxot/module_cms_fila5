@@ -1,12 +1,14 @@
 <?php
 
 declare(strict_types=1);
+
 use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\Conf;
 use PHPUnit\Framework\Assert;
-use Sushi\Sushi;
 
 use function Safe\class_uses;
+
+use Sushi\Sushi;
 
 describe('Conf Business Logic', function (): void {
     test('conf extends eloquent model', function (): void {
@@ -22,7 +24,7 @@ describe('Conf Business Logic', function (): void {
     });
 
     test('conf has expected fillable fields', function (): void {
-        $conf = new Conf;
+        $conf = new Conf();
         $expectedFillable = [
             'id',
             'name',
@@ -32,13 +34,13 @@ describe('Conf Business Logic', function (): void {
     });
 
     test('conf uses name as route key', function (): void {
-        $conf = new Conf;
+        $conf = new Conf();
 
         Assert::assertSame('name', $conf->getRouteKeyName());
     });
 
     test('conf can get rows from tenant service', function (): void {
-        $conf = new Conf;
+        $conf = new Conf();
 
         Assert::assertNotEmpty($conf->getRows());
     });

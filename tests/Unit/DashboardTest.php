@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use PHPUnit\Framework\Assert;
 
 test('route home returns successful response with correct view', function (): void {

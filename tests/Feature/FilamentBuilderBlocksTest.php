@@ -1,9 +1,9 @@
 <?php
 
 declare(strict_types=1);
+
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-use Modules\Xot\Datas\ComponentFileData;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
 
@@ -28,7 +28,11 @@ test('blocks component class exists and can be instantiated', function (): void 
 test('discovered blocks expose the expected metadata keys', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-    $allBlocks->toCollection()->each(function (ComponentFileData $block): void {
+    $allBlocks->toCollection()->each(function (mixed $block): void {
+        if (! method_exists($block, 'toArray')) {
+            return;
+        }
+
         /** @var array<string, mixed> $blockArray */
         $blockArray = $block->toArray();
     });

@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Livewire\Features\SupportTesting\Testable;
 use Livewire\Livewire;
 use Modules\Cms\Tests\TestCase;

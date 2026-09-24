@@ -38,23 +38,23 @@ class ThemeComposer
     }
 
     /**
-     * @param  array<string, mixed>  $menu
+     * @param array<string, mixed> $menu
      */
     public function getMenuUrl(array $menu): string
     {
-        if ($menu === []) {
+        if ([] === $menu) {
             return '#';
         }
         $lang = app()->getLocale();
-        if ($menu['type'] === 'internal') {
+        if ('internal' === $menu['type']) {
             return route('page_slug.view', ['lang' => $lang, 'slug' => $menu['url']]);
         }
-        if ($menu['type'] === 'external') {
+        if ('external' === $menu['type']) {
             Assert::string($url = $menu['url'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
 
             return $url;
         }
-        if ($menu['type'] === 'route_name') {
+        if ('route_name' === $menu['type']) {
             Assert::string($url = $menu['url'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
 
             return route($url, ['lang' => $lang]);

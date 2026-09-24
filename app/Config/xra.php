@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Modules\User\Models\Profile;
 use Modules\User\Models\User;
 
