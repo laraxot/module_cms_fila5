@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Modules\Cms\Enums\AttachmentDiskEnum;
 use PHPUnit\Framework\Assert;
 
+uses(Modules\Cms\Tests\TestCase::class);
 test('AttachmentDiskEnum has all cases', function () {
     $cases = AttachmentDiskEnum::cases();
 

@@ -15,7 +15,7 @@ class SectionForm extends XotBaseResourceForm
     /**
      * @return array<int|string, SchemaComponent>
      */
-    public function getFormSchema(): array
+    public static function getFormSchema(): array
     {
         return [
             'info' => Section::make('info')->schema([

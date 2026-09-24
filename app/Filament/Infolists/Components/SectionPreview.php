@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Filament\Infolists\Components;
 
-use Modules\Xot\Filament\Infolists\Components\XotBaseEntry;
+use Filament\Infolists\Components\Entry;
 
-class SectionPreview extends XotBaseEntry
+class SectionPreview extends Entry
 {
     protected string $view = 'cms::filament.infolists.components.section-preview';
 

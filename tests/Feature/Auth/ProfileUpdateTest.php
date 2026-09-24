@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Str;
 
+uses(Modules\Cms\Tests\TestCase::class);
 function cmsProfileGenerateUniqueEmail(): string
 {
     return 'test+'.Str::uuid()->toString().'@example.com';

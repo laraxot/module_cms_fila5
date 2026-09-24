@@ -8,6 +8,8 @@ use Modules\Cms\Tests\TestCase;
 use Modules\User\Filament\Widgets\RegistrationWidget;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
+// Laraxot module file — see docs/wiki for domain contract.
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('patient/doctor registration types not configured in this install.');
@@ -15,19 +17,15 @@ beforeEach(function (): void {
 
 describe('Registration Widget', function (): void {
     test('patient widget renders correctly', function (): void {
-        /** @var view-string $view */
-        $view = 'pub_theme::filament.widgets.registration';
         Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
             ->assertStatus(200)
-            ->assertViewIs($view);
+            ->assertViewIs('pub_theme::filament.widgets.registration');
     });
 
     test('doctor widget renders correctly', function (): void {
-        /** @var view-string $view */
-        $view = 'pub_theme::filament.widgets.registration';
         Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
             ->assertStatus(200)
-            ->assertViewIs($view);
+            ->assertViewIs('pub_theme::filament.widgets.registration');
     });
 
     test('widget without type throws exception', function (): void {

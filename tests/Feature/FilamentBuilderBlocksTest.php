@@ -7,6 +7,7 @@ use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\DataCollection;
 
+uses(Modules\Cms\Tests\TestCase::class);
 test('blocks discovery returns a data collection', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 
@@ -28,7 +29,7 @@ test('blocks component class exists and can be instantiated', function (): void 
 test('discovered blocks expose the expected metadata keys', function (): void {
     $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-    $allBlocks->toCollection()->each(function (mixed $block): void {
+    $allBlocks->each(function (mixed $block): void {
         if (! method_exists($block, 'toArray')) {
             return;
         }

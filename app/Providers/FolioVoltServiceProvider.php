@@ -14,7 +14,7 @@ use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes;
 use Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect;
 use Modules\Cms\Http\Middleware\SetFolioLocale;
-use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
+use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
 
@@ -36,24 +36,6 @@ class FolioVoltServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Folio registra una rotta catch-all marcata `fallback`. Laravel, fra piu'
-        // fallback, sceglie la PRIMA registrata. Filament marca come fallback la
-        // home di un pannello con multi-tenancy (`/{panelPath}/{tenant}`, vedi
-        // Filament\Pages\Concerns\HasRoutes): se Folio si registra prima, la home
-        // di ogni pannello multi-tenant risponde 404 perche' la catch-all di Folio
-        // la precede. Rimandando la registrazione a container gia' avviato, la
-        // fallback di Folio finisce in coda e resta l'ultima risorsa, che e' il
-        // suo ruolo.
-        $this->app->booted(function (): void {
-            $this->registerFolioPaths();
-        });
-    }
-
-    /**
-     * Registra i path Folio del tema e dei moduli, e monta i componenti Volt.
-     */
-    protected function registerFolioPaths(): void
-    {
         /*
          * Folio::path(resource_path('views/pages'))->middleware([
          * '*' => [
@@ -61,35 +43,7 @@ class FolioVoltServiceProvider extends ServiceProvider
          * ],
          * ]);
          */
-        // Gestione sicura della configurazione middleware per evitare errori durante bootstrap
-        $base_middleware = [];
-        try {
-            // Verifica se siamo in ambiente console e se il problema "env" è presente
-            // In questo caso, usa array vuoto per permettere al server di partire
-            if (app()->runningInConsole() && ! app()->environment('testing')) {
-                // Durante il bootstrap dei comandi artisan, potrebbe esserci un problema
-                // con la risoluzione di "env" come classe. Usiamo array vuoto come fallback.
-                $base_middleware = [];
-            } else {
-                $middleware = app(ResolveTenantConfigValueAction::class)->execute('middleware');
-                if (is_array($middleware)) {
-                    $base_middleware = Arr::get($middleware, 'base', []);
-                    if (! is_array($base_middleware)) {
-                        $base_middleware = [];
-                    }
-                }
-            }
-
-            // Assicuriamoci che 'web' sia presente se non siamo in console (o siamo in testing)
-            if (! \in_array('web', $base_middleware, true)) {
-                array_unshift($base_middleware, 'web');
-            }
-        } catch (\Exception $e) {
-            // Se c'è un errore nel caricamento della configurazione middleware, usa array vuoto
-            // Questo evita errori durante il bootstrap quando la configurazione non è disponibile
-            $base_middleware = [];
-        }
-
+        $base_middleware = $this->resolveBaseMiddleware();
         $base_middleware[] = LaravelLocalizationRoutes::class;
         $base_middleware[] = LocaleSessionRedirect::class;
         $base_middleware[] = LaravelLocalizationRedirectFilter::class;
@@ -167,6 +121,42 @@ class FolioVoltServiceProvider extends ServiceProvider
 
         if (! empty($paths)) {
             Volt::mount($paths);
+        }
+    }
+
+    /**
+     * @return list<class-string|string>
+     */
+    private function resolveBaseMiddleware(): array
+    {
+        try {
+            if (app()->runningInConsole() && ! app()->environment('testing')) {
+                return ['web'];
+            }
+
+            $middleware = TenantService::config('middleware');
+            if (! is_array($middleware)) {
+                return ['web'];
+            }
+
+            $base = Arr::get($middleware, 'base', []);
+            if (! is_array($base)) {
+                return ['web'];
+            }
+
+            if (! \in_array('web', $base, true)) {
+                array_unshift($base, 'web');
+            }
+
+            /** @var list<class-string|string> $typedBase */
+            $typedBase = array_values(array_filter(
+                $base,
+                static fn (mixed $middleware): bool => is_string($middleware),
+            ));
+
+            return $typedBase;
+        } catch (\Exception) {
+            return ['web'];
         }
     }
 }
