@@ -14,7 +14,7 @@ class AttachmentInfolist extends XotBaseResourceInfolist
     /**
      * @return array<int|string, Component|Htmlable|string>
      */
-    public function getInfolistSchema(): array
+    public static function getInfolistSchema(): array
     {
         return [
             'title' => TextEntry::make('title'),

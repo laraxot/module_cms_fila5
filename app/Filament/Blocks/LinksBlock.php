@@ -10,6 +10,7 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 final class LinksBlock extends XotBaseBlock
 {
+    #[\Override]
     public static function getBlockSchema(): array
     {
         return [
@@ -27,6 +28,6 @@ final class LinksBlock extends XotBaseBlock
 
     public static function getBlockLabel(): string
     {
-        return \trans_string('cms::filament.blocks.footer.links.label') ?: 'Footer Links Block';
+        return \trans_string('cms::filament.blocks.footer.links.label');
     }
 }

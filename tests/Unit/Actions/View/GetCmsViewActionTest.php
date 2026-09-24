@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\View;
 use Modules\Cms\Actions\View\GetCmsViewAction;
 use PHPUnit\Framework\Assert;
 
+uses(Modules\Cms\Tests\TestCase::class);
 test('GetCmsViewAction can be instantiated', function () {
     $action = new GetCmsViewAction();
 

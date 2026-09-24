@@ -3,10 +3,13 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Artisan;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\preg_match;
 use function Safe\preg_split;
+
+uses(TestCase::class);
 
 /** @return string[] */
 function getFolioPaths(): array
