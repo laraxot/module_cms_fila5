@@ -22,18 +22,21 @@ class ThemeMetadataData extends Data
             'sm' => '640px',
             'md' => '768px',
             'lg' => '1024px',
-        ]
-    ) {}
+        ],
+    ) {
+    }
 
     /**
      * Retrieves the spacing unit for a given scale key.
-     * @throws \InvalidArgumentException if the key does not exist.
+     *
+     * @throws \InvalidArgumentException if the key does not exist
      */
     public function getSpacing(string $key): string
     {
-        if (!isset($this->spacingUnits[$key])) {
+        if (! isset($this->spacingUnits[$key])) {
             throw new \InvalidArgumentException("Invalid spacing unit key: {$key}");
         }
+
         return $this->spacingUnits[$key];
     }
 }

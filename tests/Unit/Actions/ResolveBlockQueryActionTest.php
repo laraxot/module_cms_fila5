@@ -6,7 +6,6 @@ use Modules\Cms\Actions\ResolveBlockQueryAction;
 use Modules\Cms\Models\Page;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('ResolveBlockQueryAction can be instantiated', function () {
     $action = new ResolveBlockQueryAction();
 
