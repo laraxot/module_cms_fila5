@@ -40,9 +40,11 @@ describe('Password TokenComponent', function (): void {
     });
 
     test('token component has reset password method', function (): void {
-    })->todo('Add behavior assertion: method existence is statically decidable');
+        \PHPUnit\Framework\Assert::markTestSkipped('Add behavior assertion: method existence is statically decidable');
+    });
     test('token component has reset password method #2', function (): void {
-    })->todo('Add behavior assertion: method existence is statically decidable');
+        \PHPUnit\Framework\Assert::markTestSkipped('Add behavior assertion: method existence is statically decidable');
+    });
 
     test('reset password method returns redirector or redirect response', function (): void {
         $reflection = new ReflectionClass(TokenComponent::class);
