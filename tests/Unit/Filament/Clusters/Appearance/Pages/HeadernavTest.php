@@ -68,7 +68,6 @@ test('Headernav page has fillForms method', function (): void {
 test('Headernav page has getUpdateFormActions method', function (): void {
     Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
->>>>>>> laraxot/dev
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
