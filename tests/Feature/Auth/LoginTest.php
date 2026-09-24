@@ -1,11 +1,12 @@
 <?php
 
 declare(strict_types=1);
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
-use Modules\User\Models\BaseUser;
+use Modules\User\Models\User;
 
 it('renders the login page', function (): void {
     $locale = app()->getLocale();
@@ -121,7 +122,7 @@ it('rate limits login attempts', function (): void {
         'password' => Hash::make('password123'),
     ]);
 
-    for ($i = 0; $i < 5; $i++) {
+    for ($i = 0; $i < 5; ++$i) {
         LivewireVolt::test('auth.login #4')
             ->set('email', $email)
             ->set('password', 'wrong_password')
@@ -158,6 +159,6 @@ it('allows any user type to login via frontend', function (): void {
 
     $authenticatedUser = Auth::user();
     expect($authenticatedUser)->not->toBeNull();
-    assert($authenticatedUser instanceof BaseUser);
+    assert($authenticatedUser instanceof User);
     expect($authenticatedUser->email)->toBe($email);
 });

@@ -6,7 +6,7 @@ namespace Modules\Cms\Http\Volt;
 
 use Illuminate\Auth\Events\Verified;
 use Livewire\Volt\Component;
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User;
 use Webmozart\Assert\Assert;
 
 /**
@@ -19,7 +19,7 @@ class VerifyComponent extends Component
     public function resend(): void
     {
         $user = auth()->guard('web')->user();
-        Assert::isInstanceOf($user, UserContract::class);
+        Assert::isInstanceOf($user, User::class);
 
         if ($user->hasVerifiedEmail()) {
             redirect('/');

@@ -11,17 +11,17 @@ use PHPUnit\Framework\Assert;
 
 describe('Page', function (): void {
     test('page model can be instantiated', function (): void {
-        $page = new Page;
+        $page = new Page();
         Assert::assertInstanceOf(Page::class, $page);
     });
 
     test('page extends base model lang', function (): void {
-        $page = new Page;
+        $page = new Page();
         Assert::assertInstanceOf(BaseModelLang::class, $page);
     });
 
     test('page has expected fillable fields', function (): void {
-        $page = new Page;
+        $page = new Page();
         $fillable = $page->getFillable();
 
         Assert::assertContains('title', $fillable);
@@ -35,7 +35,7 @@ describe('Page', function (): void {
     });
 
     test('page has expected casts', function (): void {
-        $page = new Page;
+        $page = new Page();
         /** @var array<string, mixed> $casts */
         $casts = $page->getCasts();
         Assert::assertArrayHasKey('created_at', $casts);
@@ -52,7 +52,7 @@ describe('Page', function (): void {
     });
 
     test('page has translatable fields configured', function (): void {
-        $page = new Page;
+        $page = new Page();
 
         Assert::assertContains('title', $page->translatable);
 
@@ -64,20 +64,20 @@ describe('Page', function (): void {
     });
 
     test('page has sushi to jsons trait', function (): void {
-        $page = new Page;
+        $page = new Page();
         $traits = class_uses_recursive($page);
 
         Assert::assertContains(SushiToJsons::class, array_values($traits));
     });
 
     test('page has get rows method for sushi functionality', function (): void {
-        $page = new Page;
+        $page = new Page();
 
         Assert::assertNotEmpty($page->getRows());
     });
 
     test('page has schema definition', function (): void {
-        $page = new Page;
+        $page = new Page();
 
         $reflection = new \ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');
@@ -99,14 +99,14 @@ describe('Page', function (): void {
     });
 
     test('page casts content blocks to array', function (): void {
-        $page = new Page;
+        $page = new Page();
         $casts = $page->getCasts();
 
         Assert::assertSame('array', $casts['content_blocks']);
     });
 
     test('page casts middleware to array', function (): void {
-        $page = new Page;
+        $page = new Page();
         $casts = $page->getCasts();
 
         Assert::assertSame('array', $casts['middleware']);
