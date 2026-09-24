@@ -1,18 +1,19 @@
 <?php
 
 declare(strict_types=1);
+
 use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Section;
 use PHPUnit\Framework\Assert;
 
 test('Section model can be instantiated', function () {
-    $section = new Section;
+    $section = new Section();
 
     Assert::assertInstanceOf(Section::class, $section);
 });
 
 test('Section model has expected fillable fields', function () {
-    $section = new Section;
+    $section = new Section();
 
     $fillable = $section->getFillable();
 
@@ -23,14 +24,14 @@ test('Section model has expected fillable fields', function () {
 });
 
 test('Section model extends BaseModelLang', function () {
-    $section = new Section;
+    $section = new Section();
 
     // Section extends BaseModelLang for translations support
     Assert::assertInstanceOf(BaseModelLang::class, $section);
 });
 
 test('Section model has expected casts', function () {
-    $section = new Section;
+    $section = new Section();
 
     $casts = $section->getCasts();
     /* @var array<string, mixed> $casts */

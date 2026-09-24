@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 it('GET /it/errors/password-expired acceptable', function (): void {
     $res = cmsGet('/it/errors/password-expired');
     $status = (int) $res->getStatusCode();

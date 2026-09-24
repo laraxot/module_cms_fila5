@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Illuminate\Support\ServiceProvider;
 use Modules\Cms\Providers\CmsServiceProvider;
 use Modules\Cms\Providers\EventServiceProvider;

@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-use Illuminate\Support\Collection;
+
 use Illuminate\Support\Str;
 
 if (! function_exists('trimPath')) {
@@ -57,7 +57,7 @@ return [
     },
     /* @param object{getPath(): string, children: \Illuminate\Support\Collection} $page */
     'isActiveParent' => function ($page, $menuItem) {
-        if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof Collection) {
+        if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof Illuminate\Support\Collection) {
             return $menuItem->children->contains(function ($child) use ($page) {
                 return trimPath($page->getPath()) == trimPath($child);
             });
@@ -80,7 +80,7 @@ return [
 
     /* @param object{id: mixed} $page */
     'children' => function ($page, $docs) {
-        if ($docs instanceof Collection) {
+        if ($docs instanceof Illuminate\Support\Collection) {
             return $docs->where('parent_id', $page->id);
         }
 

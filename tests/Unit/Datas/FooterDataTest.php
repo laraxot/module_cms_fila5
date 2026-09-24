@@ -1,49 +1,50 @@
 <?php
 
 declare(strict_types=1);
+
 use Livewire\Wireable;
 use Modules\Cms\Datas\FooterData;
 use PHPUnit\Framework\Assert;
 use Spatie\LaravelData\Data;
 
 test('FooterData can be instantiated', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertInstanceOf(FooterData::class, $footerData);
 });
 
 test('FooterData extends Spatie Data', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertInstanceOf(Data::class, $footerData);
 });
 
 test('FooterData implements Wireable interface', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertInstanceOf(Wireable::class, $footerData);
 });
 
 test('FooterData has default view path', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertSame('cms::components.footer', $footerData->view);
 });
 
 test('FooterData has nullable background_color property', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertNull($footerData->background_color);
 });
 
 test('FooterData has nullable background property', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertNull($footerData->background);
 });
 
 test('FooterData has nullable overlay_color property', function (): void {
-    $footerData = new FooterData;
+    $footerData = new FooterData();
 
     Assert::assertNull($footerData->overlay_color);
 });

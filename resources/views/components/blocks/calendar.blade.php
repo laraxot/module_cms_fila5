@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 ?>
 {{-- Generic Calendar Component for CMS --}}
 @props([

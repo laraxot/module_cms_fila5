@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use PHPUnit\Framework\Assert;
 
 it('GET /it/classi-css acceptable', function (): void {

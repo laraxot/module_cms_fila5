@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Illuminate\Support\Facades\Artisan;
 use PHPUnit\Framework\Assert;
 
@@ -19,7 +20,7 @@ function getFolioPaths(): array
 
     foreach (preg_split("/\r?\n/", $output) as $line) {
         /** @var string $line */
-        if (preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) === 1) {
+        if (1 === preg_match('#\bGET\s+(/[^\s]+)#', $line, $m)) {
             $paths[] = $m[1] ?? '';
         }
     }
@@ -36,7 +37,7 @@ it('validates Folio routes basic accessibility and localization', function (): v
     $paths = getFolioPaths();
 
     foreach ($paths as $path) {
-        if ($path === '/') {
+        if ('/' === $path) {
             $response = cmsGet($path);
             $response->assertRedirect('/'.$locale);
 
@@ -50,7 +51,7 @@ it('validates Folio routes basic accessibility and localization', function (): v
         $response = cmsGet($path);
         $status = (int) $response->getStatusCode();
 
-        if ($status === 404) {
+        if (404 === $status) {
             cmsSkipTest("Folio route not found (404): {$path}");
         }
         if ($status >= 500) {

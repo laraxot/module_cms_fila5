@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Modules\Cms\Filament\Fields\LeftSidebarContent;
 use PHPUnit\Framework\Assert;
 

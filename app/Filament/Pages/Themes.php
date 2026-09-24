@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /**
  * @see https://github.com/3x1io/filament-themes/blob/main/src/Pages/Themes.php
  */
@@ -12,9 +13,10 @@ use Illuminate\Support\Facades\File;
 use Modules\Cms\Datas\ThemeData;
 use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use Modules\Xot\Filament\Pages\XotBasePage;
-use Webmozart\Assert\Assert;
 
 use function Safe\json_decode;
+
+use Webmozart\Assert\Assert;
 
 class Themes extends XotBasePage
 {

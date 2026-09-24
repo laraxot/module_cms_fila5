@@ -13,7 +13,7 @@ class CmsDatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        if ($this->command !== null) {
+        if (null !== $this->command) {
             $this->command->info('CmsDatabaseSeeder: entity seeders…');
         }
 
@@ -27,7 +27,7 @@ class CmsDatabaseSeeder extends Seeder
             SectionSeeder::class,
         ]);
 
-        if ($this->command !== null) {
+        if (null !== $this->command) {
             $this->command->info('CmsDatabaseSeeder: completato.');
         }
     }

@@ -1,8 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
 ---
 module: theme
 topic: menu-tree.blade
