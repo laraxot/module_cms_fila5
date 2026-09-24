@@ -8,33 +8,8 @@ use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\PageContent;
 use Modules\Cms\Models\Section;
-use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-uses(TestCase::class);
-// Laraxot — see module docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
-// Laraxot module file — see docs/wiki for domain contract.
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
@@ -130,7 +105,7 @@ test('cms module handles complex block structures', function () {
                 'mobile' => 1,
             ],
             'items' => array_map(
-                fn ($i) => [
+                fn (mixed $i) => [
                     'id' => $i,
                     'type' => 'content_card',
                     'title' => "Card {$i}",
@@ -148,7 +123,7 @@ test('cms module handles complex block structures', function () {
                         'author' => "Author {$i}",
                         'published_at' => now()->subDays($i)->toISOString(),
                         'categories' => ['Category '.(($i % 3) + 1), 'Category '.((($i + 1) % 3) + 1)],
-                        'tags' => array_map(fn ($t) => "tag{$t}", range(1, 5)),
+                        'tags' => array_map(fn (int $t): string => "tag{$t}", range(1, 5)),
                         'reading_time' => rand(2, 10),
                     ],
                     'actions' => [
@@ -396,19 +371,19 @@ test('cms module handles bulk operations efficiently', function () {
 test('cms module supports complex query patterns', function () {
     $pages = PageFactory::new()
         ->count(10)
-        ->createOne([
+        ->create([
             'content_blocks' => [['type' => 'hero', 'title' => 'Hero Section']],
         ]);
 
     $pageContents = PageContentFactory::new()
         ->count(8)
-        ->createOne([
+        ->create([
             'blocks' => [['type' => 'features', 'title' => 'Features']],
         ]);
 
     $sections = SectionFactory::new()
         ->count(6)
-        ->createOne([
+        ->create([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);
 
@@ -421,7 +396,7 @@ test('cms module supports complex query patterns', function () {
 
     Assert::assertCount(10, $results);
 
-    $heroPages = $results->filter(fn ($page) => collect($page->content_blocks)->contains('type', 'hero'));
+    $heroPages = $results->filter(fn (mixed $page) => collect($page->content_blocks)->contains('type', 'hero'));
 
     Assert::assertCount(10, $heroPages);
 });
