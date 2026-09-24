@@ -6,7 +6,6 @@ use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\VerifyComponent;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
 describe('VerifyComponent', function (): void {
     test('verify component extends volt component', function (): void {
         $component = new VerifyComponent();
@@ -15,7 +14,9 @@ describe('VerifyComponent', function (): void {
     });
 
     test('verify component has resend method', function (): void {
-    });
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('verify component has resend method #2', function (): void {
+    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
     test('resend method returns void', function (): void {
         $reflection = new ReflectionClass(VerifyComponent::class);
