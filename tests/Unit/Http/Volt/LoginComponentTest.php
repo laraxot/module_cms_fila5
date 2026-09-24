@@ -32,9 +32,11 @@ describe('LoginComponent', function (): void {
     });
 
     test('login component has authenticate method', function (): void {
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    });
     test('login component has authenticate method #2', function (): void {
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    });
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);
