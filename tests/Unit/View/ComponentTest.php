@@ -28,8 +28,8 @@ test('Metatags can be instantiated', function () {
 });
 
 test('Page can be instantiated', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
-    });
+    Assert::markTestSkipped('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
+});
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');

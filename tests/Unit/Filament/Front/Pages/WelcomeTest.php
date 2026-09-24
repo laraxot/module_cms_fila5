@@ -46,16 +46,16 @@ test('Welcome page has instanceModel property', function () {
 });
 
 test('Welcome page has mount method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Welcome page has getViewData method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 test('Welcome page has initView method', function (): void {
-        \PHPUnit\Framework\Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    });
+    Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+});
 
 // Rimossi `test('Welcome page has url method')` e `test('... setModel method')`: le
 // closure erano vuote e nessuno dei due metodi esiste. `Welcome` dichiara solo `mount`,
