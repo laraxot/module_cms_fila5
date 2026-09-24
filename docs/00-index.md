@@ -8,24 +8,57 @@ repository: https://github.com/laraxot/module_cms_fila5
 related:
   - ./00-index.md
   - ./index.md
+  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
 issues: https://github.com/laraxot/module_cms_fila5/issues
 discussions: https://github.com/laraxot/module_cms_fila5/discussions
 ---
 
 # Cms Module Documentation
 
-> **⚠️ Contenuto cross-project non verificato per questo repo (base_restaurant_fila5).**
-> Questa pagina e tutti i riferimenti "Design Comuni" / tema `Sixteen` / config `fixcity`
-> qui sotto descrivono un altro progetto Laraxot (verosimilmente `base_fixcity_fila5`,
-> vedi `docs/wiki/index.md`). In questo repo `Themes/Sixteen/` **non esiste** (i temi
-> disponibili sono `Meetup`, `Trattoria`, `TwentyOne`, `Zero`) e `laravel/docs/design-comuni/`
-> non esiste: tutti i link della sezione "Theme cross links" sotto sono rotti. Contenuto
-> lasciato intatto (nessuna cancellazione) per non perdere storia, ma va trattato come
-> materiale importato erroneamente, non come documentazione di questo modulo — vedi finding
-> dedicato in coda all'audit di questa sessione.
-
 ## Overview
 
+# Cms Module Documentation Index
+
+## Core Concepts
+- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
+- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
+- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
+
+## Development Guides
+- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
+- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
+
+## Code Quality
+- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
+
+## Frontend Assets
+- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
+- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
+
+## Missing Features & Gaps
+- [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
+- [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
+# Cms Module Documentation Index
+
+## Core Concepts
+- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
+- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
+- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
+
+## Development Guides
+- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
+- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
+
+## Code Quality
+- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
+
+## Frontend Assets
+- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
+- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
+
+## Missing Features & Gaps
+- [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
+- [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
 Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi. Nel lavoro corrente sulla parity Design Comuni, il Cms governa la struttura della homepage di test, mentre la resa visuale viene rifinita nel tema Sixteen.
 
 ## 📚 Design Comuni - Index Completo

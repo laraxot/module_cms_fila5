@@ -61,7 +61,11 @@ $mount = function ($initialName = '') {
 // Metodi
 $save = function () {
     $this->validate();
+<<<<<<< .merge_file_SjZqJ6
     
+=======
+
+>>>>>>> .merge_file_wgyeNG
     // Logica di salvataggio
 };
 ?>
@@ -104,10 +108,17 @@ $save = function () {
 state([
     // Stato primitivo
     'counter' => 0,
+<<<<<<< .merge_file_SjZqJ6
     
     // Array
     'items' => [],
     
+=======
+
+    // Array
+    'items' => [],
+
+>>>>>>> .merge_file_wgyeNG
     // Oggetti
     'user' => [
         'name' => '',
@@ -173,11 +184,19 @@ rules([
 
 $save = function () {
     $validated = $this->validate();
+<<<<<<< .merge_file_SjZqJ6
     
     $post = Post::create($validated['form']);
     
     session()->flash('message', 'Post creato con successo!');
     
+=======
+
+    $post = Post::create($validated['form']);
+
+    session()->flash('message', 'Post creato con successo!');
+
+>>>>>>> .merge_file_wgyeNG
     return redirect()->route('posts.show', $post);
 };
 ?>
@@ -298,8 +317,13 @@ $getFilteredUsers = function () {
 
 ```php
 // Input con debounce
+<<<<<<< .merge_file_SjZqJ6
 <input 
     type="text" 
+=======
+<input
+    type="text"
+>>>>>>> .merge_file_wgyeNG
     wire:model.live.debounce.300ms="search"
     placeholder="Cerca..."
 >
@@ -307,7 +331,11 @@ $getFilteredUsers = function () {
 // Lazy loading di relazioni
 $users = computed(function () {
     return User::with('profile', 'posts')
+<<<<<<< .merge_file_SjZqJ6
         ->when($this->search, fn($query) => 
+=======
+        ->when($this->search, fn($query) =>
+>>>>>>> .merge_file_wgyeNG
             $query->where('name', 'like', "%{$this->search}%")
         )
         ->paginate(10);
@@ -378,4 +406,8 @@ class UserFormTest extends TestCase
 - [Laravel Volt Documentation](https://livewire.laravel.com/docs/volt)
 - [Livewire Documentation](https://livewire.laravel.com)
 - [Laravel Documentation](https://laravel.com/docs)
+<<<<<<< .merge_file_SjZqJ6
 - [Articolo Originale di Moinuddin Chowdhury](https://medium.com/@moinuddinchowdhury/how-to-create-web-application-using-laravel-volt-the-magical-way-2145071046b2) 
+=======
+- [Articolo Originale di Moinuddin Chowdhury](https://medium.com/@moinuddinchowdhury/how-to-create-web-application-using-laravel-volt-the-magical-way-2145071046b2)
+>>>>>>> .merge_file_wgyeNG
