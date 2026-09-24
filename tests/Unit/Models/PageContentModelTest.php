@@ -63,5 +63,10 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has sluggable method', function (): void {
+<<<<<<< HEAD
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+        Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    });
+>>>>>>> laraxot/dev
 });
