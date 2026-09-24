@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
 use PHPUnit\Framework\Assert;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('Footer page can be instantiated', function () {
     $page = new Footer();
 });
@@ -30,16 +29,16 @@ test('Footer page has footerData property', function () {
 });
 
 test('Footer page has mount method', function () {
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has schema method', function () {
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has updateData method', function () {
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has fillForms method', function () {
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has getUpdateFormActions method', function () {
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
