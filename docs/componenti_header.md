@@ -4,8 +4,4 @@ topic: componenti_header
 canonical: ../../../Themes/docs/shared-components/componenti-header.md
 ---
 
-<<<<<<< .merge_file_1s7fPh
 See canonical documentation: ../../../Themes/docs/shared-components/componenti-header.md
-=======
-See canonical documentation: ../../../Themes/docs/shared-components/componenti-header.md
->>>>>>> .merge_file_jocAmw
