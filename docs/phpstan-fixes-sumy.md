@@ -47,7 +47,7 @@ public function __construct(
 @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
 
 // ❌ Avoid - Don't use concrete implementations
-@property-read \Modules\Xot\Contracts\ProfileContract|null $creator
+@property-read \Modules\Quaeris\Models\Profile|null $creator
 ```
 
 ### 2. Blocks Component Usage

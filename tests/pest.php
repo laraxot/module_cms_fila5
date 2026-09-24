@@ -1,8 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
-use Tests\TestCase;
+use Modules\Cms\Tests\TestCase;
 
 /*
  * |--------------------------------------------------------------------------
@@ -14,7 +13,7 @@ use Tests\TestCase;
  * |
  */
 
-uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
+uses(TestCase::class)->in('Feature', 'Unit');
 
 /*
  * |--------------------------------------------------------------------------

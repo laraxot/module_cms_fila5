@@ -10,6 +10,7 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 final class LinksBlock extends XotBaseBlock
 {
+    #[\Override]
     public static function getBlockSchema(): array
     {
         return [

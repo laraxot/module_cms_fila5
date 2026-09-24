@@ -9,14 +9,11 @@ use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Xot\Datas\XotData;
-use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertGuest;
 use function Pest\Laravel\get;
-
-uses(TestCase::class);
 
 // NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
 // Use $this->$this->generateUniqueEmail(), $this->$this->getUserClass(), $this->$this->createTestUser()
@@ -160,7 +157,7 @@ describe('Frontend Login Security', function () {
         ]);
 
         // Multiple failed attempts
-        for ($i = 0; $i < 5; ++$i) {
+        for ($i = 0; $i < 5; $i++) {
             LivewireVolt::test('auth.login')
                 ->set('email', $email)
                 ->set('password', 'wrong_password')

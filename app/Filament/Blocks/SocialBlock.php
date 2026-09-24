@@ -11,6 +11,7 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 final class SocialBlock extends XotBaseBlock
 {
+    #[\Override]
     public static function getBlockSchema(): array
     {
         return [
