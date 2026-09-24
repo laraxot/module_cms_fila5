@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 it('renders localized auth labels and links on localized homepages', function (): void {
     $response = cmsGet('/it');
 

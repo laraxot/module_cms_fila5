@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Routing\Route as IlluminateRoute;
@@ -16,7 +17,7 @@ test('compose returns early when no authenticated user', function (): void {
 
     $view = cmsCreateMock(View::class);
 
-    $composer = new XotComposer;
+    $composer = new XotComposer();
     $composer->compose($view);
 });
 
@@ -26,7 +27,7 @@ test('compose returns early when authenticated user is not user contract', funct
 
     $view = cmsCreateMock(View::class);
 
-    $composer = new XotComposer;
+    $composer = new XotComposer();
     $composer->compose($view);
 });
 
@@ -53,10 +54,10 @@ test('compose shares params lang and profile when user contract is authenticated
     $view->method('with')->willReturnCallback(
         static function (string $key, mixed $value) use ($view, $profile, &$calls): View {
             $calls = (int) $calls + 1;
-            if ($calls === 1) {
+            if (1 === $calls) {
                 Assert::assertSame('params', $key);
                 Assert::assertSame(['slug' => 'about'], $value);
-            } elseif ($calls === 2) {
+            } elseif (2 === $calls) {
                 Assert::assertSame('lang', $key);
                 Assert::assertSame('it', $value);
             } else {
@@ -68,6 +69,6 @@ test('compose shares params lang and profile when user contract is authenticated
         }
     );
 
-    $composer = new XotComposer;
+    $composer = new XotComposer();
     $composer->compose($view);
 });

@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 use Modules\Cms\View\Components\Page;
 use PHPUnit\Framework\Assert;
 

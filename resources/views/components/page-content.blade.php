@@ -1,8 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
 <div>
     @foreach($blocks as $block)
         @if(isset($block->view) && view()->exists($block->view))
