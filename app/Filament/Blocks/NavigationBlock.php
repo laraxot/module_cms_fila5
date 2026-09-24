@@ -12,7 +12,6 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 class NavigationBlock extends XotBaseBlock
 {
-    #[\Override]
     public static function getBlockSchema(): array
     {
         return [
@@ -77,6 +76,6 @@ class NavigationBlock extends XotBaseBlock
 
     public static function getBlockLabel(): string
     {
-        return \trans_string('cms::blocks.navigation.label');
+        return \trans_string('cms::blocks.navigation.label') ?: 'Navigation Block';
     }
 }
