@@ -20,10 +20,19 @@ describe('CounterComponent', function (): void {
     });
 
     test('counter component has increment method', function (): void {
+<<<<<<< HEAD
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
     test('counter component has decrement method', function (): void {
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+        Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    });
+
+    test('counter component has decrement method', function (): void {
+        Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    });
+>>>>>>> laraxot/dev
 
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);
