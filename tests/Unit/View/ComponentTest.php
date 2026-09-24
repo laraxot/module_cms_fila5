@@ -34,7 +34,6 @@ test('Page can be instantiated', function () {
 test('Page can be instantiated', function (): void {
     Assert::markTestSkipped('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
 });
->>>>>>> laraxot/dev
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');

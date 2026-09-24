@@ -26,11 +26,6 @@ describe('Password ResetComponent', function (): void {
     });
 
     test('reset component has send reset password link method', function (): void {
-<<<<<<< HEAD
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-    test('reset component has send reset password link method #2', function (): void {
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
         Assert::markTestSkipped('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     });
     test('reset component has send reset password link method #2', function (): void {

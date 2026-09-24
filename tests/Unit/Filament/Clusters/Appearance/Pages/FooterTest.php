@@ -63,4 +63,3 @@ test('Footer page has fillForms method', function (): void {
 test('Footer page has getUpdateFormActions method', function (): void {
     Assert::markTestSkipped('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 });
->>>>>>> laraxot/dev
