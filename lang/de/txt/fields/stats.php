@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/stats.php
 // Cms txt.fields.stats — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Statistiche',
-  'placeholder' => 'Dati numerici da evidenziare',
-  'helper_text' => 'Statistiche o metriche da mostrare',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Statistiche',
+    'placeholder' => 'Dati numerici da evidenziare',
+    'helper_text' => 'Statistiche o metriche da mostrare',
+    'tooltip' => '',
+    'description' => '',
+];

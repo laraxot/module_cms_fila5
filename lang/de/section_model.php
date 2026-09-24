@@ -6,10 +6,9 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/de/section_model.php
-return array (
-  'model' => 
-  array (
-    'label' => 'Sezione',
-    'plural' => 'Sezioni',
-  ),
-);
+return [
+    'model' => [
+        'label' => 'Sezione',
+        'plural' => 'Sezioni',
+    ],
+];

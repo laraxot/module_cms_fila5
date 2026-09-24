@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/link.php
 // Cms txt.fields.link — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Collegamento',
-  'placeholder' => 'https://link-destinazione.it',
-  'helper_text' => 'URL generico di collegamento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Collegamento',
+    'placeholder' => 'https://link-destinazione.it',
+    'helper_text' => 'URL generico di collegamento',
+    'tooltip' => '',
+    'description' => '',
+];

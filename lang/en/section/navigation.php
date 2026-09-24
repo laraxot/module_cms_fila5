@@ -6,9 +6,9 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability.
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/section/navigation.php
-return array (
-  'label' => 'Sections',
-  'group' => 'Content Management',
-  'icon' => 'heroicon-o-rectangle-stack',
-  'sort' => '85',
-);
+return [
+    'label' => 'Sections',
+    'group' => 'Content Management',
+    'icon' => 'heroicon-o-rectangle-stack',
+    'sort' => '85',
+];

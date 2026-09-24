@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/openFilters.php
 // Cms section.fields.openFilters — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Apri Filtri',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Apri Filtri',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

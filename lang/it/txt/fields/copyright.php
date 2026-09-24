@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/copyright.php
 // Cms txt.fields.copyright — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Copyright',
-  'placeholder' => '2024 Nome Azienda. Tutti i diritti riservati.',
-  'helper_text' => 'Testo di copyright da visualizzare nel footer',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Copyright',
+    'placeholder' => '2024 Nome Azienda. Tutti i diritti riservati.',
+    'helper_text' => 'Testo di copyright da visualizzare nel footer',
+    'tooltip' => '',
+    'description' => '',
+];

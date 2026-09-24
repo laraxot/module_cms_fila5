@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/cta_link.php
 // Cms section.fields.cta_link — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'CTA Link',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'CTA Link',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

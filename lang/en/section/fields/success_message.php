@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/success_message.php
 // Cms section.fields.success_message — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'success_message',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'success_message',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

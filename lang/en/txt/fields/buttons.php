@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/buttons.php
 // Cms txt.fields.buttons — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Pulsanti',
-  'placeholder' => 'Pulsanti di azione per l\'utente',
-  'helper_text' => 'Collezione di pulsanti per interazioni utente',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Pulsanti',
+    'placeholder' => 'Pulsanti di azione per l\'utente',
+    'helper_text' => 'Collezione di pulsanti per interazioni utente',
+    'tooltip' => '',
+    'description' => '',
+];

@@ -6,10 +6,10 @@ declare(strict_types=1);
 // claude-audit static: split from txt.php for maintainability.
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/txt/navigation.php
-return array (
-  'label' => 'Missing Navigation Label',
-  'plural_label' => 'Missing Navigation Plural Label',
-  'group' => 'Missing Group',
-  'icon' => 'heroicon-o-puzzle-piece',
-  'sort' => 100,
-);
+return [
+    'label' => 'Missing Navigation Label',
+    'plural_label' => 'Missing Navigation Plural Label',
+    'group' => 'Missing Group',
+    'icon' => 'heroicon-o-puzzle-piece',
+    'sort' => 100,
+];

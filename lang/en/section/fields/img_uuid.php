@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/img_uuid.php
 // Cms section.fields.img_uuid — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'img_uuid',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'img_uuid',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
