@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/label.php
 // Cms txt.fields.label — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Etichetta',
-  'placeholder' => 'Testo dell\'etichetta',
-  'helper_text' => 'Testo visibile per link, pulsanti o elementi interattivi',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Etichetta',
+    'placeholder' => 'Testo dell\'etichetta',
+    'helper_text' => 'Testo visibile per link, pulsanti o elementi interattivi',
+    'tooltip' => '',
+    'description' => '',
+];

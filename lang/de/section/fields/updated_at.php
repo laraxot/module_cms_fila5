@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/de/section/fields/updated_at.php
 // Cms section.fields.updated_at — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Data di Aggiornamento',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Data di Aggiornamento',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

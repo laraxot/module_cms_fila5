@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/it/section/fields/button_link.php
 // Cms section.fields.button_link — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Link Bottone',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Link Bottone',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

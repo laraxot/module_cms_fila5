@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/content_blocks.php
 // Cms txt.fields.content_blocks — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Blocchi Contenuto',
-  'placeholder' => 'Blocchi di contenuto principale',
-  'helper_text' => 'Blocchi che compongono il corpo principale della pagina',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Blocchi Contenuto',
+    'placeholder' => 'Blocchi di contenuto principale',
+    'helper_text' => 'Blocchi che compongono il corpo principale della pagina',
+    'tooltip' => '',
+    'description' => '',
+];

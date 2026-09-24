@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/children.php
 // Cms section.fields.children — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Children',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Children',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

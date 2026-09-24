@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/section/fields/blocks.php
 // Cms section.fields.blocks — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Blocchi',
-  'placeholder' => 'Aggiungi blocchi alla sezione',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Blocchi',
+    'placeholder' => 'Aggiungi blocchi alla sezione',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];

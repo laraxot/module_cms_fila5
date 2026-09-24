@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/phone.php
 // Cms txt.fields.phone — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Telefono',
-  'placeholder' => '+39 000 000 0000',
-  'helper_text' => 'Numero di telefono principale',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Telefono',
+    'placeholder' => '+39 000 000 0000',
+    'helper_text' => 'Numero di telefono principale',
+    'tooltip' => '',
+    'description' => '',
+];

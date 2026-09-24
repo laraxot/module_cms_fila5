@@ -8,9 +8,9 @@ declare(strict_types=1);
 // File: lang/en/section/fields/delete.php
 // Cms section.fields.delete — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Delete',
-  'tooltip' => '',
-  'helper_text' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Delete',
+    'tooltip' => '',
+    'helper_text' => '',
+    'description' => '',
+];
