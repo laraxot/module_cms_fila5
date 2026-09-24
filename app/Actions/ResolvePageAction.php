@@ -116,66 +116,39 @@ final class ResolvePageAction
             ]));
 
             foreach ($candidateKeys as $key) {
-                $item = $this->findViaEloquentQueries($model, $key, $identifier);
-                if (null !== $item) {
-                    return $item;
+                foreach ($this->buildCandidateQueries($model) as $query) {
+                    try {
+                        $item = $query->where($key, $identifier)->first();
+                    } catch (\Throwable) {
+                        continue;
+                    }
+
+                    if (null !== $item) {
+                        return $item;
+                    }
                 }
             }
 
             foreach ($candidateKeys as $key) {
-                $item = $this->findViaRawTable($model, $key, $identifier);
-                if (null !== $item) {
-                    return $item;
+                try {
+                    $row = $model->getConnection()
+                        ->table($model->getTable())
+                        ->where($key, $identifier)
+                        ->first();
+                } catch (\Throwable) {
+                    continue;
+                }
+
+                if (null !== $row) {
+                    /** @var array<string, mixed> $attributes */
+                    $attributes = (array) $row;
+
+                    return $model->newFromBuilder($attributes);
                 }
             }
         }
 
         return null;
-    }
-
-    /**
-     * @param Builder<Model> $query
-     */
-    private function firstWhereIdentifier(Builder $query, string $key, string $identifier): ?object
-    {
-        try {
-            return $query->where($key, $identifier)->first();
-        } catch (\Throwable) {
-            return null;
-        }
-    }
-
-    private function findViaEloquentQueries(Model $model, string $key, string $identifier): ?object
-    {
-        foreach ($this->buildCandidateQueries($model) as $query) {
-            $item = $this->firstWhereIdentifier($query, $key, $identifier);
-            if (null !== $item) {
-                return $item;
-            }
-        }
-
-        return null;
-    }
-
-    private function findViaRawTable(Model $model, string $key, string $identifier): ?object
-    {
-        try {
-            $row = $model->getConnection()
-                ->table($model->getTable())
-                ->where($key, $identifier)
-                ->first();
-        } catch (\Throwable) {
-            return null;
-        }
-
-        if (null === $row) {
-            return null;
-        }
-
-        /** @var array<string, mixed> $attributes */
-        $attributes = (array) $row;
-
-        return $model->newFromBuilder($attributes);
     }
 
     /**
