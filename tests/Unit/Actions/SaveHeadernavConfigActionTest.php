@@ -6,11 +6,11 @@ use Modules\Cms\Actions\SaveHeadernavConfigAction;
 use PHPUnit\Framework\Assert;
 
 test('SaveHeadernavConfigAction can be instantiated', function () {
-    $action = new SaveHeadernavConfigAction();
+    $action = new SaveHeadernavConfigAction;
 
     Assert::assertInstanceOf(SaveHeadernavConfigAction::class, $action);
 });
 
 test('SaveHeadernavConfigAction execute method exists', function () {
-    $action = new SaveHeadernavConfigAction();
+    $action = new SaveHeadernavConfigAction;
 });

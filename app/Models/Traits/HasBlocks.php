@@ -16,7 +16,7 @@ use Modules\Xot\Datas\XotData;
  *
  * @phpstan-require-extends Model
  *
- * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
+ * @method mixed getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
 trait HasBlocks
@@ -63,12 +63,12 @@ trait HasBlocks
             if (! is_array($block)) {
                 continue;
             }
-            $rawType = $block['type'] ?? 'unknown';
-            $type = is_string($rawType) ? $rawType : 'unknown';
+            $typeValue = $block['type'] ?? 'unknown';
+            $type = \is_string($typeValue) ? $typeValue : 'unknown';
             /** @var array<string, mixed> $data */
             $data = (array) ($block['data'] ?? []);
-            $rawSlug = $block['slug'] ?? null;
-            $slug = is_string($rawSlug) ? $rawSlug : null;
+            $slugValue = $block['slug'] ?? null;
+            $slug = \is_scalar($slugValue) ? (string) $slugValue : null;
             $active = (bool) ($block['active'] ?? true);
 
             $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug, $active);
@@ -81,8 +81,7 @@ trait HasBlocks
     }
 
     /**
-     * @param array<int|string, mixed> $blocks
-     *
+     * @param  array<int|string, mixed>  $blocks
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array
@@ -113,9 +112,8 @@ trait HasBlocks
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
      * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
      *
-     * @param string      $slug The section/page slug
-     * @param string|null $side The side to get blocks for (null for all blocks)
-     *
+     * @param  string  $slug  The section/page slug
+     * @param  string|null  $side  The side to get blocks for (null for all blocks)
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array

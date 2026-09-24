@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
-use PHPUnit\Framework\Assert;
 
 it('renders the public profile route using the localized profile page', function (): void {
     $user = UserFactory::new()->createOne([
@@ -15,15 +13,17 @@ it('renders the public profile route using the localized profile page', function
     ]);
 
     $userId = $user->getKey();
-    Assert::assertNotNull($userId);
-    $response = cmsGet('/it/profile/'.SafeStringCastAction::cast($userId));
+    if (! is_string($userId)) {
+        throw new UnexpectedValueException('Expected a string user identifier.');
+    }
+    $response = cmsGet('/it/profile/'.$userId);
     $status = (int) $response->getStatusCode();
 
     if ($status >= 500) {
         cmsSkipTest('Public profile route returned server error in this install.');
     }
 
-    if (200 !== $status) {
+    if ($status !== 200) {
         cmsSkipTest("Public profile route returned {$status} — profile FO page not configured.");
     }
 

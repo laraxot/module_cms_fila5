@@ -7,6 +7,7 @@ namespace Modules\Cms\View\Components;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\View\Component;
+use Modules\Cms\Actions\View\GetCmsViewAction;
 use Modules\Cms\Datas\BlockData;
 use Modules\Cms\Models\Section as SectionModel;
 use Spatie\LaravelData\DataCollection;
@@ -34,9 +35,9 @@ class Section extends Component
     public string $tpl = 'v1';
 
     /**
-     * @param string      $slug  Unique identifier for the section
-     * @param string|null $class Additional CSS classes
-     * @param string|null $id    Custom ID for the section
+     * @param  string  $slug  Unique identifier for the section
+     * @param  string|null  $class  Additional CSS classes
+     * @param  string|null  $id  Custom ID for the section
      */
     public function __construct(
         string $slug,
@@ -47,7 +48,7 @@ class Section extends Component
         $this->slug = $slug;
         $this->class = $class;
         $this->id = $id;
-        if (is_string($tpl) && '' !== $tpl) {
+        if (is_string($tpl) && $tpl !== '') {
             $this->tpl = $tpl;
         }
 
@@ -56,7 +57,9 @@ class Section extends Component
 
     public function render(): ViewContract
     {
-        $view = 'pub_theme::components.sections.'.$this->slug.'.'.$this->tpl;
+        $view = app(GetCmsViewAction::class)->execute(
+            'pub_theme::components.sections.'.$this->slug.'.'.$this->tpl,
+        );
         $viewParams = [
             'blocks' => $this->blocks,
             'section' => $this,
@@ -65,6 +68,6 @@ class Section extends Component
         /** @var ViewFactory $viewFactory */
         $viewFactory = app('view');
 
-        return $viewFactory->first([$view], $viewParams);
+        return $viewFactory->make($view, $viewParams);
     }
 }
