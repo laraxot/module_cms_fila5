@@ -3,7 +3,7 @@ title: "Cms Module Documentation"
 type: documentation
 tags: [module, documentation, cms, content-management]
 created: 2026-07-14
-updated: 2026-09-17
+updated: 2026-07-14
 ---
 
 # Modulo Cms
@@ -36,26 +36,23 @@ Il modulo **Cms** gestisce il sistema di content management per la piattaforma L
 Modules/Cms/
 ├── app/
 │   ├── Models/
-│   │   ├── Page.php              # Pagina (slug, content_blocks per locale, meta SEO)
-│   │   ├── PageContent.php       # Contenuto/blocchi riutilizzabili
-│   │   ├── Section.php           # Sezione modulare riutilizzabile
-│   │   ├── Menu.php              # Navigazione ad albero (adjacency list)
-│   │   ├── Conf.php              # Configurazione system-wide (Sushi)
-│   │   └── Attachment.php        # Allegati/media
-│   ├── Actions/                  # Nessun layer Services: business logic in Actions
-│   │   ├── ResolvePageAction.php         # Risolve container0/slug0 -> modello o Page
-│   │   ├── BuildPageSchemaAction.php     # Costruisce lo schema.org JSON-LD
-│   │   ├── ResolveBlockQueryAction.php   # Query dinamiche per blocchi
-│   │   ├── ResolveLocalizedBlockDataAction.php
-│   │   └── View/GetCmsViewAction.php     # Risoluzione type-safe delle view
+│   │   ├── Page.php              # Page model
+│   │   ├── Section.php           # Page section
+│   │   └── Block.php             # Content block
+│   ├── Services/
+│   │   ├── PageService.php
+│   │   ├── BlockService.php
+│   │   └── ContentService.php
+│   ├── Actions/
+│   │   ├── PublishPageAction.php
+│   │   └── BuildPageAction.php
 │   ├── Filament/
 │   │   ├── Resources/
-│   │   │   ├── PageResource.php
-│   │   │   ├── PageContentResource.php
-│   │   │   ├── SectionResource.php
-│   │   │   ├── MenuResource.php
-│   │   │   └── AttachmentResource.php
-│   │   └── Blocks/                # Definizioni Filament Builder dei blocchi
+│   │   │   └── PageResource.php
+│   │   └── Fields/
+│   │       └── PageContentBuilder.php
+│   ├── Http/
+│   │   └── Controllers/
 │   └── Traits/
 ├── database/
 │   ├── migrations/
@@ -63,64 +60,73 @@ Modules/Cms/
 │   └── seeders/
 ├── resources/
 │   ├── views/
-│   │   └── components/            # x-cms:: (page, section, blocks/*, footer/*, headernav/*)
+│   │   └── components/
 │   └── lang/
 ├── tests/
-├── docs/                          # vedi docs/index.md e docs/wiki/ per la navigazione
+├── docs/
+│   ├── README.md
+│   ├── architecture.md
+│   └── block-system.md
 ├── module.json
 └── composer.json
 ```
-
-Nota: il modulo non ha una cartella `app/Services` — la logica applicativa vive nelle Action
-(`Spatie\QueueableAction`), non in classi `*Service`.
 
 ## Componenti Principali
 
 | Classe | Scopo | Extends |
 |--------|-------|---------|
-| `Page` | Pagina con slug, `content_blocks` per locale, meta SEO | `BaseModelLang` |
-| `PageContent` | Contenuto/blocchi riutilizzabili | `BaseModel` |
-| `Section` | Sezione modulare riutilizzabile | `BaseModelLang` |
-| `Menu` | Navigazione ad albero (adjacency list) | `BaseModel` |
-| `Conf` | Configurazione system-wide (Sushi) | `BaseModel` |
-| `PageResource` | Amministrazione Filament di `Page` | `LangBaseResource` (→ `XotBaseResource`) |
-| `ResolvePageAction` | Risolve `(container0, slug0)` in modello dinamico o `Page` | Action (`QueueableAction`) |
-| `GetCmsViewAction` | Risoluzione type-safe del nome vista | Action (`QueueableAction`) |
-
-Dettaglio della pipeline di risoluzione pagina/blocchi: vedi
-[actions/page-resolution-pipeline.md](./actions/page-resolution-pipeline.md) e
-[wiki/overviews/cms-module.md](./wiki/overviews/cms-module.md).
+| `Page` | Modello pagina principale | `XotBaseModel` |
+| `Section` | Sezione dentro pagina | `XotBaseModel` |
+| `Block` | Blocco contenuto singolo | `XotBaseModel` |
+| `PageResource` | Amministrazione Filament | `XotBaseResource` |
+| `PageContentBuilder` | Builder Filament per composizione | - |
+| `PageService` | Logica gestione pagine | - |
+| `ContentService` | Logica gestione contenuti | - |
 
 ## Utilizzo Comune
 
-### Scenario 1: Struttura di un blocco di contenuto
-
-I blocchi sono array JSON salvati in `content_blocks.{locale}` su `Page` (non esiste
-un modello `Block` dedicato né un'action `CreatePageAction`):
+### Scenario 1: Creare una Pagina
 
 ```php
-use Modules\Cms\Models\Page;
+use Modules\Cms\Actions\CreatePageAction;
 
-$page = Page::create([
+$page = CreatePageAction::execute([
+    'title' => 'Homepage',
     'slug' => 'home',
-    'content_blocks' => [
-        'it' => [
-            ['type' => 'hero', 'data' => ['view' => 'pub_theme::components.blocks.hero.main', 'title' => 'Titolo']],
-            ['type' => 'text', 'data' => ['view' => 'pub_theme::components.blocks.text.main', 'content' => '...']],
-        ],
+    'status' => 'published',
+    'content' => [
+        'blocks' => [
+            ['type' => 'hero', 'data' => [...] ],
+            ['type' => 'text', 'data' => [...] ],
+        ]
     ],
 ]);
 ```
 
-### Scenario 2: Renderizzare i blocchi nel tema (Blade)
+### Scenario 2: Aggiungere Blocchi
 
-Ogni blocco dichiara la propria `view` nel JSON: il rendering non passa da uno
-`@switch` su `type`, ma risolve direttamente la view indicata (vedi `BlockData` in
-[wiki/overviews/cms-module.md](./wiki/overviews/cms-module.md)):
+```php
+use Modules\Cms\Models\Page;
+
+$page = Page::find(1);
+$page->addBlock([
+    'type' => 'gallery',
+    'data' => ['images' => [...] ],
+]);
+```
+
+### Scenario 3: Renderizzare Pagina Frontend
 
 ```blade
-@foreach ($page->content_blocks[app()->getLocale()] ?? [] as $block)
-    @include($block['data']['view'], ['data' => $block['data']])
+@foreach ($page->blocks as $block)
+    @switch($block->type)
+        @case('hero')
+            <x-cms::blocks.hero :data="$block->data" />
+            @break
+        @case('text')
+            <x-cms::blocks.text :data="$block->data" />
+            @break
+    @endswitch
 @endforeach
 ```
 
@@ -128,24 +134,41 @@ Ogni blocco dichiara la propria `view` nel JSON: il rendering non passa da uno
 
 ### Block Types
 
-Non esiste un file di configurazione centrale dei tipi di blocco (`config/local/cms/blocks.php`
-non esiste in questo repo). I tipi di blocco sono definiti come `Builder\Block` di Filament
-nello schema del `Builder::make('content_blocks')` (vedi
-[wiki/overviews/cms-module.md](./wiki/overviews/cms-module.md) per un esempio), e le view
-associate risiedono in `Themes/{pub_theme}/resources/views/components/blocks/`.
+Definire tipi di blocchi supportati in `laravel/config/local/cms/blocks.php`:
+
+```php
+return [
+    'types' => [
+        'hero' => [
+            'label' => 'Hero Section',
+            'fields' => ['title', 'subtitle', 'image'],
+        ],
+        'text' => [
+            'label' => 'Text Block',
+            'fields' => ['content'],
+        ],
+        'gallery' => [
+            'label' => 'Gallery',
+            'fields' => ['images'],
+        ],
+    ],
+];
+```
 
 ### Content Storage
 
-Il contenuto è salvato come JSON strutturato per locale nel campo `content_blocks` di `Page`
-(vedi anche [docs/examples/blocks.json](./examples/blocks.json)):
+Contenuti immagazzinati come JSON strutturato:
 
 ```json
 {
-  "it": [
+  "id": 1,
+  "title": "Homepage",
+  "slug": "home",
+  "status": "published",
+  "blocks": [
     {
       "type": "hero",
       "data": {
-        "view": "pub_theme::components.blocks.hero.main",
         "title": "Welcome",
         "subtitle": "Laraxot CMS"
       }
@@ -161,7 +184,7 @@ Il contenuto è salvato come JSON strutturato per locale nel campo `content_bloc
 ./vendor/bin/pest Modules/Cms/tests
 
 # Run specific test category
-./vendor/bin/pest Modules/Cms/tests/Unit/Models/PageTest.php
+./vendor/bin/pest Modules/Cms/tests/Feature/PageCreationTest.php
 
 # With coverage
 ./vendor/bin/pest Modules/Cms/tests --coverage
@@ -182,18 +205,11 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 
 ## Documentation Index
 
-`docs/` in questo modulo contiene centinaia di file storici/duplicati: usare
-[docs/index.md](./index.md) come mappa completa (organizzata per argomento, con la sezione
-"Storico / da consolidare" per i duplicati). Punti di ingresso consigliati:
-
-- [wiki/overviews/cms-module.md](./wiki/overviews/cms-module.md) — Overview architetturale sintetico e verificato (modelli, blocchi, routing Folio)
-- [actions/page-resolution-pipeline.md](./actions/page-resolution-pipeline.md) — Come una rotta Folio diventa contenuto renderizzato
-- [queueable-actions.md](./queueable-actions.md) — Convenzione Action del modulo (nessun layer Services)
-
-Attenzione: molti `README.md`/`index.md` nelle sottocartelle di `docs/` (es. `blocks/README.md`,
-`frontoffice/README.md`, `content/README.md`) sono boilerplate generico non aggiornato al codice
-reale di questo modulo (elencano classi/file che non esistono qui) — non fidarsi del loro
-contenuto senza verifica; vedi finding dedicato.
+- [Architecture Details](./architecture.md) — System design and patterns
+- [Block System](./block-system.md) — Creating and using blocks
+- [Frontend Rendering](./frontend-rendering.md) — Display components
+- [Folio Integration](./folio-integration.md) — File-based routing
+- [Troubleshooting](./troubleshooting.md) — Common issues and solutions
 
 ## Dipendenze / Moduli Correlati
 
@@ -225,10 +241,8 @@ contenuto senza verifica; vedi finding dedicato.
 ---
 
 **Status**: ✅ Production  
-**Last Updated**: 2026-09-17  
+**Last Updated**: 2026-07-14  
 **Requirements**: PHP 8.3+, Laravel 12, Filament 5  
 **PHPStan Level**: 10 (Target)
 
-**Note**: `docs/` in questo modulo contiene un grande volume di file storici/duplicati mai
-consolidati — questo file resta la SSoT per la struttura codice, ma per la navigazione
-completa (incluse le varianti duplicate) usare [docs/index.md](./index.md).
+**Note**: Documentation previously had duplications and merge conflicts. This version consolidates to single source of truth.
