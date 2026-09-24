@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-// Cms translations — LangServiceProvider SSoT (never ->label() in Filament PHP).
-// claude-audit static: ≥5% comment lines on files >100 LOC.
-// Canon: Modules/Cms/docs/wiki — domain i18n only.
-// File: lang/it/feature_sections.php
 return [
     'fields' => [
         'title' => [
@@ -46,7 +42,7 @@ return [
         ],
         'label' => 'Feature Sections',
         'sort' => 1,
-        'icon' => 'heroicon-o-collection',
+        'icon' => 'heroicon-o-rectangle-stack',
     ],
     'label' => 'Feature Sections',
     'plural_label' => 'Feature Sections (Plurale)',

@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\File;
+use Mockery\MockInterface;
 use Modules\Cms\Actions\Module\FixJigSawByModuleAction;
 use Nwidart\Modules\Laravel\Module;
 use PHPUnit\Framework\Assert;
@@ -14,7 +15,6 @@ use function Safe\unlink;
 
 use Symfony\Component\Finder\SplFileInfo;
 
-uses(Modules\Cms\Tests\TestCase::class);
 test('FixJigSawByModuleAction can be instantiated', function () {
     $action = new FixJigSawByModuleAction();
 
@@ -23,7 +23,7 @@ test('FixJigSawByModuleAction can be instantiated', function () {
 
 test('FixJigSawByModuleAction execute method returns array', function () {
     // Mock a module instance
-    /** @var Module&Mockery\MockInterface $module */
+    /** @var Module&MockInterface $module */
     $module = Mockery::mock(Module::class);
     $module->allows([
         'getPath' => '/tmp/test-module',
