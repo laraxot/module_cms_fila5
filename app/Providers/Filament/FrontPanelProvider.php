@@ -9,6 +9,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Panel;
+use Filament\PanelProvider;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
@@ -18,9 +19,8 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Modules\Cms\Filament\Pages\Themes;
 use Modules\Xot\Datas\MetatagData;
-use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
-class FrontPanelProvider extends XotBasePanelProvider
+class FrontPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {

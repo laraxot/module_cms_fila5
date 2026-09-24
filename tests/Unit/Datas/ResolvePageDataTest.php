@@ -31,7 +31,7 @@ test('ResolvePageData can store null item', function (): void {
 });
 
 test('ResolvePageData can store object item', function (): void {
-    $item = new stdClass();
+    $item = new stdClass;
     $item->title = 'Test Page';
 
     $data = new ResolvePageData('cms', $item, 'test');
