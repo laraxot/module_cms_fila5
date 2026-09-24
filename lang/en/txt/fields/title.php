@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/title.php
 // Cms txt.fields.title — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Titolo',
-  'placeholder' => 'Inserisci il titolo principale',
-  'help' => 'Titolo principale',
-  'helper_text' => 'Titolo che apparirà come intestazione principale',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Titolo',
+    'placeholder' => 'Inserisci il titolo principale',
+    'help' => 'Titolo principale',
+    'helper_text' => 'Titolo che apparirà come intestazione principale',
+    'tooltip' => '',
+    'description' => '',
+];

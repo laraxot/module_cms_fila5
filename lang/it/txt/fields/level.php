@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/level.php
 // Cms txt.fields.level — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Livello',
-  'placeholder' => 'Livello gerarchico (1-6]',
-  'helper_text' => 'Livello di importanza nella gerarchia del contenuto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Livello',
+    'placeholder' => 'Livello gerarchico (1-6]',
+    'helper_text' => 'Livello di importanza nella gerarchia del contenuto',
+    'tooltip' => '',
+    'description' => '',
+];

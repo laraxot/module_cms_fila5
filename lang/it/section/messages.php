@@ -6,9 +6,9 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability.
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/it/section/messages.php
-return array (
-  'created' => 'Sezione creata con successo',
-  'updated' => 'Sezione aggiornata con successo',
-  'deleted' => 'Sezione eliminata con successo',
-  'bulk_deleted' => 'Sezioni eliminate con successo',
-);
+return [
+    'created' => 'Sezione creata con successo',
+    'updated' => 'Sezione aggiornata con successo',
+    'deleted' => 'Sezione eliminata con successo',
+    'bulk_deleted' => 'Sezioni eliminate con successo',
+];

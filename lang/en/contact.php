@@ -7,8 +7,8 @@ declare(strict_types=1);
 // Canon: Modules/Cms/docs/wiki — domain i18n only.
 // File: lang/en/contact.php
 return [
-// Cms — translation keys (no business logic).
-// Cms — translation keys (no business logic).
+    // Cms — translation keys (no business logic).
+    // Cms — translation keys (no business logic).
     'navigation' => [
         'label' => 'Contatti',
         'group' => 'Gestione Contenuti',

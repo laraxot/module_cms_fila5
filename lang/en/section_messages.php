@@ -6,12 +6,11 @@ declare(strict_types=1);
 // claude-audit static: split from section.php for maintainability (<500 LOC).
 // Canon: Modules/Cms/docs/wiki/concepts/claude-audit-static.md
 // File: lang/en/section_messages.php
-return array (
-  'messages' => 
-  array (
-    'created' => 'Sezione creata con successo',
-    'updated' => 'Sezione aggiornata con successo',
-    'deleted' => 'Sezione eliminata con successo',
-    'bulk_deleted' => 'Sezioni eliminate con successo',
-  ),
-);
+return [
+    'messages' => [
+        'created' => 'Sezione creata con successo',
+        'updated' => 'Sezione aggiornata con successo',
+        'deleted' => 'Sezione eliminata con successo',
+        'bulk_deleted' => 'Sezioni eliminate con successo',
+    ],
+];

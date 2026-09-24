@@ -8,11 +8,11 @@ declare(strict_types=1);
 // File: lang/it/txt/fields/image.php
 // Cms txt.fields.image — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Immagine',
-  'help' => 'Carica un\'immagine',
-  'placeholder' => 'Seleziona o carica immagine',
-  'helper_text' => 'Immagine principale associata al contenuto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Immagine',
+    'help' => 'Carica un\'immagine',
+    'placeholder' => 'Seleziona o carica immagine',
+    'helper_text' => 'Immagine principale associata al contenuto',
+    'tooltip' => '',
+    'description' => '',
+];

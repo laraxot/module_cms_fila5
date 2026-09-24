@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/children.php
 // Cms txt.fields.children — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Elementi Figli',
-  'placeholder' => 'Elementi nested o subordinati',
-  'helper_text' => 'Elementi contenuti o dipendenti da questo elemento',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Elementi Figli',
+    'placeholder' => 'Elementi nested o subordinati',
+    'helper_text' => 'Elementi contenuti o dipendenti da questo elemento',
+    'tooltip' => '',
+    'description' => '',
+];

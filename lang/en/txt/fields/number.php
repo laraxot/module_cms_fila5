@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/number.php
 // Cms txt.fields.number — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Numero',
-  'placeholder' => 'Valore numerico',
-  'helper_text' => 'Valore numerico per contatori o statistiche',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Numero',
+    'placeholder' => 'Valore numerico',
+    'helper_text' => 'Valore numerico per contatori o statistiche',
+    'tooltip' => '',
+    'description' => '',
+];

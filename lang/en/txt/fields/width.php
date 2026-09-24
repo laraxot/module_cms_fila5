@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/en/txt/fields/width.php
 // Cms txt.fields.width — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Larghezza',
-  'placeholder' => '100%, 500px, auto',
-  'helper_text' => 'Larghezza dell\'elemento in pixel, percentuale o auto',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Larghezza',
+    'placeholder' => '100%, 500px, auto',
+    'helper_text' => 'Larghezza dell\'elemento in pixel, percentuale o auto',
+    'tooltip' => '',
+    'description' => '',
+];

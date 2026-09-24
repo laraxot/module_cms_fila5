@@ -8,10 +8,10 @@ declare(strict_types=1);
 // File: lang/de/txt/fields/sidebar_blocks.php
 // Cms txt.fields.sidebar_blocks — LangServiceProvider SSoT.
 // claude-audit static: split fields.php (>500 LOC).
-return array (
-  'label' => 'Blocchi Sidebar',
-  'placeholder' => 'Contenuti della barra laterale',
-  'helper_text' => 'Elementi da visualizzare nella barra laterale',
-  'tooltip' => '',
-  'description' => '',
-);
+return [
+    'label' => 'Blocchi Sidebar',
+    'placeholder' => 'Contenuti della barra laterale',
+    'helper_text' => 'Elementi da visualizzare nella barra laterale',
+    'tooltip' => '',
+    'description' => '',
+];
