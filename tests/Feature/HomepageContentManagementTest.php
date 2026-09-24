@@ -2,11 +2,13 @@
 
 declare(strict_types=1);
 
+use Illuminate\Http\Response;
+use Illuminate\Testing\TestResponse;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
+
 use function Pest\Laravel\get;
 
 use PHPUnit\Framework\Assert;
-
-uses(Modules\Cms\Tests\TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -122,10 +124,10 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-        $locale = (string) (config('app.locale') ?? 'it');
+        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         // For test environment, we accept 200 or 404 as valid responses
         // depending on whether content exists in test environment
         $status = $response->status();
@@ -133,10 +135,10 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
-        $locale = (string) (config('app.locale') ?? 'it');
+        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
         if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
@@ -151,10 +153,10 @@ describe('Homepage Content Management', function () {
     });
 
     it('renders responsive design elements', function () {
-        $locale = (string) (config('app.locale') ?? 'it');
+        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
-        /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+        /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
         if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
