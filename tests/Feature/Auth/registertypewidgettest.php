@@ -15,15 +15,19 @@ beforeEach(function (): void {
 
 describe('Registration Widget', function (): void {
     test('patient widget renders correctly', function (): void {
-        Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
-            ->assertStatus(200)
-            ->assertViewIs('pub_theme::filament.widgets.registration');
+        $component = Livewire::test(RegistrationWidget::class, ['type' => 'patient']);
+        $component->assertStatus(200);
+        /** @var view-string $registrationView */
+        $registrationView = 'pub_theme::filament.widgets.registration';
+        $component->assertViewIs($registrationView);
     });
 
     test('doctor widget renders correctly', function (): void {
-        Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
-            ->assertStatus(200)
-            ->assertViewIs('pub_theme::filament.widgets.registration');
+        $component = Livewire::test(RegistrationWidget::class, ['type' => 'doctor']);
+        $component->assertStatus(200);
+        /** @var view-string $registrationView */
+        $registrationView = 'pub_theme::filament.widgets.registration';
+        $component->assertViewIs($registrationView);
     });
 
     test('widget without type throws exception', function (): void {
