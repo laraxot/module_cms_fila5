@@ -2,14 +2,7 @@
 
 ## Panoramica
 
-Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi (Content Blocks, Sections, Homepage dinamica).
-
-**Attenzione**: [00-index.md](./00-index.md) e i file `design-comuni-*.md` descrivono un
-workstream "Design Comuni" su un tema `Sixteen` che **non esiste in questo repo**
-(`Themes/` contiene solo `Meetup`, `Trattoria`, `TwentyOne`, `Zero`) — quel contenuto e'
-verosimilmente importato per errore da un altro progetto Laraxot e i suoi link a
-`Themes/Sixteen/docs/**` e `laravel/docs/design-comuni/**` sono rotti. Trattarlo come
-materiale storico da verificare con l'owner, non come workstream attivo di questo repo.
+Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi (Content Blocks, Sections, Homepage dinamica). Nel lavoro in corso sulla parity "Design Comuni", il Cms governa la struttura della homepage di test, mentre la resa visuale viene rifinita nel tema Sixteen. Vedi [00-index.md](./00-index.md) per il dettaglio operativo di questo workstream.
 
 Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i file `.md` presenti nella radice di `docs/` e nelle sue sottocartelle, senza spostare, rinominare o cancellare nulla.
 

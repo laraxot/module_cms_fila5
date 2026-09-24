@@ -74,29 +74,9 @@ Senza Cms:
 
 ## Testing & Coverage
 
-Il modulo Cms segue la **Metodologia "Super Mucca" (Laraxot Zen)**:
+Il modulo $(basename $(dirname $(dirname "$prd"))) segue la **Metodologia "Super Mucca" (Laraxot Zen)**:
 - **XotBaseTestCase**: Tutti i test estendono `Modules\Xot\Tests\XotBaseTestCase`.
 - **MySQL Only**: Test eseguiti contro MySQL (.env.testing).
 - **No RefreshDatabase**: Utilizzo di `DatabaseTransactions`.
 - **Obiettivo**: 100% di coverage. Se un test fallisce, va sistemato o eliminato se il sito è funzionale.
-
-## Appendice: framing prodotto/marketing (merged da PRD.md, 2026-09-17)
-
-`PRD.md` (maiuscolo) era una seconda bozza di PRD, piu' estesa (514 righe) ma generica/aspirazionale
-(personas "Marketing Manager", metriche SaaS, drag-and-drop non presente nel codice attuale) e non
-verificata contro questo repo specifico. Sintesi mantenuta per non perdere il framing di business,
-da validare con il product owner prima di considerarla normativa:
-
-- **Problem statement**: piattaforme moderne richiedono content management flessibile con page
-  building visuale, architettura a componenti, integrazione con altri moduli (Media, Seo) — senza
-  un modulo CMS dedicato, creare pagine richiede sempre intervento sviluppatore.
-- **Value proposition**: abilitare utenti non tecnici a creare/gestire pagine in autonomia; time-to-market
-  piu' rapido per campagne; branding coerente.
-- **Personas indicative**: Marketing Manager (crea landing page per campagne), Content Editor,
-  Developer (costruisce blocchi riutilizzabili).
-- **Non-goals dichiarati in quella bozza**: gestione articoli blog (modulo Blog), pagine e-commerce
-  (moduli commerce), applicazioni web complesse.
-- **Nota**: metriche, OKR e persona "Marketing Manager" in stile SaaS generico non sono state
-  verificate contro il dominio reale di questo repo (prenotazioni ristorante) — trattarle come bozza,
-  non come requisiti approvati.
 
