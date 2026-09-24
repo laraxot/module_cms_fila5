@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-{{-- builder body partial A — see Modules/Cms/docs/wiki --}}
-=======
 @php
 // Cms Blade view — see Modules/Cms/docs/wiki.
 @endphp
@@ -270,4 +267,3 @@ declare(strict_types=1);
                                                                                     </span>
                                                                                     <span class="item-controls"> <span
                                                                                             class="item-type">Link</span>
->>>>>>> laraxot/dev

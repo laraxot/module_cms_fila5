@@ -21,10 +21,7 @@ class CmsServiceProvider extends XotBaseServiceProvider
 
     protected string $module_ns = __NAMESPACE__;
 
-<<<<<<< HEAD
     #[\Override]
-=======
->>>>>>> laraxot/dev
     public function boot(): void
     {
         parent::boot();
@@ -42,10 +39,7 @@ class CmsServiceProvider extends XotBaseServiceProvider
     /**
      * Register the service provider.
      */
-<<<<<<< HEAD
     #[\Override]
-=======
->>>>>>> laraxot/dev
     public function register(): void
     {
         parent::register();
