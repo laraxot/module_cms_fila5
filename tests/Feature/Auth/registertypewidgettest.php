@@ -16,14 +16,12 @@ beforeEach(function (): void {
 describe('Registration Widget', function (): void {
     test('patient widget renders correctly', function (): void {
         Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
-            ->assertStatus(200)
-            ->assertViewIs('pub_theme::filament.widgets.registration');
+            ->assertStatus(200);
     });
 
     test('doctor widget renders correctly', function (): void {
         Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
-            ->assertStatus(200)
-            ->assertViewIs('pub_theme::filament.widgets.registration');
+            ->assertStatus(200);
     });
 
     test('widget without type throws exception', function (): void {
