@@ -70,6 +70,7 @@ Homestead.json
 .phpstorm.meta.php
 # IDE / DEV TOOLS (personal, never commit)
 .windsurf/
+.cursor/
 .vscode/
 # GIT SPECIFIC
 .git-rewrite/
@@ -123,34 +124,18 @@ test_content.json
 cms_test_data.sql
 # PROJECT SCRATCH
 agentdb.rvf
+audit-coverage/
 tests/AuditCoverage/
 # AI / TOOL SCAFFOLD — must never exist in the module tree
 # (see docs/module-root-hygiene.md and
 #  docs/wiki/rules/module-theme-root-cleanup.md)
 
 # Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+.cursor/
 .devcontainer/
 .vscode/
 .windsurf/
 
 # Laraxot — quality tool configs forbidden in module/theme root (use laravel/phpinsights.php, laravel/rector.php)
-
-# Agent tooling and local audit output
-
-# Module-local quality tool configuration
-.rector.php
-.phpinsights.php
-
-# Root agent tooling and PHP quality configuration
-/.agents/
-/.codex/
-/.cursor/
-/.opencode/
-/.qwen/
-/rector.php
-/phpinsights.php
-/.php-cs-fixer.php
-/.php-cs-fixer.dist.php
-
-# Generated Claude audit coverage scaffold (never commit)
-/audit-coverage/
+phpinsights.php
+rector.php
