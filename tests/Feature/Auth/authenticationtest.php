@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
+<<<<<<< HEAD
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,11 @@ use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\post;
+=======
+use Illuminate\Support\Facades\Hash;
+use Livewire\Volt\Volt as LivewireVolt;
+use Modules\Cms\Tests\TestCase;
+>>>>>>> laraxot/dev
 
 uses(TestCase::class);
 
@@ -22,6 +28,7 @@ test('login screen can be rendered', function (): void {
 });
 
 test('users can authenticate using the login screen', function (): void {
+<<<<<<< HEAD
     /** @var class-string<Model> $userClass */
     $userClass = XotData::make()->getUserClass();
     $factory = $userClass::factory();
@@ -39,6 +46,16 @@ test('users can authenticate using the login screen', function (): void {
 
     $response = LivewireVolt::test('auth.login')
         ->set('email', $user->email)
+=======
+    $email = TestCase::pestGenerateUniqueEmail();
+    TestCase::pestCreateTestUser([
+        'email' => $email,
+        'password' => Hash::make('password'),
+    ]);
+
+    $response = LivewireVolt::test('auth.login')
+        ->set('email', $email)
+>>>>>>> laraxot/dev
         ->set('password', 'password')
         ->call('authenticate');
 

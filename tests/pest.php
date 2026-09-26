@@ -27,7 +27,11 @@ uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
+<<<<<<< HEAD
 expect()->extend('toBeSubclassOf', function (string $parentClass) {
+=======
+expect()->extend('toBeSubclassOf', function (mixed $value, string $parentClass) {
+>>>>>>> laraxot/dev
     $class = $value;
     if (! is_string($class)) {
         throw new InvalidArgumentException('Expected a class name string');
