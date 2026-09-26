@@ -28,14 +28,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
      */
     protected string $module_ns = __NAMESPACE__;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     #[\Override]
-=======
->>>>>>> 84d3b70 (.)
-=======
-    #[\Override]
->>>>>>> laraxot/dev
     public function boot(): void
     {
         parent::boot();
@@ -107,15 +100,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
         $models_collect = collect(array_keys($models));
         $models_collect->implode('|');
-<<<<<<< HEAD
-<<<<<<< HEAD
         $models_collect->map(static fn (int|string $item) => Str::plural((string) $item))->implode('|');
-=======
-        $models_collect->map(static fn (mixed $item) => Str::plural((string) $item))->implode('|');
->>>>>>> 84d3b70 (.)
-=======
-        $models_collect->map(static fn (int|string $item) => Str::plural((string) $item))->implode('|');
->>>>>>> laraxot/dev
 
         /*--pattern vuoto
          * dddx([
