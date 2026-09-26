@@ -22,9 +22,13 @@ class CmsServiceProvider extends XotBaseServiceProvider
     protected string $module_ns = __NAMESPACE__;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     #[\Override]
 =======
 >>>>>>> 84d3b70 (.)
+=======
+    #[\Override]
+>>>>>>> laraxot/dev
     public function boot(): void
     {
         parent::boot();
@@ -43,9 +47,13 @@ class CmsServiceProvider extends XotBaseServiceProvider
      * Register the service provider.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     #[\Override]
 =======
 >>>>>>> 84d3b70 (.)
+=======
+    #[\Override]
+>>>>>>> laraxot/dev
     public function register(): void
     {
         parent::register();
@@ -54,10 +62,14 @@ class CmsServiceProvider extends XotBaseServiceProvider
 
         // Verifica che la configurazione di LaravelLocalization sia caricata
 <<<<<<< HEAD
+<<<<<<< HEAD
         // NOTA: La configurazione è già gestita dal modulo Lang
 =======
         // NOTA: La configurazione e' gia' gestita dal modulo Lang
 >>>>>>> 84d3b70 (.)
+=======
+        // NOTA: La configurazione è già gestita dal modulo Lang
+>>>>>>> laraxot/dev
         // if (!config()->has('laravellocalization.supportedLocales')) {
         //     $this->mergeConfigFrom(__DIR__.'/../config/laravellocalization.php', 'laravellocalization');
         // }
