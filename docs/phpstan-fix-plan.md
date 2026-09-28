@@ -1,3 +1,14 @@
+---
+title: "phpstan fix plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fix plan"
+issues: []
+discussions: []
+---
+
 # Cms Module - PHPStan Level 10 Fix Plan
 
 ## Analysis Date

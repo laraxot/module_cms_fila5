@@ -1,3 +1,14 @@
+---
+title: "view components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "view components"
+issues: []
+discussions: []
+---
+
 # View Components
 
 ## Panoramica

@@ -1,3 +1,14 @@
+---
+title: "themes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "themes"
+issues: []
+discussions: []
+---
+
 # Gestione Temi - Linee Guida e Riflessioni
 
 ## Introduzione

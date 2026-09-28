@@ -1,3 +1,14 @@
+---
+title: "list"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "list"
+issues: []
+discussions: []
+---
+
 # List
 
 Il componente List è utilizzato per visualizzare elenchi di elementi in modo strutturato e accessibile.

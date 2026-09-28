@@ -1,3 +1,14 @@
+---
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
+---
+
 # Cms Module - Sprint Planning
 
 **Module:** Cms  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "sprint planning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sprint planning"
+issues: []
+discussions: []
 ## Sprint Goal
 
 Launch core CMS page builder with content creation and publishing capabilities.

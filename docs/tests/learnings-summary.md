@@ -1,3 +1,14 @@
+---
+title: "learnings summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "learnings summary"
+issues: []
+discussions: []
+---
+
 # Learnings Summary - Implementation Test Registrazione ✅ RISOLTO
 
 ## 🎯 Mission Accomplished
@@ -182,5 +193,13 @@ Il sistema di test è ora **pronto per produzione** con:
 
 ---
 
+title: "learnings summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "learnings summary"
+issues: []
+discussions: []
 *Versione: 2.0 - Helper Functions Centralized*
 *Compatibilità: <nome progetto>, PestPHP 2.x, Laravel 10+*
