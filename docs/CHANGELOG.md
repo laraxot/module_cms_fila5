@@ -1,4 +1,10 @@
 ---
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CHANGELOG"
+issues: []
+discussions: []
 title: "Rimando a changelog.md"
 description: "Documento unificato: il contenuto canonico vive in changelog.md."
 status: merged

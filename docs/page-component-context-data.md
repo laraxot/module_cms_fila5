@@ -1,3 +1,14 @@
+---
+title: "page component context data"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page component context data"
+issues: []
+discussions: []
+---
+
 # Page component context data
 
 > **SSoT architettura:** [ADR cms-x-page-opaque-data-bag](../../../docs/wiki/decisions/cms-x-page-opaque-data-bag.md) · [wiki x-page-data-bag-only](wiki/concepts/x-page-data-bag-only.md)

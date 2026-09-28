@@ -1,3 +1,14 @@
+---
+title: "register type test implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "register type test implementation"
+issues: []
+discussions: []
+---
+
 # Register Type Test Implementation - Modulo Cms
 
 ## 🎯 Overview

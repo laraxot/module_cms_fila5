@@ -1,3 +1,14 @@
+---
+title: "theme"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "theme"
+issues: []
+discussions: []
+---
+
 # Theme
 
 per sapere quale tema utilizza questo progetto devi leggere laravel/.env  la variabile APP_URL  vedi un dominio , devi togliere http:// o https:// , togliere anche wwww. e lasciare solo il dominio, poi explodere la stringa da "."  poi invertire l'array e poi unire con "/"  questo e' il nome della configurazione percio' devi andare a leggere base_path('config/<nome>/xra.php');

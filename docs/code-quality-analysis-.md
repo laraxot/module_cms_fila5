@@ -1,3 +1,14 @@
+---
+title: "code quality analysis "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "code quality analysis "
+issues: []
+discussions: []
+---
+
 # Code Quality Analysis - CMS Module - November 2025
 
 ## 📊 Risultato Analisi Completa
@@ -11,6 +22,14 @@
 
 ---
 
+title: "code quality analysis "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "code quality analysis "
+issues: []
+discussions: []
 ## 🚨 Status Critico
 
 ### ❌ PHPStan Errors (6)

@@ -1,3 +1,14 @@
+---
+title: "volt introduction 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "volt introduction 1"
+issues: []
+discussions: []
+---
+
 # Introduzione a Laravel Volt
 
 Questa documentazione introduce Laravel Volt, un'API funzionale elegantemente progettata per Livewire, che permette di combinare la logica PHP e i template Blade nello stesso file.

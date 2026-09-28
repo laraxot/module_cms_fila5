@@ -1,3 +1,14 @@
+---
+title: "json content system architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "json content system architecture"
+issues: []
+discussions: []
+---
+
 # JSON Content System Architecture - CMS Module
 
 ## Data: [DATE]
@@ -6,6 +17,14 @@
 
 ---
 
+title: "json content system architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "json content system architecture"
+issues: []
+discussions: []
 ## 🧠 La Litigata Interna
 
 ### Contesto
