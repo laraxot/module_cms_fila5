@@ -1,0 +1,1658 @@
+{
+  "version": "0.2.2",
+  "timestamp": "2026-09-27T21:59:46.019Z",
+  "project": {
+    "name": "Cms",
+    "path": "/mnt/nas07/var/www/_bases/base_fixcity_fila5/laravel/Modules/Cms",
+    "languages": {
+      "Markdown": 1289,
+      "JSON": 13,
+      "Shell": 2,
+      "XML": 2,
+      "PHP": 1020,
+      "YAML": 1,
+      "JavaScript": 3,
+      "HTML": 1,
+      "SCSS": 1,
+      "CSS": 1
+    },
+    "frameworks": [
+      "TailwindCSS"
+    ],
+    "totalFiles": 2333,
+    "totalLines": 204648,
+    "hasTests": true,
+    "hasDependencyFile": true,
+    "dependencyFile": "package.json",
+    "dependencies": {
+      "@tailwindcss/forms": "^0.5.7",
+      "@tailwindcss/typography": "^0.5.10",
+      "autoprefixer": "^10.4.17",
+      "axios": "^1.17.0",
+      "cross-env": "^7.0.3",
+      "laravel-mix": "^6.0.49",
+      "laravel-mix-merge-manifest": "^2.1.0",
+      "laravel-vite-plugin": "^1.2.0",
+      "lodash": "^4.17.21",
+      "postcss": "^8.4.33",
+      "postcss-nesting": "^12.0.2",
+      "tailwindcss": "^3.4.1",
+      "tippy.js": "^6.3.7",
+      "vite": "^6.4.2"
+    },
+    "testFrameworks": []
+  },
+  "overallScore": 65,
+  "overallGrade": "C",
+  "categories": [
+    {
+      "category": "security",
+      "score": 60,
+      "grade": "C",
+      "findings": [
+        {
+          "id": "SEC-013-0",
+          "category": "security",
+          "severity": "medium",
+          "title": "TODO / FIXME Security Comment",
+          "description": "Potential TODO / FIXME Security Comment found in source code.",
+          "file": "tests/Feature/Auth/LoginVoltTest.php",
+          "line": 8,
+          "snippet": "})->todo('Serve il componente Volt auth.login registrato dal tema: senza, non c\\'e\\' niente da montare.');",
+          "fix": "Address this security-related TODO before shipping to production."
+        },
+        {
+          "id": "SEC-013-1",
+          "category": "security",
+          "severity": "medium",
+          "title": "TODO / FIXME Security Comment",
+          "description": "Potential TODO / FIXME Security Comment found in source code.",
+          "file": "tests/Feature/Auth/PasswordConfirmationTest.php",
+          "line": 7,
+          "snippet": "})->todo('Serve il pannello con le rotte di conferma password: il test va scritto sul flusso, non sul segnaposto.');",
+          "fix": "Address this security-related TODO before shipping to production."
+        },
+        {
+          "id": "SEC-013-2",
+          "category": "security",
+          "severity": "medium",
+          "title": "TODO / FIXME Security Comment",
+          "description": "Potential TODO / FIXME Security Comment found in source code.",
+          "file": "tests/Feature/Auth/PasswordConfirmationTest.php",
+          "line": 9,
+          "snippet": "})->todo('Serve il pannello con le rotte di conferma password: il test va scritto sul flusso, non sul segnaposto.');",
+          "fix": "Address this security-related TODO before shipping to production."
+        },
+        {
+          "id": "SEC-013-3",
+          "category": "security",
+          "severity": "medium",
+          "title": "TODO / FIXME Security Comment",
+          "description": "Potential TODO / FIXME Security Comment found in source code.",
+          "file": "tests/Feature/Auth/PasswordUpdateTest.php",
+          "line": 6,
+          "snippet": "})->todo('Il flusso di aggiornamento password vive nel tema pubblico: il test richiede il pannello montato.');",
+          "fix": "Address this security-related TODO before shipping to production."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "category": "quality",
+      "score": 50,
+      "grade": "D",
+      "findings": [
+        {
+          "id": "QUA-001",
+          "category": "quality",
+          "severity": "medium",
+          "title": "Deep Nesting Detected",
+          "description": "app/Actions/ResolvePageAction.php:120 — nesting depth of 6. This hurts readability and testability.",
+          "file": "app/Actions/ResolvePageAction.php",
+          "line": 120,
+          "fix": "Use early returns, extract functions, or restructure logic to reduce nesting. Aim for max depth of 3."
+        },
+        {
+          "id": "QUA-002",
+          "category": "quality",
+          "severity": "medium",
+          "title": "Deep Nesting Detected",
+          "description": "app/Providers/FolioVoltServiceProvider.php:78 — nesting depth of 6. This hurts readability and testability.",
+          "file": "app/Providers/FolioVoltServiceProvider.php",
+          "line": 78,
+          "fix": "Use early returns, extract functions, or restructure logic to reduce nesting. Aim for max depth of 3."
+        },
+        {
+          "id": "QUA-016",
+          "category": "quality",
+          "severity": "medium",
+          "title": "Large File — Consider Splitting",
+          "description": "lang/de/txt.php has 541 lines. Large files are hard to test, review, and maintain.",
+          "file": "lang/de/txt.php",
+          "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+        },
+        {
+          "id": "QUA-034",
+          "category": "quality",
+          "severity": "medium",
+          "title": "Large File — Consider Splitting",
+          "description": "lang/en/txt.php has 541 lines. Large files are hard to test, review, and maintain.",
+          "file": "lang/en/txt.php",
+          "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+        },
+        {
+          "id": "QUA-054",
+          "category": "quality",
+          "severity": "medium",
+          "title": "Large File — Consider Splitting",
+          "description": "lang/it/section.php has 502 lines. Large files are hard to test, review, and maintain.",
+          "file": "lang/it/section.php",
+          "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+        },
+        {
+          "id": "QUA-057",
+          "category": "quality",
+          "severity": "medium",
+          "title": "Large File — Consider Splitting",
+          "description": "lang/it/txt.php has 545 lines. Large files are hard to test, review, and maintain.",
+          "file": "lang/it/txt.php",
+          "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "category": "performance",
+      "score": 80,
+      "grade": "B",
+      "findings": [],
+      "summary": ""
+    },
+    {
+      "category": "architecture",
+      "score": 80,
+      "grade": "B",
+      "findings": [],
+      "summary": ""
+    },
+    {
+      "category": "dependencies",
+      "score": 80,
+      "grade": "B",
+      "findings": [],
+      "summary": ""
+    },
+    {
+      "category": "testing",
+      "score": 75,
+      "grade": "B",
+      "findings": [
+        {
+          "id": "QUA-081",
+          "category": "testing",
+          "severity": "medium",
+          "title": "Low Test Coverage",
+          "description": "Only 1% of source files have corresponding tests (12 test files for 1023 source files).",
+          "fix": "Add unit tests for critical business logic. Aim for at least 70% code coverage."
+        }
+      ],
+      "summary": ""
+    },
+    {
+      "category": "documentation",
+      "score": 0,
+      "grade": "F",
+      "findings": [
+        {
+          "id": "QUA-003",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/blocks.php has < 5% comment coverage across 150 lines.",
+          "file": "lang/de/blocks.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-004",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/cms.php has < 5% comment coverage across 111 lines.",
+          "file": "lang/de/cms.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-005",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/components.php has < 5% comment coverage across 113 lines.",
+          "file": "lang/de/components.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-006",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/create.php has < 5% comment coverage across 316 lines.",
+          "file": "lang/de/create.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-007",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/create_page_content.php has < 5% comment coverage across 143 lines.",
+          "file": "lang/de/create_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-008",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/create_section.php has < 5% comment coverage across 236 lines.",
+          "file": "lang/de/create_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-009",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/edit.php has < 5% comment coverage across 374 lines.",
+          "file": "lang/de/edit.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-010",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/edit_page_content.php has < 5% comment coverage across 179 lines.",
+          "file": "lang/de/edit_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-011",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/edit_section.php has < 5% comment coverage across 320 lines.",
+          "file": "lang/de/edit_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-012",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/menu.php has < 5% comment coverage across 144 lines.",
+          "file": "lang/de/menu.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-013",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/page.php has < 5% comment coverage across 221 lines.",
+          "file": "lang/de/page.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-014",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/page_content.php has < 5% comment coverage across 148 lines.",
+          "file": "lang/de/page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-015",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/section.php has < 5% comment coverage across 492 lines.",
+          "file": "lang/de/section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-017",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/txt.php has < 5% comment coverage across 541 lines.",
+          "file": "lang/de/txt.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-018",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/view_page_content.php has < 5% comment coverage across 176 lines.",
+          "file": "lang/de/view_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-019",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/de/view_section.php has < 5% comment coverage across 212 lines.",
+          "file": "lang/de/view_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-020",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/blocks.php has < 5% comment coverage across 165 lines.",
+          "file": "lang/en/blocks.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-021",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/cms.php has < 5% comment coverage across 111 lines.",
+          "file": "lang/en/cms.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-022",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/components.php has < 5% comment coverage across 113 lines.",
+          "file": "lang/en/components.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-023",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/create.php has < 5% comment coverage across 316 lines.",
+          "file": "lang/en/create.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-024",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/create_page_content.php has < 5% comment coverage across 143 lines.",
+          "file": "lang/en/create_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-025",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/create_section.php has < 5% comment coverage across 236 lines.",
+          "file": "lang/en/create_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-026",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/edit.php has < 5% comment coverage across 374 lines.",
+          "file": "lang/en/edit.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-027",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/edit_page_content.php has < 5% comment coverage across 179 lines.",
+          "file": "lang/en/edit_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-028",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/edit_section.php has < 5% comment coverage across 320 lines.",
+          "file": "lang/en/edit_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-029",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/filament.php has < 5% comment coverage across 131 lines.",
+          "file": "lang/en/filament.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-030",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/menu.php has < 5% comment coverage across 144 lines.",
+          "file": "lang/en/menu.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-031",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/page.php has < 5% comment coverage across 221 lines.",
+          "file": "lang/en/page.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-032",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/page_content.php has < 5% comment coverage across 148 lines.",
+          "file": "lang/en/page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-033",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/section.php has < 5% comment coverage across 492 lines.",
+          "file": "lang/en/section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-035",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/txt.php has < 5% comment coverage across 541 lines.",
+          "file": "lang/en/txt.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-036",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/view_page_content.php has < 5% comment coverage across 176 lines.",
+          "file": "lang/en/view_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-037",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/en/view_section.php has < 5% comment coverage across 212 lines.",
+          "file": "lang/en/view_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-038",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/actions.php has < 5% comment coverage across 214 lines.",
+          "file": "lang/it/actions.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-039",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/attachment.php has < 5% comment coverage across 205 lines.",
+          "file": "lang/it/attachment.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-040",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/blocks.php has < 5% comment coverage across 183 lines.",
+          "file": "lang/it/blocks.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-041",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/breadcrumb.php has < 5% comment coverage across 125 lines.",
+          "file": "lang/it/breadcrumb.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-042",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/cms.php has < 5% comment coverage across 142 lines.",
+          "file": "lang/it/cms.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-043",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/components.php has < 5% comment coverage across 144 lines.",
+          "file": "lang/it/components.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-044",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/create.php has < 5% comment coverage across 320 lines.",
+          "file": "lang/it/create.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-045",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/create_page_content.php has < 5% comment coverage across 147 lines.",
+          "file": "lang/it/create_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-046",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/create_section.php has < 5% comment coverage across 240 lines.",
+          "file": "lang/it/create_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-047",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/edit.php has < 5% comment coverage across 378 lines.",
+          "file": "lang/it/edit.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-048",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/edit_page_content.php has < 5% comment coverage across 183 lines.",
+          "file": "lang/it/edit_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-049",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/edit_section.php has < 5% comment coverage across 324 lines.",
+          "file": "lang/it/edit_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-050",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/filament.php has < 5% comment coverage across 131 lines.",
+          "file": "lang/it/filament.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-051",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/menu.php has < 5% comment coverage across 182 lines.",
+          "file": "lang/it/menu.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-052",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/page.php has < 5% comment coverage across 235 lines.",
+          "file": "lang/it/page.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-053",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/page_content.php has < 5% comment coverage across 154 lines.",
+          "file": "lang/it/page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-055",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/section.php has < 5% comment coverage across 502 lines.",
+          "file": "lang/it/section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-056",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/sections.php has < 5% comment coverage across 109 lines.",
+          "file": "lang/it/sections.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-058",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/txt.php has < 5% comment coverage across 545 lines.",
+          "file": "lang/it/txt.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-059",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/view_page_content.php has < 5% comment coverage across 180 lines.",
+          "file": "lang/it/view_page_content.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-060",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "lang/it/view_section.php has < 5% comment coverage across 216 lines.",
+          "file": "lang/it/view_section.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-061",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/CmsContentManagementTest.php has < 5% comment coverage across 461 lines.",
+          "file": "tests/Feature/CmsContentManagementTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-062",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/PageManagementBusinessLogicTest.php has < 5% comment coverage across 262 lines.",
+          "file": "tests/Feature/PageManagementBusinessLogicTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-063",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/Auth/LoginHttpTest.php has < 5% comment coverage across 164 lines.",
+          "file": "tests/Feature/Auth/LoginHttpTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-064",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/Auth/LoginTest.php has < 5% comment coverage across 165 lines.",
+          "file": "tests/Feature/Auth/LoginTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-065",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/Auth/LoginVoltComponentTest.php has < 5% comment coverage across 358 lines.",
+          "file": "tests/Feature/Auth/LoginVoltComponentTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-066",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/Auth/registertypewidgettest.php has < 5% comment coverage across 113 lines.",
+          "file": "tests/Feature/Auth/registertypewidgettest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-067",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Actions/ResolveBlockQueryActionTest.php has < 5% comment coverage across 127 lines.",
+          "file": "tests/Unit/Actions/ResolveBlockQueryActionTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-068",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Datas/HeadernavDataTest.php has < 5% comment coverage across 129 lines.",
+          "file": "tests/Unit/Datas/HeadernavDataTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-069",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Models/PageContentBusinessLogicTest.php has < 5% comment coverage across 123 lines.",
+          "file": "tests/Unit/Models/PageContentBusinessLogicTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-070",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Models/PageTest.php has < 5% comment coverage across 115 lines.",
+          "file": "tests/Unit/Models/PageTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-071",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Support/PageSchemaBuilderTest.php has < 5% comment coverage across 143 lines.",
+          "file": "tests/Unit/Support/PageSchemaBuilderTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-072",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Views/PageComponentDataMergeTest.php has < 5% comment coverage across 119 lines.",
+          "file": "tests/Unit/Views/PageComponentDataMergeTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-073",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "resources/views/components/blog/articles-grid.blade.php has < 5% comment coverage across 162 lines.",
+          "file": "resources/views/components/blog/articles-grid.blade.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-074",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "resources/views/components/blog/category-filter.blade.php has < 5% comment coverage across 117 lines.",
+          "file": "resources/views/components/blog/category-filter.blade.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-075",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "resources/views/components/blog/featured-grid.blade.php has < 5% comment coverage across 146 lines.",
+          "file": "resources/views/components/blog/featured-grid.blade.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-076",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "resources/views/components/headernav/simple.blade.php has < 5% comment coverage across 104 lines.",
+          "file": "resources/views/components/headernav/simple.blade.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-077",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "resources/views/livewire/menu/builder.blade.php has < 5% comment coverage across 465 lines.",
+          "file": "resources/views/livewire/menu/builder.blade.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-078",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Feature/Frontoffice/FolioRoutes/LocaleRoutingTest.php has < 5% comment coverage across 136 lines.",
+          "file": "tests/Feature/Frontoffice/FolioRoutes/LocaleRoutingTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-079",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "tests/Unit/Http/Middleware/PageSlugMiddlewareTest.php has < 5% comment coverage across 129 lines.",
+          "file": "tests/Unit/Http/Middleware/PageSlugMiddlewareTest.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        },
+        {
+          "id": "QUA-080",
+          "category": "documentation",
+          "severity": "low",
+          "title": "Insufficient Documentation",
+          "description": "resources/views/components/blocks/headernav/simple.blade.php has < 5% comment coverage across 104 lines.",
+          "file": "resources/views/components/blocks/headernav/simple.blade.php",
+          "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+        }
+      ],
+      "summary": ""
+    }
+  ],
+  "allFindings": [
+    {
+      "id": "SEC-013-0",
+      "category": "security",
+      "severity": "medium",
+      "title": "TODO / FIXME Security Comment",
+      "description": "Potential TODO / FIXME Security Comment found in source code.",
+      "file": "tests/Feature/Auth/LoginVoltTest.php",
+      "line": 8,
+      "snippet": "})->todo('Serve il componente Volt auth.login registrato dal tema: senza, non c\\'e\\' niente da montare.');",
+      "fix": "Address this security-related TODO before shipping to production."
+    },
+    {
+      "id": "SEC-013-1",
+      "category": "security",
+      "severity": "medium",
+      "title": "TODO / FIXME Security Comment",
+      "description": "Potential TODO / FIXME Security Comment found in source code.",
+      "file": "tests/Feature/Auth/PasswordConfirmationTest.php",
+      "line": 7,
+      "snippet": "})->todo('Serve il pannello con le rotte di conferma password: il test va scritto sul flusso, non sul segnaposto.');",
+      "fix": "Address this security-related TODO before shipping to production."
+    },
+    {
+      "id": "SEC-013-2",
+      "category": "security",
+      "severity": "medium",
+      "title": "TODO / FIXME Security Comment",
+      "description": "Potential TODO / FIXME Security Comment found in source code.",
+      "file": "tests/Feature/Auth/PasswordConfirmationTest.php",
+      "line": 9,
+      "snippet": "})->todo('Serve il pannello con le rotte di conferma password: il test va scritto sul flusso, non sul segnaposto.');",
+      "fix": "Address this security-related TODO before shipping to production."
+    },
+    {
+      "id": "SEC-013-3",
+      "category": "security",
+      "severity": "medium",
+      "title": "TODO / FIXME Security Comment",
+      "description": "Potential TODO / FIXME Security Comment found in source code.",
+      "file": "tests/Feature/Auth/PasswordUpdateTest.php",
+      "line": 6,
+      "snippet": "})->todo('Il flusso di aggiornamento password vive nel tema pubblico: il test richiede il pannello montato.');",
+      "fix": "Address this security-related TODO before shipping to production."
+    },
+    {
+      "id": "QUA-001",
+      "category": "quality",
+      "severity": "medium",
+      "title": "Deep Nesting Detected",
+      "description": "app/Actions/ResolvePageAction.php:120 — nesting depth of 6. This hurts readability and testability.",
+      "file": "app/Actions/ResolvePageAction.php",
+      "line": 120,
+      "fix": "Use early returns, extract functions, or restructure logic to reduce nesting. Aim for max depth of 3."
+    },
+    {
+      "id": "QUA-002",
+      "category": "quality",
+      "severity": "medium",
+      "title": "Deep Nesting Detected",
+      "description": "app/Providers/FolioVoltServiceProvider.php:78 — nesting depth of 6. This hurts readability and testability.",
+      "file": "app/Providers/FolioVoltServiceProvider.php",
+      "line": 78,
+      "fix": "Use early returns, extract functions, or restructure logic to reduce nesting. Aim for max depth of 3."
+    },
+    {
+      "id": "QUA-016",
+      "category": "quality",
+      "severity": "medium",
+      "title": "Large File — Consider Splitting",
+      "description": "lang/de/txt.php has 541 lines. Large files are hard to test, review, and maintain.",
+      "file": "lang/de/txt.php",
+      "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+    },
+    {
+      "id": "QUA-034",
+      "category": "quality",
+      "severity": "medium",
+      "title": "Large File — Consider Splitting",
+      "description": "lang/en/txt.php has 541 lines. Large files are hard to test, review, and maintain.",
+      "file": "lang/en/txt.php",
+      "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+    },
+    {
+      "id": "QUA-054",
+      "category": "quality",
+      "severity": "medium",
+      "title": "Large File — Consider Splitting",
+      "description": "lang/it/section.php has 502 lines. Large files are hard to test, review, and maintain.",
+      "file": "lang/it/section.php",
+      "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+    },
+    {
+      "id": "QUA-057",
+      "category": "quality",
+      "severity": "medium",
+      "title": "Large File — Consider Splitting",
+      "description": "lang/it/txt.php has 545 lines. Large files are hard to test, review, and maintain.",
+      "file": "lang/it/txt.php",
+      "fix": "Split into smaller, focused modules. Follow the Single Responsibility Principle."
+    },
+    {
+      "id": "QUA-081",
+      "category": "testing",
+      "severity": "medium",
+      "title": "Low Test Coverage",
+      "description": "Only 1% of source files have corresponding tests (12 test files for 1023 source files).",
+      "fix": "Add unit tests for critical business logic. Aim for at least 70% code coverage."
+    },
+    {
+      "id": "QUA-003",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/blocks.php has < 5% comment coverage across 150 lines.",
+      "file": "lang/de/blocks.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-004",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/cms.php has < 5% comment coverage across 111 lines.",
+      "file": "lang/de/cms.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-005",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/components.php has < 5% comment coverage across 113 lines.",
+      "file": "lang/de/components.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-006",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/create.php has < 5% comment coverage across 316 lines.",
+      "file": "lang/de/create.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-007",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/create_page_content.php has < 5% comment coverage across 143 lines.",
+      "file": "lang/de/create_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-008",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/create_section.php has < 5% comment coverage across 236 lines.",
+      "file": "lang/de/create_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-009",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/edit.php has < 5% comment coverage across 374 lines.",
+      "file": "lang/de/edit.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-010",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/edit_page_content.php has < 5% comment coverage across 179 lines.",
+      "file": "lang/de/edit_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-011",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/edit_section.php has < 5% comment coverage across 320 lines.",
+      "file": "lang/de/edit_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-012",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/menu.php has < 5% comment coverage across 144 lines.",
+      "file": "lang/de/menu.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-013",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/page.php has < 5% comment coverage across 221 lines.",
+      "file": "lang/de/page.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-014",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/page_content.php has < 5% comment coverage across 148 lines.",
+      "file": "lang/de/page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-015",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/section.php has < 5% comment coverage across 492 lines.",
+      "file": "lang/de/section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-017",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/txt.php has < 5% comment coverage across 541 lines.",
+      "file": "lang/de/txt.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-018",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/view_page_content.php has < 5% comment coverage across 176 lines.",
+      "file": "lang/de/view_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-019",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/de/view_section.php has < 5% comment coverage across 212 lines.",
+      "file": "lang/de/view_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-020",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/blocks.php has < 5% comment coverage across 165 lines.",
+      "file": "lang/en/blocks.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-021",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/cms.php has < 5% comment coverage across 111 lines.",
+      "file": "lang/en/cms.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-022",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/components.php has < 5% comment coverage across 113 lines.",
+      "file": "lang/en/components.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-023",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/create.php has < 5% comment coverage across 316 lines.",
+      "file": "lang/en/create.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-024",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/create_page_content.php has < 5% comment coverage across 143 lines.",
+      "file": "lang/en/create_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-025",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/create_section.php has < 5% comment coverage across 236 lines.",
+      "file": "lang/en/create_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-026",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/edit.php has < 5% comment coverage across 374 lines.",
+      "file": "lang/en/edit.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-027",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/edit_page_content.php has < 5% comment coverage across 179 lines.",
+      "file": "lang/en/edit_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-028",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/edit_section.php has < 5% comment coverage across 320 lines.",
+      "file": "lang/en/edit_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-029",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/filament.php has < 5% comment coverage across 131 lines.",
+      "file": "lang/en/filament.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-030",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/menu.php has < 5% comment coverage across 144 lines.",
+      "file": "lang/en/menu.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-031",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/page.php has < 5% comment coverage across 221 lines.",
+      "file": "lang/en/page.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-032",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/page_content.php has < 5% comment coverage across 148 lines.",
+      "file": "lang/en/page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-033",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/section.php has < 5% comment coverage across 492 lines.",
+      "file": "lang/en/section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-035",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/txt.php has < 5% comment coverage across 541 lines.",
+      "file": "lang/en/txt.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-036",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/view_page_content.php has < 5% comment coverage across 176 lines.",
+      "file": "lang/en/view_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-037",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/en/view_section.php has < 5% comment coverage across 212 lines.",
+      "file": "lang/en/view_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-038",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/actions.php has < 5% comment coverage across 214 lines.",
+      "file": "lang/it/actions.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-039",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/attachment.php has < 5% comment coverage across 205 lines.",
+      "file": "lang/it/attachment.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-040",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/blocks.php has < 5% comment coverage across 183 lines.",
+      "file": "lang/it/blocks.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-041",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/breadcrumb.php has < 5% comment coverage across 125 lines.",
+      "file": "lang/it/breadcrumb.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-042",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/cms.php has < 5% comment coverage across 142 lines.",
+      "file": "lang/it/cms.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-043",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/components.php has < 5% comment coverage across 144 lines.",
+      "file": "lang/it/components.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-044",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/create.php has < 5% comment coverage across 320 lines.",
+      "file": "lang/it/create.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-045",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/create_page_content.php has < 5% comment coverage across 147 lines.",
+      "file": "lang/it/create_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-046",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/create_section.php has < 5% comment coverage across 240 lines.",
+      "file": "lang/it/create_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-047",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/edit.php has < 5% comment coverage across 378 lines.",
+      "file": "lang/it/edit.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-048",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/edit_page_content.php has < 5% comment coverage across 183 lines.",
+      "file": "lang/it/edit_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-049",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/edit_section.php has < 5% comment coverage across 324 lines.",
+      "file": "lang/it/edit_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-050",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/filament.php has < 5% comment coverage across 131 lines.",
+      "file": "lang/it/filament.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-051",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/menu.php has < 5% comment coverage across 182 lines.",
+      "file": "lang/it/menu.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-052",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/page.php has < 5% comment coverage across 235 lines.",
+      "file": "lang/it/page.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-053",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/page_content.php has < 5% comment coverage across 154 lines.",
+      "file": "lang/it/page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-055",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/section.php has < 5% comment coverage across 502 lines.",
+      "file": "lang/it/section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-056",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/sections.php has < 5% comment coverage across 109 lines.",
+      "file": "lang/it/sections.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-058",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/txt.php has < 5% comment coverage across 545 lines.",
+      "file": "lang/it/txt.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-059",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/view_page_content.php has < 5% comment coverage across 180 lines.",
+      "file": "lang/it/view_page_content.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-060",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "lang/it/view_section.php has < 5% comment coverage across 216 lines.",
+      "file": "lang/it/view_section.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-061",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/CmsContentManagementTest.php has < 5% comment coverage across 461 lines.",
+      "file": "tests/Feature/CmsContentManagementTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-062",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/PageManagementBusinessLogicTest.php has < 5% comment coverage across 262 lines.",
+      "file": "tests/Feature/PageManagementBusinessLogicTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-063",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/Auth/LoginHttpTest.php has < 5% comment coverage across 164 lines.",
+      "file": "tests/Feature/Auth/LoginHttpTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-064",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/Auth/LoginTest.php has < 5% comment coverage across 165 lines.",
+      "file": "tests/Feature/Auth/LoginTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-065",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/Auth/LoginVoltComponentTest.php has < 5% comment coverage across 358 lines.",
+      "file": "tests/Feature/Auth/LoginVoltComponentTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-066",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/Auth/registertypewidgettest.php has < 5% comment coverage across 113 lines.",
+      "file": "tests/Feature/Auth/registertypewidgettest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-067",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Actions/ResolveBlockQueryActionTest.php has < 5% comment coverage across 127 lines.",
+      "file": "tests/Unit/Actions/ResolveBlockQueryActionTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-068",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Datas/HeadernavDataTest.php has < 5% comment coverage across 129 lines.",
+      "file": "tests/Unit/Datas/HeadernavDataTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-069",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Models/PageContentBusinessLogicTest.php has < 5% comment coverage across 123 lines.",
+      "file": "tests/Unit/Models/PageContentBusinessLogicTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-070",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Models/PageTest.php has < 5% comment coverage across 115 lines.",
+      "file": "tests/Unit/Models/PageTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-071",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Support/PageSchemaBuilderTest.php has < 5% comment coverage across 143 lines.",
+      "file": "tests/Unit/Support/PageSchemaBuilderTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-072",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Views/PageComponentDataMergeTest.php has < 5% comment coverage across 119 lines.",
+      "file": "tests/Unit/Views/PageComponentDataMergeTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-073",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "resources/views/components/blog/articles-grid.blade.php has < 5% comment coverage across 162 lines.",
+      "file": "resources/views/components/blog/articles-grid.blade.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-074",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "resources/views/components/blog/category-filter.blade.php has < 5% comment coverage across 117 lines.",
+      "file": "resources/views/components/blog/category-filter.blade.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-075",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "resources/views/components/blog/featured-grid.blade.php has < 5% comment coverage across 146 lines.",
+      "file": "resources/views/components/blog/featured-grid.blade.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-076",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "resources/views/components/headernav/simple.blade.php has < 5% comment coverage across 104 lines.",
+      "file": "resources/views/components/headernav/simple.blade.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-077",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "resources/views/livewire/menu/builder.blade.php has < 5% comment coverage across 465 lines.",
+      "file": "resources/views/livewire/menu/builder.blade.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-078",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Feature/Frontoffice/FolioRoutes/LocaleRoutingTest.php has < 5% comment coverage across 136 lines.",
+      "file": "tests/Feature/Frontoffice/FolioRoutes/LocaleRoutingTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-079",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "tests/Unit/Http/Middleware/PageSlugMiddlewareTest.php has < 5% comment coverage across 129 lines.",
+      "file": "tests/Unit/Http/Middleware/PageSlugMiddlewareTest.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    },
+    {
+      "id": "QUA-080",
+      "category": "documentation",
+      "severity": "low",
+      "title": "Insufficient Documentation",
+      "description": "resources/views/components/blocks/headernav/simple.blade.php has < 5% comment coverage across 104 lines.",
+      "file": "resources/views/components/blocks/headernav/simple.blade.php",
+      "fix": "Add JSDoc/docstrings to exported functions, classes, and complex logic."
+    }
+  ],
+  "criticalCount": 0,
+  "highCount": 0,
+  "mediumCount": 11,
+  "lowCount": 74,
+  "aiPowered": false,
+  "durationMs": 536
+}
