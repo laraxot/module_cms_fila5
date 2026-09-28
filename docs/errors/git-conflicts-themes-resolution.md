@@ -1,3 +1,14 @@
+---
+title: "git conflicts themes resolution"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts themes resolution"
+issues: []
+discussions: []
+---
+
 # Risoluzione Conflitti Git nei Temi
 
 ## Descrizione del Problema
@@ -184,4 +195,12 @@ php artisan view:clear
 
 ---
 
+title: "git conflicts themes resolution"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts themes resolution"
+issues: []
+discussions: []
 *Autore: Sistema di Risoluzione Conflitti Git*

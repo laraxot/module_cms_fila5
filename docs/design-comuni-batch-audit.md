@@ -1,3 +1,14 @@
+---
+title: "design comuni batch audit"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni batch audit"
+issues: []
+discussions: []
+---
+
 # Design Comuni Batch CMS Audit
 
 Questo report riassume quali pagine `tests.<slug>` sono pronte per parity visuale e quali sono bloccate a livello di struttura CMS/rendering.

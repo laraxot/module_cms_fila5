@@ -1,3 +1,14 @@
+---
+title: "filament components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament components"
+issues: []
+discussions: []
+---
+
 # Best Practices per l'Utilizzo dei Componenti Filament
 
 ## Principio Fondamentale

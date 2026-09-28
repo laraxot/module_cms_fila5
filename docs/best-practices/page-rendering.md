@@ -1,3 +1,14 @@
+---
+title: "page rendering"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page rendering"
+issues: []
+discussions: []
+---
+
 # Best Practices per il Rendering delle Pagine
 
 ## Stato Attuale vs Best Practice
@@ -187,5 +198,13 @@ Per una documentazione più dettagliata sul sistema di gestione dei contenuti e 
 - [Gestione dei Contenuti](/docs/content/management.md)
 
 ---
+title: "page rendering"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page rendering"
+issues: []
+discussions: []
 @see laravel/Themes/One/resources/views/pages/index.blade.php
 @see laravel/docs/cms/components.md

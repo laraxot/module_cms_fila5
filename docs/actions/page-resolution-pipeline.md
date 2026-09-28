@@ -1,4 +1,7 @@
 ---
+qmd: "page resolution pipeline"
+issues: []
+discussions: []
 title: "Page Resolution Pipeline — Cms Module"
 type: documentation
 created: 2026-07-20

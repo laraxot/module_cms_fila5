@@ -1,3 +1,14 @@
+---
+title: "user link 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "user link 1"
+issues: []
+discussions: []
+---
+
 # Collegamento al Modulo User
 
 Questo documento descrive le relazioni e i collegamenti tra il modulo Cms e il modulo User per quanto riguarda i componenti Filament e le convenzioni di namespace.
@@ -26,6 +37,14 @@ Per dettagli specifici, consulta:
 
 ---
 
+title: "user link 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "user link 1"
+issues: []
+discussions: []
 ### Nota Importante
 Quando aggiungi nuovi componenti Filament, assicurati di:
 1. Utilizzare il namespace corretto

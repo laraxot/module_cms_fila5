@@ -1,3 +1,14 @@
+---
+title: "chaos monkey deep dive"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "chaos monkey deep dive"
+issues: []
+discussions: []
+---
+
 # Chaos Monkey - Deep Dive Tecnico
 
 Analisi approfondita della catena di rendering per debugging sistematico.

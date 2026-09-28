@@ -1,3 +1,14 @@
+---
+title: "content versioning"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content versioning"
+issues: []
+discussions: []
+---
+
 # Content Versioning - Cms
 
 **Task ID**: CMS-FEATURE-001

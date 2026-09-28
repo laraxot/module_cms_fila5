@@ -1,3 +1,14 @@
+---
+title: "phpmd report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpmd report"
+issues: []
+discussions: []
+---
+
 # PHPMD Report (CMS)
 
 ## esecuzione [DATE]

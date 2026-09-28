@@ -1,3 +1,14 @@
+---
+title: "newsletter"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "newsletter"
+issues: []
+discussions: []
+---
+
 # Newsletter Block
 
 Il blocco Newsletter è utilizzato per creare form di iscrizione alla newsletter, con supporto per messaggi personalizzati e feedback utente. Può essere utilizzato in qualsiasi contesto, dal footer a sezioni dedicate della pagina.

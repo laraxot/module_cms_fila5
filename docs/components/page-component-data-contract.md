@@ -1,3 +1,14 @@
+---
+title: "page component data contract"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page component data contract"
+issues: []
+discussions: []
+---
+
 # Page Component - Data Contract
 
 ## Principio: $data come carrier universale

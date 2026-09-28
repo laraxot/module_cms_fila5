@@ -1,3 +1,14 @@
+---
+title: "content blocks architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content blocks architecture"
+issues: []
+discussions: []
+---
+
 # Architettura Content Blocks - <main module>
 
 ## Panoramica Architetturale

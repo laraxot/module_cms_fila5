@@ -1,3 +1,14 @@
+---
+title: "actions"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "actions"
+issues: []
+discussions: []
+---
+
 # Actions Block
 
 Il blocco Actions è utilizzato per creare gruppi di pulsanti o link di azione, con supporto per diversi stili e tipi di pulsanti.

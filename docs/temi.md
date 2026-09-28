@@ -1,3 +1,14 @@
+---
+title: "temi"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "temi"
+issues: []
+discussions: []
+---
+
 # Struttura dei Temi in il progetto
 
 ## Panoramica

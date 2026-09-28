@@ -1,3 +1,14 @@
+---
+title: "ui link"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "ui link"
+issues: []
+discussions: []
+---
+
 # Collegamenti al Modulo UI
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Cms e il modulo UI.

@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Cms Module — Doctrine"
 type: doctrine
 tags: [cms, content-management, module-doctrine]

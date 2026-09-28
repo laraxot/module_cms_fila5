@@ -1,3 +1,14 @@
+---
+title: "create theme volt folio filament"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "create theme volt folio filament"
+issues: []
+discussions: []
+---
+
 # Creazione di un Tema con Volt, Folio e Filament
 
 ## Introduzione

@@ -1,3 +1,14 @@
+---
+title: "alert"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "alert"
+issues: []
+discussions: []
+---
+
 # Alert
 
 Il componente Alert è utilizzato per mostrare messaggi importanti, notifiche o feedback all'utente in modo chiaro e visibile.

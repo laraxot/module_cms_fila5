@@ -1,3 +1,14 @@
+---
+title: "cms theme template runtime reference"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cms theme template runtime reference"
+issues: []
+discussions: []
+---
+
 # CMS Theme Template Runtime Reference
 
 ## Quick Reference
