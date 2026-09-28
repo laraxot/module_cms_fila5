@@ -1,3 +1,14 @@
+---
+title: "psr4 autoload remediation 2026 03 09"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "psr4 autoload remediation 2026 03 09"
+issues: []
+discussions: []
+---
+
 # PSR-4 Autoload Remediation (2026-03-09)
 
 ## Contesto

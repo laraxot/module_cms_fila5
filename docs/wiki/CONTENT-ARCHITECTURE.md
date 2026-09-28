@@ -1,4 +1,10 @@
 ---
+type: note
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "CONTENT ARCHITECTURE"
+issues: []
+discussions: []
 title: "Rimando a content-architecture.md"
 description: "Documento unificato: il contenuto canonico vive in content-architecture.md."
 status: merged

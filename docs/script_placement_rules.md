@@ -1,3 +1,14 @@
+---
+title: "script placement rules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "script placement rules"
+issues: []
+discussions: []
+---
+
 # Script Placement Rules
 
 ## Rule: Standalone Operational Scripts Location

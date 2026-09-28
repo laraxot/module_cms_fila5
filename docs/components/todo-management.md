@@ -1,3 +1,14 @@
+---
+title: "todo management"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "todo management"
+issues: []
+discussions: []
+---
+
 # Gestione Todo con Volt e Folio
 
 ## Introduzione

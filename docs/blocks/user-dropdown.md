@@ -1,3 +1,14 @@
+---
+title: "user dropdown"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "user dropdown"
+issues: []
+discussions: []
+---
+
 # User Dropdown Block
 
 > **NOTA IMPORTANTE**: Per informazioni dettagliate sull'integrazione di componenti Filament in questo blocco, vedere la [documentazione nel modulo UI](../../../ui/docs/blocks/filament-component-integration.md).

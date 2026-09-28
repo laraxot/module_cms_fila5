@@ -1,3 +1,14 @@
+---
+title: "roadmap complete"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap complete"
+issues: []
+discussions: []
+---
+
 # 🗺️ ROADMAP COMPLETA - Modulo CMS
 
 ## 📊 Business Logic
@@ -13,6 +24,14 @@ Il modulo **CMS** (Content Management System) gestisce tutti i contenuti dinamic
 
 ---
 
+title: "roadmap complete"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap complete"
+issues: []
+discussions: []
 ## 🎯 Funzionalità Implementate
 
 ### ✅ Core Content Management

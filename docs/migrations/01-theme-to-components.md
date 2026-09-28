@@ -1,3 +1,14 @@
+---
+title: "01 theme to components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "01 theme to components"
+issues: []
+discussions: []
+---
+
 # Migrazione da ThemeComposer a Componenti Blade
 
 ## Panoramica
@@ -240,5 +251,13 @@ git checkout -- Themes/*/resources/views/pages/
 - [Architettura del CMS](../architecture.md)
 
 ---
+title: "01 theme to components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "01 theme to components"
+issues: []
+discussions: []
 @see Themes/One/resources/views/pages/index.blade.php
 @see Modules/Cms/View/Composers/ThemeComposer.php

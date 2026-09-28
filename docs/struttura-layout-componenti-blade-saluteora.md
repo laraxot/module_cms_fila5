@@ -1,3 +1,14 @@
+---
+title: "struttura layout componenti blade saluteora"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "struttura layout componenti blade saluteora"
+issues: []
+discussions: []
+---
+
 # Struttura dei Layout e Componenti Blade in il progetto
 
 Questo documento analizza in dettaglio la struttura dei layout e dei componenti Blade utilizzati in il progetto, con particolare attenzione all'architettura a cascata dei layout e all'integrazione con Filament e Livewire.

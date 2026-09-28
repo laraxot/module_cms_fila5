@@ -1,3 +1,14 @@
+---
+title: "index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "index"
+issues: []
+discussions: []
+---
+
 # Architettura Frontend
 
 > Questo documento è un indice e un’introduzione ai dettagli specifici dell’architettura frontend per il modulo Cms.

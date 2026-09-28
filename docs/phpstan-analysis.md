@@ -1,3 +1,14 @@
+---
+title: "phpstan analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan analysis"
+issues: []
+discussions: []
+---
+
 # PHPStan Analysis - Cms Module
 
 **Livello**: MAX (9)
@@ -5,6 +16,14 @@
 
 ---
 
+title: "phpstan analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan analysis"
+issues: []
+discussions: []
 ## 📊 Distribuzione Errori
 
 | Tipo | Quantità | % | Status |
