@@ -1,3 +1,14 @@
+---
+title: "legacy roadmap 2"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "legacy roadmap 2"
+issues: []
+discussions: []
+---
+
 # Roadmap Modulo Cms - 2026-01-30
 
 **Modulo**: Cms (Content Management System)
@@ -10,6 +21,14 @@
 
 ---
 
+title: "legacy roadmap 2"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "legacy roadmap 2"
+issues: []
+discussions: []
 ## Stato Attuale
 
 Il modulo Cms fornisce:

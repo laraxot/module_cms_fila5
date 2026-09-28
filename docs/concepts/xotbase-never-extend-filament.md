@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Cms — mai Filament\*, sempre XotBase*"
 type: concept
 module: Cms

@@ -1,3 +1,14 @@
+---
+title: "filament blocks system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament blocks system"
+issues: []
+discussions: []
+---
+
 # Sistema Filament Blocks - Modulo CMS
 
 ## Panoramica

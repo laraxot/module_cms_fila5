@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "my first blog post"
+issues: []
+discussions: []
 extends: _layouts.post
 section: content
 title: My First Blog Post

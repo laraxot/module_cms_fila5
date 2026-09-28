@@ -1,3 +1,14 @@
+---
+title: "component page alias rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "component page alias rule"
+issues: []
+discussions: []
+---
+
 # Page Component Alias Rule
 
 ## Sintesi

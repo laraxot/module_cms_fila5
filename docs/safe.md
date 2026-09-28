@@ -1,3 +1,14 @@
+---
+title: "safe"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "safe"
+issues: []
+discussions: []
+---
+
 # Utilizzo di Safe nel Progetto il progetto
 
 ## Introduzione

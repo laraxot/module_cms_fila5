@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: PHPStan Standards & PHPDoc Guidelines
 type: technical
 tags: [phpstan, phpdoc, type-safety, standards]

@@ -1,3 +1,14 @@
+---
+title: "widget test patterns"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "widget test patterns"
+issues: []
+discussions: []
+---
+
 # Widget Test Patterns - Gold Standard
 
 ## 🏆 **Pattern Vincente Confermato**
@@ -211,6 +222,14 @@ test('widget can be rendered', function () {
 
 ---
 
+title: "widget test patterns"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "widget test patterns"
+issues: []
+discussions: []
 **Status**: ✅ Gold Standard Stabilito
 **Autore**: AI Assistant con validazione utente
 **Versione**: 1.0 - Pattern Definitivo

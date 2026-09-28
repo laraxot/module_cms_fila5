@@ -1,3 +1,14 @@
+---
+title: "modules integration reference"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "modules integration reference"
+issues: []
+discussions: []
+---
+
 # Modules Integration Reference
 
 ## Overview

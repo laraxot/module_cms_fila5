@@ -1,3 +1,14 @@
+---
+title: "readme en"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "readme en"
+issues: []
+discussions: []
+---
+
 # 📄 Cms — English presentation
 
 [![Domain-CMS](https://img.shields.io/badge/Domain-CMS%20Folio-00838F.svg)](#)
@@ -14,6 +25,14 @@
 
 ---
 
+title: "readme en"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "readme en"
+issues: []
+discussions: []
 ## Why it exists
 
 Manages `/it` page composition without monolithic Blade hardcoding.

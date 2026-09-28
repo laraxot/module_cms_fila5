@@ -1,3 +1,14 @@
+---
+title: "phpstan level 10 compliance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan level 10 compliance"
+issues: []
+discussions: []
+---
+
 # PHPStan Level 10 Compliance - Cms Module
 
 ## Overview
@@ -202,6 +213,14 @@ Il modulo Cms è ora **completamente compliant** con PHPStan Level 10:
 
 ---
 
+title: "phpstan level 10 compliance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan level 10 compliance"
+issues: []
+discussions: []
 *Questo documento segue le regole fondamentali:*
 - *Git Forward Only: mai tornare indietro*
 - *PHPStan Level 10: zero compromessi*
