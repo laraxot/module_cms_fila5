@@ -1,3 +1,14 @@
+---
+title: "header language selector with flags"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header language selector with flags"
+issues: []
+discussions: []
+---
+
 # Implementazione del Selettore di Lingua con Bandiere SVG
 
 ## Collegamenti correlati

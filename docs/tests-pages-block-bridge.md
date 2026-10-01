@@ -1,3 +1,14 @@
+---
+title: "tests pages block bridge"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tests pages block bridge"
+issues: []
+discussions: []
+---
+
 # Tests Pages Block Bridge
 
 ## Problema risolto

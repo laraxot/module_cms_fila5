@@ -1,4 +1,7 @@
 ---
+qmd: "header section component"
+issues: []
+discussions: []
 title: "Header Section Component Architecture"
 type: concept
 sources: ["laravel/Modules/Cms/app/View/Components/Section.php", "laravel/config/local/fixcity/database/content/sections/header.json"]

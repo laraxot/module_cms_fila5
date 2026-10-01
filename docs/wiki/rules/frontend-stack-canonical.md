@@ -1,4 +1,9 @@
 ---
+tags: [documentation]
+created: 2026-09-26
+qmd: "frontend stack canonical"
+issues: []
+discussions: []
 title: frontend stack canonico — cms module stub
 type: rule
 module: Cms

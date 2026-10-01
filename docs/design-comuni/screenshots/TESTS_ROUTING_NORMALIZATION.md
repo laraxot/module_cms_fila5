@@ -1,3 +1,14 @@
+---
+title: "TESTS ROUTING NORMALIZATION"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "TESTS ROUTING NORMALIZATION"
+issues: []
+discussions: []
+---
+
 # Tests Routing Normalization
 
 Date: 2026-03-30

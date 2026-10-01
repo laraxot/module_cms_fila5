@@ -1,3 +1,14 @@
+---
+title: "common phpstan errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "common phpstan errors"
+issues: []
+discussions: []
+---
+
 # Common PHPStan Errors in Cms Module
 
 ## Duplicate Import Error

@@ -1,3 +1,14 @@
+---
+title: "task ridurre phpstan suppressioni"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "task ridurre phpstan suppressioni"
+issues: []
+discussions: []
+---
+
 # Task: Ridurre Suppressioni PHPStan Inline - Cms
 
 **Modulo**: Cms
@@ -6,6 +17,14 @@
 
 ---
 
+title: "task ridurre phpstan suppressioni"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "task ridurre phpstan suppressioni"
+issues: []
+discussions: []
 ## File Coinvolti
 
 | File | Suppressioni | Tipo |

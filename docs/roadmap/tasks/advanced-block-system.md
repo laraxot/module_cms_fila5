@@ -1,3 +1,14 @@
+---
+title: "advanced block system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "advanced block system"
+issues: []
+discussions: []
+---
+
 # Task: Advanced Block System with Interactive Components
 
 ## 🎯 Objective

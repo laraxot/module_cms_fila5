@@ -13,7 +13,7 @@ use function Safe\class_uses;
 
 describe('Section Business Logic', function (): void {
     test('section has expected fillable fields', function (): void {
-        $section = new Section;
+        $section = new Section();
         $expectedFillable = [
             'name',
             'slug',
@@ -36,7 +36,7 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section has correct casts for multilingual and structured data', function (): void {
-        $section = new Section;
+        $section = new Section();
         $casts = $section->getCasts();
 
         Assert::assertSame('array', $casts['name']);
@@ -45,7 +45,7 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section has schema definition for structured data', function (): void {
-        $section = new Section;
+        $section = new Section();
 
         $reflection = new \ReflectionClass($section);
         $schemaProperty = $reflection->getProperty('schema');
@@ -60,7 +60,7 @@ describe('Section Business Logic', function (): void {
     });
 
     test('section can get rows for sushi functionality', function (): void {
-        $section = new Section;
+        $section = new Section();
 
         Assert::assertNotEmpty($section->getRows());
     });

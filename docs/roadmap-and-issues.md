@@ -1,3 +1,14 @@
+---
+title: "roadmap and issues"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap and issues"
+issues: []
+discussions: []
+---
+
 # Cms Module - Roadmap & Optimization
 
 **Modulo**: Cms (Content Management System)
@@ -7,6 +18,14 @@
 
 ---
 
+title: "roadmap and issues"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap and issues"
+issues: []
+discussions: []
 ## ✅ COMPLETEZZA: 90%
 
 **Funzionalità Implementate**:

@@ -1,7 +1,8 @@
 <?php
 
 declare(strict_types=1);
-use Modules\Cms\Tests\TestCase;
+
+use Tests\TestCase;
 
 /*
  * |--------------------------------------------------------------------------
@@ -13,7 +14,7 @@ use Modules\Cms\Tests\TestCase;
  * |
  */
 
-uses(TestCase::class)->in('Feature', 'Unit');
+uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
 
 /*
  * |--------------------------------------------------------------------------
@@ -26,8 +27,8 @@ uses(TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
-expect()->extend('toBeSubclassOf', function (string $parentClass) {
-    $class = $this->value;
+expect()->extend('toBeSubclassOf', function (mixed $value, string $parentClass) {
+    $class = $value;
     if (! is_string($class)) {
         throw new InvalidArgumentException('Expected a class name string');
     }
