@@ -16,7 +16,9 @@ class AppLayout extends Component
     public function render(): Factory|View
     {
         $view_params = [];
+        /** @var view-string $view */
+        $view = 'pub_theme::components.layouts.app';
 
-        return view('pub_theme::components.layouts.app', $view_params);
+        return view($view, $view_params);
     }
 }

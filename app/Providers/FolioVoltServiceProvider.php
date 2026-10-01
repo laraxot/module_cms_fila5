@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Providers;
 
-use App\Http\Middleware\BlockLegacyPublicPages;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
@@ -94,7 +93,6 @@ class FolioVoltServiceProvider extends ServiceProvider
         $base_middleware[] = LaravelLocalizationRoutes::class;
         $base_middleware[] = LocaleSessionRedirect::class;
         $base_middleware[] = LaravelLocalizationRedirectFilter::class;
-        $base_middleware[] = BlockLegacyPublicPages::class;
         // $base_middleware[]=\Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class;
         // $base_middleware[]=\Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class;
 
