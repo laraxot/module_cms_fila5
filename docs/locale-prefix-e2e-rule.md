@@ -1,3 +1,14 @@
+---
+title: "locale prefix e2e rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "locale prefix e2e rule"
+issues: []
+discussions: []
+---
+
 # Locale Prefix E2E Rule
 
 ## Regola

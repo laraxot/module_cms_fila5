@@ -1,3 +1,14 @@
+---
+title: "001 content management system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "001 content management system"
+issues: []
+discussions: []
+---
+
 # Task 001: Implement Complete Content Management System
 
 ## Description
@@ -250,5 +261,13 @@ The Cms module needs a robust CMS for managing pages, blog posts, and dynamic co
 
 ---
 
+title: "001 content management system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "001 content management system"
+issues: []
+discussions: []
 **Status**: Pending
 **Assignee**: TBD

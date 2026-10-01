@@ -1,3 +1,14 @@
+---
+title: "git conflicts resolution impact"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts resolution impact"
+issues: []
+discussions: []
+---
+
 # Impatto Risoluzione Conflitti Git - Modulo Cms
 
 ## Data: 2025-01-06
@@ -65,7 +76,7 @@ Il modulo Cms è stato coinvolto indirettamente nella risoluzione di conflitti G
 ```php
 // SEMPRE verificare dipendenze
 use Modules\Geo\Models\Address;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 // SEMPRE usare tipizzazione rigorosa
 declare(strict_types=1);
@@ -199,6 +210,14 @@ php artisan lang:check
 
 ---
 
+title: "git conflicts resolution impact"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts resolution impact"
+issues: []
+discussions: []
 **Ultimo aggiornamento**: 2025-01-06
 **Autore**: Sistema di correzione automatica
 **Stato**: ✅ Completato

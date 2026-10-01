@@ -1,3 +1,14 @@
+---
+title: "headless cms api"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "headless cms api"
+issues: []
+discussions: []
+---
+
 # Task: Headless CMS & Multi-Channel Content Delivery
 
 ## 🎯 Objective

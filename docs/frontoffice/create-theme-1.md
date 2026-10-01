@@ -1,3 +1,14 @@
+---
+title: "create theme 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "create theme 1"
+issues: []
+discussions: []
+---
+
 # Creazione di un Tema per il CMS
 
 ## Introduzione
@@ -292,7 +303,7 @@ namespace Modules\User\Filament\Widgets\Auth;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget;
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 class RegisterWidget extends Widget
 {

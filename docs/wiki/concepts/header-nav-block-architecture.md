@@ -1,3 +1,14 @@
+---
+title: "header nav block architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header nav block architecture"
+issues: []
+discussions: []
+---
+
 # Header Nav Block Architecture
 
 **Modulo:** Cms  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "header nav block architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header nav block architecture"
+issues: []
+discussions: []
 ## Visione
 
 Il sito FixCity è un CMS headless basato su **blocchi JSON**. Ogni sezione del sito (`header`, `footer`, `sidebar`, ...) è un record `Section` che aggrega blocchi di contenuto. I blocchi sono dati puri — nessun link hardcoded nel codice Blade.

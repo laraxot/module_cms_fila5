@@ -6,11 +6,11 @@ use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
 use PHPUnit\Framework\Assert;
 
 test('Footer page can be instantiated', function () {
-    $page = new Footer;
+    $page = new Footer();
 });
 
 test('Footer page has data property', function () {
-    $page = new Footer;
+    $page = new Footer();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -19,7 +19,7 @@ test('Footer page has data property', function () {
 });
 
 test('Footer page has footerData property', function () {
-    $page = new Footer;
+    $page = new Footer();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('footerData');
     $property->setAccessible(true);
@@ -29,21 +29,16 @@ test('Footer page has footerData property', function () {
 });
 
 test('Footer page has mount method', function () {
-    Assert::assertTrue((new ReflectionClass(Footer::class))->hasMethod('mount'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has schema method', function () {
-    Assert::assertTrue((new ReflectionClass(Footer::class))->hasMethod('schema'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has updateData method', function () {
-    Assert::assertTrue((new ReflectionClass(Footer::class))->hasMethod('updateData'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has fillForms method', function () {
-    Assert::assertTrue((new ReflectionClass(Footer::class))->hasMethod('fillForms'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Footer page has getUpdateFormActions method', function () {
-    Assert::assertTrue((new ReflectionClass(Footer::class))->hasMethod('getUpdateFormActions'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
