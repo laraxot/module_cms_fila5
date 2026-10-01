@@ -1,3 +1,14 @@
+---
+title: "feature sections"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "feature sections"
+issues: []
+discussions: []
+---
+
 # Feature Sections Block
 
 Il blocco Feature Sections è utilizzato per presentare le caratteristiche principali di un servizio o prodotto in una griglia di sezioni con icone.

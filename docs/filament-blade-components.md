@@ -1,3 +1,14 @@
+---
+title: "filament blade components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament blade components"
+issues: []
+discussions: []
+---
+
 # Filament Blade Components Usage (CMS)
 
 ## Collegamenti

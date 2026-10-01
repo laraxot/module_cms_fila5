@@ -6,7 +6,7 @@ use Modules\Cms\Filament\Clusters\Appearance\Pages\Breadcrumb;
 use PHPUnit\Framework\Assert;
 
 test('Breadcrumb page uses correct view', function () {
-    $page = new Breadcrumb;
+    $page = new Breadcrumb();
     // Access protected property via reflection
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('view');
@@ -16,11 +16,11 @@ test('Breadcrumb page uses correct view', function () {
 });
 
 test('Breadcrumb page can be instantiated', function () {
-    $page = new Breadcrumb;
+    $page = new Breadcrumb();
 });
 
 test('Breadcrumb page has data property', function () {
-    $page = new Breadcrumb;
+    $page = new Breadcrumb();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -29,13 +29,10 @@ test('Breadcrumb page has data property', function () {
 });
 
 test('Breadcrumb page has mount method', function () {
-    Assert::assertTrue((new ReflectionClass(Breadcrumb::class))->hasMethod('mount'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Breadcrumb page has schema method', function () {
-    Assert::assertTrue((new ReflectionClass(Breadcrumb::class))->hasMethod('schema'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Breadcrumb page has updateData method', function () {
-    Assert::assertTrue((new ReflectionClass(Breadcrumb::class))->hasMethod('updateData'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

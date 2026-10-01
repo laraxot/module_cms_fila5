@@ -1,3 +1,14 @@
+---
+title: "phpstan roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan roadmap"
+issues: []
+discussions: []
+---
+
 # PHPStan Roadmap - Cms Module
 
 > **Created**: [DATE]  
@@ -255,5 +266,13 @@ public function testDataGenerationEndToEnd(): void
 
 ---
 
+title: "phpstan roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan roadmap"
+issues: []
+discussions: []
 **Status**: Requires detailed planning
 **Next**: Start with ThemeComposer fixes

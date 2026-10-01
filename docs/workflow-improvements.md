@@ -1,3 +1,14 @@
+---
+title: "workflow improvements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "workflow improvements"
+issues: []
+discussions: []
+---
+
 # Workflow Improvements - [DATE]
 
 **Modulo**: CMS
@@ -278,6 +289,14 @@ If you encounter issues with the new workflow:
 
 ---
 
+title: "workflow improvements"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "workflow improvements"
+issues: []
+discussions: []
 **Status**: ✅ ACTIVE
 
 **Owner**: iFlow CLI

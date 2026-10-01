@@ -1,3 +1,14 @@
+---
+title: "cms filament v5"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cms filament v5"
+issues: []
+discussions: []
+---
+
 # Task: Cms Filament v5 Alignment (Clusters & Nesting)
 
 ## 📋 Obiettivo

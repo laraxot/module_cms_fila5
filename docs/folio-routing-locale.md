@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: "Folio routing e locale"
 type: concept
 tags: [cms, folio, locale, laravel-localization, routing]

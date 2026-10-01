@@ -1,3 +1,14 @@
+---
+title: "struttura moduli laravel"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "struttura moduli laravel"
+issues: []
+discussions: []
+---
+
 # Struttura dei Moduli Laravel in il progetto
 
 ## Struttura Corretta dei Moduli

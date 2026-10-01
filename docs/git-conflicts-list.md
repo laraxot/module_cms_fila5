@@ -1,3 +1,14 @@
+---
+title: "git conflicts list"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts list"
+issues: []
+discussions: []
+---
+
 # Git Conflicts List
 
 ## Files with unresolved conflicts
