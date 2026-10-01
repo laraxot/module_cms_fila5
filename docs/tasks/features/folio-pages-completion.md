@@ -1,3 +1,14 @@
+---
+title: "folio pages completion"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio pages completion"
+issues: []
+discussions: []
+---
+
 # Folio Pages Completion - Cms
 
 **Task ID**: CMS-FEATURE-004

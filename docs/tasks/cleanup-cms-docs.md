@@ -1,3 +1,14 @@
+---
+title: "cleanup cms docs"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cleanup cms docs"
+issues: []
+discussions: []
+---
+
 # Task: Cms Docs Consolidation & Cleanup
 
 ## 📋 Obiettivo

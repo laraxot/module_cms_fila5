@@ -1,3 +1,14 @@
+---
+title: "analisi metodi duplicati"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi metodi duplicati"
+issues: []
+discussions: []
+---
+
 # Analisi Metodi Duplicati - Modulo Cms
 
 ## Riferimento Principale
@@ -206,5 +217,13 @@ protected function casts(): array
 
 ---
 
+title: "analisi metodi duplicati"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi metodi duplicati"
+issues: []
+discussions: []
 **Data:** [DATE]
 **Status:** 📋 Draft per Review

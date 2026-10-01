@@ -1,3 +1,14 @@
+---
+title: "log"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "log"
+issues: []
+discussions: []
+---
+
 - 2026-06-10: folio-filesystem-routing-no-web-php + troubleshooting folio-route-not-found
 ## [2026-06-05] docs | Folio routing — mount() tipizzato + @volt statico
 

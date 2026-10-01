@@ -1,3 +1,14 @@
+---
+title: "gestione route folio"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gestione route folio"
+issues: []
+discussions: []
+---
+
 # Gestione delle Route con Laravel Folio in il progetto
 
 ## Indice

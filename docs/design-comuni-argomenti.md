@@ -1,3 +1,14 @@
+---
+title: "design comuni argomenti"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni argomenti"
+issues: []
+discussions: []
+---
+
 # Design Comuni Argomenti
 
 ## Source Of Truth

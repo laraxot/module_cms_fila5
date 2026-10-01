@@ -1,3 +1,14 @@
+---
+title: "optimization recommendations 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "optimization recommendations 1"
+issues: []
+discussions: []
+---
+
 # Raccomandazioni di Ottimizzazione - Modulo Cms
 
 ## 🎯 Stato Attuale e Analisi

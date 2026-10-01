@@ -1,3 +1,14 @@
+---
+title: "progress bar"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "progress bar"
+issues: []
+discussions: []
+---
+
 # Progress Bar
 
 Il componente Progress Bar visualizza l'avanzamento di un'operazione o il progresso verso un obiettivo.

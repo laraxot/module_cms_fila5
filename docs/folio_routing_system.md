@@ -1,3 +1,14 @@
+---
+title: "folio routing system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio routing system"
+issues: []
+discussions: []
+---
+
 # Sistema di Routing e Localizzazione con Laravel Folio + Volt
 
 ## Risorse Ufficiali

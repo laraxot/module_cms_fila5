@@ -1,3 +1,14 @@
+---
+title: "testing homepage content management fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing homepage content management fix"
+issues: []
+discussions: []
+---
+
 # Fix: HomepageContentManagementTest - Redirect Behavior
 
 **Problema**: Test fallisce con "Expected status code [200] but received 302"
@@ -64,5 +75,13 @@ $response->assertStatus(200);
 
 ---
 
+title: "testing homepage content management fix"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing homepage content management fix"
+issues: []
+discussions: []
 **Status**: In Progress
 **Prossimo step**: Correggere tutti i test per usare `/{locale}` invece di `/`
