@@ -1,3 +1,14 @@
+---
+title: "filament"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament"
+issues: []
+discussions: []
+---
+
 # Filament nel Modulo CMS
 
 **Versione**: il progetto usa Filament 5.x. Compatibilità e riferimenti: [filament-5x-compatibility.md](filament-5x-compatibility.md).

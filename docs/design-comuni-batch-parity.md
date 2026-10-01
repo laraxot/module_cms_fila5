@@ -1,3 +1,14 @@
+---
+title: "design comuni batch parity"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni batch parity"
+issues: []
+discussions: []
+---
+
 # Design Comuni Batch Parity
 
 ## Scopo

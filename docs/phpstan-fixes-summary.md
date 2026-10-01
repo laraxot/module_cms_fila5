@@ -1,3 +1,14 @@
+---
+title: "phpstan fixes summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes summary"
+issues: []
+discussions: []
+---
+
 # PHPStan Fixes Summary - CMS Module
 
 **Date**: 2025-11-24
@@ -47,7 +58,7 @@ public function __construct(
 @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
 
 // ❌ Avoid - Don't use concrete implementations
-@property-read \Modules\Quaeris\Models\Profile|null $creator
+@property-read \Modules\Xot\Contracts\ProfileContract|null $creator
 ```
 
 ### 2. Blocks Component Usage

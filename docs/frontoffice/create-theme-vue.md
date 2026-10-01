@@ -1,3 +1,14 @@
+---
+title: "create theme vue"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "create theme vue"
+issues: []
+discussions: []
+---
+
 # Creazione di un Tema con Vue
 
 ## Introduzione

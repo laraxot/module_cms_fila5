@@ -1,3 +1,14 @@
+---
+title: "task test folio volt routing"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "task test folio volt routing"
+issues: []
+discussions: []
+---
+
 # Task: Test Folio/Volt Routing - Cms
 
 **Modulo**: Cms
@@ -6,6 +17,14 @@
 
 ---
 
+title: "task test folio volt routing"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "task test folio volt routing"
+issues: []
+discussions: []
 ## Descrizione
 
 Il FolioVoltServiceProvider gestisce routing multi-lingua con Folio ma mancano test end-to-end per verificare che le pagine vengano servite correttamente.

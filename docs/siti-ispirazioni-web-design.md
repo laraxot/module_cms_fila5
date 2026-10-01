@@ -1,3 +1,14 @@
+---
+title: "siti ispirazioni web design"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "siti ispirazioni web design"
+issues: []
+discussions: []
+---
+
 # Ispirazioni di Web Design per il progetto
 
 Questo documento raccoglie analisi e ispirazioni dai migliori esempi di web design che possono guidare lo sviluppo dell'interfaccia utente di il progetto.
@@ -259,4 +270,12 @@ La vera sfida sarà bilanciare gli elementi innovativi del design moderno con le
 
 ---
 
+title: "siti ispirazioni web design"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "siti ispirazioni web design"
+issues: []
+discussions: []
 *Documento basato su analisi di [Ingigni.com](https://www.ingigni.com/blog/siti-belli/) e integrato con le linee guida di il progetto.* 

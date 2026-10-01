@@ -1,3 +1,14 @@
+---
+title: "filament 4x compatibility"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament 4x compatibility"
+issues: []
+discussions: []
+---
+
 # Compatibilità Filament 4.x - Modulo Cms
 
 **Data**: 2025-01-27  
@@ -60,5 +71,4 @@ public static function getNavigationIcon(): null|string
 - [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
 - [Guida Ufficiale Filament 4.x](https://filamentphp.com/docs/4.x/upgrade-guide)
 
-*Ultimo aggiornamento: 2025-01-27*
 *

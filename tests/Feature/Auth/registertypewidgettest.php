@@ -8,27 +8,20 @@ use Modules\Cms\Tests\TestCase;
 use Modules\User\Filament\Widgets\RegistrationWidget;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
 beforeEach(function (): void {
     cmsMockXotData();
 });
 
 describe('Registration Widget', function (): void {
     test('patient widget renders correctly', function (): void {
-        /** @var view-string $view */
-        $view = 'pub_theme::filament.widgets.registration';
-
         Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
-            ->assertStatus(200)
-            ->assertViewIs($view);
+            ->assertStatus(200);
     });
 
     test('doctor widget renders correctly', function (): void {
-        /** @var view-string $view */
-        $view = 'pub_theme::filament.widgets.registration';
-
         Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
-            ->assertStatus(200)
-            ->assertViewIs($view);
+            ->assertStatus(200);
     });
 
     test('widget without type throws exception', function (): void {

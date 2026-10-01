@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
+
+use function Pest\Laravel\get;
+
 use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {

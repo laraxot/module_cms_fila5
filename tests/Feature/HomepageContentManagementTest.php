@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 use Illuminate\Http\Response;
 use Illuminate\Testing\TestResponse;
-use PHPUnit\Framework\Assert;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 
 use function Pest\Laravel\get;
+
+use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -122,10 +124,7 @@ describe('Homepage Content Management', function () {
     });
 
     it('handles content updates without breaking', function () {
-        $locale = config('app.locale') ?? 'it';
-        if (! is_string($locale)) {
-            throw new UnexpectedValueException('Expected the application locale to be a string.');
-        }
+        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
@@ -136,15 +135,12 @@ describe('Homepage Content Management', function () {
     });
 
     it('displays content in correct order', function () {
-        $locale = config('app.locale') ?? 'it';
-        if (! is_string($locale)) {
-            throw new UnexpectedValueException('Expected the application locale to be a string.');
-        }
+        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-        if ($status !== 200) {
+        if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
@@ -152,33 +148,24 @@ describe('Homepage Content Management', function () {
 
         Assert::assertSame(200, $response->status());
         // Avoid brittle copy-order assertions; just ensure HTML is present.
-        $content = $response->getContent();
-        if (! is_string($content)) {
-            throw new UnexpectedValueException('Expected the response content to be a string.');
-        }
+        $content = (string) $response->getContent();
         Assert::assertNotSame('', trim($content));
     });
 
     it('renders responsive design elements', function () {
-        $locale = config('app.locale') ?? 'it';
-        if (! is_string($locale)) {
-            throw new UnexpectedValueException('Expected the application locale to be a string.');
-        }
+        $locale = SafeStringCastAction::cast(config('app.locale') ?? 'it');
         $response = get('/'.$locale);
 
         /** @var TestResponse<Response> $response */
         $status = $response->getStatusCode();
-        if ($status !== 200) {
+        if (200 !== $status) {
             Assert::assertTrue(in_array($status, [301, 302, 303, 307, 308, 404], true));
 
             return;
         }
 
         Assert::assertSame(200, $response->status());
-        $content = $response->getContent();
-        if (! is_string($content)) {
-            throw new UnexpectedValueException('Expected the response content to be a string.');
-        }
+        $content = (string) $response->getContent();
         Assert::assertStringContainsString('class="', $content);
     });
 });

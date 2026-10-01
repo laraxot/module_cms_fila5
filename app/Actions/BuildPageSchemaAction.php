@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Cms\Actions;
 
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Modules\User\Models\User;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Datas\MetatagData;
+use Modules\Xot\Datas\XotData;
 use Spatie\QueueableAction\QueueableAction;
 
 final class BuildPageSchemaAction
@@ -17,7 +17,8 @@ final class BuildPageSchemaAction
     use QueueableAction;
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
+     *
      * @return array<string, mixed>
      */
     public function execute(
@@ -38,19 +39,19 @@ final class BuildPageSchemaAction
             'inLanguage' => app()->getLocale(),
         ];
 
-        if ($pageType === 'ProfilePage') {
+        if ('ProfilePage' === $pageType) {
             $personSchema = $this->resolveProfileMainEntity($routeParameters, $user);
-            if ($personSchema !== null) {
+            if (null !== $personSchema) {
                 $schema['mainEntity'] = $personSchema;
             }
         }
 
         if (
-            $pageType === 'ItemPage'
-            && ($routeName === 'container0.view' || Str::contains($path, '/events/'))
+            'ItemPage' === $pageType
+            && ('container0.view' === $routeName || Str::contains($path, '/events/'))
             && isset($routeParameters['slug0'])
             && is_string($routeParameters['slug0'])
-            && $routeParameters['slug0'] !== ''
+            && '' !== $routeParameters['slug0']
         ) {
             $schema['mainEntity'] = [
                 '@type' => 'Event',
@@ -62,43 +63,43 @@ final class BuildPageSchemaAction
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
      */
     private function resolvePageType(?string $routeName, string $path, array $routeParameters): string
     {
-        if ($routeName !== null && Str::startsWith($routeName, 'profile.')) {
+        if (null !== $routeName && Str::startsWith($routeName, 'profile.')) {
             return 'ProfilePage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'profile' || Str::contains($path, '/profile/'))
         ) {
             return 'ProfilePage';
         }
 
         if (
-            $routeName === 'container0.index'
+            'container0.index' === $routeName
             && (($routeParameters['container0'] ?? null) === 'events' || Str::contains($path, '/events'))
         ) {
             return 'CollectionPage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'events' || Str::contains($path, '/events/'))
         ) {
             return 'ItemPage';
         }
 
         if (
-            $routeName === 'container0.view'
+            'container0.view' === $routeName
             && (($routeParameters['container0'] ?? null) === 'profile' || Str::contains($path, '/profile/'))
         ) {
             return 'ProfilePage';
         }
 
-        if ($routeName === 'home' || $path === '/' || $path === '') {
+        if ('home' === $routeName || '/' === $path || '' === $path) {
             return 'WebPage';
         }
 
@@ -111,7 +112,7 @@ final class BuildPageSchemaAction
         }
 
         if (
-            $routeName !== null && Str::startsWith($routeName, 'auth.')
+            null !== $routeName && Str::startsWith($routeName, 'auth.')
             || Str::contains($path, '/auth/')
             || Str::contains($path, '/login')
             || Str::contains($path, '/register')
@@ -125,27 +126,30 @@ final class BuildPageSchemaAction
     }
 
     /**
-     * @param  array<string, mixed>  $routeParameters
+     * @param array<string, mixed> $routeParameters
+     *
      * @return array<string, mixed>|null
      */
     private function resolveProfileMainEntity(array $routeParameters, ?Authenticatable $user): ?array
     {
+        /** @var class-string<Model&Authenticatable> $userClass */
+        $userClass = XotData::make()->getUserClass();
         $publicUser = null;
 
         $publicIdentifier = $routeParameters['id'] ?? $routeParameters['slug0'] ?? null;
 
-        if (is_string($publicIdentifier) && $publicIdentifier !== '') {
-            $publicUser = User::query()
+        if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
+            $publicUser = $userClass::query()
                 ->with('profile')
                 ->find($publicIdentifier);
         }
 
-        if (! $publicUser instanceof User && $user instanceof User) {
+        if (! $publicUser instanceof Authenticatable && $user instanceof Authenticatable) {
             $publicUser = $user->loadMissing('profile');
         }
 
-        if (! $publicUser instanceof User) {
-            if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && $routeParameters['slug0'] !== '') {
+        if (! $publicUser instanceof Authenticatable) {
+            if (isset($routeParameters['slug0']) && is_string($routeParameters['slug0']) && '' !== $routeParameters['slug0']) {
                 return [
                     '@type' => 'Person',
                     'identifier' => $routeParameters['slug0'],
@@ -156,7 +160,13 @@ final class BuildPageSchemaAction
             return null;
         }
 
-        $profile = $publicUser->profile;
+        $profile = null;
+        if ($publicUser instanceof Model) {
+            $profileAttr = $publicUser->getAttribute('profile');
+            if ($profileAttr instanceof ProfileContract) {
+                $profile = $profileAttr;
+            }
+        }
         $profileFirstName = '';
         $profileLastName = '';
         $profileEmail = '';
@@ -170,56 +180,74 @@ final class BuildPageSchemaAction
             $profileBio = $this->readNullableStringProperty($profile, 'bio');
 
             $avatarUrl = $profile->getAvatarUrl();
-            if (is_string($avatarUrl) && $avatarUrl !== '') {
+            if (is_string($avatarUrl) && '' !== $avatarUrl) {
                 $profileImage = $avatarUrl;
             }
         }
 
-        $name = trim((string) ($publicUser->name ?? ''));
+        $publicNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('name') : null;
+        $publicFirstNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('first_name') : null;
+        $publicLastNameRaw = $publicUser instanceof Model ? $publicUser->getAttribute('last_name') : null;
+        $publicEmailRaw = $publicUser instanceof Model ? $publicUser->getAttribute('email') : null;
 
-        if ($name === '') {
-            $firstName = trim((string) ($publicUser->first_name ?? $profileFirstName));
-            $lastName = trim((string) ($publicUser->last_name ?? $profileLastName));
+        /** @var string $publicName */
+        $publicName = is_string($publicNameRaw) ? $publicNameRaw : '';
+        /** @var string $publicFirstName */
+        $publicFirstName = is_string($publicFirstNameRaw) ? $publicFirstNameRaw : '';
+        /** @var string $publicLastName */
+        $publicLastName = is_string($publicLastNameRaw) ? $publicLastNameRaw : '';
+        /** @var string $publicEmail */
+        $publicEmail = is_string($publicEmailRaw) ? $publicEmailRaw : '';
+
+        $name = trim($publicName);
+
+        if ('' === $name) {
+            $firstName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
+            $lastName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
             $name = trim($firstName.' '.$lastName);
         }
 
-        if ($name === '') {
+        if ('' === $name) {
             $name = 'Profile';
         }
+
+        $publicKey = $publicUser->getAuthIdentifier();
+        /** @var int|string $publicKey */
+        $publicKeyStr = is_int($publicKey) || is_string($publicKey) ? (string) $publicKey : '';
 
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.SafeStringCastAction::cast($publicUser->getKey())),
+            'url' => url('/profile/'.$publicKeyStr),
         ];
 
-        if (is_string($publicIdentifier) && $publicIdentifier !== '') {
+        if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
             $schema['identifier'] = $publicIdentifier;
         }
 
-        $givenName = trim((string) ($publicUser->first_name ?? $profileFirstName));
-        $familyName = trim((string) ($publicUser->last_name ?? $profileLastName));
-        $email = trim((string) ($publicUser->email ?? $profileEmail));
-        $description = trim((string) $profileBio);
+        $givenName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
+        $familyName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
+        $email = trim($publicEmail);
+        $description = $profileBio;
         $image = $profileImage;
 
-        if ($givenName !== '') {
+        if ('' !== $givenName) {
             $schema['givenName'] = $givenName;
         }
 
-        if ($familyName !== '') {
+        if ('' !== $familyName) {
             $schema['familyName'] = $familyName;
         }
 
-        if ($email !== '') {
+        if ('' !== $email) {
             $schema['email'] = $email;
         }
 
-        if ($description !== '') {
+        if ('' !== $description) {
             $schema['description'] = $description;
         }
 
-        if ($image !== null) {
+        if (null !== $image) {
             $schema['image'] = $image;
         }
 

@@ -1,3 +1,14 @@
+---
+title: "rendering"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "rendering"
+issues: []
+discussions: []
+---
+
 # Rendering dei Blocchi di Contenuto
 
 ## Introduzione

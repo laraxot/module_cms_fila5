@@ -1,3 +1,14 @@
+---
+title: "volt web application 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "volt web application 1"
+issues: []
+discussions: []
+---
+
 # Sviluppo Applicazioni Web con Laravel Volt
 
 Questa guida spiega come sviluppare applicazioni web moderne utilizzando Laravel Volt, concentrandosi sulla creazione di componenti reattivi e sulla gestione dello stato dell'applicazione.
@@ -61,7 +72,7 @@ $mount = function ($initialName = '') {
 // Metodi
 $save = function () {
     $this->validate();
-    
+
     // Logica di salvataggio
 };
 ?>
@@ -104,10 +115,10 @@ $save = function () {
 state([
     // Stato primitivo
     'counter' => 0,
-    
+
     // Array
     'items' => [],
-    
+
     // Oggetti
     'user' => [
         'name' => '',
@@ -173,11 +184,11 @@ rules([
 
 $save = function () {
     $validated = $this->validate();
-    
+
     $post = Post::create($validated['form']);
-    
+
     session()->flash('message', 'Post creato con successo!');
-    
+
     return redirect()->route('posts.show', $post);
 };
 ?>
@@ -298,8 +309,8 @@ $getFilteredUsers = function () {
 
 ```php
 // Input con debounce
-<input 
-    type="text" 
+<input
+    type="text"
     wire:model.live.debounce.300ms="search"
     placeholder="Cerca..."
 >
@@ -307,7 +318,7 @@ $getFilteredUsers = function () {
 // Lazy loading di relazioni
 $users = computed(function () {
     return User::with('profile', 'posts')
-        ->when($this->search, fn($query) => 
+        ->when($this->search, fn($query) =>
             $query->where('name', 'like', "%{$this->search}%")
         )
         ->paginate(10);
@@ -378,4 +389,4 @@ class UserFormTest extends TestCase
 - [Laravel Volt Documentation](https://livewire.laravel.com/docs/volt)
 - [Livewire Documentation](https://livewire.laravel.com)
 - [Laravel Documentation](https://laravel.com/docs)
-- [Articolo Originale di Moinuddin Chowdhury](https://medium.com/@moinuddinchowdhury/how-to-create-web-application-using-laravel-volt-the-magical-way-2145071046b2) 
+- [Articolo Originale di Moinuddin Chowdhury](https://medium.com/@moinuddinchowdhury/how-to-create-web-application-using-laravel-volt-the-magical-way-2145071046b2)

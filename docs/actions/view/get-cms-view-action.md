@@ -1,3 +1,14 @@
+---
+title: "get cms view action"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "get cms view action"
+issues: []
+discussions: []
+---
+
 # GetCmsViewAction Action
 
 ## Obiettivo

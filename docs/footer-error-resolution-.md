@@ -1,3 +1,14 @@
+---
+title: "footer error resolution "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "footer error resolution "
+issues: []
+discussions: []
+---
+
 # Footer Error Resolution - [DATE]
 
 ## Error Fixed

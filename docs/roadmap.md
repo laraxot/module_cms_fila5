@@ -1,3 +1,14 @@
+---
+title: "roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap"
+issues: []
+discussions: []
+---
+
 # Roadmap (Module Cms)
 
 ## Current roadmap
@@ -55,6 +66,14 @@ Il modulo Cms fornisce:
 
 ---
 
+title: "roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap"
+issues: []
+discussions: []
 ## Tasks
 
 | # | Task | File | Priorita' | % |
