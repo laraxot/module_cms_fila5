@@ -1,3 +1,14 @@
+---
+title: "content expiration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content expiration"
+issues: []
+discussions: []
+---
+
 # Content Expiration - Cms
 
 **Task ID**: CMS-FEATURE-003

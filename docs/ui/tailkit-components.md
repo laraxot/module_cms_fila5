@@ -1,3 +1,14 @@
+---
+title: "tailkit components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "tailkit components"
+issues: []
+discussions: []
+---
+
 # Tailkit Components Integration
 
 ## Analisi Template ChatAI

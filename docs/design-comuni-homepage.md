@@ -1,3 +1,14 @@
+---
+title: "design comuni homepage"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni homepage"
+issues: []
+discussions: []
+---
+
 # Design Comuni Homepage Parity
 
 **Last verified**: 2026-04-03

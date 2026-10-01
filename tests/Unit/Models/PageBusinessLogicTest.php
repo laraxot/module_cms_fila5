@@ -12,7 +12,7 @@ use function Safe\class_uses;
 
 describe('Page Business Logic', function (): void {
     test('page has expected fillable fields', function (): void {
-        $page = new Page;
+        $page = new Page();
         $expectedFillable = [
             'content',
             'description',
@@ -34,7 +34,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page has correct casts for blocks and arrays', function (): void {
-        $page = new Page;
+        $page = new Page();
         $casts = $page->getCasts();
 
         Assert::assertSame('array', $casts['content_blocks']);
@@ -44,7 +44,7 @@ describe('Page Business Logic', function (): void {
     });
 
     test('page has schema definition for structured data', function (): void {
-        $page = new Page;
+        $page = new Page();
 
         $reflection = new \ReflectionClass($page);
         $schemaProperty = $reflection->getProperty('schema');

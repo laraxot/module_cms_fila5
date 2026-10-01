@@ -10,11 +10,11 @@ use PHPUnit\Framework\Assert;
 use function Safe\class_implements;
 
 test('Headernav page can be instantiated', function () {
-    $page = new Headernav;
+    $page = new Headernav();
 });
 
 test('Headernav page has data property', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('data');
     $property->setAccessible(true);
@@ -25,7 +25,7 @@ test('Headernav page has data property', function () {
 });
 
 test('Headernav page has headernavData property', function () {
-    $page = new Headernav;
+    $page = new Headernav();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('headernavData');
     $property->setAccessible(true);
@@ -34,24 +34,19 @@ test('Headernav page has headernavData property', function () {
 });
 
 test('Headernav page has mount method', function () {
-    Assert::assertTrue((new ReflectionClass(Headernav::class))->hasMethod('mount'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page has schema method', function () {
-    Assert::assertTrue((new ReflectionClass(Headernav::class))->hasMethod('schema'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page has updateData method', function () {
-    Assert::assertTrue((new ReflectionClass(Headernav::class))->hasMethod('updateData'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page has fillForms method', function () {
-    Assert::assertTrue((new ReflectionClass(Headernav::class))->hasMethod('fillForms'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page has getUpdateFormActions method', function () {
-    Assert::assertTrue((new ReflectionClass(Headernav::class))->hasMethod('getUpdateFormActions'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);

@@ -1,3 +1,14 @@
+---
+title: "phpstan errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan errors"
+issues: []
+discussions: []
+---
+
 # PHPStan Errors - Cms Module
 
 **Date**: [DATE]
@@ -16,6 +27,14 @@
 
 ---
 
+title: "phpstan errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan errors"
+issues: []
+discussions: []
 ## File: app/Http/View/Composers/XotComposer.php
 
 ### Error: Class Not Found
@@ -36,7 +55,7 @@ Code is calling `App\Models\User` but this class doesn't exist in this codebase.
 use App\Models\User;
 
 // ✅ CORRECT - Option 1: Use module User
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 // ✅ CORRECT - Option 2: Use contract
 use Modules\Xot\Contracts\UserContract;

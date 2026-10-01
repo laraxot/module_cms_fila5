@@ -1,3 +1,14 @@
+---
+title: "phpstan compliance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan compliance"
+issues: []
+discussions: []
+---
+
 # PHPStan Compliance - CMS Module
 
 ## Status: ✅ FULLY COMPLIANT
@@ -30,6 +41,10 @@ This module provides Content Management System functionality including:
 ### Safe Function Usage
 - Fixed unsafe `file_put_contents` usage in business data generation script
 - Now uses `use function Safe\file_put_contents;` for exception-based error handling
+
+### PestHelpers ricaduta (ROOT-17.10)
+- Helper globali senza namespace; homepage JSON su `TestCase::homepageJsonForBlocksArchitecture()`
+- Dettaglio: [testing.md](testing.md#pesthelpers-phpstan--merge)
 
 ## Filament 4.x Compatibility
 

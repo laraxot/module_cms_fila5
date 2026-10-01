@@ -1,3 +1,14 @@
+---
+title: "implementation pagina servizi"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "implementation pagina servizi"
+issues: []
+discussions: []
+---
+
 # Implementazione Pagina Servizi - <main module>
 
 *Documentazione completa dell'implementazione della pagina servizi seguendo la filosofia e architettura <main module>*
@@ -252,6 +263,14 @@ L'implementazione riflette una comprensione profonda delle implicazioni:
 
 ---
 
+title: "implementation pagina servizi"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "implementation pagina servizi"
+issues: []
+discussions: []
 **Data Implementazione**: 15 Gennaio 2025
 **Versione Documentazione**: 1.0.0
 **Maintainer**: Team <main module>

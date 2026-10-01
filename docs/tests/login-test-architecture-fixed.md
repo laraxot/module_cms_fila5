@@ -1,3 +1,14 @@
+---
+title: "login test architecture fixed"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login test architecture fixed"
+issues: []
+discussions: []
+---
+
 # Login Test Architecture - PROBLEMA RISOLTO ✅
 
 ## 🎯 Executive Summary
@@ -138,6 +149,14 @@ test('any user type can login successfully', function (): void {
 
 ---
 
+title: "login test architecture fixed"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login test architecture fixed"
+issues: []
+discussions: []
 **Status**: ✅ COMPLETATO
 **Priorità**: 🚨 P0 - CRITICO (ora risolto)
 **Validato**: Test in passing ✅

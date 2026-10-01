@@ -1,3 +1,14 @@
+---
+title: "page show"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page show"
+issues: []
+discussions: []
+---
+
 # Livewire Page\Show
 
 ## Scopo
@@ -32,6 +43,14 @@ Vedi file: `Modules/Cms/app/Http/Livewire/Page/Show.php`
 
 ---
 
+title: "page show"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page show"
+issues: []
+discussions: []
 ## Collegamenti
 - [Indice CMS](../../../../../docs/modules/cms.md)
 

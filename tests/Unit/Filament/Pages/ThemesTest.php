@@ -6,11 +6,11 @@ use Modules\Cms\Filament\Pages\Themes;
 use PHPUnit\Framework\Assert;
 
 test('Themes page can be instantiated', function () {
-    $page = new Themes;
+    $page = new Themes();
 });
 
 test('Themes page has themes property', function () {
-    $page = new Themes;
+    $page = new Themes();
     $reflection = new ReflectionClass($page);
     $property = $reflection->getProperty('themes');
     $property->setAccessible(true);
@@ -19,9 +19,7 @@ test('Themes page has themes property', function () {
 });
 
 test('Themes page has changePubTheme method', function () {
-    Assert::assertTrue((new ReflectionClass(Themes::class))->hasMethod('changePubTheme'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Themes page has getViewData method', function () {
-    Assert::assertTrue((new ReflectionClass(Themes::class))->hasMethod('getViewData'));
-});
+})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');

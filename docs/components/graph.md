@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "graph"
+issues: []
+discussions: []
 title: Graph
 description: Graph
 extends: _layouts.documentation

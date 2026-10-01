@@ -1,3 +1,14 @@
+---
+title: "event detail no event found data merge gap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "event detail no event found data merge gap"
+issues: []
+discussions: []
+---
+
 # Event Detail mostra "Nessun evento trovato" - data merge gap
 
 ## Sintomo

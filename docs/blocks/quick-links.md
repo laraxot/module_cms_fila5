@@ -1,3 +1,14 @@
+---
+title: "quick links"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "quick links"
+issues: []
+discussions: []
+---
+
 # Quick Links Block
 
 Il blocco Quick Links è utilizzato per creare gruppi di link rapidi, con supporto per target personalizzati. Può essere utilizzato in qualsiasi contesto, come footer, sidebar, o sezioni di navigazione.

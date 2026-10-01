@@ -1,3 +1,14 @@
+---
+title: "glossary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "glossary"
+issues: []
+discussions: []
+---
+
 # Glossario Tecnico
 
 ## Elementi Strutturali

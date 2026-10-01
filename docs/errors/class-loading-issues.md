@@ -1,3 +1,14 @@
+---
+title: "class loading issues"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "class loading issues"
+issues: []
+discussions: []
+---
+
 # Errori di Caricamento Classi
 
 ## Problema: Riferimenti a Classi Rinominate
