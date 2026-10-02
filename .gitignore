@@ -139,3 +139,4 @@ graphify-out/
 .claude-audit/
 test-results/
 cms.code-workspace
+/.docs-archive/
