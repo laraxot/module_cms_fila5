@@ -77,6 +77,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
  * @method static Builder<static>|Menu    withRelationshipExpression($direction, callable $constraint, $initialDepth, $from = null, $maxDepth = null)
  *
  * @mixin \Eloquent
+ * @implements HasRecursiveRelationshipsContract<Menu>
  */
 class Menu extends BaseModel implements HasRecursiveRelationshipsContract
 {
@@ -106,7 +107,7 @@ class Menu extends BaseModel implements HasRecursiveRelationshipsContract
      */
     public static function getTreeMenuOptions(): array
     {
-        /** @var class-string<HasRecursiveRelationshipsContract> $className */
+        /** @var class-string<HasRecursiveRelationshipsContract<Menu>> $className */
         $className = self::class;
 
         return app(GetTreeOptionsByModelClassAction::class)->execute($className);

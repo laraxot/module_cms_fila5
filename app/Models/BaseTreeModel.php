@@ -96,9 +96,16 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
  *
  * @mixin \Eloquent
  */
+/**
+ * @template TModel of BaseTreeModel
+ * @implements HasRecursiveRelationshipsContract<TModel>
+ */
 abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationshipsContract
 {
     use TypedHasRecursiveRelationships;
+
+    /** @var string */
+    protected $title;
 
     /** @var list<string> */
     protected $fillable = [
@@ -118,9 +125,13 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
         'updated_by' => 'string',
     ];
 
+    /** @property string $title */
     public function getLabel(): string
     {
-        return $this->title;
+        /** @var string $title */
+        $title = $this->title;
+
+        return $title;
     }
 
     /** @return array<string, string> */
