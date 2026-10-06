@@ -1,4 +1,11 @@
 ---
+qmd: "agents"
+issues: []
+discussions: []
+title: "Agents"
+---
+
+---
 title: "Agent instructions"
 type: reference
 tags: [agents, coding-agent, llm-wiki]

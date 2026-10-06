@@ -1,4 +1,11 @@
 ---
+qmd: "livewire-widget-project-context"
+issues: []
+discussions: []
+title: "Livewire Widget Project Context"
+---
+
+---
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26

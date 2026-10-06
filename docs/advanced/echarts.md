@@ -1,4 +1,11 @@
 ---
+qmd: "echarts"
+issues: []
+discussions: []
+title: "Echarts"
+---
+
+---
 type: note
 tags: [documentation]
 created: 2026-09-26

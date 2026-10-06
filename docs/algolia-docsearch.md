@@ -1,4 +1,11 @@
 ---
+qmd: "algolia-docsearch"
+issues: []
+discussions: []
+title: "Algolia Docsearch"
+---
+
+---
 title: "algolia docsearch"
 type: note
 tags: [documentation]

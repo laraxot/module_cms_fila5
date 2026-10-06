@@ -1,4 +1,11 @@
 ---
+qmd: "livewire-inventory"
+issues: []
+discussions: []
+title: "Livewire Inventory"
+---
+
+---
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26

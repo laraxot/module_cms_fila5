@@ -1,4 +1,11 @@
 ---
+qmd: "algolia_docsearch"
+issues: []
+discussions: []
+title: "Algolia Docsearch"
+---
+
+---
 type: note
 tags: [documentation]
 created: 2026-09-26

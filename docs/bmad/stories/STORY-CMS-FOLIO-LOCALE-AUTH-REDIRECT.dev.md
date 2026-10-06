@@ -1,4 +1,11 @@
 ---
+qmd: "STORY-CMS-FOLIO-LOCALE-AUTH-REDIRECT.dev"
+issues: []
+discussions: []
+title: "Story Cms Folio Locale Auth Redirect.Dev"
+---
+
+---
 title: "Development record — localized Folio guest redirects"
 type: implementation-record
 status: verified

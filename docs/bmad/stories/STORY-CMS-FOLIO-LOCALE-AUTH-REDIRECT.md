@@ -1,4 +1,11 @@
 ---
+qmd: "STORY-CMS-FOLIO-LOCALE-AUTH-REDIRECT"
+issues: []
+discussions: []
+title: "Story Cms Folio Locale Auth Redirect"
+---
+
+---
 title: "Folio guests keep the requested locale on authentication redirects"
 type: story
 status: done
