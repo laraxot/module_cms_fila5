@@ -6,6 +6,7 @@ namespace Modules\Cms\Models\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\MultipleRecordsFoundException;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Modules\Cms\Datas\BlockData;
@@ -16,7 +17,7 @@ use Modules\Xot\Datas\XotData;
  *
  * @phpstan-require-extends Model
  *
- * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
+ * @method mixed getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
 trait HasBlocks
@@ -81,8 +82,7 @@ trait HasBlocks
     }
 
     /**
-     * @param array<int|string, mixed> $blocks
-     *
+     * @param  array<int|string, mixed>  $blocks
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array
@@ -113,15 +113,34 @@ trait HasBlocks
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
      * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
      *
-     * @param string      $slug The section/page slug
-     * @param string|null $side The side to get blocks for (null for all blocks)
-     *
+     * @param  string  $slug  The section/page slug
+     * @param  string|null  $side  The side to get blocks for (null for all blocks)
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
     {
+        $query = static::query()->where('slug', $slug);
+
         try {
-            $record = static::query()->where('slug', $slug)->sole();
+            $record = $query->sole();
+        } catch (MultipleRecordsFoundException $e) {
+            $duplicates = $query->clone()->limit(10)->get(['id', 'slug']);
+            $records = $duplicates
+                ->map(static fn (Model $model): string => sprintf(
+                    'id=%s slug=%s',
+                    (string) $model->getAttribute('id'),
+                    (string) $model->getAttribute('slug'),
+                ))
+                ->implode(', ');
+
+            throw new \RuntimeException(sprintf(
+                'CMS content collision: %s matched %d records for slug [%s], side [%s]. Records: %s. Expected one JSON content record per slug.',
+                static::class,
+                $e->getCount(),
+                $slug,
+                $side ?? 'content',
+                $records,
+            ), previous: $e);
         } catch (ModelNotFoundException) {
             return [];
         }

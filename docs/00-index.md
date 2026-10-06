@@ -1,4 +1,11 @@
 ---
+qmd: "00-index"
+issues: []
+discussions: []
+title: "00 Index"
+---
+
+---
 type: note
 created: 2026-09-26
 updated: 2026-09-26

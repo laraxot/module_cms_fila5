@@ -1,4 +1,11 @@
 ---
+qmd: "algolia-docsearch-old2"
+issues: []
+discussions: []
+title: "Algolia Docsearch Old2"
+---
+
+---
 title: "algolia docsearch old2"
 type: note
 tags: [documentation]

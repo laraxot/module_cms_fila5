@@ -2,6 +2,13 @@
 qmd: "index"
 issues: []
 discussions: []
+title: "Index"
+---
+
+---
+qmd: "index"
+issues: []
+discussions: []
 title: "Skills Index"
 type: index
 created: 2026-05-11
