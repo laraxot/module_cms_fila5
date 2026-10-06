@@ -1,4 +1,11 @@
 ---
+qmd: "aggiornamenti"
+issues: []
+discussions: []
+title: "Aggiornamenti"
+---
+
+---
 type: note
 tags: [documentation]
 created: 2026-09-26

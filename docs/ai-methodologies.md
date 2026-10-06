@@ -1,4 +1,11 @@
 ---
+qmd: "ai-methodologies"
+issues: []
+discussions: []
+title: "Ai Methodologies"
+---
+
+---
 title: "ai methodologies"
 type: note
 tags: [documentation]
