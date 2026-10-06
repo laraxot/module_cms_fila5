@@ -11,7 +11,7 @@ use Modules\Cms\Database\Factories\MenuFactory;
 use Modules\Media\Models\Media;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Models\Traits\TypedHasRecursiveRelationships;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
 
@@ -102,7 +102,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
  */
 abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationshipsContract
 {
-    use TypedHasRecursiveRelationships;
+    use HasRecursiveRelationships;
 
     /** @var string */
     protected $title;

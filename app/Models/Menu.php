@@ -9,7 +9,7 @@ use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Actions\Tree\GetTreeOptionsByModelClassAction;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Models\Traits\TypedHasRecursiveRelationships;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
 
@@ -82,7 +82,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
 class Menu extends BaseModel implements HasRecursiveRelationshipsContract
 {
     use SushiToJsons;
-    use TypedHasRecursiveRelationships;
+    use HasRecursiveRelationships;
 
     /** @var list<string> */
     protected $fillable = [
@@ -107,8 +107,8 @@ class Menu extends BaseModel implements HasRecursiveRelationshipsContract
      */
     public static function getTreeMenuOptions(): array
     {
-        /** @var class-string<HasRecursiveRelationshipsContract<Menu>> $className */
-        $className = self::class;
+        /** @var class-string<HasRecursiveRelationshipsContract> $className */
+        $className = self::class; // @phpstan-ignore-line missingType.generics
 
         return app(GetTreeOptionsByModelClassAction::class)->execute($className);
     }
