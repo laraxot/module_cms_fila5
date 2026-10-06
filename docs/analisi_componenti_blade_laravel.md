@@ -1,4 +1,11 @@
 ---
+qmd: "analisi_componenti_blade_laravel"
+issues: []
+discussions: []
+title: "Analisi Componenti Blade Laravel"
+---
+
+---
 title: "analisi componenti blade laravel"
 type: note
 tags: [documentation]

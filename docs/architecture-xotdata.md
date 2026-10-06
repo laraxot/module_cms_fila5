@@ -1,4 +1,11 @@
 ---
+qmd: "architecture-xotdata"
+issues: []
+discussions: []
+title: "Architecture Xotdata"
+---
+
+---
 title: "architecture xotdata"
 type: note
 tags: [documentation]
