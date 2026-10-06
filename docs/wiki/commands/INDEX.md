@@ -2,6 +2,13 @@
 qmd: "INDEX"
 issues: []
 discussions: []
+title: "Index"
+---
+
+---
+qmd: "INDEX"
+issues: []
+discussions: []
 title: "Commands Index"
 type: index
 created: 2026-05-11
