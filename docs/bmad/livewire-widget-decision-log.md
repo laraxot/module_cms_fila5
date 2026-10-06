@@ -1,4 +1,11 @@
 ---
+qmd: "livewire-widget-decision-log"
+issues: []
+discussions: []
+title: "Livewire Widget Decision Log"
+---
+
+---
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
