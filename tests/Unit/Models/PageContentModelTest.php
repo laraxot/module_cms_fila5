@@ -60,6 +60,8 @@ describe('PageContent Model', function (): void {
 
     test('page content model has getRows method', function (): void {
         $model = new PageContent();
+
+        Assert::assertContainsOnlyArray($model->getRows());
     });
 
     test('page content model has sluggable method', function (): void {
