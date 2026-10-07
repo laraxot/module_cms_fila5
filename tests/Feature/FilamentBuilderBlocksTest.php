@@ -35,6 +35,10 @@ test('discovered blocks expose the expected metadata keys', function (): void {
 
         /** @var array<string, mixed> $blockArray */
         $blockArray = $block->toArray();
+
+        foreach (['name', 'class', 'module', 'path'] as $key) {
+            Assert::assertArrayHasKey($key, $blockArray);
+        }
     });
 });
 

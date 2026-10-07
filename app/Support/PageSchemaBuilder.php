@@ -224,7 +224,7 @@ final class PageSchemaBuilder
 
         $givenName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
         $familyName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
-        $email = trim($publicEmail);
+        $email = '' !== trim($publicEmail) ? trim($publicEmail) : trim($profileEmail);
         $description = $profileBio;
         $image = $profileImage;
 

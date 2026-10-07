@@ -125,12 +125,19 @@ trait HasBlocks
             $record = $query->sole();
         } catch (MultipleRecordsFoundException $e) {
             $duplicates = $query->clone()->limit(10)->get(['id', 'slug']);
+            $formatValue = static fn (mixed $value): string => match (true) {
+                is_string($value) => $value,
+                is_int($value), is_float($value), is_bool($value) => (string) $value,
+                default => get_debug_type($value),
+            };
             $records = $duplicates
-                ->map(static fn (Model $model): string => sprintf(
+                ->map(static function (Model $model) use ($formatValue): string {
+                    return sprintf(
                     'id=%s slug=%s',
-                    (string) $model->getAttribute('id'),
-                    (string) $model->getAttribute('slug'),
-                ))
+                    $formatValue($model->getAttribute('id')),
+                    $formatValue($model->getAttribute('slug')),
+                    );
+                })
                 ->implode(', ');
 
             throw new \RuntimeException(sprintf(
