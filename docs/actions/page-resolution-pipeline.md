@@ -64,6 +64,11 @@ Per `ProfilePage` arricchisce lo schema con un `mainEntity` di tipo `Person`,
 cercando prima uno `User` reale (per id/slug o utente autenticato) e degradando
 a un placeholder `Person` con solo `identifier`/`url` se non trovato.
 
+Per `Person`, `givenName`, `familyName` ed `email` provengono dall'utente con **fallback sul
+profilo** (`ProfileContract`): se l'utente non ha un valore, si usa quello del profilo.
+Aggiornato il 2026-10-06: il fallback dell'`email` era andato perso in un refactor
+(vedi [story PHPStan cleanup Cms](../stories/2026-10-06-phpstan-cleanup-cms.dev.md)).
+
 ## `ResolveBlockQueryAction`
 
 `app/Actions/ResolveBlockQueryAction.php`
