@@ -7,6 +7,8 @@ use PHPUnit\Framework\Assert;
 
 test('Themes page can be instantiated', function () {
     $page = new Themes();
+
+    Assert::assertInstanceOf(Themes::class, $page);
 });
 
 test('Themes page has themes property', function () {

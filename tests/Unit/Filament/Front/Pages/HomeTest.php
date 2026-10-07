@@ -7,6 +7,8 @@ use PHPUnit\Framework\Assert;
 
 test('Home page can be instantiated', function () {
     $page = new Home();
+
+    Assert::assertInstanceOf(Home::class, $page);
 });
 
 test('Home page has view_type property', function () {

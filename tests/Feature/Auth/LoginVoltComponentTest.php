@@ -53,6 +53,7 @@ it('allows a user to authenticate via the volt component', function (): void {
 
     $response->assertHasNoErrors();
     cmsAssertAuthenticated();
+    Assert::assertEquals($user->getAuthIdentifier(), Auth::id());
 });
 
 it('fails authentication with wrong credentials', function (): void {
@@ -352,6 +353,4 @@ it('has proper aria labels', function (): void {
 });
 
 it('handles keyboard navigation', function (): void {
-    /** @var Testable<Component> $component */
-    $component = LivewireVolt::test('auth.login #25');
-});
+})->todo('Serve una asserzione sul markup di navigazione da tastiera (autofocus/tabindex/submit) del form di login: dipende dal tema pubblico attivo, va scritta sul suo markup reale.');
