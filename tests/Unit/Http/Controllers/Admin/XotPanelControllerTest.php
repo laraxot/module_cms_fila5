@@ -22,7 +22,9 @@ describe('XotPanelController', function (): void {
         Assert::assertSame('Modules\Cms\Http\Controllers\Admin', $reflector->getNamespaceName());
     });
 
-    test('xot panel controller is not instantiable via constructor without params', function (): void {
+    test('xot panel controller is instantiable without constructor params', function (): void {
         $controller = new XotPanelController();
+
+        Assert::assertInstanceOf(XotPanelController::class, $controller);
     });
 });

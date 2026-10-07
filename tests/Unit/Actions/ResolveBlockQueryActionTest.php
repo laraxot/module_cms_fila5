@@ -58,7 +58,8 @@ test('ResolveBlockQueryAction applies scopes', function () {
         'model' => Page::class,
         'scope' => 'published',
     ]);
-    /* @var array<string, mixed> $result */
+
+    Assert::assertArrayHasKey('items', $result);
 });
 
 test('ResolveBlockQueryAction applies scopes array', function () {
@@ -68,7 +69,8 @@ test('ResolveBlockQueryAction applies scopes array', function () {
         'model' => Page::class,
         'scopes' => [],
     ]);
-    /* @var array<string, mixed> $result */
+
+    Assert::assertArrayHasKey('items', $result);
 });
 
 test('ResolveBlockQueryAction applies orderBy and direction', function () {
@@ -79,7 +81,8 @@ test('ResolveBlockQueryAction applies orderBy and direction', function () {
         'orderBy' => 'updated_at',
         'direction' => 'asc',
     ]);
-    /* @var array<string, mixed> $result */
+
+    Assert::assertArrayHasKey('items', $result);
 });
 
 test('ResolveBlockQueryAction applies limit', function () {

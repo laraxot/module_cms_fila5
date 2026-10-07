@@ -52,3 +52,8 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 - Se il problema e' strutturale, verificare prima Cms JSON + routing.
 - Se il problema e' visivo, lavorare nel tema e documentare i risultati anche qui.
 - Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.
+
+## Stories BMAD
+
+- [stories/2026-10-06-phpstan-cleanup-cms.story.md](./stories/2026-10-06-phpstan-cleanup-cms.story.md) - PHPStan cleanup Cms: scopo, analisi, criteri
+- [stories/2026-10-06-phpstan-cleanup-cms.dev.md](./stories/2026-10-06-phpstan-cleanup-cms.dev.md) - Piano tecnico, verifica, lezioni apprese
