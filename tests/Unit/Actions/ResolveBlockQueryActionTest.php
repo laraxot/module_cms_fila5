@@ -54,29 +54,35 @@ test('ResolveBlockQueryAction applies scopes', function () {
     $action = new ResolveBlockQueryAction();
 
     // Test with singular scope
-    $action->execute([        'model' => Page::class,
+    $result = $action->execute([
+        'model' => Page::class,
         'scope' => 'published',
     ]);
-    /* @var array<string, mixed> $result */
+
+    Assert::assertArrayHasKey('items', $result);
 });
 
 test('ResolveBlockQueryAction applies scopes array', function () {
     $action = new ResolveBlockQueryAction();
 
-    $action->execute([        'model' => Page::class,
+    $result = $action->execute([
+        'model' => Page::class,
         'scopes' => [],
     ]);
-    /* @var array<string, mixed> $result */
+
+    Assert::assertArrayHasKey('items', $result);
 });
 
 test('ResolveBlockQueryAction applies orderBy and direction', function () {
     $action = new ResolveBlockQueryAction();
 
-    $action->execute([        'model' => Page::class,
+    $result = $action->execute([
+        'model' => Page::class,
         'orderBy' => 'updated_at',
         'direction' => 'asc',
     ]);
-    /* @var array<string, mixed> $result */
+
+    Assert::assertArrayHasKey('items', $result);
 });
 
 test('ResolveBlockQueryAction applies limit', function () {
