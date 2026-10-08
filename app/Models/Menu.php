@@ -9,9 +9,9 @@ use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Actions\Tree\GetTreeOptionsByModelClassAction;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
-use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 /**
  * Modules\Cms\Models\Menu.
@@ -80,8 +80,8 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  */
 class Menu extends BaseModel implements HasRecursiveRelationshipsContract
 {
-    use HasRecursiveRelationships;
     use SushiToJsons;
+    use HasRecursiveRelationships;
 
     /** @var list<string> */
     protected $fillable = [
@@ -106,10 +106,7 @@ class Menu extends BaseModel implements HasRecursiveRelationshipsContract
      */
     public static function getTreeMenuOptions(): array
     {
-        /** @var class-string<HasRecursiveRelationshipsContract> $className */
-        $className = self::class;
-
-        return app(GetTreeOptionsByModelClassAction::class)->execute($className);
+        return app(GetTreeOptionsByModelClassAction::class)->execute(self::class);
     }
 
     /**
