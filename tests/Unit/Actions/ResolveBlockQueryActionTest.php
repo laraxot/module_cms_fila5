@@ -54,8 +54,7 @@ test('ResolveBlockQueryAction applies scopes', function () {
     $action = new ResolveBlockQueryAction();
 
     // Test with singular scope
-    $result = $action->execute([
-        'model' => Page::class,
+    $action->execute([        'model' => Page::class,
         'scope' => 'published',
     ]);
     /* @var array<string, mixed> $result */
@@ -64,8 +63,7 @@ test('ResolveBlockQueryAction applies scopes', function () {
 test('ResolveBlockQueryAction applies scopes array', function () {
     $action = new ResolveBlockQueryAction();
 
-    $result = $action->execute([
-        'model' => Page::class,
+    $action->execute([        'model' => Page::class,
         'scopes' => [],
     ]);
     /* @var array<string, mixed> $result */
@@ -74,8 +72,7 @@ test('ResolveBlockQueryAction applies scopes array', function () {
 test('ResolveBlockQueryAction applies orderBy and direction', function () {
     $action = new ResolveBlockQueryAction();
 
-    $result = $action->execute([
-        'model' => Page::class,
+    $action->execute([        'model' => Page::class,
         'orderBy' => 'updated_at',
         'direction' => 'asc',
     ]);

@@ -21,8 +21,7 @@ describe('AttachmentResource', function (): void {
     });
 
     test('attachment resource has relations', function (): void {
-        $relations = AttachmentResource::getRelations();
-        /* @var array<string, mixed> $relations */
+        Assert::assertSame([], AttachmentResource::getRelations());
     });
 
     test('attachment resource has pages', function (): void {

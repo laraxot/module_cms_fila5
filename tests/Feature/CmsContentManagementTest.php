@@ -16,8 +16,7 @@ beforeEach(function (): void {
 });
 
 test('cms module models work together in content management', function () {
-    $page = PageFactory::new()->createOne([
-        'slug' => 'home-page',
+    PageFactory::new()->createOne([        'slug' => 'home-page',
         'title' => ['en' => 'Home Page', 'it' => 'Pagina Home'],
         'content' => 'Welcome to our website',
         'content_blocks' => [
@@ -25,16 +24,14 @@ test('cms module models work together in content management', function () {
         ],
     ]);
 
-    $pageContent = PageContentFactory::new()->createOne([
-        'slug' => 'home-content',
+    PageContentFactory::new()->createOne([        'slug' => 'home-content',
         'name' => ['en' => 'Home Content', 'it' => 'Contenuto Home'],
         'blocks' => [
             ['type' => 'features', 'title' => 'Our Features', 'items' => []],
         ],
     ]);
 
-    $section = SectionFactory::new()->createOne([
-        'slug' => 'hero-section',
+    SectionFactory::new()->createOne([        'slug' => 'hero-section',
         'name' => ['en' => 'Hero Section', 'it' => 'Sezione Hero'],
         'blocks' => [
             ['type' => 'banner', 'title' => 'Main Banner'],
@@ -369,20 +366,17 @@ test('cms module handles bulk operations efficiently', function () {
 });
 
 test('cms module supports complex query patterns', function () {
-    $pages = PageFactory::new()
-        ->count(10)
+    PageFactory::new()        ->count(10)
         ->create([
             'content_blocks' => [['type' => 'hero', 'title' => 'Hero Section']],
         ]);
 
-    $pageContents = PageContentFactory::new()
-        ->count(8)
+    PageContentFactory::new()        ->count(8)
         ->create([
             'blocks' => [['type' => 'features', 'title' => 'Features']],
         ]);
 
-    $sections = SectionFactory::new()
-        ->count(6)
+    SectionFactory::new()        ->count(6)
         ->create([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);

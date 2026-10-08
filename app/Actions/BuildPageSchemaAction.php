@@ -169,14 +169,12 @@ final class BuildPageSchemaAction
         }
         $profileFirstName = '';
         $profileLastName = '';
-        $profileEmail = '';
         $profileBio = '';
         $profileImage = null;
 
         if ($profile instanceof ProfileContract) {
             $profileFirstName = $this->readNullableStringProperty($profile, 'first_name');
             $profileLastName = $this->readNullableStringProperty($profile, 'last_name');
-            $profileEmail = $this->readNullableStringProperty($profile, 'email');
             $profileBio = $this->readNullableStringProperty($profile, 'bio');
 
             $avatarUrl = $profile->getAvatarUrl();

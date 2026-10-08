@@ -53,6 +53,4 @@ test('ModulePolicy can be instantiated', function () {
     Assert::assertInstanceOf(ModulePolicy::class, $policy);
 });
 
-test('PagePolicy has expected methods', function () {
-    $policy = new PagePolicy();
-});
+test('PagePolicy has expected methods', function ()  { })->todo();
