@@ -14,14 +14,12 @@ test('GetViewThemeByViewAction can be executed', function () {
 test('GetViewThemeByViewAction returns string when executed with empty view', function () {
     $action = new GetViewThemeByViewAction();
 
-    $result = $action->execute();
-});
+    $action->execute();});
 
 test('GetViewThemeByViewAction returns string when executed with view', function () {
     $action = new GetViewThemeByViewAction();
 
-    $result = $action->execute('test::view');
-});
+    $action->execute('test::view');});
 
 test('GetViewThemeByViewAction returns original view when view does not exist', function () {
     $action = new GetViewThemeByViewAction();

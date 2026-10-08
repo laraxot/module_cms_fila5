@@ -183,8 +183,7 @@ describe('Frontend Login User Types', function () {
     test('any user type can login via frontend', function () {
         // Using XotData pattern ensures compatibility with any user type
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
-            'email' => $email,
+        $this->createTestUser([            'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
