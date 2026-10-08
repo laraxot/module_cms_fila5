@@ -133,9 +133,9 @@ trait HasBlocks
             $records = $duplicates
                 ->map(static function (Model $model) use ($formatValue): string {
                     return sprintf(
-                    'id=%s slug=%s',
-                    $formatValue($model->getAttribute('id')),
-                    $formatValue($model->getAttribute('slug')),
+                        'id=%s slug=%s',
+                        $formatValue($model->getAttribute('id')),
+                        $formatValue($model->getAttribute('slug')),
                     );
                 })
                 ->implode(', ');

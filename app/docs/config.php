@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 if (! function_exists('trimPath')) {
@@ -38,7 +39,7 @@ if (! function_exists('docsEnv')) {
     {
         $value = $_SERVER[$key] ?? $_ENV[$key] ?? null;
 
-        return is_string($value) && '' !== $value ? $value : null;
+        return is_string($value) && $value !== '' ? $value : null;
     }
 }
 
@@ -83,7 +84,7 @@ return [
         return Str::endsWith(trimPath(pageStringCall($page, 'getPath')), trimPath(pageStringCall($item, 'getPath')));
     },
     'isActiveParent' => static function (mixed $page, mixed $menuItem): bool {
-        if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof Illuminate\Support\Collection) {
+        if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof Collection) {
             return $menuItem->children->contains(static function (mixed $child) use ($page): bool {
                 return is_string($child) && trimPath(pageStringCall($page, 'getPath')) === trimPath($child);
             });
@@ -105,8 +106,8 @@ return [
         return url('/'.trimPath($path));
     },
 
-    'children' => static function (mixed $page, mixed $docs): Illuminate\Support\Collection {
-        if ($docs instanceof Illuminate\Support\Collection) {
+    'children' => static function (mixed $page, mixed $docs): Collection {
+        if ($docs instanceof Collection) {
             return $docs->where('parent_id', pageProperty($page, 'id'));
         }
 
