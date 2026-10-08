@@ -16,7 +16,6 @@ use PHPUnit\Framework\Assert;
 // ---- Volt Component Rendering ----
 
 it('renders the volt login component', function (): void {
-    /** @var Testable<Component> $component */
     $component = LivewireVolt::test('auth.login');
     $component->assertOk();
 });
@@ -40,8 +39,7 @@ it('renders form elements', function (): void {
 
 it('allows a user to authenticate via the volt component', function (): void {
     $email = cmsGenerateUniqueEmail();
-    $user = cmsCreateTestUser([
-        'email' => $email,
+    cmsCreateTestUser([        'email' => $email,
         'password' => Hash::make('password123'),
     ]);
     cmsAssertGuest();
@@ -352,6 +350,5 @@ it('has proper aria labels', function (): void {
 });
 
 it('handles keyboard navigation', function (): void {
-    /** @var Testable<Component> $component */
-    $component = LivewireVolt::test('auth.login #25');
+    LivewireVolt::test('auth.login #25')->assertSee('data.email');
 });
