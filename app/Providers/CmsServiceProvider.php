@@ -6,9 +6,9 @@ namespace Modules\Cms\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
+use Modules\Cms\View\Components\Page;
 use Modules\Xot\Actions\File\FixPathAction;
 use Modules\Xot\Datas\XotData;
-use Modules\Cms\View\Components\Page;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 use Webmozart\Assert\Assert;
 
