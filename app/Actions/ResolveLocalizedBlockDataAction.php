@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Actions;
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Mcamara\LaravelLocalization\LaravelLocalization as LaravelLocalizationManager;
 
 use function Safe\preg_match;
 
@@ -91,10 +92,11 @@ final class ResolveLocalizedBlockDataAction
             return $url;
         }
 
-        $locale = LaravelLocalization::getCurrentLocale();
+        $localization = app(LaravelLocalizationManager::class);
+        $locale = $localization->getCurrentLocale();
 
         /** @var string|null $localizedUrl */
-        $localizedUrl = LaravelLocalization::getLocalizedURL($locale, $url);
+        $localizedUrl = $localization->getLocalizedURL($locale, $url);
 
         return $localizedUrl ?? $url;
     }

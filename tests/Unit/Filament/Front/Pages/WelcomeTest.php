@@ -6,7 +6,9 @@ use Modules\Cms\Filament\Front\Pages\Welcome;
 use PHPUnit\Framework\Assert;
 
 test('Welcome page can be instantiated', function () {
-    Assert::assertInstanceOf(Welcome::class, new Welcome());
+    $page = new Welcome();
+
+    Assert::assertInstanceOf(Welcome::class, $page);
 });
 
 test('Welcome page has view_type property', function () {

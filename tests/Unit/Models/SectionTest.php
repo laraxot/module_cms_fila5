@@ -33,5 +33,9 @@ test('Section model extends BaseModelLang', function () {
 test('Section model has expected casts', function () {
     $section = new Section();
 
-    $section->getCasts();    /* @var array<string, mixed> $casts */
+    $casts = $section->getCasts();
+
+    Assert::assertArrayHasKey('slug', $casts);
+    Assert::assertArrayHasKey('blocks', $casts);
+    Assert::assertArrayHasKey('name', $casts);
 });

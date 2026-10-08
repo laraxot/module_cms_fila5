@@ -59,7 +59,10 @@ describe('PageContent Model', function (): void {
     });
 
     test('page content model has getRows method', function (): void {
-        new PageContent();    });
+        $model = new PageContent();
+
+        Assert::assertContainsOnlyArray($model->getRows());
+    });
 
     test('page content model has sluggable method', function (): void {
     })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');

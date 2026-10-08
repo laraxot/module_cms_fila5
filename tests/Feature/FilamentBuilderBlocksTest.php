@@ -33,7 +33,13 @@ test('discovered blocks expose the expected metadata keys', function (): void {
             return;
         }
 
-        $block->toArray();    });
+        /** @var array<string, mixed> $blockArray */
+        $blockArray = $block->toArray();
+
+        foreach (['name', 'class', 'module', 'path'] as $key) {
+            Assert::assertArrayHasKey($key, $blockArray);
+        }
+    });
 });
 
 test('homepage request is reachable when route is available', function (): void {
