@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Modules\Cms\Providers\CmsServiceProvider;
 use Modules\Cms\Providers\EventServiceProvider;
@@ -59,18 +60,28 @@ test('RouteServiceProvider has correct name', function () {
     Assert::assertSame('Cms', $property->getValue($provider));
 });
 
-test('RouteServiceProvider has registerRoutePattern method', function () {
-    new RouteServiceProvider(app());});
+test('RouteServiceProvider registerRoutePattern registers the lang route pattern', function () {
+    $provider = new RouteServiceProvider(app());
+    // Router isolato: non si altera il router dell'applicazione di test.
+    $router = new Router(app('events'), app());
 
-test('RouteServiceProvider has registerMyMiddleware method', function () {
-    new RouteServiceProvider(app());});
+    $provider->registerRoutePattern($router);
+
+    $pattern = $router->getPatterns()['lang'] ?? null;
+    Assert::assertIsString($pattern);
+    Assert::assertStringStartsWith('/|', $pattern);
+    Assert::assertStringEndsWith('|/i', $pattern);
+});
+
+test('RouteServiceProvider registerMyMiddleware registers the Cms middleware', function () {
+})->todo('registerMyMiddleware() e\' volutamente vuoto (i middleware di locale sono commentati): non c\'e\' comportamento da asserire finche\' non viene riabilitato.');
 
 test('FolioVoltServiceProvider extends ServiceProvider', function () {
     Assert::assertInstanceOf(ServiceProvider::class, new FolioVoltServiceProvider(app()));
 });
 
-test('FolioVoltServiceProvider has register method', function () {
-    new FolioVoltServiceProvider(app());});
+test('FolioVoltServiceProvider register does not bind anything', function () {
+})->todo('register() e\' vuoto: il lavoro e\' in boot().');
 
-test('FolioVoltServiceProvider has boot method', function () {
-    new FolioVoltServiceProvider(app());});
+test('FolioVoltServiceProvider boot registers the Folio paths once the app is booted', function () {
+})->todo('boot() registra i path Folio/Volt sul container gia\' avviato (effetti globali sul router): serve un\'app isolata per asserirlo.');

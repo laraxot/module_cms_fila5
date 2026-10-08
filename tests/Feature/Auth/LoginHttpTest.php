@@ -142,7 +142,8 @@ describe('Login Http', function (): void {
 
     test('any user type can login via frontend', function (): void {
         $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([            'email' => $email,
+        $user = cmsCreateTestUser([
+            'email' => $email,
             'password' => Hash::make('password123'),
         ]);
         cmsAssertGuest();
@@ -158,5 +159,6 @@ describe('Login Http', function (): void {
         $authenticatedUser = Auth::user();
         Assert::assertNotNull($authenticatedUser);
         Assert::assertSame($email, $authenticatedUser->email);
+        Assert::assertEquals($user->getAuthIdentifier(), $authenticatedUser->getAuthIdentifier());
     });
 });
