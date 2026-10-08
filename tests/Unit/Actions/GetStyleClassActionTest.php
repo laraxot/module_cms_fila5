@@ -15,13 +15,8 @@ test('GetStyleClassAction can be executed', function () {
 test('GetStyleClassAction handles exceptions gracefully', function () {
     $action = new GetStyleClassAction();
 
-    // This action will likely throw an exception due to missing view/config
-    // so we need to test that it's handled appropriately
-    try {
-        $result = $action->execute();
-    } catch (Exception $e) {
-        // If an exception is thrown, it's expected due to missing dependencies
-    }
+    // Senza la view del tema (e la relativa config `<tema>::<view>.class`) l'action lancia una Exception.
+    expect(fn () => $action->execute())->toThrow(Exception::class);
 });
 
 test('GetStyleClassAction with mocked config', function () {

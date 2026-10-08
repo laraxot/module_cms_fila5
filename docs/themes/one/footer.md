@@ -1,3 +1,14 @@
+---
+title: "footer"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "footer"
+issues: []
+discussions: []
+---
+
 # Footer Component Reference (CMS Module)
 
 Questo documento è un riferimento al componente Footer implementato nel tema One.

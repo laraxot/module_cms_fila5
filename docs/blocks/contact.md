@@ -1,3 +1,14 @@
+---
+title: "contact"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "contact"
+issues: []
+discussions: []
+---
+
 # Contact Block
 
 Il blocco Contact è utilizzato per visualizzare informazioni di contatto, con supporto per mappa e vari canali di comunicazione. Può essere utilizzato in qualsiasi contesto che richieda la presentazione di dettagli di contatto.

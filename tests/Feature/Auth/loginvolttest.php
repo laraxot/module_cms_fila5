@@ -12,6 +12,7 @@ use Modules\Xot\Datas\XotData;
 use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\assertAuthenticated;
+use function Pest\Laravel\assertAuthenticatedAs;
 use function Pest\Laravel\assertGuest;
 
 uses(TestCase::class);
@@ -59,7 +60,7 @@ describe('Volt Component Authentication', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        assertAuthenticatedAs($user);
     });
 
     test('authentication fails with wrong credentials', function (): void {
@@ -180,7 +181,7 @@ describe('Volt Component Session Management', function (): void {
             ->set('password', 'password123')
             ->call('save');
 
-        assertAuthenticated();
+        assertAuthenticatedAs($user);
 
         // Session data should be preserved (session regenerated but data kept)
         expect(Session::get('test_key'))->toBe('test_value');
@@ -216,7 +217,7 @@ describe('Volt Component Security', function (): void {
     test('csrf protection is active', function (): void {
         // Volt components should automatically handle CSRF protection
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -272,7 +273,7 @@ describe('Volt Component State Management', function (): void {
 
     test('loading state is managed correctly', function (): void {
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -307,7 +308,7 @@ describe('Volt Component User Types Integration', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        assertAuthenticatedAs($user);
 
         // Verify authenticated user
         $authenticatedUser = Auth::user();
@@ -330,7 +331,7 @@ describe('Volt Component User Types Integration', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        assertAuthenticatedAs($user);
 
         $authenticatedUser = Auth::user();
         expect($authenticatedUser?->name)->toBe('Test User');
@@ -351,7 +352,7 @@ describe('Volt Component Redirects', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        assertAuthenticatedAs($user);
 
         // Component might trigger redirect via JavaScript/Alpine
         // This test ensures the authentication logic completes successfully
@@ -373,7 +374,7 @@ describe('Volt Component Redirects', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticated();
+        assertAuthenticatedAs($user);
     });
 });
 

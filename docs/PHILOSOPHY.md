@@ -1,3 +1,14 @@
+---
+title: "PHILOSOPHY"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PHILOSOPHY"
+issues: []
+discussions: []
+---
+
 # CMS Module Philosophy
 
 ## Religione: Core Dogmas
@@ -28,6 +39,14 @@ The Cms module rests on three immutable pillars:
 
 ---
 
+title: "PHILOSOPHY"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PHILOSOPHY"
+issues: []
+discussions: []
 ## Filosofia: Headless CMS Principles
 
 ### Content and Presentation are Divorced

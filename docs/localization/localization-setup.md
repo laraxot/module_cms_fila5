@@ -1,3 +1,14 @@
+---
+title: "localization setup"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "localization setup"
+issues: []
+discussions: []
+---
+
 # Configurazione della Localizzazione
 
 ## Pacchetto mcamara/laravel-localization

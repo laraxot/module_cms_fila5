@@ -1,3 +1,14 @@
+---
+title: "timeline"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "timeline"
+issues: []
+discussions: []
+---
+
 # Timeline
 
 Il componente Timeline visualizza una sequenza di eventi in ordine cronologico, ideale per mostrare storico, attività o progressi.

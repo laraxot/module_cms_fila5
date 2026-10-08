@@ -1,3 +1,14 @@
+---
+title: "product roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product roadmap"
+issues: []
+discussions: []
+---
+
 # Cms Module - Product Roadmap
 
 **Module:** Cms  
@@ -7,6 +18,14 @@
 
 ---
 
+title: "product roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "product roadmap"
+issues: []
+discussions: []
 ## Vision Statement
 
 To provide a **flexible content management system** that empowers non-technical users to create, manage, and publish content across the platform without developer intervention.

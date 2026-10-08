@@ -1,3 +1,14 @@
+---
+title: "pages content strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pages content strategy"
+issues: []
+discussions: []
+---
+
 # Strategia Contenuti Pagine - <main module>
 
 ## Filosofia dei Contenuti

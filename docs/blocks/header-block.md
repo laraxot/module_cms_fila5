@@ -1,3 +1,14 @@
+---
+title: "header block"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header block"
+issues: []
+discussions: []
+---
+
 # Header Block
 
 ## Panoramica

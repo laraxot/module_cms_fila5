@@ -1,3 +1,14 @@
+---
+title: "homepage architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "homepage architecture"
+issues: []
+discussions: []
+---
+
 # Architettura della Homepage
 
 ## Indice

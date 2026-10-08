@@ -1,3 +1,14 @@
+---
+title: "legacy roadmap 3"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "legacy roadmap 3"
+issues: []
+discussions: []
+---
+
 # Cms Module - Content Management Roadmap
 
 **Data**: 2026-01-31
@@ -7,6 +18,14 @@
 
 ---
 
+title: "legacy roadmap 3"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "legacy roadmap 3"
+issues: []
+discussions: []
 ## 📊 Stato Attuale
 
 ### Completamento Globale: **75%**
