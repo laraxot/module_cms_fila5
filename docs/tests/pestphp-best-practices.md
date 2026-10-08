@@ -1,3 +1,14 @@
+---
+title: "pestphp best practices"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pestphp best practices"
+issues: []
+discussions: []
+---
+
 # PestPHP Best Practices - Modulo Cms
 
 ## 🎯 Overview
@@ -332,6 +343,14 @@ Applicando questi pattern abbiamo ottenuto:
 - [<nome progetto> Testing Architecture](../../../<nome progetto>/docs/testing.md)
 
 ---
+title: "pestphp best practices"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pestphp best practices"
+issues: []
+discussions: []
 **Ultimo aggiornamento**: Gennaio 2025
 **Status**: ✅ PRODUCTION READY
 **Verified**: 9 test / 4.44s / 100% pass rate

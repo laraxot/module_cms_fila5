@@ -1,3 +1,14 @@
+---
+title: "phpstan scripts fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan scripts fixes"
+issues: []
+discussions: []
+---
+
 # PHPStan Level 10 - Scripts Utility Fixes
 
 **Modulo**: Cms  
@@ -6,6 +17,14 @@
 
 ---
 
+title: "phpstan scripts fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan scripts fixes"
+issues: []
+discussions: []
 ## 📊 Executive Summary
 
 **Errori iniziali**: 32  

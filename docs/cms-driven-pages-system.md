@@ -1,3 +1,14 @@
+---
+title: "cms driven pages system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cms driven pages system"
+issues: []
+discussions: []
+---
+
 # CMS-Driven Pages System
 
 ## Overview

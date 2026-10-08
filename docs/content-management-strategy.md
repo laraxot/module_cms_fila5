@@ -1,3 +1,14 @@
+---
+title: "content management strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content management strategy"
+issues: []
+discussions: []
+---
+
 # Strategia di Gestione Contenuti per Pagine Istituzionali Sanitarie
 
 ## Filosofia e Approccio Olistico
@@ -98,5 +109,13 @@ Questa strategia integra:
 
 ---
 
+title: "content management strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content management strategy"
+issues: []
+discussions: []
 **Ultimo aggiornamento**: Gennaio 2025  
 **Revisione**: Conforme regole Laraxot olistica e filosofia zen del contenuto sanitario 

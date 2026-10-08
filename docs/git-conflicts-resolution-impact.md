@@ -1,3 +1,14 @@
+---
+title: "git conflicts resolution impact"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts resolution impact"
+issues: []
+discussions: []
+---
+
 # Impatto Risoluzione Conflitti Git - Modulo Cms
 
 ## Data: [DATE]
@@ -199,6 +210,14 @@ php artisan lang:check
 
 ---
 
+title: "git conflicts resolution impact"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "git conflicts resolution impact"
+issues: []
+discussions: []
 **Ultimo aggiornamento**: [DATE]
 **Autore**: Sistema di correzione automatica
 **Stato**: ✅ Completato
