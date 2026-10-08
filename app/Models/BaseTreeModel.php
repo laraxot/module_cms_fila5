@@ -11,9 +11,9 @@ use Modules\Cms\Database\Factories\MenuFactory;
 use Modules\Media\Models\Media;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use Modules\Xot\Contracts\ProfileContract;
+use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Collection;
-use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 /**
  * Modules\Cms\Models\BaseTreeModel.
@@ -100,6 +100,9 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
 {
     use HasRecursiveRelationships;
 
+    /** @var string */
+    protected $title;
+
     /** @var list<string> */
     protected $fillable = [
         'title',
@@ -118,9 +121,13 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
         'updated_by' => 'string',
     ];
 
+    /** @property string $title */
     public function getLabel(): string
     {
-        return $this->title;
+        /** @var string $title */
+        $title = $this->title;
+
+        return $title;
     }
 
     /** @return array<string, string> */
