@@ -1,3 +1,14 @@
+---
+title: "page"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page"
+issues: []
+discussions: []
+---
+
 # Componente Page - Rendering Semplice e Affidabile
 
 ## Introduzione

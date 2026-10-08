@@ -1,3 +1,14 @@
+---
+title: "chaos monkey recovery playbook"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "chaos monkey recovery playbook"
+issues: []
+discussions: []
+---
+
 # Chaos Monkey Recovery Playbook (CMS)
 
 ## Goal

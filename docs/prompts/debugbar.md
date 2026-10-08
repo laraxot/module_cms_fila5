@@ -1,3 +1,14 @@
+---
+title: "debugbar"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "debugbar"
+issues: []
+discussions: []
+---
+
 # Debugbar
 
 studia a fondo 

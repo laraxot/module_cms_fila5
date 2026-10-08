@@ -1,3 +1,14 @@
+---
+title: "componenti blade"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "componenti blade"
+issues: []
+discussions: []
+---
+
 # Componenti Blade di Filament
 
 ## Introduzione

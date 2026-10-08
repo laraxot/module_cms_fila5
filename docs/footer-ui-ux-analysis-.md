@@ -1,3 +1,14 @@
+---
+title: "footer ui ux analysis "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "footer ui ux analysis "
+issues: []
+discussions: []
+---
+
 # Footer UI/UX Analysis - [DATE]
 
 ## Critical Issues Identified

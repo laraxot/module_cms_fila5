@@ -22,7 +22,9 @@ describe('AttachmentResource', function (): void {
 
     test('attachment resource has relations', function (): void {
         $relations = AttachmentResource::getRelations();
-        /* @var array<string, mixed> $relations */
+
+        // La risorsa dichiara esplicitamente una lista vuota di relation manager.
+        Assert::assertSame([], $relations);
     });
 
     test('attachment resource has pages', function (): void {

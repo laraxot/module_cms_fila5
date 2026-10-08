@@ -1,3 +1,14 @@
+---
+title: "design comuni faq"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni faq"
+issues: []
+discussions: []
+---
+
 # Design Comuni - Domande Frequenti (FAQ)
 
 ## Panoramica
@@ -208,6 +219,14 @@ Icone utilizzate:
 
 ---
 
+title: "design comuni faq"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni faq"
+issues: []
+discussions: []
 **Ultimo Aggiornamento**: 2026-04-03  
 **Stato**: ✅ 90% Completato  
 **Responsabile**: AI Agent Team

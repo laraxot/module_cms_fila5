@@ -1,3 +1,14 @@
+---
+title: "template theme cms runtime architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "template theme cms runtime architecture"
+issues: []
+discussions: []
+---
+
 # Template, Theme, and CMS Runtime Architecture
 
 ## Overview

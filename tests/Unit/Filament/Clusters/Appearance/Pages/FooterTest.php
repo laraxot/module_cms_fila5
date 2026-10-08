@@ -7,6 +7,8 @@ use PHPUnit\Framework\Assert;
 
 test('Footer page can be instantiated', function () {
     $page = new Footer();
+
+    Assert::assertInstanceOf(Footer::class, $page);
 });
 
 test('Footer page has data property', function () {

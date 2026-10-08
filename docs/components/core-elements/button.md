@@ -1,3 +1,14 @@
+---
+title: "button"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "button"
+issues: []
+discussions: []
+---
+
 # Button
 
 I pulsanti sono componenti fondamentali per l'interazione dell'utente. Questo componente fornisce diverse varianti e stili per soddisfare varie esigenze di design.

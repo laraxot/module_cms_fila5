@@ -1,3 +1,14 @@
+---
+title: "logo"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "logo"
+issues: []
+discussions: []
+---
+
 # Logo Block
 
 Il blocco Logo è utilizzato per gestire il logo del sito, con supporto per il caricamento dell'immagine e la configurazione delle dimensioni.

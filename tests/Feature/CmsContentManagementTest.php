@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Collection;
 use Modules\Cms\Database\Factories\PageContentFactory;
 use Modules\Cms\Database\Factories\PageFactory;
 use Modules\Cms\Database\Factories\SectionFactory;
@@ -48,6 +49,9 @@ test('cms module models work together in content management', function () {
     Assert::assertCount(1, $pages);
     Assert::assertCount(1, $pageContents);
     Assert::assertCount(1, $sections);
+    Assert::assertTrue($pages->first()?->is($page));
+    Assert::assertTrue($pageContents->first()?->is($pageContent));
+    Assert::assertTrue($sections->first()?->is($section));
 });
 
 test('cms module handles multilingual content correctly', function () {
@@ -386,6 +390,10 @@ test('cms module supports complex query patterns', function () {
         ->create([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);
+
+    Assert::assertCount(10, Collection::wrap($pages));
+    Assert::assertCount(8, Collection::wrap($pageContents));
+    Assert::assertCount(6, Collection::wrap($sections));
 
     $complexQuery = Page::query()->whereJsonContains('content_blocks', [['type' => 'hero']])->orderBy(
         'created_at',

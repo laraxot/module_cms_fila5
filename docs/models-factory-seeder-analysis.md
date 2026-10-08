@@ -1,3 +1,14 @@
+---
+title: "models factory seeder analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "models factory seeder analysis"
+issues: []
+discussions: []
+---
+
 # Analisi Modelli, Factory e Seeder - Modulo CMS
 
 ## Riepilogo Modelli
@@ -104,4 +115,12 @@
 Il modulo CMS è ben strutturato con tutte le factory necessarie. Un modello (Module) potrebbe necessitare di revisione per verificarne l'effettivo utilizzo.
 
 ---
+title: "models factory seeder analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "models factory seeder analysis"
+issues: []
+discussions: []
 *Analizzato da: Sistema di analisi automatica moduli*

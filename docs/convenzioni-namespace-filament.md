@@ -1,3 +1,14 @@
+---
+title: "convenzioni namespace filament"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "convenzioni namespace filament"
+issues: []
+discussions: []
+---
+
 # Convenzioni Namespace per Filament
 
 > **Regola fondamentale:** Il namespace dei componenti Filament è sempre `Modules\<NomeModulo>\Filament`, anche se i file si trovano fisicamente in `app/Filament`. **Non va mai aggiunto `App` nel namespace.**
@@ -102,4 +113,12 @@ Section::make('Anteprima')
 
 ---
 
+title: "convenzioni namespace filament"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "convenzioni namespace filament"
+issues: []
+discussions: []
 > **Nota**: Questo documento è linkato anche dal README di Xot per garantire coerenza tra i moduli.

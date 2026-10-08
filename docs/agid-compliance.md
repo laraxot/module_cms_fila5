@@ -1,3 +1,14 @@
+---
+title: "agid compliance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid compliance"
+issues: []
+discussions: []
+---
+
 # 🏛️ AGID Compliance - CMS Module
 
 **Module**: Cms
@@ -7,6 +18,14 @@
 
 ---
 
+title: "agid compliance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agid compliance"
+issues: []
+discussions: []
 ## 📋 Overview
 
 The Cms module provides the foundation for content management in compliance with AGID standards for Italian public administration websites.

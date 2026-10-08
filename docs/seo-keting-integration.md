@@ -1,3 +1,14 @@
+---
+title: "seo keting integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "seo keting integration"
+issues: []
+discussions: []
+---
+
 # SEO & Marketing Integration - Module Roadmap
 
 **Date**: February 6, 2026
@@ -6,6 +17,14 @@
 
 ---
 
+title: "seo keting integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "seo keting integration"
+issues: []
+discussions: []
 ## Executive Summary
 
 This document outlines how SEO optimization, multilingual support, inbound marketing, and AdSense integration should be distributed across modules following Laraxot architecture principles.

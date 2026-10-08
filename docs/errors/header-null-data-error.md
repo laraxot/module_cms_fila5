@@ -1,3 +1,14 @@
+---
+title: "header null data error"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "header null data error"
+issues: []
+discussions: []
+---
+
 # Errore: Attempt to read property "data" on null nel Header
 
 ## Descrizione del Problema

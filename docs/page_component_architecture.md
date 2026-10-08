@@ -1,3 +1,14 @@
+---
+title: "page component architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page component architecture"
+issues: []
+discussions: []
+---
+
 # Page Component Architecture - Cms Module
 
 **Project:** FixCity Fila5
@@ -7,6 +18,14 @@
 
 ---
 
+title: "page component architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page component architecture"
+issues: []
+discussions: []
 ## 🎯 Scopo
 
 Questo documento spiega l'architettura del componente `Page` nel modulo Cms e come i temi devono (o non devono) overridearlo.
