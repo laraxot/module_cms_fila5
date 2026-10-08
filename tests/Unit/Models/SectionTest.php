@@ -33,6 +33,5 @@ test('Section model extends BaseModelLang', function () {
 test('Section model has expected casts', function () {
     $section = new Section();
 
-    $casts = $section->getCasts();
-    /* @var array<string, mixed> $casts */
+    $section->getCasts();    /* @var array<string, mixed> $casts */
 });

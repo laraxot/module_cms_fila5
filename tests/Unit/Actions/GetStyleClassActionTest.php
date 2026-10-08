@@ -18,8 +18,7 @@ test('GetStyleClassAction handles exceptions gracefully', function () {
     // This action will likely throw an exception due to missing view/config
     // so we need to test that it's handled appropriately
     try {
-        $result = $action->execute();
-    } catch (Exception $e) {
+        $action->execute();    } catch (Exception $e) {
         // If an exception is thrown, it's expected due to missing dependencies
     }
 });

@@ -17,18 +17,26 @@ test('AttachmentDiskEnum cases have correct values', function () {
     Assert::assertSame('local', AttachmentDiskEnum::local->value);
 });
 
-test('AttachmentDiskEnum getLabel method exists', function () {
-    $enum = AttachmentDiskEnum::public_html;
+test('AttachmentDiskEnum cases provide labels', function () {
+    foreach (AttachmentDiskEnum::cases() as $case) {
+        Assert::assertNotSame('', $case->getLabel());
+    }
 });
 
-test('AttachmentDiskEnum getColor method exists', function () {
-    $enum = AttachmentDiskEnum::public_html;
+test('AttachmentDiskEnum cases provide colors', function () {
+    foreach (AttachmentDiskEnum::cases() as $case) {
+        Assert::assertNotSame('', $case->getColor());
+    }
 });
 
-test('AttachmentDiskEnum getIcon method exists', function () {
-    $enum = AttachmentDiskEnum::public_html;
+test('AttachmentDiskEnum cases provide icons', function () {
+    foreach (AttachmentDiskEnum::cases() as $case) {
+        Assert::assertNotSame('', $case->getIcon());
+    }
 });
 
-test('AttachmentDiskEnum getDescription method exists', function () {
-    $enum = AttachmentDiskEnum::public_html;
+test('AttachmentDiskEnum cases provide descriptions', function () {
+    foreach (AttachmentDiskEnum::cases() as $case) {
+        Assert::assertNotSame('', $case->getDescription());
+    }
 });

@@ -60,21 +60,17 @@ test('RouteServiceProvider has correct name', function () {
 });
 
 test('RouteServiceProvider has registerRoutePattern method', function () {
-    $provider = new RouteServiceProvider(app());
-});
+    new RouteServiceProvider(app());});
 
 test('RouteServiceProvider has registerMyMiddleware method', function () {
-    $provider = new RouteServiceProvider(app());
-});
+    new RouteServiceProvider(app());});
 
 test('FolioVoltServiceProvider extends ServiceProvider', function () {
     Assert::assertInstanceOf(ServiceProvider::class, new FolioVoltServiceProvider(app()));
 });
 
 test('FolioVoltServiceProvider has register method', function () {
-    $provider = new FolioVoltServiceProvider(app());
-});
+    new FolioVoltServiceProvider(app());});
 
 test('FolioVoltServiceProvider has boot method', function () {
-    $provider = new FolioVoltServiceProvider(app());
-});
+    new FolioVoltServiceProvider(app());});

@@ -10,7 +10,7 @@ use PHPUnit\Framework\Assert;
 use function Safe\class_implements;
 
 test('Headernav page can be instantiated', function () {
-    $page = new Headernav();
+    Assert::assertInstanceOf(Headernav::class, new Headernav());
 });
 
 test('Headernav page has data property', function () {

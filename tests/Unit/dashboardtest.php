@@ -13,7 +13,6 @@ test('route home redirects to locale-specific page', function (): void {
 
 test('route login is accessible', function (): void {
     // The login route may redirect, show a login page, or return 404 if not configured
-    $response = get('/it/login');
-    /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
+    get('/it/login');    /* @var \Illuminate\Testing\TestResponse<\Illuminate\Http\Response> $response */
     // Accept various status codes based on configuration
 });

@@ -80,8 +80,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves profile route as profile page with person main entity', function (): void {
-        $builder = app(BuildPageSchemaAction::class);
-        $user = new User([
+        app(BuildPageSchemaAction::class);        $user = new User([
             'first_name' => 'Mario',
             'last_name' => 'Rossi',
             'name' => 'Mario Rossi',
@@ -106,8 +105,7 @@ describe('Page Schema Builder', function (): void {
     });
 
     test('it resolves public profile detail route as profile page with person identifier', function (): void {
-        $builder = app(BuildPageSchemaAction::class);
-
+        app(BuildPageSchemaAction::class);
         $schema = app(BuildPageSchemaAction::class)->execute(
             meta: MetatagData::make(),
             routeName: 'container0.view',
