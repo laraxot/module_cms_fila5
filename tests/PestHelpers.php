@@ -30,11 +30,14 @@ use function Safe\json_decode;
 if (! function_exists('cmsTest')) {
     function cmsTest(): TestCase
     {
-        if (TestCase::$currentTest instanceof TestCase) {
+        if (null !== TestCase::$currentTest) {
             return TestCase::$currentTest;
         }
 
-        throw new RuntimeException('cmsTest() richiede un test attivo (TestCase::$currentTest).');
+        $test = test();
+        Assert::assertInstanceOf(TestCase::class, $test);
+
+        return $test;
     }
 }
 

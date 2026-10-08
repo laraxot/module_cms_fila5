@@ -159,5 +159,6 @@ describe('Login Http', function (): void {
         $authenticatedUser = Auth::user();
         Assert::assertNotNull($authenticatedUser);
         Assert::assertSame($email, $authenticatedUser->email);
+        Assert::assertEquals($user->getAuthIdentifier(), $authenticatedUser->getAuthIdentifier());
     });
 });

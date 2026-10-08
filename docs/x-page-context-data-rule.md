@@ -1,3 +1,14 @@
+---
+title: "x page context data rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "x page context data rule"
+issues: []
+discussions: []
+---
+
 # X-Page Context Data Rule
 
 ## Regola

@@ -1,3 +1,14 @@
+---
+title: "xot link"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "xot link"
+issues: []
+discussions: []
+---
+
 # Collegamenti al Modulo Xot
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Cms e il modulo Xot.

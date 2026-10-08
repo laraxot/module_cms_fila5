@@ -1,3 +1,14 @@
+---
+title: "path naming"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "path naming"
+issues: []
+discussions: []
+---
+
 # Convenzioni dei Percorsi nei Moduli
 
 ## Case Sensitivity nei Percorsi
