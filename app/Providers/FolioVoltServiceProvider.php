@@ -105,8 +105,7 @@ class FolioVoltServiceProvider extends ServiceProvider
         Assert::isArray($supportedLocalesConfig);
         /** @var array<string, mixed> $supportedLocalesConfig */
         $supportedLocales = array_map('strval', array_keys($supportedLocalesConfig));
-        $defaultLocale = config('app.locale', 'it');
-
+        config('app.locale', 'it');
         /**
          * @var Collection<int, \Nwidart\Modules\Module> $modules
          */

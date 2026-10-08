@@ -33,9 +33,7 @@ test('discovered blocks expose the expected metadata keys', function (): void {
             return;
         }
 
-        /** @var array<string, mixed> $blockArray */
-        $blockArray = $block->toArray();
-    });
+        $block->toArray();    });
 });
 
 test('homepage request is reachable when route is available', function (): void {
