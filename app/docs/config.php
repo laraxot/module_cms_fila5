@@ -11,6 +11,37 @@ if (! function_exists('trimPath')) {
     }
 }
 
+// `$page` e `$item` sono oggetti runtime di Jigsaw (PageVariable, non installato in vendor):
+// i loro metodi/proprieta' si leggono in modo difensivo invece di assumerne il tipo.
+if (! function_exists('pageStringCall')) {
+    function pageStringCall(mixed $page, string $method): string
+    {
+        if (! is_object($page) || ! is_callable([$page, $method])) {
+            return '';
+        }
+        $value = $page->{$method}();
+
+        return is_string($value) ? $value : '';
+    }
+}
+
+if (! function_exists('pageProperty')) {
+    function pageProperty(mixed $page, string $property): mixed
+    {
+        return is_object($page) ? $page->{$property} : null;
+    }
+}
+
+if (! function_exists('docsEnv')) {
+    // Questo file e' un config di Jigsaw (fuori da Laravel): legge .env/ambiente da $_SERVER/$_ENV.
+    function docsEnv(string $key): ?string
+    {
+        $value = $_SERVER[$key] ?? $_ENV[$key] ?? null;
+
+        return is_string($value) && '' !== $value ? $value : null;
+    }
+}
+
 $moduleName = 'Cms';
 
 return [
@@ -22,44 +53,39 @@ return [
 
     'collections' => [
         'posts' => [
-            /* @param object{getFilename(): string} $page */
-            'path' => function ($page) {
+            'path' => static function (mixed $page): string {
                 // return $page->lang.'/posts/'.Str::slug($page->getFilename());
                 // return 'posts/' . ($page->featured ? 'featured/' : '') . Str::slug($page->getFilename());
 
-                return 'posts/'.Str::slug($page->getFilename());
+                return 'posts/'.Str::slug(pageStringCall($page, 'getFilename'));
             },
         ],
         'docs' => [
-            /* @param object{getFilename(): string} $page */
-            'path' => function ($page) {
+            'path' => static function (mixed $page): string {
                 // return $page->lang.'/docs/'.Str::slug($page->getFilename());
-                return 'docs/'.Str::slug($page->getFilename());
+                return 'docs/'.Str::slug(pageStringCall($page, 'getFilename'));
             },
         ],
     ],
 
     // Algolia DocSearch credentials
-    'docsearchApiKey' => env('DOCSEARCH_KEY'),
-    'docsearchIndexName' => env('DOCSEARCH_INDEX'),
+    'docsearchApiKey' => docsEnv('DOCSEARCH_KEY'),
+    'docsearchIndexName' => docsEnv('DOCSEARCH_INDEX'),
 
     // navigation menu
     'navigation' => file_exists(__DIR__.'/navigation.php') ? require __DIR__.'/navigation.php' : [],
 
     // helpers
-    /* @param object{getPath(): string} $page */
-    'isActive' => function ($page, $path) {
-        return Str::endsWith(trimPath($page->getPath()), trimPath($path));
+    'isActive' => static function (mixed $page, mixed $path): bool {
+        return Str::endsWith(trimPath(pageStringCall($page, 'getPath')), trimPath(is_string($path) ? $path : ''));
     },
-    /* @param object{getPath(): string} $page */
-    'isItemActive' => function ($page, $item) {
-        return Str::endsWith(trimPath($page->getPath()), trimPath($item->getPath()));
+    'isItemActive' => static function (mixed $page, mixed $item): bool {
+        return Str::endsWith(trimPath(pageStringCall($page, 'getPath')), trimPath(pageStringCall($item, 'getPath')));
     },
-    /* @param object{getPath(): string, children: \Illuminate\Support\Collection} $page */
-    'isActiveParent' => function ($page, $menuItem) {
+    'isActiveParent' => static function (mixed $page, mixed $menuItem): bool {
         if (is_object($menuItem) && property_exists($menuItem, 'children') && $menuItem->children instanceof Illuminate\Support\Collection) {
-            return $menuItem->children->contains(function ($child) use ($page) {
-                return trimPath($page->getPath()) == trimPath($child);
+            return $menuItem->children->contains(static function (mixed $child) use ($page): bool {
+                return is_string($child) && trimPath(pageStringCall($page, 'getPath')) === trimPath($child);
             });
         }
 
@@ -69,7 +95,8 @@ return [
         return Str::startsWith($path, 'http') ? $path : '/' . trimPath($path);
     },
     */
-    'url' => function ($page, $path) {
+    'url' => static function (mixed $page, mixed $path): string {
+        $path = is_string($path) ? $path : '';
         if (Str::startsWith($path, 'http')) {
             return $path;
         }
@@ -78,10 +105,9 @@ return [
         return url('/'.trimPath($path));
     },
 
-    /* @param object{id: mixed} $page */
-    'children' => function ($page, $docs) {
+    'children' => static function (mixed $page, mixed $docs): Illuminate\Support\Collection {
         if ($docs instanceof Illuminate\Support\Collection) {
-            return $docs->where('parent_id', $page->id);
+            return $docs->where('parent_id', pageProperty($page, 'id'));
         }
 
         return collect();

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Illuminate\Database\Eloquent\Collection;
 use Modules\Cms\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
 
@@ -10,33 +11,41 @@ test('ThemeComposer can be instantiated', function () {
     Assert::assertInstanceOf(ThemeComposer::class, $composer);
 });
 
-test('ThemeComposer returns menu items as an array', function () {
-    $menu = new \Modules\Cms\Models\Menu();
-    $menu->title = 'unit-test-menu';
-    $menu->setAttribute('items', ['home' => ['type' => 'internal', 'url' => 'home']]);
-    $menu->save();
+test('ThemeComposer getMenu reads the menu items', function () {
+})->todo('getMenu() usa Menu::firstOrCreate(): scrive nello store JSON del tenant. Serve uno store isolato (fixture) prima di asserire sugli items.');
 
-    Assert::assertSame(['home' => ['type' => 'internal', 'url' => 'home']], (new ThemeComposer())->getMenu('unit-test-menu'));
-});
+test('ThemeComposer getMenuUrl returns the url of an external menu entry', function () {
+    $composer = new ThemeComposer();
 
-test('ThemeComposer returns a placeholder for an unsupported menu type', function () {
-    Assert::assertSame('#', (new ThemeComposer())->getMenuUrl(['type' => 'unsupported', 'url' => 'unused']));
-});
-
-test('ThemeComposer renders page content as a view', function () {
-    Assert::assertInstanceOf(
-        \Illuminate\Contracts\View\View::class,
-        (new ThemeComposer())->showPageContent('theme-composer-test-'.uniqid()),
+    Assert::assertSame(
+        'https://example.com/page',
+        $composer->getMenuUrl(['type' => 'external', 'url' => 'https://example.com/page']),
     );
 });
 
-test('ThemeComposer returns all page models as an Eloquent collection', function () {
-    Assert::assertInstanceOf(\Illuminate\Database\Eloquent\Collection::class, (new ThemeComposer())->getPages());
+test('ThemeComposer getMenuUrl returns hash for an unknown menu type', function () {
+    $composer = new ThemeComposer();
+
+    Assert::assertSame('#', $composer->getMenuUrl(['type' => 'unknown', 'url' => 'x']));
 });
 
-test('ThemeComposer returns null for a page slug that does not exist', function () {
-    Assert::assertNull((new ThemeComposer())->getPageModel('theme-composer-missing-'.uniqid()));
+test('ThemeComposer showPageContent renders the page blocks', function () {
+})->todo('showPageContent() usa Page::firstOrCreate(): scrive nello store JSON del tenant. Serve uno store isolato (fixture) prima di asserire sul render.');
+
+test('ThemeComposer getPages returns the pages collection', function () {
+    $composer = new ThemeComposer();
+
+    Assert::assertInstanceOf(Collection::class, $composer->getPages());
 });
+
+test('ThemeComposer getPageModel returns null for non-existent page', function () {
+    $composer = new ThemeComposer();
+
+    Assert::assertNull($composer->getPageModel('non-existent-page-'.uniqid()));
+});
+
+test('ThemeComposer getUrlPage returns the localized url of an existing page', function () {
+})->todo('Manca il caso "pagina esistente": richiede una fixture JSON isolata. Il caso "pagina assente" e\' coperto sotto.');
 
 test('ThemeComposer getMenuUrl returns hash for empty array', function () {
     $composer = new ThemeComposer();

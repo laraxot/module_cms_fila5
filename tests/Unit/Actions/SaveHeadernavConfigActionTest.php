@@ -13,19 +13,15 @@ test('SaveHeadernavConfigAction can be instantiated', function () {
     Assert::assertInstanceOf(SaveHeadernavConfigAction::class, $action);
 });
 
-test('SaveHeadernavConfigAction saves the header navigation tenant config', function () {
-    $data = HeadernavData::from([
-        'background_color' => '#ffffff',
-        'view' => 'cms::components.headernav',
-    ]);
+test('SaveHeadernavConfigAction saves headernav data in the appearance tenant config', function () {
+    $data = HeadernavData::from(['background_color' => '#ffffff', 'class' => 'sticky']);
 
-    $saveTenantConfig = Mockery::mock(SaveTenantConfigAction::class);
-    $saveTenantConfig
-        ->shouldReceive('execute')
+    // Il salvataggio reale scriverebbe la config del tenant su disco: si verifica solo il contratto.
+    $save = Mockery::mock(SaveTenantConfigAction::class);
+    $save->shouldReceive('execute')
         ->once()
         ->with('appearance', ['headernav' => $data->toArray()]);
+    app()->instance(SaveTenantConfigAction::class, $save);
 
-    app()->instance(SaveTenantConfigAction::class, $saveTenantConfig);
-
-    app(SaveHeadernavConfigAction::class)->execute($data);
+    (new SaveHeadernavConfigAction())->execute($data);
 });

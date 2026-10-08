@@ -6,7 +6,9 @@ use Modules\Cms\Filament\Clusters\Appearance\Pages\Footer;
 use PHPUnit\Framework\Assert;
 
 test('Footer page can be instantiated', function () {
-    Assert::assertInstanceOf(Footer::class, new Footer());
+    $page = new Footer();
+
+    Assert::assertInstanceOf(Footer::class, $page);
 });
 
 test('Footer page has data property', function () {

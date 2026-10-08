@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
+use Illuminate\Http\Request;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use PHPUnit\Framework\Assert;
-use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 test('PageSlugMiddleware can be instantiated', function () {
@@ -13,14 +13,12 @@ test('PageSlugMiddleware can be instantiated', function () {
     Assert::assertInstanceOf(PageSlugMiddleware::class, $middleware);
 });
 
-test('PageSlugMiddleware passes through requests without a routed CMS page', function () {
-    $request = Request::create('/not-a-cms-route');
-    $expectedResponse = new Response('next middleware');
+test('PageSlugMiddleware passes the request through when no CMS page matches', function () {
+    $middleware = new PageSlugMiddleware();
+    $expected = new Response('ok');
 
-    $response = (new PageSlugMiddleware())->handle(
-        $request,
-        fn (Request $nextRequest): Response => $expectedResponse,
-    );
+    // Request::create() non ha una rotta risolta: nessuno slug CMS, si prosegue la catena.
+    $response = $middleware->handle(Request::create('/it/no-such-page'), fn (Request $request): Response => $expected);
 
-    Assert::assertSame($expectedResponse, $response);
+    Assert::assertSame($expected, $response);
 });

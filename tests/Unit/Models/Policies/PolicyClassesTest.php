@@ -9,6 +9,7 @@ use Modules\Cms\Models\Policies\ModulePolicy;
 use Modules\Cms\Models\Policies\PageContentPolicy;
 use Modules\Cms\Models\Policies\PagePolicy;
 use Modules\Cms\Models\Policies\SectionPolicy;
+use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
 test('CmsBasePolicy is an abstract class', function () {
@@ -53,4 +54,24 @@ test('ModulePolicy can be instantiated', function () {
     Assert::assertInstanceOf(ModulePolicy::class, $policy);
 });
 
-test('PagePolicy has expected methods', function ()  { })->todo();
+test('PagePolicy grants abilities from the page.* permissions', function () {
+    $policy = new PagePolicy();
+    $user = cmsCreateMock(UserContract::class);
+    $user->method('hasPermissionTo')->willReturnCallback(
+        static fn (mixed $permission): bool => 'page.viewAny' === $permission,
+    );
+
+    Assert::assertTrue($policy->viewAny($user));
+    Assert::assertFalse($policy->create($user));
+});
+
+test('CmsBasePolicy before() short-circuits only for super-admin', function () {
+    $policy = new PagePolicy();
+    $admin = cmsCreateMock(UserContract::class);
+    $admin->method('hasRole')->willReturn(true);
+    $user = cmsCreateMock(UserContract::class);
+    $user->method('hasRole')->willReturn(false);
+
+    Assert::assertTrue($policy->before($admin, 'viewAny'));
+    Assert::assertNull($policy->before($user, 'viewAny'));
+});

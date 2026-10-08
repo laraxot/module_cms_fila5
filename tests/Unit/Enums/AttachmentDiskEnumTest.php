@@ -17,26 +17,30 @@ test('AttachmentDiskEnum cases have correct values', function () {
     Assert::assertSame('local', AttachmentDiskEnum::local->value);
 });
 
-test('AttachmentDiskEnum cases provide labels', function () {
-    foreach (AttachmentDiskEnum::cases() as $case) {
-        Assert::assertNotSame('', $case->getLabel());
+test('AttachmentDiskEnum getLabel returns a translated label for every case', function () {
+    foreach (AttachmentDiskEnum::cases() as $enum) {
+        Assert::assertNotSame('', $enum->getLabel());
+        Assert::assertStringStartsNotWith('fix:', $enum->getLabel());
     }
 });
 
-test('AttachmentDiskEnum cases provide colors', function () {
-    foreach (AttachmentDiskEnum::cases() as $case) {
-        Assert::assertNotSame('', $case->getColor());
+test('AttachmentDiskEnum getColor returns a translated color for every case', function () {
+    foreach (AttachmentDiskEnum::cases() as $enum) {
+        Assert::assertNotSame('', $enum->getColor());
+        Assert::assertStringStartsNotWith('fix:', $enum->getColor());
     }
 });
 
-test('AttachmentDiskEnum cases provide icons', function () {
-    foreach (AttachmentDiskEnum::cases() as $case) {
-        Assert::assertNotSame('', $case->getIcon());
+test('AttachmentDiskEnum getIcon returns a translated icon for every case', function () {
+    foreach (AttachmentDiskEnum::cases() as $enum) {
+        Assert::assertNotSame('', $enum->getIcon());
+        Assert::assertStringStartsNotWith('fix:', $enum->getIcon());
     }
 });
 
-test('AttachmentDiskEnum cases provide descriptions', function () {
-    foreach (AttachmentDiskEnum::cases() as $case) {
-        Assert::assertNotSame('', $case->getDescription());
+test('AttachmentDiskEnum getDescription returns a translated description for every case', function () {
+    foreach (AttachmentDiskEnum::cases() as $enum) {
+        Assert::assertNotSame('', $enum->getDescription());
+        Assert::assertStringStartsNotWith('fix:', $enum->getDescription());
     }
 });

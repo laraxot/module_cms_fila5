@@ -62,7 +62,10 @@ describe('Section Model', function (): void {
     });
 
     test('section model has getRows method', function (): void {
-        new Section();    });
+        $model = new Section();
+
+        Assert::assertContainsOnlyArray($model->getRows());
+    });
 
     test('section model extends BaseModelLang', function (): void {
         $model = new Section();

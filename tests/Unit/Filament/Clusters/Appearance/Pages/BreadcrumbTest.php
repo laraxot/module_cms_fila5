@@ -16,7 +16,9 @@ test('Breadcrumb page uses correct view', function () {
 });
 
 test('Breadcrumb page can be instantiated', function () {
-    Assert::assertInstanceOf(Breadcrumb::class, new Breadcrumb());
+    $page = new Breadcrumb();
+
+    Assert::assertInstanceOf(Breadcrumb::class, $page);
 });
 
 test('Breadcrumb page has data property', function () {

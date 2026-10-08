@@ -16,6 +16,7 @@ use PHPUnit\Framework\Assert;
 // ---- Volt Component Rendering ----
 
 it('renders the volt login component', function (): void {
+    /** @var Testable<Component> $component */
     $component = LivewireVolt::test('auth.login');
     $component->assertOk();
 });
@@ -39,7 +40,8 @@ it('renders form elements', function (): void {
 
 it('allows a user to authenticate via the volt component', function (): void {
     $email = cmsGenerateUniqueEmail();
-    cmsCreateTestUser([        'email' => $email,
+    $user = cmsCreateTestUser([
+        'email' => $email,
         'password' => Hash::make('password123'),
     ]);
     cmsAssertGuest();
@@ -51,6 +53,7 @@ it('allows a user to authenticate via the volt component', function (): void {
 
     $response->assertHasNoErrors();
     cmsAssertAuthenticated();
+    Assert::assertEquals($user->getAuthIdentifier(), Auth::id());
 });
 
 it('fails authentication with wrong credentials', function (): void {
@@ -350,5 +353,4 @@ it('has proper aria labels', function (): void {
 });
 
 it('handles keyboard navigation', function (): void {
-    LivewireVolt::test('auth.login #25')->assertSee('data.email');
-});
+})->todo('Serve una asserzione sul markup di navigazione da tastiera (autofocus/tabindex/submit) del form di login: dipende dal tema pubblico attivo, va scritta sul suo markup reale.');

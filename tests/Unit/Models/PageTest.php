@@ -95,7 +95,10 @@ describe('Page', function (): void {
     });
 
     test('page has get middleware by slug static method', function (): void {
-        Page::getMiddlewareBySlug('non-existent-slug');    });
+        $result = Page::getMiddlewareBySlug('non-existent-slug');
+
+        Assert::assertSame([], $result);
+    });
 
     test('page casts content blocks to array', function (): void {
         $page = new Page();
