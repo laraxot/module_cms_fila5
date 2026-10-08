@@ -31,8 +31,6 @@ class GetCmsViewAction
             throw new \Exception('View not found: '.$viewName);
         }
 
-        // The @return view-string PHPDoc on the method itself is the key
-        // to satisfying PHPStan's type analysis for view paths in this project.
         return $viewName;
     }
 }
