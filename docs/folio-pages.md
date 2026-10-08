@@ -1,3 +1,14 @@
+---
+title: "folio pages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio pages"
+issues: []
+discussions: []
+---
+
 # Struttura delle Pagine con Laravel Folio nel Tema One
 
 Questo documento descrive come sono organizzate e gestite le pagine utilizzando Laravel Folio nel tema One del progetto il progetto.

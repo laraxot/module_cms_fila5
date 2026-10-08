@@ -1,4 +1,7 @@
 ---
+qmd: "README"
+issues: []
+discussions: []
 title: "Cms Module Documentation"
 type: documentation
 tags: [module, documentation, cms, content-management]

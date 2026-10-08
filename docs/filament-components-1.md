@@ -1,3 +1,14 @@
+---
+title: "filament components 1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament components 1"
+issues: []
+discussions: []
+---
+
 # Utilizzo dei Componenti Filament in il progetto
 > **Collegamenti correlati**
 > - [FILAMENT_COMPONENTS.md tema One](../../../../themes/one/docs/filament_components.md)

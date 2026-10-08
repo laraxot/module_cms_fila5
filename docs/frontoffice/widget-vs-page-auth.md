@@ -1,3 +1,14 @@
+---
+title: "widget vs page auth"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "widget vs page auth"
+issues: []
+discussions: []
+---
+
 # Widget vs Page per l'Autenticazione
 
 ## Introduzione

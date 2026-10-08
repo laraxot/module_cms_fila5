@@ -1,3 +1,14 @@
+---
+title: "testing guidelines"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing guidelines"
+issues: []
+discussions: []
+---
+
 # Cms Module - Testing Guidelines
 
 ## Testing Framework Requirements
@@ -369,5 +380,13 @@ describe('Performance and Caching', function () {
 ---
 
 
+title: "testing guidelines"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing guidelines"
+issues: []
+discussions: []
 **Testing Framework**: Pest
 **Environment**: .env.testing

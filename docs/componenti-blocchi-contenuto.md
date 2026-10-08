@@ -1,3 +1,14 @@
+---
+title: "componenti blocchi contenuto"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "componenti blocchi contenuto"
+issues: []
+discussions: []
+---
+
 # Componenti e Blocchi di Contenuto in il progetto
 
 ## Introduzione

@@ -30,4 +30,7 @@ test('GetCmsViewAction execute method throws exception for non-existing view', f
         ->andReturn(false);
 
     $action = new GetCmsViewAction();
+
+    expect(fn () => $action->execute('non.existing.view'))
+        ->toThrow(Exception::class, 'View not found: non.existing.view');
 });

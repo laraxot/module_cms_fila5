@@ -1,3 +1,14 @@
+---
+title: "design comuni segnalazioni elenco"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni segnalazioni elenco"
+issues: []
+discussions: []
+---
+
 # Design Comuni - Segnalazioni Elenco
 
 ## Panoramica
@@ -50,6 +61,14 @@ Analisi e implementazione della pagina elenco segnalazioni del progetto Design C
 
 ---
 
+title: "design comuni segnalazioni elenco"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni segnalazioni elenco"
+issues: []
+discussions: []
 **Data**: 2026-04-03  
 **Stato**: ⚠️ 52.7% (migliorato da 38.4%)  
 **Prossimo**: Implementare tabs navigation, map placeholder

@@ -1,3 +1,14 @@
+---
+title: "architecture xotdata pattern"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "architecture xotdata pattern"
+issues: []
+discussions: []
+---
+
 # Architettura XotData Pattern - Errore Critico Risolto e Analisi Approfondita
 
 ## 🚨 **Errore Grave Identificato e Risolto**

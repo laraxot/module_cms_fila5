@@ -1,3 +1,14 @@
+---
+title: "phpstan issues"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan issues"
+issues: []
+discussions: []
+---
+
 # Problemi con PHPStan e Larastan in un progetto modulare
 
 ## Problema dell'integrazione Larastan con struttura modulare

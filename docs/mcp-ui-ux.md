@@ -1,3 +1,14 @@
+---
+title: "mcp ui ux"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "mcp ui ux"
+issues: []
+discussions: []
+---
+
 # MCP Servers per UI/UX - Modulo Cms
 
 

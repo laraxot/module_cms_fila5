@@ -1,3 +1,14 @@
+---
+title: "webdesign"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "webdesign"
+issues: []
+discussions: []
+---
+
 # Web Design: Un Approccio Olistico
 
 ## Introduzione
