@@ -22,7 +22,7 @@ Sia il modulo Cms che il modulo User seguono le stesse convenzioni di namespace 
 
 Per dettagli specifici, consulta:
 - [Convenzioni Namespace Filament](./convenzioni-namespace-filament.md) in questo modulo
-- [Convenzioni di Namespace](../../user/docs/namespace-conventions.md) nel modulo User
+- [Convenzioni di Namespace](../../User/docs/namespace-conventions.md) nel modulo User
 
 ## Punti di Integrazione
 
@@ -32,7 +32,7 @@ Per dettagli specifici, consulta:
 
 ## Collegamenti Bidirezionali
 
-- [Convenzioni di Namespace nel modulo User](../../user/docs/namespace-conventions.md)
+- [Convenzioni di Namespace nel modulo User](../../User/docs/namespace-conventions.md)
 - [Best Practices Filament nel modulo User](../../user/docs/filament_best_practices.md)
 
 ---

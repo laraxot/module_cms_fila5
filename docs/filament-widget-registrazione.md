@@ -59,8 +59,8 @@ namespace Modules\User\Filament\Widgets;
 use App\Models\User;
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Wizard;
-use Filament\Forms\Components\Wizard\Step;
+use Filament\Schemas\Components\Wizard; // correzione verificata 2026-10-13: in Filament v5 non esiste Filament\Forms\Components\Wizard
+use Filament\Schemas\Components\Wizard\Step;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Form;
 use Filament\Widgets\Widget;

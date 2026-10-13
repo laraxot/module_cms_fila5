@@ -10,7 +10,7 @@ issues:
 discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/363"
 related:
-  - ../../../../docs/stories/STORY-357-tickets-create-auth-middleware.md
+  - ../../../../../../docs/stories/STORY-357-tickets-create-auth-middleware.md
   - ../architecture/template-theme-cms-runtime-architecture.md
 ---
 
@@ -44,10 +44,10 @@ Alias supportati come su Laravel (`auth`, `verified`, classi FQCN, parametri `th
 ## Esempio Fixcity
 
 - URL: `/it/tickets/create`
-- Folio: `Modules/Fixcity/resources/views/pages/tickets/create.blade.php` (`name('tickets.create')`)
-- JSON: `tickets.create.json` con `"middleware": ["auth"]`
+- Folio che risponde (verificato 2026-10-13 con `data-slug` e `wire:name` della risposta): `Themes/Sixteen/resources/views/pages/[container0]/[slug0]/index.blade.php`. La Folio del modulo `Modules/Fixcity/resources/views/pages/tickets/create.blade.php` (`name('tickets.create')`, `middleware('auth')`) è registrata ma non è quella che risponde.
+- JSON: `tickets.create.json` NON ha la chiave `middleware` (verificato 2026-10-13 nelle tre copie: `config/local/fixcity`, `config/eu/fixcity`, `Modules/Fixcity/config`); un ospite riceve `200` su `/it/tickets/create`. Il contratto sopra vale per le pagine il cui JSON dichiara `middleware`.
 
-**Nota:** la shell generica `Themes/Sixteen/.../[container0]/[slug].blade.php` non serve per questa URL — vince il Folio dedicato Fixcity.
+**Nota (corretta 2026-10-13):** per `/it/tickets/create` risponde proprio la shell generica `Themes/Sixteen/.../[container0]/[slug0]/index.blade.php`, non il Folio dedicato Fixcity. Dettagli: `Modules/Fixcity/docs/wiki/concepts/ticket-crea-url-routing-chain.md`.
 
 ## Vietato
 
@@ -58,3 +58,25 @@ Alias supportati come su Laravel (`auth`, `verified`, classi FQCN, parametri `th
 
 - `Modules/Cms/tests/Unit/Http/Middleware/PageSlugMiddlewareTest.php`
 - `Modules/Fixcity/tests/Feature/Pages/TicketPagesTest.php`
+
+
+## Da URL a JSON: come verificare (2026-10-13)
+
+Lo slug CMS e' quello che il server usa davvero, non quello che un doc suggerisce.
+
+| URL | Folio | Slug |
+|-----|-------|------|
+| `/it/tickets/create` | `Themes/Sixteen/.../pages/[container0]/[slug0]/index.blade.php` | `tickets.create` (`<container0>.<slug0>`) |
+| `/it/tests/<x>` | `Themes/Sixteen/.../pages/tests/[slug].blade.php` | `tests.<x>`; `/it/tests` = `tests.index` |
+
+Il prefisso `tests.` si compone SOLO nel secondo canale. `components.blocks.tests.*` e' una cartella di view dei blocchi, non uno slug.
+
+Comando: `bash bashscripts/tools/cms/page-json-for-url.sh <url>` stampa lo slug (`data-slug` della risposta) e i JSON trovati; exit 2 = nessun JSON, non crearlo senza chiedere. Lo stesso JSON puo' esistere in piu' tenant (`config/local/fixcity`, `config/eu/fixcity`, `Modules/*/config`): confrontarli prima di dire che sono uguali.
+
+
+## Cosa si puo' scrivere nell'array `middleware` (2026-10-13, DCP-50)
+- Alias del kernel (`auth`, `throttle:10,1`) o classi esistenti. `PageSlugMiddleware` risolve ogni voce con l'alias del kernel e poi con `app()`.
+- `web` e' un gruppo gia' applicato dallo stack Folio: viene ignorato (no-op), ma non va scritto. Prima faceva 500 per tutti (`Target class [web] does not exist`, 2026-10-13).
+- Un nome non risolvibile (refuso come `auht`, o un gruppo come `api`) lancia `InvalidArgumentException` con un messaggio chiaro. NON viene mai ignorato in silenzio: ignorarlo renderebbe pubblica una pagina protetta.
+- Non e' coperto: se la lettura dei middleware della pagina fallisce, `handle()` usa `[]` e la pagina diventa pubblica (fail-open); e' un finding dell'audit DCP-49.
+Test: `Modules/Cms/tests/Unit/Http/Middleware/PageSlugMiddlewareTest.php`. Guardia dei template: `Themes/Sixteen/tests/Unit/BladeTemplatesCompileTest.php`.

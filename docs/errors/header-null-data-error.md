@@ -99,7 +99,7 @@ Per prevenire regressioni future:
 
 ## Collegamenti Correlati
 
-- [Componente Section](../../laravel/modules/cms/docs/components/section.md)
+- [Componente Section](../components/section.md)
 - [Trait HasBlocks](../../laravel/modules/cms/docs/traits/has-blocks.md)
 - [Gestione Errori Blade](../../laravel/modules/cms/docs/errors/blade-errors.md)
 

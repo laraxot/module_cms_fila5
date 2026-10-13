@@ -516,10 +516,10 @@ CREATE TABLE cms_navigation (
 - [Filament Documentation](https://filamentphp.com/docs)
 
 ### 12.3 Related PRDs
-- [Blog Module PRD](../Blog/docs/PRD.md)
-- [Media Module PRD](../Media/docs/PRD.md)
-- [Seo Module PRD](../Seo/docs/PRD.md)
-- [Lang Module PRD](../Lang/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/PRD.md)
+- [Media Module PRD](../../Media/docs/PRD.md)
+- [Seo Module PRD](../../Seo/docs/PRD.md)
+- [Lang Module PRD](../../Lang/docs/PRD.md)
 
 ---
 

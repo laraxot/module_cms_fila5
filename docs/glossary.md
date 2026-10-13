@@ -113,7 +113,7 @@ Elemento interattivo che:
 - Gestire le performance
 
 ## Collegamenti
-- [Documentazione Componenti](./components/readme.md)
+- [Documentazione Componenti](./components/README.md)
 - [Guida allo Stile](./style/readme.md)
 - [Convenzioni Layout](./layout/readme.md)
 

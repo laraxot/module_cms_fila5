@@ -258,7 +258,7 @@ expect()->extend('toHaveDynamicHeading', function (string $type) {
 ## 🔗 Collegamenti
 
 ### Documentazione Correlata
-- [RegistrationWidget Documentation](../../../user/docs/filament/widgets/registration-widget.md)
+- [RegistrationWidget Documentation](../../../User/docs/filament/widgets/registration-widget.md)
 - [Folio Pages Implementation](../folio-pages.md)
 - [Login Test Implementation](./login-test-implementation.md)
 - [Test Organization Rules](../../../../docs/test-organization-rules.md)
