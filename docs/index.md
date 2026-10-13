@@ -664,3 +664,4 @@ Durante l'audit sono stati individuati alcuni file con nome chiaramente corrotto
 - Questo indice copre tutti i file `.md` sotto `docs/` (radice + sottocartelle) al 2026-09-03: 570 file in radice, ~596 nelle sottocartelle, totale 1166.
 - Non sono stati creati, rinominati o cancellati file `.md` esistenti in questo audit.
 - Prossimo passo suggerito (non eseguito qui): valutare con l'owner del modulo la cancellazione/consolidamento reale dei cluster in "Storico / da consolidare" e delle cartelle-archivio.
+- [Contenuti JSON: unicita' dello slug](./json-content-slug-uniqueness.md): collisioni, override tenant, nome canonico `tests.<slug>.json` (2026-10-13).
