@@ -22,7 +22,7 @@ Secondo le regole di organizzazione della documentazione:
 
 ## Collegamenti ai Temi nel Modulo UI
 
-- [Componenti UI](../../ui/docs/readme.md) - Panoramica dei componenti UI disponibili
+- [Componenti UI](../../UI/docs/README.md) - Panoramica dei componenti UI disponibili
 - [Layout e Temi](../../ui/docs/layouts-and-themes.md) - Documentazione sui layout e temi
 - [Componenti Blade](../../ui/docs/blade-components.md) - Componenti Blade riutilizzabili
 

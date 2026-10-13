@@ -47,21 +47,21 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 
 | Documento | File | Descrizione |
 |-----------|------|-------------|
-| **All Pages Analysis** | [ALL_PAGES_ANALYSIS.md](../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) | Analisi 54 pagine |
-| **Progress Report** | [PROGRESS_REPORT.md](../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) | Report progresso |
-| **Fail Pages Analysis** | [FAIL_PAGES_ANALYSIS.md](../../Themes/Sixteen/docs/design-comuni/FAIL_PAGES_ANALYSIS.md) | Analisi pagine fail |
-| **Argomenti Analisi** | [ARGOMENTI_ANALISI.md](../../Themes/Sixteen/docs/design-comuni/ARGOMENTI_ANALISI.md) | Analisi argomenti |
-| **Argomenti Report** | [ARGOMENTI_REPORT_AGGIORNATO.md](../../Themes/Sixteen/docs/design-comuni/ARGOMENTI_REPORT_AGGIORNATO.md) | Report argomenti |
-| **Risultati Ricerca** | [RISULTATI_RICERCA_ANALISI.md](../../Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_ANALISI.md) | Analisi ricerca |
-| **FAQ HTML Analysis** | [DOMANDE_FREQUENTI_HTML_ANALYSIS.md](../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_ANALYSIS.md) | Analisi HTML FAQ |
-| **FAQ Implementazione** | [DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md](../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md) | Implementazione FAQ |
-| **Master Index** | [MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md) | Index globale |
+| **All Pages Analysis** | [ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) | Analisi 54 pagine |
+| **Progress Report** | [PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) | Report progresso |
+| **Fail Pages Analysis** | [FAIL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/FAIL_PAGES_ANALYSIS.md) | Analisi pagine fail |
+| **Argomenti Analisi** | [ARGOMENTI_ANALISI.md](../../../Themes/Sixteen/docs/design-comuni/ARGOMENTI_ANALISI.md) | Analisi argomenti |
+| **Argomenti Report** | [ARGOMENTI_REPORT_AGGIORNATO.md](../../../Themes/Sixteen/docs/design-comuni/ARGOMENTI_REPORT_AGGIORNATO.md) | Report argomenti |
+| **Risultati Ricerca** | [RISULTATI_RICERCA_ANALISI.md](../../../Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_ANALISI.md) | Analisi ricerca |
+| **FAQ HTML Analysis** | [DOMANDE_FREQUENTI_HTML_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_ANALYSIS.md) | Analisi HTML FAQ |
+| **FAQ Implementazione** | [DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md) | Implementazione FAQ |
+| **Master Index** | [MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md) | Index globale |
 
 ### Screenshots Tema Sixteen
 
 | Directory | Descrizione |
 |-----------|-------------|
-| [screenshots/](../../Themes/Sixteen/docs/design-comuni/screenshots/) | Screenshots FAQ (150+ files) |
+| [screenshots/](../../../Themes/Sixteen/docs/design-comuni/screenshots) | Screenshots FAQ (150+ files) |
 | [screenshots/argomenti/](../../Themes/Sixteen/docs/design-comuni/screenshots/argomenti/) | Screenshots argomenti |
 | [screenshots/risultati-ricerca/](../../Themes/Sixteen/docs/design-comuni/screenshots/risultati-ricerca/) | Screenshots ricerca |
 | [screenshots/all-pages/](../../Themes/Sixteen/docs/design-comuni/screenshots/all-pages/) | Screenshots 54 pagine |

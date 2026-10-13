@@ -11,7 +11,7 @@ discussions: []
 
 # Page Context Data Bag
 
-> **SSoT:** [ADR](../../../docs/wiki/decisions/cms-x-page-opaque-data-bag.md) · duplicare qui solo esempi operativi.
+> **SSoT:** [ADR](../../../../../docs/wiki/decisions/cms-x-page-opaque-data-bag.md) · duplicare qui solo esempi operativi.
 
 ## Sintesi
 
