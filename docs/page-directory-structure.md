@@ -43,6 +43,9 @@ Questi alberi rompono DRY, aumentano il debito di routing e duplicano la respons
 
 - usare `tests/[slug].blade.php` per le pagine di test replicate da JSON
 - usare `tests/index.blade.php` per la root `/tests`
+- usare un solo `Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
+  per ogni dettaglio `/tests/{slug}`; non creare `tests/segnalazioni/[slug]`
+  o altre directory semantiche per famiglia
 - usare `[container0]/index.blade.php` e `[container0]/[slug0]/index.blade.php` per il frontoffice dinamico
 - demandare il rendering contenuti a `<x-page side="content" :slug="$pageSlug" :data="$data" />`
 
