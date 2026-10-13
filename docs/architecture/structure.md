@@ -106,7 +106,7 @@ Modules/Cms/
 - [Struttura Route e Viste](struttura-route-e-viste.md) - Organizzazione di route e viste
 
 ## Vedi Anche
-- [Modulo Xot](../xot/docs/readme.md) - Struttura base dei moduli
+- [Modulo Xot](../../../Xot/docs/README.md) - Struttura base dei moduli
 - [Documentazione Laravel](https://laravel.com/docs/structure.html) - Struttura standard Laravel
 ## Collegamenti tra versioni di structure.md
 * [structure.md](bashscripts/docs/structure.md)

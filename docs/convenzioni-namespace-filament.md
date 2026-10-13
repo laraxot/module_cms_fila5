@@ -107,7 +107,7 @@ Section::make('Anteprima')
 - [User - Filament Best Practices](../../user/project_docs/filament_best_practices.md) - Best practices per Filament
 
 ### Documentazione Interna
-- [README del modulo Cms](./readme.md) - Indice principale del modulo Cms
+- [README del modulo Cms](./README.md) - Indice principale del modulo Cms
 - [Filament Widget Registrazione](./filament-widget-registrazione.md) - Widget di registrazione
 - [Filament Widgets in Blade](./filament-widgets-in-blade.md) - Uso dei widget in Blade
 

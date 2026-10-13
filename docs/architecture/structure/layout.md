@@ -133,8 +133,8 @@ Riorganizzazione degli elementi:
    - CTA evidenti
 
 ## Collegamenti
-- [Glossario Tecnico](../glossary.md)
-- [Struttura Componenti](../components/structure.md)
-- [Documentazione Blocchi](../blocks/readme.md)
+- [Glossario Tecnico](../../glossary.md)
+- [Struttura Componenti](../../components/structure.md)
+- [Documentazione Blocchi](../../blocks/README.md)
 
 [Fonte: deborasilvestri.it](https://www.deborasilvestri.it/creare-un-sito-web/struttura-di-un-sito-web/)

@@ -216,5 +216,5 @@ Si raccomanda di completare questa migrazione in tutti i file del progetto per g
 ## Riferimenti
 
 - [Documentazione Componenti Blade Laravel](https://laravel.com/docs/blade#components)
-- [Componente Page](../components/page.md)
-- [Best Practices per il Rendering delle Pagine](../best-practices/page-rendering.md)
+- [Componente Page](../../components/page.md)
+- [Best Practices per il Rendering delle Pagine](../../best-practices/page-rendering.md)

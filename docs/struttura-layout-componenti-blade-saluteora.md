@@ -184,12 +184,12 @@ Il widget di registrazione è implementato come un widget Filament:
 // /Modules/User/Filament/Widgets/RegistrationWidget.php
 namespace Modules\User\Filament\Widgets;
 
-use Filament\Forms\Form;
+use Filament\Forms\Form; // snippet v3: in Filament v5 Filament\Forms\Form non esiste (verificato 2026-10-13), si usa Filament\Schemas\Schema
 use Filament\Widgets\Widget;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Wizard;
-use Filament\Forms\Components\Wizard\Step;
+use Filament\Schemas\Components\Wizard; // correzione verificata 2026-10-13: in Filament v5 non esiste Filament\Forms\Components\Wizard
+use Filament\Schemas\Components\Wizard\Step;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Modules\Xot\Contracts\UserContract;
 
