@@ -27,4 +27,4 @@ Blocchi CMS e pagine Folio: classi Tailwind/DaisyUI nel tema; naming blocchi da 
 
 ## Story
 
-[STORY-133](../../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md)
+[STORY-133](../../../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md)

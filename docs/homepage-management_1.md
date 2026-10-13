@@ -97,4 +97,4 @@ issues: []
 discussions: []
 **Documentazione Correlata**
 
-- [Documentazione principale della homepage](../../../../docs/gestione-homepage.md)
+- [Documentazione principale della homepage](gestione-homepage.md)

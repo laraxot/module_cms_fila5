@@ -43,4 +43,4 @@ Questo mantiene il componente pagina estendibile e permette al tema di overridea
 
 - [component-page-alias-rule.md](./component-page-alias-rule.md)
 - [layout-runtime-contract.md](./layout-runtime-contract.md)
-- [../../Themes/Sixteen/docs/component-page-runtime.md](../../Themes/Sixteen/docs/component-page-runtime.md)
+- [../../Themes/Sixteen/docs/component-page-runtime.md](../../../Themes/Sixteen/docs/component-page-runtime.md)

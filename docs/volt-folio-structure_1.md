@@ -142,5 +142,5 @@ function login(): void {
 
 - [Folio ](./FOLIO_OVERVIEW.md)
 - [Volt Best Practices](./VOLT_BEST_PRACTICES.md)
-- [Autenticazione con Volt e Folio](../../User/docs/VOLT_FOLIO_AUTH_IMPLEMENTATION.md)
+- [Autenticazione con Volt e Folio](../../User/docs/volt_folio_auth_implementation.md)
 - [Layout Components](../components/LAYOUTS.md)

@@ -11,6 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 
 class PageSlugMiddleware
 {
+    /**
+     * Gruppi gia' applicati dallo stack Folio: una voce `web` nel JSON non ha effetto.
+     * Prima faceva `Target class [web] does not exist` (500 per tutti): D17, 2026-10-13.
+     */
+    private const GROUPS_ALREADY_APPLIED = ['web'];
+
     protected Kernel $kernel;
 
     public function handle(Request $request, \Closure $next): Response
@@ -147,8 +153,21 @@ class PageSlugMiddleware
 
         [$middlewareClass, $parameters] = $this->parseMiddleware($middleware);
 
+        if (\in_array($middlewareClass, self::GROUPS_ALREADY_APPLIED, true)) {
+            return $this->executeMiddlewareChain($request, $middlewares, $finalNext);
+        }
+
         // Resolve middleware class name if it's an alias
         $middlewareClass = $this->resolveMiddlewareClass($middlewareClass);
+
+        // Un nome non risolvibile (refuso, gruppo) non si ignora mai: ignorarlo renderebbe pubblica una pagina protetta.
+        if (! class_exists($middlewareClass) && ! app()->bound($middlewareClass)) {
+            throw new \InvalidArgumentException(sprintf(
+                "Middleware CMS '%s' non risolvibile: usare un alias (es. 'auth') o una classe esistente; 'web' e' gia' applicato dallo stack Folio.",
+                $middleware,
+            ));
+        }
+
         // Create middleware instance
         /** @var object $middlewareInstance */
         $middlewareInstance = app($middlewareClass);

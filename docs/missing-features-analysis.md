@@ -169,7 +169,7 @@ Nessuna funzionalità critica mancante - il modulo Cms è ben implementato
 
 - [Modulo Quaeris](../quaeris/docs/readme.md)
 - [Modulo Limesurvey](../limesurvey/docs/readme.md)
-- [Cms README](./readme.md)
+- [Cms README](./README.md)
 
 ---
 

@@ -29,9 +29,9 @@ Le sezioni sono componenti strutturali che compongono le pagine del sito. Ogni s
 ### Header
 - [Header](./header.md) - Documentazione generale dell'header
 - [Header Section](./header-section.md) - Struttura e implementazione della sezione header
-- [Header con Lingua e Dropdown Utente](./HEADER_LANGUAGE_USER_DROPDOWN.md) - Implementazione completa del dropdown utente e selettore lingua
-- [Header con Lingua e Avatar](./HEADER_LANGUAGE_AVATAR_IMPLEMENTATION.md) - Implementazione dell'avatar utente e selettore lingua
-- [Selettore Lingua con Bandiere](./HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md) - Implementazione del selettore lingua con bandiere
+- [Header con Lingua e Dropdown Utente](./header_language_user_dropdown.md) - Implementazione completa del dropdown utente e selettore lingua
+- [Header con Lingua e Avatar](./header_language_avatar_implementation.md) - Implementazione dell'avatar utente e selettore lingua
+- [Selettore Lingua con Bandiere](./header_language_selector_with_flags.md) - Implementazione del selettore lingua con bandiere
 
 ### Footer
 - [Footer Section](./footer-section.md) - Struttura e implementazione della sezione footer

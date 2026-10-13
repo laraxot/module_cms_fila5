@@ -101,7 +101,7 @@ test('resolveMiddlewareClass returns mapped class for alias', function (): void 
     /** @var Kernel&MockInterface $kernel */
     $kernel = Mockery::mock(Kernel::class);
     $kernel->allows([
-        'getRouteMiddleware' => ['auth' => Authenticate::class],
+        'getMiddlewareAliases' => ['auth' => Authenticate::class],
     ]);
 
     setProtected($middleware, 'kernel', $kernel);
@@ -125,4 +125,33 @@ test('executeMiddlewareChain returns 500 when final closure does not return resp
     Assert::assertSame(500, $response->getStatusCode());
 
     Assert::assertSame('Internal Server Error', $response->getContent());
+});
+
+test('executeMiddlewareChain treats the web group as already applied by the folio stack', function (): void {
+    $middleware = new PageSlugMiddleware();
+
+    /** @var Response $response */
+    $response = invokeProtected($middleware, 'executeMiddlewareChain', [
+        Request::create('/test', 'GET'),
+        ['web'],
+        fn (Request $req): Response => new Response('reached', 200),
+    ]);
+
+    Assert::assertSame(200, $response->getStatusCode());
+    Assert::assertSame('reached', $response->getContent());
+});
+
+test('executeMiddlewareChain refuses an unresolvable middleware name with a clear message', function (): void {
+    $middleware = new PageSlugMiddleware();
+    /** @var Kernel&MockInterface $kernel */
+    $kernel = Mockery::mock(Kernel::class);
+    $kernel->allows(['getMiddlewareAliases' => ['auth' => Authenticate::class]]);
+    setProtected($middleware, 'kernel', $kernel);
+
+    // Un refuso come "auht" non deve mai rendere pubblica la pagina in silenzio: blocca, ma dicendo perche'.
+    expect(fn () => invokeProtected($middleware, 'executeMiddlewareChain', [
+        Request::create('/test', 'GET'),
+        ['auht'],
+        fn (Request $req): Response => new Response('must not be reached', 200),
+    ]))->toThrow(InvalidArgumentException::class, "'auht'");
 });
