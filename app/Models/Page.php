@@ -20,6 +20,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property array<array-key, mixed>|null $middleware
  * @property string|null $content
  * @property string|null $description
+ * @property string|null $layout
  * @property array<array-key, mixed>|null $blocks
  * @property array<array-key, mixed>|null $content_blocks
  * @property array<array-key, mixed>|null $sidebar_blocks
@@ -76,6 +77,7 @@ class Page extends BaseModelLang
     protected $fillable = [
         'content',
         'description',
+        'layout',
         'slug',
         'title',
         'middleware',
@@ -93,6 +95,7 @@ class Page extends BaseModelLang
         'middleware' => 'json',
         'content' => 'string',
         'description' => 'string',
+        'layout' => 'string',
         'blocks' => 'json',
         'content_blocks' => 'json',
         'sidebar_blocks' => 'json',
@@ -162,6 +165,7 @@ class Page extends BaseModelLang
             'sidebar_blocks' => 'array',
             'footer_blocks' => 'array',
             'middleware' => 'array',
+            'layout' => 'string',
         ];
     }
 }
