@@ -25,11 +25,11 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 
 ## Collegamenti tema e workspace attivo
 
-- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema Sixteen
+- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-INDEX.md) - Indice docs del tema Sixteen
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
 - [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
 - [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso
-- [../../../docs/design-comuni/MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
+- [../../../docs/design-comuni/MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
 - [DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md) - Index Design Comuni con link bidirezionali (vedi anche variante [design_comuni_index.md](./design_comuni_index.md) in Storico)
 
 ## Documenti in radice di docs/, per argomento

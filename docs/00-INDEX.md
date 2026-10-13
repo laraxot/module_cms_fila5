@@ -3,7 +3,7 @@ title: "00 INDEX"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-13
 qmd: "00 INDEX"
 issues: []
 discussions: []
@@ -14,6 +14,16 @@ discussions: []
 ## Overview
 
 Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi. Nel lavoro corrente sulla parity Design Comuni, il Cms governa la struttura della homepage di test, mentre la resa visuale viene rifinita nel tema Sixteen.
+
+## Governance documentale
+
+- [Contratto moduli/temi](../../../../bmad-output/docs-architecture/module-theme-docs-contract.md)
+- [Tassonomia](../../../../bmad-output/docs-architecture/taxonomy.md)
+- [Ownership](../../../../bmad-output/docs-architecture/ownership.md)
+
+Questo indice è l'ingresso operativo del Cms. `index.md` e `00-index.md` sono
+varianti storiche: non creare altri indici; prima di consolidarli verificare i
+riferimenti con `rg`.
 
 ## 📚 Design Comuni - Index Completo
 
@@ -34,11 +44,11 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 
 ## Theme cross links
 
-- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema
+- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-INDEX.md) - Indice docs del tema
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
 - [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
 - [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso
-- [../../../docs/design-comuni/MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
+- [../../../docs/design-comuni/MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
 
 ## Runtime architecture
 
@@ -52,3 +62,6 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 - Se il problema e' strutturale, verificare prima Cms JSON + routing.
 - Se il problema e' visivo, lavorare nel tema e documentare i risultati anche qui.
 - Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.
+
+## Story URL -> JSON (2026-10-13)
+- [DCP-41 da URL a JSON: strumento e regola](stories/2026-10-13-dcp-41-url-to-json-resolver.story.md)

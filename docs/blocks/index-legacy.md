@@ -23,11 +23,11 @@ related:
 
 ## Collegamenti Correlati
 - [Indice CMS](../index.md)
-- [README CMS](../readme.md)
+- [README CMS](../README.md)
 - [Blocchi](../blocks.md)
 - [Componenti Blocchi Contenuto](../componenti-blocchi-contenuto.md)
 - [Namespace Componenti Blocchi](../namespace-componenti-blocchi.md)
-- [Documentazione Generale](../../../../../../docs/readme.md)
+- [Documentazione Generale](../../../../../docs/README.md)
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 
 ## Panoramica

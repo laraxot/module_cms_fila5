@@ -70,8 +70,8 @@ discussions: []
 
 ## 🔗 Collegamenti
 
-- [← Cms Module README](../readme.md)
-- [← Root Documentation](../../../../docs/index.md)
+- [← Cms Module README](../README.md)
+- [← Root Documentation](../../index.md)
 
 ---
 

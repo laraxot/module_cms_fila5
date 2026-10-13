@@ -14,7 +14,7 @@ related:
   - ../../../../../../docs/wiki/memories/volt-route-params-mount-contract.md
   - ../../../../../../docs/wiki/rules/cms-x-page-data-bag-only.md
   - ../../components/page-component-data-contract.md
-  - ../../../../Themes/Sixteen/docs/folio-page-pattern.md
+  - ../../../../../Themes/Sixteen/docs/folio-page-pattern.md
 ---
 
 # Folio + Volt — `mount()` e `@volt` statico

@@ -11,7 +11,7 @@ discussions:
   - "https://github.com/laraxot/module_fixcity_fila5/discussions/53"
 related:
   - ../../../Xot/docs/wiki/concepts/phpstan-pest-bridge-discipline.md
-  - ../../../../docs/wiki/rules/cms-x-page-data-bag-only.md
+  - ../../../../../../docs/wiki/rules/cms-x-page-data-bag-only.md
 ---
 
 # Testing in Cms

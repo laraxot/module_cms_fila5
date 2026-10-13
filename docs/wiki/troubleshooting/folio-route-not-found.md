@@ -10,7 +10,7 @@ issues:
   - https://github.com/laraxot/base_fixcity_fila5/issues/289
 related:
   - ../concepts/folio-filesystem-routing-no-web-php.md
-  - ../../../../Themes/Sixteen/docs/wiki/troubleshooting/route-not-found-view-cache.md
+  - ../../../../../Themes/Sixteen/docs/wiki/troubleshooting/route-not-found-view-cache.md
 ---
 
 # RouteNotFoundException — Folio FO
@@ -70,4 +70,4 @@ grep -r "area-personale.notifiche" storage/framework/views/ || echo "OK: nessuna
 ## Collegamenti
 
 - [filesystem routing](../concepts/folio-filesystem-routing-no-web-php.md)
-- [Sixteen view cache](../../../../Themes/Sixteen/docs/wiki/troubleshooting/route-not-found-view-cache.md)
+- [Sixteen view cache](../../../../../Themes/Sixteen/docs/wiki/troubleshooting/route-not-found-view-cache.md)

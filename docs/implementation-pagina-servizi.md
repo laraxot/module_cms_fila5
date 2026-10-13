@@ -188,7 +188,7 @@ L'implementazione riflette una comprensione profonda delle implicazioni:
 ### Filosofici
 - [Architettura Sistema](../../../../docs/architettura_sistema.md)
 - [Rules](../../../../docs/rules.md)
-- [README Principale](../../../../docs/readme.md)
+- [README Principale](../../../../docs/README.md)
 
 ## ✅ Checklist Completamento
 

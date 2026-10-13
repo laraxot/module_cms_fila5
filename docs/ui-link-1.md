@@ -21,7 +21,7 @@ Secondo le regole di organizzazione della documentazione:
 
 ## Collegamenti Principali
 
-- [Componenti UI](../../ui/docs/readme.md) - Panoramica dei componenti UI disponibili
+- [Componenti UI](../../UI/docs/README.md) - Panoramica dei componenti UI disponibili
 - [Componenti Filament](../../ui/docs/filament-components.md) - Componenti personalizzati per Filament
 - [Componenti Blade](../../ui/docs/blade-components.md) - Componenti Blade riutilizzabili
 

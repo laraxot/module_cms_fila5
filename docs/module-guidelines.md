@@ -95,7 +95,7 @@ I dati dell'header (titolo, link, logo, ecc.) sono recuperati da:
 Modifica il file `header.blade.php` in questa posizione per personalizzare l'header del FrontOffice.
 
 ## Collegamenti Bidirezionali
-- [README](readme.md) - Documentazione principale del modulo
+- [README](README.md) - Documentazione principale del modulo
 - [Architettura](architecture.md) - Architettura del modulo
 - [Struttura](structure.md) - Struttura del modulo
 - [Namespace](namespace-moduli-laravel-<nome progetto>.md) - Convenzioni namespace
