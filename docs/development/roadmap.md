@@ -305,7 +305,7 @@ discussions: []
 
 ## Collegamenti tra versioni di roadmap.md
 - [roadmap.md](bashscripts/docs/roadmap.md)
-- [roadmap.md](docs/roadmap.md)
+- [roadmap.md](../roadmap.md)
 - [roadmap.md](laravel/modules/gdpr/docs/roadmap.md)
 - [roadmap.md](laravel/modules/notify/docs/roadmap.md)
 - [roadmap.md](laravel/modules/xot/docs/roadmap.md)

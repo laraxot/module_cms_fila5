@@ -11,7 +11,7 @@ discussions: []
 
 # Page component context data
 
-> **SSoT architettura:** [ADR cms-x-page-opaque-data-bag](../../../docs/wiki/decisions/cms-x-page-opaque-data-bag.md) · [wiki x-page-data-bag-only](wiki/concepts/x-page-data-bag-only.md)
+> **SSoT architettura:** [ADR cms-x-page-opaque-data-bag](../../../../docs/wiki/decisions/cms-x-page-opaque-data-bag.md) · [wiki x-page-data-bag-only](wiki/concepts/x-page-data-bag-only.md)
 
 The `Page` View Component (`Modules\Cms\View\Components\Page`) renders a CMS-driven page by looking up its blocks from a JSON file and rendering each block with a merged data context.
 

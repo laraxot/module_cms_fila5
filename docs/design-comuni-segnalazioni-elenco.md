@@ -48,13 +48,13 @@ Analisi e implementazione della pagina elenco segnalazioni del progetto Design C
 ## 📚 Link Bidirezionali
 
 ### Tema Sixteen
-- [Analisi HTML](../../Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_ANALISI.md)
-- [Report](../../Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_REPORT.md)
-- [Progress Report](../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md)
-- [All Pages Analysis](../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md)
+- [Analisi HTML](../../../Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_ANALISI.md)
+- [Report](../../../Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_REPORT.md)
+- [Progress Report](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md)
+- [All Pages Analysis](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md)
 
 ### Master Index
-- [docs/design-comuni/MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md)
+- [docs/design-comuni/MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md)
 
 ### Scripts
 - [analyze-ticket-list.js](../../../bashscripts/design-comuni/analyze-ticket-list.js)
