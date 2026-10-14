@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chaos monkey recovery playbook"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Chaos Monkey Recovery Playbook (CMS)

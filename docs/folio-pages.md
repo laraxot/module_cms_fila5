@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "folio pages"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura delle Pagine con Laravel Folio nel Tema One

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "tailkit components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Tailkit Components Integration

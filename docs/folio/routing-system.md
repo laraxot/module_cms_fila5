@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "routing system"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sistema di Routing con Laravel Folio

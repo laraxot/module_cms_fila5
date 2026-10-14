@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: folio_pages
 canonical: ../../../Themes/docs/shared-components/folio-pages.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/folio-pages.md

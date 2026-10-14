@@ -167,7 +167,7 @@ if (!$result->isValid()) {
 ## Collegamenti
 
 - [Installazione](installation.md)
-- [Architettura](architecture.md)
+- [Architettura](frontoffice/architecture.md)
 - [API](api.md)
 - [Cache](cache.md)
 

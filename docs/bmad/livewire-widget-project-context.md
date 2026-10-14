@@ -10,6 +10,7 @@ type: constitution
 module: Cms
 related:
   - ./livewire-inventory.md
+status: draft
 ---
 
 # Context Cms

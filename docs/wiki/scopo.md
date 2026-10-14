@@ -3,6 +3,10 @@ qmd: "scopo"
 issues: []
 discussions: []
 title: "Scopo"
+type: note
+status: draft
+updated: 2026-10-08
+tags: [docs, cms, wiki]
 ---
 
 # Cms — Scopo (BMAD)

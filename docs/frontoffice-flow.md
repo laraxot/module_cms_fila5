@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "frontoffice flow"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Flusso Frontoffice <main module>

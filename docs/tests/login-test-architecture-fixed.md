@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "login test architecture fixed"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Login Test Architecture - PROBLEMA RISOLTO ✅
@@ -148,15 +149,6 @@ test('any user type can login successfully', function (): void {
 - [Modular Testing Guide](../../../docs/testing/modular-independence.md)
 
 ---
-
-title: "login test architecture fixed"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "login test architecture fixed"
-issues: []
-discussions: []
 **Status**: ✅ COMPLETATO
 **Priorità**: 🚨 P0 - CRITICO (ora risolto)
 **Validato**: Test in passing ✅

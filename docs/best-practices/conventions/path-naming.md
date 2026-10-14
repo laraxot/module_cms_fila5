@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "path naming"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Convenzioni dei Percorsi nei Moduli

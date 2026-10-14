@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "legacy roadmap 3"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Cms Module - Content Management Roadmap
@@ -17,15 +18,6 @@ discussions: []
 **Obiettivo**: 100% completamento con advanced blocks, SEO e versioning
 
 ---
-
-title: "legacy roadmap 3"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "legacy roadmap 3"
-issues: []
-discussions: []
 ## 📊 Stato Attuale
 
 ### Completamento Globale: **75%**

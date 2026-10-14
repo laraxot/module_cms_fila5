@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "homepage management 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione della Homepage
@@ -86,15 +87,6 @@ Per aggiungere un nuovo tipo di blocco:
 3. Aggiungere il nuovo blocco nel file JSON
 
 ---
-
-title: "homepage management 1"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "homepage management 1"
-issues: []
-discussions: []
 **Documentazione Correlata**
 
 - [Documentazione principale della homepage](../../../../../docs/gestione-homepage.md)

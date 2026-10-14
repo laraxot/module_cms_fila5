@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "analisi componenti blade laravel 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Analisi Corretta dei Componenti Blade in Laravel

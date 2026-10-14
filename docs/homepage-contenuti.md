@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "homepage contenuti"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Contenuti Homepage il progetto

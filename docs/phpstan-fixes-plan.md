@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan fixes plan"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Cms Module - PHPStan Level 10 Fixes Plan
@@ -218,15 +219,6 @@ The Cms module has **30 PHPStan errors** that need to be resolved to achieve Lev
 4. Have database backups available
 
 ---
-
-title: "phpstan fixes plan"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "phpstan fixes plan"
-issues: []
-discussions: []
 **Estimated Completion**: 2 weeks
 **Priority**: High (30 errors affecting core functionality)
 **Impact**: Critical UI and authentication components

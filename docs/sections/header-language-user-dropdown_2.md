@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "header language user dropdown 2"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Implementazione del Selettore di Lingua e Dropdown Utente nell'Header

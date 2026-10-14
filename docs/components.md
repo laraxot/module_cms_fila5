@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Componenti del CMS
@@ -74,14 +75,6 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 - `laravel/Themes/*/resources/views/components/`
 
 ---
-title: "components"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "components"
-issues: []
-discussions: []
 @see laravel/Modules/Cms/docs/best-practices/page-rendering.md
 
 ## Collegamenti tra versioni di components.md

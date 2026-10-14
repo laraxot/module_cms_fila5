@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "page content to section"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Refactoring: Da PageContent a Section

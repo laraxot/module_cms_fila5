@@ -11,6 +11,7 @@ description: Base
 extends: _layouts.documentation
 section: content
 path: it/docs/components/chartjs
+status: draft
 ---
 
 # Base {#base}

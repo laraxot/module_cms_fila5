@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "seo"
 issues: []
 discussions: []
+status: draft
 ---
 
 # SEO

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament blocks system"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sistema Filament Blocks - Modulo CMS

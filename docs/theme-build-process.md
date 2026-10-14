@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "theme build process"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Processo di Build del Tema in il progetto

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "volt introduction 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Introduzione a Laravel Volt

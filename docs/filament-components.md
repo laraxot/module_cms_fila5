@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Utilizzo dei Componenti Filament in il progetto

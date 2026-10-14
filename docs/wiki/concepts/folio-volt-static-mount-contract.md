@@ -15,6 +15,7 @@ related:
   - ../../../../../../docs/wiki/rules/cms-x-page-data-bag-only.md
   - ../../components/page-component-data-contract.md
   - ../../../../../Themes/Sixteen/docs/folio-page-pattern.md
+status: draft
 ---
 
 # Folio + Volt — `mount()` e `@volt` statico

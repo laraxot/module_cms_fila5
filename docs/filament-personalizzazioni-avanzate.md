@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament personalizzazioni avanzate"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Personalizzazioni Avanzate di Filament in il progetto

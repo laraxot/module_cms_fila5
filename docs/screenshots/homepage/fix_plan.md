@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "fix plan"
 issues: []
 discussions: []
+status: draft
 ---
 
 # 🚀 Fix Homepage Bootstrap Italia - Piano Esecutivo
@@ -18,15 +19,6 @@ Allineare la homepage FixCity (`/it/tests/homepage`) al design Bootstrap Italia 
 **Target**: http://fixcity.local/it/tests/homepage
 
 ---
-
-title: "fix plan"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "fix plan"
-issues: []
-discussions: []
 ## Fase 1: Header & Hero (Settimana 1)
 
 ### Task 1.1: Header Slim Component
