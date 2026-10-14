@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "volt folio example"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Esempio Pratico Laravel Volt e Folio

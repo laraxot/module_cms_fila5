@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "design comuni argomenti"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Design Comuni Argomenti

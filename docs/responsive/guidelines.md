@@ -145,7 +145,7 @@ Il design responsive è fondamentale per il successo di un sito web moderno, con
   - Esperienza utente
 
 ## Collegamenti
-- [Anatomia Sito Web](../structure/layout.md)
+- [Anatomia Sito Web](../architecture/structure/layout.md)
 - [Componenti Responsive](../components/responsive.md)
 - [Performance Guidelines](../performance/guidelines.md)
 

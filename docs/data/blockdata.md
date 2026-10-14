@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "blockdata"
 issues: []
 discussions: []
+status: draft
 ---
 
 # BlockData - Cuore del Sistema di Gestione Blocchi

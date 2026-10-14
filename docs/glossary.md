@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "glossary"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Glossario Tecnico

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "mcp configuration"
 issues: []
 discussions: []
+status: draft
 ---
 
 # MCP Server Configuration - Cms Module
@@ -16,15 +17,6 @@ discussions: []
 **MCP Servers**: Asana, ClickUp, Filesystem, Database, Redmine (Planned)
 
 ---
-
-title: "mcp configuration"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "mcp configuration"
-issues: []
-discussions: []
 ## 📋 Overview
 
 The Cms module's MCP configuration enables AI assistants to interact with:

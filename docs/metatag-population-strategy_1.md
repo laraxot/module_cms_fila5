@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "metatag population strategy 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Strategia di Popolamento Metatag - <nome progetto>

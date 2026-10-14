@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: frontoffice_flow
 canonical: ../../../Themes/docs/shared-components/frontoffice-flow.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/frontoffice-flow.md

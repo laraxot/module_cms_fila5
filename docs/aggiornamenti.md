@@ -10,6 +10,7 @@ title: Aggiornamenti
 description: Aggiornamenti
 extends: _layouts.documentation
 section: content
+status: draft
 ---
 
 # Aggiornamenti {#aggiornamenti}

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "register type test implementation"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Register Type Test Implementation - Modulo Cms

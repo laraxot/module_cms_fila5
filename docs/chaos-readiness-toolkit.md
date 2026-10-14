@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chaos readiness toolkit"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Chaos Readiness Toolkit - CMS

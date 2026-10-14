@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: ux_wizard_registrazione_paziente
 canonical: ../../../Themes/docs/shared-components/ux-wizard-registrazione-paziente.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/ux-wizard-registrazione-paziente.md

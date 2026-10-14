@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chat ai components 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Componenti Chat AI

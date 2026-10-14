@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "volt folio integration"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Integrazione Volt e Folio nel Modulo CMS

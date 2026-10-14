@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "bottlenecks"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Colli di Bottiglia e Soluzioni - Modulo Cms

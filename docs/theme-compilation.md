@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "theme compilation"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Compilazione e Pubblicazione dei Temi

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "standard ui components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Standard UI Components in il progetto
