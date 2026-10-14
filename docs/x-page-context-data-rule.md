@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "x page context data rule"
 issues: []
 discussions: []
+status: draft
 ---
 
 # X-Page Context Data Rule

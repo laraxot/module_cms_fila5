@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: customizing_your_site
 canonical: ../../../Themes/docs/shared-components/customizing-your-site.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/customizing-your-site.md

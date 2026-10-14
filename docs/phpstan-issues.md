@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan issues"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Problemi con PHPStan e Larastan in un progetto modulare

@@ -143,7 +143,7 @@ public function test_filament_components_rendering()
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](architecture.md) - Architettura del sistema CMS
+- [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
 - [Componenti](filament-components.md) - Componenti Filament
 - [Form](filament-forms.md) - Sistema di form
 - [Resources](filament-resources.md) - Gestione risorse

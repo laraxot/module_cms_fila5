@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "gestione route folio"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione delle Route con Laravel Folio in il progetto

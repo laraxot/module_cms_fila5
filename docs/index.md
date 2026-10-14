@@ -3,13 +3,16 @@ title: "index"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-14
 qmd: "index"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Indice documentazione modulo Cms
+
+> Nota 2026-10-14: questo e' il catalogo per argomento, non l'ingresso operativo. L'ingresso e' [00-INDEX.md](./00-INDEX.md); lo stato verificato del modulo (come si servono le pagine, cosa non esiste) e' in [README.md](./README.md). I documenti descritti sotto come "architettura" o "servizi" possono citare classi che non esistono (`PageService`, `BlockService`, modello `Block`): nel dubbio, controllare il codice. 24 link a file inesistenti sono annotati come mancanti.
 
 ## Panoramica
 
@@ -152,7 +155,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [volt-folio-structure.md](./volt-folio-structure.md)
 - [volt-introduction.md](./volt-introduction.md)
 - [volt-livewire-component-boundaries.md](./volt-livewire-component-boundaries.md)
-- [volt-single-root-element.md](./volt-single-root-element.md)
+- [volt-single-root-element.md](./volt-single-root-element.md) _(target mancante, verificato 2026-10-14)_
 - [volt-web-application.md](./volt-web-application.md)
 
 ### Localizzazione e namespace (10)
@@ -172,7 +175,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 
 - [links.md](./links.md)
 - [prompt-rules-link.md](./prompt-rules-link.md)
-- [root-links.md](./root-links.md)
+- [root-links.md](./root-links.md) _(target mancante, verificato 2026-10-14)_
 - [themes-ui-link.md](./themes-ui-link.md)
 - [ui-link.md](./ui-link.md)
 - [user-link.md](./user-link.md)
@@ -182,12 +185,12 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 
 - [analisi-metodi-duplicati.md](./analisi-metodi-duplicati.md)
 - [bottlenecks.md](./bottlenecks.md)
-- [code-quality-analysis-legacy.md](./code-quality-analysis-legacy.md)
+- [code-quality-analysis-legacy.md](./code-quality-analysis-legacy.md) _(target mancante, verificato 2026-10-14)_
 - [code-quality-analysis.md](./code-quality-analysis.md)
 - [code-quality-improvement-report.md](./code-quality-improvement-report.md)
 - [code-quality-report.md](./code-quality-report.md)
 - [code-quality.md](./code-quality.md)
-- [copilot-redundancy-audit-2026-05-25.md](./copilot-redundancy-audit-2026-05-25.md)
+- [copilot-redundancy-audit-2026-05-25.md](./copilot-redundancy-audit-2026-05-25.md) _(target mancante, verificato 2026-10-14)_
 - [coverage.md](./coverage.md)
 - [cyclomatic-complexity-report.md](./cyclomatic-complexity-report.md)
 - [dependency-intelligence.md](./dependency-intelligence.md)
@@ -237,7 +240,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [quality-status.md](./quality-status.md)
 - [quality-tooling.md](./quality-tooling.md)
 - [quality.md](./quality.md)
-- [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md)
+- [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md) _(target mancante, verificato 2026-10-14)_
 - [redundancy-report.md](./redundancy-report.md)
 - [redundancy_analysis.md](./redundancy_analysis.md)
 - [safe.md](./safe.md)
@@ -249,7 +252,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [test.md](./test.md)
 - [test111.md](./test111.md)
 - [test2.md](./test2.md)
-- [test2025-08-28.md](./test2025-08-28.md)
+- [test2025-08-28.md](./test2025-08-28.md) _(target mancante, verificato 2026-10-14)_
 - [test222.md](./test222.md)
 - [test3.md](./test3.md)
 - [testing-business-behavior-update-summary.md](./testing-business-behavior-update-summary.md)
@@ -309,11 +312,11 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [file-naming-rules.md](./file-naming-rules.md)
 - [file-structure-cleanup.md](./file-structure-cleanup.md)
 - [link-relativi-regole.md](./link-relativi-regole.md)
-- [module-root-hygiene.md](./module-root-hygiene.md)
+- [module-root-hygiene.md](./module-root-hygiene.md) _(target mancante, verificato 2026-10-14)_
 - [no-ai-tool-scaffold-dirs.md](./no-ai-tool-scaffold-dirs.md)
 - [on-demand-pattern.md](./on-demand-pattern.md)
-- [root-file-policy.md](./root-file-policy.md)
-- [root-files-hygiene.md](./root-files-hygiene.md)
+- [root-file-policy.md](./root-file-policy.md) _(target mancante, verificato 2026-10-14)_
+- [root-files-hygiene.md](./root-files-hygiene.md) _(target mancante, verificato 2026-10-14)_
 - [rules-index.md](./rules-index.md)
 - [script-placement-governance.md](./script-placement-governance.md)
 - [script-placement-rules.md](./script-placement-rules.md)
@@ -323,7 +326,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 ### Conflitti git e merge (7)
 
 - [conflict-resolution.md](./conflict-resolution.md)
-- [git-conflict-resolution-2026-07-31.md](./git-conflict-resolution-2026-07-31.md)
+- [git-conflict-resolution-2026-07-31.md](./git-conflict-resolution-2026-07-31.md) _(target mancante, verificato 2026-10-14)_
 - [git-conflicts-list.md](./git-conflicts-list.md)
 - [git-conflicts-resolution-impact.md](./git-conflicts-resolution-impact.md)
 - [merge-conflict-files-list.md](./merge-conflict-files-list.md)
@@ -477,7 +480,7 @@ Sottocartelle senza indice interno (elenco file diretto consigliato per chi le a
 | [responsive/](./responsive/) | 1 | [responsive/guidelines.md](./responsive/guidelines.md) |
 | [screenshots/](./screenshots/) | 9 | (note su screenshot, nessun heading) |
 | [stories/](./stories/) | 1 | [stories/7.1.phpstan-paramtype-coverage.story.md](./stories/7.1.phpstan-paramtype-coverage.story.md) — vedi anche [stories/docs-index-audit.story.md](./stories/docs-index-audit.story.md) |
-| [tasks/](./tasks/) | 11 | [tasks/001-content-management-system.md](./tasks/001-content-management-system.md) |
+| [tasks/](./tasks/) _(target mancante, verificato 2026-10-14)_ | 11 | [tasks/001-content-management-system.md](./tasks/001-content-management-system.md) _(target mancante, verificato 2026-10-14)_ |
 | [testing/](./testing/) | 1 | [testing/naming-conventions.md](./testing/naming-conventions.md) |
 | [tests/](./tests/) | 11 | [tests/architecture-aration-rules.md](./tests/architecture-aration-rules.md) |
 | [themes/](./themes/) | 13 | [themes/assets.md](./themes/assets.md) |
@@ -592,12 +595,12 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[psr4-autoload-cleanup.md](./psr4-autoload-cleanup.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [psr4-autoload-cleanup-2026-03-09.md](./psr4-autoload-cleanup-2026-03-09.md)
 - **[psr4-autoload-remediation.md](./psr4-autoload-remediation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [psr4-autoload-remediation-2026-03-09.md](./psr4-autoload-remediation-2026-03-09.md)
 - **[qmd-setup.md](./qmd-setup.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [QMD-SETUP.md](./QMD-SETUP.md)
-- **[quality-status.md](./quality-status.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [quality-status-.md](./quality-status-.md), [quality-status-11.md](./quality-status-11.md), [quality-status-2025-11.md](./quality-status-2025-11.md)
+- **[quality-status.md](./quality-status.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [quality-status-.md](./quality-status-.md), [quality-status-11.md](./quality-status-11.md), [quality-status-2025-11.md](./quality-status-2025-11.md) _(target mancante, verificato 2026-10-14)_
 - **[redundancy_analysis.md](./redundancy_analysis.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [REDUNDANCY_ANALYSIS.md](./REDUNDANCY_ANALYSIS.md)
 - **[register-disabled-implementation.md](./register-disabled-implementation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [register-disabled-implementation-1.md](./register-disabled-implementation-1.md), [register-disabled-implementation_1.md](./register-disabled-implementation_1.md), [register_disabled_implementation.md](./register_disabled_implementation.md), [registerisabled-implementation.md](./registerisabled-implementation.md)
 - **[risorse-ui-ux.md](./risorse-ui-ux.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [risorse_ui_ux.md](./risorse_ui_ux.md)
 - **[roadmap.md](./roadmap.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [roadmap--renamed.md](./roadmap--renamed.md), [roadmap-.md](./roadmap-.md), [roadmap-2025.md](./roadmap-2025.md), [roadmap-q1.md](./roadmap-q1.md)
-- **[root-links.md](./root-links.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [root_links.md](./root_links.md)
+- **[root-links.md](./root-links.md) _(target mancante, verificato 2026-10-14)_** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [root_links.md](./root_links.md) _(target mancante, verificato 2026-10-14)_
 - **[script-placement-rules.md](./script-placement-rules.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [SCRIPT_PLACEMENT_RULES.md](./SCRIPT_PLACEMENT_RULES.md), [script_placement_rules.md](./script_placement_rules.md)
 - **[section-management.md](./section-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [section_management.md](./section_management.md)
 - **[serializable-closure-error-resolution.md](./serializable-closure-error-resolution.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [serializable-closure-error-resolution-.md](./serializable-closure-error-resolution-.md)
@@ -623,23 +626,23 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[volt-folio-esempio.md](./volt-folio-esempio.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-folio-esempio-1.md](./volt-folio-esempio-1.md), [volt-folio-esempio_1.md](./volt-folio-esempio_1.md), [volt_folio_esempio.md](./volt_folio_esempio.md)
 - **[volt-folio-structure.md](./volt-folio-structure.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-folio-structure-1.md](./volt-folio-structure-1.md), [volt-folio-structure_1.md](./volt-folio-structure_1.md), [volt_folio_structure.md](./volt_folio_structure.md)
 - **[volt-introduction.md](./volt-introduction.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-introduction-1.md](./volt-introduction-1.md), [volt-introduction_1.md](./volt-introduction_1.md), [volt_introduction.md](./volt_introduction.md)
-- **[volt-single-root-element.md](./volt-single-root-element.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-single-root-element-1.md](./volt-single-root-element-1.md), [volt-single-root-element_1.md](./volt-single-root-element_1.md), [volt_single_root_element.md](./volt_single_root_element.md)
+- **[volt-single-root-element.md](./volt-single-root-element.md) _(target mancante, verificato 2026-10-14)_** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-single-root-element-1.md](./volt-single-root-element-1.md) _(target mancante, verificato 2026-10-14)_, [volt-single-root-element_1.md](./volt-single-root-element_1.md) _(target mancante, verificato 2026-10-14)_, [volt_single_root_element.md](./volt_single_root_element.md) _(target mancante, verificato 2026-10-14)_
 - **[volt-web-application.md](./volt-web-application.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-web-application-1.md](./volt-web-application-1.md), [volt-web-application_1.md](./volt-web-application_1.md), [volt_web_application.md](./volt_web_application.md)
 - **[web-design-rules.md](./web-design-rules.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [web_design_rules.md](./web_design_rules.md), [webesign.md](./webesign.md)
 - **[xot-link.md](./xot-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [xot_link.md](./xot_link.md)
 
 ### Cartelle-archivio (contenuto storico, non indicizzato per singolo file)
 
-- [archive/](./archive/) — 184 file `.md`, dump storico di documentazione superata (es. varianti vecchie di algolia-docsearch e altri doc gia' presenti anche in radice). Consultare solo per ricostruire la storia di una decisione.
+- [archive/](./archive/) _(target mancante, verificato 2026-10-14)_ — 184 file `.md`, dump storico di documentazione superata (es. varianti vecchie di algolia-docsearch e altri doc gia' presenti anche in radice). Consultare solo per ricostruire la storia di una decisione.
 - [raw/](./raw/) — 25 file, materiale grezzo/non rifinito, con stub `README.md`/`index.md` che puntano a `Themes/docs/shared-components/`.
-- [historical/](./historical/) — 4 file, snapshot storici (es. code-quality-analysis datata novembre 2025).
+- [historical/](./historical/) _(target mancante, verificato 2026-10-14)_ — 4 file, snapshot storici (es. code-quality-analysis datata novembre 2025).
 - [root-md-files/](./root-md-files/) — 31 file, altro deposito di `.md` spaiati (es. `business-logic-report-dup-16529.md`, il nome stesso segnala un duplicato).
-- [root-txt-files/](./root-txt-files/) — 6 file (es. `test111.md`), materiale di scarto spostato dalla root del modulo.
-- [root-code-workspace-files/](./root-code-workspace-files/) — cartella presente ma senza file `.md` diretti.
+- [root-txt-files/](./root-txt-files/) _(target mancante, verificato 2026-10-14)_ — 6 file (es. `test111.md`), materiale di scarto spostato dalla root del modulo.
+- [root-code-workspace-files/](./root-code-workspace-files/) _(target mancante, verificato 2026-10-14)_ — cartella presente ma senza file `.md` diretti.
 
 ### File di scratch/test in radice docs/ (probabile materiale di prova, verificarne l'utilita')
 
-- [test.md](./test.md), [test2.md](./test2.md), [test3.md](./test3.md), [test111.md](./test111.md), [test222.md](./test222.md), [test2025-08-28.md](./test2025-08-28.md) — file senza contenuto strutturato riconoscibile dal nome, verosimilmente scratchpad.
+- [test.md](./test.md), [test2.md](./test2.md), [test3.md](./test3.md), [test111.md](./test111.md), [test222.md](./test222.md), [test2025-08-28.md](./test2025-08-28.md) _(target mancante, verificato 2026-10-14)_ — file senza contenuto strutturato riconoscibile dal nome, verosimilmente scratchpad.
 
 ### Nomi file corrotti/mangled ricondotti al cluster corretto
 

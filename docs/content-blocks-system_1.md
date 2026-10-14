@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content blocks system 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sistema Content Blocks - <nome progetto>

@@ -10,6 +10,7 @@ type: tech-spec
 module: Cms
 related:
   - ./livewire-widget-prd.md
+status: draft
 ---
 
 # Tech spec Cms

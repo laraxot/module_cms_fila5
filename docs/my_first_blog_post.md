@@ -12,6 +12,7 @@ title: My First Blog Post
 date: 2022-06-21
 description: This will be your meta description, make sure it isn't too long
 categories: [writting]
+status: draft
 ---
  
 This is my blog post.

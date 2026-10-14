@@ -41,6 +41,6 @@ Per le best practice di **Filament** (https://filamentphp.com/docs/3.x/support/b
 ```
 
 ## Collegamenti tra versioni di filament-blade-components.md
-* [filament-blade-components.md](laravel/Modules/Cms/docs/filament-blade-components.md)
-* [filament-blade-components.md](laravel/Themes/One/docs/filament-blade-components.md)
+* [filament-blade-components.md](filament-blade-components.md)
+* [filament-blade-components.md](filament-blade-components.md)
 

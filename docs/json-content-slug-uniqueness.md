@@ -5,6 +5,8 @@ type: guide
 status: active
 created: 2026-10-13
 qmd: "cms json content collision slug duplicato sushi page tests tenant override nome canonico"
+updated: 2026-10-13
+tags: [docs, cms]
 ---
 
 # Contenuti JSON: unicita' dello slug e nome canonico

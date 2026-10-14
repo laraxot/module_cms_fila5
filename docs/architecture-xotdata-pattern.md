@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "architecture xotdata pattern"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Architettura XotData Pattern - Errore Critico Risolto e Analisi Approfondita

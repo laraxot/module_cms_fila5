@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "git conflicts list"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Git Conflicts List

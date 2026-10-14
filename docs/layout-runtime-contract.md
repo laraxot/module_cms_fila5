@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "layout runtime contract"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Layout Runtime Contract

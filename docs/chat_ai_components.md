@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: chat_ai_components
 canonical: ../../../Themes/docs/shared-components/chat-ai-components.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/chat-ai-components.md

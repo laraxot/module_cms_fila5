@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "todo management"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione Todo con Volt e Folio

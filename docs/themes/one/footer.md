@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "footer"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Footer Component Reference (CMS Module)

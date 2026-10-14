@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "roadmap"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Roadmap (Module Cms)
@@ -65,15 +66,6 @@ Il modulo Cms fornisce:
 - **Integrazione Filament** per admin content management
 
 ---
-
-title: "roadmap"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "roadmap"
-issues: []
-discussions: []
 ## Tasks
 
 | # | Task | File | Priorita' | % |

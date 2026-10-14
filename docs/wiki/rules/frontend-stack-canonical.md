@@ -8,6 +8,7 @@ title: frontend stack canonico — cms module stub
 type: rule
 module: Cms
 updated: 2026-06-03
+status: draft
 ---
 
 # Stack frontend — modulo Cms
