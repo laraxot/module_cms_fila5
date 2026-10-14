@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: phpstanes
 canonical: ../../../Themes/docs/shared-components/phpstan-fixes-Modules.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/phpstan-fixes-Modules.md

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "struttura layout componenti blade saluteora"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura dei Layout e Componenti Blade in il progetto

@@ -14,6 +14,7 @@ related:
   - ../../folio_routing_system.md
   - ../../../../../../docs/wiki/memories/volt-route-params-mount-contract.md
   - ../../../../../Themes/Sixteen/docs/wiki/concepts/folio-route-params-mount.md
+status: draft
 ---
 
 # Folio page shell — `mount()`, `<x-page>`, `@volt` statico

@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: header_language_avatar_implementation
 canonical: ../../../../Themes/docs/shared-components/header-language-avatar-implementation-Modules.md
+status: stub
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/header-language-avatar-implementation-Modules.md

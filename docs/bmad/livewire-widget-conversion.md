@@ -10,6 +10,7 @@ type: pointer
 module: Cms
 related:
   - ./livewire-inventory.md
+status: draft
 ---
 
 # Cms — canone

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "daisyui componenti 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # DaisyUI: Componenti e Implementazione in il progetto
@@ -634,13 +635,4 @@ Utilizzo:
 - [Filament + DaisyUI Integration](https://filamentphp.com/docs/panels/themes)
 
 ---
-
-title: "daisyui componenti 1"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "daisyui componenti 1"
-issues: []
-discussions: []
 Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo.

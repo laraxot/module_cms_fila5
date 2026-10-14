@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "design comuni batch audit"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Design Comuni Batch CMS Audit

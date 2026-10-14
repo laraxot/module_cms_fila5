@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chaos readiness"
 issues: []
 discussions: []
+status: draft
 ---
 
 # CMS Chaos Readiness - 2026-03-02

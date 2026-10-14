@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: quality
 canonical: ../../../Themes/docs/shared-components/quality-status-Modules.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/quality-status-Modules.md

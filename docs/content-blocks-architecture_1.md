@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content blocks architecture 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Architettura Content Blocks - <nome progetto>

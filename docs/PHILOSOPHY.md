@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "PHILOSOPHY"
 issues: []
 discussions: []
+status: draft
 ---
 
 # CMS Module Philosophy
@@ -38,15 +39,6 @@ The Cms module rests on three immutable pillars:
 **Why this matters**: The trinity ensures flexibility without collapse. Pages set structure, Sections enable reuse, Blocks enable composition. Each layer is independent—missing a section doesn't break the page; swapping a block type doesn't require migration.
 
 ---
-
-title: "PHILOSOPHY"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "PHILOSOPHY"
-issues: []
-discussions: []
 ## Filosofia: Headless CMS Principles
 
 ### Content and Presentation are Divorced

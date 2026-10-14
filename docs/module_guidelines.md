@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: module_guidelines
 canonical: ../../../Themes/docs/shared-components/module-guidelines.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/module-guidelines.md
