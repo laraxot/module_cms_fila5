@@ -79,5 +79,5 @@ Builder::make('content')
 
 - [Documentazione Filament Forms](../filament-forms.md)
 - [Gestione Contenuti](../content.md)
-- [Best Practices SEO](../best-practices/seo.md)
+- [Best Practices SEO](../packages/seo.md)
 - [Accessibilità](../ui/accessibility.md)

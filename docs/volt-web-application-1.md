@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "volt web application 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sviluppo Applicazioni Web con Laravel Volt

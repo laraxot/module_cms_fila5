@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "register disabled implementation 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Implementazione Pagina Register Disabled

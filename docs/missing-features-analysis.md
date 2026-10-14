@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "missing features analysis"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Analisi Funzionalità Mancanti - Modulo Cms
@@ -172,13 +173,4 @@ Nessuna funzionalità critica mancante - il modulo Cms è ben implementato
 - [Cms README](./README.md)
 
 ---
-
-title: "missing features analysis"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "missing features analysis"
-issues: []
-discussions: []
 **Prossima Revisione**: [DATE]

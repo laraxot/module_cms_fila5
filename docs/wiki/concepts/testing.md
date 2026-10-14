@@ -12,6 +12,7 @@ discussions:
 related:
   - ../../../Xot/docs/wiki/concepts/phpstan-pest-bridge-discipline.md
   - ../../../../../../docs/wiki/rules/cms-x-page-data-bag-only.md
+status: draft
 ---
 
 # Testing in Cms

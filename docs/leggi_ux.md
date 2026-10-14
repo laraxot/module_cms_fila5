@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: leggi_ux
 canonical: ../../../Themes/docs/shared-components/leggi-ux.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/leggi-ux.md

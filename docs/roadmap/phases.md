@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phases"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Visione e fasi - Cms Module

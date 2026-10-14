@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "laravel folio operational rules"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Laravel Folio Operational Rules

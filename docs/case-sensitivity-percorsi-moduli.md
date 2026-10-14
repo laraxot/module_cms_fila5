@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "case sensitivity percorsi moduli"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Case Sensitivity nei Percorsi dei Moduli Laravel in il progetto

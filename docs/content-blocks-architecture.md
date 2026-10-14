@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content blocks architecture"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Architettura Content Blocks - <main module>

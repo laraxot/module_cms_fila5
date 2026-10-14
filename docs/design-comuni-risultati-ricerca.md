@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "design comuni risultati ricerca"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Design Comuni - Risultati Ricerca

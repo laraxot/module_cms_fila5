@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "product management"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione Prodotti con Volt e Folio

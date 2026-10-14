@@ -11,6 +11,7 @@ tags: [folio, actions, page-resolution, cms, schema-org]
 related:
   - ../queueable-actions.md
   - ../actions/view/get-cms-view-action.md
+status: draft
 ---
 
 # Page Resolution Pipeline — Cms Module

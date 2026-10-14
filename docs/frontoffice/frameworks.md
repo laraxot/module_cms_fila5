@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "frameworks"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Framework Frontend

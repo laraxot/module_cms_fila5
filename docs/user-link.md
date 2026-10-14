@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "user link"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Collegamento al Modulo User
@@ -36,15 +37,6 @@ Per dettagli specifici, consulta:
 - [Best Practices Filament nel modulo User](../../user/project_docs/filament_best_practices.md)
 
 ---
-
-title: "user link"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "user link"
-issues: []
-discussions: []
 ### Nota Importante
 Quando aggiungi nuovi componenti Filament, assicurati di:
 1. Utilizzare il namespace corretto

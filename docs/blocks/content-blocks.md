@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content blocks"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Blocchi di Contenuto

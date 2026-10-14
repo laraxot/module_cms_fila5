@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "page directory structure"
 issues: []
 discussions: []
+status: draft
 ---
 
 # CMS Page Directory Structure Contract
