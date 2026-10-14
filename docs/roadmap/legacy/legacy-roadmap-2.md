@@ -46,11 +46,11 @@ Il modulo Cms fornisce:
 
 | # | Task | File | Priorita' | % |
 |---|------|------|-----------|---|
-| 1 | Ridurre suppressioni PHPStan (10) | [task-ridurre-phpstan-suppressioni.md](task-ridurre-phpstan-suppressioni.md) | Alta | 0% |
-| 2 | Completare sistema blocks | [task-completare-sistema-blocks.md](task-completare-sistema-blocks.md) | Alta | 60% |
-| 3 | Migliorare test Folio/Volt routing | [task-test-folio-volt-routing.md](task-test-folio-volt-routing.md) | Media | 40% |
-| 4 | Consolidare documentazione (315 file) | [task-consolidare-documentazione.md](task-consolidare-documentazione.md) | Media | 20% |
-| 5 | Implementare versioning pagine | [task-versioning-pagine.md](task-versioning-pagine.md) | Bassa | 0% |
+| 1 | Ridurre suppressioni PHPStan (10) | [task-ridurre-phpstan-suppressioni.md](../../task-ridurre-phpstan-suppressioni.md) | Alta | 0% |
+| 2 | Completare sistema blocks | [task-completare-sistema-blocks.md](../../task-completare-sistema-blocks.md) | Alta | 60% |
+| 3 | Migliorare test Folio/Volt routing | [task-test-folio-volt-routing.md](../../task-test-folio-volt-routing.md) | Media | 40% |
+| 4 | Consolidare documentazione (315 file) | [task-consolidare-documentazione.md](../../task-consolidare-documentazione.md) | Media | 20% |
+| 5 | Implementare versioning pagine | [task-versioning-pagine.md](../../task-versioning-pagine.md) | Bassa | 0% |
 
 ---
 

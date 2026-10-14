@@ -11,6 +11,7 @@ issues:
 related:
   - folio-filesystem-routing-no-web-php.md
   - ../troubleshooting/folio-route-not-found.md
+status: draft
 ---
 
 # folio:list vs route:list — audit rotte FO

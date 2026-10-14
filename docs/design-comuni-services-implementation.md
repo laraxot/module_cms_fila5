@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "design comuni services implementation"
 issues: []
 discussions: []
+status: draft
 ---
 
 # 🏛️ Design Comuni - Services Implementation Guide
@@ -15,15 +16,6 @@ discussions: []
 **Related:** Theme Sixteen, Design Comuni Italia
 
 ---
-
-title: "design comuni services implementation"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "design comuni services implementation"
-issues: []
-discussions: []
 ## 📋 Overview
 
 Questa guida descrive come implementare la gestione dei servizi comunali secondo il modello Design Comuni Italia nel modulo Cms di FixCity.

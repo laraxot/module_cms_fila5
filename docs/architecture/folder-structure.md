@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "folder structure"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura delle Cartelle Coinvolte nel CmsServiceProvider
@@ -45,12 +46,4 @@ discussions: []
 - Isolare la logica di localizzazione e tema all'interno del modulo Cms.
 
 ---
-title: "folder structure"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "folder structure"
-issues: []
-discussions: []
 *Documento generato per allineare la struttura del progetto ai principi di Clean Code.*

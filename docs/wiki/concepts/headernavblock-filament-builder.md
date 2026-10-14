@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "headernavblock filament builder"
 issues: []
 discussions: []
+status: draft
 ---
 
 # HeaderNavBlock - Filament Builder Documentation

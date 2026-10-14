@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "DESIGN COMUNI INDEX"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Design Comuni - Cms Module Documentation Index
@@ -101,15 +102,6 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 3. Migliorare 34 OK a 90%+ (testing visivo)
 
 ---
-
-title: "DESIGN COMUNI INDEX"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "DESIGN COMUNI INDEX"
-issues: []
-discussions: []
 **Data**: 2026-04-03  
 **Stato**: ✅ 63.0% OK  
 **Modulo**: Cms - Content Management System

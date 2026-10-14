@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "legacy roadmap and issues"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Cms Module - Roadmap & Optimization
@@ -17,15 +18,6 @@ discussions: []
 **Status Generale**: ✅ ECCELLENTE
 
 ---
-
-title: "legacy roadmap and issues"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "legacy roadmap and issues"
-issues: []
-discussions: []
 ## ✅ COMPLETEZZA: 90%
 
 **Funzionalità Implementate**:

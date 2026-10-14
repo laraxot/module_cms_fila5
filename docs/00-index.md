@@ -19,50 +19,52 @@ discussions: https://github.com/laraxot/module_cms_fila5/discussions
 
 # Cms Module Documentation
 
+> Nota 2026-10-14: variante storica dell'indice. L'ingresso operativo e' [00-INDEX.md](./00-INDEX.md); lo stato verificato del modulo e' in [README.md](./README.md). Le voci "Core Concepts", "Development Guides", "Frontend Assets" e "Missing Features" qui sotto puntano a `../Meetup/docs/`, cartella che non esiste (`laravel/Modules/Meetup` non c'e' e i file non sono in `Themes/Meetup/docs/`): i link sono annotati come mancanti.
+
 ## Overview
 
 # Cms Module Documentation Index
 
 ## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
+- [Project Purpose](../Meetup/docs/project-purpose.md) _(target mancante, verificato 2026-10-14)_ - Purpose of the CMS system
+- [Business Logic](../Meetup/docs/business-logic.md) _(target mancante, verificato 2026-10-14)_ - Core business requirements
+- [Architecture Overview](../Meetup/docs/architecture-overview.md) _(target mancante, verificato 2026-10-14)_ - Module architecture patterns
 
 ## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
+- [Implementation Plan](../Meetup/docs/implementation-plan.md) _(target mancante, verificato 2026-10-14)_ - Development roadmap
+- [Services Guide](../Meetup/docs/services-guide.md) _(target mancante, verificato 2026-10-14)_ - Service layer documentation
 
 ## Code Quality
 - [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
 
 ## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
+- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) _(target mancante, verificato 2026-10-14)_ - Asset management
+- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) _(target mancante, verificato 2026-10-14)_ - Build process
 
 ## Missing Features & Gaps
-- [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
-- [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
+- [Missing Features](../Meetup/docs/missing-features.md) _(target mancante, verificato 2026-10-14)_ - Identified missing functionality
+- [Gap Analysis](../Meetup/docs/gap-analysis.md) _(target mancante, verificato 2026-10-14)_ - Gap analysis between current and desired state
 # Cms Module Documentation Index
 
 ## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
+- [Project Purpose](../Meetup/docs/project-purpose.md) _(target mancante, verificato 2026-10-14)_ - Purpose of the CMS system
+- [Business Logic](../Meetup/docs/business-logic.md) _(target mancante, verificato 2026-10-14)_ - Core business requirements
+- [Architecture Overview](../Meetup/docs/architecture-overview.md) _(target mancante, verificato 2026-10-14)_ - Module architecture patterns
 
 ## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
+- [Implementation Plan](../Meetup/docs/implementation-plan.md) _(target mancante, verificato 2026-10-14)_ - Development roadmap
+- [Services Guide](../Meetup/docs/services-guide.md) _(target mancante, verificato 2026-10-14)_ - Service layer documentation
 
 ## Code Quality
 - [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
 
 ## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
+- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) _(target mancante, verificato 2026-10-14)_ - Asset management
+- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) _(target mancante, verificato 2026-10-14)_ - Build process
 
 ## Missing Features & Gaps
-- [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
-- [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
+- [Missing Features](../Meetup/docs/missing-features.md) _(target mancante, verificato 2026-10-14)_ - Identified missing functionality
+- [Gap Analysis](../Meetup/docs/gap-analysis.md) _(target mancante, verificato 2026-10-14)_ - Gap analysis between current and desired state
 Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi. Nel lavoro corrente sulla parity Design Comuni, il Cms governa la struttura della homepage di test, mentre la resa visuale viene rifinita nel tema Sixteen.
 
 ## 📚 Design Comuni - Index Completo

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "section component"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Section Component

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "state"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Pattern State in Laravel

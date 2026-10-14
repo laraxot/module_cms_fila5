@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "optimization recommendations 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Raccomandazioni di Ottimizzazione - Modulo Cms

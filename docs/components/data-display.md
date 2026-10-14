@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "data display"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Componenti di Visualizzazione Dati

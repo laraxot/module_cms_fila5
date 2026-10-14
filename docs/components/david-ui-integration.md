@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "david ui integration"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Integrazione David UI

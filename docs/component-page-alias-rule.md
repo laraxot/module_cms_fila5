@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "component page alias rule"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Page Component Alias Rule

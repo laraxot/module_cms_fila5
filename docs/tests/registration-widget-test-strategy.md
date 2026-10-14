@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "registration widget test strategy"
 issues: []
 discussions: []
+status: draft
 ---
 
 # RegistrationWidget Test Strategy - Modulo Cms ✅ IMPLEMENTATO
@@ -261,14 +262,6 @@ L'implementazione del `RegisterTypeWidgetTest` è stata **completata con success
 Il modulo Cms ora ha una **strategia di testing solida** e **replicabile** per altri widget Filament.
 
 ---
-title: "registration widget test strategy"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "registration widget test strategy"
-issues: []
-discussions: []
 **Ultimo aggiornamento**: Gennaio 2025
 **Status**: ✅ PRODUCTION READY
 **Performance**: 9 test / 4.44s / 100% pass rate

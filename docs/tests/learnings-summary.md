@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "learnings summary"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Learnings Summary - Implementation Test Registrazione ✅ RISOLTO
@@ -192,14 +193,5 @@ Il sistema di test è ora **pronto per produzione** con:
 **Status**: 🏆 **MISSION ACCOMPLISHED** - Sistema test completamente funzionale e documentato.
 
 ---
-
-title: "learnings summary"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "learnings summary"
-issues: []
-discussions: []
 *Versione: 2.0 - Helper Functions Centralized*
 *Compatibilità: <nome progetto>, PestPHP 2.x, Laravel 10+*

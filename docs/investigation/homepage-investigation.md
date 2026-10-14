@@ -2,6 +2,10 @@
 type: investigation
 title: "Investigation Homepage Audit & Feature Gap Analysis"
 links: {github_issue: #500}
+status: draft
+updated: 2026-10-08
+tags: [docs, cms, investigation]
+qmd: "investigation: homepage audit cms"
 ---
 # Investigation: Homepage Audit
 

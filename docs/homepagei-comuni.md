@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: homepagei-comuni
 canonical: ../../../Themes/docs/shared-components/homepage-errori-comuni.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/homepage-errori-comuni.md

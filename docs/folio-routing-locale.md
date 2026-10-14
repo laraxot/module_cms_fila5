@@ -11,6 +11,7 @@ related:
   - wiki/concepts/folio-filesystem-routing-no-web-php.md
   - wiki/troubleshooting/folio-route-not-found.md
   - ../../../Themes/Sixteen/docs/wiki/concepts/fo-folio-links-multilingua.md
+status: draft
 ---
 
 # Folio routing e locale (mcamara/laravel-localization)

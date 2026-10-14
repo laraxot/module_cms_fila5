@@ -11,6 +11,7 @@ issues:
 related:
   - ../concepts/folio-filesystem-routing-no-web-php.md
   - ../../../../../Themes/Sixteen/docs/wiki/troubleshooting/route-not-found-view-cache.md
+status: draft
 ---
 
 # RouteNotFoundException — Folio FO

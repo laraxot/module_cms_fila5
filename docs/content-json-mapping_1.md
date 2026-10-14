@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content json mapping 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Mappatura tra Slug e File JSON

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "page management"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione delle Pagine

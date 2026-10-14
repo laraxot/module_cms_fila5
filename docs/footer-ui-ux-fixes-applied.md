@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: footer-ui-ux-fixes-applied
 canonical: ../../../Themes/docs/shared-components/footer-ui-ux-fixes-applied-.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/footer-ui-ux-fixes-applied-.md

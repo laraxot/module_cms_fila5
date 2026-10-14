@@ -11,7 +11,7 @@ discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/363"
 related:
   - ../../../../../../docs/stories/STORY-357-tickets-create-auth-middleware.md
-  - ../architecture/template-theme-cms-runtime-architecture.md
+  - ../../template-theme-cms-runtime-architecture.md
 ---
 
 # Middleware per pagina CMS (JSON)

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "pages content strategy"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Strategia Contenuti Pagine - <main module>

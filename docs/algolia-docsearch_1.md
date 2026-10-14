@@ -88,8 +88,8 @@ For more details, visit the [official Algolia DocSearch documentation.](https://
 ### Versione Incoming
 
 ---
-* [algolia-docsearch.md](laravel/Modules/Chart/docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/Gdpr/docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/Xot/docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/UI/docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/Cms/docs/algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)

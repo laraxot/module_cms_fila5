@@ -15,6 +15,7 @@ related:
   - ../troubleshooting/folio-route-not-found.md
   - ../../../../../Themes/Sixteen/docs/wiki/concepts/fo-folio-routing-zen.md
   - ../../../../../../docs/wiki/memories/folio-no-web-routes-religion.md
+status: draft
 ---
 
 # Folio — routing filesystem, mai web.php FO

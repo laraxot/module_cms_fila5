@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "header"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Componente Header

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "docs directory violation reminder"
 issues: []
 discussions: []
+status: draft
 ---
 
 # CRITICAL: DOCS DIRECTORY ARCHITECTURAL VIOLATION

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "internationalization"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Internazionalizzazione

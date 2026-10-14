@@ -127,6 +127,6 @@ Il blocco può essere utilizzato in vari contesti:
 ## Collegamenti
 
 - [Documentazione Filament Forms](../filament-forms.md)
-- [UI Components](../ui/components.md)
+- [UI Components](../components.md)
 - [Best Practices Navigation](../ui/navigation-guidelines.md)
 - [Accessibilità](../ui/accessibility.md)
