@@ -15,7 +15,7 @@ class PageSlugMiddleware
      * Gruppi gia' applicati dallo stack Folio: una voce `web` nel JSON non ha effetto.
      * Prima faceva `Target class [web] does not exist` (500 per tutti): D17, 2026-10-13.
      */
-    private const GROUPS_ALREADY_APPLIED = ['web'];
+    private const array GROUPS_ALREADY_APPLIED = ['web'];
 
     protected Kernel $kernel;
 
