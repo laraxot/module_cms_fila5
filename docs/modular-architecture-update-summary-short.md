@@ -239,3 +239,8 @@ Questa correzione è **CRITICA** per l'integrità architettuale del sistema.
 **Data implementazione**: Gennaio 2025  
 **Status**: COMPLETATO - VIOLAZIONE DA CORREGGERE  
 **Applicabilità**: UNIVERSALE - tutto il sistema modulare**
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

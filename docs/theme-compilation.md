@@ -226,3 +226,8 @@ npm update
 ## Collegamenti tra versioni di theme_compilation.md
 * [theme_compilation.md](docs/standards/theme_compilation.md)
 * [theme_compilation.md](laravel/modules/cms/docs/theme_compilation.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

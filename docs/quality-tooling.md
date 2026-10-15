@@ -73,3 +73,8 @@ actionlint -color
 
 ## Manutenzione
 - Documentare i refactor guidati da PHPMD in `Modules/Cms/docs/`.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

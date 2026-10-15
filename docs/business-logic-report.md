@@ -348,3 +348,7 @@ Create missing seeders for:
 The SaluteOra project demonstrates a well-architected business logic layer with comprehensive factory support and proper modular separation. The successful generation of 300 test records validates the core business model functionality, while the constraint violations highlight areas for factory refinement and dependency management improvements.
 
 The modular architecture supports scalability and maintainability, with clear separation between business logic (SaluteOra), configuration (Cms), compliance (Gdpr), and infrastructure (User, Xot) concerns.
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

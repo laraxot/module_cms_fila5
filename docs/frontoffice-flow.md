@@ -152,3 +152,7 @@ Questo documento descrive il flusso completo del frontoffice di <main module>, d
 - [Struttura Route e Viste](./struttura-route-e-viste.md)
 - [Layout e Componenti](./struttura-layout-componenti-blade-<nome progetto>.md)
 - [Best Practices Filament](./best-practices/filament.md) 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

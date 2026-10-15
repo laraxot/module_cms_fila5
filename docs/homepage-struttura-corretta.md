@@ -85,3 +85,8 @@ Per verificare che l'implementazione sia corretta:
 4. Non rispettare gli accordi con i partner del progetto
 
 Questo documento serve come riferimento definitivo per il contenuto dell'homepage e deve essere consultato prima di qualsiasi modifica all'interfaccia utente del portale il progetto. 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

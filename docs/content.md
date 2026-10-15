@@ -135,3 +135,8 @@ $page->setTranslation('title', 'en', 'About Us')
      ->setTranslation('title', 'it', 'Chi Siamo')
      ->save();
 ```
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

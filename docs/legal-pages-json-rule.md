@@ -46,3 +46,8 @@ Se i JSON mancano:
    - route `GET /it/privacy`
    - route `GET /it/terms`
 4. Aggiungere Pest coverage per i due slug quando si tocca questa area.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

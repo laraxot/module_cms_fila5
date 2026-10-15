@@ -77,3 +77,8 @@ $response->assertStatus(200);
 ---
 **Status**: In Progress
 **Prossimo step**: Correggere tutti i test per usare `/{locale}` invece di `/`
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
