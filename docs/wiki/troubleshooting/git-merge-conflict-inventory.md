@@ -19,10 +19,10 @@ status: draft
 ## Files
 
 - docs/phpstan-scripts-roadmap.md
-- docs/quality-status-11.md
+- docs/quality-status.md
 - docs/quality-status-2025-11.md
 - docs/roadmap.md
-- docs/roadmap/legacy/legacy-roadmap-3.md
+- docs/roadmap/legacy/legacy-roadmap-content-management.md
 - docs/roadmap/legacy/legacy-roadmap-x.md
 - docs/wiki/README.md
 - docs/wiki/_archive/filament-4x-compatibility.md
