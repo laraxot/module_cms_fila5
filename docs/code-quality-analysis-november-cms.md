@@ -148,7 +148,7 @@ status: draft
 ## 📚 Collegamenti Documentazione
 
 - [PHPMD Report](./phpmd-report.md) - Analisi precedente PHPMD
-- [Filament Integration](./filament_integration.md) - Integrazione Filament
+- [Filament Integration](./filament-integration.md) - Integrazione Filament
 - [Testing Guidelines](./testing.md) - Linee guida testing
 - [Optimization Analysis](./optimization-analysis.md) - Analisi ottimizzazioni
 

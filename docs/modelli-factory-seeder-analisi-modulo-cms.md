@@ -138,7 +138,7 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 
 ### Documentazione Correlata
 - [CMS Architecture](./cms_architecture.md)
-- [Page Management](./page_management.md)
+- [Page Management](./page-management.md)
 - [Menu System](./menu_system.md)
 - [SEO Optimization](./seo_optimization.md)
 
