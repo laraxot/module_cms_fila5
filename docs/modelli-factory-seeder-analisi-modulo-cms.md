@@ -150,8 +150,11 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 9 modelli, sistema CMS completo*
+<<<<<<< .merge_file_0ERvma
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_0m9VdT

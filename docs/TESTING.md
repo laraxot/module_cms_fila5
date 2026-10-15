@@ -72,8 +72,11 @@ Run a specific test file:
 2. **Test Edge Cases**: Include tests for validation errors and edge cases
 3. **Keep Tests Focused**: Each test should verify one specific behavior
 4. **Use Descriptive Names**: Test names should clearly indicate what's being tested
+<<<<<<< .merge_file_exsQKN
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_rvDTY3

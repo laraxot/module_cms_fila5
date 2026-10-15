@@ -14,8 +14,11 @@ status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/implementazione-pagina-servizi.md
+<<<<<<< .merge_file_yEWbkU
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_qE1s18
