@@ -57,3 +57,8 @@ Per ulteriori dettagli su come funziona l'integrazione, consultare la [documenta
 - [Personalizzazione del Tema](./theme-customization.md)
 - [Struttura dei Componenti](./theme-components.md)
 - [Integrazione con Filament](./filament-integration.md) 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

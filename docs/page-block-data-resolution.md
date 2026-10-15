@@ -34,3 +34,8 @@ To ensure that resolved data (like `events` list) persists and is correctly pass
 
 ## Verification
 This fix ensures that when `events.json` specifies a `query`, the `ResolveBlockQueryAction` is executed, the results are merged into the block's data, and this data is available in the Vue/Blade component as `$block->data['events']`.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -34,3 +34,7 @@ This module has comprehensive test coverage with various test types implemented.
 
 ## Status
 All tests are passing and coverage is being maintained.
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

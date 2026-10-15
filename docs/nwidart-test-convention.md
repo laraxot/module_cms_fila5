@@ -1,0 +1,1 @@
+# nwidart Test Convention — Cms\n- Feature tests: laravel/tests/Feature/Modules/Cms/\n- Unit tests: laravel/tests/Unit/Modules/Cms/\n- Integration: laravel/tests/Integration/Modules/Cms/\n- NEVER laravel/Modules/Cms/tests/\n- NEVER flat laravel/tests/Modules/\n- Fixtures PHPStan: laravel/Modules/Cms/app/Fixtures/

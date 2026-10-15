@@ -974,3 +974,8 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 * [bottlenecks.md](../../Media/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../Activity/docs/bottlenecks.md)
 * [bottlenecks.md](../../patient/docs/roadmap/bottlenecks.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

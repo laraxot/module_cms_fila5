@@ -48,3 +48,8 @@ La documentazione storica che dichiarava Cms completamente compliant non e' piu'
 - `app/View/Components/GuestLayout.php`: tipo `view-string` da rendere esplicito;
 - `database/factories/PostFactory.php`: factory riferita a modello `Post` non risolto;
 - `resources/views/Composers/ThemeComposer.php`: firma `Blocks` non piu' allineata.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

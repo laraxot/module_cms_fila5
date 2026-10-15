@@ -63,3 +63,8 @@ The module adheres to:
 - Comprehensive type hints
 - Safe function usage patterns
 - Modern PHP 8.2+ features
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

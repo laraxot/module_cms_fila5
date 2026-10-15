@@ -46,3 +46,8 @@ Il modulo Cms gestisce il rendering dei temi frontend (pub_theme) e la registraz
 - [MCP UI/UX Tema Two](../../themes/two/docs/mcp-ui-ux.md)
 - [MCP UI/UX Modulo UI](../../../laravel/modules/ui/docs/mcp-ui-ux.md)
 - [Status MCP Progetto](../../../../docs/mcp-servers-status.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

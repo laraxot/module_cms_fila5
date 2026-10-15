@@ -141,3 +141,8 @@ Per approfondire il funzionamento tecnico del sistema:
 - [Sistema di Archiviazione dei Contenuti](../laravel/modules/cms/project_docs/content-storage.md) - Documentazione tecnica completa
 - [Gestione dei Blocchi di Contenuto](../laravel/modules/cms/project_docs/content.md) - Come funzionano i blocchi di contenuto
 - [Struttura delle Pagine](../laravel/modules/cms/project_docs/page-resource.md) - Informazioni sulle risorse Page
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

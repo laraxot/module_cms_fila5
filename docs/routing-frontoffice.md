@@ -15,3 +15,8 @@ status: draft
 - Tutte le rotte pubbliche (homepage, pagine, login, prediction markets, ecc.) sono gestite tramite Folio e Volt.
 - Non inserire MAI rotte frontoffice in routes/web.php.
 - Per le regole generali vedere anche ../Xot/docs/routing-best-practices.mdc.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

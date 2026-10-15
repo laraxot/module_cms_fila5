@@ -389,3 +389,8 @@ Queste personalizzazioni avanzate di Filament consentono di creare interfacce am
 - [Documentazione ufficiale di Filament](https://filamentphp.com/docs)
 - [FilamentExamples.com](https://filamentexamples.com)
 - [Repository GitHub di Filament](https://github.com/filamentphp/filament)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
