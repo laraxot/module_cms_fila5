@@ -14,8 +14,11 @@ status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/product-management.md
+<<<<<<< .merge_file_nsYG0x
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_5Tjwsg
