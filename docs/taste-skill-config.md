@@ -55,8 +55,11 @@ Homepage = landing page / redesign (preserve brand, modernize). Direction: edito
 - Use `forest` accent for CTAs / badges, `paper` background, `ink` text
 - One signature element: oversized index numeral / glyph from Italian subject's writing (e.g., `§` or `N°`) at reduced opacity
 - Punctuation kit: 2–3 deliberate marks (accent terminal, stamp badge, index numeral)
+<<<<<<< .merge_file_bJBoZ6
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_X21VBA
