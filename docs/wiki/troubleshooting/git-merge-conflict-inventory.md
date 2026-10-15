@@ -20,7 +20,7 @@ status: draft
 
 - docs/phpstan-scripts-roadmap.md
 - docs/quality-status.md
-- docs/quality-status-2025-11.md
+- docs/quality-status-activity-module-november.md
 - docs/roadmap.md
 - docs/roadmap/legacy/legacy-roadmap-content-management.md
 - docs/roadmap/legacy/legacy-roadmap-x.md
