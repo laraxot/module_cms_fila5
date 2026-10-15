@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Modules\Cms;
 
+use Illuminate\Foundation\Application;
+
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -80,7 +82,7 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @return array<int, class-string<ServiceProvider>>
      */
-    protected function getPackageProviders(\Illuminate\Foundation\Application $app): array
+    protected function getPackageProviders(Application $app): array
     {
         return [
             XotServiceProvider::class,
