@@ -103,6 +103,6 @@ Per il lavoro corrente, la distinzione e' fondamentale:
 
 ### Theme Sixteen
 - [../../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../../Themes/Sixteen/docs/design-comuni/00-index.md)
-- [../../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff-2026-04-02.md](../../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff-2026-04-02.md)
+- [../../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff.md](../../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff.md)
 - [../../../../Themes/Sixteen/docs/design-comuni/work-plan.md](../../../../Themes/Sixteen/docs/design-comuni/work-plan.md)
 - [../../../../Themes/Sixteen/docs/design-comuni/screenshots/homepage-visual-pass-2026-04-02.md](../../../../Themes/Sixteen/docs/design-comuni/screenshots/homepage-visual-pass-2026-04-02.md)
