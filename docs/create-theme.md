@@ -15,8 +15,7 @@ status: draft
   "description": "Custom theme for prediction market platform",
   "version": "1.0.0",
   "type": "prediction-market-theme"
-}
-
+} 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
