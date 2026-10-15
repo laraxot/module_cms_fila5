@@ -495,11 +495,8 @@ php artisan tinker
 - **Verified Against**: laravel/Modules/Cms/ full codebase review
 - **Error Correction**: Aggiunto fabricator come competitor con confronto, laravel/head come pacchetto consigliato
 - **Author**: Visionary analysis (corrected)
-<<<<<<< .merge_file_FNVVD5
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_mm2YJP

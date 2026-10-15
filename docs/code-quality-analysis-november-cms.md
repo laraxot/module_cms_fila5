@@ -169,12 +169,8 @@ Il modulo CMS presenta problemi critici che bloccano l'analisi completa e richie
 
 **Ultimo Aggiornamento:** 24 Novembre 2025
 **Versione Analisi:** 1.0
-<<<<<<< .merge_file_CFFoiL
 **Status:** ❌ CRITICAL - Requires Immediate Fixes
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
-**Status:** ❌ CRITICAL - Requires Immediate Fixes
->>>>>>> .merge_file_77KO1n
