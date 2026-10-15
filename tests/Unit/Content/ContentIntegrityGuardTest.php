@@ -19,7 +19,7 @@ use function Safe\json_encode;
  *  (d) il manifest design-comuni-pages.txt e i JSON `tests.*` devono corrispondersi;
  *  (e) un blocco Blade cancellato o rinominato rompe il test, non la pagina.
  * Criterio di identita' (b): JSON decodificato, ordine delle chiavi degli oggetti ignorato, ordine delle liste e tipi rispettati.
- * Vedi Modules/Cms/docs/stories/2026-10-13-dcp-101-guardie-json-asset-manifest.story.md.
+ * Vedi Modules/Cms/docs/stories/dcp-101-guardie-json-asset-manifest.story.md.
  */
 
 function contentGuardRoot(): string

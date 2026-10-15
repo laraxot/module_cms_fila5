@@ -9,8 +9,8 @@ tags: [docs, cms, folio, json, blocchi, stale, docs-organizer, bmad]
 qmd: "cms docs studio 2026-10-14 Page SushiToJsons pagine JSON tenant Folio ResolvePageAction PageSlugMiddleware blocchi type PageService inesistente"
 related:
   - ../../../../../bmad-output/docs-architecture/module-theme-docs-contract.md
-  - ../../../Fixcity/docs/stories/2026-10-13-dcp-56-organizzazione-docs-moduli-e-temi.story.md
-  - ./2026-10-13-dcp-41-url-to-json-resolver.story.md
+  - ../../../Fixcity/docs/stories/dcp-56-organizzazione-docs-moduli-e-temi.story.md
+  - ./dcp-41-url-to-json-resolver.story.md
 ---
 
 # Docs Cms: studio del codice e correzione degli ingressi

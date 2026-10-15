@@ -23,7 +23,7 @@ tags: [docs, cms]
 
 ## Incidenti del 2026-10-13
 `homepage.json` + `tests.homepage.json` e `risultati-ricerca.json` + `tests.risultati-ricerca.json` nella stessa cartella: due pagine in 500.
-Risolti unificando sul nome canonico. Guardia automatica prevista in `laravel/Themes/Sixteen/docs/bmad/stories/2026-10-13-dcp-09-json-content-integrity-guard.story.md`.
+Risolti unificando sul nome canonico. Guardia automatica prevista in `laravel/Themes/Sixteen/docs/bmad/stories/dcp-09-json-content-integrity-guard.story.md`.
 Contratto del tema: `laravel/Themes/Sixteen/docs/layout-runtime-contract.md`.
 
 ## Sezioni con template alternativo (`tpl`)

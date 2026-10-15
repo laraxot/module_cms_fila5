@@ -14,7 +14,7 @@ status: draft
 ## [2026-10-14] docs | Studio del codice e correzione degli ingressi
 
 - Verificato: le pagine sono file JSON per tenant (`Page` + `SushiToJsons`, 99 in `config/local/fixcity`), servite da rotte Folio del tema; `PageService`, `BlockService`, modello `Block`, `PublishPageAction` non esistono. README sostituito, `00-INDEX.md` con mappa delle directory (righe dell'altra sessione intatte), `wiki/content-architecture.md` marcato `stale`.
-- Story: [2026-10-14-docs-cms-studio](../stories/2026-10-14-docs-cms-studio.story.md). Memoria: [nota di memoria](../../../../../bashscripts/ai/wiki/memories/2026-10-14-docs-cms-lang-tenant-seo-studio.md)
+- Story: [2026-10-14-docs-cms-studio](../stories/docs-cms-studio.story.md). Memoria: [nota di memoria](../../../../../bashscripts/ai/wiki/memories/docs-cms-lang-tenant-seo-studio.md)
 
 ## [2026-06-05] docs | Folio routing — mount() tipizzato + @volt statico
 

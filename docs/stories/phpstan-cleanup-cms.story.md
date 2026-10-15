@@ -7,7 +7,7 @@ created: 2026-10-06
 updated: 2026-10-06
 tags: [cms, phpstan, tests, enum, lang, bmad]
 related:
-  - ./2026-10-06-phpstan-cleanup-cms.dev.md
+  - ./phpstan-cleanup-cms.dev.md
   - ../actions/page-resolution-pipeline.md
 ---
 

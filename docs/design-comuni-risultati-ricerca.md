@@ -28,7 +28,7 @@ Differenze confermate:
 
 ## Documentazione canonica nel tema
 
-- [risultati-ricerca-parity-2026-04-03.md](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/risultati-ricerca-parity-2026-04-03.md)
+- [risultati-ricerca-parity-2026-04-03.md](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/risultati-ricerca-parity.md)
 - [analysis.md](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/screenshots/risultati-ricerca-parity/analysis.md)
 - [reference-risultati-ricerca.png](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/screenshots/risultati-ricerca-parity/reference-risultati-ricerca.png)
 - [local-risultati-ricerca.png](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/screenshots/risultati-ricerca-parity/local-risultati-ricerca.png)

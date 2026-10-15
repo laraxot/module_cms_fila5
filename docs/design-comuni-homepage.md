@@ -41,9 +41,9 @@ La homepage di test ` /it/tests/homepage ` e' orchestrata da due livelli distint
 ## Active references in theme docs
 
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md)
-- [../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff-2026-04-02.md](../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff-2026-04-02.md)
+- [../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff.md](../../../Themes/Sixteen/docs/design-comuni/homepage-structure-diff.md)
 - [../../../Themes/Sixteen/docs/design-comuni/work-plan.md](../../../Themes/Sixteen/docs/design-comuni/work-plan.md)
-- [../../../Themes/Sixteen/docs/design-comuni/bmad-gsd-status-2026-04-03.md](../../../Themes/Sixteen/docs/design-comuni/bmad-gsd-status-2026-04-03.md)
+- [../../../Themes/Sixteen/docs/design-comuni/bmad-gsd-status.md](../../../Themes/Sixteen/docs/design-comuni/bmad-gsd-status.md)
 - [../../../Themes/Sixteen/docs/design-comuni/screenshots/homepage-visual-pass-2026-04-02.md](../../../Themes/Sixteen/docs/design-comuni/screenshots/homepage-visual-pass-2026-04-02.md)
 
 ## Cms-side guidance

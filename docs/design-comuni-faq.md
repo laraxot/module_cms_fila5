@@ -226,7 +226,7 @@ Icone utilizzate:
 ## Verifica corrente 2026-04-03
 
 Verifica rilanciata sui render attuali:
-- [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity-2026-04-03.md)
+- [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity.md)
 - [Structure diff](../../../Themes/Sixteen/docs/pages/domande-frequenti/STRUCTURE-DIFF.md)
 
 Esito aggiornato:
