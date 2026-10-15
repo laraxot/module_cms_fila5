@@ -1,3 +1,15 @@
+---
+title: "laravel folio governance"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "laravel folio governance"
+issues: []
+discussions: []
+status: draft
+---
+
 # Laravel Folio Governance
 
 ## Contesto
@@ -45,3 +57,8 @@ Questo assicura che il router file-based punti sempre alle pagine del tema attiv
 
 - Laravel Folio docs: https://laravel.com/docs/12.x/folio
 - Repository: https://github.com/laravel/folio
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

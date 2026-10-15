@@ -1,3 +1,15 @@
+---
+title: "phpstan scripts fixes"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan scripts fixes"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Level 10 - Scripts Utility Fixes
 
 **Modulo**: Cms  
@@ -5,7 +17,6 @@
 **Status**: 🔄 **IN PROGRESSO** (65.6% completato)
 
 ---
-
 ## 📊 Executive Summary
 
 **Errori iniziali**: 32  
@@ -233,3 +244,8 @@ php -l Modules/Cms/populate_database_comprehensive.php
 **Status**: 🔄 **IN PROGRESSO** (65.6% completato)
 
 **Ultimo aggiornamento**: [DATE]
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

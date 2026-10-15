@@ -1,3 +1,15 @@
+---
+title: "filament 5x compatibility"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament 5x compatibility"
+issues: []
+discussions: []
+status: draft
+---
+
 # Compatibilità Filament 4.x - Modulo Cms
 
 **Data**: 2025-01-27  
@@ -60,3 +72,8 @@ public static function getNavigationIcon(): null|string
 - [Rapporto Aggiornamento Filament 4.x](../../../docs/filament_4x_upgrade_report.md)
 - [Guida Ufficiale Filament 4.x](https://filamentphp.com/docs/4.x/upgrade-guide)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

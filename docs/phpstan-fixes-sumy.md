@@ -1,3 +1,15 @@
+---
+title: "phpstan fixes sumy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes sumy"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Fixes Summary - CMS Module
 
 **Date**: [DATE]
@@ -47,7 +59,7 @@ public function __construct(
 @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
 
 // ❌ Avoid - Don't use concrete implementations
-@property-read \Modules\Quaeris\Models\Profile|null $creator
+@property-read \Modules\Xot\Contracts\ProfileContract|null $creator
 ```
 
 ### 2. Blocks Component Usage
@@ -121,3 +133,7 @@ All fixes verified with:
 2. **Document**: Update component documentation
 3. **Educate**: Share contract usage patterns
 4. **Automate**: Pre-commit hooks for quality
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

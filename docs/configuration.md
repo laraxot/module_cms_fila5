@@ -1,3 +1,14 @@
+---
+title: "configuration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "configuration"
+issues: []
+discussions: []
+---
+
 # Configurazione
 
 Questo documento descrive le opzioni di configurazione disponibili per il modulo CMS.
@@ -156,7 +167,7 @@ if (!$result->isValid()) {
 ## Collegamenti
 
 - [Installazione](installation.md)
-- [Architettura](architecture.md)
+- [Architettura](frontoffice/architecture.md)
 - [API](api.md)
 - [Cache](cache.md)
 
@@ -164,3 +175,8 @@ if (!$result->isValid()) {
 * [configuration.md](docs/configuration.md)
 * [configuration.md](laravel/modules/xot/docs/configuration.md)
 * [configuration.md](laravel/modules/cms/docs/configuration.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

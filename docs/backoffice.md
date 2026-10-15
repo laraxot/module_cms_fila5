@@ -1,3 +1,15 @@
+---
+title: "backoffice"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "backoffice"
+issues: []
+discussions: []
+status: draft
+---
+
 # Documentazione Backoffice il progetto
 
 ## Introduzione
@@ -468,3 +480,8 @@ Tables\Actions\Action::make('close')
 ## Conclusione
 
 Il backoffice basato su Filament fornisce un'interfaccia amministrativa potente e flessibile per la gestione del sistema. La struttura modulare permette di estendere facilmente le funzionalità mantenendo la coerenza dell'interfaccia utente.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "glossary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "glossary"
+issues: []
+discussions: []
+status: draft
+---
+
 # Glossario Tecnico
 
 ## Elementi Strutturali
@@ -102,8 +114,13 @@ Elemento interattivo che:
 - Gestire le performance
 
 ## Collegamenti
-- [Documentazione Componenti](./components/readme.md)
+- [Documentazione Componenti](./components/README.md)
 - [Guida allo Stile](./style/readme.md)
 - [Convenzioni Layout](./layout/readme.md)
 
 [Fonte: sopralerighe.org](https://www.sopralerighe.org/sito-web-glossario-tecnico/)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "register disabled implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "register disabled implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Implementazione Pagina Register Disabled
 
 ## Panoramica
@@ -170,3 +182,8 @@ Per aggiornamenti futuri:
 - [Documentazione Filament Builder](https://filamentphp.com/docs/3.x/forms/fields/builder)
 
 *Implementazione completata: gennaio 2025*
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

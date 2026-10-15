@@ -1,3 +1,15 @@
+---
+title: "task ridurre phpstan suppressioni"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "task ridurre phpstan suppressioni"
+issues: []
+discussions: []
+status: draft
+---
+
 # Task: Ridurre Suppressioni PHPStan Inline - Cms
 
 **Modulo**: Cms
@@ -5,7 +17,6 @@
 **Completamento**: 0%
 
 ---
-
 ## File Coinvolti
 
 | File | Suppressioni | Tipo |
@@ -24,3 +35,8 @@
 - [ ] Tutte le 10 suppressioni analizzate
 - [ ] Almeno 7 risolte senza suppress
 - [ ] PHPStan 0 errori mantenuto
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

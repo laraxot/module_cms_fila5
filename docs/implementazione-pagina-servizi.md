@@ -1,3 +1,15 @@
+---
+title: "implementazione pagina servizi"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "implementazione pagina servizi"
+issues: []
+discussions: []
+status: draft
+---
+
 # Implementazione Pagina Servizi - <main module>
 
 *Documentazione completa dell'implementazione della pagina servizi seguendo la filosofia e architettura <main module>*
@@ -177,7 +189,7 @@ L'implementazione riflette una comprensione profonda delle implicazioni:
 ### Filosofici
 - [Architettura Sistema](../../../../docs/project/architettura_sistema.md)
 - [Rules](../../../../docs/project/rules.md)
-- [README Principale](../../../../docs/project/readme.md)
+- [README Principale](../../../../docs/project/README.md)
 
 ## ✅ Checklist Completamento
 
@@ -251,10 +263,14 @@ L'implementazione riflette una comprensione profonda delle implicazioni:
 - **Emergency Ready**: Supporto 24/7 multilingue
 
 ---
-
 **Data Implementazione**: 15 Gennaio 2025  
 **Versione Documentazione**: 1.0.0  
 **Maintainer**: Team <main module>  
 **Review**: Approvazione stakeholder medici, tecnici, UX
 
 *Implementazione completata seguendo rigorosamente la filosofia <main module>: democratizzazione dell'accesso alla salute orale attraverso tecnologia umana, competente e inclusiva.* 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "PRODUCT ROADMAP"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PRODUCT ROADMAP"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - Product Roadmap
 
 **Module:** Cms  
@@ -6,7 +18,6 @@
 **Status:** In Development
 
 ---
-
 ## Vision Statement
 
 To provide a **flexible content management system** that empowers non-technical users to create, manage, and publish content across the platform without developer intervention.
@@ -100,3 +111,8 @@ To provide a **flexible content management system** that empowers non-technical 
 
 ---
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

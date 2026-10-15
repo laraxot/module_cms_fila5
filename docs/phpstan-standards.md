@@ -1,4 +1,6 @@
 ---
+issues: []
+discussions: []
 title: PHPStan Standards & PHPDoc Guidelines
 type: technical
 tags: [phpstan, phpdoc, type-safety, standards]
@@ -118,11 +120,16 @@ $value = $data['key']; // PHPStan: offsetAccess.nonOffsetAccessible
 
 ## Related Documents
 
-- [Module Architecture](./architecture.md)
-- [Content Blocks System](./content-blocks.md)
+- [Module Architecture](./frontoffice/architecture.md)
+- [Content Blocks System](./blocks/content-blocks.md)
 - [BlockData Implementation](../app/Datas/BlockData.php)
 
 ## Compliance
 
 Last PHPStan Check: 2026-06-10
 Status: ✅ All critical issues resolved
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

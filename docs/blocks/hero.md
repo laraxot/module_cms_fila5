@@ -1,3 +1,14 @@
+---
+title: "hero"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "hero"
+issues: []
+discussions: []
+---
+
 # Hero Block
 
 Il blocco Hero è un componente di primo impatto utilizzato tipicamente nella parte superiore delle pagine per catturare l'attenzione dell'utente.
@@ -65,5 +76,5 @@ Builder::make('content')
 
 - [Documentazione Filament Forms](../filament-forms.md)
 - [Gestione Contenuti](../content.md)
-- [Best Practices UI](../ui/best-practices.md)
+- [Best Practices UI](../best-practices.md)
 - [Accessibilità](../ui/accessibility.md)

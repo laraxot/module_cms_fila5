@@ -1,3 +1,15 @@
+---
+title: "content json mapping"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content json mapping"
+issues: []
+discussions: []
+status: draft
+---
+
 # Mappatura tra Slug e File JSON
 
 ## Indice
@@ -132,3 +144,8 @@ Per personalizzare o estendere questo sistema:
 ## Conclusione
 
 Il sistema di mappatura tra slug e file JSON è un esempio di un'architettura ben progettata che combina la semplicità dei file JSON con la potenza dei modelli Eloquent. Questo approccio offre un modo flessibile e manutenibile per gestire i contenuti delle pagine, consentendo agli sviluppatori di concentrarsi sulla creazione di un'esperienza utente eccellente senza doversi preoccupare della complessità del backend.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

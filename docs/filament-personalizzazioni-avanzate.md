@@ -1,3 +1,15 @@
+---
+title: "filament personalizzazioni avanzate"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament personalizzazioni avanzate"
+issues: []
+discussions: []
+status: draft
+---
+
 # Personalizzazioni Avanzate di Filament in il progetto
 
 Questa guida illustra le tecniche avanzate per personalizzare Filament all'interno del framework il progetto, con particolare attenzione alle funzionalità che migliorano l'esperienza utente e la manutenibilità del codice.
@@ -377,3 +389,8 @@ Queste personalizzazioni avanzate di Filament consentono di creare interfacce am
 - [Documentazione ufficiale di Filament](https://filamentphp.com/docs)
 - [FilamentExamples.com](https://filamentexamples.com)
 - [Repository GitHub di Filament](https://github.com/filamentphp/filament)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

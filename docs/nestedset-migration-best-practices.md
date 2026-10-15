@@ -13,6 +13,7 @@ discussions:
   - "https://github.com/laraxot/module_xot_fila5/discussions/40"
 related:
   - ../../Xot/docs/recursive-relationships-vendor-direct.md
+status: draft
 ---
 
 # NestedSet Migration Best Practices - CMS Module
@@ -315,3 +316,8 @@ return new class extends XotBaseMigration
 - [Documentazione principale](/docs/migration/nestedset-best-practices.md)
 - [CMS Module Architecture](/docs/architecture/cms-module.md)
 - [BaseTreeModel Documentation](/docs/models/base-tree-model.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

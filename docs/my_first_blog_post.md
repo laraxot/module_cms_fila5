@@ -1,10 +1,18 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "my first blog post"
+issues: []
+discussions: []
 extends: _layouts.post
 section: content
 title: My First Blog Post
 date: 2022-06-21
 description: This will be your meta description, make sure it isn't too long
 categories: [writting]
+status: draft
 ---
  
 This is my blog post.
@@ -22,3 +30,7 @@ This is my blog post.
 > Even a blockqute
  
 [And a link](https://www.laravel-news.com/)
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

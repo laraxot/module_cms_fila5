@@ -1,3 +1,15 @@
+---
+title: "content blocks architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content blocks architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architettura Content Blocks - <main module>
 
 ## Panoramica Architetturale
@@ -145,3 +157,8 @@ Builder::make('content_blocks')
 - [Configurazione Builder](../app/Filament/Resources/PageResource.php)
 - [Theme Components](../../../Themes/One/resources/views/components/blocks/)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

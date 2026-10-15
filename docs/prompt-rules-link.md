@@ -1,3 +1,15 @@
+---
+title: "prompt rules link"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "prompt rules link"
+issues: []
+discussions: []
+status: draft
+---
+
 # Regole per i Prompt
 
 Per le regole sui prompt, fare riferimento a [Regole Prompt nel modulo Xot](../../xot/docs/prompt_rules.md)
@@ -10,3 +22,8 @@ Per le regole sui prompt, fare riferimento a [Regole Prompt nel modulo Xot](../.
 ## Collegamenti tra versioni di prompt_rules_link.md
 * [prompt_rules_link.md](../../ui/docs/prompt_rules_link.md)
 * [prompt_rules_link.md](../../lang/docs/prompt_rules_link.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

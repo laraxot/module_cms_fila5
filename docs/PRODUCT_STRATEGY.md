@@ -1,3 +1,15 @@
+---
+title: "PRODUCT STRATEGY"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PRODUCT STRATEGY"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - Product Strategy
 
 **Module:** Cms  
@@ -5,7 +17,6 @@
 **Owner:** Product Team
 
 ---
-
 ## Executive Summary
 
 The CMS module enables business users to manage content independently, reducing developer burden and accelerating content operations.
@@ -83,3 +94,8 @@ Fast content delivery.
 
 ---
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

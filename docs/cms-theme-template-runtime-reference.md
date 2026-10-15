@@ -1,3 +1,15 @@
+---
+title: "cms theme template runtime reference"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cms theme template runtime reference"
+issues: []
+discussions: []
+status: draft
+---
+
 # CMS Theme Template Runtime Reference
 
 ## Quick Reference
@@ -578,3 +590,7 @@ test('page renders with blocks', function () {
 - [Folio Documentation](https://laravel.com/docs/folio)
 - [Volt Documentation](https://laravel.com/docs/volt)
 - [Spatie Laravel Data](https://spatie.be/docs/laravel-data)
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

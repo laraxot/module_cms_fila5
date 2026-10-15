@@ -1,3 +1,15 @@
+---
+title: "folio routing system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio routing system"
+issues: []
+discussions: []
+status: draft
+---
+
 # Sistema di Routing e Localizzazione con Laravel Folio
 
 ## Collegamenti correlati
@@ -195,3 +207,8 @@ Il sistema di routing Folio si integra con il `XotComposer` per:
 1. Aggiungere la configurazione in `laravellocalization.php`
 2. Creare i file di traduzione corrispondenti
 3. Testare le rotte con la nuova lingua 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

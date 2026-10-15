@@ -1,3 +1,15 @@
+---
+title: "template theme cms reference"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "template theme cms reference"
+issues: []
+discussions: []
+status: draft
+---
+
 # Template, Theme, CMS - Runtime Reference
 
 Consolidated reference for real runtime behavior of the frontoffice rendering system.
@@ -88,3 +100,8 @@ For routes such as `/it/events/{slug}`:
 - `chaos-monkey-recovery-playbook.md`
 - `../../../Themes/Meetup/docs/chaos-monkey-theme-recovery-playbook.md`
 - `../../Meetup/docs/chaos-monkey-event-rendering-playbook.md`
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

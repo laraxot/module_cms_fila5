@@ -1,3 +1,15 @@
+---
+title: "themes ui link"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "themes ui link"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collegamenti ai Temi e UI
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Cms e il modulo UI per quanto riguarda i temi.
@@ -31,3 +43,8 @@ Secondo le regole di organizzazione della documentazione:
 Questo documento è collegato bidirezionalmente con [cms-themes-link.md](../../ui/project_docs/cms-themes-link.md) nel modulo UI.
 
 > Aggiorna entrambi i riferimenti se modifichi la documentazione dei temi o aggiungi nuove sezioni.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

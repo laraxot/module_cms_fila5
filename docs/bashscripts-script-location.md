@@ -1,3 +1,15 @@
+---
+title: "bashscripts script location"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "bashscripts script location"
+issues: []
+discussions: []
+status: draft
+---
+
 # Bashscripts Script Location
 
 Gli script eseguibili o di supporto operativo non devono stare dentro `Modules/Cms/`.
@@ -13,3 +25,8 @@ Caso concreto corretto il 2026-03-12:
 
 Riferimenti:
 - [Bashscripts Location Policy](../../Xot/docs/bashscripts-location-policy.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

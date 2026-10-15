@@ -1,3 +1,15 @@
+---
+title: "pestphp best practices"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pestphp best practices"
+issues: []
+discussions: []
+status: draft
+---
+
 # PestPHP Best Practices - Modulo Cms
 
 ## 🎯 Overview

@@ -1,3 +1,15 @@
+---
+title: "block data flow"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "block data flow"
+issues: []
+discussions: []
+status: draft
+---
+
 # Block Data Flow Architecture
 
 This document describes how data flows from the JSON configuration to the final Blade components in the CMS module.
@@ -61,3 +73,8 @@ The CMS module registers a `pub_theme` view namespace that dynamically points to
 
 > [!TIP]
 > Always use `isset()` or null coalescing operator when accessing `$block->data` keys, as the JSON structure might vary between themes.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

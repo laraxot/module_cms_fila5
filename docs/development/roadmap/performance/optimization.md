@@ -1,3 +1,14 @@
+---
+title: "optimization"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "optimization"
+issues: []
+discussions: []
+---
+
 # Ottimizzazione Performance CMS
 
 ## Stato
@@ -113,7 +124,7 @@ Le altre ottimizzazioni sono in fase di implementazione:
 - [Roadmap Principale](../../roadmap.md)
 - [Content Management](../features/content-management.md)
 - [Frontend Integration](../features/frontend-integration.md)
-- [Best Practices Performance](../../../Xot/docs/BEST-PRACTICES.md#performance)
+- [Best Practices Performance](../../../best-practices.md#performance)
 
 ## Collegamenti tra versioni di optimization.md
 * [optimization.md](laravel/modules/xot/docs/roadmap/performance/optimization.md)

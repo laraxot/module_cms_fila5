@@ -1,3 +1,15 @@
+---
+title: "struttura route e viste"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "struttura route e viste"
+issues: []
+discussions: []
+status: draft
+---
+
 # Struttura delle Route e Viste in il progetto
 
 ## Indice
@@ -115,3 +127,8 @@ Per identificare il file corrispondente a un URL specifico:
 **Problema**: Le route e le viste del backoffice (Filament) e del frontoffice sono gestite in modo diverso.
 
 **Soluzione**: Identifica prima se la route appartiene al backoffice o al frontoffice, poi cerca nei percorsi appropriati.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

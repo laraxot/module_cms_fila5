@@ -1,3 +1,15 @@
+---
+title: "USER RESEARCH"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "USER RESEARCH"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - User Research
 
 **Module:** Cms  
@@ -5,7 +17,6 @@
 **Owner:** Product Team
 
 ---
-
 ## Research Goals
 
 1. Understand content creator workflows
@@ -84,3 +95,8 @@ Non-technical users need onboarding.
 
 ---
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

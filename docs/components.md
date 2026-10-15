@@ -1,3 +1,15 @@
+---
+title: "components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "components"
+issues: []
+discussions: []
+status: draft
+---
+
 # Componenti del CMS
 
 ## Introduzione
@@ -43,7 +55,7 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 
 ## Collegamenti Bidirezionali
 
-- [README](readme.md) - Documentazione principale del modulo
+- [README](README.md) - Documentazione principale del modulo
 - [DaisyUI Componenti](daisyui-componenti.md) - Componenti basati su DaisyUI
 - [Componenti Blocchi](componenti-blocchi-contenuto.md) - Componenti per i blocchi di contenuto
 - [Componenti Header](componenti-header.md) - Componenti per l'header
@@ -52,7 +64,7 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 - [Custom Components](custom-components.md) - Creazione di componenti personalizzati
 
 ## Vedi Anche
-- [Modulo UI](../ui/docs/readme.md) - Componenti UI riutilizzabili
+- [Modulo UI](../../UI/docs/README.md) - Componenti UI riutilizzabili
 - [Namespace Componenti](namespace-componenti-blocchi.md) - Convenzioni di namespace
 - [Standard UI](standard_ui_components.md) - Standard per i componenti UI
 
@@ -70,3 +82,8 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 * [components.md](laravel/modules/ui/docs/themes/components.md)
 * [components.md](laravel/modules/cms/docs/components.md)
 * [components.md](laravel/themes/one/docs/components.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

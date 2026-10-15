@@ -1,3 +1,15 @@
+---
+title: "volt folio esempio"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "volt folio esempio"
+issues: []
+discussions: []
+status: draft
+---
+
 # Esempio Pratico: Laravel Volt con Folio
 
 Questa documentazione fornisce un esempio pratico di implementazione di Laravel Volt insieme a Laravel Folio, basato sul repository di esempio ufficiale.
@@ -276,3 +288,7 @@ class ContactFormTest extends TestCase
 - [Documentazione Laravel Volt](https://livewire.laravel.com/project_docs/volt)
 - [Documentazione Laravel Folio](https://github.com/laravel/folio)
 - [Livewire](https://livewire.laravel.com) 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

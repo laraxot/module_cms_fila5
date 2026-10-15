@@ -1,3 +1,15 @@
+---
+title: "SPRINT PLANNING"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "SPRINT PLANNING"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - Sprint Planning
 
 **Module:** Cms  
@@ -5,7 +17,6 @@
 **Version:** 1.0.0
 
 ---
-
 ## Sprint Goal
 
 Launch core CMS page builder with content creation and publishing capabilities.
@@ -64,3 +75,8 @@ Launch core CMS page builder with content creation and publishing capabilities.
 
 ---
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "FILAMENT RESOURCE GUIDELINES"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "FILAMENT RESOURCE GUIDELINES"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module Filament Resource Guidelines
 
 ## Extension Patterns
@@ -138,3 +150,7 @@ All Cms resources must be tested to ensure:
 - [LangBaseResource Documentation](../../Lang/docs/filament/lang-base-resource.md)
 - [Multilingual Best Practices](../../Lang/docs/translation-best-practices.md)
 - [Filament Resource Guidelines](../../Xot/docs/filament-resource-rules.md)
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "architecture"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "architecture"
+issues: []
+discussions: []
+status: draft
+---
+
 # Architettura Frontend
 
 ## Panoramica
@@ -107,8 +119,8 @@ I blocchi sono l'unità base di contenuto. Ogni blocco:
 ## Documentazione Correlata
 
 - [Gestione dei Temi](../themes/readme.md)
-- [Componenti UI](../components/readme.md)
-- [Configurazione Blocchi](../blocks/readme.md)
+- [Componenti UI](../components/README.md)
+- [Configurazione Blocchi](../blocks/README.md)
 - [Ottimizzazione Performance](../performance/readme.md)
 
 ## Collegamenti tra versioni di architecture.md

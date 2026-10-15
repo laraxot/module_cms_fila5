@@ -1,3 +1,15 @@
+---
+title: "folio pages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio pages"
+issues: []
+discussions: []
+status: draft
+---
+
 # Struttura delle Pagine con Laravel Folio nel Tema One
 
 Questo documento descrive come sono organizzate e gestite le pagine utilizzando Laravel Folio nel tema One del progetto il progetto.
@@ -210,3 +222,8 @@ Per le pagine dinamiche, utilizzare l'interfaccia amministrativa Filament per cr
 * [folio-pages.md](laravel/modules/cms/project_docs/folio-pages.md)
 * [folio-pages.md](laravel/themes/one/project_docs/folio-pages.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

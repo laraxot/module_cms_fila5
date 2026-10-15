@@ -1,3 +1,15 @@
+---
+title: "nested resources"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "nested resources"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - Nested Resource Implementation Guide
 
 ## Overview
@@ -208,3 +220,7 @@ Following the documented approach in `Modules/UI/docs/filament/nested-resource.m
 - Content caching strategies
 - Optimized queries for hierarchical content
 - Efficient handling of large content datasets
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

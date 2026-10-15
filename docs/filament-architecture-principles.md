@@ -1,3 +1,15 @@
+---
+title: "filament architecture principles"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament architecture principles"
+issues: []
+discussions: []
+status: draft
+---
+
 # Applicazione dei Principi di Architettura Filament ai Moduli
 
 ## Introduzione
@@ -292,3 +304,8 @@ Dove appropriato, implementare sistemi di versioning come nel modulo Notify, per
 ## Conclusione
 
 Applicando i principi architetturali osservati nel pacchetto `filament-spatie-laravel-database-mail-templates`, possiamo creare un'esperienza utente coerente e funzionale in tutti i moduli del progetto LaravelPizza, mantenendo però la specificità e le esigenze di ciascun modulo.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

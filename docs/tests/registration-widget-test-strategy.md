@@ -1,3 +1,15 @@
+---
+title: "registration widget test strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "registration widget test strategy"
+issues: []
+discussions: []
+status: draft
+---
+
 # RegistrationWidget Test Strategy - Modulo Cms ✅ IMPLEMENTATO
 
 ## 🎯 Overview Strategico

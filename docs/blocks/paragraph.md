@@ -1,3 +1,14 @@
+---
+title: "paragraph"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "paragraph"
+issues: []
+discussions: []
+---
+
 # Paragraph Block
 
 Il blocco Paragraph è un componente per la gestione di contenuti testuali formattati con un editor rich-text.
@@ -68,5 +79,5 @@ Builder::make('content')
 
 - [Documentazione Filament Forms](../filament-forms.md)
 - [Gestione Contenuti](../content.md)
-- [Best Practices SEO](../best-practices/seo.md)
+- [Best Practices SEO](../packages/seo.md)
 - [Accessibilità](../ui/accessibility.md)

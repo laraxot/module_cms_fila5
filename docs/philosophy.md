@@ -13,6 +13,7 @@ discussions:
   - "https://github.com/laraxot/module_xot_fila5/discussions/40"
 related:
   - ../../Xot/docs/recursive-relationships-vendor-direct.md
+status: draft
 ---
 
 # Modulo Cms - Filosofia, Religione, Politica, Zen
@@ -150,3 +151,8 @@ Questo componente incarna lo zen dell'auto-scoperta, creando automaticamente la 
 - [Documentazione Cms Blocks System](./content-blocks-system.md)
 - [Documentazione Cms Architecture](./architecture/)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

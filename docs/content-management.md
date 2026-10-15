@@ -1,3 +1,14 @@
+---
+title: "content management"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "content management"
+issues: []
+discussions: []
+---
+
 # Sistema di Gestione Contenuti
 
 ## Introduzione
@@ -93,8 +104,8 @@ laravel/
 Questa documentazione è parte del sistema di documentazione di il progetto. Per dettagli specifici sui singoli componenti, consultare la documentazione dei rispettivi moduli.
 
 ## Collegamenti Bidirezionali
-- [README](readme.md) - Documentazione principale del modulo
-- [Architettura](architecture.md) - Architettura del sistema CMS
+- [README](README.md) - Documentazione principale del modulo
+- [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
 - [Gestione Pagine](page-management.md) - Sistema di gestione pagine
 - [Storage](content-storage.md) - Archiviazione contenuti
 - [Mapping JSON](content_json_mapping.md) - Mappatura JSON
@@ -114,3 +125,8 @@ Questa documentazione è parte del sistema di documentazione di <main module>. P
 * [content-management.md](laravel/modules/cms/project_docs/content-management.md)
 * [content-management.md](laravel/modules/cms/project_docs/roadmap/features/content-management.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "daisyui componenti"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "daisyui componenti"
+issues: []
+discussions: []
+status: draft
+---
+
 # DaisyUI: Componenti e Implementazione in il progetto
 
 Questo documento descrive l'utilizzo di [DaisyUI](https://daisyui.com/) nel progetto il progetto, fornendo linee guida per sfruttare al meglio questa libreria di componenti per Tailwind CSS.
@@ -623,5 +635,8 @@ Utilizzo:
 - [Filament + DaisyUI Integration](https://filamentphp.com/project_docs/panels/themes)
 
 ---
-
 Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo. 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

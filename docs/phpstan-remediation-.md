@@ -1,3 +1,15 @@
+---
+title: "phpstan remediation "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan remediation "
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Remediation Plan – 23 Dic 2025
 
 ## Contesto
@@ -50,3 +62,8 @@
 - Introdurre un documento unico “CMS Data Generators” che descriva come generare contenuti fake senza script duplicati.
 - Standardizzare l’uso delle `Data` (es. `FooterData`, `HeadernavData`) come fonte unica per i composer, evitando logica duplicata.
 - Automatizzare, via bashscript quality, un check che impedisca script PHP fuori da `app/` senza namespace/autoload nel modulo CMS.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

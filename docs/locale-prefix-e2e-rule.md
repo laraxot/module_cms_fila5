@@ -1,3 +1,15 @@
+---
+title: "locale prefix e2e rule"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "locale prefix e2e rule"
+issues: []
+discussions: []
+status: draft
+---
+
 # Locale Prefix E2E Rule
 
 ## Regola
@@ -30,3 +42,8 @@ Perche' verifica lo stato corrente del test runner, non il comportamento del pre
 - testare esplicitamente `/it`, `/en`, `/de`;
 - cablare il middleware che imposta la locale prima del rendering Folio;
 - non delegare la risoluzione della locale a blocchi Blade sparsi.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

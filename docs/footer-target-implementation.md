@@ -1,3 +1,15 @@
+---
+title: "footer target implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "footer target implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Footer Target Implementation - Cms Module
 
 **Stato**: ✅ Completato  
@@ -43,3 +55,7 @@ Supporto completo per italiano, inglese e tedesco.
 - [x] Multilingua
 - [x] Responsive
 - [x] Accessibile
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

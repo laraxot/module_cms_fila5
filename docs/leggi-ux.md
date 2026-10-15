@@ -1,3 +1,15 @@
+---
+title: "leggi ux"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "leggi ux"
+issues: []
+discussions: []
+status: draft
+---
+
 # Leggi di User Experience (UX)
 
 Questo documento riassume le principali leggi di UX basate sul sito [Laws of UX](https://lawsofux.com/) e spiega come applicarle al progetto il progetto. L'obiettivo è migliorare l'esperienza utente dell'applicazione seguendo principi consolidati di design e psicologia cognitiva.
@@ -544,3 +556,7 @@ Per implementare efficacemente queste leggi di UX nel progetto il progetto, segu
 - [Don't Make Me Think](https://www.sensible.com/dmmt.html) di Steve Krug
 - [The Design of Everyday Things](https://www.nngroup.com/books/design-everyday-things-revised/) di Don Norman
 - [Universal Principles of Design](https://www.rockpublishing.com/products/universal-principles-of-design-revised-and-updated) di William Lidwell 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
