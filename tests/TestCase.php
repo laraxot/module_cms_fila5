@@ -80,7 +80,7 @@ abstract class TestCase extends XotBaseTestCase
     /**
      * @return array<int, class-string<ServiceProvider>>
      */
-    protected function getPackageProviders(mixed $app): array
+    protected function getPackageProviders(\Illuminate\Foundation\Application $app): array
     {
         return [
             XotServiceProvider::class,
