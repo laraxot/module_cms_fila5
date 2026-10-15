@@ -28,7 +28,7 @@ riferimenti con `rg`.
 
 ## Stato verificato e mappa delle directory (2026-10-14)
 
-Come il Cms serve davvero le pagine (JSON per tenant in `config/<tenant>/database/content/pages/`, rotte Folio del tema, blocchi con `type`, `ResolvePageAction`, `PageSlugMiddleware`) e cosa NON esiste (Services `PageService`/`BlockService`, modello `Block`, `PublishPageAction`) e' in [README.md](./README.md), con prove. Story di questo lavoro: [2026-10-14-docs-cms-studio](./stories/2026-10-14-docs-cms-studio.story.md).
+Come il Cms serve davvero le pagine (JSON per tenant in `config/<tenant>/database/content/pages/`, rotte Folio del tema, blocchi con `type`, `ResolvePageAction`, `PageSlugMiddleware`) e cosa NON esiste (Services `PageService`/`BlockService`, modello `Block`, `PublishPageAction`) e' in [README.md](./README.md), con prove. Story di questo lavoro: [2026-10-14-docs-cms-studio](./stories/docs-cms-studio.story.md).
 
 | Directory | Ruolo | File .md |
 |---|---|---|
@@ -82,7 +82,7 @@ La radice di `docs/` ha 576 file .md (DOC-004/006 aperti: non spostati). `00-ind
 - Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.
 
 ## Story URL -> JSON (2026-10-13)
-- [DCP-41 da URL a JSON: strumento e regola](stories/2026-10-13-dcp-41-url-to-json-resolver.story.md)
+- [DCP-41 da URL a JSON: strumento e regola](stories/dcp-41-url-to-json-resolver.story.md)
 
 --- BMAD + second brain note (agent AI update 2026-10-14) ---
 - [second brain: kp-174d15a58ff94901b2b0df0d86b8907a] Design Comuni parity attiva
