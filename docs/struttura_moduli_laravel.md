@@ -14,8 +14,11 @@ status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/struttura-moduli-laravel.md
+<<<<<<< .merge_file_MEDZ9h
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_Pq2NAy

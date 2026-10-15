@@ -61,8 +61,11 @@ in loco (forward-only, nessuna rimozione), ma non è la fonte dati del modello.
 
 Nessuna nuova migration creata per Cms: tutti i modelli senza migration sono Sushi-backed e il gap è
 legittimo e documentato.
+<<<<<<< .merge_file_3odCk4
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_msyAgj

@@ -14,8 +14,11 @@ status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/quality-status-11-Modules.md
+<<<<<<< .merge_file_0dzJet
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_3rgDav

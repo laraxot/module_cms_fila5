@@ -14,8 +14,11 @@ tags: [merge, duplicato, case-only]
 # Documento unificato
 
 Questo file era un duplicato esatto che differiva solo per maiuscole/minuscole, in violazione della regola no-case-only-variations. Il contenuto canonico si trova in [changelog.md](./changelog.md).
+<<<<<<< .merge_file_Xbkkj2
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_fRroWh
