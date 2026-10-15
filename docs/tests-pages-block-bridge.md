@@ -64,3 +64,8 @@ La direzione corretta resta:
 - niente tipi di blocco pagina-specifici
 - niente rollback Git
 - convergenza progressiva verso HTML e resa visiva del reference Design Comuni
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

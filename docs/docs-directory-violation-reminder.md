@@ -39,3 +39,8 @@ If this directory exists, it should be:
 3. DELETED after migration completion
 
 Last verified: 2025-08-22
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

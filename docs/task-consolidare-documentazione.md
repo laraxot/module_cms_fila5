@@ -26,3 +26,8 @@ status: draft
 - [ ] Rimossi file duplicati
 - [ ] Naming conventions rispettate (lowercase-with-hyphens)
 - [ ] README.md con indice aggiornato
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

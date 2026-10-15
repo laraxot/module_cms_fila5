@@ -140,3 +140,8 @@ Se `page.blade.php` non riceve `container0`/`slug0` (es. da `[slug].blade.php`),
 - [template-theme-cms-reference](template-theme-cms-reference.md)
 - [chaos-monkey-recovery-playbook](chaos-monkey-recovery-playbook.md)
 - [chaos-monkey-event-rendering-playbook](../../Meetup/docs/chaos-monkey-event-rendering-playbook.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

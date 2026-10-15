@@ -68,3 +68,8 @@ status: draft
 - [Performance](packages/performance.md)
 - [SEO](packages/seo.md)
 - [Analytics](packages/analytics.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

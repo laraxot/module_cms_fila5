@@ -73,3 +73,8 @@ ls -la laravel/Modules/Cms/database/
 
 This cleanup was part of a project-wide database folder structure audit to enforce lowercase naming conventions across all modules.
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -244,3 +244,8 @@ php -l Modules/Cms/populate_database_comprehensive.php
 **Status**: 🔄 **IN PROGRESSO** (65.6% completato)
 
 **Ultimo aggiornamento**: [DATE]
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

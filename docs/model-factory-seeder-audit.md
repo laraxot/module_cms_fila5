@@ -33,3 +33,8 @@ Seeder: `database/seeders/CmsDatabaseSeeder.php`
 
 ## Likely non-business-critical
 - `HasBlocks` (behavioral helper). Documented as infra; exclude from factory/seeding.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

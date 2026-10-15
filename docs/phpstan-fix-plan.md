@@ -374,3 +374,7 @@ Modules/Cms/
 - Type annotations need improvement
 - Consider using Spatie Laravel Data for DTOs
 - Static methods can be converted to scopes for better testability
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

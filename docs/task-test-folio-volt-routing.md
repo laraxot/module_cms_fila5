@@ -35,3 +35,8 @@ Il FolioVoltServiceProvider gestisce routing multi-lingua con Folio ma mancano t
 - [ ] 6+ test per routing Folio
 - [ ] Test per traduzione content blocks
 - [ ] Tutti i test passano
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

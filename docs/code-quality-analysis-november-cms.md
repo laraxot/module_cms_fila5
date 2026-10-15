@@ -148,7 +148,7 @@ status: draft
 ## 📚 Collegamenti Documentazione
 
 - [PHPMD Report](./phpmd-report.md) - Analisi precedente PHPMD
-- [Filament Integration](./filament_integration.md) - Integrazione Filament
+- [Filament Integration](./filament-integration.md) - Integrazione Filament
 - [Testing Guidelines](./testing.md) - Linee guida testing
 - [Optimization Analysis](./optimization-analysis.md) - Analisi ottimizzazioni
 
@@ -170,3 +170,7 @@ Il modulo CMS presenta problemi critici che bloccano l'analisi completa e richie
 **Ultimo Aggiornamento:** 24 Novembre 2025
 **Versione Analisi:** 1.0
 **Status:** ❌ CRITICAL - Requires Immediate Fixes
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -347,3 +347,8 @@ Seguendo questa guida e rispettando le convenzioni di il progetto, potrai implem
 - [Documentazione di Livewire](https://livewire.laravel.com/docs)
 - [Repository di esempio su GitHub](https://github.com/LaravelDaily/Filament-Form-On-Top-Of-Resource)
 - [FilamentExamples.com](https://filamentexamples.com)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -130,3 +130,8 @@ Ora posso procedere a:
 **Data implementazione**: Gennaio 2025  
 **Status**: COMPLETATO  
 **Applicabilità**: UNIVERSALE - tutto il progetto <nome progetto>
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

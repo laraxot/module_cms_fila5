@@ -34,3 +34,8 @@ npm run copy
 
 `build` genera il manifest del tema.
 `copy` lo pubblica nella directory realmente letta dal renderer.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

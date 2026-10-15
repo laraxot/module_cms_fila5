@@ -138,7 +138,7 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 
 ### Documentazione Correlata
 - [CMS Architecture](./cms_architecture.md)
-- [Page Management](./page_management.md)
+- [Page Management](./page-management.md)
 - [Menu System](./menu_system.md)
 - [SEO Optimization](./seo_optimization.md)
 
@@ -150,3 +150,8 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 9 modelli, sistema CMS completo*
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

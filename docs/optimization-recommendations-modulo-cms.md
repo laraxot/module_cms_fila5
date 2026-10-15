@@ -335,3 +335,8 @@ php artisan cms:seo-audit
 - [SEO Best Practices](seo/)
 
 *
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

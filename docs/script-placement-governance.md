@@ -33,3 +33,8 @@ Il loro posto corretto e' una sottocartella di `bashscripts/` nel repository roo
 ## Regola collegata
 
 Se uno script standalone e' nel posto sbagliato, il fix corretto non e' solo tipizzarlo: bisogna anche ricollocarlo sotto `bashscripts/`.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

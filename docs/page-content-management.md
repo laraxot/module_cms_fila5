@@ -27,3 +27,8 @@ Questo documento fornisce una panoramica del sistema di gestione dei contenuti d
 
 ## Note
 Questa documentazione contiene solo una panoramica generale. Per i dettagli completi, consultare la documentazione del modulo Cms. 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

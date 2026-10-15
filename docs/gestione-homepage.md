@@ -129,3 +129,8 @@ Per i dettagli tecnici sulla gestione dei contenuti, consultare:
 - [Architettura del Frontoffice](./architettura_frontoffice.md)
 - [Linee Guida per la Documentazione](./linee-guida-documentazione.md)
 - [Standard di Codice](./standard-codice.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

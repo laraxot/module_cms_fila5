@@ -67,3 +67,8 @@ Il componente puo' esporre `...$data` alla view per comodita', ma i valori canon
 - `data`
 
 devono restare quelli costruiti internamente da `Page`.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

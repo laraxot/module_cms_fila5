@@ -110,3 +110,8 @@ Modifica il file `header.blade.php` in questa posizione per personalizzare l'hea
 - [Convenzioni Naming](../../../../docs/project/standards/file_naming_conventions.md) - Standard naming
 - [Documentazione Laravel](https://laravel.com/docs) - Documentazione ufficiale
 - [Best Practices](https://laravel.com/project_docs/11.x/best-practices) - Best practices Laravel
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

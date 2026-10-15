@@ -47,3 +47,8 @@ Quando aggiungi nuovi componenti Filament, assicurati di:
 * [user-link.md](laravel/modules/lang/project_docs/user-link.md)
 * [user-link.md](laravel/modules/cms/project_docs/user-link.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

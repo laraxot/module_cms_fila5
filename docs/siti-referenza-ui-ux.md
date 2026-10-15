@@ -182,3 +182,7 @@ Per ogni sito, vengono valutati i seguenti aspetti:
 L'analisi di questi siti di riferimento offre una base solida per il design UI/UX di il progetto. Identificando le migliori pratiche nel settore sanitario e applicando i principi di design moderno, possiamo creare un'interfaccia che sia al contempo funzionale, accessibile e piacevole da utilizzare.
 
 L'integrazione con gli strumenti già selezionati (DaisyUI, Tailwind CSS) e l'applicazione dei principi di design (Refactoring UI) permetteranno di creare un'esperienza utente coerente e di alta qualità. 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
