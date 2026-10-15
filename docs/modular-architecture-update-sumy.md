@@ -1,5 +1,3 @@
-<<<<<<< .merge_file_vMQCAe
-=======
 ---
 type: note
 tags: [documentation]
@@ -11,7 +9,6 @@ discussions: []
 title: "Rimando a modular_architecture_update_summary.md"
 description: "Documento unificato: il contenuto canonico vive in modular_architecture_update_summary.md."
 status: merged
->>>>>>> .merge_file_UzRcpq
 ---
 type: note
 tags: [documentation]
@@ -27,15 +24,9 @@ status: merged
 
 # Documento unificato
 
-<<<<<<< .merge_file_vMQCAe
 Questo file era un duplicato esatto. Il contenuto canonico si trova in [modular_architecture_update_summary.md](./modular-architecture-update-summary.md).
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
-# Documento unificato
-
-Questo file era un duplicato esatto. Il contenuto canonico si trova in [modular_architecture_update_summary.md](./modular-architecture-update-summary.md).
->>>>>>> .merge_file_UzRcpq

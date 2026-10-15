@@ -95,11 +95,8 @@ Non-technical users need onboarding.
 
 ---
 
-<<<<<<< .merge_file_sdO1tX
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_F6C5NE

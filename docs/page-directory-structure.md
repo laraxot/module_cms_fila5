@@ -63,11 +63,8 @@ Questi alberi rompono DRY, aumentano il debito di routing e duplicano la respons
 - [cms-driven-pages-system.md](./cms-driven-pages-system.md)
 - [folio_routing_system.md](./folio-routing-system.md)
 - [../../Themes/Sixteen/docs/page-directory-structure.md](../../../Themes/Sixteen/docs/page-directory-structure.md)
-<<<<<<< .merge_file_QkegJx
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_oH8RcU

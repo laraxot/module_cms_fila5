@@ -184,12 +184,8 @@ curl -I http://localhost:8000/en/contacts
 - Add logging for locale detection debugging
 
 ---
-<<<<<<< .merge_file_LiKz7j
 **Resolution Summary**: Successfully eliminated Serializable Closure TypeError by removing problematic inline closures from Folio middleware configuration and implementing direct locale setting in page templates. All routes now function correctly without serialization conflicts.
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
-**Resolution Summary**: Successfully eliminated Serializable Closure TypeError by removing problematic inline closures from Folio middleware configuration and implementing direct locale setting in page templates. All routes now function correctly without serialization conflicts.
->>>>>>> .merge_file_ziKiiI
