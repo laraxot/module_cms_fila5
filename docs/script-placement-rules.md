@@ -75,11 +75,8 @@ ModuleName/
 
 - 2026-03-12: Rule established after discovering misplaced scripts causing PHPStan errors
 - Files moved: `generate_test_data.php`, `populate_database_comprehensive.php`
-<<<<<<< .merge_file_cGIMZe
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_l1tZzp

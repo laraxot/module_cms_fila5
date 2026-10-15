@@ -17,11 +17,8 @@ Risoluzione deterministica per singolo blocco: lato non vuoto, superset, metadat
 | File | Blocchi | Decisioni | SHA-256 prima → dopo |
 |---|---:|---|---|
 | `laravel/Modules/Cms/docs/wiki/_archive/filament-4x-compatibility.md` | 1 | shorter_tiebreak=1 | `ad4d86c76511` → `81b15ed04b66` |
-<<<<<<< .merge_file_EswW32
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_YuWCre

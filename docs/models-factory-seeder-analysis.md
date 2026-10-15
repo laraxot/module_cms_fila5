@@ -117,11 +117,8 @@ Il modulo CMS è ben strutturato con tutte le factory necessarie. Un modello (Mo
 
 ---
 *Analizzato da: Sistema di analisi automatica moduli*
-<<<<<<< .merge_file_PenC7w
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_GLNzbg
