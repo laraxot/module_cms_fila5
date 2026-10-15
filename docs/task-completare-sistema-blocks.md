@@ -47,3 +47,8 @@ Il sistema blocks e' funzionante con 7 tipi (Paragraph, Navigation, Newsletter, 
 - [ ] Ogni block con componente Blade corrispondente
 - [ ] Integrazione con Filament Builder
 - [ ] Test per BlockData con nuovi tipi
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

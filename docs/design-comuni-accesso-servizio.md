@@ -34,3 +34,8 @@ curl -f http://192.168.1.40:8000/it/tests/accesso-servizio
 ```
 
 La verifica browser deve inoltre controllare H1, sezioni SPID/CIE, asset SVG, console e overflow sui breakpoint 375, 768 e 1440.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

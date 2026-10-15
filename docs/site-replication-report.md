@@ -344,3 +344,8 @@ The site replication is 85% complete. All major pages have been created and matc
 
 *Report Generated: [DATE]*
 *
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

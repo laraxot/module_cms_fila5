@@ -82,3 +82,8 @@ Non pubblicare percentuali “di adozione DaisyUI” senza uno script di audit c
 - [Documentazione ufficiale](https://daisyui.com/docs/)
 - Mapping PA / Tailwind / Filament: [design-comuni-class-mapping](../../../Themes/Sixteen/docs/wiki/entities/design-comuni-class-mapping.md)
 - Sintesi **tema Sixteen** (overlay): [daisyui-pro-contro-metriche](../../../Themes/Sixteen/docs/wiki/concepts/daisyui-pro-contro-metriche.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

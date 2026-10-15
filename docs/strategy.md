@@ -16,3 +16,8 @@ status: draft
 - **Agnosticismo**: Il modulo non deve dipendere da logiche di business specifiche di altri moduli.
 - **Qualità**: Conformità rigorosa a PHPStan Level 10.
 - **Riuso**: Ogni azione deve essere atomica e riutilizzabile.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

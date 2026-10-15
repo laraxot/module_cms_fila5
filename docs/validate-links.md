@@ -170,3 +170,8 @@ jobs:
 **Ultimo aggiornamento**: Gennaio 2025
 **Versione**: 1.0
 **Integrazione**: Sistema CI/CD e pre-commit hooks
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

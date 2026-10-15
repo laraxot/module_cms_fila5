@@ -391,3 +391,7 @@ class UserFormTest extends TestCase
 - [Livewire Documentation](https://livewire.laravel.com)
 - [Laravel Documentation](https://laravel.com/docs)
 - [Articolo Originale di Moinuddin Chowdhury](https://medium.com/@moinuddinchowdhury/how-to-create-web-application-using-laravel-volt-the-magical-way-2145071046b2) 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

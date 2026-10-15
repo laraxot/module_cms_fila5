@@ -271,3 +271,7 @@ La vera sfida sarà bilanciare gli elementi innovativi del design moderno con le
 
 ---
 *Documento basato su analisi di [Ingigni.com](https://www.ingigni.com/blog/siti-belli/) e integrato con le linee guida di il progetto.* 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

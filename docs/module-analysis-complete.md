@@ -254,3 +254,8 @@ Il modulo Cms è il sistema di gestione contenuti di <main module>, fornendo mod
 **Stato**: In Progress
 **Responsabile**: Team Sviluppo <main module>
 **Prossima Revisione**: Gennaio 2025
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

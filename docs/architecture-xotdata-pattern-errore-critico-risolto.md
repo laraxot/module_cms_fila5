@@ -190,3 +190,7 @@ LoginWidgetTest.php → Widget Livewire
 ```
 
 *Ultimo aggiornamento: Dicembre 2024 - Analisi completa e correzione pattern* 
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

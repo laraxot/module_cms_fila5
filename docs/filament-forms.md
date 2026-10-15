@@ -385,3 +385,8 @@ class PageResource extends XotBaseResource
 ## Conclusione
 
 L'utilizzo esclusivo dei widget Filament per i form rappresenta una scelta architetturale che offre numerosi vantaggi in termini di consistenza, manutenibilità e velocità di sviluppo. Seguendo le best practices e sfruttando le funzionalità avanzate di Filament, è possibile creare form robusti, tipizzati e facilmente manutenibili.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
