@@ -14,7 +14,6 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
-use Modules\Xot\Providers\XotServiceProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use Tests\Modules\Xot\XotBaseTestCase;
 
@@ -85,7 +84,7 @@ abstract class TestCase extends XotBaseTestCase
     protected function getPackageProviders(Application $app): array
     {
         return [
-            XotServiceProvider::class,
+            ...parent::getPackageProviders($app),
             UserServiceProvider::class,
             CmsServiceProvider::class,
         ];
