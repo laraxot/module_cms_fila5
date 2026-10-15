@@ -50,8 +50,11 @@ The module was already compliant or had been fixed in a previous session. No cha
 - Monitor for any future type-related issues
 - Maintain current PHPStan Level 10 configuration
 - Continue with Activity module compliance
+<<<<<<< .merge_file_iVDbhU
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_xIrtF6

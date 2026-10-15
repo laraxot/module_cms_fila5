@@ -13,8 +13,11 @@ status: draft
 # Test2025 08 28
 
 _File vuoto, nessun contenuto._
+<<<<<<< .merge_file_zch3XY
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_wzdaXR

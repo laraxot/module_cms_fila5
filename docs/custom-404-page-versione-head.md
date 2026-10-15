@@ -51,8 +51,12 @@ Depending on where your site is hosted, you may need to configure your server to
 * [custom-404-page.md](custom-404-page.md)
 * [custom-404-page.md](custom-404-page.md)
 * [custom-404-page.md](custom-404-page.md)
+<<<<<<< .merge_file_vdHpJ9
 * [custom-404-page.md](custom-404-page.md)
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+* [custom-404-page.md](custom-404-page.md)
+>>>>>>> .merge_file_1Or8xS

@@ -105,8 +105,11 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 **Data**: 2026-04-03  
 **Stato**: ✅ 63.0% OK  
 **Modulo**: Cms - Content Management System
+<<<<<<< .merge_file_YqxQjm
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_MjWGVc

@@ -69,8 +69,12 @@ Questo report riassume quali pagine `tests.<slug>` sono pronte per parity visual
 - segnalazione-04-conferma: json=yes, runtime=ok, overall=11%, gate=BLOCK
 - segnalazione-area-personale: json=yes, runtime=ok, overall=6%, gate=BLOCK
 
+<<<<<<< .merge_file_oSTs0P
 - Theme summary: [laravel/Themes/Sixteen/docs/design-comuni/batch-structure-audit.md](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/batch-structure-audit.md)
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+- Theme summary: [laravel/Themes/Sixteen/docs/design-comuni/batch-structure-audit.md](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/batch-structure-audit.md)
+>>>>>>> .merge_file_ISQH60
