@@ -20,6 +20,11 @@ Questa verifica elenca i file del modulo `Cms` che differiscono solo per maiusco
 - `Modules/Cms/app/Filament/Blocks`: `Block.php.up`, `block.php.up`
 - `Modules/Cms/app/Filament/Resources`: `PageResource.fabri`, `pageresource.fabri`
 - `Modules/Cms/app/Http/Livewire/Modal/Panel`: `Destroy.need_wire_modal`, `destroy.need_wire_modal`
-- `Modules/Cms/docs`: `TESTING.md`, `testing.md`
+- `Modules/Cms/docs`: `testing.md`, `testing.md`
 
 **Azione consigliata**: rinominare o rimuovere i duplicati mantenendo la versione PascalCase/SnakeCase già adottata dal progetto, quindi aggiornare eventuali riferimenti nei sorgenti e nelle docs.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

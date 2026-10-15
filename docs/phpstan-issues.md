@@ -105,3 +105,8 @@ Per progetti esistenti con molti errori, è consigliabile generare un file basel
 ```
 
 Questo creerà un file `phpstan-baseline.neon` che ignora gli errori esistenti, permettendo di concentrarsi solo sui nuovi errori.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

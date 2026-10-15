@@ -50,3 +50,8 @@ Per i controlli visuali ripetibili il tooling canonico non e piu in `/tmp` ma qu
 Nota CMS aggiornata:
 - i residui attivi della homepage sono quasi tutti nel tema Sixteen
 - il confronto del CTA `VAI ALLA PAGINA` e tracciato in [readmore-analysis.md](/var/www/_bases/base_fixcity_fila5/laravel/Themes/Sixteen/docs/design-comuni/screenshots/homepage-parity/readmore-analysis.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

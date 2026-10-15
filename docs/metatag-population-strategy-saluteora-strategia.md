@@ -158,3 +158,8 @@ I metatag vengono utilizzati nel componente `Modules\Cms\app\View\Components\Met
 - [Traduzioni Tema DE](../../../Themes/One/lang/de/)
 
 *Implementazione completata: gennaio 2025*
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

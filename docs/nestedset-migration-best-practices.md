@@ -316,3 +316,8 @@ return new class extends XotBaseMigration
 - [Documentazione principale](/docs/migration/nestedset-best-practices.md)
 - [CMS Module Architecture](/docs/architecture/cms-module.md)
 - [BaseTreeModel Documentation](/docs/models/base-tree-model.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

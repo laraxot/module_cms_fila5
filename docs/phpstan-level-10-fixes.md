@@ -508,3 +508,8 @@ Update CLAUDE.md with:
 **Maintained by**: Claude Code
 **Last Verified**: [DATE]
 **PHPStan Level**: 10 (Maximum)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

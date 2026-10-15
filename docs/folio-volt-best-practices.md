@@ -113,3 +113,7 @@ middleware(['auth', 'verified']);
 
 ## Date
 2025-11-29
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
