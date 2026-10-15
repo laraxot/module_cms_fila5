@@ -161,8 +161,11 @@ Filament offre una vasta gamma di componenti Blade riutilizzabili. Di seguito i 
 * [filament-components.md](laravel/modules/cms/docs/best-practices/filament-components.md)
 * [filament-components.md](laravel/modules/cms/docs/filament-components.md)
 * [filament-components.md](laravel/docs/rules/filament-components.md)
+<<<<<<< .merge_file_lH0ilV
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_THaHdW

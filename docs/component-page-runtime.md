@@ -45,8 +45,11 @@ Questo mantiene il componente pagina estendibile e permette al tema di overridea
 - [component-page-alias-rule.md](./component-page-alias-rule.md)
 - [layout-runtime-contract.md](./layout-runtime-contract.md)
 - [../../Themes/Sixteen/docs/component-page-runtime.md](../../../Themes/Sixteen/docs/component-page-runtime.md)
+<<<<<<< .merge_file_Cn8Z63
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_cWOXGW

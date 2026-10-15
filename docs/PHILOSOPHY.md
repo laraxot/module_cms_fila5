@@ -623,8 +623,11 @@ The Cms module is a **lean, composable content management system** embedded in L
 **Author**: CMS Module Analysis  
 **Date**: 2026-09-06  
 **Status**: Production-ready (draft/versioning pending)
+<<<<<<< .merge_file_ySER3T
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_JuE3U2

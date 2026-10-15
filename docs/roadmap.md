@@ -299,8 +299,11 @@ Cms Module
 ---
 
 *Questa roadmap è specifica per il modulo Cms e viene aggiornata regolarmente in base ai progressi e alle nuove esigenze.*
+<<<<<<< .merge_file_elQg2P
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_Pafrc1
