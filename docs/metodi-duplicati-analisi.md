@@ -8,14 +8,17 @@ qmd: "metodi duplicati analisi"
 issues: []
 discussions: []
 module: theme
-topic: metodi-duplicati-analisi
+topic: metodi_duplicati_analisi
 canonical: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
 status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/METODI_DUPLICATI_ANALISI.md
+<<<<<<< .merge_file_sNjOfC
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+=======
+>>>>>>> .merge_file_yAMkoa
