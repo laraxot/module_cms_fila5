@@ -42,3 +42,8 @@ Decisione applicativa:
 - Prima correggere i contratti reali tra classi.
 - Poi correggere le factory legacy o disaccoppiarle da modelli inesistenti.
 - Solo dopo valutare eventuali affinamenti di PHPDoc.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

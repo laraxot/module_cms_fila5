@@ -59,3 +59,8 @@ Se il contenuto della homepage deve essere modificato, è necessario:
 1. Aggiornare questo documento
 2. Aggiornare il file JSON corrispondente in `/var/www/html/<directory progetto>/laravel/config/local/<directory progetto>/database/content/pages/1.json`
 3. Verificare che le modifiche siano correttamente visualizzate in tutte le versioni (mobile, tablet, desktop)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

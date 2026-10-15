@@ -107,3 +107,8 @@ try {
 ## Performance
 
 L'impatto sulle performance è minimo, circa 700μs per richiesta. Questo è un compromesso accettabile rispetto al miglioramento della sicurezza e della leggibilità del codice.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

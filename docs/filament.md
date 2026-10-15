@@ -122,3 +122,8 @@ Le pagine custom devono essere collocate in `app/Filament/Pages`:
 * [filament.md](laravel/modules/job/docs/filament.md)
 * [filament.md](laravel/modules/activity/docs/filament.md)
 * [filament.md](laravel/modules/cms/docs/filament.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

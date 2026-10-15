@@ -292,3 +292,7 @@ If you encounter issues with the new workflow:
 **Status**: ✅ ACTIVE
 
 **Owner**: iFlow CLI
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -294,3 +294,8 @@ storage/     # Directory storage tema
 - [Theme Development Guidelines](./theme_development_guidelines.md)
 
 *Riorganizzazione completata: gennaio 2025*
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

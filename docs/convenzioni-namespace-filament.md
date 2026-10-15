@@ -114,3 +114,8 @@ Section::make('Anteprima')
 
 ---
 > **Nota**: Questo documento è linkato anche dal README di Xot per garantire coerenza tra i moduli.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

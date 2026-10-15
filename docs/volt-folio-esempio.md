@@ -288,3 +288,8 @@ class ContactFormTest extends TestCase
 - [Documentazione Laravel Volt](https://livewire.laravel.com/project_docs/volt)
 - [Documentazione Laravel Folio](https://github.com/laravel/folio)
 - [Livewire](https://livewire.laravel.com) 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

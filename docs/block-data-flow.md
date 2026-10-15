@@ -73,3 +73,8 @@ The CMS module registers a `pub_theme` view namespace that dynamically points to
 
 > [!TIP]
 > Always use `isset()` or null coalescing operator when accessing `$block->data` keys, as the JSON structure might vary between themes.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

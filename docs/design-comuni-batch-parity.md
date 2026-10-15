@@ -33,3 +33,8 @@ Il report dettagliato vive nel tema, perche' e' il tema il punto dove convergono
 - Se una pagina risulta `READY_FOR_CSS_JS`, il lavoro successivo va nel tema Sixteen.
 - Se una pagina risulta `HTML_DELTA`, prima va riallineata la struttura o il JSON Cms.
 - Se una pagina risulta `LOCAL_500`, la priorita' e' sbloccare il rendering locale prima di parlare di parity visiva.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

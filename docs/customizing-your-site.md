@@ -89,3 +89,8 @@ class Foo extends bar
 * [customizing-your-site.md](laravel/modules/tenant/project_docs/it/customizing-your-site.md)
 * [customizing-your-site.md](laravel/modules/cms/project_docs/customizing-your-site.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -23,3 +23,8 @@ Il modulo "module_cms" è un pacchetto aggiuntivo per Laravel che fornisce funzi
 * [introduction.md](laravel/vendor/spatie/laravel-data/docs/validation/introduction.md)
 * [introduction.md](laravel/modules/lang/docs/introduction.md)
 * [introduction.md](laravel/modules/cms/docs/introduction.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

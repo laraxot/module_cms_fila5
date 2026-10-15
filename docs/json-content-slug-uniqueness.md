@@ -29,3 +29,8 @@ Contratto del tema: `laravel/Themes/Sixteen/docs/layout-runtime-contract.md`.
 ## Sezioni con template alternativo (`tpl`)
 `<x-section slug="header" tpl="design-comuni" />` cerca la vista `pub_theme::components.sections.<slug>.<tpl>` (default `v1`; il footer del sito usa `full`). Una sezione nuova = un file `sections/<slug>.json`
 con `blocks.it/en[].data` e un template `sections/<slug>/<tpl>.blade.php` che unisce i `data` dei blocchi come fanno gli altri template. Usato da `layouts/design-comuni` del tema Sixteen (2026-10-13).
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

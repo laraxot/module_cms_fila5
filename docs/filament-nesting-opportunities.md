@@ -288,3 +288,8 @@ Nessuna funzionalità critica - il modulo Cms funziona bene con relation manager
 
 ---
 **Prossima Revisione**: [DATE]
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

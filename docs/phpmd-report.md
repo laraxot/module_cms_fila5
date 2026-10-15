@@ -31,6 +31,11 @@ status: draft
 5. **Rieseguire PHPMD** dopo ogni step per monitorare la riduzione delle violazioni.
 
 ## follow-up suggeriti
-- Creare task dedicati in `todo_application.md` per ciascuna macro-area (naming, test, coupling).
+- Creare task dedicati in `todo-application.md` per ciascuna macro-area (naming, test, coupling).
 - Integrare PHPMD nel CI (read-only) per evitare regressioni.
 - Collegare i fix ai relativi documenti (es. `./architecture-xotdata-pattern.md`, `./filament-integration.md`).
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -133,3 +133,7 @@ All fixes verified with:
 2. **Document**: Update component documentation
 3. **Educate**: Share contract usage patterns
 4. **Automate**: Pre-commit hooks for quality
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

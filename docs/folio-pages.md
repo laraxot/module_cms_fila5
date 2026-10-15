@@ -222,3 +222,8 @@ Per le pagine dinamiche, utilizzare l'interfaccia amministrativa Filament per cr
 * [folio-pages.md](laravel/modules/cms/project_docs/folio-pages.md)
 * [folio-pages.md](laravel/themes/one/project_docs/folio-pages.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

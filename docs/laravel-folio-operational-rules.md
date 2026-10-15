@@ -57,3 +57,8 @@ Non usare il Blade page come luogo dove compensare middleware mancanti.
 ### 7. Route cache
 
 Folio va considerato compatibile con la route cache del framework. Non va escluso dai workflow di deploy.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

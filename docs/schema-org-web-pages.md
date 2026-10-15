@@ -374,3 +374,8 @@ This complements the `<link rel="alternate" hreflang="...">` tags in the page he
 - https://schema.org/SearchResultsPage
 - `laravel/Modules/Cms/docs/content-blocks-system.md`
 - `laravel/Modules/Lang/docs/laravel-localization-complete-guide.md`
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

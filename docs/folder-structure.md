@@ -47,3 +47,8 @@ status: draft
 
 ---
 *Documento generato per allineare la struttura del progetto ai principi di Clean Code.*
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

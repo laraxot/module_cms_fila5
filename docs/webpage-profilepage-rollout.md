@@ -43,3 +43,8 @@ Standardizzare lo schema pagina (`schema.org`) a livello globale, non solo a liv
 
 - test Pest su mapping type pagina;
 - validazione presenza JSON-LD nei contesti principali.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

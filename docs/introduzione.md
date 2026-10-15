@@ -33,3 +33,8 @@ Dipende un po da tutti i Moduli.
 ## Collegamenti tra versioni di introduzione.md
 * [introduzione.md](laravel/modules/chart/docs/introduzione.md)
 * [introduzione.md](laravel/modules/cms/docs/introduzione.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

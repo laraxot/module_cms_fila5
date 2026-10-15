@@ -34,3 +34,8 @@ ShowPageContent renderizza i content_blocks tramite il componente \Modules\UI\Vi
 che a sua volta renderizza la lista dei blocchi tramite il ciclo che è dentro /Modules/UI/resources/views/components/render/blocks/v1.blade.php
 
 La pagina Themes/Sixteen/resources/views/pages/pages/[slug].blade.php serve a renderizzare le altre pagine. Bisogna visitare l'url /it/pages/slug
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

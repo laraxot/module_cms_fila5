@@ -33,3 +33,8 @@ status: draft
 php artisan test --filter=Cms --compact
 ./vendor/bin/phpstan analyze Modules/Cms --level=10
 ```
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

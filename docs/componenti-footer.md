@@ -20,3 +20,8 @@ Questo documento fornisce un collegamento alla documentazione dettagliata del co
 
 ## Utilizzo nel Progetto
 Il componente Footer è utilizzato come elemento di chiusura in tutte le pagine del sito, fornendo navigazione secondaria organizzata in categorie, informazioni di contatto e link ai social media. Per maggiori dettagli sulla sua implementazione e configurazione, consultare la documentazione del modulo CMS. 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

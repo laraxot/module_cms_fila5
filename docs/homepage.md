@@ -142,3 +142,8 @@ Per una documentazione più approfondita sull'architettura della homepage, consu
 - [Gestione Contenuti](content-management.md) - Sistema di gestione contenuti
 - [Sezioni](sections.md) - Gestione delle sezioni
 - [Layout](struttura-layout-componenti-blade-<nome progetto>.md) - Struttura dei layout
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

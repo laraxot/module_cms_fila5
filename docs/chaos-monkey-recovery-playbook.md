@@ -100,3 +100,8 @@ When failure is broad:
 - `cms-theme-template-runtime-architecture.md`
 - `template-theme-cms-reference.md`
 - `../../../Themes/Meetup/docs/chaos-monkey-theme-recovery-playbook.md`
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

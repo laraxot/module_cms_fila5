@@ -175,3 +175,8 @@ Prima di implementare modifiche ai file JSON:
 ## Conclusione
 
 Rispettare la struttura dei blocchi di contenuto e utilizzare solo componenti esistenti è fondamentale per garantire il corretto funzionamento del sistema di gestione dei contenuti di il progetto. In caso di dubbio, è sempre meglio esaminare i file JSON esistenti per comprendere la struttura e i componenti disponibili.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

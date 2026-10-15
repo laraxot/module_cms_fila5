@@ -222,3 +222,8 @@ The Cms module has **30 PHPStan errors** that need to be resolved to achieve Lev
 **Estimated Completion**: 2 weeks
 **Priority**: High (30 errors affecting core functionality)
 **Impact**: Critical UI and authentication components
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
