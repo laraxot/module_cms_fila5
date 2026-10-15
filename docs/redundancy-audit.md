@@ -30,11 +30,8 @@ Suggested cleanup order:
 1. Move PHP classes out of view/resource trees; keep one Composer class under `app/`.
 2. Decide whether `docs/source` or `app/docs/source` is canonical.
 3. Consolidate component block aliases after checking Blade include names.
-<<<<<<< .merge_file_ZghStR
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_jLEL0b

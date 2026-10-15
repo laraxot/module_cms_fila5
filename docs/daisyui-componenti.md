@@ -635,12 +635,8 @@ Utilizzo:
 - [Filament + DaisyUI Integration](https://filamentphp.com/project_docs/panels/themes)
 
 ---
-<<<<<<< .merge_file_NIPXie
 Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo. 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
-Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo. 
->>>>>>> .merge_file_CeU27L

@@ -111,11 +111,8 @@ To provide a **flexible content management system** that empowers non-technical 
 
 ---
 
-<<<<<<< .merge_file_yNkzzY
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_xarWw8
