@@ -1,4 +1,11 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "algolia docsearch"
+issues: []
+discussions: []
 title: Algolia DocSearch
 description: Configure Algolia DocSearch with the Jigsaw docs starter template
 extends: _layouts.documentation
@@ -71,9 +78,14 @@ If you'd like to customize the styling of the search results, Algolia exposes cu
 For more details, visit the [official Algolia DocSearch documentation.](https://community.algolia.com/docsearch/what-is-docsearch.html)
 
 ## Collegamenti tra versioni di algolia-docsearch.md
-* [algolia-docsearch.md](laravel/Modules/Chart/project_docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/Gdpr/project_docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/Xot/project_docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/UI/project_docs/algolia-docsearch.md)
-* [algolia-docsearch.md](laravel/Modules/Cms/project_docs/algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
+* [algolia-docsearch.md](algolia-docsearch.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

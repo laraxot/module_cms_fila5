@@ -1,3 +1,15 @@
+---
+title: "cms driven pages system"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cms driven pages system"
+issues: []
+discussions: []
+status: draft
+---
+
 # CMS-Driven Pages System
 
 ## Overview
@@ -187,3 +199,8 @@ Per tutto il resto: **Plain Blade**!
 - [Componenti Blocchi Contenuto](./componenti-blocchi-contenuto.md)
 - [Content Management](./content-management.md)
 - [Folio Volt Architecture](../meetup/docs/folio-volt-filament-architecture.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

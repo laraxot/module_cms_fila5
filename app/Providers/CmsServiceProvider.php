@@ -6,6 +6,7 @@ namespace Modules\Cms\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
+use Modules\Cms\View\Components\Page;
 use Modules\Xot\Actions\File\FixPathAction;
 use Modules\Xot\Datas\XotData;
 use Modules\Xot\Providers\XotBaseServiceProvider;
@@ -25,6 +26,10 @@ class CmsServiceProvider extends XotBaseServiceProvider
     public function boot(): void
     {
         parent::boot();
+
+        // Keep the canonical CMS contract deterministic in optimized/native
+        // bundles where filesystem component discovery may be unavailable.
+        Blade::component('page', Page::class);
 
         $this->xot = XotData::make();
 

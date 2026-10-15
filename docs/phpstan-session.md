@@ -1,3 +1,15 @@
+---
+title: "phpstan session"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan session"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Session 2026-03-02 - Correzioni Cms, UI, Tenant, Geo, Blog
 
 ## Correzioni implementate
@@ -32,3 +44,8 @@
 ## Riferimenti
 - [phpstan-fixes](phpstan-fixes.md)
 - [block-data-flow](block-data-flow.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

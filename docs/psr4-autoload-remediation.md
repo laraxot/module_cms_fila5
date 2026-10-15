@@ -1,3 +1,15 @@
+---
+title: "psr4 autoload remediation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "psr4 autoload remediation"
+issues: []
+discussions: []
+status: draft
+---
+
 # PSR-4 Autoload Remediation (2026-03-09)
 
 ## Contesto
@@ -14,3 +26,8 @@ Warning autoload PSR-4 su file test Feature/CMS causati da pattern testuali ambi
 
 Intervento di igiene autoload: migliora signal/noise in `composer dump-autoload`.
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

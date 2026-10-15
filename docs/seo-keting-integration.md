@@ -1,3 +1,15 @@
+---
+title: "seo keting integration"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "seo keting integration"
+issues: []
+discussions: []
+status: draft
+---
+
 # SEO & Marketing Integration - Module Roadmap
 
 **Date**: February 6, 2026
@@ -5,7 +17,6 @@
 **Priority**: High
 
 ---
-
 ## Executive Summary
 
 This document outlines how SEO optimization, multilingual support, inbound marketing, and AdSense integration should be distributed across modules following Laraxot architecture principles.
@@ -656,3 +667,7 @@ Each module has clear responsibilities and uses Queueable Actions for business l
 
 **Author**: iFlow CLI
 **Status**: Ready for Implementation
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

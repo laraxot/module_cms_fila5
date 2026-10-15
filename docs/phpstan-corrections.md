@@ -1,3 +1,15 @@
+---
+title: "phpstan corrections"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan corrections"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Corrections - CMS Module
 
 ## Fixed Issues
@@ -49,3 +61,8 @@ private const BASE_URL = 'https://maps.googleapis.com/maps/api/directions/json';
 ## Test Corrections (Pest)
 - Nei test, la connessione `user` usa SQLite in-memory: la tabella `users` deve esistere (altrimenti le factory falliscono con `no such table: users`).
 - Evitare assert fragili su stringhe hardcoded di localizzazione (il sito funziona): preferire stringhe realmente presenti nel markup o key/valori di traduzione attuali.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

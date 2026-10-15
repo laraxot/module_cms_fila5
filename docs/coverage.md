@@ -1,3 +1,15 @@
+---
+title: "coverage"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "coverage"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module Test Coverage
 
 ## Overview
@@ -22,3 +34,7 @@ This module has comprehensive test coverage with various test types implemented.
 
 ## Status
 All tests are passing and coverage is being maintained.
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

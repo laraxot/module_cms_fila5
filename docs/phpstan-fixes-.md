@@ -1,3 +1,15 @@
+---
+title: "phpstan fixes "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fixes "
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Fixes for Cms Module (2025-12-30)
 
 This document outlines the errors found by PHPStan in the `Cms` module and the plan to resolve them.
@@ -31,3 +43,8 @@ These errors indicate conflicting `use` statements or duplicated class/trait imp
 4.  **Verify:** Run `phpstan` on the specific file to ensure the error is resolved.
 5.  **Quality Checks:** Once all PHPStan errors are clear for the file, run `phpmd` and `phpinsights` on it.
 6.  **Commit:** Once all files in the module are fixed and verified, commit the changes.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

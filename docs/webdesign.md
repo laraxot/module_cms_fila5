@@ -1,3 +1,15 @@
+---
+title: "webdesign"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "webdesign"
+issues: []
+discussions: []
+status: draft
+---
+
 # Web Design: Un Approccio Olistico
 
 ## Introduzione
@@ -112,3 +124,8 @@ Il web design moderno è un'arte che combina tecnologia, estetica e psicologia. 
 ## Note Finali
 
 Questo documento è un work in progress e verrà aggiornato regolarmente con nuove scoperte e best practices. La documentazione dettagliata per ogni aspetto è disponibile nelle rispettive sottosezioni.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,14 @@
+---
+title: "create theme vue"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "create theme vue"
+issues: []
+discussions: []
+---
+
 # Creazione di un Tema con Vue
 
 ## Introduzione
@@ -234,4 +245,4 @@ npm run copy
 Se preferisci utilizzare un altro approccio, puoi consultare le guide per:
 - [Creazione di un tema con Volt, Folio e Filament](create_theme_volt_folio_filament.md)
 - [Creazione di un tema con React](create_theme_react.md)
-- [Creazione di un tema con Laravel](create_theme.md)
+- [Creazione di un tema con Laravel](../create_theme.md)

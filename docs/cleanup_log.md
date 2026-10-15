@@ -1,3 +1,15 @@
+---
+title: "cleanup log"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "cleanup log"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module Cleanup - 2025-12-18
 
 ## Removed Files
@@ -10,3 +22,8 @@ The following files were identified as broken standalone scripts (incorrect path
 1. They contained incorrect paths (`require_once __DIR__.'/laravel/vendor/autoload.php'`) which do not exist.
 2. They violated the rule regarding loose scripts in the module root.
 3. They caused PHPStan errors (level 10) due to mixed types and manual bootstrapping.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

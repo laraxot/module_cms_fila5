@@ -1,3 +1,15 @@
+---
+title: "packages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "packages"
+issues: []
+discussions: []
+status: draft
+---
+
 # Pacchetti del Modulo Cms
 
 ## Pacchetti Utilizzati
@@ -5,9 +17,9 @@
 ### Core
 - [laraxot/module_xot_fila5](../xot/docs/packages.md) - Modulo base per funzionalità comuni
 - [laraxot/module_ui](../ui/docs/packages.md) - Componenti UI e temi
-- [laraxot/module_tenant_fila5](../tenant/docs/packages.md) - Gestione multi-tenant
-- [laraxot/module_user_fila5](../user/docs/packages.md) - Gestione utenti e permessi
-- [laraxot/module_lang_fila5](../lang/docs/packages.md) - Gestione lingue e traduzioni
+- [laraxot/module_tenant_fila5](../../Tenant/docs/packages.md) - Gestione multi-tenant
+- [laraxot/module_user_fila5](../../User/docs/packages.md) - Gestione utenti e permessi
+- [laraxot/module_lang_fila5](../../Lang/docs/packages.md) - Gestione lingue e traduzioni
 
 ### Development
 - [spatie/laravel-package-tools](https://github.com/spatie/laravel-package-tools) - Strumenti per lo sviluppo di pacchetti Laravel
@@ -56,3 +68,8 @@
 - [Performance](packages/performance.md)
 - [SEO](packages/seo.md)
 - [Analytics](packages/analytics.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

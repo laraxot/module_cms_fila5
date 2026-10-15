@@ -1,3 +1,15 @@
+---
+title: "design comuni faq"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "design comuni faq"
+issues: []
+discussions: []
+status: draft
+---
+
 # Design Comuni - Domande Frequenti (FAQ)
 
 ## Panoramica
@@ -207,7 +219,6 @@ Icone utilizzate:
 - `#it-search` - Icona search input
 
 ---
-
 **Ultimo Aggiornamento**: 2026-04-03  
 **Stato**: ✅ 90% Completato  
 **Responsabile**: AI Agent Team
@@ -215,7 +226,7 @@ Icone utilizzate:
 ## Verifica corrente 2026-04-03
 
 Verifica rilanciata sui render attuali:
-- [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity-2026-04-03.md)
+- [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity.md)
 - [Structure diff](../../../Themes/Sixteen/docs/pages/domande-frequenti/STRUCTURE-DIFF.md)
 
 Esito aggiornato:
@@ -226,3 +237,8 @@ Esito aggiornato:
 Implicazione pratica:
 - per questa pagina non e ancora corretto parlare di parity ottenibile con soli CSS/JS
 - prima serve riallineare struttura e wrapper effettivamente renderizzati dal tema
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

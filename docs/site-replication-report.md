@@ -1,9 +1,20 @@
+---
+title: "site replication report"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "site replication report"
+issues: []
+discussions: []
+status: draft
+---
+
 # Site Replication Report: Marco Sottana TechPlanner
 
 ## Status: COMPLETED
 
 ---
-
 ## Objective
 
 Replicate the target website https://lightseagreen-dogfish-560272.hostingersite.com/ into our local Laravel environment at http://127.0.0.1:8000/it with improvements in SEO, GDPR compliance, and inbound marketing capabilities.
@@ -333,3 +344,8 @@ The site replication is 85% complete. All major pages have been created and matc
 
 *Report Generated: [DATE]*
 *
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

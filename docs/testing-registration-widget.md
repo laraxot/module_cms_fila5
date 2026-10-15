@@ -1,5 +1,14 @@
 ---
+title: "testing registration widget"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "testing registration widget"
+issues: []
+discussions: []
 description: Testing strategy for RegistrationWidget
+status: draft
 ---
 
 # Testing the RegistrationWidget (Filament / Livewire)
@@ -225,3 +234,8 @@ After implementare le migliorie descritte sopra, tutti i test passano con succes
 
 ---
 Last update: [DATE]
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

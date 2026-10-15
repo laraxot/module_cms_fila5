@@ -1,3 +1,15 @@
+---
+title: "blade logic separation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "blade logic separation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Blade Logic Separation: Content Resolution
 
 ## The Problem
@@ -166,3 +178,8 @@ Do not add dedicated props for each route depth such as:
 - `slug1`
 
 The route context belongs in the `data` array so the component can support future nested patterns without changing its constructor signature. If the view needs direct access, the component may spread `...$data` into the final view params while keeping internal keys authoritative.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

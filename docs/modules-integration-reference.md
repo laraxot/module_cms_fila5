@@ -1,3 +1,15 @@
+---
+title: "modules integration reference"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "modules integration reference"
+issues: []
+discussions: []
+status: draft
+---
+
 # Modules Integration Reference
 
 ## Overview
@@ -749,3 +761,7 @@ Blade::anonymousComponentNamespace($namespace, $path);
 6. Test functionality
 
 This reference provides a comprehensive understanding of how all modules integrate with each other and with the theme system in the LaravelPizza project.
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

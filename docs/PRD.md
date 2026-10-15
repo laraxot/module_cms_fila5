@@ -1,3 +1,15 @@
+---
+title: "PRD"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "PRD"
+issues: []
+discussions: []
+status: draft
+---
+
 # Product Requirements Document (PRD) - Cms Module
 
 **Module**: Cms
@@ -6,7 +18,6 @@
 **Author**: Product Team
 
 ---
-
 ## Document Control
 
 | Version | Date | Author | Changes |
@@ -497,10 +508,10 @@ CREATE TABLE cms_navigation (
 - [Filament Documentation](https://filamentphp.com/docs)
 
 ### 12.3 Related PRDs
-- [Blog Module PRD](../Blog/docs/PRD.md)
-- [Media Module PRD](../Media/docs/PRD.md)
-- [Seo Module PRD](../Seo/docs/PRD.md)
-- [Lang Module PRD](../Lang/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/PRD.md)
+- [Media Module PRD](../../Media/docs/PRD.md)
+- [Seo Module PRD](../../Seo/docs/PRD.md)
+- [Lang Module PRD](../../Lang/docs/PRD.md)
 
 ---
 
@@ -512,3 +523,8 @@ CREATE TABLE cms_navigation (
 | Engineering Lead | | | |
 | Design Lead | | | |
 | Stakeholder | | | |
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "register type test implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "register type test implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # Register Type Test Implementation - Modulo Cms
 
 ## 🎯 Overview
@@ -247,7 +259,7 @@ expect()->extend('toHaveDynamicHeading', function (string $type) {
 ## 🔗 Collegamenti
 
 ### Documentazione Correlata
-- [RegistrationWidget Documentation](../../../user/docs/filament/widgets/registration-widget.md)
+- [RegistrationWidget Documentation](../../../User/docs/filament/widgets/registration-widget.md)
 - [Folio Pages Implementation](../folio-pages.md)
 - [Login Test Implementation](./login-test-implementation.md)
 - [Test Organization Rules](../../../../docs/test-organization-rules.md)

@@ -1,8 +1,16 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "getting started"
+issues: []
+discussions: []
 title: Getting Started
 description: Getting started with Jigsaw's docs starter template is as easy as 1, 2, 3.
 extends: _layouts.documentation
 section: content
+status: draft
 ---
 
 # Getting Started {#getting-started}
@@ -83,3 +91,8 @@ npm run dev
 * [getting-started.md](laravel/modules/tenant/project_docs/it/getting-started.md)
 * [getting-started.md](laravel/modules/cms/project_docs/getting-started.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

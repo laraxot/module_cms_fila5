@@ -1,3 +1,15 @@
+---
+title: "volt introduction"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "volt introduction"
+issues: []
+discussions: []
+status: draft
+---
+
 # Introduzione a Laravel Volt
 
 ## Panoramica

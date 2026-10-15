@@ -1,3 +1,15 @@
+---
+title: "common phpstan errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "common phpstan errors"
+issues: []
+discussions: []
+status: draft
+---
+
 # Common PHPStan Errors in Cms Module
 
 ## Duplicate Import Error
@@ -38,3 +50,8 @@ This error typically occurs when:
 - Prevents code quality checks from completing
 - Can hide other important errors in the codebase
 - Affects the overall quality gate in CI/CD pipelines
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

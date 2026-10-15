@@ -1,3 +1,15 @@
+---
+title: "phpstan fix plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan fix plan"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - PHPStan Level 10 Fix Plan
 
 ## Analysis Date
@@ -207,7 +219,7 @@ Use concrete model or update UserContract:
 
 ```php
 // Option 1: Use concrete model
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 /** @var User $user */
 $user = auth()->user();
@@ -362,3 +374,7 @@ Modules/Cms/
 - Type annotations need improvement
 - Consider using Spatie Laravel Data for DTOs
 - Static methods can be converted to scopes for better testability
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

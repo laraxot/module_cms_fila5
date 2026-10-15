@@ -1,3 +1,15 @@
+---
+title: "phpstan view string resolution"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan view string resolution"
+issues: []
+discussions: []
+status: draft
+---
+
 # Risoluzione Problemi PHPStan per `view-string`
 
 ## Contesto
@@ -120,3 +132,8 @@ class Section extends Component
 ## Conclusione
 
 La risoluzione degli errori `view-string` non deve avvenire tramite scorciatoie o PHPDoc mal posizionati. L'approccio corretto, in linea con la metodologia "Super Mucca" e i principi Laraxot, è incapsulare la logica di risoluzione delle view in un'azione dedicata che si assume la responsabilità di restituire un `view-string` validato, permettendo così a PHPStan di eseguire correttamente la sua analisi statica.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

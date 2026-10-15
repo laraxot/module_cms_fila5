@@ -1,3 +1,15 @@
+---
+title: "folio volt best practices"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "folio volt best practices"
+issues: []
+discussions: []
+status: draft
+---
+
 # Laravel Folio + Volt - Best Practices and Patterns Analysis
 
 ## Overview
@@ -101,3 +113,7 @@ middleware(['auth', 'verified']);
 
 ## Date
 2025-11-29
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

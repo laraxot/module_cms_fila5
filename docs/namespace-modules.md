@@ -1,3 +1,15 @@
+---
+title: "namespace modules"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "namespace modules"
+issues: []
+discussions: []
+status: draft
+---
+
 # Struttura dei Namespace nei Moduli Laravel
 
 Questo documento definisce le linee guida ufficiali per l'utilizzo corretto dei namespace nei moduli Laravel all'interno del framework del progetto.
@@ -142,3 +154,8 @@ Se hai già una struttura con i namespace errati, segui questi passaggi per corr
 ## Conclusione
 
 Seguire queste linee guida garantirà una struttura del codice coerente e manutenibile in tutti i moduli del progetto, facilitando la collaborazione tra sviluppatori e riducendo gli errori legati ai namespace.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

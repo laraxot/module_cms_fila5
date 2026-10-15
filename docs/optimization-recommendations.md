@@ -1,3 +1,15 @@
+---
+title: "optimization recommendations"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "optimization recommendations"
+issues: []
+discussions: []
+status: draft
+---
+
 # Raccomandazioni di Ottimizzazione - Modulo Cms
 
 ## 🎯 Stato Attuale e Analisi
@@ -322,3 +334,8 @@ php artisan cms:seo-audit
 - [Content Management Guide](content-management/)
 - [SEO Best Practices](seo/)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

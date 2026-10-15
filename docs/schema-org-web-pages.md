@@ -1,3 +1,15 @@
+---
+title: "schema org web pages"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "schema org web pages"
+issues: []
+discussions: []
+status: draft
+---
+
 # schema.org web page types
 
 Reference: https://schema.org/WebPage and subtypes.
@@ -362,3 +374,8 @@ This complements the `<link rel="alternate" hreflang="...">` tags in the page he
 - https://schema.org/SearchResultsPage
 - `laravel/Modules/Cms/docs/content-blocks-system.md`
 - `laravel/Modules/Lang/docs/laravel-localization-complete-guide.md`
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

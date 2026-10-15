@@ -1,3 +1,15 @@
+---
+title: "blockdata implementation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "blockdata implementation"
+issues: []
+discussions: []
+status: draft
+---
+
 # BlockData: Auto-Detection and Rendering
 
 ## Overview
@@ -111,3 +123,8 @@ $data = ['container0' => 'events', 'slug0' => '2025', 'container1' => 'talk', 's
 - `Modules/Cms/resources/views/components/page.blade.php` — merges $data
 - `Themes/Meetup/resources/views/pages/[container0]/[slug0]/index.blade.php` — builds $data
 - `Modules/Meetup/docs/folio-container-routing-priority.md` — routing architecture
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "phpstan assets analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan assets analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi PHPStan - Gestione Assets dei Temi
 
 > [!NOTE]

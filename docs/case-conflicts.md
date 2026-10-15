@@ -1,3 +1,15 @@
+---
+title: "case conflicts"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "case conflicts"
+issues: []
+discussions: []
+status: draft
+---
+
 # Case-Insensitive File Conflicts
 
 Questa verifica elenca i file del modulo `Cms` che differiscono solo per maiuscole/minuscole all'interno dello stesso percorso. Tutti vanno uniformati scegliendo un'unica versione coerente con gli standard Laraxot.
@@ -11,3 +23,8 @@ Questa verifica elenca i file del modulo `Cms` che differiscono solo per maiusco
 - `Modules/Cms/docs`: `TESTING.md`, `testing.md`
 
 **Azione consigliata**: rinominare o rimuovere i duplicati mantenendo la versione PascalCase/SnakeCase già adottata dal progetto, quindi aggiornare eventuali riferimenti nei sorgenti e nelle docs.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

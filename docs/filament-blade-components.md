@@ -1,3 +1,15 @@
+---
+title: "filament blade components"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament blade components"
+issues: []
+discussions: []
+status: draft
+---
+
 # Filament Blade Components Usage (CMS)
 
 ## Collegamenti
@@ -33,3 +45,8 @@ Per le best practice di **Filament** (https://filamentphp.com/project_docs/3.x/s
 * [filament-blade-components.md](laravel/modules/cms/project_docs/filament-blade-components.md)
 * [filament-blade-components.md](laravel/themes/one/project_docs/filament-blade-components.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -1,3 +1,15 @@
+---
+title: "page directory structure"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "page directory structure"
+issues: []
+discussions: []
+status: draft
+---
+
 # CMS Page Directory Structure Contract
 
 ## Scopo
@@ -32,6 +44,9 @@ Questi alberi rompono DRY, aumentano il debito di routing e duplicano la respons
 
 - usare `tests/[slug].blade.php` per le pagine di test replicate da JSON
 - usare `tests/index.blade.php` per la root `/tests`
+- usare un solo `Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`
+  per ogni dettaglio `/tests/{slug}`; non creare `tests/segnalazioni/[slug]`
+  o altre directory semantiche per famiglia
 - usare `[container0]/index.blade.php` e `[container0]/[slug0]/index.blade.php` per il frontoffice dinamico
 - demandare il rendering contenuti a `<x-page side="content" :slug="$pageSlug" :data="$data" />`
 
@@ -47,4 +62,9 @@ Questi alberi rompono DRY, aumentano il debito di routing e duplicano la respons
 - [README.md](./README.md)
 - [cms-driven-pages-system.md](./cms-driven-pages-system.md)
 - [folio_routing_system.md](./folio_routing_system.md)
-- [../../Themes/Sixteen/docs/page-directory-structure.md](../../Themes/Sixteen/docs/page-directory-structure.md)
+- [../../Themes/Sixteen/docs/page-directory-structure.md](../../../Themes/Sixteen/docs/page-directory-structure.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

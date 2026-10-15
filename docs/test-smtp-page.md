@@ -1,3 +1,15 @@
+---
+title: "test smtp page"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "test smtp page"
+issues: []
+discussions: []
+status: draft
+---
+
 # Test SMTP in il progetto
 
 ![test smtp page](test-smtp-page.jpg)
@@ -50,3 +62,8 @@ MAIL_FROM_NAME="<main module>"
 * [test-smtp-page.md](laravel/modules/notify/project_docs/test-smtp-page.md)
 * [test-smtp-page.md](laravel/modules/cms/project_docs/test-smtp-page.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

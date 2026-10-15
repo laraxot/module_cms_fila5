@@ -1,3 +1,15 @@
+---
+title: "module analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "module analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Cms Module - Comprehensive Analysis
 
 ## Module Overview
@@ -92,3 +104,7 @@ The Cms module provides a comprehensive content management system:
 - External integration
 - Recommendation system
 - Versioning system
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

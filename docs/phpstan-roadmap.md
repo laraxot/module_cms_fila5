@@ -1,3 +1,15 @@
+---
+title: "phpstan roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan roadmap"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Roadmap - Cms Module
 
 > **Created**: [DATE]  
@@ -254,6 +266,10 @@ public function testDataGenerationEndToEnd(): void
 - Comprehensive test coverage
 
 ---
-
 **Status**: Requires detailed planning
 **Next**: Start with ThemeComposer fixes
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

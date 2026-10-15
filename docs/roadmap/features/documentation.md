@@ -1,3 +1,14 @@
+---
+title: "documentation"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "documentation"
+issues: []
+discussions: []
+---
+
 # Documentazione CMS
 
 ## Stato
@@ -94,7 +105,7 @@ La documentazione dettagliata degli endpoint, esempi e Swagger/OpenAPI sono in f
 ## Collegamenti
 - [Roadmap Principale](../../roadmap.md)
 - [Content Management](./content-management.md)
-- [Frontend Integration](./frontend-integration.md)
+- [Frontend Integration](../../development/roadmap/features/frontend-integration.md)
 - [Filament Integration](./filament-integration.md)
 
 ## Collegamenti tra versioni di documentation.md

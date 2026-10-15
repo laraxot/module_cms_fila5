@@ -1,3 +1,15 @@
+---
+title: "volt introduction"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "volt introduction"
+issues: []
+discussions: []
+status: draft
+---
+
 # Introduzione a Laravel Volt
 
 Questa documentazione introduce Laravel Volt, un'API funzionale elegantemente progettata per Livewire, che permette di combinare la logica PHP e i template Blade nello stesso file.
@@ -173,3 +185,8 @@ class CounterTest extends TestCase
 * [volt-introduction.md](laravel/modules/cms/project_docs/volt-introduction.md)
 * [volt-introduction.md](laravel/modules/cms/project_docs/components/volt-introduction.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

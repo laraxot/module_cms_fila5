@@ -1,3 +1,15 @@
+---
+title: "footer links"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "footer links"
+issues: []
+discussions: []
+status: draft
+---
+
 # Footer Links Block
 
 ## Type

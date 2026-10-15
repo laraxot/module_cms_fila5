@@ -1,3 +1,15 @@
+---
+title: "login vs loginwidget analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "login vs loginwidget analysis"
+issues: []
+discussions: []
+status: draft
+---
+
 # Login vs LoginWidget - Analisi Architetturale Approfondita
 
 ## 🚨 **ERRORE GRAVE IDENTIFICATO**
@@ -191,7 +203,6 @@ Devo:
 - ✅ Documentare le differenze per evitare confusione futura
 
 ---
-
 **Status**: 📚 ANALISI COMPLETATA
 **Next Steps**: Implementare separazione corretta
 **Priority**: 🚨 P0 - Correzione architettturale critica

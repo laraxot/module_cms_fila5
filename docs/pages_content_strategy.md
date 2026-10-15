@@ -1,3 +1,15 @@
+---
+title: "pages content strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "pages content strategy"
+issues: []
+discussions: []
+status: draft
+---
+
 # Strategia Contenuti Pagine - <main module>
 
 ## Filosofia dei Contenuti
@@ -101,3 +113,8 @@ La pagina servizi deve comunicare:
 - [UI Components](../ui/project_docs/components.md)
 - [Theme Blocks](../../themes/one/project_docs/blocks.md)
 - [User Experience](../../../../docs/project/frontend/ux-guidelines.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

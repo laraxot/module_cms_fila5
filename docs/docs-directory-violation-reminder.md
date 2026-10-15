@@ -1,3 +1,15 @@
+---
+title: "docs directory violation reminder"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs directory violation reminder"
+issues: []
+discussions: []
+status: draft
+---
+
 # CRITICAL: DOCS DIRECTORY ARCHITECTURAL VIOLATION
 
 ## VIOLATION DETAILS
@@ -27,3 +39,8 @@ If this directory exists, it should be:
 3. DELETED after migration completion
 
 Last verified: 2025-08-22
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

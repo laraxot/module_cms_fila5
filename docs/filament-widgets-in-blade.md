@@ -1,3 +1,15 @@
+---
+title: "filament widgets in blade"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament widgets in blade"
+issues: []
+discussions: []
+status: draft
+---
+
 # Utilizzo dei Widget Filament nelle Viste Blade in il progetto
 
 ## Introduzione
@@ -108,3 +120,8 @@ public function registerFilamentWidgets(): void
 ## Conclusione
 
 L'utilizzo corretto dei widget Filament nelle viste Blade può migliorare significativamente l'esperienza utente e la manutenibilità del codice. Seguendo le best practices descritte in questo documento, è possibile evitare errori comuni e sfruttare appieno le potenzialità di Filament in il progetto.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

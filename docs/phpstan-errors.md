@@ -1,3 +1,15 @@
+---
+title: "phpstan errors"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan errors"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Errors - Cms Module
 
 **Date**: [DATE]
@@ -15,7 +27,6 @@
 | app/View/Components/Section.php | 2 | High |
 
 ---
-
 ## File: app/Http/View/Composers/XotComposer.php
 
 ### Error: Class Not Found
@@ -36,7 +47,7 @@ Code is calling `App\Models\User` but this class doesn't exist in this codebase.
 use App\Models\User;
 
 // ✅ CORRECT - Option 1: Use module User
-use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 
 // ✅ CORRECT - Option 2: Use contract
 use Modules\Xot\Contracts\UserContract;
@@ -337,3 +348,8 @@ Same as Error 1 - correct the import and add proper type hint.
 - [Spatie Laravel Data Documentation](https://spatie.be/docs/laravel-data)
 - [DataCollection Usage](https://spatie.be/docs/laravel-data/v3/as-a-data-transfer-object/collections)
 - [UserContract Interface](../../Xot/Contracts/UserContract.php)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

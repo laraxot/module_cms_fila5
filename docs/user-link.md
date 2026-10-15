@@ -1,3 +1,15 @@
+---
+title: "user link"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "user link"
+issues: []
+discussions: []
+status: draft
+---
+
 # Collegamento al Modulo User
 
 Questo documento descrive le relazioni e i collegamenti tra il modulo Cms e il modulo User per quanto riguarda i componenti Filament e le convenzioni di namespace.
@@ -25,7 +37,6 @@ Per dettagli specifici, consulta:
 - [Best Practices Filament nel modulo User](../../user/project_docs/filament_best_practices.md)
 
 ---
-
 ### Nota Importante
 Quando aggiungi nuovi componenti Filament, assicurati di:
 1. Utilizzare il namespace corretto
@@ -36,3 +47,8 @@ Quando aggiungi nuovi componenti Filament, assicurati di:
 * [user-link.md](laravel/modules/lang/project_docs/user-link.md)
 * [user-link.md](laravel/modules/cms/project_docs/user-link.md)
 
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

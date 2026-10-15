@@ -1,8 +1,16 @@
 ---
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "introduzione"
+issues: []
+discussions: []
 title: Introducendo Cms
 description: Introduzione a Module Cms
 extends: _layouts.documentation
 section: content
+status: draft
 ---
 
 # Introducendo Cms {#introducendo-cms}
@@ -25,3 +33,8 @@ Dipende un po da tutti i Moduli.
 ## Collegamenti tra versioni di introduzione.md
 * [introduzione.md](laravel/modules/chart/docs/introduzione.md)
 * [introduzione.md](laravel/modules/cms/docs/introduzione.md)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

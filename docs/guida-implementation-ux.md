@@ -1,3 +1,15 @@
+---
+title: "guida implementation ux"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "guida implementation ux"
+issues: []
+discussions: []
+status: draft
+---
+
 # Guida all'Implementazione UX in il progetto
 
 Questa guida fornisce indicazioni pratiche su come implementare i principi UX documentati in [Leggi di UX](/docs/07-frontend/leggi-ux.md) nel progetto il progetto. È rivolta agli sviluppatori e ai designer che lavorano sul progetto.
@@ -467,3 +479,8 @@ Per approfondimenti, consultare:
 - [UX del Wizard di Registrazione](/docs/07-frontend/ux-wizard-registrazione-paziente.md)
 - [DaisyUI Documentation](https://daisyui.com/components/)
 - [Filament Documentation](https://filamentphp.com/docs/forms)
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

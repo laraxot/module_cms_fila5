@@ -1,3 +1,14 @@
+---
+title: "assets troubleshooting"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "assets troubleshooting"
+issues: []
+discussions: []
+---
+
 # Risoluzione Problemi con Assets dei Temi
 
 > [!NOTE]
@@ -21,7 +32,7 @@ Questo errore è uno dei più comuni nella gestione dei temi. Per la risoluzione
 
 ## Collegamenti Rilevanti
 
-- [Processo di Build dei Temi](theme-build-process.md)
+- [Processo di Build dei Temi](../theme-build-process.md)
 - [Compilazione dei Temi](theme_compilation.md)
 - [Documentazione Principale Vite](/docs/vite_assets_troubleshooting.md)
 

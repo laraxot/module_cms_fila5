@@ -1,3 +1,15 @@
+---
+title: "analisi componenti blade laravel"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi componenti blade laravel"
+issues: []
+discussions: []
+status: draft
+---
+
 # Analisi Corretta dei Componenti Blade in Laravel
 
 Questo documento definisce le linee guida per l'analisi e l'identificazione corretta dei componenti Blade in Laravel, con particolare attenzione all'ecosistema il progetto.
@@ -104,3 +116,8 @@ find_by_name /var/www/html/<directory progetto>/laravel/Themes/One/resources/vie
 L'analisi corretta dei componenti Blade in Laravel richiede un approccio metodico e verifiche approfondite. Seguendo la procedura in 5 passaggi descritta in questo documento, è possibile evitare errori di identificazione e fornire informazioni accurate sui componenti utilizzati nel progetto il progetto.
 
 Ricorda: **Verifica sempre, non assumere mai**. Questo principio è fondamentale per mantenere l'accuratezza e l'affidabilità dell'analisi del codice.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

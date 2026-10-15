@@ -1,3 +1,15 @@
+---
+title: "phpstan cluster"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "phpstan cluster"
+issues: []
+discussions: []
+status: draft
+---
+
 # PHPStan Cluster - 2026-03-10
 
 ## Stato attuale
@@ -30,3 +42,8 @@ Decisione applicativa:
 - Prima correggere i contratti reali tra classi.
 - Poi correggere le factory legacy o disaccoppiarle da modelli inesistenti.
 - Solo dopo valutare eventuali affinamenti di PHPDoc.
+
+--- BMAD + Second Brain ---
+- Scopo: documentazione tecnica del modulo.
+- Utilità: riferimento sviluppatori/audit.
+- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
