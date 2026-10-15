@@ -55,11 +55,8 @@ Quando aggiungi nuovi componenti Filament, assicurati di:
 * [user-link.md](user-link.md)
 * [user-link.md](user-link.md)
 
-<<<<<<< .merge_file_QEKmTT
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_eYC7OF
