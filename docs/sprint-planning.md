@@ -75,11 +75,8 @@ Launch core CMS page builder with content creation and publishing capabilities.
 
 ---
 
-<<<<<<< .merge_file_mRxhBs
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_uN4NfD

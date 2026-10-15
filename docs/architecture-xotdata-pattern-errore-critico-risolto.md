@@ -189,12 +189,8 @@ LoginWidgetTest.php → Widget Livewire
 └── Interazioni specifiche
 ```
 
-<<<<<<< .merge_file_pkQajk
 *Ultimo aggiornamento: Dicembre 2024 - Analisi completa e correzione pattern* 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
-*Ultimo aggiornamento: Dicembre 2024 - Analisi completa e correzione pattern* 
->>>>>>> .merge_file_KLzw9w

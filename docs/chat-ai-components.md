@@ -55,11 +55,8 @@ Questo documento descrive le componenti UI ispirate al template "ChatAI" di [Tai
 - [Template Tailkit ChatAI](https://tailkit.com/templates#chatai)  
 - [Blocchi di Contenuto](blocks.md)  
 - [Documentazione Root](../../../../docs/project/README.md)
-<<<<<<< .merge_file_QtMNpM
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_MfZoWb

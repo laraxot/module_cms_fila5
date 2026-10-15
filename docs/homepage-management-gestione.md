@@ -90,11 +90,8 @@ Per aggiungere un nuovo tipo di blocco:
 **Documentazione Correlata**
 
 - [Documentazione principale della homepage](../../../../../docs/gestione-homepage.md)
-<<<<<<< .merge_file_w3xJjT
 
 --- BMAD + Second Brain ---
 - Scopo: documentazione tecnica del modulo.
 - Utilità: riferimento sviluppatori/audit.
 - Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
-=======
->>>>>>> .merge_file_CQQ39f
