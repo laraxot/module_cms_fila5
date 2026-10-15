@@ -13,12 +13,12 @@ status: draft
 - 2026-06-10: folio-filesystem-routing-no-web-php + troubleshooting folio-route-not-found
 ## [2026-10-14] docs | Studio del codice e correzione degli ingressi
 
-- Verificato: le pagine sono file JSON per tenant (`Page` + `SushiToJsons`, 99 in `config/local/fixcity`), servite da rotte Folio del tema; `PageService`, `BlockService`, modello `Block`, `PublishPageAction` non esistono. README sostituito, `00-INDEX.md` con mappa delle directory (righe dell'altra sessione intatte), `wiki/content-architecture.md` marcato `stale`.
+- Verificato: le pagine sono file JSON per tenant (`Page` + `SushiToJsons`, 99 in `config/local/fixcity`), servite da rotte Folio del tema; `PageService`, `BlockService`, modello `Block`, `PublishPageAction` non esistono. README sostituito, `00-index.md` con mappa delle directory (righe dell'altra sessione intatte), `wiki/content-architecture.md` marcato `stale`.
 - Story: [2026-10-14-docs-cms-studio](../stories/docs-cms-studio.story.md). Memoria: [nota di memoria](../../../../../bashscripts/ai/wiki/memories/docs-cms-lang-tenant-seo-studio.md)
 
 ## [2026-06-05] docs | Folio routing — mount() tipizzato + @volt statico
 
-- `folio_routing_system.md`: `mount(string $container0, string $slug0 = '')`; anti-pattern senza `request()->route()`
+- `folio-routing-system.md`: `mount(string $container0, string $slug0 = '')`; anti-pattern senza `request()->route()`
 - Shell: [concepts/folio-page-shell-pattern.md](concepts/folio-page-shell-pattern.md)
 
 ## [2026-06-05] docs | HackerNoon harness — tips 001-022 in wiki locale
@@ -31,7 +31,7 @@ status: draft
 ## [2026-06-05] architecture | Folio page shell — mount + x-page + volt statico
 
 - Nuovo: [folio-page-shell-pattern.md](concepts/folio-page-shell-pattern.md)
-- Aggiornato: `folio_routing_system.md` — no `@volt($pageSlug)`, es. `container1.index`
+- Aggiornato: `folio-routing-system.md` — no `@volt($pageSlug)`, es. `container1.index`
 
 ## [2026-05-26] docs | ridondanza ThemeComposer — copia fuori da PSR-4
 
