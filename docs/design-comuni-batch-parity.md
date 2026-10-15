@@ -20,7 +20,7 @@ Il report dettagliato vive nel tema, perche' e' il tema il punto dove convergono
 
 ## Report attivo
 
-- [../../../Themes/Sixteen/docs/design-comuni/batch-body-parity-2026-04-03.md](../../../Themes/Sixteen/docs/design-comuni/batch-body-parity-2026-04-03.md)
+- [../../../Themes/Sixteen/docs/design-comuni/batch-body-parity.md](../../../Themes/Sixteen/docs/design-comuni/batch-body-parity.md)
 - [../../../Themes/Sixteen/docs/design-comuni/batch-body-parity](../../../Themes/Sixteen/docs/design-comuni/batch-body-parity)
 
 ## Script correlato
