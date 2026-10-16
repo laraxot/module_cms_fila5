@@ -64,8 +64,3 @@ Analisi e implementazione della pagina elenco segnalazioni del progetto Design C
 **Data**: 2026-04-03  
 **Stato**: ⚠️ 52.7% (migliorato da 38.4%)  
 **Prossimo**: Implementare tabs navigation, map placeholder
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -62,8 +62,3 @@ MAIL_FROM_NAME="<main module>"
 * [test-smtp-page.md](laravel/modules/notify/project_docs/test-smtp-page.md)
 * [test-smtp-page.md](laravel/modules/cms/project_docs/test-smtp-page.md)
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

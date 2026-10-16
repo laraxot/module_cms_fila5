@@ -47,8 +47,3 @@ Il builder schema deve inoltre mantenere compatibilita' semantica anche quando i
 - nessun fallback al blocco eventi;
 - nessun errore `PropertyNotFoundException` o "Nessun evento trovato" su pagina profilo.
 - verifica locale `it` che le chiavi `pub_theme::profile.*` risultino tradotte (non key raw).
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

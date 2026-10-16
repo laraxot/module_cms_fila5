@@ -10,92 +10,56 @@ discussions: []
 status: draft
 ---
 
-# Cms Module - Product Strategy
+# Cms - Product Strategy
 
-**Module:** Cms  
-**Version:** 1.0.0  
-**Owner:** Product Team
+> Strategia prodotto. Modulo.
+> Allineamento strategico stimato: 74%.
 
----
-## Executive Summary
+## Missione
 
-The CMS module enables business users to manage content independently, reducing developer burden and accelerating content operations.
+Portare **Cms** a uno stato in cui il progetto ottiene un vantaggio netto e misurabile su questa area: gestione pagine, blocchi e routing CMS-driven.
 
----
+## Problema da risolvere
 
-## Market Analysis
+- chiarire il ruolo del componente nel sistema
+- evitare sovrapposizioni con altri moduli o temi
+- rendere il valore del componente esplicito e verificabile
 
-### TAM / SAM / SOM
+## Principi strategici
 
-| Segment | TAM | SAM | SOM (2028) |
-|---------|-----|-----|------------|
-| **CMS Platforms** | $30B | $3B | $150M |
-| **Headless CMS** | $5B | $500M | $25M |
-| **Total** | $35B | $3.5B | $175M |
+- DRY: riuso prima di duplicare
+- KISS: superfici semplici e veritiere
+- truth over demo: nessuna feature solo apparente
+- docs come interscambio tra agenti AI
 
----
+## Scelte strategiche
 
-## Strategic Pillars
+- concentrare gli investimenti sui gap P0 e P1
+- misurare il progresso con percentuali e quality gates
+- collegare ogni evoluzione a issue, discussion e test
 
-### Pillar 1: Self-Service
-Empower non-technical users.
+## Cosa non fare
 
-### Pillar 2: Flexibility
-Support diverse content needs.
+- aggiungere feature cosmetiche prima del core
+- introdurre stack o dipendenze senza ownership chiara
+- lasciare zone grigie tra codice reale e documento di prodotto
 
-### Pillar 3: Governance
-Maintain quality and compliance.
+## Metriche strategiche
 
-### Pillar 4: Performance
-Fast content delivery.
+| Area | Target |
+|------|--------|
+| Chiarezza di scope | 100% |
+| Aderenza docs-codice | > 90% |
+| Gap P0 aperti | < 10% |
 
----
+## Collegamenti
 
-## Go-to-Market Strategy
+- [PRD](prd.md)
+- [Product Roadmap](product-roadmap.md)
+- [Indice centrale](../../../../docs/project/PRODUCT_DOCS_INDEX_2026_03_12.md)
 
-### Phase 1: Internal (Q1-Q2 2026)
-- Marketing team adoption
-- Support content management
+## Regola architetturale
 
-### Phase 2: External (Q3-Q4 2026)
-- Customer-facing content
-- Partner portals
-
----
-
-## Financial Projections
-
-| Year | Efficiency Gain | External Revenue | Total |
-|------|-----------------|------------------|-------|
-| 2026 | $200K | $0 | $200K |
-| 2027 | $500K | $100K | $600K |
-| 2028 | $1M | $500K | $1.5M |
-
----
-
-## Risks and Mitigation
-
-| Risk | Mitigation |
-|------|------------|
-| **Low adoption** | Training, intuitive UX |
-| **Content quality** | Approval workflows |
-| **Performance** | Caching, CDN |
-
----
-
-## Success Criteria
-
-| Metric | 12-Month Target |
-|--------|-----------------|
-| **Active Content Creators** | 50+ |
-| **Pages Published/Month** | 200+ |
-| **Developer Time Saved** | 20 hours/week |
-| **User Satisfaction** | 4.5/5.0 |
-
----
-
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+- Action-first: niente generic `Services` per la business logic
+- Standard operativo: `spatie/laravel-queueable-action`
+- Convenzione: Action con metodo `execute()` e dispatch tramite container

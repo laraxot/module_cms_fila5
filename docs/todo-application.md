@@ -351,8 +351,3 @@ class TodoTest extends TestCase
 - [Laravel Volt Documentation](https://livewire.laravel.com/project_docs/volt)
 - [Livewire Documentation](https://livewire.laravel.com)
 - [Articolo Originale di Nuno Maduro](https://nunomaduro.com/todo_application_with_laravel_folio_and_volt) 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

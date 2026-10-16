@@ -151,14 +151,9 @@ Builder::make('content_blocks')
 4. **Real-time Collaboration**: Editing collaborativo delle pagine
 
 ## Collegamenti
-- [Documentazione Sistema Content Blocks](./content-blocks-system.md)
-- [Implementazione Register Disabled](./register-disabled-implementation.md)
+- [Documentazione Sistema Content Blocks](./content_blocks_system.md)
+- [Implementazione Register Disabled](./register_disabled_implementation.md)
 - [Implementazione BlockData](../app/Datas/BlockData.php)
 - [Configurazione Builder](../app/Filament/Resources/PageResource.php)
 - [Theme Components](../../../Themes/One/resources/views/components/blocks/)
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

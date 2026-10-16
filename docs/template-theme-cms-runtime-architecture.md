@@ -884,7 +884,3 @@ $page->blocks = [
 The Template, Theme, and CMS systems in LaravelPizza provide a flexible, powerful architecture for building dynamic, multi-language websites. The separation of concerns between configuration, routing, models, and rendering allows for easy customization and extension while maintaining performance and security.
 
 The block-based content system enables developers to create reusable, composable content components that can be dynamically queried and rendered across multiple pages and themes.
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

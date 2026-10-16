@@ -75,8 +75,3 @@ Nei test sotto `Modules/Cms/tests/Feature/Frontoffice/FolioRoutes/*` quindi adot
 ---
 **Status**: In Progress
 **Prossimo step**: Correggere tutti i test che usano `<nome progetto>` placeholder
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

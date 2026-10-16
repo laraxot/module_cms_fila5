@@ -147,8 +147,3 @@ $rows = $this->getSushiRows();
 - [Architettura Modulo Cms](./frontoffice/architecture.md)
 - [Middleware System](./middleware-system.md)
 - [Model Management](./model-management.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

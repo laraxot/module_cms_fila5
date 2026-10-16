@@ -42,8 +42,3 @@ a <x-(nome controllato)
 ## Collegamenti tra versioni di aggiornamenti.md
 * [aggiornamenti.md](laravel/modules/chart/docs/aggiornamenti.md)
 * [aggiornamenti.md](laravel/modules/cms/docs/aggiornamenti.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

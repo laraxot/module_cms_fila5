@@ -132,8 +132,3 @@ Questa checklist è basata sul runtime attuale (fail-fast su view mancanti, JSON
 
 3. Rimuovere `events.view` e verificare fallback del routing `[container0]/[slug0]`.
 4. Cambiare `xra.pub_theme` e verificare risoluzione namespace e path Folio.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

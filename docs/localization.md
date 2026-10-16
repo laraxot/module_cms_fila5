@@ -74,8 +74,3 @@ The configuration is located in `config/laravellocalization.php`. It defines:
 
 ## Agent Team: Localization Expert
 For complex localization tasks, refer to the "Localization Expert" agent.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

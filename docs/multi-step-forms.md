@@ -417,8 +417,3 @@ class PersonalInfoTest extends TestCase
 * [multi-step-forms.md](laravel/modules/cms/project_docs/multi-step-forms.md)
 * [multi-step-forms.md](laravel/modules/cms/project_docs/components/multi-step-forms.md)
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

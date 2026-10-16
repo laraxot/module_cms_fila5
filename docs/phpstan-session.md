@@ -44,8 +44,3 @@ status: draft
 ## Riferimenti
 - [phpstan-fixes](phpstan-fixes.md)
 - [block-data-flow](block-data-flow.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

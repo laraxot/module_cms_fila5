@@ -93,7 +93,3 @@ For more details, visit the [official Algolia DocSearch documentation.](https://
 * [algolia-docsearch.md](algolia-docsearch.md)
 * [algolia-docsearch.md](algolia-docsearch.md)
 * [algolia-docsearch.md](algolia-docsearch.md)
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
