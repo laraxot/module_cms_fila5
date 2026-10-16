@@ -55,7 +55,3 @@ Supporto completo per italiano, inglese e tedesco.
 - [x] Multilingua
 - [x] Responsive
 - [x] Accessibile
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

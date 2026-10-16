@@ -34,8 +34,3 @@ Le pagine CMS non hanno versioning. Aggiungere revisioni per permettere rollback
 - [ ] Action di salvataggio revisione automatico
 - [ ] Action di revert
 - [ ] UI Filament per cronologia
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

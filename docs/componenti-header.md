@@ -20,8 +20,3 @@ Questo documento fornisce un collegamento alla documentazione dettagliata del co
 
 ## Utilizzo nel Progetto
 Il componente Header è utilizzato come elemento principale di navigazione in tutte le pagine del sito. Per maggiori dettagli sulla sua implementazione e configurazione, consultare la documentazione del modulo CMS. 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

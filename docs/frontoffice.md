@@ -300,8 +300,3 @@ Per estendere il frontoffice con nuove funzionalità:
 - [Modulo Xot](../../Xot/docs/README.md) - Classi base e utilities
 - [Documentazione Volt](volt-introduction.md) - Introduzione a Laravel Volt
 - [Documentazione Folio](folio-pages.md) - Gestione delle pagine con Laravel Folio
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

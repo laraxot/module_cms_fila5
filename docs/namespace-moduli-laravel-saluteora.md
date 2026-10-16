@@ -191,8 +191,3 @@ Se hai componenti che utilizzano la struttura errata (`Modules\NomeModulo\App\..
 ## Conclusione
 
 Seguire queste linee guida garantisce la coerenza in tutto il progetto il progetto e previene errori difficili da diagnosticare. La struttura corretta dei namespace è fondamentale per il corretto funzionamento dei moduli Laravel e per la manutenibilità del codice nel lungo termine.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
