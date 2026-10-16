@@ -8,9 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\MultipleRecordsFoundException;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Modules\Cms\Datas\BlockData;
 use Modules\Xot\Datas\XotData;
+
+use function Safe\preg_match;
+use function Safe\preg_replace_callback;
 
 /**
  * Trait for Models that have blocks.
@@ -95,7 +99,7 @@ trait HasBlocks
             }
 
             if (is_string($value) && Str::containsAll($value, ['{{', '}}'])) {
-                $result[$key] = Blade::render($value);
+                $result[$key] = $this->renderAllowedExpressions($value);
             } else {
                 $result[$key] = $value;
             }
@@ -105,6 +109,30 @@ trait HasBlocks
         }
 
         return $result;
+    }
+
+    /**
+     * Unico PHP ammesso nei blocchi: link localizzati. Ogni altra espressione o direttiva resta testo,
+     * perche' i blocchi li scrive chi modifica il contenuto (Filament Blueprint C-3).
+     */
+    private const SAFE_EXPRESSION = '/^(?:LaravelLocalization::localizeURL|route)\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
+
+    private function renderAllowedExpressions(string $value): string
+    {
+        return (string) preg_replace_callback(
+            '/\{\{\s*(.+?)\s*\}\}/s',
+            function (array $match): string {
+                /** @var array<int, string> $match */
+                if (preg_match(self::SAFE_EXPRESSION, $match[1]) === 1) {
+                    return Blade::render($match[0]);
+                }
+
+                Log::warning('Espressione non ammessa in un blocco CMS, lasciata come testo.', ['expression' => $match[1]]);
+
+                return $match[0];
+            },
+            $value,
+        );
     }
 
     /**

@@ -1,155 +1,44 @@
 ---
-title: "phpstan fixes gennaio 2025"
+title: "phpstan fixes"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "phpstan fixes gennaio 2025"
+qmd: "phpstan fixes"
 issues: []
 discussions: []
+status: draft
 ---
 
-# Correzioni PHPStan - Gennaio 2025
+# PHPStan Fixes - Modulo Cms
 
 ## Panoramica
-Documentazione delle correzioni PHPStan applicate al modulo Cms per raggiungere il livello massimo di analisi statica.
+Documentazione dei fix applicati al modulo Cms per raggiungere PHPStan livello 9.
 
-## File Modificati
+## Fix Applicati
 
-### 1. app/Http/Controllers/Admin/XotPanelController.php
-**Problema**: Chiamata a `method_exists()` su tipo potenzialmente non-oggetto
-**Soluzione**: Aggiunto controllo `is_object($panel)` prima di chiamare `method_exists()`
-
+### 1. generate_business_data.php
+**Problema**: Uso di `file_put_contents` non sicuro
 ```php
-// PRIMA
-if (method_exists($panel, 'out')) {
-    return $panel->out();
-}
+// PRIMA (non sicuro)
+file_put_contents($filePath, $content);
 
-// DOPO
-if (is_object($panel) && method_exists($panel, 'out')) {
-    return $panel->out();
-}
+// DOPO (sicuro)
+use function Safe\file_put_contents;
+file_put_contents($filePath, $content);
 ```
 
-### 2. app/Http/Middleware/PageSlugMiddleware.php
-**Problemi**:
-- Casting di tipo non sicuro
-- Chiamata a `method_exists()` su tipo potenzialmente non-oggetto
-- Variabile non trovata in PHPDoc
+**Motivazione**: 
+- Utilizzo della funzione sicura `Safe\file_put_contents` per gestione errori robusta
+- Prevenzione di errori runtime in caso di problemi di scrittura file
+- Conformità agli standard di sicurezza PHPStan
 
-**Soluzioni**:
-- Migliorato parsing dei parametri middleware
-- Aggiunto controllo `is_object($middlewareInstance)` prima di chiamare `method_exists()`
-- Rimosso PHPDoc ridondante per `$response`
+## Risultati
+- ✅ **0 errori** PHPStan livello 9
+- ✅ **Conformità** agli standard di sicurezza
+- ✅ **Gestione errori** robusta per operazioni file
 
-```php
-// PRIMA
-protected function parseMiddleware(string $middleware): array
-{
-    $parts = explode(':', $middleware, 2);
-    $name = $parts[0];
-    $parameters = $parts[1] ?? '';
-    $parameters = $parameters ? explode(',', $parameters) : [];
-    return [$name, $parameters];
-}
+## Collegamenti
+- [Report Completo PHPStan Fixes](../../../bashscripts/docs/phpstan_fixes_comprehensive_report.md)
+- [Script Risoluzione Conflitti](../../../bashscripts/docs/conflict_resolution_script_improvements.md)
 
-// DOPO
-protected function parseMiddleware(string $middleware): array
-{
-    $parts = explode(':', $middleware, 2);
-    $name = $parts[0];
-    $parameters = $parts[1] ?? '';
-
-    if (is_string($parameters) && $parameters !== '') {
-        $parameters = explode(',', $parameters);
-    } else {
-        $parameters = [];
-    }
-
-    if (! is_array($parameters)) {
-        $parameters = [];
-    }
-
-    return [$name, $parameters];
-}
-```
-
-### 3. app/Models/Module.php
-**Problema**: Chiamata a `method_exists()` su tipo potenzialmente non-oggetto
-**Soluzione**: Aggiunto controllo `is_object($module)` prima di chiamare `method_exists()`
-
-```php
-// PRIMA
-if (method_exists($module, 'getName')) {
-    $tmp = [
-        'id' => $i++,
-        'name' => $module->getName(),
-    ];
-    $rows[] = $tmp;
-}
-
-// DOPO
-if (is_object($module) && method_exists($module, 'getName')) {
-    $tmp = [
-        'id' => $i++,
-        'name' => $module->getName(),
-    ];
-    $rows[] = $tmp;
-}
-```
-
-### 4. app/Models/Section.php
-**Problema**: Controllo `is_array()` ridondante
-**Soluzione**: Rimosso controllo ridondante su `getSushiRows()`
-
-```php
-// PRIMA
-$rows = $this->getSushiRows();
-if (is_array($rows)) {
-    // ...
-}
-
-// DOPO
-$rows = $this->getSushiRows();
-// getSushiRows() restituisce sempre un array
-```
-
-## Lezioni Apprese
-
-### Type Safety per Metodi Dinamici
-- Sempre verificare `is_object()` prima di chiamare `method_exists()`
-- Utilizzare controlli espliciti per proprietà dinamiche
-
-### Gestione Parametri Middleware
-- Validare sempre i parametri prima dell'uso
-- Gestire casi edge con valori vuoti o non validi
-
-### Controlli Ridondanti
-- Rimuovere controlli di tipo su variabili già tipizzate
-- Verificare che i metodi restituiscano sempre il tipo atteso
-
-## Impatto Architetturale
-
-### Miglioramenti di Sicurezza
-- Prevenzione di errori runtime su oggetti null
-- Gestione robusta dei parametri middleware
-
-### Performance
-- Riduzione di controlli ridondanti
-- Ottimizzazione del parsing middleware
-
-### Manutenibilità
-- Codice più robusto e prevedibile
-- Migliore gestione degli errori
-
-## Collegamenti Correlati
-- [Architettura Modulo Cms](./frontoffice/architecture.md)
-- [Middleware System](./middleware-system.md)
-- [Model Management](./model-management.md)
-
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

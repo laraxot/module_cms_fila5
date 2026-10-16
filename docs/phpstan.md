@@ -133,8 +133,3 @@ Utilizzare Rector per correggere automaticamente le chiamate alle funzioni:
 composer require --dev rector/rector
 vendor/bin/rector process app/ --config vendor/thecodingmachine/safe/rector-migrate.php
 ```
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -110,8 +110,3 @@ In caso di problemi, è possibile:
 1. Mantenere la vecchia struttura come backup
 2. Creare un branch di backup
 3. Documentare i punti di rollback
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -7,6 +7,8 @@ namespace Modules\Cms\Actions;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Blog\Models\Article;
+use Modules\Blog\View\Composers\ThemeComposer;
 use Modules\Cms\Datas\ResolvePageData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\QueueableAction\QueueableAction;
@@ -67,18 +69,22 @@ final class ResolvePageAction
             return $this->resolvePublicProfileItem($slug0);
         }
 
-        $knownMappings = [
-            'events' => 'Modules\\Meetup\\Models\\Event',
-        ];
+        // /blog/{slug} = solo content_type=post pubblicati (mai event / Parental type)
+        if ($container0 === 'blog') {
+            $post = app(ThemeComposer::class)->findPublishedPostBySlug($slug0);
 
-        if (isset($knownMappings[$container0])) {
-            $modelClass = $knownMappings[$container0];
-
-            return $this->queryModel($modelClass, $slug0);
+            return $post instanceof Article ? $post : null;
         }
 
-        $modelMap = config('xra.container0_model_map', []);
-        if (is_array($modelMap) && isset($modelMap[$container0])) {
+        // /events/{slug} = solo content_type=event pubblicati (mai post / Parental type)
+        if ($container0 === 'events') {
+            $event = app(ThemeComposer::class)->findPublishedEventBySlug($slug0);
+
+            return $event instanceof Article ? $event : null;
+        }
+
+        $modelMap = config('xra.container0_model_map');
+        if (is_array($modelMap) && array_key_exists($container0, $modelMap)) {
             $modelClass = $modelMap[$container0];
             if (is_string($modelClass)) {
                 return $this->queryModel($modelClass, $slug0);

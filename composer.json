@@ -27,6 +27,11 @@
             "Modules\\Cms\\Database\\Seeders\\": "database/seeders/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Cms\\Tests\\": "tests/"
+        }
+    },
     "require": {},
     "repositories": [
         {

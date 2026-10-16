@@ -57,8 +57,3 @@ Questo assicura che il router file-based punti sempre alle pagine del tema attiv
 
 - Laravel Folio docs: https://laravel.com/docs/12.x/folio
 - Repository: https://github.com/laravel/folio
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

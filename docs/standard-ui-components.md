@@ -81,8 +81,3 @@ status: draft
 ## Collegamenti tra versioni di standard_ui_components.md
 * [standard_ui_components.md](docs/implementazione/standard_ui_components.md)
 * [standard_ui_components.md](laravel/modules/cms/docs/standard_ui_components.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

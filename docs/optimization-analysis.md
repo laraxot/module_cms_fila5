@@ -86,8 +86,3 @@ class TextBlock implements BlockInterface
 
 ---
 *Stato: 🟡 Funzionale ma Necessita Caching e Modularità*
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

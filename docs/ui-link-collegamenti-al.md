@@ -39,8 +39,3 @@ Il modulo Cms utilizza i componenti UI definiti nel modulo UI per:
 Questo documento è collegato bidirezionalmente con [cms-link.md](../../ui/docs/cms-link.md) nel modulo UI.
 
 > Aggiorna entrambi i riferimenti se modifichi l'utilizzo dei componenti UI nel frontend o aggiungi nuove integrazioni.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

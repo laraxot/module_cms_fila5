@@ -237,8 +237,3 @@ Esito aggiornato:
 Implicazione pratica:
 - per questa pagina non e ancora corretto parlare di parity ottenibile con soli CSS/JS
 - prima serve riallineare struttura e wrapper effettivamente renderizzati dal tema
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

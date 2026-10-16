@@ -39,8 +39,3 @@ Quindi la blade deve restare indipendente dal nome del tema attivo.
 
 - [layout-runtime-contract.md](./layout-runtime-contract.md)
 - [../../Themes/Sixteen/docs/component-page-alias-rule.md](../../../Themes/Sixteen/docs/component-page-alias-rule.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

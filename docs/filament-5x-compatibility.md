@@ -166,8 +166,3 @@ Questo evita errori di `ComponentNotFoundException` nelle architetture modulari.
 - [Filament 5.x Guida Upgrade](https://filamentphp.com/docs/5.x/panels/upgrade)
 - [Classi XotBase](../Xot/docs/filament-xotbase-classes.md)
 - [Testing Filament](../Xot/docs/filament-testing.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -359,8 +359,3 @@ La struttura dei layout e componenti Blade in il progetto è progettata per esse
 L'integrazione con Filament e Livewire aggiunge potenti funzionalità di gestione dei form e interattività, mantenendo al contempo una struttura di codice pulita e organizzata.
 
 Seguendo le best practices documentate in questo documento, gli sviluppatori possono estendere e mantenere efficacemente l'interfaccia utente di il progetto.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
