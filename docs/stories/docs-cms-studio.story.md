@@ -16,7 +16,7 @@ related:
 # Docs Cms: studio del codice e correzione degli ingressi
 
 ## Richiesta
-Fase BMAD documentazione/qualita' (DOC-010 + DOC-002): capire come il Cms serve le pagine JSON del sito (modelli Page, sezioni, blocchi) e confrontarlo con i docs; correggere `README.md`, `00-index.md`, `index.md` senza toccare le righe dell'altra sessione che lavora sul Cms.
+Fase BMAD documentazione/qualita' (DOC-010 + DOC-002): capire come il Cms serve le pagine JSON del sito (modelli Page, sezioni, blocchi) e confrontarlo con i docs; correggere `README.md`, `00-INDEX.md`, `index.md` senza toccare le righe dell'altra sessione che lavora sul Cms.
 
 ## Analisi
 Verificato il 2026-10-14:
@@ -29,7 +29,7 @@ Verificato il 2026-10-14:
 
 ## Modifiche
 - `README.md`: blocco da "# Modulo Cms" a "Dipendenze" sostituito (come si servono le pagine, Filament, quick start provato, debito, test, mappa); footer "Production" sostituito dalla data di verifica; `status: active`.
-- `00-index.md` (riletto prima, mtime 07:36:52, nessuna scrittura nei 15 minuti precedenti): aggiunta in coda al paragrafo di governance la sezione "Stato verificato e mappa delle directory"; righe dell'altra sessione intatte (la nota "BMAD + second brain note (agent AI update 2026-10-14)" e le sezioni Design Comuni non sono state toccate), solo `updated` portato a 2026-10-14.
+- `00-INDEX.md` (riletto prima, mtime 07:36:52, nessuna scrittura nei 15 minuti precedenti): aggiunta in coda al paragrafo di governance la sezione "Stato verificato e mappa delle directory"; righe dell'altra sessione intatte (la nota "BMAD + second brain note (agent AI update 2026-10-14)" e le sezioni Design Comuni non sono state toccate), solo `updated` portato a 2026-10-14.
 - `00-index.md`: nota di variante storica e 18 link a `../Meetup/docs/` annotati come mancanti.
 - `index.md`: nota in testa e 24 link a file mancanti annotati.
 - `wiki/log.md`: 2 link annotati e voce datata. `docs-organizer.py stale --fix` su `wiki/content-architecture.md`.
@@ -42,7 +42,7 @@ Verificato il 2026-10-14:
 
 ## Decisioni
 - I 576 .md nella radice di `docs/` non si spostano (DOC-004/006). Nessun file cancellato o rinominato; nessuna modifica al codice.
-- `00-index.md` resta l'ingresso operativo; `index.md` e `00-index.md` restano varianti storiche annotate.
+- `00-INDEX.md` resta l'ingresso operativo; `index.md` e `00-index.md` restano varianti storiche annotate.
 
 ## Aperto
 - Pulire `app/docs`, `app/Config`, `app/config`, `app/bashscripts`, `app/App` e le viste `*_old3`: richiede una story di codice.

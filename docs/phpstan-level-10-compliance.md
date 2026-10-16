@@ -218,7 +218,3 @@ Il modulo Cms è ora **completamente compliant** con PHPStan Level 10:
 - *PHPStan Level 10: zero compromessi*
 - *Type Safety: rigoroso e completo*
 - *Interface Compliance: verificata a runtime*
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

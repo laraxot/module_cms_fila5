@@ -404,8 +404,3 @@ La cartella `docs/` è ben organizzata con:
 **Maintainer**: CMS Team
 **Status**: 🚧 In Development (65% completo)
 **Prossima Revisione**: [DATE]
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

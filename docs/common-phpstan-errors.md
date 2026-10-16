@@ -50,8 +50,3 @@ This error typically occurs when:
 - Prevents code quality checks from completing
 - Can hide other important errors in the codebase
 - Affects the overall quality gate in CI/CD pipelines
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

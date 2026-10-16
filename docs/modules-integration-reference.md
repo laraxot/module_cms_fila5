@@ -761,7 +761,3 @@ Blade::anonymousComponentNamespace($namespace, $path);
 6. Test functionality
 
 This reference provides a comprehensive understanding of how all modules integrate with each other and with the theme system in the LaravelPizza project.
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

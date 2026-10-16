@@ -100,8 +100,3 @@ For routes such as `/it/events/{slug}`:
 - `chaos-monkey-recovery-playbook.md`
 - `../../../Themes/Meetup/docs/chaos-monkey-theme-recovery-playbook.md`
 - `../../Meetup/docs/chaos-monkey-event-rendering-playbook.md`
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
