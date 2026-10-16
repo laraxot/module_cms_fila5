@@ -14,6 +14,9 @@ status: draft
 
 Concetti Cms. On-demand: `qmd search` · [trigger map](/docs/wiki/rules/00-TRIGGER_MAP.md).
 
+- [Sostenibilità contenuto](../../project-sustainability-content.md) — pagina `/sostieni` e sezioni partner (BMAD discovery)
+- [Hub risorse inbound](../../inbound-marketing-hub-risorse.md) — pattern AFC hub poche risorse (BMAD)
+
 ## Folio FO (routing) — canon
 
 - [folio-filesystem-routing-no-web-php](folio-filesystem-routing-no-web-php.md) — **religione**: file `pages/` = rotta, mai `web.php`

@@ -17,8 +17,3 @@ status: draft
 
 ## Decision
 - Normalize test file to valid syntax and keep only essential checks for block discovery/rendering integration.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

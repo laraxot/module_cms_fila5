@@ -327,7 +327,3 @@ L'approccio combinato sfrutta:
 - L'efficienza di Tailwind CSS e DaisyUI
 
 Il risultato sarà un'interfaccia che soddisfa le esigenze di pazienti e operatori sanitari, contribuendo al successo complessivo della piattaforma il progetto. 
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

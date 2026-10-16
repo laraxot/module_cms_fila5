@@ -188,8 +188,3 @@ Ogni blocco supporta diversi contesti:
 - [Modulo UI](../ui/docs/blocks-system.md)
 - [Filament Builder](https://filamentphp.com/docs/3.x/forms/fields/builder)
 - [Laravel Folio](../../../docs/folio-routing.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -188,7 +188,3 @@ Per ottimizzare le performance della homepage:
 3. **Localizzazione**: Gestire correttamente le traduzioni dei contenuti
 4. **Testing**: Verificare la responsiveness su diversi dispositivi
 5. **Manutenibilità**: Documentare le personalizzazioni e i blocchi personalizzati 
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

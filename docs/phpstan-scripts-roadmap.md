@@ -108,8 +108,3 @@ Su questi due file non e' stata applicata una patch di codice in questa sessione
 ---
 
 **
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

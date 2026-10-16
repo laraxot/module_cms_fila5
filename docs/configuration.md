@@ -175,8 +175,3 @@ if (!$result->isValid()) {
 * [configuration.md](docs/configuration.md)
 * [configuration.md](laravel/modules/xot/docs/configuration.md)
 * [configuration.md](laravel/modules/cms/docs/configuration.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

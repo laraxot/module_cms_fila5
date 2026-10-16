@@ -35,8 +35,3 @@ status: draft
 - [ ] Tutte le 10 suppressioni analizzate
 - [ ] Almeno 7 risolte senza suppress
 - [ ] PHPStan 0 errori mantenuto
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
