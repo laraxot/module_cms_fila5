@@ -36,8 +36,3 @@ status: draft
 - Integrare le correzioni sopra e rieseguire PHP Insights. Obiettivo: Style ≥ 90%, Architecture ≥ 85%.
 - Aggiornare questa nota e `quality-tooling.md` dopo ogni passaggio per tracciare lo stato.
 - Collegare i fix ai relativi documenti tecnici (es. `./naming-conventions.md`, `./filament-integration.md`).
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

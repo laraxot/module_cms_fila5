@@ -123,8 +123,3 @@ Each block template receives its variables via `array_merge($data, $block->data)
 ## Public property `$data`
 
 `$data` is declared as a public property. Laravel Blade components automatically inject public properties into the component's view, so `$data` is available in `cms::components.page` even without being listed explicitly in `$view_params`. The explicit entry is kept for clarity and for use in `array_merge` within the block loop.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

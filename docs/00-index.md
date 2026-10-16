@@ -19,7 +19,7 @@ discussions: https://github.com/laraxot/module_cms_fila5/discussions
 
 # Cms Module Documentation
 
-> Nota 2026-10-14: variante storica dell'indice. L'ingresso operativo e' [00-INDEX.md](./00-index.md); lo stato verificato del modulo e' in [README.md](./README.md). Le voci "Core Concepts", "Development Guides", "Frontend Assets" e "Missing Features" qui sotto puntano a `../Meetup/docs/`, cartella che non esiste (`laravel/Modules/Meetup` non c'e' e i file non sono in `Themes/Meetup/docs/`): i link sono annotati come mancanti.
+> Nota 2026-10-14: variante storica dell'indice. L'ingresso operativo e' [00-INDEX.md](./00-INDEX.md); lo stato verificato del modulo e' in [README.md](./README.md). Le voci "Core Concepts", "Development Guides", "Frontend Assets" e "Missing Features" qui sotto puntano a `../Meetup/docs/`, cartella che non esiste (`laravel/Modules/Meetup` non c'e' e i file non sono in `Themes/Meetup/docs/`): i link sono annotati come mancanti.
 
 ## Overview
 
@@ -69,7 +69,7 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 
 ## 📚 Design Comuni - Index Completo
 
-- **[DESIGN_COMUNI_INDEX.md](./design-comuni-index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
+- **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
 
 ## Active design-comuni references
 
@@ -82,7 +82,7 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 - [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) - Audit batch pagine
 - [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) - Verifica parity
 - [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Flusso runtime aggiornato della homepage di test
-- [PAGE_COMPONENT_ARCHITECTURE.md](./page-component-architecture.md) - Architettura generale componenti pagina
+- [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale componenti pagina
 
 ## Theme cross links
 
@@ -104,7 +104,3 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 - Se il problema e' strutturale, verificare prima Cms JSON + routing.
 - Se il problema e' visivo, lavorare nel tema e documentare i risultati anche qui.
 - Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
