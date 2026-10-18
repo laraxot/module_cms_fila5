@@ -2,33 +2,75 @@
 
 declare(strict_types=1);
 
-use Illuminate\Support\Str;
+namespace Modules\Cms\Tests\Feature\Auth;
 
-function cmsProfileGenerateUniqueEmail(): string
-{
-    return 'test+'.Str::uuid()->toString().'@example.com';
-}
+use Livewire\Volt\Volt as LivewireVolt;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Tests\TestCase;
 
-test('profile settings page can be rendered', function (): void {
-    cmsSkipTest('Route /it/settings/profile not available in this install.');
+use function Pest\Laravel\actingAs;
+
+uses(TestCase::class);
+
+    $user = $userClass::factory()->create();
+
+    $lang = app()->getLocale();
+    actingAs($user)->get('/'.$lang.'/settings/profile')->assertOk();
 });
 
-test('profile information can be updated', function (): void {
-    cmsSkipTest('Profile update flow requires full Volt/page setup.');
+    $user = $userClass::factory()->create();
+
+    actingAs($user);
+
+    $response = LivewireVolt::test('settings.profile')
+        ->set('name', 'Test User')
+        ->set('email', 'test@example.com')
+        ->call('updateProfileInformation');
+
+    $response->assertHasNoErrors();
+
+    $user->refresh();
+
+    expect($user->name)
+        ->toBe('Test User')
+        ->and($user->email)
+        ->toBe('test@example.com')
+        ->and($user->email_verified_at)
+        ->toBeNull();
 });
 
-test('email verification status is reset if email changes', function (): void {
-    cmsSkipTest('Email verification profile flow requires full setup.');
+    $user = $userClass::factory()->create();
+
+    actingAs($user);
+
+    $response = LivewireVolt::test('settings.profile')
+        ->set('name', 'Test User')
+        ->set('email', $user->email)
+        ->call('updateProfileInformation');
+
+    $response->assertHasNoErrors();
+
+    expect($user->refresh()->email_verified_at)->not->toBeNull();
 });
 
-test('email verification status is not reset if email does not change', function (): void {
-    cmsSkipTest('Email verification profile flow requires full setup.');
+    $user = $userClass::factory()->create();
+
+    actingAs($user);
+
+    $response = LivewireVolt::test('settings.delete-user-form')->set('password', 'password')->call('deleteUser');
+
+    $response->assertHasNoErrors()->assertRedirect('/');
+
+    expect($user->fresh())->toBeNull()->and(auth()->check())->toBeFalse();
 });
 
-test('user account can be deleted', function (): void {
-    cmsSkipTest('Account deletion flow requires full Volt/page setup.');
-});
+    $user = $userClass::factory()->create();
 
-test('user account deletion fails with wrong password', function (): void {
-    cmsSkipTest('Account deletion flow requires full Volt/page setup.');
+    actingAs($user);
+
+    $response = LivewireVolt::test('settings.delete-user-form')->set('password', 'wrong-password')->call('deleteUser');
+
+    $response->assertHasErrors(['password']);
+
+    expect($user->fresh())->not->toBeNull();
 });

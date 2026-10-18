@@ -6,6 +6,7 @@ namespace Modules\Cms\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\MultipleRecordsFoundException;
 use Illuminate\Support\Carbon;
 use Modules\Cms\Models\Traits\HasBlocks;
 use Modules\Tenant\Models\Traits\SushiToJsons;
@@ -111,13 +112,19 @@ class Page extends BaseModelLang
      */
     public function getRows(): array
     {
-        return $this->getSushiRows();
+        $rows = $this->getSushiRows();
+
+        return $rows;
     }
 
     public static function findUniqueBySlug(string $slug): ?self
     {
         try {
             return self::query()->where('slug', $slug)->sole();
+        } catch (MultipleRecordsFoundException $e) {
+            throw new MultipleRecordsFoundException(
+                "Page slug duplication detected for slug='{$slug}': 2 or more CMS pages found (expected 1). Check database / CMS JSON for duplicate '{$slug}'. Original: ".$e->getMessage()
+            );
         } catch (ModelNotFoundException) {
             return null;
         }

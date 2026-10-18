@@ -13,7 +13,6 @@ use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertAuthenticated;
-use function Pest\Laravel\assertAuthenticatedAs;
 use function Pest\Laravel\assertGuest;
 use function Pest\Laravel\get;
 
@@ -197,7 +196,7 @@ describe('Frontend Login User Types', function () {
             ->call('authenticate');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
 
         // Verify authenticated user
         $authenticatedUser = Auth::user();

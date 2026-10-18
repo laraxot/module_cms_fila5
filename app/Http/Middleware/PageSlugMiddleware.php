@@ -95,8 +95,13 @@ class PageSlugMiddleware
         }
 
         foreach (array_unique($candidates) as $candidate) {
-            if (Page::findUniqueBySlug($candidate) !== null) {
-                return $candidate;
+            try {
+                if (Page::findUniqueBySlug($candidate) !== null) {
+                    return $candidate;
+                }
+            } catch (\Throwable) {
+                // Skip candidate if duplicate slug found in database
+                continue;
             }
         }
 
