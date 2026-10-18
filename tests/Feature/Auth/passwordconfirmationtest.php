@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
-use Livewire\Volt\Volt as LivewireVolt;
 use Illuminate\Support\Facades\Hash;
+use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Cms\Tests\TestCase;
 
 use function Pest\Laravel\actingAs;
