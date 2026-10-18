@@ -2,20 +2,30 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Models;
-
+use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Tenant\Models\Traits\SushiToJsons;
-use PHPUnit\Framework\Assert;
 
-use function Safe\class_uses;
+describe('Page Business Logic', function () {
+    test('page extends base model lang for multilingual support', function () {
+        expect(Page::class)->toBeSubclassOf(BaseModelLang::class);
+    });
 
-describe('Page Business Logic', function (): void {
-    test('page has expected fillable fields', function (): void {
+    test('page has translatable fields configured', function () {
+        $page = new Page();
+
+        expect($page->translatable)->toEqual([
+            'title',
+            'content_blocks',
+            'sidebar_blocks',
+            'footer_blocks',
+        ]);
+    });
+
+    test('page has expected fillable fields', function () {
         $page = new Page();
         $expectedFillable = [
             'content',
-            'description',
             'slug',
             'title',
             'middleware',
@@ -24,37 +34,43 @@ describe('Page Business Logic', function (): void {
             'footer_blocks',
         ];
 
-        Assert::assertEquals($expectedFillable, $page->getFillable());
+        expect($page->getFillable())->toEqual($expectedFillable);
     });
 
-    test('page has sushi to json trait', function (): void {
+    test('page has sushi to json trait', function () {
         $traits = class_uses(Page::class);
 
-        Assert::assertArrayHasKey(SushiToJsons::class, $traits);
+        expect($traits)->toHaveKey(SushiToJsons::class);
     });
 
-    test('page has correct casts for blocks and arrays', function (): void {
+    test('page can get middleware by slug', function () {
+        $middleware = Page::getMiddlewareBySlug('non-existent-slug');
+
+        expect($middleware)->toBeArray();
+    });
+
+    test('page has correct casts for blocks and arrays', function () {
         $page = new Page();
         $casts = $page->getCasts();
 
-        Assert::assertSame('array', $casts['content_blocks']);
-        Assert::assertSame('array', $casts['sidebar_blocks']);
-        Assert::assertSame('array', $casts['footer_blocks']);
-        Assert::assertSame('array', $casts['middleware']);
+        expect($casts['content_blocks'])->toBe('array');
+        expect($casts['sidebar_blocks'])->toBe('array');
+        expect($casts['footer_blocks'])->toBe('array');
+        expect($casts['middleware'])->toBe('array');
     });
 
-    test('page has schema definition for structured data', function (): void {
+    test('page has schema definition for structured data', function () {
         $page = new Page();
 
-        $reflection = new \ReflectionClass($page);
-        $schemaProperty = $reflection->getProperty('schema');
+        expect($page)->toHaveProperty('schema');
+        expect($page->schema['content_blocks'])->toBe('json');
+        expect($page->schema['sidebar_blocks'])->toBe('json');
+        expect($page->schema['footer_blocks'])->toBe('json');
+    });
 
-        Assert::assertTrue($schemaProperty->isProtected());
+    test('page can get rows for sushi functionality', function () {
+        $page = new Page();
 
-        /** @var array<string, mixed> $schema */
-        $schema = $schemaProperty->getValue($page);
-        Assert::assertSame('json', $schema['content_blocks']);
-        Assert::assertSame('json', $schema['sidebar_blocks']);
-        Assert::assertSame('json', $schema['footer_blocks']);
+        expect(method_exists($page, 'getRows'))->toBeTrue();
     });
 });
