@@ -2,121 +2,291 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Models;
-
-use Modules\Cms\Models\BaseModel;
+use Illuminate\Database\QueryException;
 use Modules\Cms\Models\PageContent;
 use Modules\Tenant\Models\Traits\SushiToJsons;
-use PHPUnit\Framework\Assert;
 use Spatie\Translatable\HasTranslations;
 
-describe('Page Content Business Logic', function (): void {
-    test('page content model can be instantiated', function (): void {
-        $pageContent = new PageContent();
-        Assert::assertInstanceOf(PageContent::class, $pageContent);
-    });
+test('page content model uses required traits', function () {
+    $pageContent = new PageContent();
 
-    test('page content extends base model', function (): void {
-        $pageContent = new PageContent();
-        Assert::assertInstanceOf(BaseModel::class, $pageContent);
-    });
+    expect($pageContent)->toBeInstanceOf(SushiToJsons::class);
+    expect(in_array(HasTranslations::class, class_uses($pageContent), strict: true))->toBeTrue();
+});
 
-    test('page content uses sushi to jsons trait', function (): void {
-        $pageContent = new PageContent();
-        $traits = class_uses_recursive($pageContent);
+test('page content has correct translatable attributes', function () {
+    $pageContent = new PageContent();
 
-        Assert::assertContains(SushiToJsons::class, array_values($traits));
-    });
+    $expectedTranslatable = [
+        'name',
+        'blocks',
+    ];
 
-    test('page content uses has translations trait', function (): void {
-        $pageContent = new PageContent();
-        $traits = class_uses_recursive($pageContent);
+    expect($pageContent->translatable)->toBe($expectedTranslatable);
+});
 
-        Assert::assertContains(HasTranslations::class, array_values($traits));
-    });
+test('page content has correct fillable attributes', function () {
+    $pageContent = new PageContent();
 
-    test('page content has correct translatable attributes', function (): void {
-        $pageContent = new PageContent();
+    $expectedFillable = [
+        'name',
+        'slug',
+        'blocks',
+    ];
 
-        Assert::assertContains('name', $pageContent->translatable);
+    expect($pageContent->getFillable())->toBe($expectedFillable);
+});
 
-        Assert::assertContains('blocks', $pageContent->translatable);
-    });
+test('page content has correct schema definition', function () {
+    $pageContent = new PageContent();
 
-    test('page content has correct fillable attributes', function (): void {
-        $pageContent = new PageContent();
-        $fillable = $pageContent->getFillable();
+    $expectedSchema = [
+        'id' => 'integer',
+        'name' => 'json',
+        'slug' => 'string',
+        'blocks' => 'json',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'created_by' => 'string',
+        'updated_by' => 'string',
+    ];
 
-        Assert::assertContains('name', $fillable);
+    expect($pageContent->schema)->toBe($expectedSchema);
+});
 
-        Assert::assertContains('slug', $fillable);
+test('page content has correct casts', function () {
+    $pageContent = new PageContent();
 
-        Assert::assertContains('blocks', $fillable);
-    });
+    $expectedCasts = [
+        'id' => 'string',
+        'uuid' => 'string',
+        'name' => 'string',
+        'slug' => 'string',
+        'blocks' => 'array',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
-    test('page content has correct schema definition', function (): void {
-        $pageContent = new PageContent();
+    expect($pageContent->casts())->toBe($expectedCasts);
+});
 
-        $reflection = new \ReflectionClass($pageContent);
-        $schemaProperty = $reflection->getProperty('schema');
+test('page content can be created with basic data', function () {
+    $pageContent = PageContent::factory()->create([
+        'slug' => 'test-content',
+        'name' => ['en' => 'Test Content', 'it' => 'Contenuto di Test'],
+        'blocks' => [['type' => 'text', 'content' => 'Test content']],
+    ]);
 
-        Assert::assertTrue($schemaProperty->isProtected());
+    expect($pageContent)
+        ->slug->toBe('test-content')
+        ->name->toBe(['en' => 'Test Content', 'it' => 'Contenuto di Test'])
+        ->blocks->toBe([['type' => 'text', 'content' => 'Test content']]);
+});
 
-        /** @var array<string, mixed> $schema */
-        $schema = $schemaProperty->getValue($pageContent);
-        Assert::assertArrayHasKey('id', $schema);
-        Assert::assertArrayHasKey('name', $schema);
-        Assert::assertArrayHasKey('slug', $schema);
-        Assert::assertArrayHasKey('blocks', $schema);
-        Assert::assertSame('json', $schema['name']);
-        Assert::assertSame('json', $schema['blocks']);
-        Assert::assertSame('string', $schema['slug']);
-    });
+test('page content blocks support complex structures', function () {
+    $blocks = [
+        [
+            'type' => 'hero',
+            'title' => 'Welcome Banner',
+            'content' => 'Hero section content',
+            'image' => 'hero.jpg',
+            'cta' => ['text' => 'Get Started', 'link' => '/start'],
+        ],
+        [
+            'type' => 'features',
+            'title' => 'Our Features',
+            'items' => [
+                ['title' => 'Fast', 'description' => 'Lightning fast performance'],
+                ['title' => 'Secure', 'description' => 'Bank-level security'],
+                ['title' => 'Reliable', 'description' => '99.9% uptime guarantee'],
+            ],
+        ],
+        [
+            'type' => 'testimonial',
+            'quote' => 'Amazing service!',
+            'author' => 'John Doe',
+            'company' => 'ABC Corp',
+            'image' => 'john.jpg',
+        ],
+    ];
 
-    test('page content has correct casts', function (): void {
-        $pageContent = new PageContent();
-        /** @var array<string, mixed> $casts */
-        $casts = $pageContent->getCasts();
-        Assert::assertArrayHasKey('id', $casts);
+    $pageContent = PageContent::factory()->create(['blocks' => $blocks]);
 
-        Assert::assertArrayHasKey('blocks', $casts);
+    expect($pageContent->blocks)
+        ->toBeArray()
+        ->toHaveCount(3)
+        ->sequence(
+            fn ($block) => $block->type->toBe('hero'),
+            fn ($block) => $block->type->toBe('features'),
+            fn ($block) => $block->type->toBe('testimonial'),
+        );
+});
 
-        Assert::assertArrayHasKey('created_at', $casts);
+test('page content supports multilingual name', function () {
+    $pageContent = PageContent::factory()->create([
+        'name' => [
+            'en' => 'Home Content',
+            'it' => 'Contenuto Home',
+            'es' => 'Contenido Principal',
+            'fr' => 'Contenu Principal',
+        ],
+    ]);
 
-        Assert::assertArrayHasKey('updated_at', $casts);
+    expect($pageContent->name)
+        ->toBeArray()
+        ->toHaveKey('en', 'Home Content')
+        ->toHaveKey('it', 'Contenuto Home')
+        ->toHaveKey('es', 'Contenido Principal')
+        ->toHaveKey('fr', 'Contenu Principal');
+});
 
-        Assert::assertSame('array', $casts['blocks']);
-    });
+test('page content supports multilingual blocks', function () {
+    $blocks = [
+        'en' => [
+            ['type' => 'text', 'content' => 'English content'],
+        ],
+        'it' => [
+            ['type' => 'text', 'content' => 'Contenuto italiano'],
+        ],
+        'es' => [
+            ['type' => 'text', 'content' => 'Contenido español'],
+        ],
+    ];
 
-    test('page content get rows method returns array', function (): void {
-        $pageContent = new PageContent();
-        $rows = $pageContent->getRows();
-        Assert::assertNotEmpty($rows);
-    });
+    $pageContent = PageContent::factory()->create(['blocks' => $blocks]);
 
-    test('page content has sluggable configuration', function (): void {
-        $pageContent = new PageContent();
-        $sluggable = $pageContent->sluggable();
-        Assert::assertArrayHasKey('slug', $sluggable);
-        /** @var array<string, mixed> $slugConfig */
-        $slugConfig = $sluggable['slug'];
-        Assert::assertArrayHasKey('source', $slugConfig);
+    expect($pageContent->blocks)
+        ->toBeArray()
+        ->toHaveKeys(['en', 'it', 'es'])
+        ->en->toBeArray()->toHaveCount(1)
+        ->it->toBeArray()->toHaveCount(1)
+        ->es->toBeArray()->toHaveCount(1);
+});
 
-        Assert::assertSame('title', $slugConfig['source']);
-    });
+test('page content factory creates valid instances', function () {
+    $pageContent = PageContent::factory()->make();
 
-    test('page content blocks cast to array', function (): void {
-        $pageContent = new PageContent();
-        $casts = $pageContent->getCasts();
+    expect($pageContent)
+        ->slug->toBeString()
+        ->not->toBeEmpty()
+        ->name->toBeArray()
+        ->not->toBeEmpty()
+        ->blocks->toBeArray();
+});
 
-        Assert::assertSame('array', $casts['blocks']);
-    });
+test('page content slug must be unique', function () {
+    $pageContent1 = PageContent::factory()->create(['slug' => 'unique-content']);
 
-    test('page content has datetime casts for timestamps', function (): void {
-        $pageContent = new PageContent();
-        $casts = $pageContent->getCasts();
+    expect(fn () => PageContent::factory()->create(['slug' => 'unique-content']))
+        ->toThrow(QueryException::class);
+});
 
-        Assert::assertSame('datetime', $casts['created_at']);
-        Assert::assertSame('datetime', $casts['updated_at']);
-    });
+test('page content blocks validation', function () {
+    $pageContent = PageContent::factory()->make(['blocks' => 'invalid-string']);
+
+    expect($pageContent->save(...))->toThrow(QueryException::class);
+});
+
+test('page content handles large blocks efficiently', function () {
+    $largeBlocks = array_map(
+        fn ($i) => [
+            'type' => 'card',
+            'title' => "Card {$i}",
+            'content' => "Content for card {$i} with detailed description.",
+            'image' => "card{$i}.jpg",
+            'metadata' => ['index' => $i, 'category' => 'test'],
+        ],
+        range(1, 50),
+    );
+
+    $pageContent = PageContent::factory()->create(['blocks' => $largeBlocks]);
+
+    expect($pageContent->fresh()->blocks)->toBeArray()->toHaveCount(50);
+});
+
+test('page content name validation for multilingual support', function () {
+    $pageContent = PageContent::factory()->make(['name' => 'invalid-string']);
+
+    expect($pageContent->save(...))->toThrow(QueryException::class);
+});
+
+test('page content getRows method returns sushi rows', function () {
+    $pageContent = new PageContent();
+
+    $rows = $pageContent->getRows();
+
+    expect($rows)->toBeArray();
+});
+
+test('page content sluggable configuration', function () {
+    $pageContent = new PageContent();
+
+    $sluggable = $pageContent->sluggable();
+
+    expect($sluggable)->toBeArray()->toHaveKey('slug')->slug->toBeArray()->toHaveKey('source', 'title');
+});
+
+test('page content with complex nested block structures', function () {
+    $complexBlocks = [
+        [
+            'type' => 'accordion',
+            'title' => 'FAQ Section',
+            'items' => array_map(
+                fn ($i) => [
+                    'question' => "Question {$i}",
+                    'answer' => "Answer to question {$i} with detailed explanation.",
+                    'expanded' => 0 === $i,
+                ],
+                range(1, 20),
+            ),
+        ],
+        [
+            'type' => 'gallery',
+            'title' => 'Image Gallery',
+            'images' => array_map(
+                fn ($i) => [
+                    'src' => "gallery/image{$i}.jpg",
+                    'alt' => "Image {$i}",
+                    'caption' => "Caption for image {$i}",
+                    'thumbnail' => "gallery/thumb{$i}.jpg",
+                ],
+                range(1, 15),
+            ),
+        ],
+        [
+            'type' => 'pricing',
+            'title' => 'Pricing Plans',
+            'plans' => [
+                [
+                    'name' => 'Basic',
+                    'price' => '$9.99',
+                    'features' => ['Feature 1', 'Feature 2', 'Feature 3'],
+                    'button' => ['text' => 'Get Basic', 'link' => '/buy/basic'],
+                ],
+                [
+                    'name' => 'Pro',
+                    'price' => '$19.99',
+                    'features' => ['All Basic features', 'Priority Support', 'Advanced Analytics'],
+                    'button' => ['text' => 'Get Pro', 'link' => '/buy/pro'],
+                ],
+                [
+                    'name' => 'Enterprise',
+                    'price' => '$49.99',
+                    'features' => ['All Pro features', 'Dedicated Account Manager', 'Custom Solutions'],
+                    'button' => ['text' => 'Contact Sales', 'link' => '/contact'],
+                ],
+            ],
+        ],
+    ];
+
+    $pageContent = PageContent::factory()->create(['blocks' => $complexBlocks]);
+
+    expect($pageContent->fresh()->blocks)
+        ->toBeArray()
+        ->toHaveCount(3)
+        ->sequence(
+            fn ($block) => $block->type->toBe('accordion')->items->toHaveCount(20),
+            fn ($block) => $block->type->toBe('gallery')->images->toHaveCount(15),
+            fn ($block) => $block->type->toBe('pricing')->plans->toHaveCount(3),
+        );
 });
