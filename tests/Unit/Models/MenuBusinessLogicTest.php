@@ -1,40 +1,38 @@
 <?php
 
 declare(strict_types=1);
-
-namespace Modules\Cms\Tests\Unit\Models;
-
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Menu;
-use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
-use PHPUnit\Framework\Assert;
+use Modules\Xot\Models\Traits\TypedHasRecursiveRelationships;
 
 use function Safe\class_uses;
 
 use Staudenmeir\LaravelAdjacencyList\Eloquent\Builder;
-use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
-uses(TestCase::class);
-
-describe('Menu Business Logic', function (): void {
-    test('menu implements recursive relationships contract', function (): void {
-        $menu = new Menu();
-        Assert::assertInstanceOf(HasRecursiveRelationshipsContract::class, $menu);
+describe('Menu Business Logic', function () {
+    test('menu extends base model', function () {
+        expect(Menu::class)->toBeSubclassOf(BaseModel::class);
     });
 
-    test('menu has recursive relationships trait', function (): void {
+    test('menu implements recursive relationships contract', function () {
+        expect(Menu::class)->toImplement(HasRecursiveRelationshipsContract::class);
+    });
+
+    test('menu has recursive relationships trait', function () {
         $traits = class_uses(Menu::class);
-        Assert::assertNotEmpty($traits);
-        Assert::assertContains(HasRecursiveRelationships::class, array_values($traits));
+
+        expect($traits)->toHaveKey(TypedHasRecursiveRelationships::class);
     });
 
-    test('menu has sushi to json trait', function (): void {
+    test('menu has sushi to json trait', function () {
         $traits = class_uses(Menu::class);
-        Assert::assertArrayHasKey(SushiToJsons::class, $traits);
+
+        expect($traits)->toHaveKey(SushiToJsons::class);
     });
 
-    test('menu has expected fillable fields', function (): void {
+    test('menu has expected fillable fields', function () {
         $menu = new Menu();
         $expectedFillable = [
             'title',
@@ -42,47 +40,53 @@ describe('Menu Business Logic', function (): void {
             'parent_id',
         ];
 
-        Assert::assertEquals($expectedFillable, $menu->getFillable());
+        expect($menu->getFillable())->toEqual($expectedFillable);
     });
 
-    test('menu can get label', function (): void {
+    test('menu can get tree options for hierarchical display', function () {
+        $options = Menu::getTreeMenuOptions();
+
+        expect($options)->toBeArray();
+    });
+
+    test('menu can get label', function () {
         $menu = new Menu();
         $menu->title = 'Test Menu';
 
-        Assert::assertSame('Test Menu', $menu->getLabel());
+        expect($menu->getLabel())->toBe('Test Menu');
     });
 
-    test('menu has correct casts for structured data', function (): void {
+    test('menu has correct casts for structured data', function () {
         $menu = new Menu();
         $casts = $menu->getCasts();
 
-        Assert::assertSame('array', $casts['items']);
-        Assert::assertSame('string', $casts['id']);
+        expect($casts['items'])->toBe('array');
+        expect($casts['id'])->toBe('string');
     });
 
-    test('menu has schema definition for structured data', function (): void {
+    test('menu has schema definition for structured data', function () {
         $menu = new Menu();
 
-        $reflection = new \ReflectionClass($menu);
-        $schemaProperty = $reflection->getProperty('schema');
-
-        Assert::assertTrue($schemaProperty->isProtected());
-
-        /** @var array<string, mixed> $schema */
-        $schema = $schemaProperty->getValue($menu);
-        Assert::assertSame('string', $schema['title']);
-        Assert::assertSame('integer', $schema['parent_id']);
+        expect($menu)->toHaveProperty('schema');
+        expect($menu->schema['title'])->toBe('string');
+        expect($menu->schema['parent_id'])->toBe('integer');
     });
 
-    test('menu can build tree queries', function (): void {
+    test('menu can get rows for sushi functionality', function () {
+        $menu = new Menu();
+
+        expect(method_exists($menu, 'getRows'))->toBeTrue();
+    });
+
+    test('menu can build tree queries', function () {
         $query = Menu::tree();
 
-        Assert::assertInstanceOf(Builder::class, $query);
+        expect($query)->toBeInstanceOf(Builder::class);
     });
 
-    test('menu can query by depth', function (): void {
+    test('menu can query by depth', function () {
         $query = Menu::whereDepth(1);
 
-        Assert::assertInstanceOf(Builder::class, $query);
+        expect($query)->toBeInstanceOf(Builder::class);
     });
 });

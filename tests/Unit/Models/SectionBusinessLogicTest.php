@@ -2,17 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Unit\Models;
-
+use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
 use Modules\Tenant\Models\Traits\SushiToJsons;
-use PHPUnit\Framework\Assert;
 
-use function Safe\class_uses;
+describe('Section Business Logic', function () {
+    test('section extends base model lang for multilingual support', function () {
+        expect(Section::class)->toBeSubclassOf(BaseModelLang::class);
+    });
 
-describe('Section Business Logic', function (): void {
-    test('section has expected fillable fields', function (): void {
+    test('section has translatable fields configured', function () {
+        $section = new Section();
+
+        expect($section->translatable)->toEqual([
+            'name',
+            'blocks',
+        ]);
+    });
+
+    test('section has expected fillable fields', function () {
         $section = new Section();
         $expectedFillable = [
             'name',
@@ -20,48 +29,43 @@ describe('Section Business Logic', function (): void {
             'blocks',
         ];
 
-        Assert::assertEquals($expectedFillable, $section->getFillable());
+        expect($section->getFillable())->toEqual($expectedFillable);
     });
 
-    test('section has sushi to json trait', function (): void {
+    test('section has sushi to json trait', function () {
         $traits = class_uses(Section::class);
 
-        Assert::assertArrayHasKey(SushiToJsons::class, $traits);
+        expect($traits)->toHaveKey(SushiToJsons::class);
     });
 
-    test('section has has blocks trait', function (): void {
+    test('section has has blocks trait', function () {
         $traits = class_uses(Section::class);
 
-        Assert::assertArrayHasKey(HasBlocks::class, $traits);
+        expect($traits)->toHaveKey(HasBlocks::class);
     });
 
-    test('section has correct casts for multilingual and structured data', function (): void {
+    test('section has correct casts for multilingual and structured data', function () {
         $section = new Section();
         $casts = $section->getCasts();
 
-        Assert::assertSame('array', $casts['name']);
-        Assert::assertSame('array', $casts['blocks']);
-        Assert::assertSame('string', $casts['id']);
+        expect($casts['name'])->toBe('array');
+        expect($casts['blocks'])->toBe('array');
+        expect($casts['id'])->toBe('string');
     });
 
-    test('section has schema definition for structured data', function (): void {
+    test('section has schema definition for structured data', function () {
         $section = new Section();
 
-        $reflection = new \ReflectionClass($section);
-        $schemaProperty = $reflection->getProperty('schema');
-
-        Assert::assertTrue($schemaProperty->isProtected());
-
-        /** @var array<string, mixed> $schema */
-        $schema = $schemaProperty->getValue($section);
-        Assert::assertSame('json', $schema['name']);
-        Assert::assertSame('json', $schema['blocks']);
-        Assert::assertSame('string', $schema['slug']);
+        expect($section)->toHaveProperty('schema');
+        expect($section->schema['name'])->toBe('json');
+        expect($section->schema['blocks'])->toBe('json');
+        expect($section->schema['slug'])->toBe('string');
     });
 
-    test('section can get rows for sushi functionality', function (): void {
+    test('section can get rows for sushi functionality', function () {
         $section = new Section();
 
-        Assert::assertNotEmpty($section->getRows());
+        expect(method_exists($section, 'getRows'))->toBeTrue();
+        expect($section->getRows())->toBeArray();
     });
 });

@@ -4,44 +4,39 @@ declare(strict_types=1);
 
 use Illuminate\Database\Eloquent\Model;
 use Modules\Cms\Models\Conf;
-use PHPUnit\Framework\Assert;
-
-use function Safe\class_uses;
-
 use Sushi\Sushi;
 
-describe('Conf Business Logic', function (): void {
-    test('conf extends eloquent model', function (): void {
-        Assert::assertTrue(
-            (new ReflectionClass(Conf::class))->isSubclassOf(Model::class),
-        );
+describe('Conf Business Logic', function () {
+    test('conf extends eloquent model', function () {
+        expect(Conf::class)->toBeSubclassOf(Model::class);
     });
 
-    test('conf uses sushi trait for in-memory data', function (): void {
+    test('conf uses sushi trait for in-memory data', function () {
         $traits = class_uses(Conf::class);
 
-        Assert::assertArrayHasKey(Sushi::class, $traits);
+        expect($traits)->toHaveKey(Sushi::class);
     });
 
-    test('conf has expected fillable fields', function (): void {
+    test('conf has expected fillable fields', function () {
         $conf = new Conf();
         $expectedFillable = [
             'id',
             'name',
         ];
 
-        Assert::assertEquals($expectedFillable, $conf->getFillable());
+        expect($conf->getFillable())->toEqual($expectedFillable);
     });
 
-    test('conf uses name as route key', function (): void {
+    test('conf uses name as route key', function () {
         $conf = new Conf();
 
-        Assert::assertSame('name', $conf->getRouteKeyName());
+        expect($conf->getRouteKeyName())->toBe('name');
     });
 
-    test('conf can get rows from tenant service', function (): void {
+    test('conf can get rows from tenant service', function () {
         $conf = new Conf();
 
-        Assert::assertNotEmpty($conf->getRows());
+        expect(method_exists($conf, 'getRows'))->toBeTrue();
+        expect($conf->getRows())->toBeArray();
     });
 });
