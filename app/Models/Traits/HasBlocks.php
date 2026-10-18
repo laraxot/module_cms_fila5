@@ -21,7 +21,7 @@ use function Safe\preg_replace_callback;
  *
  * @phpstan-require-extends Model
  *
- * @method mixed getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
+ * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
 trait HasBlocks
@@ -86,7 +86,8 @@ trait HasBlocks
     }
 
     /**
-     * @param  array<int|string, mixed>  $blocks
+     * @param array<int|string, mixed> $blocks
+     *
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array
@@ -123,7 +124,7 @@ trait HasBlocks
             '/\{\{\s*(.+?)\s*\}\}/s',
             function (array $match): string {
                 /** @var array<int, string> $match */
-                if (preg_match(self::SAFE_EXPRESSION, $match[1]) === 1) {
+                if (1 === preg_match(self::SAFE_EXPRESSION, $match[1])) {
                     return Blade::render($match[0]);
                 }
 
@@ -141,8 +142,9 @@ trait HasBlocks
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
      * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
      *
-     * @param  string  $slug  The section/page slug
-     * @param  string|null  $side  The side to get blocks for (null for all blocks)
+     * @param string      $slug The section/page slug
+     * @param string|null $side The side to get blocks for (null for all blocks)
+     *
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
@@ -168,14 +170,7 @@ trait HasBlocks
                 })
                 ->implode(', ');
 
-            throw new \RuntimeException(sprintf(
-                'CMS content collision: %s matched %d records for slug [%s], side [%s]. Records: %s. Expected one JSON content record per slug.',
-                static::class,
-                $e->getCount(),
-                $slug,
-                $side ?? 'content',
-                $records,
-            ), previous: $e);
+            throw new \RuntimeException(sprintf('CMS content collision: %s matched %d records for slug [%s], side [%s]. Records: %s. Expected one JSON content record per slug.', static::class, $e->getCount(), $slug, $side ?? 'content', $records), previous: $e);
         } catch (ModelNotFoundException) {
             return [];
         }
