@@ -17,12 +17,12 @@ use function Safe\class_uses;
  */
 final class PageBusinessLogicTest extends TestCase
 {
-    public function test_extends_base_model_lang_for_translations(): void
+    public function testExtendsBaseModelLangForTranslations(): void
     {
-        Assert::assertInstanceOf(BaseModelLang::class, new Page);
+        Assert::assertInstanceOf(BaseModelLang::class, new Page());
     }
 
-    public function test_declares_translatable_page_fields(): void
+    public function testDeclaresTranslatablePageFields(): void
     {
         $expected = [
             'title',
@@ -32,10 +32,10 @@ final class PageBusinessLogicTest extends TestCase
             'footer_blocks',
         ];
 
-        Assert::assertSame($expected, (new Page)->translatable);
+        Assert::assertSame($expected, (new Page())->translatable);
     }
 
-    public function test_exposes_expected_fillable_attributes(): void
+    public function testExposesExpectedFillableAttributes(): void
     {
         $expected = [
             'content',
@@ -50,22 +50,22 @@ final class PageBusinessLogicTest extends TestCase
             'footer_blocks',
         ];
 
-        Assert::assertSame($expected, (new Page)->getFillable());
+        Assert::assertSame($expected, (new Page())->getFillable());
     }
 
-    public function test_uses_sushi_to_json_trait(): void
+    public function testUsesSushiToJsonTrait(): void
     {
         Assert::assertArrayHasKey(SushiToJsons::class, class_uses(Page::class));
     }
 
-    public function test_returns_empty_middleware_when_slug_is_unknown(): void
+    public function testReturnsEmptyMiddlewareWhenSlugIsUnknown(): void
     {
         Assert::assertSame([], Page::getMiddlewareBySlug('non-existent-slug-for-unit-test'));
     }
 
-    public function test_casts_block_fields_and_middleware_as_arrays(): void
+    public function testCastsBlockFieldsAndMiddlewareAsArrays(): void
     {
-        $casts = (new Page)->getCasts();
+        $casts = (new Page())->getCasts();
 
         Assert::assertSame('array', $casts['content_blocks']);
         Assert::assertSame('array', $casts['sidebar_blocks']);
