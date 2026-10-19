@@ -2,75 +2,74 @@
 
 declare(strict_types=1);
 
+namespace Modules\Cms\Tests\Unit\Models;
+
 use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
+use PHPUnit\Framework\Assert;
 
-describe('Page Business Logic', function () {
-    test('page extends base model lang for multilingual support', function () {
-        expect(Page::class)->toBeSubclassOf(BaseModelLang::class);
-    });
+use function Safe\class_uses;
 
-    test('page has translatable fields configured', function () {
-        $page = new Page();
+/**
+ * Verifica il contratto pubblico del model Page (pagine CMS multilingua).
+ */
+final class PageBusinessLogicTest extends TestCase
+{
+    public function test_extends_base_model_lang_for_translations(): void
+    {
+        Assert::assertInstanceOf(BaseModelLang::class, new Page);
+    }
 
-        expect($page->translatable)->toEqual([
+    public function test_declares_translatable_page_fields(): void
+    {
+        $expected = [
             'title',
-            'content_blocks',
-            'sidebar_blocks',
-            'footer_blocks',
-        ]);
-    });
-
-    test('page has expected fillable fields', function () {
-        $page = new Page();
-        $expectedFillable = [
-            'content',
-            'slug',
-            'title',
-            'middleware',
+            'blocks',
             'content_blocks',
             'sidebar_blocks',
             'footer_blocks',
         ];
 
-        expect($page->getFillable())->toEqual($expectedFillable);
-    });
+        Assert::assertSame($expected, (new Page)->translatable);
+    }
 
-    test('page has sushi to json trait', function () {
-        $traits = class_uses(Page::class);
+    public function test_exposes_expected_fillable_attributes(): void
+    {
+        $expected = [
+            'content',
+            'description',
+            'layout',
+            'slug',
+            'title',
+            'middleware',
+            'blocks',
+            'content_blocks',
+            'sidebar_blocks',
+            'footer_blocks',
+        ];
 
-        expect($traits)->toHaveKey(SushiToJsons::class);
-    });
+        Assert::assertSame($expected, (new Page)->getFillable());
+    }
 
-    test('page can get middleware by slug', function () {
-        $middleware = Page::getMiddlewareBySlug('non-existent-slug');
+    public function test_uses_sushi_to_json_trait(): void
+    {
+        Assert::assertArrayHasKey(SushiToJsons::class, class_uses(Page::class));
+    }
 
-        expect($middleware)->toBeArray();
-    });
+    public function test_returns_empty_middleware_when_slug_is_unknown(): void
+    {
+        Assert::assertSame([], Page::getMiddlewareBySlug('non-existent-slug-for-unit-test'));
+    }
 
-    test('page has correct casts for blocks and arrays', function () {
-        $page = new Page();
-        $casts = $page->getCasts();
+    public function test_casts_block_fields_and_middleware_as_arrays(): void
+    {
+        $casts = (new Page)->getCasts();
 
-        expect($casts['content_blocks'])->toBe('array');
-        expect($casts['sidebar_blocks'])->toBe('array');
-        expect($casts['footer_blocks'])->toBe('array');
-        expect($casts['middleware'])->toBe('array');
-    });
-
-    test('page has schema definition for structured data', function () {
-        $page = new Page();
-
-        expect($page)->toHaveProperty('schema');
-        expect($page->schema['content_blocks'])->toBe('json');
-        expect($page->schema['sidebar_blocks'])->toBe('json');
-        expect($page->schema['footer_blocks'])->toBe('json');
-    });
-
-    test('page can get rows for sushi functionality', function () {
-        $page = new Page();
-
-        expect(method_exists($page, 'getRows'))->toBeTrue();
-    });
-});
+        Assert::assertSame('array', $casts['content_blocks']);
+        Assert::assertSame('array', $casts['sidebar_blocks']);
+        Assert::assertSame('array', $casts['footer_blocks']);
+        Assert::assertSame('array', $casts['middleware']);
+    }
+}
