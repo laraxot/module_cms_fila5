@@ -15,11 +15,7 @@ if (! function_exists('actingAs')) {
      */
     function actingAs(Authenticatable $user, ?string $driver = null): TestResponse
     {
-        throw new RuntimeException(sprintf(
-            'Stub actingAs(%s, %s) not intended for runtime use',
-            $user::class,
-            $driver ?? 'default',
-        ));
+        throw new RuntimeException(sprintf('Stub actingAs(%s, %s) not intended for runtime use', $user::class, $driver ?? 'default'));
     }
 }
 
@@ -31,10 +27,6 @@ if (! function_exists('livewire')) {
      */
     function livewire(string $component, array $params = []): Testable
     {
-        throw new RuntimeException(sprintf(
-            'Stub livewire(%s, [%s]) not intended for runtime use',
-            $component,
-            implode(', ', array_keys($params)),
-        ));
+        throw new RuntimeException(sprintf('Stub livewire(%s, [%s]) not intended for runtime use', $component, implode(', ', array_keys($params))));
     }
 }
