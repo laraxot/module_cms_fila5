@@ -1,1 +1,6 @@
-# nwidart Test Convention — Cms\n- Feature tests: laravel/tests/Feature/Modules/Cms/\n- Unit tests: laravel/tests/Unit/Modules/Cms/\n- Integration: laravel/tests/Integration/Modules/Cms/\n- NEVER laravel/Modules/Cms/tests/\n- NEVER flat laravel/tests/Modules/\n- Fixtures PHPStan: laravel/Modules/Cms/app/Fixtures/
+# Nwidart Test Convention — Cms
+
+- Tests: `laravel/Modules/Cms/tests/`.
+- Module fixtures: `laravel/Modules/Cms/tests/Fixtures/`.
+- Application, cross-module and theme tests may live under `laravel/tests/`.
+- Never create a second `laravel/tests/Modules/Cms/` tree.
