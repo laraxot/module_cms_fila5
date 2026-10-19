@@ -1,1 +1,6 @@
-# Test Location Rule — Cms\n- Tests: laravel/tests/Modules/Cms/\n- Fixtures (PHPStan): laravel/Modules/Cms/app/Fixtures/\n- NO laravel/Modules/Cms/tests/\n- BMAD + second brain + ponytail + filament
+# Test Location Rule — Cms
+
+- Tests: `laravel/Modules/Cms/tests/`.
+- Module fixtures: `laravel/Modules/Cms/tests/Fixtures/`.
+- `laravel/tests/` is reserved for application, cross-module and theme tests.
+- Do not create `laravel/tests/Modules/Cms/` as a duplicate.
