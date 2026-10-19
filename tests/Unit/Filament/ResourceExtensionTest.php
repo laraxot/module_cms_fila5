@@ -103,11 +103,11 @@ test('page resource form schema contains expected fields', function () {
 
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'title',
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
         );
 
     $hasSlugField = collect($schema)
-        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'slug');
+        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && 'slug' === $field->getName());
 
     Assert::assertTrue($hasTitleField, 'PageResource should have title field');
     Assert::assertTrue($hasSlugField, 'PageResource should have slug field');
@@ -121,12 +121,12 @@ test('menu resource form schema contains expected fields', function () {
 
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'title',
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
         );
 
     $hasItemsField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'items',
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'items' === $field->getName(),
         );
 
     Assert::assertTrue($hasTitleField, 'MenuResource should have title field');
