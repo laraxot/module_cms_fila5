@@ -14,12 +14,15 @@ use function Pest\Laravel\get;
 
 uses(TestCase::class);
 
+test('forgot password screen can be rendered', function (): void {
     $lang = app()->getLocale();
     $response = get('/'.$lang.'/forgot-password');
 
     $response->assertStatus(200);
 });
 
+test('users can request a password reset link', function (): void {
+    $userClass = XotData::make()->getUserClass();
     $user = $userClass::factory()->create();
 
     LivewireVolt::test('auth.forgot-password')->set('email', $user->email)->call('sendPasswordResetLink');
@@ -27,6 +30,8 @@ uses(TestCase::class);
     Notification::assertSentTo($user, ResetPassword::class);
 });
 
+test('password reset page can be rendered from a notification', function (): void {
+    $userClass = XotData::make()->getUserClass();
     $user = $userClass::factory()->create();
     $lang = app()->getLocale();
 
@@ -40,6 +45,8 @@ uses(TestCase::class);
     });
 });
 
+test('users can reset their password', function (): void {
+    $userClass = XotData::make()->getUserClass();
     $user = $userClass::factory()->create();
     $lang = app()->getLocale();
 
