@@ -18,34 +18,34 @@ use function Safe\class_uses;
  */
 final class SectionBusinessLogicTest extends TestCase
 {
-    public function test_extends_base_model_lang_for_translations(): void
+    public function testExtendsBaseModelLangForTranslations(): void
     {
-        Assert::assertInstanceOf(BaseModelLang::class, new Section);
+        Assert::assertInstanceOf(BaseModelLang::class, new Section());
     }
 
-    public function test_declares_translatable_name_and_blocks(): void
+    public function testDeclaresTranslatableNameAndBlocks(): void
     {
-        Assert::assertSame(['name', 'blocks'], (new Section)->translatable);
+        Assert::assertSame(['name', 'blocks'], (new Section())->translatable);
     }
 
-    public function test_exposes_expected_fillable_attributes(): void
+    public function testExposesExpectedFillableAttributes(): void
     {
-        Assert::assertSame(['name', 'slug', 'blocks'], (new Section)->getFillable());
+        Assert::assertSame(['name', 'slug', 'blocks'], (new Section())->getFillable());
     }
 
-    public function test_uses_sushi_to_json_trait(): void
+    public function testUsesSushiToJsonTrait(): void
     {
         Assert::assertArrayHasKey(SushiToJsons::class, class_uses(Section::class));
     }
 
-    public function test_uses_has_blocks_trait(): void
+    public function testUsesHasBlocksTrait(): void
     {
         Assert::assertArrayHasKey(HasBlocks::class, class_uses(Section::class));
     }
 
-    public function test_casts_multilingual_fields_as_arrays(): void
+    public function testCastsMultilingualFieldsAsArrays(): void
     {
-        $casts = (new Section)->getCasts();
+        $casts = (new Section())->getCasts();
 
         Assert::assertSame('array', $casts['name']);
         Assert::assertSame('array', $casts['blocks']);
