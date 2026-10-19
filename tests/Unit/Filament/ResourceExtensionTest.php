@@ -8,17 +8,13 @@ use Modules\Cms\Filament\Resources\PageResource;
 use Modules\Cms\Filament\Resources\SectionResource;
 use Modules\Lang\Filament\Resources\LangBaseResource;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+use PHPUnit\Framework\Assert;
 
 test('cms resources extend proper base resources', function () {
-    // Multilingual resources should extend LangBaseResource
-    expect(PageResource::class)->toBeSubclassOf(LangBaseResource::class);
-
-    expect(PageContentResource::class)->toBeSubclassOf(LangBaseResource::class);
-
-    expect(SectionResource::class)->toBeSubclassOf(LangBaseResource::class);
-
-    // Non-multilingual resources should extend XotBaseResource
-    expect(MenuResource::class)->toBeSubclassOf(XotBaseResource::class);
+    Assert::assertTrue(is_subclass_of(PageResource::class, LangBaseResource::class));
+    Assert::assertTrue(is_subclass_of(PageContentResource::class, LangBaseResource::class));
+    Assert::assertTrue(is_subclass_of(SectionResource::class, LangBaseResource::class));
+    Assert::assertTrue(is_subclass_of(MenuResource::class, XotBaseResource::class));
 });
 
 test('cms resources do not implement unnecessary methods', function () {
@@ -32,18 +28,10 @@ test('cms resources do not implement unnecessary methods', function () {
     foreach ($resources as $resourceClass) {
         $reflection = new ReflectionClass($resourceClass);
 
-        expect($reflection->hasMethod('getPages'))
-            ->toBeFalse()
-            ->with("{$resourceClass} should not implement getPages()")
-            ->and($reflection->hasMethod('getRelations'))
-            ->toBeFalse()
-            ->with("{$resourceClass} should not implement getRelations()")
-            ->and($reflection->hasMethod('form'))
-            ->toBeFalse()
-            ->with("{$resourceClass} should not implement form()")
-            ->and($reflection->hasMethod('table'))
-            ->toBeFalse()
-            ->with("{$resourceClass} should not implement table()");
+        Assert::assertFalse($reflection->hasMethod('getPages'), "{$resourceClass} should not implement getPages()");
+        Assert::assertFalse($reflection->hasMethod('getRelations'), "{$resourceClass} should not implement getRelations()");
+        Assert::assertFalse($reflection->hasMethod('form'), "{$resourceClass} should not implement form()");
+        Assert::assertFalse($reflection->hasMethod('table'), "{$resourceClass} should not implement table()");
     }
 });
 
@@ -58,31 +46,20 @@ test('cms resources implement required getFormSchema method', function () {
     foreach ($resources as $resourceClass) {
         $reflection = new ReflectionClass($resourceClass);
 
-        expect($reflection->hasMethod('getFormSchema'))
-            ->toBeTrue()
-            ->with("{$resourceClass} must implement getFormSchema()");
+        Assert::assertTrue($reflection->hasMethod('getFormSchema'), "{$resourceClass} must implement getFormSchema()");
 
         $method = $reflection->getMethod('getFormSchema');
-        expect($method->isPublic())
-            ->toBeTrue()
-            ->with("{$resourceClass}::getFormSchema() must be public")
-            ->and($method->isStatic())
-            ->toBeTrue()
-            ->with("{$resourceClass}::getFormSchema() must be static")
-            ->and($method->getReturnType()?->getName())
-            ->toBe('array')
-            ->with("{$resourceClass}::getFormSchema() must return array");
+        Assert::assertTrue($method->isPublic(), "{$resourceClass}::getFormSchema() must be public");
+        Assert::assertTrue($method->isStatic(), "{$resourceClass}::getFormSchema() must be static");
+        Assert::assertSame('array', $method->getReturnType()?->getName(), "{$resourceClass}::getFormSchema() must return array");
     }
 });
 
 test('cms resources have correct model configuration', function () {
-    expect(PageResource::getModel())->toBe('Modules\\Cms\\Models\\Page');
-
-    expect(PageContentResource::getModel())->toBe('Modules\\Cms\\Models\\PageContent');
-
-    expect(SectionResource::getModel())->toBe('Modules\\Cms\\Models\\Section');
-
-    expect(MenuResource::getModel())->toBe('Modules\\Cms\\Models\\Menu');
+    Assert::assertSame('Modules\\Cms\\Models\\Page', PageResource::getModel());
+    Assert::assertSame('Modules\\Cms\\Models\\PageContent', PageContentResource::getModel());
+    Assert::assertSame('Modules\\Cms\\Models\\Section', SectionResource::getModel());
+    Assert::assertSame('Modules\\Cms\\Models\\Menu', MenuResource::getModel());
 });
 
 test('multilingual resources provide translatable locales', function () {
@@ -95,12 +72,10 @@ test('multilingual resources provide translatable locales', function () {
     foreach ($multilingualResources as $resourceClass) {
         $locales = $resourceClass::getTranslatableLocales();
 
-        expect($locales)
-            ->toBeArray()
-            ->not->toBeEmpty()->with("{$resourceClass} must provide translatable locales")->and($locales)->toContain(
-                'it',
-                'en',
-            )->with("{$resourceClass} must support Italian and English locales");
+        Assert::assertIsArray($locales, "{$resourceClass} must provide translatable locales");
+        Assert::assertNotEmpty($locales, "{$resourceClass} must provide translatable locales");
+        Assert::assertContains('it', $locales, "{$resourceClass} must support Italian and English locales");
+        Assert::assertContains('en', $locales, "{$resourceClass} must support Italian and English locales");
     }
 });
 
@@ -115,48 +90,47 @@ test('cms resource form schemas return valid arrays', function () {
     foreach ($resources as $resourceClass) {
         $schema = $resourceClass::getFormSchema();
 
-        expect($schema)
-            ->toBeArray()
-            ->not->toBeEmpty()->with("{$resourceClass}::getFormSchema() must return non-empty array");
+        Assert::assertIsArray($schema);
+        Assert::assertNotEmpty($schema, "{$resourceClass}::getFormSchema() must return non-empty array");
     }
 });
 
 test('page resource form schema contains expected fields', function () {
     $schema = PageResource::getFormSchema();
 
-    expect($schema)->toBeArray()->not->toBeEmpty();
+    Assert::assertIsArray($schema);
+    Assert::assertNotEmpty($schema);
 
-    // Check for basic field structure
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'title',
         );
 
     $hasSlugField = collect($schema)
-        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && 'slug' === $field->getName());
+        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'slug');
 
-    expect($hasTitleField)->toBeTrue('PageResource should have title field');
-    expect($hasSlugField)->toBeTrue('PageResource should have slug field');
+    Assert::assertTrue($hasTitleField, 'PageResource should have title field');
+    Assert::assertTrue($hasSlugField, 'PageResource should have slug field');
 });
 
 test('menu resource form schema contains expected fields', function () {
     $schema = MenuResource::getFormSchema();
 
-    expect($schema)->toBeArray()->not->toBeEmpty();
+    Assert::assertIsArray($schema);
+    Assert::assertNotEmpty($schema);
 
-    // Check for basic field structure
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'title',
         );
 
     $hasItemsField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'items' === $field->getName(),
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'items',
         );
 
-    expect($hasTitleField)->toBeTrue('MenuResource should have title field');
-    expect($hasItemsField)->toBeTrue('MenuResource should have items field');
+    Assert::assertTrue($hasTitleField, 'MenuResource should have title field');
+    Assert::assertTrue($hasItemsField, 'MenuResource should have items field');
 });
 
 test('resources use proper base resource functionality', function () {
@@ -171,26 +145,24 @@ test('resources use proper base resource functionality', function () {
         $pages = $resourceClass::getPages();
         $relations = $resourceClass::getRelations();
 
-        expect($pages)
-            ->toBeArray()
-            ->toHaveKeys(['index', 'create', 'edit'])
-            ->with("{$resourceClass} should have standard pages");
-
-        expect($relations)->toBeArray()->with("{$resourceClass} should return relations array");
+        Assert::assertIsArray($pages);
+        Assert::assertArrayHasKey('index', $pages, "{$resourceClass} should have standard pages");
+        Assert::assertArrayHasKey('create', $pages, "{$resourceClass} should have standard pages");
+        Assert::assertArrayHasKey('edit', $pages, "{$resourceClass} should have standard pages");
+        Assert::assertIsArray($relations, "{$resourceClass} should return relations array");
     }
 });
 
 test('resources follow naming conventions', function () {
-    expect(class_basename(PageResource::class))->toBe('PageResource');
-    expect(class_basename(PageContentResource::class))->toBe('PageContentResource');
-    expect(class_basename(SectionResource::class))->toBe('SectionResource');
-    expect(class_basename(MenuResource::class))->toBe('MenuResource');
+    Assert::assertSame('PageResource', class_basename(PageResource::class));
+    Assert::assertSame('PageContentResource', class_basename(PageContentResource::class));
+    Assert::assertSame('SectionResource', class_basename(SectionResource::class));
+    Assert::assertSame('MenuResource', class_basename(MenuResource::class));
 
-    // Test that model names are correctly derived
-    expect(PageResource::getModel())->toBe('Modules\\Cms\\Models\\Page');
-    expect(PageContentResource::getModel())->toBe('Modules\\Cms\\Models\\PageContent');
-    expect(SectionResource::getModel())->toBe('Modules\\Cms\\Models\\Section');
-    expect(MenuResource::getModel())->toBe('Modules\\Cms\\Models\\Menu');
+    Assert::assertSame('Modules\\Cms\\Models\\Page', PageResource::getModel());
+    Assert::assertSame('Modules\\Cms\\Models\\PageContent', PageContentResource::getModel());
+    Assert::assertSame('Modules\\Cms\\Models\\Section', SectionResource::getModel());
+    Assert::assertSame('Modules\\Cms\\Models\\Menu', MenuResource::getModel());
 });
 
 test('lang base resource provides multilingual features', function () {
@@ -201,14 +173,15 @@ test('lang base resource provides multilingual features', function () {
     ];
 
     foreach ($multilingualResources as $resourceClass) {
-        // Test that multilingual methods are available
-        expect(method_exists($resourceClass, 'getTranslatableLocales'))->toBeTrue();
-        expect(method_exists($resourceClass, 'getDefaultTranslatableLocale'))->toBeTrue();
+        Assert::assertTrue(method_exists($resourceClass, 'getTranslatableLocales'));
+        Assert::assertTrue(method_exists($resourceClass, 'getDefaultTranslatableLocale'));
 
         $locales = $resourceClass::getTranslatableLocales();
         $defaultLocale = $resourceClass::getDefaultTranslatableLocale();
 
-        expect($locales)->toBeArray()->not->toBeEmpty();
-        expect($defaultLocale)->toBeString()->not->toBeEmpty();
+        Assert::assertIsArray($locales);
+        Assert::assertNotEmpty($locales);
+        Assert::assertIsString($defaultLocale);
+        Assert::assertNotSame('', $defaultLocale);
     }
 });

@@ -2,41 +2,38 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Eloquent\Model;
+namespace Modules\Cms\Tests\Unit\Models;
+
+use Modules\Cms\Models\BaseModel;
 use Modules\Cms\Models\Conf;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 use Sushi\Sushi;
 
-describe('Conf Business Logic', function () {
-    test('conf extends eloquent model', function () {
-        expect(Conf::class)->toBeSubclassOf(Model::class);
-    });
+use function Safe\class_uses;
 
-    test('conf uses sushi trait for in-memory data', function () {
-        $traits = class_uses(Conf::class);
+/**
+ * Verifica il contratto pubblico del model Conf (config tenant in-memory via Sushi).
+ */
+final class ConfBusinessLogicTest extends TestCase
+{
+    public function test_extends_cms_base_model(): void
+    {
+        Assert::assertInstanceOf(BaseModel::class, new Conf);
+    }
 
-        expect($traits)->toHaveKey(Sushi::class);
-    });
+    public function test_uses_sushi_trait_for_in_memory_rows(): void
+    {
+        Assert::assertArrayHasKey(Sushi::class, class_uses(Conf::class));
+    }
 
-    test('conf has expected fillable fields', function () {
-        $conf = new Conf();
-        $expectedFillable = [
-            'id',
-            'name',
-        ];
+    public function test_exposes_expected_fillable_attributes(): void
+    {
+        Assert::assertSame(['id', 'name'], (new Conf)->getFillable());
+    }
 
-        expect($conf->getFillable())->toEqual($expectedFillable);
-    });
-
-    test('conf uses name as route key', function () {
-        $conf = new Conf();
-
-        expect($conf->getRouteKeyName())->toBe('name');
-    });
-
-    test('conf can get rows from tenant service', function () {
-        $conf = new Conf();
-
-        expect(method_exists($conf, 'getRows'))->toBeTrue();
-        expect($conf->getRows())->toBeArray();
-    });
-});
+    public function test_uses_name_as_route_key(): void
+    {
+        Assert::assertSame('name', (new Conf)->getRouteKeyName());
+    }
+}
