@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "PRODUCT STRATEGY"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: product_strategy.md
 ---
 
 # Cms Module - Product Strategy

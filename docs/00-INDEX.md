@@ -37,22 +37,29 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 
 Questo indice e' l'ingresso operativo del Cms. Stub verso qui: `00-index.md`, `INDEX.md`. `index.md` e' catalogo generato: non creare altri indici.
 
-## Stato verificato e mappa delle directory (2026-10-14)
+## Stato verificato e mappa delle directory (2026-10-20)
 
 Come il Cms serve davvero le pagine (JSON per tenant in `config/<tenant>/database/content/pages/`, rotte Folio del tema, blocchi con `type`, `ResolvePageAction`, `PageSlugMiddleware`) e cosa NON esiste (Services `PageService`/`BlockService`, modello `Block`, `PublishPageAction`) e' in [README.md](./README.md), con prove. Story di questo lavoro: [2026-10-14-docs-cms-studio](./stories/docs-cms-studio.story.md).
 
 | Directory | Ruolo | File .md |
 |---|---|---|
 | `README.md`, `wiki/` | canonici (README verificato; per le regole su JSON e middleware vedi `wiki/concepts/cms-page-middleware-json-ssot.md`; `wiki/content-architecture.md` e' stale: descrive modelli ContentPage/ContentBlock inesistenti) | 57 in wiki |
-| `stories/`, `bmad/` | evidence BMAD | 22 e 17 |
-| `architecture/`, `frontoffice/`, `blocks/`, `components/`, `sections/`, `folio/`, `livewire/`, `frontend-architecture/` | riferimenti tecnici: leggere dopo il README, molti sono datati | 6, 23, 28, 43, 31, 1, 1, 3 |
-| `design-comuni/`, `themes/`, `webdesign/`, `responsive/`, `screenshots/` | evidence della parity con Design Comuni (la resa visuale e' nel tema Sixteen) | 3, 13, 3, 1, 9 |
-| `roadmap/`, `migrations/`, `refactoring/` | piani e storico | 38, 8, 1 |
+| `stories/`, `bmad/` | evidence BMAD | 31 e 20 |
+| `architecture/`, `frontoffice/`, `blocks/`, `components/`, `sections/`, `folio/`, `livewire/`, `frontend-architecture/` | riferimenti tecnici: leggere dopo il README, molti sono datati | 6, 21, 27, 43, 22, 1, 1, 3 |
+| `design-comuni/`, `themes/`, `webdesign/`, `responsive/`, `screenshots/` | evidence della parity con Design Comuni (la resa visuale e' nel tema Sixteen) | 2, 12, 3, 1, 9 |
+| `roadmap/`, `migrations/`, `refactoring/` | piani e storico | 39, 8, 1 |
 | `errors/`, `investigation/`, `testing/`, `tests/` | diagnosi e test | 8, 1, 1, 11 |
 | `raw/` | sorgenti immutabili | 38 |
 | `llm-wiki/`, `root-md-files/`, `_integration/`, `localization/`, `localizzazione/`, `it/`, `packages/`, `prompts/`, `outputs/` e altre | legacy | varie |
 
-La radice di `docs/` ha 576 file .md (DOC-004/006 aperti: non spostati). `00-index.md` e' stub (il testo Meetup rotto resta in git); `index.md` e' il catalogo generato (668 righe, `draft`).
+La radice di `docs/` ha 567 file .md (DOC-004/006 aperti: nessuno strumento del repo sposta file riscrivendo i riferimenti, quindi non spostati). `00-index.md` e' stub (il testo Meetup rotto resta in git); `index.md` e' il catalogo generato (670 righe, `draft`) e rimanda a questo file.
+
+## Riordino della docs (2026-10-20)
+
+- **Gemelli per maiuscole.** Canonico = nome minuscolo (eccezioni `README.md`, `CHANGELOG.md`, `AGENTS.md`, `00-INDEX.md`; per `INDEX.md`/`index.md` nelle sottocartelle chi ha piu' riferimenti entranti). Il gemello e' `status: superseded` con `superseded_by` e i link esistenti risolvono ancora; dove una sessione precedente aveva gia' scritto `status: merged` la direzione e' rispettata. Cancellato un solo duplicato senza riferimenti entranti (`design-comuni/screenshots/TESTS_ROUTING_NORMALIZATION.md`).
+- **Frontmatter minimo** aggiunto ai 21 file che ne erano privi; quattro nomi con data o suffisso rinominati con `md-filenames.py apply`.
+- **Story PHPStan.** Nel Cms nessuna regola `.gitignore` le nasconde (verificato con `git check-ignore`): non serve un `docs/.gitignore`.
+- Numeri prima/dopo, coppie divergenti e decisioni aperte: [docs-organization-cms](./stories/docs-organization-cms.story.md).
 
 ## Quality gate PHPStan e test
 
