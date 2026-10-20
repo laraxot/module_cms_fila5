@@ -3,7 +3,7 @@ title: "00 INDEX"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-10-14
+updated: 2026-10-20
 qmd: "00 INDEX"
 issues: []
 discussions: []
@@ -42,6 +42,11 @@ Come il Cms serve davvero le pagine (JSON per tenant in `config/<tenant>/databas
 | `llm-wiki/`, `root-md-files/`, `_integration/`, `localization/`, `localizzazione/`, `it/`, `packages/`, `prompts/`, `outputs/` e altre | legacy | varie |
 
 La radice di `docs/` ha 576 file .md (DOC-004/006 aperti: non spostati). `00-index.md` e' una variante storica con link a `../Meetup/docs/` inesistenti (annotati); `index.md` e' il catalogo generato (668 righe, `draft`).
+
+## Quality gate PHPStan e test
+
+- [stories/phpstan-test-wave-cms.story.md](./stories/phpstan-test-wave-cms.story.md) - lane cms del run PHPStan del 2026-10-20: perche' i test del merge `c0a06773` erano specifiche per un Cms con tabelle SQL, cosa e' stato riallineato al modello JSON, cosa resta da decidere.
+- [wiki/concepts/env-testing-cms-tests.md](./wiki/concepts/env-testing-cms-tests.md) - base class dei test del modulo e `.env.testing`.
 
 ## 📚 Design Comuni - Index Completo
 
@@ -83,6 +88,10 @@ La radice di `docs/` ha 576 file .md (DOC-004/006 aperti: non spostati). `00-ind
 
 ## Story URL -> JSON (2026-10-13)
 - [DCP-41 da URL a JSON: strumento e regola](stories/dcp-41-url-to-json-resolver.story.md)
+
+## PHPStan tests swarm wave (2026-10-20)
+- [phpstan-cms-swarm-wave.story.md](stories/phpstan-cms-swarm-wave.story.md) — verify gate: TSV 359 → 0 su `Cms.files`
+- [phpstan-test-wave-cms.story.md](stories/phpstan-test-wave-cms.story.md) — cause e fix Feature/Unit + PestHelpers
 
 --- BMAD + second brain note (agent AI update 2026-10-14) ---
 - [second brain: kp-174d15a58ff94901b2b0df0d86b8907a] Design Comuni parity attiva
