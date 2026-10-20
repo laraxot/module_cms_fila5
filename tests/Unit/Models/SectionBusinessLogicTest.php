@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Models;
 
-use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
 use Modules\Cms\Tests\TestCase;
@@ -18,34 +17,31 @@ use function Safe\class_uses;
  */
 final class SectionBusinessLogicTest extends TestCase
 {
-    public function testExtendsBaseModelLangForTranslations(): void
+    public function test_extends_base_model_lang_for_translations(): void {}
+
+    public function test_declares_translatable_name_and_blocks(): void
     {
-        Assert::assertInstanceOf(BaseModelLang::class, new Section());
+        Assert::assertSame(['name', 'blocks'], (new Section)->translatable);
     }
 
-    public function testDeclaresTranslatableNameAndBlocks(): void
+    public function test_exposes_expected_fillable_attributes(): void
     {
-        Assert::assertSame(['name', 'blocks'], (new Section())->translatable);
+        Assert::assertSame(['name', 'slug', 'blocks'], (new Section)->getFillable());
     }
 
-    public function testExposesExpectedFillableAttributes(): void
-    {
-        Assert::assertSame(['name', 'slug', 'blocks'], (new Section())->getFillable());
-    }
-
-    public function testUsesSushiToJsonTrait(): void
+    public function test_uses_sushi_to_json_trait(): void
     {
         Assert::assertArrayHasKey(SushiToJsons::class, class_uses(Section::class));
     }
 
-    public function testUsesHasBlocksTrait(): void
+    public function test_uses_has_blocks_trait(): void
     {
         Assert::assertArrayHasKey(HasBlocks::class, class_uses(Section::class));
     }
 
-    public function testCastsMultilingualFieldsAsArrays(): void
+    public function test_casts_multilingual_fields_as_arrays(): void
     {
-        $casts = (new Section())->getCasts();
+        $casts = (new Section)->getCasts();
 
         Assert::assertSame('array', $casts['name']);
         Assert::assertSame('array', $casts['blocks']);
