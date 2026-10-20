@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "DESIGN COMUNI INDEX"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: design_comuni_index.md
 ---
 
 # Design Comuni - Cms Module Documentation Index

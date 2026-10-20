@@ -1,3 +1,13 @@
+---
+title: "Test Location Rule - Cms"
+type: note
+status: draft
+created: 2026-10-15
+updated: 2026-10-19
+module: Cms
+tags: [docs, cms]
+---
+
 # Test Location Rule — Cms
 
 - Tests: `laravel/Modules/Cms/tests/`.

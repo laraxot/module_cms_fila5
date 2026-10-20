@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "FILAMENT RESOURCE GUIDELINES"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: filament-resource-guidelines.md
 ---
 
 # Cms Module Filament Resource Guidelines

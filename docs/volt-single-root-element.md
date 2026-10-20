@@ -1,3 +1,13 @@
+---
+title: "Regola del Singolo Elemento Root in Volt/Livewire"
+type: note
+status: draft
+created: 2026-01-27
+updated: 2026-10-18
+module: Cms
+tags: [docs, cms]
+---
+
 # Regola del Singolo Elemento Root in Volt/Livewire
 
 ## Descrizione
