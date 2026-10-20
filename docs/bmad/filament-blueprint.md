@@ -47,6 +47,10 @@ cresce oltre pochi campi. Enum tipizzati al posto di option array.
 Ogni query Filament rispetta tenant + policy del modello owner. Nessun elenco
 cross-tenant per comodita admin.
 
+## PHPStan
+
+Test business e Resource CMS: helper su `TestCase` static, no mix Pest chain che crasha `pest-plugin-phpstan`. Ordine permanente verso `analyse Modules` a zero: [phpstan-modules-zero-standing-order](../../Xot/docs/wiki/memories/phpstan-modules-zero-standing-order.md).
+
 ## Related
 
 - Planning: [bmad-planning.md](../bmad-planning.md)

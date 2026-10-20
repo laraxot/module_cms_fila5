@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature;
 
-use Modules\Cms\Tests\TestCase;
 
 use function Pest\Laravel\get;
-
-uses(TestCase::class);
 
 describe('Homepage Content Management', function () {
     it('loads homepage content from JSON correctly', function () {
@@ -114,8 +111,14 @@ describe('Homepage Content Management', function () {
         // Verifica ordine contenuti
         // Il titolo deve apparire prima del sottotitolo
         $content = $response->getContent();
+        if (! is_string($content)) {
+            throw new \RuntimeException('Homepage response has no content.');
+        }
         $titlePos = strpos($content, '<nome progetto> - Promozione della <slogan> per le gestanti');
         $subtitlePos = strpos($content, 'il portale che vuole garantire alle pazienti vulnerabili');
+        if (false === $titlePos || false === $subtitlePos) {
+            throw new \RuntimeException('Homepage content order markers are missing.');
+        }
 
         expect($titlePos)->toBeLessThan($subtitlePos);
     });
