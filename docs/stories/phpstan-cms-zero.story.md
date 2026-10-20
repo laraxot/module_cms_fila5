@@ -44,6 +44,8 @@ cd laravel
 
 Misura sul working tree: inventario 09:55 (145) → dopo consolidamento loader + Resource/Folio (10:12+) → **0**.
 
+Spike fleet ~12:21 (`phpstan.parse`, marker merge in Lang/AI/Cms): **`parse` ≠ errori di tipo** — [Lang phpstan-lang-zero](../../Lang/docs/stories/phpstan-lang-zero.story.md).
+
 ## Collegamenti
 
 - Dettaglio lane/swarm: [phpstan-test-wave-cms.story.md](./phpstan-test-wave-cms.story.md)
