@@ -3,6 +3,10 @@ qmd: "status"
 issues: []
 discussions: []
 title: "Status"
+type: note
+status: draft
+updated: 2026-10-06
+tags: [docs, cms, bmad]
 ---
 
 # Cms — Status BMAD
