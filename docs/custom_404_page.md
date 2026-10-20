@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: custom_404_page
 canonical: ../../../Themes/docs/shared-components/custom-404-page.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/custom-404-page.md

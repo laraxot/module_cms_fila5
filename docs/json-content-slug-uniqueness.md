@@ -5,6 +5,8 @@ type: guide
 status: active
 created: 2026-10-13
 qmd: "cms json content collision slug duplicato sushi page tests tenant override nome canonico"
+updated: 2026-10-13
+tags: [docs, cms]
 ---
 
 # Contenuti JSON: unicita' dello slug e nome canonico
@@ -21,5 +23,9 @@ qmd: "cms json content collision slug duplicato sushi page tests tenant override
 
 ## Incidenti del 2026-10-13
 `homepage.json` + `tests.homepage.json` e `risultati-ricerca.json` + `tests.risultati-ricerca.json` nella stessa cartella: due pagine in 500.
-Risolti unificando sul nome canonico. Guardia automatica prevista in `laravel/Themes/Sixteen/docs/bmad/stories/2026-10-13-dcp-09-json-content-integrity-guard.story.md`.
+Risolti unificando sul nome canonico. Guardia automatica prevista in `laravel/Themes/Sixteen/docs/bmad/stories/dcp-09-json-content-integrity-guard.story.md`.
 Contratto del tema: `laravel/Themes/Sixteen/docs/layout-runtime-contract.md`.
+
+## Sezioni con template alternativo (`tpl`)
+`<x-section slug="header" tpl="design-comuni" />` cerca la vista `pub_theme::components.sections.<slug>.<tpl>` (default `v1`; il footer del sito usa `full`). Una sezione nuova = un file `sections/<slug>.json`
+con `blocks.it/en[].data` e un template `sections/<slug>/<tpl>.blade.php` che unisce i `data` dei blocchi come fanno gli altri template. Usato da `layouts/design-comuni` del tema Sixteen (2026-10-13).

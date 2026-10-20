@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament resources"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Filament Resources nel CMS
@@ -106,7 +107,7 @@ return [
 - Usa sempre i file di traduzione invece dei label hardcoded
 
 ## Collegamenti Bidirezionali
-- [README](readme.md) - Documentazione principale del modulo
+- [README](README.md) - Documentazione principale del modulo
 - [Integrazione Filament](filament-integration.md) - Integrazione con Filament
 - [Componenti](filament-components.md) - Componenti Filament
 - [Form](filament-forms.md) - Sistema di form

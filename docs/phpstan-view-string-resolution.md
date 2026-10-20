@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan view string resolution"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Risoluzione Problemi PHPStan per `view-string`

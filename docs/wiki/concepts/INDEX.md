@@ -7,11 +7,15 @@ type: index
 tags: [concepts, Cms]
 created: 2026-05-11
 updated: 2026-06-10
+status: draft
 ---
 
 # concepts Index — Cms
 
 Concetti Cms. On-demand: `qmd search` · [trigger map](/docs/wiki/rules/00-TRIGGER_MAP.md).
+
+- [Sostenibilità contenuto](../../project-sustainability-content.md) — pagina `/sostieni` e sezioni partner (BMAD discovery)
+- [Hub risorse inbound](../../inbound-marketing-hub-risorse.md) — pattern AFC hub poche risorse (BMAD)
 
 ## Folio FO (routing) — canon
 
@@ -28,5 +32,5 @@ Concetti Cms. On-demand: `qmd search` · [trigger map](/docs/wiki/rules/00-TRIGG
 
 ## Owner pagine per modulo (cross-link)
 
-- User: [folio-pages-owner-pattern](../../User/docs/wiki/concepts/folio-pages-owner-pattern.md)
-- Sixteen header: [fo-folio-named-routes-header](../../Themes/Sixteen/docs/wiki/concepts/fo-folio-named-routes-header.md)
+- User: [folio-pages-owner-pattern](../../../../User/docs/wiki/concepts/folio-pages-owner-pattern.md)
+- Sixteen header: [fo-folio-named-routes-header](../../../../../Themes/Sixteen/docs/wiki/concepts/fo-folio-named-routes-header.md)

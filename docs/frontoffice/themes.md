@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "themes"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione Temi - Linee Guida e Riflessioni

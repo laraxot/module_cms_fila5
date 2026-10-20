@@ -8,6 +8,7 @@ type: reference
 module: Cms
 tags: [daisyui, tailwind, metriche, governance, fixcity, sixteen]
 updated: 2026-05-15
+status: draft
 ---
 
 # DaisyUI: pro, contro e percentuali

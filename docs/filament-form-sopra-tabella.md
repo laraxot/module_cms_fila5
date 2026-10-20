@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament form sopra tabella"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Aggiungere un Form Sopra una Tabella in Filament

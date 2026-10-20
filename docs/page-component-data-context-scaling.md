@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "page component data context scaling"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Page Component Data-Context Scaling

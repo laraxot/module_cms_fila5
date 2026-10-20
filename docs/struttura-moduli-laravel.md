@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "struttura moduli laravel"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura dei Moduli Laravel in il progetto

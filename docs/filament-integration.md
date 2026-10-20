@@ -136,14 +136,14 @@ public function test_filament_components_rendering()
 
 ## Collegamenti
 
-- [Documentazione CMS](../readme.md)
+- [Documentazione CMS](../README.md)
 - [Best Practices](../best_practices/theme-reusability.md)
 - [Configurazione](../config.md)
 - [Testing](../testing.md)
 
 ## Collegamenti Bidirezionali
-- [README](readme.md) - Documentazione principale del modulo
-- [Architettura](architecture.md) - Architettura del sistema CMS
+- [README](README.md) - Documentazione principale del modulo
+- [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
 - [Componenti](filament-components.md) - Componenti Filament
 - [Form](filament-forms.md) - Sistema di form
 - [Resources](filament-resources.md) - Gestione risorse

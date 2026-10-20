@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "test smtp page"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Test SMTP in il progetto

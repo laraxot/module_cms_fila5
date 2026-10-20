@@ -1,14 +1,3 @@
----
-title: "code quality analysis 2025 11 24"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "code quality analysis 2025 11 24"
-issues: []
-discussions: []
----
-
 # Code Quality Analysis - CMS Module - November 2025
 
 ## 📊 Risultato Analisi Completa
@@ -22,14 +11,6 @@ discussions: []
 
 ---
 
-title: "code quality analysis 2025 11 24"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "code quality analysis 2025 11 24"
-issues: []
-discussions: []
 ## 🚨 Status Critico
 
 ### ❌ PHPStan Errors (6)
@@ -157,7 +138,7 @@ discussions: []
 
 - [PHPMD Report](./phpmd-report.md) - Analisi precedente PHPMD
 - [Filament Integration](./filament_integration.md) - Integrazione Filament
-- [Testing Guidelines](./testing.md) - Linee guida testing
+- [Testing Guidelines](./TESTING.md) - Linee guida testing
 - [Optimization Analysis](./optimization-analysis.md) - Analisi ottimizzazioni
 
 ---

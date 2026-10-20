@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: daisyui_componenti
 canonical: ../../../Themes/docs/shared-components/daisyui-componenti.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/daisyui-componenti.md

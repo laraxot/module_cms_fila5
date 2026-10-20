@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "patient tests deletion reasoning"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Patient Routes Tests Deletion - Reasoning
@@ -135,13 +136,4 @@ Same applies here:
 - `Modules/Xot/docs/testing-philosophy-unified.md` - "Delete fiction" principle
 
 ---
-
-title: "patient tests deletion reasoning"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "patient tests deletion reasoning"
-issues: []
-discussions: []
 **Conclusion**: Tests deleted. Platform domain clarified. Technical debt reduced.

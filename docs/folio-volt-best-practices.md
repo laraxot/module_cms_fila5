@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "folio volt best practices"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Laravel Folio + Volt - Best Practices and Patterns Analysis

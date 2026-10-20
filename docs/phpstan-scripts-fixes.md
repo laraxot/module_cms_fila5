@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan scripts fixes"
 issues: []
 discussions: []
+status: draft
 ---
 
 # PHPStan Level 10 - Scripts Utility Fixes
@@ -16,15 +17,6 @@ discussions: []
 **Status**: 🔄 **IN PROGRESSO** (65.6% completato)
 
 ---
-
-title: "phpstan scripts fixes"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "phpstan scripts fixes"
-issues: []
-discussions: []
 ## 📊 Executive Summary
 
 **Errori iniziali**: 32  
