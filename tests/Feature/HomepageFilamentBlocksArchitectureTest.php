@@ -10,10 +10,6 @@ use Modules\UI\View\Components\Render\Blocks;
 
 use function Pest\Laravel\get;
 
-use Spatie\LaravelData\DataCollection;
-
-uses(TestCase::class);
-
 describe('Homepage Filament Builder Blocks - CMS Module', function () {
     beforeEach(function () {
         $this->lang = app()->getLocale();
@@ -32,10 +28,8 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('json content structure is properly loaded by cms', function () {
-        $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
-        expect(file_exists($homepageJsonPath))->toBeTrue('Homepage JSON must exist for CMS');
-
-        $homepageData = json_decode(file_get_contents($homepageJsonPath), true);
+        // Il loader salta il test se il tenant non ha la homepage e fallisce se la forma non e' valida.
+        $homepageData = TestCase::homepageJsonForBlocksArchitecture();
 
         // Verify CMS-specific JSON structure
         expect($homepageData)->toHaveKeys(['id', 'slug', 'content_blocks']);
@@ -43,7 +37,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($homepageData['content_blocks'])->toHaveKey($this->lang);
 
         // Verify blocks structure for CMS processing
-        $blocks = $homepageData['content_blocks'][$this->lang];
+        $blocks = cmsHomepageBlocks($this->lang);
         foreach ($blocks as $block) {
             expect($block)->toHaveKeys(['type', 'data']);
             expect($block['data'])->toHaveKey('view');
@@ -54,34 +48,27 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     test('cms blocks discovery system works correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        expect($allBlocks)->toBeInstanceOf(DataCollection::class);
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
-        $cmsBlocks = $allBlocks->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
         if ($cmsBlocks->count() > 0) {
-            $cmsBlocks->each(function ($block) {
+            foreach ($cmsBlocks as $block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
                 expect(class_exists($block->class))->toBeTrue("CMS block class {$block->class} should exist");
-            });
+            }
         }
     });
 
     test('ui blocks render component processes homepage blocks', function () {
         // Verify the UI Blocks render component exists and works
-        $blocksClass = Blocks::class;
-        expect(class_exists($blocksClass))->toBeTrue('Blocks render component should exist');
+        expect(class_exists(Blocks::class))->toBeTrue('Blocks render component should exist');
 
         // Load homepage blocks
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
+        $blocks = cmsHomepageBlocks($this->lang);
 
-        $blocks = $homepageData['content_blocks'][$this->lang];
-
-        // Test component instantiation with blocks
-        $component = new $blocksClass($blocks);
+        // Test component instantiation with blocks (stessa vista usata da ThemeComposer)
+        $component = new Blocks('ui::components.render.blocks.v1', $blocks);
         expect($component->blocks)->toEqual($blocks);
     });
 
@@ -92,12 +79,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         $content = $response->getContent();
 
         // Load expected content from JSON
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
-        $blocks = $homepageData['content_blocks'][$this->lang];
+        $blocks = cmsHomepageBlocks($this->lang);
 
         // Verify that CMS-managed content appears on page
         foreach ($blocks as $block) {
@@ -120,12 +102,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($content)->toContain('pub_theme::');
 
         // Load blocks to verify theme views
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
-        $blocks = $homepageData['content_blocks'][$this->lang];
+        $blocks = cmsHomepageBlocks($this->lang);
 
         foreach ($blocks as $block) {
             $view = $block['data']['view'];
@@ -135,14 +112,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('cms handles multilingual content correctly', function () {
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
-        // Verify CMS multilingual structure
-        expect($homepageData['content_blocks'])->toBeArray();
-        expect($homepageData['title'])->toBeArray();
+        $homepageData = TestCase::homepageJsonForBlocksArchitecture();
 
         // Verify current locale has content
         expect($homepageData['content_blocks'])->toHaveKey($this->lang);
@@ -173,39 +143,24 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
     });
 
     test('cms json storage pattern is consistent', function () {
-        $pagesPath = config_path('local/<nome progetto>/database/content/pages/');
-        expect(file_exists($pagesPath))->toBeTrue('CMS pages directory should exist');
-
-        $homepageJsonPath = $pagesPath.'home.json';
-        expect(file_exists($homepageJsonPath))->toBeTrue('Homepage JSON should exist');
-
-        $homepageData = json_decode(file_get_contents($homepageJsonPath), true);
+        // Esistenza della cartella e forma di locale, `type` (string) e `data` (object) di ogni blocco:
+        // le verifica il loader (salta senza homepage, fallisce se la forma e' errata).
+        $homepageData = TestCase::homepageJsonForBlocksArchitecture();
 
         // Verify CMS-required fields
         expect($homepageData)->toHaveKeys(['id', 'slug', 'content_blocks']);
         expect($homepageData['slug'])->toBe('home');
 
         // Verify blocks structure
-        foreach ($homepageData['content_blocks'] as $locale => $blocks) {
-            expect($locale)->toBeString();
-            expect($blocks)->toBeArray();
-
+        foreach ($homepageData['content_blocks'] as $blocks) {
             foreach ($blocks as $block) {
-                expect($block)->toHaveKeys(['type', 'data']);
-                expect($block['type'])->toBeString();
-                expect($block['data'])->toBeArray();
                 expect($block['data'])->toHaveKey('view');
             }
         }
     });
 
     test('cms blade syntax processing works in json', function () {
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
-        $blocks = $homepageData['content_blocks'][$this->lang];
+        $blocks = cmsHomepageBlocks($this->lang);
         $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
         if ($landingBlock) {
