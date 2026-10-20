@@ -11,13 +11,19 @@ use Symfony\Component\HttpFoundation\Response;
 
 class PageSlugMiddleware
 {
+    /**
+     * Gruppi gia' applicati dallo stack Folio: una voce `web` nel JSON non ha effetto.
+     * Prima faceva `Target class [web] does not exist` (500 per tutti): D17, 2026-10-13.
+     */
+    private const array GROUPS_ALREADY_APPLIED = ['web'];
+
     protected Kernel $kernel;
 
     public function handle(Request $request, \Closure $next): Response
     {
         $slug = $this->resolveCmsPageSlug($request);
 
-        if ($slug === null) {
+        if (null === $slug) {
             $response = $next($request);
             if (! $response instanceof Response) {
                 return new Response('Internal Server Error', 500);
@@ -54,7 +60,7 @@ class PageSlugMiddleware
     protected function resolveCmsPageSlug(Request $request): ?string
     {
         $route = $request->route();
-        if ($route === null) {
+        if (null === $route) {
             return null;
         }
 
@@ -62,35 +68,40 @@ class PageSlugMiddleware
         $candidates = [];
 
         $name = $route->getName();
-        if (\is_string($name) && $name !== '') {
+        if (\is_string($name) && '' !== $name) {
             $candidates[] = $name;
         }
 
         $container0 = $route->parameter('container0');
         $slug0 = $route->parameter('slug0');
-        if (\is_string($container0) && $container0 !== '' && \is_string($slug0) && $slug0 !== '') {
+        if (\is_string($container0) && '' !== $container0 && \is_string($slug0) && '' !== $slug0) {
             $candidates[] = $container0.'.'.$slug0;
         }
 
         $container = $route->parameter('container');
         $slug = $route->parameter('slug');
-        if (\is_string($container) && $container !== '' && \is_string($slug) && $slug !== '') {
+        if (\is_string($container) && '' !== $container && \is_string($slug) && '' !== $slug) {
             $candidates[] = $container.'.'.$slug;
         }
-        if (\is_string($container0) && $container0 !== '' && \is_string($slug) && $slug !== '') {
+        if (\is_string($container0) && '' !== $container0 && \is_string($slug) && '' !== $slug) {
             $candidates[] = $container0.'.'.$slug;
         }
 
         foreach (['slug0', 'slug'] as $param) {
             $value = $route->parameter($param);
-            if (\is_string($value) && $value !== '') {
+            if (\is_string($value) && '' !== $value) {
                 $candidates[] = $value;
             }
         }
 
         foreach (array_unique($candidates) as $candidate) {
-            if (Page::findUniqueBySlug($candidate) !== null) {
-                return $candidate;
+            try {
+                if (null !== Page::findUniqueBySlug($candidate)) {
+                    return $candidate;
+                }
+            } catch (\Throwable) {
+                // Skip candidate if duplicate slug found in database
+                continue;
             }
         }
 
@@ -122,7 +133,7 @@ class PageSlugMiddleware
      * Execute middleware chain manually.
      */
     /**
-     * @param  array<int, string>  $middlewares
+     * @param array<int, string> $middlewares
      */
     protected function executeMiddlewareChain(Request $request, array $middlewares, \Closure $finalNext): Response
     {
@@ -147,8 +158,18 @@ class PageSlugMiddleware
 
         [$middlewareClass, $parameters] = $this->parseMiddleware($middleware);
 
+        if (\in_array($middlewareClass, self::GROUPS_ALREADY_APPLIED, true)) {
+            return $this->executeMiddlewareChain($request, $middlewares, $finalNext);
+        }
+
         // Resolve middleware class name if it's an alias
         $middlewareClass = $this->resolveMiddlewareClass($middlewareClass);
+
+        // Un nome non risolvibile (refuso, gruppo) non si ignora mai: ignorarlo renderebbe pubblica una pagina protetta.
+        if (! class_exists($middlewareClass) && ! app()->bound($middlewareClass)) {
+            throw new \InvalidArgumentException(sprintf("Middleware CMS '%s' non risolvibile: usare un alias (es. 'auth') o una classe esistente; 'web' e' gia' applicato dallo stack Folio.", $middleware));
+        }
+
         // Create middleware instance
         /** @var object $middlewareInstance */
         $middlewareInstance = app($middlewareClass);

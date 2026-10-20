@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "namespace modules"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura dei Namespace nei Moduli Laravel

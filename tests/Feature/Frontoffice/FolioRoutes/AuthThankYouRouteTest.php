@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-use PHPUnit\Framework\Assert;
+use Modules\Cms\Tests\TestCase;
+
+uses(TestCase::class);
 
 it('GET /it/auth/thank-you acceptable', function (): void {
-    $res = cmsGet('/it/auth/thank-you');
-    $status = (int) $res->getStatusCode();
-    Assert::assertTrue(in_array($status, [200, 204, 301, 302, 303, 307, 308, 404], true));
+    $res = $this->get('/it/auth/thank-you');
+    expect($res->getStatusCode())->toBeIn([200, 204, 301, 302, 303, 307, 308]);
 });

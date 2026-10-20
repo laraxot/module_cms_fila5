@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "bugfix applayout view path"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Bugfix: `AppLayout` puntava a una view inesistente

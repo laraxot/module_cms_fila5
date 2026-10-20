@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "xot link"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Collegamenti al Modulo Xot

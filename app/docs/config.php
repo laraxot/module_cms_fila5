@@ -39,7 +39,7 @@ if (! function_exists('docsEnv')) {
     {
         $value = $_SERVER[$key] ?? $_ENV[$key] ?? null;
 
-        return is_string($value) && $value !== '' ? $value : null;
+        return is_string($value) && '' !== $value ? $value : null;
     }
 }
 

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "switch"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Switch

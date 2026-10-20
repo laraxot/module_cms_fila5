@@ -4,30 +4,45 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\Cms\Tests\TestCase;
+use Modules\Xot\Datas\XotData;
+use Modules\Xot\Tests\TestCase;
+
+use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
+use function Pest\Laravel\post;
 
 uses(TestCase::class);
 
 test('login screen can be rendered', function (): void {
     $lang = app()->getLocale();
-    $this->get('/'.$lang.'/auth/login');
+    get('/'.$lang.'/auth/login')->assertStatus(200);
 });
 
 test('users can authenticate using the login screen', function (): void {
-    $email = TestCase::pestGenerateUniqueEmail();
-    TestCase::pestCreateTestUser([
-        'email' => $email,
-        'password' => Hash::make('password'),
-    ]);
+    /** @var class-string<\Illuminate\Database\Eloquent\Model> $userClass */
+    $userClass = XotData::make()->getUserClass();
+    $factory = $userClass::factory();
+    /*
+     * $connection_name=app($userClass)->getConnectionName();
+     * dddx([
+     * 'connection_name' => $connection_name,
+     * 'factory'=>$factory->raw(),
+     * //'config'=>config('database'),
+     *
+     * ]);
+     */
+    /** @var \Illuminate\Contracts\Auth\Authenticatable&\Illuminate\Database\Eloquent\Model $user */
+    $user = $factory->create();
 
     $response = LivewireVolt::test('auth.login')
-        ->set('email', $email)
+        ->set('email', $user->email)
         ->set('password', 'password')
         ->call('authenticate');
 
-    $response->assertHasNoErrors(); // ->assertRedirect(route('dashboard', absolute: false))
+    $response->assertHasNoErrors()// ->assertRedirect(route('dashboard', absolute: false))
+    ;
 
     // expect(Auth::user())->not->toBeNull();
 });

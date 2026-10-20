@@ -120,8 +120,8 @@ $value = $data['key']; // PHPStan: offsetAccess.nonOffsetAccessible
 
 ## Related Documents
 
-- [Module Architecture](./architecture.md)
-- [Content Blocks System](./content-blocks.md)
+- [Module Architecture](./frontoffice/architecture.md)
+- [Content Blocks System](./blocks/content-blocks.md)
 - [BlockData Implementation](../app/Datas/BlockData.php)
 
 ## Compliance

@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: filament-resourcelines
 canonical: ../../../Themes/docs/shared-components/filament-resource-guidelines.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/filament-resource-guidelines.md

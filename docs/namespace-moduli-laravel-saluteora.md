@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "namespace moduli laravel saluteora"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura dei Namespace nei Moduli Laravel in il progetto

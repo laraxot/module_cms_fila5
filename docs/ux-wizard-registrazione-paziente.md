@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "ux wizard registrazione paziente"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Applicazione delle Leggi UX al Wizard di Registrazione Paziente

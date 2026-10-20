@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "get cms view action"
 issues: []
 discussions: []
+status: draft
 ---
 
 # GetCmsViewAction Action
@@ -101,6 +102,6 @@ class MyComponent extends Component
 
 ## Collegamenti Utili
 
--   [PHPStan View-string Resolution Documentation](../phpstan-view-string-resolution.md)
+-   [PHPStan View-string Resolution Documentation](../../phpstan-view-string-resolution.md)
 -   [Spatie Queueable Actions](https://github.com/spatie/laravel-queueable-action)
 -   [Webmozart Assert](https://github.com/webmozarts/assert)

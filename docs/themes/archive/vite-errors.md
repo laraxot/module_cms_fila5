@@ -82,7 +82,7 @@ ls -la dist/
 ## Collegamenti Correlati
 - [Documentazione Generale Errori](/project_docs/errors/readme.md)
 - [Gestione Temi CMS](../themes/readme.md)
-- [Processo di Deploy](../../project_docs/deployment/themes.md)
+- [Processo di Deploy](../../frontoffice/themes.md)
 
 ## Note Tecniche
 - La compilazione deve essere eseguita per ogni tema individualmente

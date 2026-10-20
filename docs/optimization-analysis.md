@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "optimization analysis"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Analisi di Ottimizzazione - Modulo Cms
@@ -84,12 +85,4 @@ class TextBlock implements BlockInterface
 - **Fase 4**: Static generation per performance
 
 ---
-title: "optimization analysis"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "optimization analysis"
-issues: []
-discussions: []
 *Stato: 🟡 Funzionale ma Necessita Caching e Modularità*

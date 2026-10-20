@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "page translation strategy"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Page Translation Strategy

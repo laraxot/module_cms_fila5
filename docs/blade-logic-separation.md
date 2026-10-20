@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "blade logic separation"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Blade Logic Separation: Content Resolution

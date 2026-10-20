@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "namespace componenti blocchi"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione dei Namespace nei Componenti a Blocchi

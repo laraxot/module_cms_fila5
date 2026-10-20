@@ -10,6 +10,7 @@ title: PageResource
 description: PageResource
 extends: _layouts.documentation
 section: content
+status: draft
 ---
 
 ## 🔗 Collegamenti

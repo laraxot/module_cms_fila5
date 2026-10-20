@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "user dropdown"
 issues: []
 discussions: []
+status: draft
 ---
 
 # User Dropdown Block
@@ -128,6 +129,6 @@ public function boot()
 - Proteggere le rotte sensibili
 
 ## Collegamenti
-- [Documentazione Blocchi](../readme.md)
-- [Best Practices CMS](../../best-practices.md)
-- [Guida Componenti](../../components.md)
+- [Documentazione Blocchi](../../README.md)
+- [Best Practices CMS](../../../best-practices.md)
+- [Guida Componenti](../../../components.md)

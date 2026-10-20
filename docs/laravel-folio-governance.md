@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "laravel folio governance"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Laravel Folio Governance

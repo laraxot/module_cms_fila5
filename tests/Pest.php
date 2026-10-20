@@ -2,19 +2,45 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Tests\TestCase;
+use Tests\TestCase;
 
 /*
  * |--------------------------------------------------------------------------
  * | Test Case
  * |--------------------------------------------------------------------------
  * |
- * | `pest()->extend(TestCase::class)->in(...)` è la forma **consigliata**
- * | (Pest configuring-tests, XOT-5.41 + pest-plugin-phpstan).
- * | Non duplicare `uses(TestCase::class)` nei file di test: XOR → TestCaseAlreadyInUse.
+ * | Il TestCase di default per tutti i test del modulo Cms.
+ * | Utilizza il TestCase globale di Laravel con setup specifico per frontend.
  * |
  */
 
-require_once __DIR__.'/PestHelpers.php';
+uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
 
-pest()->extend(TestCase::class)->in(__DIR__.'/Unit', __DIR__.'/Feature');
+/*
+ * |--------------------------------------------------------------------------
+ * | Expectations
+ * |--------------------------------------------------------------------------
+ * |
+ * | Qui puoi definire aspettative globali per il modulo Cms.
+ * | Quando definisci here expectation globali, saranno disponibili
+ * | in tutti i test del modulo.
+ * |
+ */
+
+// expect()->extend('toBeValidHtml', function () {
+//     return $this->toContain('<html');
+// });
+
+/*
+ * |--------------------------------------------------------------------------
+ * | Functions
+ * |--------------------------------------------------------------------------
+ * |
+ * | Qui puoi definire funzioni helper globali per i test del modulo.
+ * | Queste funzioni saranno disponibili in tutti i test.
+ * |
+ */
+
+// function createTestUser() {
+//     return User::factory()->create();
+// }

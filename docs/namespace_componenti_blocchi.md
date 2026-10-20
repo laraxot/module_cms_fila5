@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: namespace_componenti_blocchi
 canonical: ../../../Themes/docs/shared-components/namespace-componenti-blocchi.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/namespace-componenti-blocchi.md

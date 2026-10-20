@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "navigation"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Componenti di Navigazione

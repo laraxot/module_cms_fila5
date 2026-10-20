@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "view components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # View Components
@@ -117,5 +118,5 @@ class Section extends Component
 
 ## Collegamenti
 - [Gestione Sezioni](../section-management.md)
-- [Documentazione Blocchi](../blocks/readme.md)
-- [Documentazione Root](../../../../../docs/components.md)
+- [Documentazione Blocchi](../blocks/README.md)
+- [Documentazione Root](../components.md)

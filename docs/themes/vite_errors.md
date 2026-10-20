@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: vite_errors
 canonical: ../../../../Themes/docs/shared-components/vite-errors.md
+status: stub
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/vite-errors.md

@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: gits-resolution-impact
 canonical: ../../../Themes/docs/shared-components/git-conflicts-resolution-impact.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/git-conflicts-resolution-impact.md

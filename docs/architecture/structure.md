@@ -100,13 +100,13 @@ Modules/Cms/
 
 ## Collegamenti Bidirezionali
 - [README](readme.md) - Documentazione principale del modulo
-- [Architettura](architecture.md) - Architettura del sistema CMS
-- [Struttura Moduli Laravel](struttura-moduli-laravel.md) - Struttura standard dei moduli Laravel
+- [Architettura](../frontoffice/architecture.md) - Architettura del sistema CMS
+- [Struttura Moduli Laravel](../struttura-moduli-laravel.md) - Struttura standard dei moduli Laravel
 - [Namespace Moduli](namespace-moduli-laravel-<nome progetto>.md) - Convenzioni di namespace
-- [Struttura Route e Viste](struttura-route-e-viste.md) - Organizzazione di route e viste
+- [Struttura Route e Viste](../struttura-route-e-viste.md) - Organizzazione di route e viste
 
 ## Vedi Anche
-- [Modulo Xot](../xot/docs/readme.md) - Struttura base dei moduli
+- [Modulo Xot](../../../Xot/docs/README.md) - Struttura base dei moduli
 - [Documentazione Laravel](https://laravel.com/docs/structure.html) - Struttura standard Laravel
 ## Collegamenti tra versioni di structure.md
 * [structure.md](bashscripts/docs/structure.md)

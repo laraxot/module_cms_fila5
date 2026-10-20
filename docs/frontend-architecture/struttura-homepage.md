@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "struttura homepage"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura della Homepage

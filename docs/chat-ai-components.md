@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chat ai components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Componenti Chat AI
@@ -53,4 +54,4 @@ Questo documento descrive le componenti UI ispirate al template "ChatAI" di [Tai
 
 - [Template Tailkit ChatAI](https://tailkit.com/templates#chatai)  
 - [Blocchi di Contenuto](blocks.md)  
-- [Documentazione Root](../../../../docs/project/readme.md)
+- [Documentazione Root](../../../../docs/project/README.md)

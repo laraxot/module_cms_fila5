@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "integration strategy"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Strategia di Integrazione UI
