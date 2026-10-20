@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "glossary"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Glossario Tecnico
@@ -113,7 +114,7 @@ Elemento interattivo che:
 - Gestire le performance
 
 ## Collegamenti
-- [Documentazione Componenti](./components/readme.md)
+- [Documentazione Componenti](./components/README.md)
 - [Guida allo Stile](./style/readme.md)
 - [Convenzioni Layout](./layout/readme.md)
 

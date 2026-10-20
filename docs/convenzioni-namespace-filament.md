@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "convenzioni namespace filament"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Convenzioni Namespace per Filament
@@ -107,18 +108,9 @@ Section::make('Anteprima')
 - [User - Filament Best Practices](../../user/project_docs/filament_best_practices.md) - Best practices per Filament
 
 ### Documentazione Interna
-- [README del modulo Cms](./readme.md) - Indice principale del modulo Cms
+- [README del modulo Cms](./README.md) - Indice principale del modulo Cms
 - [Filament Widget Registrazione](./filament-widget-registrazione.md) - Widget di registrazione
 - [Filament Widgets in Blade](./filament-widgets-in-blade.md) - Uso dei widget in Blade
 
 ---
-
-title: "convenzioni namespace filament"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "convenzioni namespace filament"
-issues: []
-discussions: []
 > **Nota**: Questo documento è linkato anche dal README di Xot per garantire coerenza tra i moduli.

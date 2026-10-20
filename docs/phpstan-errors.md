@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan errors"
 issues: []
 discussions: []
+status: draft
 ---
 
 # PHPStan Errors - Cms Module
@@ -26,15 +27,6 @@ discussions: []
 | app/View/Components/Section.php | 2 | High |
 
 ---
-
-title: "phpstan errors"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "phpstan errors"
-issues: []
-discussions: []
 ## File: app/Http/View/Composers/XotComposer.php
 
 ### Error: Class Not Found

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "safe"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Utilizzo di Safe nel Progetto il progetto

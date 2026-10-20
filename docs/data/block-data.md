@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "block data"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sistema BlockData

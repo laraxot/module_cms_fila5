@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "profile public route resolution"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Profile Public Route Resolution

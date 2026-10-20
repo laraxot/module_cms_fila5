@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "tailkit components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Tailkit Components Integration
@@ -178,6 +179,6 @@ class ChatMessageWrapper extends Component
 - Caching appropriato
 
 ## Collegamenti
-- [Documentazione UI](../ui/readme.md)
+- [Documentazione UI](../../../UI/README.md)
 - [Gestione Sezioni](../section-management.md)
-- [Componenti Base](../components/readme.md)
+- [Componenti Base](../components/README.md)

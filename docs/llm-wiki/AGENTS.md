@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "AGENTS"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Cms Module LLM Wiki Agent Instructions

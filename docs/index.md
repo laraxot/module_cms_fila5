@@ -3,13 +3,16 @@ title: "index"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-14
 qmd: "index"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Indice documentazione modulo Cms
+
+> Nota 2026-10-14: questo e' il catalogo per argomento, non l'ingresso operativo. L'ingresso e' [00-INDEX.md](./00-INDEX.md); lo stato verificato del modulo (come si servono le pagine, cosa non esiste) e' in [README.md](./README.md). I documenti descritti sotto come "architettura" o "servizi" possono citare classi che non esistono (`PageService`, `BlockService`, modello `Block`): nel dubbio, controllare il codice. 24 link a file inesistenti sono annotati come mancanti.
 
 ## Panoramica
 
@@ -25,11 +28,11 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 
 ## Collegamenti tema e workspace attivo
 
-- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema Sixteen
+- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-INDEX.md) - Indice docs del tema Sixteen
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
 - [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
 - [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso
-- [../../../docs/design-comuni/MASTER_INDEX.md](../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
+- [../../../docs/design-comuni/MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
 - [DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md) - Index Design Comuni con link bidirezionali (vedi anche variante [design_comuni_index.md](./design_comuni_index.md) in Storico)
 
 ## Documenti in radice di docs/, per argomento
@@ -152,7 +155,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [volt-folio-structure.md](./volt-folio-structure.md)
 - [volt-introduction.md](./volt-introduction.md)
 - [volt-livewire-component-boundaries.md](./volt-livewire-component-boundaries.md)
-- [volt-single-root-element.md](./volt-single-root-element.md)
+- [volt-single-root-element.md](./volt-single-root-element.md) _(target mancante, verificato 2026-10-14)_
 - [volt-web-application.md](./volt-web-application.md)
 
 ### Localizzazione e namespace (10)
@@ -172,7 +175,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 
 - [links.md](./links.md)
 - [prompt-rules-link.md](./prompt-rules-link.md)
-- [root-links.md](./root-links.md)
+- [root-links.md](./root-links.md) _(target mancante, verificato 2026-10-14)_
 - [themes-ui-link.md](./themes-ui-link.md)
 - [ui-link.md](./ui-link.md)
 - [user-link.md](./user-link.md)
@@ -182,12 +185,12 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 
 - [analisi-metodi-duplicati.md](./analisi-metodi-duplicati.md)
 - [bottlenecks.md](./bottlenecks.md)
-- [code-quality-analysis-legacy.md](./code-quality-analysis-legacy.md)
+- [code-quality-analysis-legacy.md](./code-quality-analysis-legacy.md) _(target mancante, verificato 2026-10-14)_
 - [code-quality-analysis.md](./code-quality-analysis.md)
 - [code-quality-improvement-report.md](./code-quality-improvement-report.md)
 - [code-quality-report.md](./code-quality-report.md)
 - [code-quality.md](./code-quality.md)
-- [copilot-redundancy-audit-2026-05-25.md](./copilot-redundancy-audit-2026-05-25.md)
+- [copilot-redundancy-audit-2026-05-25.md](./copilot-redundancy-audit-2026-05-25.md) _(target mancante, verificato 2026-10-14)_
 - [coverage.md](./coverage.md)
 - [cyclomatic-complexity-report.md](./cyclomatic-complexity-report.md)
 - [dependency-intelligence.md](./dependency-intelligence.md)
@@ -237,7 +240,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [quality-status.md](./quality-status.md)
 - [quality-tooling.md](./quality-tooling.md)
 - [quality.md](./quality.md)
-- [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md)
+- [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md) _(target mancante, verificato 2026-10-14)_
 - [redundancy-report.md](./redundancy-report.md)
 - [redundancy_analysis.md](./redundancy_analysis.md)
 - [safe.md](./safe.md)
@@ -249,7 +252,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [test.md](./test.md)
 - [test111.md](./test111.md)
 - [test2.md](./test2.md)
-- [test2025-08-28.md](./test2025-08-28.md)
+- [test2025-08-28.md](./test2025-08-28.md) _(target mancante, verificato 2026-10-14)_
 - [test222.md](./test222.md)
 - [test3.md](./test3.md)
 - [testing-business-behavior-update-summary.md](./testing-business-behavior-update-summary.md)
@@ -309,11 +312,11 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [file-naming-rules.md](./file-naming-rules.md)
 - [file-structure-cleanup.md](./file-structure-cleanup.md)
 - [link-relativi-regole.md](./link-relativi-regole.md)
-- [module-root-hygiene.md](./module-root-hygiene.md)
+- [module-root-hygiene.md](./module-root-hygiene.md) _(target mancante, verificato 2026-10-14)_
 - [no-ai-tool-scaffold-dirs.md](./no-ai-tool-scaffold-dirs.md)
 - [on-demand-pattern.md](./on-demand-pattern.md)
-- [root-file-policy.md](./root-file-policy.md)
-- [root-files-hygiene.md](./root-files-hygiene.md)
+- [root-file-policy.md](./root-file-policy.md) _(target mancante, verificato 2026-10-14)_
+- [root-files-hygiene.md](./root-files-hygiene.md) _(target mancante, verificato 2026-10-14)_
 - [rules-index.md](./rules-index.md)
 - [script-placement-governance.md](./script-placement-governance.md)
 - [script-placement-rules.md](./script-placement-rules.md)
@@ -323,7 +326,7 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 ### Conflitti git e merge (7)
 
 - [conflict-resolution.md](./conflict-resolution.md)
-- [git-conflict-resolution-2026-07-31.md](./git-conflict-resolution-2026-07-31.md)
+- [git-conflict-resolution-2026-07-31.md](./git-conflict-resolution-2026-07-31.md) _(target mancante, verificato 2026-10-14)_
 - [git-conflicts-list.md](./git-conflicts-list.md)
 - [git-conflicts-resolution-impact.md](./git-conflicts-resolution-impact.md)
 - [merge-conflict-files-list.md](./merge-conflict-files-list.md)
@@ -477,7 +480,7 @@ Sottocartelle senza indice interno (elenco file diretto consigliato per chi le a
 | [responsive/](./responsive/) | 1 | [responsive/guidelines.md](./responsive/guidelines.md) |
 | [screenshots/](./screenshots/) | 9 | (note su screenshot, nessun heading) |
 | [stories/](./stories/) | 1 | [stories/7.1.phpstan-paramtype-coverage.story.md](./stories/7.1.phpstan-paramtype-coverage.story.md) — vedi anche [stories/docs-index-audit.story.md](./stories/docs-index-audit.story.md) |
-| [tasks/](./tasks/) | 11 | [tasks/001-content-management-system.md](./tasks/001-content-management-system.md) |
+| [tasks/](./tasks/) _(target mancante, verificato 2026-10-14)_ | 11 | [tasks/001-content-management-system.md](./tasks/001-content-management-system.md) _(target mancante, verificato 2026-10-14)_ |
 | [testing/](./testing/) | 1 | [testing/naming-conventions.md](./testing/naming-conventions.md) |
 | [tests/](./tests/) | 11 | [tests/architecture-aration-rules.md](./tests/architecture-aration-rules.md) |
 | [themes/](./themes/) | 13 | [themes/assets.md](./themes/assets.md) |
@@ -492,37 +495,37 @@ Cartelle vuote o senza file `.md` diretti: `examples/`, `root-code-workspace-fil
 Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono raggruppati qui perche' palesemente duplicati o superati. Per ciascuna riga il primo link e' il riferimento consigliato; gli altri sono le varianti storiche.
 
 - **[00-index.md](./00-index.md)** — contenuto identico duplicato per case del filename. Varianti storiche: [00-INDEX.md](./00-INDEX.md)
-- **[algolia-docsearch.md](./algolia-docsearch.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [algolia-docsearch-1.md](./algolia-docsearch-1.md), [algolia-docsearch-old.md](./algolia-docsearch-old.md), [algolia-docsearch-old2.md](./algolia-docsearch-old2.md), [algolia-docsearch_1.md](./algolia-docsearch_1.md), [algolia_docsearch.md](./algolia_docsearch.md)
-- **[analisi-componenti-blade-laravel.md](./analisi-componenti-blade-laravel.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [analisi-componenti-blade-laravel-1.md](./analisi-componenti-blade-laravel-1.md), [analisi-componenti-blade-laravel_1.md](./analisi-componenti-blade-laravel_1.md), [analisi_componenti_blade_laravel.md](./analisi_componenti_blade_laravel.md)
-- **[architecture-xotdata-pattern.md](./architecture-xotdata-pattern.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [architecture-xotdata-pattern-1.md](./architecture-xotdata-pattern-1.md), [architecture-xotdata-pattern_1.md](./architecture-xotdata-pattern_1.md), [architecture_xotdata_pattern.md](./architecture_xotdata_pattern.md)
+- **[algolia-docsearch.md](./algolia-docsearch.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [algolia-docsearch-1.md](./algolia-docsearch-adding-custom.md), [algolia-docsearch-old.md](./algolia-docsearch-old.md), [algolia-docsearch-old2.md](./algolia-docsearch-old2.md), [algolia-docsearch_1.md](./algolia-docsearch-adding-custom.md), [algolia_docsearch.md](./algolia_docsearch.md)
+- **[analisi-componenti-blade-laravel.md](./analisi-componenti-blade-laravel.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [analisi-componenti-blade-laravel-1.md](./analisi-componenti-blade-laravel-corretta.md), [analisi-componenti-blade-laravel_1.md](./analisi-componenti-blade-laravel-problema-identificato.md), [analisi_componenti_blade_laravel.md](./analisi_componenti_blade_laravel.md)
+- **[architecture-xotdata-pattern.md](./architecture-xotdata-pattern.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [architecture-xotdata-pattern-1.md](./architecture-xotdata-pattern-errore-critico.md), [architecture-xotdata-pattern_1.md](./architecture-xotdata-pattern-errore-critico-risolto.md), [architecture_xotdata_pattern.md](./architecture_xotdata_pattern.md)
 - **[best_practices.md](./best_practices.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [BEST_PRACTICES.md](./BEST_PRACTICES.md)
 - **[business-logic-report.md](./business-logic-report.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [business_logic_report.md](./business_logic_report.md)
 - **[case-sensitivity-percorsi-moduli.md](./case-sensitivity-percorsi-moduli.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [case_sensitivity_percorsi_moduli.md](./case_sensitivity_percorsi_moduli.md)
 - **[CHANGELOG.md](./CHANGELOG.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [changelog.md](./changelog.md)
-- **[chat-ai-components.md](./chat-ai-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [chat-ai-components-1.md](./chat-ai-components-1.md), [chat-ai-components_1.md](./chat-ai-components_1.md), [chat_ai_components.md](./chat_ai_components.md)
+- **[chat-ai-components.md](./chat-ai-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [chat-ai-components-1.md](./chat-ai-components-componenti.md), [chat-ai-components_1.md](./chat-ai-components-componenti.md), [chat_ai_components.md](./chat_ai_components.md)
 - **[cleanup-log.md](./cleanup-log.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [cleanup_log.md](./cleanup_log.md)
-- **[code-quality-analysis.md](./code-quality-analysis.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [code-quality-analysis-.md](./code-quality-analysis-.md), [code-quality-analysis-2025-11-24.md](./code-quality-analysis-2025-11-24.md), [code-quality-analysis-november.md](./code-quality-analysis-november.md), [code-quality-analysis-renamed.md](./code-quality-analysis-renamed.md)
-- **[componenti-blocchi-contenuto.md](./componenti-blocchi-contenuto.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [componenti-blocchi-contenuto-1.md](./componenti-blocchi-contenuto-1.md), [componenti-blocchi-contenuto_1.md](./componenti-blocchi-contenuto_1.md), [componenti_blocchi_contenuto.md](./componenti_blocchi_contenuto.md)
+- **[code-quality-analysis.md](./code-quality-analysis.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [code-quality-analysis-.md](./code-quality-analysis-.md), [code-quality-analysis-2025-11-24.md](./code-quality-analysis-november-cms.md), [code-quality-analysis-november.md](./code-quality-analysis-november.md), [code-quality-analysis-renamed.md](./code-quality-analysis-renamed.md)
+- **[componenti-blocchi-contenuto.md](./componenti-blocchi-contenuto.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [componenti-blocchi-contenuto-1.md](./componenti-blocchi-contenuto.md), [componenti-blocchi-contenuto_1.md](./componenti-blocchi-contenuto.md), [componenti_blocchi_contenuto.md](./componenti_blocchi_contenuto.md)
 - **[componenti-footer.md](./componenti-footer.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [componenti_footer.md](./componenti_footer.md)
 - **[componenti-header.md](./componenti-header.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [componenti_header.md](./componenti_header.md)
-- **[content-blocks-architecture.md](./content-blocks-architecture.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content-blocks-architecture-1.md](./content-blocks-architecture-1.md), [content-blocks-architecture_1.md](./content-blocks-architecture_1.md), [content_blocks_architecture.md](./content_blocks_architecture.md)
-- **[content-blocks-system.md](./content-blocks-system.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content-blocks-system-1.md](./content-blocks-system-1.md), [content-blocks-system_1.md](./content-blocks-system_1.md), [content_blocks_system.md](./content_blocks_system.md)
-- **[content-json-mapping.md](./content-json-mapping.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content-json-mapping-1.md](./content-json-mapping-1.md), [content-json-mapping_1.md](./content-json-mapping_1.md)
+- **[content-blocks-architecture.md](./content-blocks-architecture.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content-blocks-architecture-1.md](./content-blocks-architecture-saluteora-architettura.md), [content-blocks-architecture_1.md](./content-blocks-architecture-nome-progetto.md), [content_blocks_architecture.md](./content_blocks_architecture.md)
+- **[content-blocks-system.md](./content-blocks-system.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content-blocks-system-1.md](./content-blocks-system-saluteora-sistema.md), [content-blocks-system_1.md](./content-blocks-system-saluteora-sistema.md), [content_blocks_system.md](./content_blocks_system.md)
+- **[content-json-mapping.md](./content-json-mapping.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content-json-mapping-1.md](./content-json-mapping.md), [content-json-mapping_1.md](./content-json-mapping.md)
 - **[content-management.md](./content-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content_management.md](./content_management.md)
 - **[content-management-strategy.md](./content-management-strategy.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content_management_strategy.md](./content_management_strategy.md)
 - **[content-storage.md](./content-storage.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [content_storage.md](./content_storage.md)
 - **[convenzioni-namespace-filament.md](./convenzioni-namespace-filament.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [convenzioni_namespace_filament.md](./convenzioni_namespace_filament.md)
 - **[create-theme.md](./create-theme.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [create_theme.md](./create_theme.md)
-- **[custom-404-page.md](./custom-404-page.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [custom-404-page-1.md](./custom-404-page-1.md), [custom-404-page_1.md](./custom-404-page_1.md), [custom_404_page.md](./custom_404_page.md)
+- **[custom-404-page.md](./custom-404-page.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [custom-404-page-1.md](./custom-404-page-collegamenti-versioni.md), [custom-404-page_1.md](./custom-404-page-versione-head.md), [custom_404_page.md](./custom_404_page.md)
 - **[custom-components.md](./custom-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [custom_components.md](./custom_components.md)
-- **[customizing-your-site.md](./customizing-your-site.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [customizing-your-site-1.md](./customizing-your-site-1.md), [customizing-your-site_1.md](./customizing-your-site_1.md), [customizing_your_site.md](./customizing_your_site.md)
-- **[daisyui-componenti.md](./daisyui-componenti.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [daisyui-componenti-1.md](./daisyui-componenti-1.md), [daisyui-componenti_1.md](./daisyui-componenti_1.md), [daisyui_componenti.md](./daisyui_componenti.md)
+- **[customizing-your-site.md](./customizing-your-site.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [customizing-your-site-1.md](./customizing-your-site.md), [customizing-your-site_1.md](./customizing-your-site-styles.md), [customizing_your_site.md](./customizing_your_site.md)
+- **[daisyui-componenti.md](./daisyui-componenti.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [daisyui-componenti-1.md](./daisyui-componenti.md), [daisyui-componenti_1.md](./daisyui-componenti.md), [daisyui_componenti.md](./daisyui_componenti.md)
 - **[design_comuni_index.md](./design_comuni_index.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)
 - **[docs-directory-violation-reminder.md](./docs-directory-violation-reminder.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [.docs-directory-violation-reminder.md](./.docs-directory-violation-reminder.md), [.docs_directory_violation_reminder.md](./.docs_directory_violation_reminder.md)
 - **[filament-4x-compatibility.md](./filament-4x-compatibility.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament_4x_compatibility.md](./filament_4x_compatibility.md)
 - **[filament-5x-compatibility.md](./filament-5x-compatibility.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament_5x_compatibility.md](./filament_5x_compatibility.md)
-- **[filament-blade-components.md](./filament-blade-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament-blade-components-1.md](./filament-blade-components-1.md), [filament-blade-components_1.md](./filament-blade-components_1.md), [filament_blade_components.md](./filament_blade_components.md)
-- **[filament-components.md](./filament-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament-components-1.md](./filament-components-1.md), [filament-components_1.md](./filament-components_1.md), [filament_components.md](./filament_components.md)
+- **[filament-blade-components.md](./filament-blade-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament-blade-components-1.md](./filament-blade-components-usage-cms.md), [filament-blade-components_1.md](./filament-blade-components-collegamenti.md), [filament_blade_components.md](./filament_blade_components.md)
+- **[filament-components.md](./filament-components.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament-components-1.md](./filament-components-utilizzo-componenti.md), [filament-components_1.md](./filament-components-utilizzo-componenti-progetto.md), [filament_components.md](./filament_components.md)
 - **[filament-form-sopra-tabella.md](./filament-form-sopra-tabella.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament_form_sopra_tabella.md](./filament_form_sopra_tabella.md)
 - **[filament-forms.md](./filament-forms.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament_forms.md](./filament_forms.md)
 - **[filament-integration.md](./filament-integration.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [filament_integration.md](./filament_integration.md)
@@ -546,11 +549,11 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[git-conflicts-resolution-impact.md](./git-conflicts-resolution-impact.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [git_conflicts_resolution_impact.md](./git_conflicts_resolution_impact.md), [gits-resolution-impact.md](./gits-resolution-impact.md)
 - **[gitignore-organization-strategy.md](./gitignore-organization-strategy.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [gitignore_organization_strategy.md](./gitignore_organization_strategy.md)
 - **[guida-implementazione-ux.md](./guida-implementazione-ux.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [guida_implementazione_ux.md](./guida_implementazione_ux.md)
-- **[homepage-architecture.md](./homepage-architecture.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage-architecture-1.md](./homepage-architecture-1.md), [homepage-architecture_1.md](./homepage-architecture_1.md)
+- **[homepage-architecture.md](./homepage-architecture.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage-architecture-1.md](./homepage-architecture.md), [homepage-architecture_1.md](./homepage-architecture.md)
 - **[homepage-contenuti.md](./homepage-contenuti.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage_contenuti.md](./homepage_contenuti.md)
 - **[homepage-errori-comuni.md](./homepage-errori-comuni.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage_errori_comuni.md](./homepage_errori_comuni.md), [homepagei-comuni.md](./homepagei-comuni.md)
-- **[homepage-management.md](./homepage-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage-management-1.md](./homepage-management-1.md), [homepage-management_1.md](./homepage-management_1.md)
-- **[homepage-structure.md](./homepage-structure.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage-structure-1.md](./homepage-structure-1.md), [homepage-structure_1.md](./homepage-structure_1.md), [homepage_structure.md](./homepage_structure.md)
+- **[homepage-management.md](./homepage-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage-management-1.md](./homepage-management-gestione.md), [homepage-management_1.md](./homepage-management-gestione.md)
+- **[homepage-structure.md](./homepage-structure.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage-structure-1.md](./homepage-structure.md), [homepage-structure_1.md](./homepage-structure-documentation-themes.md), [homepage_structure.md](./homepage_structure.md)
 - **[homepage-struttura-corretta.md](./homepage-struttura-corretta.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [homepage_struttura_corretta.md](./homepage_struttura_corretta.md)
 - **[icon-design.md](./icon-design.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [iconesign.md](./iconesign.md)
 - **[implementazione-pagina-servizi.md](./implementazione-pagina-servizi.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [implementazione_pagina_servizi.md](./implementazione_pagina_servizi.md)
@@ -559,9 +562,9 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[leggi-ux.md](./leggi-ux.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [leggi_ux.md](./leggi_ux.md)
 - **[LICENSE.md](./LICENSE.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [license-renamed.md](./license-renamed.md), [license.md](./license.md)
 - **[mcp-server-recommended.md](./mcp-server-recommended.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [mcp_server_recommended.md](./mcp_server_recommended.md)
-- **[metatag-population-strategy.md](./metatag-population-strategy.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [metatag-population-strategy-1.md](./metatag-population-strategy-1.md), [metatag-population-strategy_1.md](./metatag-population-strategy_1.md), [metatag_population_strategy.md](./metatag_population_strategy.md)
+- **[metatag-population-strategy.md](./metatag-population-strategy.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [metatag-population-strategy-1.md](./metatag-population-strategy-saluteora-strategia.md), [metatag-population-strategy_1.md](./metatag-population-strategy-nome-progetto.md), [metatag_population_strategy.md](./metatag_population_strategy.md)
 - **[metodi-duplicati-analisi.md](./metodi-duplicati-analisi.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [METODI-DUPLICATI-ANALISI.md](./METODI-DUPLICATI-ANALISI.md), [METODI_DUPLICATI_ANALISI.md](./METODI_DUPLICATI_ANALISI.md), [metodi_duplicati_analisi.md](./metodi_duplicati_analisi.md), [metodiuplicati-analisi.md](./metodiuplicati-analisi.md)
-- **[modelli-factory-seeder-analisi.md](./modelli-factory-seeder-analisi.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [modelli-factory-seeder-analisi-1.md](./modelli-factory-seeder-analisi-1.md), [modelli_factory_seeder_analisi.md](./modelli_factory_seeder_analisi.md)
+- **[modelli-factory-seeder-analisi.md](./modelli-factory-seeder-analisi.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [modelli-factory-seeder-analisi-1.md](./modelli-factory-seeder-analisi-modulo-cms.md), [modelli_factory_seeder_analisi.md](./modelli_factory_seeder_analisi.md)
 - **[modular-architecture-update-summary.md](./modular-architecture-update-summary.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [MODULAR_ARCHITECTURE_UPDATE_SUMMARY.md](./MODULAR_ARCHITECTURE_UPDATE_SUMMARY.md), [modular_architecture_update_summary.md](./modular_architecture_update_summary.md)
 - **[module-guidelines.md](./module-guidelines.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [module_guidelines.md](./module_guidelines.md), [modulelines.md](./modulelines.md)
 - **[multi-step-forms.md](./multi-step-forms.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [multi_step_forms.md](./multi_step_forms.md)
@@ -570,7 +573,7 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[namespace-modules.md](./namespace-modules.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [namespace_modules.md](./namespace_modules.md)
 - **[namespace-moduli-laravel-saluteora.md](./namespace-moduli-laravel-saluteora.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [namespace_moduli_laravel_saluteora.md](./namespace_moduli_laravel_saluteora.md)
 - **[on-demand-pattern.md](./on-demand-pattern.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [ON-DEMAND-PATTERN.md](./ON-DEMAND-PATTERN.md)
-- **[optimization-recommendations.md](./optimization-recommendations.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [optimization-recommendations-1.md](./optimization-recommendations-1.md), [optimization-recommendations_1.md](./optimization-recommendations_1.md), [optimization_recommendations.md](./optimization_recommendations.md)
+- **[optimization-recommendations.md](./optimization-recommendations.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [optimization-recommendations-1.md](./optimization-recommendations-modulo-cms.md), [optimization-recommendations_1.md](./optimization-recommendations.md), [optimization_recommendations.md](./optimization_recommendations.md)
 - **[page_component_architecture.md](./page_component_architecture.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md)
 - **[page-content-management.md](./page-content-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [page_content_management.md](./page_content_management.md)
 - **[page-management.md](./page-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [page_management.md](./page_management.md)
@@ -589,15 +592,15 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[product-roadmap.md](./product-roadmap.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [PRODUCT_ROADMAP.md](./PRODUCT_ROADMAP.md), [product_roadmap.md](./product_roadmap.md)
 - **[product-strategy.md](./product-strategy.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [PRODUCT_STRATEGY.md](./PRODUCT_STRATEGY.md), [product_strategy.md](./product_strategy.md)
 - **[project-structure.md](./project-structure.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [PROJECT-STRUCTURE.md](./PROJECT-STRUCTURE.md)
-- **[psr4-autoload-cleanup.md](./psr4-autoload-cleanup.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [psr4-autoload-cleanup-2026-03-09.md](./psr4-autoload-cleanup-2026-03-09.md)
-- **[psr4-autoload-remediation.md](./psr4-autoload-remediation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [psr4-autoload-remediation-2026-03-09.md](./psr4-autoload-remediation-2026-03-09.md)
+- **[psr4-autoload-cleanup.md](./psr4-autoload-cleanup.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [psr4-autoload-cleanup-2026-03-09.md](./psr4-autoload-cleanup.md)
+- **[psr4-autoload-remediation.md](./psr4-autoload-remediation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [psr4-autoload-remediation-2026-03-09.md](./psr4-autoload-remediation.md)
 - **[qmd-setup.md](./qmd-setup.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [QMD-SETUP.md](./QMD-SETUP.md)
-- **[quality-status.md](./quality-status.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [quality-status-.md](./quality-status-.md), [quality-status-11.md](./quality-status-11.md), [quality-status-2025-11.md](./quality-status-2025-11.md)
+- **[quality-status.md](./quality-status.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [quality-status-.md](./quality-status-.md), [quality-status-11.md](./quality-status.md), [quality-status-2025-11.md](./quality-status-activity-module-november.md) _(target mancante, verificato 2026-10-14)_
 - **[redundancy_analysis.md](./redundancy_analysis.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [REDUNDANCY_ANALYSIS.md](./REDUNDANCY_ANALYSIS.md)
-- **[register-disabled-implementation.md](./register-disabled-implementation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [register-disabled-implementation-1.md](./register-disabled-implementation-1.md), [register-disabled-implementation_1.md](./register-disabled-implementation_1.md), [register_disabled_implementation.md](./register_disabled_implementation.md), [registerisabled-implementation.md](./registerisabled-implementation.md)
+- **[register-disabled-implementation.md](./register-disabled-implementation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [register-disabled-implementation-1.md](./register-disabled-implementation.md), [register-disabled-implementation_1.md](./register-disabled-implementation.md), [register_disabled_implementation.md](./register_disabled_implementation.md), [registerisabled-implementation.md](./registerisabled-implementation.md)
 - **[risorse-ui-ux.md](./risorse-ui-ux.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [risorse_ui_ux.md](./risorse_ui_ux.md)
 - **[roadmap.md](./roadmap.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [roadmap--renamed.md](./roadmap--renamed.md), [roadmap-.md](./roadmap-.md), [roadmap-2025.md](./roadmap-2025.md), [roadmap-q1.md](./roadmap-q1.md)
-- **[root-links.md](./root-links.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [root_links.md](./root_links.md)
+- **[root-links.md](./root-links.md) _(target mancante, verificato 2026-10-14)_** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [root_links.md](./root_links.md) _(target mancante, verificato 2026-10-14)_
 - **[script-placement-rules.md](./script-placement-rules.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [SCRIPT_PLACEMENT_RULES.md](./SCRIPT_PLACEMENT_RULES.md), [script_placement_rules.md](./script_placement_rules.md)
 - **[section-management.md](./section-management.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [section_management.md](./section_management.md)
 - **[serializable-closure-error-resolution.md](./serializable-closure-error-resolution.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [serializable-closure-error-resolution-.md](./serializable-closure-error-resolution-.md)
@@ -612,34 +615,34 @@ Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono r
 - **[testing-business-behavior-update-summary.md](./testing-business-behavior-update-summary.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [TESTING_BUSINESS_BEHAVIOR_UPDATE_SUMMARY.md](./TESTING_BUSINESS_BEHAVIOR_UPDATE_SUMMARY.md), [testing_business_behavior_update_summary.md](./testing_business_behavior_update_summary.md)
 - **[testing-registration-widget.md](./testing-registration-widget.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [testing_registration_widget.md](./testing_registration_widget.md)
 - **[theme-build-process.md](./theme-build-process.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [theme_build_process.md](./theme_build_process.md)
-- **[theme-compilation.md](./theme-compilation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [theme-compilation-1.md](./theme-compilation-1.md), [theme-compilation_1.md](./theme-compilation_1.md)
-- **[themes-ui-link.md](./themes-ui-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [themes-ui-link-1.md](./themes-ui-link-1.md), [themes-ui-link_1.md](./themes-ui-link_1.md), [themes_ui_link.md](./themes_ui_link.md)
+- **[theme-compilation.md](./theme-compilation.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [theme-compilation-1.md](./theme-compilation.md), [theme-compilation_1.md](./theme-compilation.md)
+- **[themes-ui-link.md](./themes-ui-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [themes-ui-link-1.md](./themes-ui-link-collegamenti-ai.md), [themes-ui-link_1.md](./themes-ui-link-collegamenti-ai-temi.md), [themes_ui_link.md](./themes_ui_link.md)
 - **[todo-application.md](./todo-application.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [todo_application.md](./todo_application.md)
-- **[ui-link.md](./ui-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [ui-link-1.md](./ui-link-1.md), [ui-link_1.md](./ui-link_1.md), [ui_link.md](./ui_link.md)
-- **[user-link.md](./user-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [user-link-1.md](./user-link-1.md), [user-link_1.md](./user-link_1.md), [user_link.md](./user_link.md)
+- **[ui-link.md](./ui-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [ui-link-1.md](./ui-link-collegamenti-al.md), [ui-link_1.md](./ui-link-collegamenti-al-modulo.md), [ui_link.md](./ui_link.md)
+- **[user-link.md](./user-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [user-link-1.md](./user-link-collegamento-al.md), [user-link_1.md](./user-link-collegamento-al-modulo.md), [user_link.md](./user_link.md)
 - **[user-research.md](./user-research.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [USER_RESEARCH.md](./USER_RESEARCH.md), [user_research.md](./user_research.md)
 - **[utilizzo-modelli-user-in-saluteora.md](./utilizzo-modelli-user-in-saluteora.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [utilizzo_modelli_user_in_saluteora.md](./utilizzo_modelli_user_in_saluteora.md)
 - **[ux-wizard-registrazione-paziente.md](./ux-wizard-registrazione-paziente.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [ux_wizard_registrazione_paziente.md](./ux_wizard_registrazione_paziente.md)
-- **[volt-folio-esempio.md](./volt-folio-esempio.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-folio-esempio-1.md](./volt-folio-esempio-1.md), [volt-folio-esempio_1.md](./volt-folio-esempio_1.md), [volt_folio_esempio.md](./volt_folio_esempio.md)
-- **[volt-folio-structure.md](./volt-folio-structure.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-folio-structure-1.md](./volt-folio-structure-1.md), [volt-folio-structure_1.md](./volt-folio-structure_1.md), [volt_folio_structure.md](./volt_folio_structure.md)
-- **[volt-introduction.md](./volt-introduction.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-introduction-1.md](./volt-introduction-1.md), [volt-introduction_1.md](./volt-introduction_1.md), [volt_introduction.md](./volt_introduction.md)
-- **[volt-single-root-element.md](./volt-single-root-element.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-single-root-element-1.md](./volt-single-root-element-1.md), [volt-single-root-element_1.md](./volt-single-root-element_1.md), [volt_single_root_element.md](./volt_single_root_element.md)
-- **[volt-web-application.md](./volt-web-application.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-web-application-1.md](./volt-web-application-1.md), [volt-web-application_1.md](./volt-web-application_1.md), [volt_web_application.md](./volt_web_application.md)
+- **[volt-folio-esempio.md](./volt-folio-esempio.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-folio-esempio-1.md](./volt-folio-esempio.md), [volt-folio-esempio_1.md](./volt-folio-esempio.md), [volt_folio_esempio.md](./volt_folio_esempio.md)
+- **[volt-folio-structure.md](./volt-folio-structure.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-folio-structure-1.md](./volt-folio-structure.md), [volt-folio-structure_1.md](./volt-folio-structure-struttura-corretta.md), [volt_folio_structure.md](./volt_folio_structure.md)
+- **[volt-introduction.md](./volt-introduction.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-introduction-1.md](./volt-introduction-introduzione-laravel.md), [volt-introduction_1.md](./volt-introduction-introduzione-laravel.md), [volt_introduction.md](./volt_introduction.md)
+- **[volt-single-root-element.md](./volt-single-root-element.md) _(target mancante, verificato 2026-10-14)_** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-single-root-element-1.md](./volt-single-root-element-1.md) _(target mancante, verificato 2026-10-14)_, [volt-single-root-element_1.md](./volt-single-root-element_1.md) _(target mancante, verificato 2026-10-14)_, [volt_single_root_element.md](./volt_single_root_element.md) _(target mancante, verificato 2026-10-14)_
+- **[volt-web-application.md](./volt-web-application.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [volt-web-application-1.md](./volt-web-application.md), [volt-web-application_1.md](./volt-web-application.md), [volt_web_application.md](./volt_web_application.md)
 - **[web-design-rules.md](./web-design-rules.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [web_design_rules.md](./web_design_rules.md), [webesign.md](./webesign.md)
 - **[xot-link.md](./xot-link.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [xot_link.md](./xot_link.md)
 
 ### Cartelle-archivio (contenuto storico, non indicizzato per singolo file)
 
-- [archive/](./archive/) — 184 file `.md`, dump storico di documentazione superata (es. varianti vecchie di algolia-docsearch e altri doc gia' presenti anche in radice). Consultare solo per ricostruire la storia di una decisione.
+- [archive/](./archive/) _(target mancante, verificato 2026-10-14)_ — 184 file `.md`, dump storico di documentazione superata (es. varianti vecchie di algolia-docsearch e altri doc gia' presenti anche in radice). Consultare solo per ricostruire la storia di una decisione.
 - [raw/](./raw/) — 25 file, materiale grezzo/non rifinito, con stub `README.md`/`index.md` che puntano a `Themes/docs/shared-components/`.
-- [historical/](./historical/) — 4 file, snapshot storici (es. code-quality-analysis datata novembre 2025).
+- [historical/](./historical/) _(target mancante, verificato 2026-10-14)_ — 4 file, snapshot storici (es. code-quality-analysis datata novembre 2025).
 - [root-md-files/](./root-md-files/) — 31 file, altro deposito di `.md` spaiati (es. `business-logic-report-dup-16529.md`, il nome stesso segnala un duplicato).
-- [root-txt-files/](./root-txt-files/) — 6 file (es. `test111.md`), materiale di scarto spostato dalla root del modulo.
-- [root-code-workspace-files/](./root-code-workspace-files/) — cartella presente ma senza file `.md` diretti.
+- [root-txt-files/](./root-txt-files/) _(target mancante, verificato 2026-10-14)_ — 6 file (es. `test111.md`), materiale di scarto spostato dalla root del modulo.
+- [root-code-workspace-files/](./root-code-workspace-files/) _(target mancante, verificato 2026-10-14)_ — cartella presente ma senza file `.md` diretti.
 
 ### File di scratch/test in radice docs/ (probabile materiale di prova, verificarne l'utilita')
 
-- [test.md](./test.md), [test2.md](./test2.md), [test3.md](./test3.md), [test111.md](./test111.md), [test222.md](./test222.md), [test2025-08-28.md](./test2025-08-28.md) — file senza contenuto strutturato riconoscibile dal nome, verosimilmente scratchpad.
+- [test.md](./test.md), [test2.md](./test2.md), [test3.md](./test3.md), [test111.md](./test111.md), [test222.md](./test222.md), [test2025-08-28.md](./test2025-08-28.md) _(target mancante, verificato 2026-10-14)_ — file senza contenuto strutturato riconoscibile dal nome, verosimilmente scratchpad.
 
 ### Nomi file corrotti/mangled ricondotti al cluster corretto
 

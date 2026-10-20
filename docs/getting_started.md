@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: getting_started
 canonical: ../../../Themes/docs/shared-components/getting-started.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/getting-started.md

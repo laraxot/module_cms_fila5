@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: code-quality-analysis
 canonical: ../../../Themes/docs/shared-components/code-quality-analysis-legacy.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/code-quality-analysis-legacy.md
