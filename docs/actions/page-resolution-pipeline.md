@@ -5,7 +5,7 @@ discussions: []
 title: "Page Resolution Pipeline — Cms Module"
 type: documentation
 created: 2026-07-20
-updated: 2026-07-20
+updated: 2026-10-20
 confidence: high
 tags: [folio, actions, page-resolution, cms, schema-org]
 related:
@@ -28,12 +28,14 @@ renderizzato.
 Data la coppia `(container0, slug0)` di una rotta Folio, decide **cosa** renderizzare,
 in ordine di priorità:
 
-1. **Modello dinamico**: prova a caricare un Eloquent model associato al `container0`
-   (es. `events` → `Modules\Meetup\Models\Event`). La mappa dei container noti è
-   hard-coded (`$knownMappings`) più un fallback via `config('xra.container0_model_map')`
-   e infine un tentativo per convenzione (`Modules\{Container}\Models\{Singular}`,
-   `App\Models\{Singular}`). Il caso `container0 === 'profile'` ha una risoluzione
-   dedicata (`resolvePublicProfileItem`) che prova `User` e poi profili di modulo.
+1. **Modello dinamico**: prova a caricare un Eloquent model associato al `container0`.
+   `profile` ha una risoluzione dedicata (`resolvePublicProfileItem`: `User` e poi profili di
+   modulo). `blog` e `events` chiedono al `ThemeComposer` del modulo Blog solo i contenuti
+   pubblicati del tipo giusto (`findPublishedPostBySlug`, `findPublishedEventBySlug`), mai
+   post per events o viceversa; se il modulo Blog non e' installato (come in Quaeris) si passa
+   oltre senza errore. Poi `config('xra.container0_model_map')` e infine la convenzione
+   (`Modules\{Container}\Models\{Singular}`, `App\Models\{Singular}`). La vecchia mappa
+   hard-coded `$knownMappings` (`events` -> `Modules\Meetup\Models\Event`) non esiste piu'.
 2. **Pagina CMS con slug esatto**: se non c'è un modello dinamico, cerca
    `Page::where('slug', "{container0}.{slug0}")`.
 3. **Pagina CMS generica del container**: fallback su `Page::where('slug', "{container0}.view")`.
