@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "structure"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Struttura dei Componenti
@@ -113,7 +114,7 @@ I blocchi sono componenti modulari che:
 ## Collegamenti
 - [Glossario Tecnico](../glossary.md)
 - [Guida allo Stile](../style/readme.md)
-- [Documentazione Blocchi](../blocks/readme.md)
+- [Documentazione Blocchi](../blocks/README.md)
 
 ## Collegamenti tra versioni di structure.md
 * [structure.md](bashscripts/docs/structure.md)

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "readme en"
 issues: []
 discussions: []
+status: draft
 ---
 
 # 📄 Cms — English presentation
@@ -24,15 +25,6 @@ discussions: []
 > **Pages that breathe Design Comuni.** Folio, CMS blocks, JSON content — frontoffice is first-class.
 
 ---
-
-title: "readme en"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "readme en"
-issues: []
-discussions: []
 ## Why it exists
 
 Manages `/it` page composition without monolithic Blade hardcoding.
@@ -58,7 +50,7 @@ Manages `/it` page composition without monolithic Blade hardcoding.
 
 Build **civic pages** modularly — one block at a time.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

@@ -7,6 +7,7 @@ type: index
 tags: [concepts, Cms]
 created: 2026-05-11
 updated: 2026-06-10
+status: draft
 ---
 
 # concepts Index — Cms
@@ -28,5 +29,5 @@ Concetti Cms. On-demand: `qmd search` · [trigger map](/docs/wiki/rules/00-TRIGG
 
 ## Owner pagine per modulo (cross-link)
 
-- User: [folio-pages-owner-pattern](../../User/docs/wiki/concepts/folio-pages-owner-pattern.md)
-- Sixteen header: [fo-folio-named-routes-header](../../Themes/Sixteen/docs/wiki/concepts/fo-folio-named-routes-header.md)
+- User: [folio-pages-owner-pattern](../../../../User/docs/wiki/concepts/folio-pages-owner-pattern.md)
+- Sixteen header: [fo-folio-named-routes-header](../../../../../Themes/Sixteen/docs/wiki/concepts/fo-folio-named-routes-header.md)

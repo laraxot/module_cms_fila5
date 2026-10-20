@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: filament_integration
 canonical: ../../../Themes/docs/shared-components/filament-integration-Modules.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/filament-integration-Modules.md

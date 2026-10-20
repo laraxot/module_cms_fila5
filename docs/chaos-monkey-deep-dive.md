@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chaos monkey deep dive"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Chaos Monkey - Deep Dive Tecnico

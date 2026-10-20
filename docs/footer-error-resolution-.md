@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "footer error resolution "
 issues: []
 discussions: []
+status: draft
 ---
 
 # Footer Error Resolution - [DATE]

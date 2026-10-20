@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan analysis"
 issues: []
 discussions: []
+status: draft
 ---
 
 # PHPStan Analysis - Cms Module
@@ -15,15 +16,6 @@ discussions: []
 **Errori Totali**: 767
 
 ---
-
-title: "phpstan analysis"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "phpstan analysis"
-issues: []
-discussions: []
 ## 📊 Distribuzione Errori
 
 | Tipo | Quantità | % | Status |

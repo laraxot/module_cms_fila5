@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan compliance december"
 issues: []
 discussions: []
+status: draft
 ---
 
 # PHPStan Compliance - Dicembre 2025

@@ -9,7 +9,8 @@ issues: []
 discussions: []
 module: theme
 topic: roadmap
-canonical: ../../../../Themes/docs/shared-components/2025-q4-roadmap-Modules.md
+canonical: ../../../../Themes/docs/shared-components/roadmap-Modules-q4.md
+status: stub
 ---
 
-See canonical documentation: ../../../../Themes/docs/shared-components/2025-q4-roadmap-Modules.md
+See canonical documentation: ../../../../Themes/docs/shared-components/roadmap-Modules-q4.md

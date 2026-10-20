@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: gitignore_organization_strategy
 canonical: ../../../Themes/docs/shared-components/gitignore-organization-strategy.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/gitignore-organization-strategy.md

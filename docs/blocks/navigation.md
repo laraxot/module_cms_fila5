@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "navigation"
 issues: []
 discussions: []
+status: draft
 ---
 
 # NavigationBlock
@@ -72,7 +73,7 @@ Block::make('navigation')
 - Sidebar: Menu di navigazione contestuale con titolo opzionale
 
 ## Collegamenti
-- [Documentazione Blocchi](./readme.md)
+- [Documentazione Blocchi](./README.md)
 - [Componente Header](../components/header.md)
 - [Componente Footer](../components/footer.md)
 - [Convenzioni Filament](../../../../docs/filament-conventions.md)

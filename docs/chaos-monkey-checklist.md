@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "chaos monkey checklist"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Chaos monkey checklist (cms)
