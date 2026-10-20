@@ -48,3 +48,7 @@ modulo owner FixCity: `tests/Feature/Pages/TicketGuestLocaleRedirectTest.php`.
 - Chromium end-to-end: `/it|en/tickets/create` da guest termina sul login
   localizzato; copy/footer e link corretti a 320/768/1440 px, nessun overflow o
   errore JavaScript.
+
+Correzione verificata 2026-10-13 (DCP-35 S4): lo stato attuale di `/it/tickets/create` e `/en/tickets/create` per un ospite è `200` senza redirect (curl): `tickets.create.json` non ha la chiave `middleware` in nessuna delle tre copie. I criteri 1 e 2 valgono solo per pagine protette con `auth`; il test `Modules/Fixcity/tests/Feature/Pages/TicketGuestLocaleRedirectTest.php` (che chiede il redirect su `/{it,en}/tickets/create`) oggi fallisce 3 casi su 3 (`pest` del 2026-10-13: «Expected response status code [401] but received 200» e `assertRedirect` non soddisfatto): è obsoleto o va riallineato alla decisione sull'`auth` di `tickets.create`.
+
+Aggiornamento 2026-10-13 14:05 UTC: la chiave `"middleware": ["auth"]` e' stata ripristinata in `config/local/fixcity/.../tickets.create.json` (D17, DCP-42). Un ospite riceve ora 302 `/it/auth/login` e `/en/auth/login`; `TicketGuestLocaleRedirectTest` passa (6 test, 28 asserzioni con gli altri due file). Le copie `Modules/Fixcity/config` ed `eu` non hanno ancora la chiave.
