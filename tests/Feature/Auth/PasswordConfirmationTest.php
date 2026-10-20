@@ -8,9 +8,7 @@ use Modules\Xot\Tests\TestCase;
 
 uses(TestCase::class);
 
+// I test reali della conferma password stanno in passwordconfirmationtest.php.
 describe('Password Confirmation', function () {
-    test('password confirmation placeholder', function () {
-        // Placeholder - actual tests require full setup
-        expect(true)->toBeTrue();
-    });
+    test('password confirmation placeholder')->skip('Password confirmation: see passwordconfirmationtest.php');
 });
