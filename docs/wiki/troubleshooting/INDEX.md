@@ -7,7 +7,8 @@ type: index
 tags: [cms, troubleshooting]
 created: 2026-06-10
 updated: 2026-06-10
-status: draft
+status: superseded
+superseded_by: index.md
 ---
 
 # Troubleshooting — Cms

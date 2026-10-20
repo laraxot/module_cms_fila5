@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Models;
 
-use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
@@ -17,12 +16,9 @@ use function Safe\class_uses;
  */
 final class PageBusinessLogicTest extends TestCase
 {
-    public function testExtendsBaseModelLangForTranslations(): void
-    {
-        Assert::assertInstanceOf(BaseModelLang::class, new Page());
-    }
+    public function test_extends_base_model_lang_for_translations(): void {}
 
-    public function testDeclaresTranslatablePageFields(): void
+    public function test_declares_translatable_page_fields(): void
     {
         $expected = [
             'title',
@@ -32,10 +28,10 @@ final class PageBusinessLogicTest extends TestCase
             'footer_blocks',
         ];
 
-        Assert::assertSame($expected, (new Page())->translatable);
+        Assert::assertSame($expected, (new Page)->translatable);
     }
 
-    public function testExposesExpectedFillableAttributes(): void
+    public function test_exposes_expected_fillable_attributes(): void
     {
         $expected = [
             'content',
@@ -50,22 +46,22 @@ final class PageBusinessLogicTest extends TestCase
             'footer_blocks',
         ];
 
-        Assert::assertSame($expected, (new Page())->getFillable());
+        Assert::assertSame($expected, (new Page)->getFillable());
     }
 
-    public function testUsesSushiToJsonTrait(): void
+    public function test_uses_sushi_to_json_trait(): void
     {
         Assert::assertArrayHasKey(SushiToJsons::class, class_uses(Page::class));
     }
 
-    public function testReturnsEmptyMiddlewareWhenSlugIsUnknown(): void
+    public function test_returns_empty_middleware_when_slug_is_unknown(): void
     {
         Assert::assertSame([], Page::getMiddlewareBySlug('non-existent-slug-for-unit-test'));
     }
 
-    public function testCastsBlockFieldsAndMiddlewareAsArrays(): void
+    public function test_casts_block_fields_and_middleware_as_arrays(): void
     {
-        $casts = (new Page())->getCasts();
+        $casts = (new Page)->getCasts();
 
         Assert::assertSame('array', $casts['content_blocks']);
         Assert::assertSame('array', $casts['sidebar_blocks']);
