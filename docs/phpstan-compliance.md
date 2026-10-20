@@ -44,7 +44,7 @@ This module provides Content Management System functionality including:
 - Now uses `use function Safe\file_put_contents;` for exception-based error handling
 
 ### PestHelpers ricaduta (ROOT-17.10)
-- Helper globali senza namespace; homepage JSON su `TestCase::homepageJsonForBlocksArchitecture()`
+- Helper globali senza namespace; homepage JSON su `TestCase::homepageJsonForBlocksArchitecture()` (loader tipizzato e tenant-aware, salta senza homepage)
 - Dettaglio: [testing.md](testing.md#pesthelpers-phpstan--merge)
 
 ## Filament 4.x Compatibility
