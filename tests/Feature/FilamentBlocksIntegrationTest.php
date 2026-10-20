@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature;
 
-use Modules\Cms\Tests\TestCase;
 
 use function Pest\Laravel\get;
-
-uses(TestCase::class);
 
 describe('Filament Blocks Integration', function () {
     it('integrates with PageContentBuilder correctly', function () {
