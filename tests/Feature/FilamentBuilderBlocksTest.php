@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Feature;
 
 use Filament\Forms\Components\Builder\Block;
+use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
 use PHPUnit\Framework\Assert as PHPUnitAssert;
@@ -103,31 +104,16 @@ describe('Filament Builder Blocks System', function () {
     });
 
     test('json storage pattern is consistent', function () {
-        $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
-        expect(file_exists($homepageJsonPath))->toBeTrue('Homepage JSON should exist');
-
-        $homepageData = cmsJsonDecodeFile($homepageJsonPath);
+        // Esistenza del file e forma di locale, `type` (string) e `data` (object) di ogni blocco:
+        // le verifica il loader (salta senza homepage, fallisce se la forma e' errata).
+        $homepageData = TestCase::homepageJsonForBlocksArchitecture();
 
         // Verify required JSON structure
         expect($homepageData)->toHaveKeys(['id', 'slug', 'content_blocks']);
 
         // Verify multilingual structure
-        $contentBlocks = $homepageData['content_blocks'] ?? null;
-        if (! is_array($contentBlocks)) {
-            throw new \RuntimeException('Content blocks must be an array.');
-        }
-        foreach ($contentBlocks as $locale => $blocks) {
-            expect($locale)->toBeString('Locale key should be string');
-            if (! is_array($blocks)) {
-                throw new \RuntimeException('Blocks must be an array.');
-            }
+        foreach ($homepageData['content_blocks'] as $blocks) {
             foreach ($blocks as $block) {
-                if (! is_array($block)) {
-                    throw new \RuntimeException('Block must be an array.');
-                }
-                expect($block)->toHaveKeys(['type', 'data']);
-                expect($block['type'])->toBeString();
-                expect($block['data'])->toBeArray();
                 expect($block['data'])->toHaveKey('view');
             }
         }
@@ -214,6 +200,8 @@ describe('Filament Builder Blocks System', function () {
     test('performance considerations are implemented', function () {
         // Test that JSON loading is efficient
         $startTime = microtime(true);
+
+        TestCase::homepageJsonForBlocksArchitecture();
 
         $loadTime = microtime(true) - $startTime;
         expect($loadTime)->toBeLessThan(0.1, 'JSON loading should be fast');

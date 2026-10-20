@@ -36,6 +36,12 @@ tests/
 - Homepage blocchi: fonte di verità `TestCase::homepageJsonForBlocksArchitecture()`
   (PSR-4, non si perde nei merge). Wrapper globale opzionale:
   `loadHomepageJsonForBlocksArchitectureTest()`. Story [ROOT-17.10](../../../../docs/stories/17-10-helper-e-blocchi-persi-nella-bonifica.md).
+  Il loader cerca in `config/<tenant>/database/content/pages/` (via `GetTenantFilePathAction`) il JSON con
+  slug `home`, valida la forma (`id`, `content_blocks` per lingua, ogni blocco con `type` e `data`) e
+  **salta il test** se il tenant non ha la homepage. Per i blocchi di una lingua: `TestCase::homepageBlocksForLocale()`
+  (o `cmsHomepageBlocks()` nei test Pest). Nei test non si scrivono path di tenant a mano.
+- `createPHPUnitMock()` e `skipTest()` sono metodi d'istanza di `TestCase` (come `XotBaseTestCase`);
+  `skipTest()` salta davvero il test, non lo fa fallire.
 - Prima di rimuovere un helper: `grep -rn '\bnomeHelper(' Modules --include='*.php'`.
 
 ## Writing Tests
