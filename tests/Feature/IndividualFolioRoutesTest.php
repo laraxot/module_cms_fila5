@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature;
 
-use Modules\Cms\Tests\TestCase;
 
 use function Pest\Laravel\get;
-
-uses(TestCase::class);
 
 describe('CMS Individual Folio Routes Tests', function () {
     beforeEach(function () {
@@ -289,13 +286,13 @@ describe('CMS Individual Folio Routes Tests', function () {
             $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
             expect(file_exists($homepageJsonPath))->toBeTrue();
 
-            $homepageData = json_decode(file_get_contents($homepageJsonPath), true);
+            $homepageData = cmsJsonDecodeFile($homepageJsonPath);
             expect($homepageData['content_blocks'])->toHaveKey($this->lang);
 
             $content = $response->getContent();
 
             // Verifica che i blocchi JSON siano renderizzati
-            $blocks = $homepageData['content_blocks'][$this->lang];
+            $blocks = cmsHomepageBlocks($this->lang);
             foreach ($blocks as $block) {
                 if (isset($block['data']['title'])) {
                     expect($content)->toContain($block['data']['title']);
@@ -307,12 +304,7 @@ describe('CMS Individual Folio Routes Tests', function () {
             $response = get('/'.$this->lang);
             $response->assertStatus(200);
 
-            $homepageData = json_decode(
-                file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-                true,
-            );
-
-            $blocks = $homepageData['content_blocks'][$this->lang];
+            $blocks = cmsHomepageBlocks($this->lang);
 
             // Verifica che le viste seguano il pattern theme
             foreach ($blocks as $block) {
@@ -323,12 +315,7 @@ describe('CMS Individual Folio Routes Tests', function () {
         });
 
         test('cms processes blade syntax in json correctly', function () {
-            $homepageData = json_decode(
-                file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-                true,
-            );
-
-            $blocks = $homepageData['content_blocks'][$this->lang];
+            $blocks = cmsHomepageBlocks($this->lang);
             $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
             if ($landingBlock) {

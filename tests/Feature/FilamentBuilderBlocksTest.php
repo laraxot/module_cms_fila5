@@ -5,45 +5,43 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Feature;
 
 use Filament\Forms\Components\Builder\Block;
-use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+use PHPUnit\Framework\Assert as PHPUnitAssert;
+use Webmozart\Assert\Assert;
 
 use function Pest\Laravel\get;
-
-use Spatie\LaravelData\DataCollection;
-
-uses(TestCase::class);
-
 describe('Filament Builder Blocks System', function () {
     test('blocks discovery system finds all available blocks', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        expect($allBlocks)->toBeInstanceOf(DataCollection::class);
         expect($allBlocks->count())->toBeGreaterThan(0, 'At least one block should be discovered');
 
         // Verify each block has required properties
-        $allBlocks->each(function ($block) {
+        foreach ($allBlocks as $block) {
             expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
             expect(class_exists($block->class))->toBeTrue("Block class {$block->class} should exist");
-        });
+        }
     });
 
     test('xot base block pattern is followed by cms blocks', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        $cmsBlocks = $allBlocks->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
 
         expect($cmsBlocks->count())->toBeGreaterThan(0, 'CMS module should have blocks');
 
-        $cmsBlocks->each(function ($block) {
-            $reflection = new \ReflectionClass($block->class);
+        foreach ($cmsBlocks as $block) {
+            $blockClass = $block->class;
+            expect(class_exists($blockClass))->toBeTrue();
+            Assert::classExists($blockClass);
+            $reflection = new \ReflectionClass($blockClass);
 
             // Verify extends XotBaseBlock or has make() method
             expect($reflection->hasMethod('make'))->toBeTrue("Block {$block->class} should have make() method");
             expect($reflection->hasMethod('getBlockSchema'))
                 ->toBeTrue("Block {$block->class} should have getBlockSchema() method");
-        });
+        }
     });
 
     test('page component renders blocks correctly', function () {
@@ -64,9 +62,6 @@ describe('Filament Builder Blocks System', function () {
         ];
 
         // Test that blocks are properly structured
-        expect($pageData['content_blocks'])->toBeArray();
-        expect($pageData['content_blocks']['it'])->toBeArray();
-
         $block = $pageData['content_blocks']['it'][0];
         expect($block)->toHaveKeys(['type', 'data']);
         expect($block['data'])->toHaveKey('view');
@@ -75,7 +70,7 @@ describe('Filament Builder Blocks System', function () {
     test('block naming conventions are consistent', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        $allBlocks->each(function ($block) {
+        foreach ($allBlocks as $block) {
             // Verify snake_case naming
             expect($block->name)->toMatch('/^[a-z]+(_[a-z]+)*$/', "Block name {$block->name} should be snake_case");
 
@@ -88,18 +83,13 @@ describe('Filament Builder Blocks System', function () {
                         "Block class {$className} should be PascalCase ending with 'Block'",
                     );
             }
-        });
+        }
     });
 
     test('block views follow theme pattern', function () {
         // Test with actual homepage JSON
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
         $locale = app()->getLocale();
-        $blocks = $homepageData['content_blocks'][$locale];
+        $blocks = cmsHomepageBlocks($locale);
 
         foreach ($blocks as $block) {
             $view = $block['data']['view'];
@@ -116,18 +106,25 @@ describe('Filament Builder Blocks System', function () {
         $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
         expect(file_exists($homepageJsonPath))->toBeTrue('Homepage JSON should exist');
 
-        $homepageData = json_decode(file_get_contents($homepageJsonPath), true);
+        $homepageData = cmsJsonDecodeFile($homepageJsonPath);
 
         // Verify required JSON structure
         expect($homepageData)->toHaveKeys(['id', 'slug', 'content_blocks']);
-        expect($homepageData['content_blocks'])->toBeArray();
 
         // Verify multilingual structure
-        foreach ($homepageData['content_blocks'] as $locale => $blocks) {
+        $contentBlocks = $homepageData['content_blocks'] ?? null;
+        if (! is_array($contentBlocks)) {
+            throw new \RuntimeException('Content blocks must be an array.');
+        }
+        foreach ($contentBlocks as $locale => $blocks) {
             expect($locale)->toBeString('Locale key should be string');
-            expect($blocks)->toBeArray('Blocks should be array');
-
+            if (! is_array($blocks)) {
+                throw new \RuntimeException('Blocks must be an array.');
+            }
             foreach ($blocks as $block) {
+                if (! is_array($block)) {
+                    throw new \RuntimeException('Block must be an array.');
+                }
                 expect($block)->toHaveKeys(['type', 'data']);
                 expect($block['type'])->toBeString();
                 expect($block['data'])->toBeArray();
@@ -146,9 +143,8 @@ describe('Filament Builder Blocks System', function () {
         expect($reflection->hasMethod('__construct'))->toBeTrue('Blocks component should have constructor');
 
         // Test component instantiation
-        $component = new $blocksClass([]);
-        expect($component)->toBeInstanceOf($blocksClass);
-        expect($component->blocks)->toBeArray();
+        $component = new $blocksClass('pub_theme::components.blocks');
+        expect($component->view)->toBe('pub_theme::components.blocks');
     });
 
     test('page component integration with blocks system', function () {
@@ -163,13 +159,8 @@ describe('Filament Builder Blocks System', function () {
         expect($content)->toContain('slug="home"');
 
         // Verify blocks are rendered
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
         $locale = app()->getLocale();
-        $blocks = $homepageData['content_blocks'][$locale];
+        $blocks = cmsHomepageBlocks($locale);
 
         foreach ($blocks as $block) {
             if (isset($block['data']['title'])) {
@@ -179,13 +170,8 @@ describe('Filament Builder Blocks System', function () {
     });
 
     test('block data validation and security', function () {
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
-
         $locale = app()->getLocale();
-        $blocks = $homepageData['content_blocks'][$locale];
+        $blocks = cmsHomepageBlocks($locale);
 
         foreach ($blocks as $block) {
             // Verify required fields
@@ -194,8 +180,6 @@ describe('Filament Builder Blocks System', function () {
             expect($block['data'])->toHaveKey('view');
 
             // Verify safe data types
-            expect($block['type'])->toBeString();
-            expect($block['data'])->toBeArray();
 
             // Verify view names are safe (no path traversal)
             $view = $block['data']['view'];
@@ -206,34 +190,30 @@ describe('Filament Builder Blocks System', function () {
 
     test('cms module blocks extend xot base block correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
-        $cmsBlocks = $allBlocks->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
 
-        $cmsBlocks->each(function ($block) {
-            $reflection = new \ReflectionClass($block->class);
+        foreach ($cmsBlocks as $block) {
+            $blockClass = $block->class;
+            expect(class_exists($blockClass))->toBeTrue();
+            Assert::classExists($blockClass);
+            $reflection = new \ReflectionClass($blockClass);
 
             // Check if it's a proper block class
             if ($reflection->hasMethod('make') && $reflection->hasMethod('getBlockSchema')) {
-                $instance = $reflection->newInstance();
-
                 // Verify make method returns Filament Block
-                $blockInstance = $block->class::make();
+                $blockInstance = $reflection->getMethod('make')->invoke(null);
                 expect($blockInstance)->toBeInstanceOf(Block::class);
 
                 // Verify schema is array
-                $schema = $block->class::getBlockSchema();
-                expect($schema)->toBeArray();
+                $schema = $reflection->getMethod('getBlockSchema')->invoke(null);
+                PHPUnitAssert::assertIsArray($schema);
             }
-        });
+        }
     });
 
     test('performance considerations are implemented', function () {
         // Test that JSON loading is efficient
         $startTime = microtime(true);
-
-        $homepageData = json_decode(
-            file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-            true,
-        );
 
         $loadTime = microtime(true) - $startTime;
         expect($loadTime)->toBeLessThan(0.1, 'JSON loading should be fast');

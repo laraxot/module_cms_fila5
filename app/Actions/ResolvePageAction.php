@@ -7,8 +7,6 @@ namespace Modules\Cms\Actions;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Modules\Blog\Models\Article;
-use Modules\Blog\View\Composers\ThemeComposer;
 use Modules\Cms\Datas\ResolvePageData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\QueueableAction\QueueableAction;
@@ -25,6 +23,18 @@ use Spatie\QueueableAction\QueueableAction;
 final class ResolvePageAction
 {
     use QueueableAction;
+
+    private const BLOG_COMPOSER = 'Modules\\Blog\\View\\Composers\\ThemeComposer';
+
+    private const BLOG_ARTICLE = 'Modules\\Blog\\Models\\Article';
+
+    /**
+     * Container0 => metodo del ThemeComposer del modulo Blog che restituisce solo i contenuti pubblicati.
+     */
+    private const BLOG_PUBLISHED_FINDERS = [
+        'blog' => 'findPublishedPostBySlug',
+        'events' => 'findPublishedEventBySlug',
+    ];
 
     public function execute(string $container0, string $slug0): ResolvePageData
     {
@@ -69,18 +79,11 @@ final class ResolvePageAction
             return $this->resolvePublicProfileItem($slug0);
         }
 
-        // /blog/{slug} = solo content_type=post pubblicati (mai event / Parental type)
-        if ('blog' === $container0) {
-            $post = app(ThemeComposer::class)->findPublishedPostBySlug($slug0);
-
-            return $post instanceof Article ? $post : null;
-        }
-
-        // /events/{slug} = solo content_type=event pubblicati (mai post / Parental type)
-        if ('events' === $container0) {
-            $event = app(ThemeComposer::class)->findPublishedEventBySlug($slug0);
-
-            return $event instanceof Article ? $event : null;
+        // /blog/{slug} e /events/{slug}: contenuti pubblicati del solo tipo giusto (mai post per event e viceversa).
+        // Il modulo Blog e' opzionale: dove non c'e' si ripiega sulla risoluzione generica qui sotto.
+        $publishedFinder = self::BLOG_PUBLISHED_FINDERS[$container0] ?? null;
+        if (null !== $publishedFinder && class_exists(self::BLOG_COMPOSER) && class_exists(self::BLOG_ARTICLE)) {
+            return $this->findPublishedArticle($publishedFinder, $slug0);
         }
 
         $modelMap = config('xra.container0_model_map');
@@ -105,6 +108,14 @@ final class ResolvePageAction
         }
 
         return null;
+    }
+
+    private function findPublishedArticle(string $finder, string $slug): ?object
+    {
+        $composer = app(self::BLOG_COMPOSER);
+        $item = is_callable([$composer, $finder]) ? call_user_func([$composer, $finder], $slug) : null;
+
+        return is_object($item) && is_a($item, self::BLOG_ARTICLE) ? $item : null;
     }
 
     private function queryModel(string $modelClass, string $identifier): ?object
