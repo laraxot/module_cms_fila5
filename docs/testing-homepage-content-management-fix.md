@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "testing homepage content management fix"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Fix: HomepageContentManagementTest - Redirect Behavior
@@ -74,14 +75,5 @@ $response->assertStatus(200);
 - [Homepage Structure](homepage-structure.md) - Documentazione homepage
 
 ---
-
-title: "testing homepage content management fix"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "testing homepage content management fix"
-issues: []
-discussions: []
 **Status**: In Progress
 **Prossimo step**: Correggere tutti i test per usare `/{locale}` invece di `/`

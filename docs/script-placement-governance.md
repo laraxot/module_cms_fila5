@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "script placement governance"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Script Placement Governance

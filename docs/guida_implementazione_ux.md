@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: guida_implementazione_ux
 canonical: ../../../Themes/docs/shared-components/guida-implementazione-ux.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/guida-implementazione-ux.md

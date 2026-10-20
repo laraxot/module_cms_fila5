@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "footer blocks"
 issues: []
 discussions: []
+status: draft
 ---
 
 https://flowbite.com/docs/components/footer/

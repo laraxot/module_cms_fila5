@@ -12,6 +12,7 @@ discussions:
 related:
   - ../../../../Xot/docs/wiki/concepts/env-testing-parity-copy-env.md
   - ../../../../../../docs/wiki/bmad/architecture-env-testing-parity.md
+status: draft
 ---
 
 # Modulo Cms e `.env.testing`

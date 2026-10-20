@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament components"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Utilizzo dei Componenti Filament in il progetto
@@ -141,7 +142,7 @@ Filament offre una vasta gamma di componenti Blade riutilizzabili. Di seguito i 
 - [Demo dei componenti](https://demo.filamentphp.com/)
 
 ## Collegamenti Bidirezionali
-- [README](readme.md) - Documentazione principale del modulo
+- [README](README.md) - Documentazione principale del modulo
 - [Integrazione Filament](filament-integration.md) - Integrazione con Filament
 - [Form Filament](filament-forms.md) - Sistema di form Filament
 - [Widget](filament-widgets-in-blade.md) - Utilizzo dei widget in Blade

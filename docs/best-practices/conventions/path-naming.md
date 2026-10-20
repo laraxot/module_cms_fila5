@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "path naming"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Convenzioni dei Percorsi nei Moduli
@@ -161,4 +162,4 @@ ls -la
 ## Collegamenti
 - [Struttura Moduli](../architecture/module-structure.md)
 - [Documentazione Root – Naming Conventions](../../../../../docs/regole/naming-convention.md)
-- [Documentazione Root – Indice](../../../../../docs/readme.md)
+- [Documentazione Root – Indice](../../../../../../docs/README.md)

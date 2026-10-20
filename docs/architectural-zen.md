@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "architectural zen"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Architectural Zen: Content and Workflow
@@ -47,14 +48,5 @@ To see changes in the browser, follow this strict sequence:
 - **Console Robustness**: It fallback to `config('app.url')` when `$_SERVER['SERVER_NAME']` is unavailable, ensuring Artisan commands and queue workers are tenant-aware.
 
 ---
-
-title: "architectural zen"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "architectural zen"
-issues: []
-discussions: []
 > [!IMPORTANT]
 > This site is a high-fidelity conversion of `laravelpizza.com`. Every block in the JSON content must align with the visual and functional requirements of the original site.

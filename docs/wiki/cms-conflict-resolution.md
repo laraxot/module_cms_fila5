@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "cms conflict resolution 2026 04 21"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Risoluzione conflitti CMS - 2026-04-21

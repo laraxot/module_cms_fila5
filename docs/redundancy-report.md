@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "redundancy report"
 issues: []
 discussions: []
+status: draft
 ---
 
 - Inventario [ridondanze cross-modulo](../docs/redundancy-report.md)

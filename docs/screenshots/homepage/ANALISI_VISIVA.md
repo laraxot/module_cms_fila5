@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "ANALISI VISIVA"
 issues: []
 discussions: []
+status: draft
 ---
 
 # 📸 Analisi Visiva Homepage FixCity vs Bootstrap Italia
@@ -18,15 +19,6 @@ discussions: []
 - **FixCity**: http://fixcity.local/it/tests/homepage
 
 ---
-
-title: "ANALISI VISIVA"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "ANALISI VISIVA"
-issues: []
-discussions: []
 ## 1. Header Structure
 
 ### Bootstrap Italia

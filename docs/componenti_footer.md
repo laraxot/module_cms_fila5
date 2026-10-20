@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: componenti_footer
 canonical: ../../../Themes/docs/shared-components/componenti-footer.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/componenti-footer.md

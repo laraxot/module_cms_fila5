@@ -14,9 +14,9 @@ use Modules\Cms\Http\Controllers\BaseController;
 class XotPanelController extends BaseController
 {
     /**
-     * @param  array<int, mixed>  $arg
+     * @param array<int, mixed> $arg
      */
-    public function __call($method, $arg)
+    public function __call($method, $arg): mixed
     {
         // Convert to proper types for internal use
         $method = (string) $method;

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "class extension rules"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Filament Class Extension Rules

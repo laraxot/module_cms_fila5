@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "block rendering"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Rendering dei Blocchi di Contenuto

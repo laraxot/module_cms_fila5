@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "footer"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Footer
@@ -28,10 +29,10 @@ Questo permette di aggiungere, ordinare e rimuovere ogni tipo di blocco.
 3. Testare su diversi dispositivi per la responsività.
 
 ## Collegamenti
-- [Documentazione Blocchi](../blocks/readme.md)
+- [Documentazione Blocchi](README.md)
 - [PageContentBuilder](../filament-forms.md)
 - [Gestione Sezioni](../sections/footer-section.md)
-- [Documentazione UI](../../ui/docs/readme.md)
+- [Documentazione UI](../../../UI/docs/README.md)
 - [Documentazione Moduli](../../xot/docs/modules.md)
 - [Linee guida etichette Filament](/docs/filament-block-labels.md)
 
