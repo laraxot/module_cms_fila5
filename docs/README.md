@@ -46,6 +46,24 @@ bash ../bashscripts/tools/cms/page-json-for-url.sh http://127.0.0.1:8081/it/test
 
 ## Mappa dei docs
 
+Contratto corrente per le pagine pubbliche di primo livello: [container0 index
+JSON-driven pages](./wiki/concepts/container0-index-json-driven-pages.md).
+
+Il contratto comune per la documentazione è
+[docs/project/docs-governance.md](../../../../docs/project/docs-governance.md).
+Questo `README.md` è l'ingresso canonico del modulo; gli indici esistenti sono
+mappe di navigazione e non fonti concorrenti.
+
+### Regola operativa per le pagine di primo livello
+
+Prima di creare una Blade sotto `resources/views/pages/`, verificare se l'URL è
+già coperto da `[container0]/index.blade.php` o da `[container0]/[slug0]`. Per
+`domande-frequenti.index` la risposta è sì: la view speciale
+`Themes/Sixteen/resources/views/pages/domande-frequenti/index.blade.php` è vietata
+perché duplica il match Folio e bypassa il JSON tenant. Se il problema è nel
+markup, correggere il blocco condiviso; se è nei dati, correggere JSON/Filament;
+se è nel catalogo, correggere il modulo owner.
+
 Indice operativo: [00-INDEX.md](./00-INDEX.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/).
 
 ## Dipendenze / Moduli Correlati
@@ -79,6 +97,6 @@ Indice operativo: [00-INDEX.md](./00-INDEX.md). Wiki: [wiki/index.md](./wiki/ind
 
 **Ultima verifica**: 2026-10-14 (Laravel 13.35.0, PHP 8.4.26). Livello PHPStan e copertura non rimisurati in questa verifica.
 
-**Sostenibilità (discovery):** [project-sustainability-content.md](./project-sustainability-content.md) — outline `/sostieni` e footer partner; dossier [project-sustainability](../../../../bmad-output/project-sustainability/README.md).
+**Sostenibilità (discovery):** [project-sustainability-content.md](./project-sustainability-content.md) — outline `/sostieni` e footer partner. Il dossier locale del modulo è la fonte mantenuta; eventuali riferimenti a `bmad-output/` sono storici.
 
 **Note**: Documentation previously had duplications and merge conflicts. This version consolidates to single source of truth.
