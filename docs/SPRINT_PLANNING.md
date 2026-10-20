@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "SPRINT PLANNING"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: sprint_planning.md
 ---
 
 # Cms Module - Sprint Planning

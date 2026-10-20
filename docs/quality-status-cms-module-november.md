@@ -1,3 +1,13 @@
+---
+title: "Cms Module - Quality Status (November 2025)"
+type: note
+status: draft
+created: 2026-10-20
+updated: 2026-10-20
+module: Cms
+tags: [docs, cms]
+---
+
 # Cms Module - Quality Status (November 2025)
 
 ## 🎯 Overview
