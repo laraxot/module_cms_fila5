@@ -3,7 +3,7 @@ title: "Cms — test e .env.testing"
 type: concept
 tags: [cms, testing, env, xot]
 created: 2026-06-12
-updated: 2026-06-12
+updated: 2026-10-20
 qmd: "Cms module pest env testing CreatesApplication PageSlugMiddleware"
 issues:
   - "https://github.com/laraxot/base_fixcity_fila5/issues/364"
@@ -19,7 +19,7 @@ status: draft
 
 ## Bootstrap
 
-`Modules\Cms\tests\TestCase` estende `Modules\Xot\Tests\XotBaseTestCase` → trait `CreatesApplication` carica `laravel/.env.testing` quando `APP_ENV=testing`.
+`Modules\Cms\Tests\TestCase` estende `Tests\TestCase` (`laravel/tests/TestCase.php`) dal merge `c0a06773` del 2026-10-20; fino al 2026-10-08 estendeva `Modules\Xot\Tests\XotBaseTestCase`, il cui trait `CreatesApplication` carica `laravel/.env.testing` quando `APP_ENV=testing` (vale ancora per i test Auth che dichiarano `uses(Modules\Xot\Tests\TestCase::class)`). Decisione aperta: tornare a `XotBaseTestCase` come base di modulo (vedi [phpstan-test-wave-cms](../../stories/phpstan-test-wave-cms.story.md)).
 
 ## Contratto
 

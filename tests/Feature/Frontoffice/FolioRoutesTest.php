@@ -2,12 +2,9 @@
 
 declare(strict_types=1);
 use Illuminate\Support\Facades\Artisan;
-use Modules\Cms\Tests\TestCase;
 
 use function Safe\preg_match;
 use function Safe\preg_split;
-
-uses(TestCase::class);
 
 /**
  * Parse Folio routes from `artisan folio:list` output and return a list of path strings.
@@ -23,8 +20,11 @@ function getFolioPaths(): array
     $paths = [];
 
     foreach (preg_split("/\r?\n/", $output) as $line) {
+        if (! is_string($line)) {
+            continue;
+        }
         // Lines look like: "  GET       /it ...."
-        if (1 === preg_match('#\bGET\s+(/[^\s]+)#', $line, $m)) {
+        if (1 === preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) && isset($m[1]) && is_string($m[1])) {
             $paths[] = $m[1];
         }
     }
@@ -54,8 +54,6 @@ it('validates Folio routes basic accessibility and localization', function (): v
         // Skip dynamic placeholder routes; they require seeded data or specific tokens
         if (str_contains($path, '{')) {
             $this->markTestSkipped("Dynamic Folio route requires fixture: {$path}");
-
-            continue;
         }
 
         $response = $this->get($path);
@@ -65,7 +63,7 @@ it('validates Folio routes basic accessibility and localization', function (): v
         if (404 === $status) {
             $this->markTestSkipped("Folio route not found (404): {$path}");
         }
-        if ($status >= 500) {
+        elseif ($status >= 500) {
             $this->markTestSkipped("Folio route returned server error ({$status}): {$path}");
         }
 
