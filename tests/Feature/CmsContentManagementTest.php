@@ -2,22 +2,12 @@
 
 declare(strict_types=1);
 
-use Illuminate\Support\Collection;
-use Modules\Cms\Database\Factories\PageContentFactory;
-use Modules\Cms\Database\Factories\PageFactory;
-use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\PageContent;
 use Modules\Cms\Models\Section;
-use PHPUnit\Framework\Assert;
-
-beforeEach(function (): void {
-    /* @var \Modules\Cms\Tests\TestCase $this */
-    cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
-});
 
 test('cms module models work together in content management', function () {
-    $page = PageFactory::new()->createOne([
+    $page = Page::factory()->create([
         'slug' => 'home-page',
         'title' => ['en' => 'Home Page', 'it' => 'Pagina Home'],
         'content' => 'Welcome to our website',
@@ -26,7 +16,7 @@ test('cms module models work together in content management', function () {
         ],
     ]);
 
-    $pageContent = PageContentFactory::new()->createOne([
+    $pageContent = PageContent::factory()->create([
         'slug' => 'home-content',
         'name' => ['en' => 'Home Content', 'it' => 'Contenuto Home'],
         'blocks' => [
@@ -34,7 +24,7 @@ test('cms module models work together in content management', function () {
         ],
     ]);
 
-    $section = SectionFactory::new()->createOne([
+    $section = Section::factory()->create([
         'slug' => 'hero-section',
         'name' => ['en' => 'Hero Section', 'it' => 'Sezione Hero'],
         'blocks' => [
@@ -42,16 +32,28 @@ test('cms module models work together in content management', function () {
         ],
     ]);
 
+    expect($page)
+        ->slug->toBe('home-page')
+        ->title->toBe(['en' => 'Home Page', 'it' => 'Pagina Home'])
+        ->content_blocks->toHaveCount(1);
+
+    expect($pageContent)
+        ->slug->toBe('home-content')
+        ->name->toBe(['en' => 'Home Content', 'it' => 'Contenuto Home'])
+        ->blocks->toHaveCount(1);
+
+    expect($section)
+        ->slug->toBe('hero-section')
+        ->name->toBe(['en' => 'Hero Section', 'it' => 'Sezione Hero'])
+        ->blocks->toHaveCount(1);
+
     $pages = Page::where('slug', 'home-page')->get();
     $pageContents = PageContent::where('slug', 'home-content')->get();
     $sections = Section::where('slug', 'hero-section')->get();
 
-    Assert::assertCount(1, $pages);
-    Assert::assertCount(1, $pageContents);
-    Assert::assertCount(1, $sections);
-    Assert::assertTrue($pages->first()?->is($page));
-    Assert::assertTrue($pageContents->first()?->is($pageContent));
-    Assert::assertTrue($sections->first()?->is($section));
+    expect($pages)->toHaveCount(1)->first()->id->toBe($page->id);
+    expect($pageContents)->toHaveCount(1)->first()->id->toBe($pageContent->id);
+    expect($sections)->toHaveCount(1)->first()->id->toBe($section->id);
 });
 
 test('cms module handles multilingual content correctly', function () {
@@ -62,7 +64,7 @@ test('cms module handles multilingual content correctly', function () {
         'fr' => 'Contenu français',
     ];
 
-    $page = PageFactory::new()->createOne([
+    $page = Page::factory()->create([
         'title' => $multilingualData,
         'content_blocks' => [
             'en' => [['type' => 'text', 'content' => 'English text']],
@@ -72,7 +74,7 @@ test('cms module handles multilingual content correctly', function () {
         ],
     ]);
 
-    $pageContent = PageContentFactory::new()->createOne([
+    $pageContent = PageContent::factory()->create([
         'name' => $multilingualData,
         'blocks' => [
             'en' => [['type' => 'card', 'title' => 'English card']],
@@ -82,7 +84,7 @@ test('cms module handles multilingual content correctly', function () {
         ],
     ]);
 
-    $section = SectionFactory::new()->createOne([
+    $section = Section::factory()->create([
         'name' => $multilingualData,
         'blocks' => [
             'en' => [['type' => 'banner', 'title' => 'English banner']],
@@ -92,9 +94,13 @@ test('cms module handles multilingual content correctly', function () {
         ],
     ]);
 
-    Assert::assertSame($multilingualData, $page->title);
-    Assert::assertSame($multilingualData, $pageContent->name);
-    Assert::assertSame($multilingualData, $section->name);
+    expect($page->title)->toBe($multilingualData);
+    expect($pageContent->name)->toBe($multilingualData);
+    expect($section->name)->toBe($multilingualData);
+
+    expect($page->content_blocks)->toHaveKeys(['en', 'it', 'es', 'fr']);
+    expect($pageContent->blocks)->toHaveKeys(['en', 'it', 'es', 'fr']);
+    expect($section->blocks)->toHaveKeys(['en', 'it', 'es', 'fr']);
 });
 
 test('cms module handles complex block structures', function () {
@@ -109,7 +115,7 @@ test('cms module handles complex block structures', function () {
                 'mobile' => 1,
             ],
             'items' => array_map(
-                fn (mixed $i) => [
+                fn ($i) => [
                     'id' => $i,
                     'type' => 'content_card',
                     'title' => "Card {$i}",
@@ -127,7 +133,7 @@ test('cms module handles complex block structures', function () {
                         'author' => "Author {$i}",
                         'published_at' => now()->subDays($i)->toISOString(),
                         'categories' => ['Category '.(($i % 3) + 1), 'Category '.((($i + 1) % 3) + 1)],
-                        'tags' => array_map(fn (int $t): string => "tag{$t}", range(1, 5)),
+                        'tags' => array_map(fn ($t) => "tag{$t}", range(1, 5)),
                         'reading_time' => rand(2, 10),
                     ],
                     'actions' => [
@@ -303,21 +309,22 @@ test('cms module handles complex block structures', function () {
         ],
     ];
 
-    $page = PageFactory::new()->createOne(['content_blocks' => $complexBlocks]);
-    $pageContent = PageContentFactory::new()->createOne(['blocks' => $complexBlocks]);
-    $section = SectionFactory::new()->createOne(['blocks' => $complexBlocks]);
+    $page = Page::factory()->create(['content_blocks' => $complexBlocks]);
+    $pageContent = PageContent::factory()->create(['blocks' => $complexBlocks]);
+    $section = Section::factory()->create(['blocks' => $complexBlocks]);
 
-    $freshPage = $page->fresh();
-    Assert::assertInstanceOf(Page::class, $freshPage);
-    Assert::assertCount(3, $freshPage->content_blocks ?? []);
+    expect($page->fresh()->content_blocks)
+        ->toBeArray()
+        ->toHaveCount(3)
+        ->sequence(
+            fn ($block) => $block->type->toBe('advanced_grid')->items->toHaveCount(12),
+            fn ($block) => $block->type->toBe('interactive_chart')->data->datasets->toHaveCount(3),
+            fn ($block) => $block->type->toBe('real_time_updates')->source->type->toBe('websocket'),
+        );
 
-    $freshPageContent = $pageContent->fresh();
-    Assert::assertInstanceOf(PageContent::class, $freshPageContent);
-    Assert::assertCount(3, $freshPageContent->blocks ?? []);
+    expect($pageContent->fresh()->blocks)->toBeArray()->toHaveCount(3);
 
-    $freshSection = $section->fresh();
-    Assert::assertInstanceOf(Section::class, $freshSection);
-    Assert::assertCount(3, $freshSection->blocks ?? []);
+    expect($section->fresh()->blocks)->toBeArray()->toHaveCount(3);
 });
 
 test('cms module handles bulk operations efficiently', function () {
@@ -331,24 +338,24 @@ test('cms module handles bulk operations efficiently', function () {
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],
             'content' => "Content for page {$i}",
             'content_blocks' => [['type' => 'text', 'content' => "Page {$i} content"]],
-            'created_at' => now()->toDateTimeString(),
-            'updated_at' => now()->toDateTimeString(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $pageContentsData[] = [
             'slug' => "content-{$i}",
             'name' => ['en' => "Content {$i}", 'it' => "Contenuto {$i}"],
             'blocks' => [['type' => 'card', 'title' => "Card {$i}"]],
-            'created_at' => now()->toDateTimeString(),
-            'updated_at' => now()->toDateTimeString(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
 
         $sectionsData[] = [
             'slug' => "section-{$i}",
             'name' => ['en' => "Section {$i}", 'it' => "Sezione {$i}"],
             'blocks' => [['type' => 'banner', 'title' => "Banner {$i}"]],
-            'created_at' => now()->toDateTimeString(),
-            'updated_at' => now()->toDateTimeString(),
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 
@@ -360,40 +367,35 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContents = PageContent::where('slug', 'like', 'content-%')->get();
     $sections = Section::where('slug', 'like', 'section-%')->get();
 
-    Assert::assertCount(50, $pages);
-    Assert::assertCount(50, $pageContents);
-    Assert::assertCount(50, $sections);
+    expect($pages)->toHaveCount(50);
+    expect($pageContents)->toHaveCount(50);
+    expect($sections)->toHaveCount(50);
 
     $firstPage = $pages->first();
     $lastPage = $pages->last();
-    Assert::assertInstanceOf(Page::class, $firstPage);
-    Assert::assertInstanceOf(Page::class, $lastPage);
-    Assert::assertSame('page-0', $firstPage->slug);
-    Assert::assertSame('page-49', $lastPage->slug);
+
+    expect($firstPage->slug)->toBe('page-0');
+    expect($lastPage->slug)->toBe('page-49');
 });
 
 test('cms module supports complex query patterns', function () {
-    $pages = PageFactory::new()
+    $pages = Page::factory()
         ->count(10)
         ->create([
             'content_blocks' => [['type' => 'hero', 'title' => 'Hero Section']],
         ]);
 
-    $pageContents = PageContentFactory::new()
+    $pageContents = PageContent::factory()
         ->count(8)
         ->create([
             'blocks' => [['type' => 'features', 'title' => 'Features']],
         ]);
 
-    $sections = SectionFactory::new()
+    $sections = Section::factory()
         ->count(6)
         ->create([
             'blocks' => [['type' => 'testimonial', 'title' => 'Testimonials']],
         ]);
-
-    Assert::assertCount(10, Collection::wrap($pages));
-    Assert::assertCount(8, Collection::wrap($pageContents));
-    Assert::assertCount(6, Collection::wrap($sections));
 
     $complexQuery = Page::query()->whereJsonContains('content_blocks', [['type' => 'hero']])->orderBy(
         'created_at',
@@ -402,67 +404,53 @@ test('cms module supports complex query patterns', function () {
 
     $results = $complexQuery->get();
 
-    Assert::assertCount(10, $results);
+    expect($results)->toHaveCount(10);
 
-    $heroPages = $results->filter(fn (mixed $page) => collect($page->content_blocks)->contains('type', 'hero'));
+    $heroPages = $results->filter(fn ($page) => collect($page->content_blocks)->contains('type', 'hero'));
 
-    Assert::assertCount(10, $heroPages);
+    expect($heroPages)->toHaveCount(10);
 });
 
 test('cms module handles data consistency across models', function () {
-    $page = PageFactory::new()->createOne([
+    $page = Page::factory()->create([
         'slug' => 'consistent-page',
         'title' => ['en' => 'Consistent Page'],
         'content_blocks' => [['type' => 'text', 'content' => 'Initial content']],
     ]);
 
-    $pageContent = PageContentFactory::new()->createOne([
+    $pageContent = PageContent::factory()->create([
         'slug' => 'consistent-content',
         'name' => ['en' => 'Consistent Content'],
         'blocks' => [['type' => 'card', 'title' => 'Initial card']],
     ]);
 
-    $section = SectionFactory::new()->createOne([
+    $section = Section::factory()->create([
         'slug' => 'consistent-section',
         'name' => ['en' => 'Consistent Section'],
         'blocks' => [['type' => 'banner', 'title' => 'Initial banner']],
     ]);
 
-    $pageBlocks = is_array($page->content_blocks) ? $page->content_blocks : [];
-    $pageContentBlocks = is_array($pageContent->blocks) ? $pageContent->blocks : [];
-    $sectionBlocks = is_array($section->blocks) ? $section->blocks : [];
-
     $page->update([
-        'content_blocks' => array_merge($pageBlocks, [['type' => 'updated', 'content' => 'Updated content']]),
+        'content_blocks' => array_merge($page->content_blocks, [['type' => 'updated', 'content' => 'Updated content']]),
     ]);
 
     $pageContent->update([
-        'blocks' => array_merge($pageContentBlocks, [['type' => 'updated', 'title' => 'Updated card']]),
+        'blocks' => array_merge($pageContent->blocks, [['type' => 'updated', 'title' => 'Updated card']]),
     ]);
 
     $section->update([
-        'blocks' => array_merge($sectionBlocks, [['type' => 'updated', 'title' => 'Updated banner']]),
+        'blocks' => array_merge($section->blocks, [['type' => 'updated', 'title' => 'Updated banner']]),
     ]);
 
     $freshPage = $page->fresh();
     $freshPageContent = $pageContent->fresh();
     $freshSection = $section->fresh();
-    Assert::assertInstanceOf(Page::class, $freshPage);
-    Assert::assertInstanceOf(PageContent::class, $freshPageContent);
-    Assert::assertInstanceOf(Section::class, $freshSection);
 
-    /** @var list<array<string, mixed>> $updatedPageBlocks */
-    $updatedPageBlocks = $freshPage->content_blocks ?? [];
-    /** @var list<array<string, mixed>> $updatedPageContentBlocks */
-    $updatedPageContentBlocks = $freshPageContent->blocks ?? [];
-    /** @var list<array<string, mixed>> $updatedSectionBlocks */
-    $updatedSectionBlocks = $freshSection->blocks ?? [];
+    expect($freshPage->content_blocks)->toHaveCount(2);
+    expect($freshPageContent->blocks)->toHaveCount(2);
+    expect($freshSection->blocks)->toHaveCount(2);
 
-    Assert::assertCount(2, $updatedPageBlocks);
-    Assert::assertCount(2, $updatedPageContentBlocks);
-    Assert::assertCount(2, $updatedSectionBlocks);
-
-    Assert::assertSame('updated', $updatedPageBlocks[1]['type'] ?? null);
-    Assert::assertSame('updated', $updatedPageContentBlocks[1]['type'] ?? null);
-    Assert::assertSame('updated', $updatedSectionBlocks[1]['type'] ?? null);
+    expect($freshPage->content_blocks[1]['type'])->toBe('updated');
+    expect($freshPageContent->blocks[1]['type'])->toBe('updated');
+    expect($freshSection->blocks[1]['type'])->toBe('updated');
 });

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "tipografia"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Tipografia: L'Arte della Comunicazione Visiva

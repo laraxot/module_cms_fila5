@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: metatag_population_strategy
 canonical: ../../../Themes/docs/shared-components/metatag-population-strategy.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/metatag-population-strategy.md

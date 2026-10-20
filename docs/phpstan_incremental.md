@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: phpstan_incremental
 canonical: ../../../Themes/docs/shared-components/phpstan-incremental.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/phpstan-incremental.md

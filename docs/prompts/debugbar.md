@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "debugbar"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Debugbar

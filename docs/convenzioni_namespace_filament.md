@@ -10,6 +10,7 @@ discussions: []
 module: theme
 topic: convenzioni_namespace_filament
 canonical: ../../../Themes/docs/shared-components/convenzioni-namespace-filament.md
+status: stub
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/convenzioni-namespace-filament.md

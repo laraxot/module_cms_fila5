@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "header null data error"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Errore: Attempt to read property "data" on null nel Header
@@ -99,7 +100,7 @@ Per prevenire regressioni future:
 
 ## Collegamenti Correlati
 
-- [Componente Section](../../laravel/modules/cms/docs/components/section.md)
+- [Componente Section](../components/section.md)
 - [Trait HasBlocks](../../laravel/modules/cms/docs/traits/has-blocks.md)
 - [Gestione Errori Blade](../../laravel/modules/cms/docs/errors/blade-errors.md)
 

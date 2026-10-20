@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "namespace conventions"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Convenzioni dei Namespace

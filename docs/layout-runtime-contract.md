@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "layout runtime contract"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Layout Runtime Contract
@@ -57,4 +58,4 @@ Per replicare Design Comuni pagina per pagina, il markup comune deve stare in un
 
 - [README.md](./README.md)
 - [design-comuni-page-census.md](./design-comuni-page-census.md)
-- [../../Themes/Sixteen/docs/layout-runtime-contract.md](../../Themes/Sixteen/docs/layout-runtime-contract.md)
+- [../../Themes/Sixteen/docs/layout-runtime-contract.md](../../../Themes/Sixteen/docs/layout-runtime-contract.md)
