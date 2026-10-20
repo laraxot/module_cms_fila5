@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature;
 
+use Modules\Cms\Tests\TestCase;
 
 use function Pest\Laravel\get;
 
@@ -282,11 +283,8 @@ describe('CMS Individual Folio Routes Tests', function () {
             $response = get('/'.$this->lang);
             $response->assertStatus(200);
 
-            // Verifica che il JSON della homepage sia caricato correttamente
-            $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
-            expect(file_exists($homepageJsonPath))->toBeTrue();
-
-            $homepageData = cmsJsonDecodeFile($homepageJsonPath);
+            // Verifica che il JSON della homepage sia caricato correttamente (salta se il tenant non ce l'ha)
+            $homepageData = TestCase::homepageJsonForBlocksArchitecture();
             expect($homepageData['content_blocks'])->toHaveKey($this->lang);
 
             $content = $response->getContent();

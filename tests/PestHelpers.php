@@ -118,35 +118,13 @@ if (! function_exists('cmsJsonDecodeFile')) {
 
 if (! function_exists('cmsHomepageBlocks')) {
     /**
-     * @return list<array{type: string, data: array<string, mixed> }>
+     * Blocchi della homepage del tenant per una lingua (loader tipizzato su `TestCase`).
+     *
+     * @return list<array{type: string, data: array<string, mixed>}>
      */
     function cmsHomepageBlocks(string $locale): array
     {
-        $data = cmsJsonDecodeFile(config_path('local/<nome progetto>/database/content/pages/home.json'));
-        $contentBlocks = $data['content_blocks'] ?? null;
-        $blocks = is_array($contentBlocks) ? ($contentBlocks[$locale] ?? null) : null;
-
-        if (! is_array($blocks)) {
-            throw new RuntimeException("Homepage blocks for locale {$locale} are missing.");
-        }
-
-        $result = [];
-        foreach ($blocks as $block) {
-            if (! is_array($block) || ! is_string($block['type'] ?? null) || ! is_array($block['data'] ?? null) || ! is_string($block['data']['view'] ?? null)) {
-                throw new RuntimeException('Homepage block has an invalid shape.');
-            }
-
-            $blockData = [];
-            foreach ($block['data'] as $key => $value) {
-                if (! is_string($key)) {
-                    throw new RuntimeException('Homepage block data has an invalid key.');
-                }
-                $blockData[$key] = $value;
-            }
-            $result[] = ['type' => $block['type'], 'data' => $blockData];
-        }
-
-        return $result;
+        return TestCase::homepageBlocksForLocale($locale);
     }
 }
 

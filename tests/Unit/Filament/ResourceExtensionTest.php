@@ -6,17 +6,19 @@ use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Filament\Resources\PageContentResource;
 use Modules\Cms\Filament\Resources\PageResource;
 use Modules\Cms\Filament\Resources\SectionResource;
+use Modules\Lang\Filament\Resources\LangBaseResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
 use PHPUnit\Framework\Assert;
-use ReflectionNamedType;
 
 test('cms resources extend proper base resources', function () {
-    Assert::assertTrue((new ReflectionClass(PageResource::class))->isSubclassOf('Modules\\Lang\\Filament\\Resources\\LangBaseResource'));
-    Assert::assertTrue((new ReflectionClass(PageContentResource::class))->isSubclassOf('Modules\\Lang\\Filament\\Resources\\LangBaseResource'));
-    Assert::assertTrue((new ReflectionClass(SectionResource::class))->isSubclassOf('Modules\\Lang\\Filament\\Resources\\LangBaseResource'));
-    Assert::assertTrue((new ReflectionClass(MenuResource::class))->isSubclassOf('Modules\\Xot\\Filament\\Resources\\XotBaseResource'));
+    foreach ([PageResource::class, PageContentResource::class, SectionResource::class] as $resourceClass) {
+        Assert::assertTrue((new ReflectionClass($resourceClass))->isSubclassOf(LangBaseResource::class), "{$resourceClass} must extend LangBaseResource");
+    }
+
+    Assert::assertTrue((new ReflectionClass(MenuResource::class))->isSubclassOf(XotBaseResource::class));
 });
 
-test('cms resources do not implement unnecessary methods', function () {
+test('cms resources inherit pages, relations, form and table from their base resource', function () {
     $resources = [
         PageResource::class,
         PageContentResource::class,
@@ -27,14 +29,18 @@ test('cms resources do not implement unnecessary methods', function () {
     foreach ($resources as $resourceClass) {
         $reflection = new ReflectionClass($resourceClass);
 
-        Assert::assertFalse($reflection->hasMethod('getPages'), "{$resourceClass} should not implement getPages()");
-        Assert::assertFalse($reflection->hasMethod('getRelations'), "{$resourceClass} should not implement getRelations()");
-        Assert::assertFalse($reflection->hasMethod('form'), "{$resourceClass} should not implement form()");
-        Assert::assertFalse($reflection->hasMethod('table'), "{$resourceClass} should not implement table()");
+        // I metodi esistono (ereditati da XotBaseResource): la Resource non deve dichiararli lei.
+        foreach (['getPages', 'getRelations', 'form', 'table'] as $method) {
+            Assert::assertNotSame(
+                $resourceClass,
+                $reflection->getMethod($method)->getDeclaringClass()->getName(),
+                "{$resourceClass} should not declare {$method}()",
+            );
+        }
     }
 });
 
-test('cms resources implement required getFormSchema method', function () {
+test('cms resources keep their form schema in the Schemas form class', function () {
     $resources = [
         PageResource::class,
         PageContentResource::class,
@@ -43,15 +49,10 @@ test('cms resources implement required getFormSchema method', function () {
     ];
 
     foreach ($resources as $resourceClass) {
-        $reflection = new ReflectionClass($resourceClass);
+        // XotBaseResource::getFormSchema() e' final e vuoto: lo schema vive in `{Resource}\Schemas\{Model}Form`.
+        $formClass = $resourceClass::getFormClass();
 
-        Assert::assertTrue($reflection->hasMethod('getFormSchema'), "{$resourceClass} must implement getFormSchema()");
-
-        $method = $reflection->getMethod('getFormSchema');
-        Assert::assertTrue($method->isPublic(), "{$resourceClass}::getFormSchema() must be public");
-        Assert::assertTrue($method->isStatic(), "{$resourceClass}::getFormSchema() must be static");
-        $returnType = $method->getReturnType();
-        Assert::assertSame('array', $returnType instanceof ReflectionNamedType ? $returnType->getName() : null, "{$resourceClass}::getFormSchema() must return array");
+        Assert::assertSame($resourceClass, $formClass::getResource(), "{$formClass} must belong to {$resourceClass}");
     }
 });
 
@@ -88,14 +89,16 @@ test('cms resource form schemas return valid arrays', function () {
     ];
 
     foreach ($resources as $resourceClass) {
-        $schema = (new $resourceClass)->getFormSchema();
+        $formClass = $resourceClass::getFormClass();
+        $schema = (new $formClass)->getFormSchema();
 
-        Assert::assertNotEmpty($schema, "{$resourceClass}::getFormSchema() must return non-empty array");
+        Assert::assertNotEmpty($schema, "{$resourceClass} form class must return a non-empty schema");
     }
 });
 
 test('page resource form schema contains expected fields', function () {
-    $schema = (new PageResource)->getFormSchema();
+    $formClass = PageResource::getFormClass();
+    $schema = (new $formClass)->getFormSchema();
 
     Assert::assertNotEmpty($schema);
 
@@ -112,7 +115,8 @@ test('page resource form schema contains expected fields', function () {
 });
 
 test('menu resource form schema contains expected fields', function () {
-    $schema = (new MenuResource)->getFormSchema();
+    $formClass = MenuResource::getFormClass();
+    $schema = (new $formClass)->getFormSchema();
 
     Assert::assertNotEmpty($schema);
 
