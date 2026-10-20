@@ -1,16 +1,17 @@
 ---
-qmd: "scopo"
+qmd: "scopo cms wiki stub"
 issues: []
 discussions: []
-title: "Scopo"
+title: "Scopo (puntatore)"
 type: note
-status: draft
-updated: 2026-10-08
-tags: [docs, cms, wiki]
+status: active
+updated: 2026-10-20
+tags: [docs, cms, wiki, scopo]
+canonical: ../scopo.md
 ---
 
-# Cms — Scopo (BMAD)
-**Bold**: Gestione contenuti, pagine Folio, blocchi, componenti Blade, CMS pubblico.
-**Minimal**: Actions (GetCmsViewAction), Filament Resources, Model/Presenters; docs/wiki e docs/bmad presenti.
-**Actionable**: Riferimento: `docs/bmad/stories/STORY-CMS-FOLIO-LOCALE-AUTH-REDIRECT.md`; `docs/architecture/`.
-**Durable**: Scopo CMS (contenuti + frontoffice); PHPStan non corretto, solo documentato stato docs.
+# Cms — Scopo
+
+Documento canonico: [../scopo.md](../scopo.md).
+
+Indice modulo: [../00-INDEX.md](../00-INDEX.md).
