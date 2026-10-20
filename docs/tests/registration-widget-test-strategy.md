@@ -1,3 +1,13 @@
+---
+title: "RegistrationWidget Test Strategy - Modulo Cms IMPLEMENTATO"
+type: note
+status: draft
+created: 2026-01-27
+updated: 2026-10-18
+module: Cms
+tags: [docs, cms, tests]
+---
+
 # RegistrationWidget Test Strategy - Modulo Cms ✅ IMPLEMENTATO
 
 ## 🎯 Overview Strategico

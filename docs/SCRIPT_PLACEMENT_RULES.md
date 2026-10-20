@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "SCRIPT PLACEMENT RULES"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: script_placement_rules.md
 ---
 
 # Script Placement Rules

@@ -1,3 +1,13 @@
+---
+title: "Architecture Separation Rules - Test Strategy"
+type: note
+status: draft
+created: 2026-01-27
+updated: 2026-10-18
+module: Cms
+tags: [docs, cms, tests]
+---
+
 # Architecture Separation Rules - Test Strategy
 
 ## 🚨 **REGOLA CRITICA: Separazione Architettuale**
