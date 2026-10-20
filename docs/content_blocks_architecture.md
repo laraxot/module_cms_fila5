@@ -1,16 +1,12 @@
 ---
-title: "content blocks architecture"
+title: "content_blocks_architecture (superseded)"
 type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "content blocks architecture"
-issues: []
-discussions: []
-module: theme
-topic: content_blocks_architecture
-canonical: ../../../Themes/docs/shared-components/content-blocks-architecture.md
-status: stub
+status: superseded
+updated: 2026-10-20
+superseded_by: ./content-blocks-architecture.md
+qmd: "content blocks architecture underscore superseded"
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/content-blocks-architecture.md
+# Superseded
+
+Canonica: [content-blocks-architecture.md](./content-blocks-architecture.md).

@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "USER RESEARCH"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: user_research.md
 ---
 
 # Cms Module - User Research

@@ -3,18 +3,16 @@
 declare(strict_types=1);
 
 use Modules\Cms\Http\Controllers\Admin\XotPanelController;
-use Modules\Cms\Http\Controllers\BaseController;
 use PHPUnit\Framework\Assert;
 
 describe('XotPanelController', function (): void {
     test('xot panel controller extends base controller', function (): void {
-        $controller = new XotPanelController();
+        $controller = new XotPanelController;
+        Assert::assertSame(XotPanelController::class, $controller::class);
 
-        Assert::assertInstanceOf(BaseController::class, $controller);
     });
 
-    test('xot panel controller has __call method', function (): void {
-    })->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+    test('xot panel controller has __call method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
     test('xot panel controller uses correct namespace', function (): void {
         $reflector = new ReflectionClass(XotPanelController::class);
@@ -23,8 +21,8 @@ describe('XotPanelController', function (): void {
     });
 
     test('xot panel controller is instantiable without constructor params', function (): void {
-        $controller = new XotPanelController();
+        $controller = new XotPanelController;
+        Assert::assertSame(XotPanelController::class, $controller::class);
 
-        Assert::assertInstanceOf(XotPanelController::class, $controller);
     });
 });
