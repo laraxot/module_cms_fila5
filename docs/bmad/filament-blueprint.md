@@ -4,7 +4,7 @@ type: filament-blueprint
 status: active
 module: Cms
 created: 2026-10-16
-updated: 2026-10-16
+updated: 2026-10-20
 tags: [bmad, filament, blueprint, cms]
 qmd: "filament blueprint cms xotbase resource widget"
 related:
@@ -23,9 +23,13 @@ i confini di dominio.
 2. Nessun `->label()` hardcoded: chiavi in `lang/<locale>/` del modulo.
 3. Business logic nelle Actions del modulo, non nei form hooks grassi.
 4. FO: widget montati esplicitamente; non abusare `discoverWidgets` per chrome.
-5. Liste FO via Folio shell del tema + JSON `pages.{container0}.index` — il BO
-   (`PageResource`) edita i JSON; il tema non reinventa match/`@include` nativi.
-   Canon tema: [container0-index-shell-contract.md](../../../../Themes/Sixteen/docs/bmad/container0-index-shell-contract.md).
+5. Liste FO via Folio shell del tema + JSON del tenant. La cartella è il contenitore,
+   lo slug nel file è l'ultimo pezzo (`pages/services/index.json` → `services.index`,
+   `pages/services/view.json` → `services.view`, `pages/area-personale/pratiche.json` →
+   `area-personale.pratiche`). `PageResource` edita quei JSON; il tema non reinventa
+   match/`@include` nativi.
+   Canon: [json-content-slug-uniqueness.md](../json-content-slug-uniqueness.md),
+   tema [container0-index-shell-contract.md](../../../../Themes/Sixteen/docs/bmad/container0-index-shell-contract.md).
 
 ## Resource / widget
 
