@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "FIX PLAN"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: fix_plan.md
 ---
 
 # 🚀 Fix Homepage Bootstrap Italia - Piano Esecutivo

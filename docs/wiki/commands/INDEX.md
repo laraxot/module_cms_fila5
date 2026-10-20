@@ -10,7 +10,8 @@ tags: [commands, index, on-demand]
 related:
   - ../rules/00-TRIGGER_MAP.md
   - ../rules/on-demand-pattern.md
-status: draft
+status: superseded
+superseded_by: index.md
 ---
 
 # Commands Index

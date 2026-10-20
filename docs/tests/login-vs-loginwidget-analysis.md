@@ -1,3 +1,13 @@
+---
+title: "Login vs LoginWidget - Analisi Architetturale Approfondita"
+type: note
+status: draft
+created: 2026-01-27
+updated: 2026-10-18
+module: Cms
+tags: [docs, cms, tests]
+---
+
 # Login vs LoginWidget - Analisi Architetturale Approfondita
 
 ## 🚨 **ERRORE GRAVE IDENTIFICATO**

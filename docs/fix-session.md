@@ -1,3 +1,13 @@
+---
+title: "Correzioni Errore /it (2026-07-13)"
+type: note
+status: draft
+created: 2026-10-20
+updated: 2026-10-20
+module: Cms
+tags: [docs, cms]
+---
+
 # Correzioni Errore /it (2026-07-13)
 
 ## Second Brain Reference
