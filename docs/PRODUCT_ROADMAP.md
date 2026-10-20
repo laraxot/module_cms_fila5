@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "PRODUCT ROADMAP"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: product_roadmap.md
 ---
 
 # Cms Module - Product Roadmap

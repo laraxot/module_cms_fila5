@@ -9,7 +9,8 @@ issues: []
 discussions: []
 related:
   - ./coding-agent-manifests.md
-status: draft
+status: superseded
+superseded_by: AGENTS.md
 ---
 
 # Cms Module LLM Wiki Agent Instructions

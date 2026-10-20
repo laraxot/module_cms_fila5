@@ -7,6 +7,8 @@ updated: 2026-09-26
 qmd: "PAGE COMPONENT ARCHITECTURE"
 issues: []
 discussions: []
+status: superseded
+superseded_by: page_component_architecture.md
 ---
 
 # Page Component Architecture - Cms Module

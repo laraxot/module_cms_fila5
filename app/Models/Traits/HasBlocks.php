@@ -116,7 +116,7 @@ trait HasBlocks
      * Unico PHP ammesso nei blocchi: link localizzati. Ogni altra espressione o direttiva resta testo,
      * perche' i blocchi li scrive chi modifica il contenuto (Filament Blueprint C-3).
      */
-    private const SAFE_EXPRESSION = '/^(?:LaravelLocalization::localizeURL|route)\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
+    private const string SAFE_EXPRESSION = '/^(?:LaravelLocalization::localizeURL|route)\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
 
     private function renderAllowedExpressions(string $value): string
     {

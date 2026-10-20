@@ -8,8 +8,6 @@ use Modules\Cms\Tests\TestCase;
 
 use function Pest\Laravel\get;
 
-uses(TestCase::class);
-
 describe('CMS Individual Folio Routes Tests', function () {
     beforeEach(function () {
         $this->lang = app()->getLocale();
@@ -285,17 +283,14 @@ describe('CMS Individual Folio Routes Tests', function () {
             $response = get('/'.$this->lang);
             $response->assertStatus(200);
 
-            // Verifica che il JSON della homepage sia caricato correttamente
-            $homepageJsonPath = config_path('local/<nome progetto>/database/content/pages/home.json');
-            expect(file_exists($homepageJsonPath))->toBeTrue();
-
-            $homepageData = json_decode(file_get_contents($homepageJsonPath), true);
+            // Verifica che il JSON della homepage sia caricato correttamente (salta se il tenant non ce l'ha)
+            $homepageData = TestCase::homepageJsonForBlocksArchitecture();
             expect($homepageData['content_blocks'])->toHaveKey($this->lang);
 
             $content = $response->getContent();
 
             // Verifica che i blocchi JSON siano renderizzati
-            $blocks = $homepageData['content_blocks'][$this->lang];
+            $blocks = cmsHomepageBlocks($this->lang);
             foreach ($blocks as $block) {
                 if (isset($block['data']['title'])) {
                     expect($content)->toContain($block['data']['title']);
@@ -307,12 +302,7 @@ describe('CMS Individual Folio Routes Tests', function () {
             $response = get('/'.$this->lang);
             $response->assertStatus(200);
 
-            $homepageData = json_decode(
-                file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-                true,
-            );
-
-            $blocks = $homepageData['content_blocks'][$this->lang];
+            $blocks = cmsHomepageBlocks($this->lang);
 
             // Verifica che le viste seguano il pattern theme
             foreach ($blocks as $block) {
@@ -323,12 +313,7 @@ describe('CMS Individual Folio Routes Tests', function () {
         });
 
         test('cms processes blade syntax in json correctly', function () {
-            $homepageData = json_decode(
-                file_get_contents(config_path('local/<nome progetto>/database/content/pages/home.json')),
-                true,
-            );
-
-            $blocks = $homepageData['content_blocks'][$this->lang];
+            $blocks = cmsHomepageBlocks($this->lang);
             $landingBlock = collect($blocks)->firstWhere('type', 'landing-page');
 
             if ($landingBlock) {
