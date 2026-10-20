@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature\Auth;
 
-use Illuminate\Support\Facades\Auth;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\Xot\Datas\XotData;
 use Modules\Xot\Tests\TestCase;
 
-use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
-use function Pest\Laravel\post;
 
 uses(TestCase::class);
 
@@ -21,36 +17,21 @@ test('login screen can be rendered', function (): void {
 });
 
 test('users can authenticate using the login screen', function (): void {
-    /** @var class-string<\Illuminate\Database\Eloquent\Model> $userClass */
-    $userClass = XotData::make()->getUserClass();
-    $factory = $userClass::factory();
-    /*
-     * $connection_name=app($userClass)->getConnectionName();
-     * dddx([
-     * 'connection_name' => $connection_name,
-     * 'factory'=>$factory->raw(),
-     * //'config'=>config('database'),
-     *
-     * ]);
-     */
-    /** @var \Illuminate\Contracts\Auth\Authenticatable&\Illuminate\Database\Eloquent\Model $user */
-    $user = $factory->create();
+    $user = $this->createTestUser();
 
     $response = LivewireVolt::test('auth.login')
         ->set('email', $user->email)
         ->set('password', 'password')
         ->call('authenticate');
 
-    $response->assertHasNoErrors()// ->assertRedirect(route('dashboard', absolute: false))
-    ;
+    $response->assertHasNoErrors(); // ->assertRedirect(route('dashboard', absolute: false))
 
     // expect(Auth::user())->not->toBeNull();
 });
 
 /*
  * test('users cannot authenticate with invalid password', function (): void {
- * $userClass = XotData::make()->getUserClass();
- * $user = $userClass::factory()->create();
+ * $user = $this->createTestUser();
  *
  * $response = LivewireVolt::test('auth.login')
  * ->set('email', $user->email)
@@ -63,8 +44,7 @@ test('users can authenticate using the login screen', function (): void {
  * });
  *
  * test('users can logout', function (): void {
- * $userClass = XotData::make()->getUserClass();
- * $user = $userClass::factory()->create();
+ * $user = $this->createTestUser();
  *
  * $response = actingAs($user)->post('/logout');
  *

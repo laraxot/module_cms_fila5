@@ -122,7 +122,7 @@ class Page extends BaseModelLang
         try {
             return self::query()->where('slug', $slug)->sole();
         } catch (MultipleRecordsFoundException $e) {
-            throw new MultipleRecordsFoundException("Page slug duplication detected for slug='{$slug}': 2 or more CMS pages found (expected 1). Check database / CMS JSON for duplicate '{$slug}'. Original: ".$e->getMessage());
+            throw new \RuntimeException(sprintf("Page slug duplication detected for slug='%s': %d CMS pages found (expected 1). Check database / CMS JSON for duplicate '%s'.", $slug, $e->getCount(), $slug), previous: $e);
         } catch (ModelNotFoundException) {
             return null;
         }
