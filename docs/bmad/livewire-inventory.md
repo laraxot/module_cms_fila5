@@ -16,14 +16,14 @@ related:
   - ./livewire-widget-decision-log.md
   - ./livewire-widget-epics.md
   - ../stories/12.1.cms-page-show-not-widget.story.md
-  - ../../User/docs/bmad/livewire-inventory.md
+  - ../../../User/docs/bmad/livewire-inventory.md
 ---
 
 # Inventario: Livewire HTTP → Filament — modulo Cms
 
 **Solo documentazione. Nessun PHP toccato in questo audit.**
 
-Questo file è la SSoT del modulo Cms per la campagna di conversione Livewire → Filament widget. Formato e metodo sono ripresi da [Modules/User/docs/bmad/livewire-inventory.md](../../User/docs/bmad/livewire-inventory.md), adattati al fatto che qui, a differenza di User, non esiste alcun candidato reale.
+Questo file è la SSoT del modulo Cms per la campagna di conversione Livewire → Filament widget. Formato e metodo sono ripresi da [Modules/User/docs/bmad/livewire-inventory.md](../../../User/docs/bmad/livewire-inventory.md), adattati al fatto che qui, a differenza di User, non esiste alcun candidato reale.
 
 ## Metodo (codice, non assunzione)
 
