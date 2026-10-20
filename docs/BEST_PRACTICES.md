@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "BEST PRACTICES"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: best_practices.md
 ---
 
 # Best Practices – Cms

@@ -1,3 +1,13 @@
+---
+title: "Code Quality Analysis - CMS Module - November 2025"
+type: note
+status: draft
+created: 2026-01-27
+updated: 2026-10-18
+module: Cms
+tags: [docs, cms]
+---
+
 # Code Quality Analysis - CMS Module - November 2025
 
 ## 📊 Risultato Analisi Completa
