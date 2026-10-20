@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "TESTING"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: testing.md
 ---
 
 # Cms Module Testing Guide
