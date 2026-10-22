@@ -151,18 +151,9 @@ Config::set('cms.custom_option', [
 
 ## Validazione
 
-Il modulo include validatori per le configurazioni:
-
-```php
-use Modules\Cms\Support\ConfigValidator;
-
-$validator = new ConfigValidator();
-$result = $validator->validate();
-
-if (!$result->isValid()) {
-    $errors = $result->getErrors();
-}
-```
+`Modules\Cms\Support\ConfigValidator` **non esiste** (religione no `app/Support`).
+Lo schema pagina pubblica passa da `BuildPageSchemaAction` (`app/Actions/`).
+Vedi [no-app-support-queueable-actions](wiki/concepts/no-app-support-queueable-actions.md).
 
 ## Collegamenti
 
