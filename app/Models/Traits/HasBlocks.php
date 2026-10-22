@@ -113,10 +113,12 @@ trait HasBlocks
     }
 
     /**
-     * Unico PHP ammesso nei blocchi: link localizzati. Ogni altra espressione o direttiva resta testo,
-     * perche' i blocchi li scrive chi modifica il contenuto (Filament Blueprint C-3).
+     * Unico PHP ammesso nei blocchi: `route(...)` Folio (es. container0.view).
+     * Vietato `LaravelLocalization::localizeURL` (religione FO — Fixcity
+     * frontoffice-link-conventions). Ogni altra espressione resta testo
+     * (Filament Blueprint C-3).
      */
-    private const string SAFE_EXPRESSION = '/^(?:LaravelLocalization::localizeURL|route)\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
+    private const string SAFE_EXPRESSION = '/^route\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
 
     private function renderAllowedExpressions(string $value): string
     {
