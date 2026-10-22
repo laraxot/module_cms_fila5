@@ -49,7 +49,11 @@ cross-tenant per comodita admin.
 
 ## PHPStan
 
-Test business e Resource CMS: helper su `TestCase` static, no mix Pest chain che crasha `pest-plugin-phpstan`. Ordine permanente verso `analyse Modules` a zero: [phpstan-modules-zero-standing-order](../../Xot/docs/wiki/memories/phpstan-modules-zero-standing-order.md).
+Test business e Resource CMS: helper su `TestCase` static, no mix Pest chain che crasha `pest-plugin-phpstan`. Gate unico: `cd laravel && ./vendor/bin/phpstan analyse Modules` a **zero** (`laravel/phpstan.neon` solo; agenti mai ignore/baseline).
+
+Prima del fix: scopo pagina/Resource in questo blueprint → chiamanti → causa tipizzata; **non zittire** l'errore.
+
+Track: [phpstan-modules-zero-standing-order](../../Xot/docs/wiki/memories/phpstan-modules-zero-standing-order.md), [00-start.md](../../../../../bashscripts/docs/prompts/00-start.md#ordine-permanente-dellutente), [11-phpstan.md](../../../../../bashscripts/docs/prompts/11-phpstan.md). Resource: solo [XotBaseResource](../../Xot/app/Filament/Resources/XotBaseResource.php) — ratchet [NeverExtendFilamentDirectlyTest.php](../../Xot/tests/Unit/Filament/NeverExtendFilamentDirectlyTest.php).
 
 ## Related
 
