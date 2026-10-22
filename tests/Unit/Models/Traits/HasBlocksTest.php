@@ -22,14 +22,28 @@ test('HasBlocks trait can be used', function (): void {
     Assert::assertSame(['title' => 'plain'], $model->compile(['title' => 'plain']));
 });
 
-// Filament Blueprint C-3: compile() non deve eseguire PHP scritto da chi modifica il contenuto.
-test('compile renders the allowlisted localizeURL expression', function (): void {
-    $compiled = (new Page())->compile(['nested' => ['href' => "{{ LaravelLocalization::localizeURL('/tickets') }}"]]);
+// Filament Blueprint C-3 + FO religion (container0.view, mai localizeURL).
+// Under test: Modules\Cms\Models\Traits\HasBlocks::compile. Existing file: this.
+// User: «localizeUrl è sbagliato… corretta era route(container0.view)… non rifarlo più».
+test('compile renders the allowlisted route expression', function (): void {
+    $compiled = (new Page())->compile([
+        'nested' => [
+            'href' => "{{ route('container0.index',['container0'=>'tickets']) }}",
+        ],
+    ]);
 
     Assert::assertIsArray($compiled['nested']);
     Assert::assertIsString($compiled['nested']['href']);
     Assert::assertStringEndsWith('/tickets', $compiled['nested']['href']);
     Assert::assertStringNotContainsString('{{', $compiled['nested']['href']);
+});
+
+test('compile leaves localizeURL expressions as text', function (): void {
+    $payload = "{{ LaravelLocalization::localizeURL('/tickets') }}";
+    Assert::assertSame(
+        ['href' => $payload],
+        (new Page())->compile(['href' => $payload]),
+    );
 });
 
 test('compile leaves arbitrary expressions and directives as text', function (string $payload): void {
