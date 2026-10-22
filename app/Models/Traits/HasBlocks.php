@@ -45,7 +45,11 @@ trait HasBlocks
             $localeKeys = ['it', 'en', 'fr', 'de', 'es', $primary_lang];
             $hasLocaleKeys = count(array_intersect(array_keys($blocks), $localeKeys)) > 0;
             if ($hasLocaleKeys) {
-                $blocks = $this->getTranslation($field, $primary_lang);
+                $locale = app()->getLocale();
+                $blocks = $this->getTranslation($field, $locale, false);
+                if (! is_array($blocks) && $locale !== $primary_lang) {
+                    $blocks = $this->getTranslation($field, $primary_lang, false);
+                }
             }
         }
 
