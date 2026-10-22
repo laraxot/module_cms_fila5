@@ -15,6 +15,11 @@ related:
 
 # Decision log — Cms
 
+## 2026-10-20 — Gate PHPStan Modules zero; Filament blueprint SSoT UI admin
+
+- **Decisione:** gate `analyse Modules` a zero; `PageResource` / JSON tenant e liste FO si allineano a [filament-blueprint.md](./filament-blueprint.md) (XotBase, Lang, niente label hardcoded).
+- **Track:** [phpstan-modules-zero-standing-order](../../Xot/docs/wiki/memories/phpstan-modules-zero-standing-order.md).
+
 ## 2026-10-16 — Kit BMAD owner
 
 - **Decisione:** adottare `docs/bmad-planning.md` + `docs/bmad-brainstorming.md` + `docs/bmad/filament-blueprint.md` come SSoT di planning per questo owner.
