@@ -51,7 +51,7 @@ Nota sui link rotti. Confronto insiemistico con la copia di `HEAD` (stesso scrip
 ## Decisioni
 - Stessa regola di Lang: canonico minuscolo, gemello superseded, cancellazione solo con zero riferimenti.
 - Le coppie con contenuto diverso (similarita' sotto 0.9) non sono state marcate se il gemello piu' piccolo non e' chiaramente uno stub.
-- `code-quality-analysis-2025-11-24.md` non rinominato: `md-filenames.py apply` riscriverebbe anche i registri di lavoro `docs/worklog/2026/03/13/*.md` e `bashscripts/docs/md-collisions-migration-map.json`, che sono cronologia.
+- `code-quality-analysis-cms-module-november.md` non rinominato: `md-filenames.py apply` riscriverebbe anche i registri di lavoro `docs/worklog/2026/03/13/*.md` e `bashscripts/docs/md-collisions-migration-map.json`, che sono cronologia.
 
 ## Aperto
 - **Coppie divergenti** (decisione dell'owner): `PHILOSOPHY.md` (22 KB) contro `philosophy.md` (7 KB, 69 riferimenti); `PRD.md` (17 KB) contro `prd.md` (3 KB, 106 riferimenti); `license.md` contro `LICENSE.md`; `FILAMENT_RESOURCE_GUIDELINES.md` (copia completa) contro `filament_resource_guidelines.md` (stub con `canonical` verso la docs dei temi).
