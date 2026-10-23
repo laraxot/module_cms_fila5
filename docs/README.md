@@ -46,12 +46,11 @@ bash ../bashscripts/tools/cms/page-json-for-url.sh http://127.0.0.1:8081/it/test
 
 ## Mappa dei docs
 
-<<<<<<< .merge_file_7tajpx
 Contratto corrente per le pagine pubbliche di primo livello: [container0 index
 JSON-driven pages](./wiki/concepts/container0-index-json-driven-pages.md).
 
 Il contratto comune per la documentazione è
-[docs/project/docs-governance.md](../../../../docs/project/docs-governance.md).
+[DOCUMENTATION_GOVERNANCE.md](../../../../docs/DOCUMENTATION_GOVERNANCE.md).
 Questo `README.md` è l'ingresso canonico del modulo; gli indici esistenti sono
 mappe di navigazione e non fonti concorrenti.
 
@@ -65,10 +64,7 @@ perché duplica il match Folio e bypassa il JSON tenant. Se il problema è nel
 markup, correggere il blocco condiviso; se è nei dati, correggere JSON/Filament;
 se è nel catalogo, correggere il modulo owner.
 
-Indice operativo: [00-INDEX.md](./00-INDEX.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/).
-=======
-Indice operativo: [00-INDEX.md](./00-INDEX.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/). PHPStan tests a zero: [stories/phpstan-cms-zero.story.md](./stories/phpstan-cms-zero.story.md).
->>>>>>> .merge_file_WihpWz
+Indice operativo: [00-INDEX.md](./00-INDEX.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/); PHPStan: [stories/phpstan-cms-zero.story.md](./stories/phpstan-cms-zero.story.md).
 
 ## Dipendenze / Moduli Correlati
 
