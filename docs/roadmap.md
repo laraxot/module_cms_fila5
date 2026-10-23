@@ -38,7 +38,7 @@ status: draft
 - [roadmap/04-milestones.md](roadmap/04-milestones.md)
 - [roadmap/04-risks.md](roadmap/04-risks.md)
 - [roadmap/05-risks.md](roadmap/05-risks.md)
-- [roadmap/2025-q4-roadmap.md](roadmap/roadmap-q4.md)
+- [roadmap/roadmap.md](roadmap/roadmap-q4.md)
 - [roadmap/README.md](roadmap/README.md)
 - [roadmap/features/documentation.md](roadmap/features/documentation.md)
 - [roadmap/legacy-roadmap.md](roadmap/legacy-roadmap.md)
