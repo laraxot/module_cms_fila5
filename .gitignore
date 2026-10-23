@@ -140,3 +140,4 @@ graphify-out/
 .claude-audit/
 test-results/
 cms.code-workspace
+ruvector.db
