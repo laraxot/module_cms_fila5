@@ -32,7 +32,9 @@
             "Modules\\Cms\\Tests\\": "tests/"
         }
     },
-    "require": {},
+    "require": {
+        "laravel/head": "^0.2.2"
+    },
     "repositories": [
         {
             "type": "path",
@@ -48,10 +50,10 @@
         }
     ],
     "scripts": {
-        "post-autoload-dump": [
+        "post-autoload-dump-comment": [
             "@php vendor/bin/testbench package:discover --ansi"
         ],
-        "post-update-cmd": [
+        "post-update-cmd-comment": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
         "analyse": "vendor/bin/phpstan analyse",
