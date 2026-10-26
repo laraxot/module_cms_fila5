@@ -9,7 +9,7 @@ updated: 2026-10-20
 confidence: high
 tags: [folio, actions, page-resolution, cms, schema-org]
 related:
-  - ../00-INDEX.md
+  - ../00-index.md
   - ../scopo.md
   - ../content-blocks-architecture.md
   - ../queueable-actions.md
@@ -21,7 +21,7 @@ status: active
 
 **Perché:** le pagine pubbliche non hanno controller; Folio del tema passa `(container0, slug0)` e Cms decide *cosa* renderizzare (modello, pagina JSON, fallback). Senza questa pipeline il tema dovrebbe conoscere il dominio.
 
-Indice: [../00-INDEX.md](../00-INDEX.md) · scopo: [../scopo.md](../scopo.md).
+Indice: [../00-INDEX.md](../00-index.md) · scopo: [../scopo.md](../scopo.md).
 
 Questo modulo non usa `web.php` né `Http\Controllers` per servire pagine pubbliche: le rotte
 `[container0]/[slug0]` sono Folio pages nel tema attivo. Le Actions qui documentate sono
@@ -102,5 +102,5 @@ multilingua.
 
 - [content-blocks-architecture.md](../content-blocks-architecture.md) — composizione blocchi
 - [safe.md](../safe.md) — I/O tipizzato su JSON/filesystem
-- [Lang — ResolveLocalizedBlockData / i18n](../../Lang/docs/scopo.md)
+- [Lang — ResolveLocalizedBlockData / i18n](../../../Lang/docs/scopo.md)
 

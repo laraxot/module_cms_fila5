@@ -181,8 +181,8 @@ Output: `Themes/Sixteen/docs/design-comuni/screenshots/`
 - [Documentazione Script](../../../bashscripts/docs/DESIGN_COMUNI_SCREENSHOT_SCRIPT.md)
 
 ### Moduli Correlati
-- [UI Module - Blocks System](../UI/docs/blocks-system.md)
-- [UI Module - Design System](../UI/docs/design-system.md)
+- [UI Module - Blocks System](../../UI/docs/blocks-system.md)
+- [UI Module - Design System](../../UI/docs/design-system.md)
 
 ## Prossimi Passi
 

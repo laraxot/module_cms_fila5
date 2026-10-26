@@ -6,6 +6,7 @@ created: 2026-01-27
 updated: 2026-10-18
 module: Cms
 tags: [docs, cms, tests]
+qmd: "login test architecture - problema risolto cms"
 ---
 
 # Login Test Architecture - PROBLEMA RISOLTO ✅

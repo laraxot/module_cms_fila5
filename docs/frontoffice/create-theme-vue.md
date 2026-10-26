@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "create theme vue"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Creazione di un Tema con Vue

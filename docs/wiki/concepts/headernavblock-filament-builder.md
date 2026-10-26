@@ -106,7 +106,7 @@ The header.json is the **Single Source of Truth**. No hardcoded links. No duplic
 
 ## See also
 
-- [../../00-INDEX.md](../../00-INDEX.md) · [../../scopo.md](../../scopo.md)
+- [../../00-INDEX.md](../../00-index.md) · [../../scopo.md](../../scopo.md)
 - [header-nav-block-architecture.md](./header-nav-block-architecture.md)
 - [../../content-blocks-architecture.md](../../content-blocks-architecture.md)
 

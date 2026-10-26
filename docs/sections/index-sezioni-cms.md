@@ -13,7 +13,7 @@ status: draft
 # Indice della Documentazione - Sezioni CMS
 
 ## Collegamenti Correlati
-- [Indice CMS](../INDEX.md)
+- [Indice CMS](../index.md)
 - [README CMS](../README.md)
 - [Sezioni](../sections.md)
 - [Gestione Sezioni](../section-management.md)

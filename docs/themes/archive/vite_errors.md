@@ -7,6 +7,8 @@ updated: 2026-09-26
 qmd: "vite errors"
 issues: []
 discussions: []
+status: superseded
+superseded_by: vite-errors.md
 ---
 
 # Gestione Errori Vite nei Temi

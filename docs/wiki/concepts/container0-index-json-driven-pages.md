@@ -9,6 +9,7 @@ related:
   - ./folio-page-shell-pattern.md
   - ../../../../../Themes/Sixteen/docs/bmad/container0-index-shell-contract.md
   - ../../../../../Themes/Sixteen/docs/bmad/filament-blueprint.md
+qmd: "perché `pages/{container0}/index.blade.php` non va creato cms"
 ---
 
 # Perché `pages/{container0}/index.blade.php` non va creato

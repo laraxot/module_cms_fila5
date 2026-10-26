@@ -944,7 +944,7 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 ## Collegamenti
 - [Roadmap Principale](./roadmap.md)
 - [Convenzioni Namespace Filament](./convenzioni-namespace-filament.md)
-- [Best Practices](../xot/docs/best-practices.md)
+- [Best Practices](../../Xot/docs/best-practices.md)
 - [Struttura Moduli](../xot/docs/module_structure.md)
 
 ## Collegamenti tra versioni di BOTTLENECKS.md
@@ -959,14 +959,14 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 * [bottlenecks.md](../../chart/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../Gdpr/docs/bottlenecks.md)
 * [bottlenecks.md](../../Gdpr/docs/performance/bottlenecks.md)
-* [bottlenecks.md](../../xot/docs/bottlenecks.md)
+* [bottlenecks.md](../../Xot/docs/bottlenecks.md)
 * [bottlenecks.md](../../xot/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../xot/docs/roadmap/bottlenecks.md)
 * [bottlenecks.md](../../dental/docs/bottlenecks.md)
 * [bottlenecks.md](../../User/docs/bottlenecks.md)
 * [bottlenecks.md](../../User/docs/roadmap/bottlenecks.md)
-* [bottlenecks.md](../../ui/docs/bottlenecks.md)
-* [bottlenecks.md](../../ui/docs/roadmap/bottlenecks.md)
+* [bottlenecks.md](../../UI/docs/bottlenecks.md)
+* [bottlenecks.md](../../UI/docs/roadmap/bottlenecks.md)
 * [bottlenecks.md](../../Lang/docs/bottlenecks.md)
 * [bottlenecks.md](../../Lang/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../Job/docs/performance/bottlenecks.md)

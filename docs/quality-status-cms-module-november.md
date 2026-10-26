@@ -6,6 +6,7 @@ created: 2026-10-20
 updated: 2026-10-20
 module: Cms
 tags: [docs, cms]
+qmd: "cms module - quality status (november 2025) cms"
 ---
 
 # Cms Module - Quality Status (November 2025)

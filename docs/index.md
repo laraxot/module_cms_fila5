@@ -12,7 +12,7 @@ status: draft
 
 # Indice documentazione modulo Cms
 
-> Nota 2026-10-14: questo e' il catalogo per argomento, non l'ingresso operativo. L'ingresso e' [00-INDEX.md](./00-INDEX.md); lo stato verificato del modulo (come si servono le pagine, cosa non esiste) e' in [README.md](./README.md). I documenti descritti sotto come "architettura" o "servizi" possono citare classi che non esistono (`PageService`, `BlockService`, modello `Block`): nel dubbio, controllare il codice. 24 link a file inesistenti sono annotati come mancanti.
+> Nota 2026-10-14: questo e' il catalogo per argomento, non l'ingresso operativo. L'ingresso e' [00-INDEX.md](./00-index.md); lo stato verificato del modulo (come si servono le pagine, cosa non esiste) e' in [README.md](./README.md). I documenti descritti sotto come "architettura" o "servizi" possono citare classi che non esistono (`PageService`, `BlockService`, modello `Block`): nel dubbio, controllare il codice. 24 link a file inesistenti sono annotati come mancanti.
 
 ## Panoramica
 
@@ -494,7 +494,7 @@ Cartelle vuote o senza file `.md` diretti: `examples/`, `root-code-workspace-fil
 
 Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono raggruppati qui perche' palesemente duplicati o superati. Per ciascuna riga il primo link e' il riferimento consigliato; gli altri sono le varianti storiche.
 
-- **[00-index.md](./00-index.md)** — contenuto identico duplicato per case del filename. Varianti storiche: [00-INDEX.md](./00-INDEX.md)
+- **[00-index.md](./00-index.md)** — contenuto identico duplicato per case del filename. Varianti storiche: [00-INDEX.md](./00-index.md)
 - **[algolia-docsearch.md](./algolia-docsearch.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [algolia-docsearch-1.md](./algolia-docsearch-adding-custom.md), [algolia-docsearch-old.md](./algolia-docsearch-old.md), [algolia-docsearch-old2.md](./algolia-docsearch-old2.md), [algolia-docsearch_1.md](./algolia-docsearch-adding-custom.md), [algolia_docsearch.md](./algolia_docsearch.md)
 - **[analisi-componenti-blade-laravel.md](./analisi-componenti-blade-laravel.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [analisi-componenti-blade-laravel-1.md](./analisi-componenti-blade-laravel-corretta.md), [analisi-componenti-blade-laravel_1.md](./analisi-componenti-blade-laravel-problema-identificato.md), [analisi_componenti_blade_laravel.md](./analisi_componenti_blade_laravel.md)
 - **[architecture-xotdata-pattern.md](./architecture-xotdata-pattern.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [architecture-xotdata-pattern-1.md](./architecture-xotdata-pattern-errore-critico.md), [architecture-xotdata-pattern_1.md](./architecture-xotdata-pattern-errore-critico-risolto.md), [architecture_xotdata_pattern.md](./architecture_xotdata_pattern.md)

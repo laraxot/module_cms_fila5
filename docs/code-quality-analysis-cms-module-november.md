@@ -6,6 +6,7 @@ created: 2026-01-27
 updated: 2026-10-18
 module: Cms
 tags: [docs, cms]
+qmd: "code quality analysis - cms module - november 2025 cms"
 ---
 
 # Code Quality Analysis - CMS Module - November 2025

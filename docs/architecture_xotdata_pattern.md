@@ -10,7 +10,8 @@ discussions: []
 module: theme
 topic: architecture_xotdata_pattern
 canonical: ../../../Themes/docs/shared-components/architecture-xotdata-pattern.md
-status: stub
+status: superseded
+superseded_by: architecture-xotdata.md
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/architecture-xotdata-pattern.md
