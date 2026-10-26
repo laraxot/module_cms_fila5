@@ -2,11 +2,6 @@
 
 declare(strict_types=1);
 
-use Modules\Xot\Tests\TestCase;
-
-// Use the project's base TestCase
-uses(TestCase::class);
-
 beforeEach(function (): void {
     if (! function_exists('moduleEnabled')) {
         $this->markTestSkipped('moduleEnabled() helper not available.');

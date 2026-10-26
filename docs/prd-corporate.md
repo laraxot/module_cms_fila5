@@ -1,10 +1,10 @@
 ---
-title: "PRD"
+title: "PRD Cms (corporate v1.0)"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
-qmd: "PRD"
+updated: 2026-10-25
+qmd: "cms prd corporate document control okr requisiti"
 issues: []
 discussions: []
 status: draft
@@ -508,9 +508,9 @@ CREATE TABLE cms_navigation (
 - [Filament Documentation](https://filamentphp.com/docs)
 
 ### 12.3 Related PRDs
-- [Blog Module PRD](../../Blog/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/prd.md)
 - [Media Module PRD](../../Media/docs/PRD.md)
-- [Seo Module PRD](../../Seo/docs/PRD.md)
+- [Seo Module PRD](../../Seo/docs/prd.md)
 - [Lang Module PRD](../../Lang/docs/PRD.md)
 
 ---
