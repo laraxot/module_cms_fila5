@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "git conflicts resolution impact"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Impatto Risoluzione Conflitti Git - Modulo Cms
@@ -209,15 +210,6 @@ php artisan lang:check
 - [Architecture](frontoffice/architecture.md)
 
 ---
-
-title: "git conflicts resolution impact"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "git conflicts resolution impact"
-issues: []
-discussions: []
 **Ultimo aggiornamento**: 2025-01-06
 **Autore**: Sistema di correzione automatica
 **Stato**: ✅ Completato

@@ -8,6 +8,8 @@ end_errors: 0
 updated: 2026-10-20
 qmd: "cms phpstan variable.unused alreadyNarrowedType GetStyleClass BlockData swarm"
 # Facts GateGuard: (1) Non duplica multiple-records-cms né STORY-CMS-FOLIO-*; è la story lane PHPStan bucket grandi. (2) Link da docs/bmad/decision-log.md e README modulo. (3) Nuova perché lo scope TSV/wave è distinto dalle story Folio/records. (4) User: «Aggiorna/crea UNA story per modulo in docs/bmad/stories/».
+type: story
+tags: [docs, cms, bmad]
 ---
 
 # Cms — PHPStan swarm (bucket grandi)
