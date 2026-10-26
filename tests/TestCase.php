@@ -5,10 +5,13 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests;
 
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 use Modules\Tenant\Actions\Config\GetTenantFilePathAction;
 use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\MockObject\MockObject;
 use Tests\TestCase as RootTestCase;
@@ -23,11 +26,22 @@ abstract class TestCase extends RootTestCase
 {
     public static ?self $currentTest = null;
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+        self::$currentTest = $this;
+    }
+
+    protected function tearDown(): void
+    {
+        self::$currentTest = null;
+        parent::tearDown();
+    }
+
     /**
      * @template T of object
      *
      * @param  class-string<T>  $class
-     *
      * @return T&MockObject
      */
     public function createPHPUnitMock(string $class): MockObject
@@ -40,15 +54,39 @@ abstract class TestCase extends RootTestCase
      */
     public static function pestGenerateUniqueEmail(): string
     {
-        return 'test-' . Str::uuid() . '@example.com';
+        return 'test-'.Str::uuid().'@example.com';
     }
 
     /**
      * Create a test user with the given attributes.
      *
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     public static function pestCreateTestUser(array $attributes = []): Authenticatable
+    {
+        return User::factory()->createOne($attributes);
+    }
+
+    /**
+     * Email univoca: stessa firma di `XotBaseTestCase::generateUniqueEmail()`, usata dai test Auth.
+     */
+    protected static function generateUniqueEmail(): string
+    {
+        return self::pestGenerateUniqueEmail();
+    }
+
+    /**
+     * @return class-string<Model&UserContract>
+     */
+    protected static function getUserClass(): string
+    {
+        return XotData::make()->getUserClass();
+    }
+
+    /**
+     * @param  array<string, mixed>  $attributes
+     */
+    protected static function createTestUser(array $attributes = []): UserContract
     {
         return User::factory()->createOne($attributes);
     }
@@ -81,7 +119,7 @@ abstract class TestCase extends RootTestCase
 
         if (is_dir($dir)) {
             foreach (File::files($dir) as $file) {
-                $decoded = 'json' === $file->getExtension() ? json_decode(file_get_contents($file->getPathname()), true) : null;
+                $decoded = $file->getExtension() === 'json' ? json_decode(file_get_contents($file->getPathname()), true) : null;
                 if (is_array($decoded) && 'home' === ($decoded['slug'] ?? null)) {
                     $homepage = $decoded;
                     break;
@@ -89,7 +127,7 @@ abstract class TestCase extends RootTestCase
             }
         }
 
-        if (null === $homepage) {
+        if ($homepage === null) {
             Assert::markTestSkipped('No homepage JSON (slug "home") in '.$dir.' for the current tenant.');
         }
 
@@ -115,7 +153,7 @@ abstract class TestCase extends RootTestCase
     public static function homepageBlocksForLocale(string $locale): array
     {
         $blocks = self::homepageJsonForBlocksArchitecture()['content_blocks'][$locale] ?? null;
-        if (null === $blocks) {
+        if ($blocks === null) {
             Assert::fail('Homepage JSON has no content_blocks for locale "'.$locale.'".');
         }
 
@@ -123,8 +161,7 @@ abstract class TestCase extends RootTestCase
     }
 
     /**
-     * @param array<mixed> $contentBlocks
-     *
+     * @param  array<mixed>  $contentBlocks
      * @return array<string, list<array{type: string, data: array<string, mixed>}>>
      */
     private static function blocksByLocale(array $contentBlocks): array
@@ -169,8 +206,7 @@ abstract class TestCase extends RootTestCase
     }
 
     /**
-     * @param array<mixed> $data
-     *
+     * @param  array<mixed>  $data
      * @return array<string, mixed>
      */
     private static function stringKeys(array $data): array
