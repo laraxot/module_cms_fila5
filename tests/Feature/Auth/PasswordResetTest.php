@@ -7,11 +7,8 @@ namespace Modules\Cms\Tests\Feature\Auth;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Volt\Volt as LivewireVolt;
-use Modules\Xot\Tests\TestCase;
 
 use function Pest\Laravel\get;
-
-uses(TestCase::class);
 
 test('forgot password screen can be rendered', function (): void {
     $lang = app()->getLocale();
