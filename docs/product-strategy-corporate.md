@@ -1,14 +1,14 @@
 ---
-title: "PRODUCT STRATEGY"
+title: "Product strategy Cms (corporate v1.0)"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
-qmd: "PRODUCT STRATEGY"
+updated: 2026-10-25
+qmd: "cms product strategy corporate executive summary"
 issues: []
 discussions: []
 status: superseded
-superseded_by: product_strategy.md
+superseded_by: product-strategy.md
 ---
 
 # Cms Module - Product Strategy

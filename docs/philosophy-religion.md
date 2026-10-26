@@ -1,10 +1,10 @@
 ---
-title: "PHILOSOPHY"
+title: "Cms philosophy, religion e zen"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
-qmd: "PHILOSOPHY"
+updated: 2026-10-25
+qmd: "cms philosophy religion dogmi pagine sezioni blocchi"
 issues: []
 discussions: []
 status: draft
