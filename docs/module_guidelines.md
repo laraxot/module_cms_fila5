@@ -10,7 +10,8 @@ discussions: []
 module: theme
 topic: module_guidelines
 canonical: ../../../Themes/docs/shared-components/module-guidelines.md
-status: stub
+status: superseded
+superseded_by: modulelines.md
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/module-guidelines.md

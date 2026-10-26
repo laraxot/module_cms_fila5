@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "user dropdown errors"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Errori nel Componente User Dropdown

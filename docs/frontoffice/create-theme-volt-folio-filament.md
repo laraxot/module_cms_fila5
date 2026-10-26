@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "create theme volt folio filament"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Creazione di un Tema con Volt, Folio e Filament

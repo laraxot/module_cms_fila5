@@ -5,6 +5,7 @@ module: Cms
 status: decision-input
 updated: 2026-10-15
 tags: [sustainability, cms, content, bmad]
+qmd: "contenuto di sostenibilità (ownership cms) cms"
 ---
 
 # Contenuto di sostenibilità (ownership Cms)
