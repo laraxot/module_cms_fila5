@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Feature\Auth;
 
 use Illuminate\Support\Str;
-use Modules\Xot\Tests\TestCase;
-
-uses(TestCase::class);
 
 function cmsProfileGenerateUniqueEmail(): string
 {
