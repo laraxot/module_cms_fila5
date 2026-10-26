@@ -1,3 +1,11 @@
+---
+title: "Cms — PHPStan variable.unused BMAD"
+type: note
+status: draft
+updated: 2026-10-20
+tags: [docs, cms]
+qmd: "cms   phpstan variable.unused bmad cms"
+---
 # Cms — PHPStan variable.unused BMAD
 
 **Module purpose:** CMS blocks/themes, style classes, footer/header config; production = actions/datas, tests = unit actions + datas.

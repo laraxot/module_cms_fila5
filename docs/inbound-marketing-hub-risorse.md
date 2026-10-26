@@ -5,6 +5,7 @@ module: Cms
 status: decision-input
 updated: 2026-10-15
 tags: [inbound, cms, risorse, afc, bmad]
+qmd: "hub risorse (ownership cms) cms"
 ---
 
 # Hub risorse (ownership Cms)
