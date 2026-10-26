@@ -5,6 +5,7 @@ status: superseded
 updated: 2026-10-20
 superseded_by: ./content-blocks-architecture.md
 qmd: "content blocks architecture underscore superseded"
+tags: [docs, cms]
 ---
 
 # Superseded

@@ -9,7 +9,7 @@ issues: []
 discussions: []
 status: active
 related:
-  - ../../00-INDEX.md
+  - ../../00-index.md
   - ../../scopo.md
   - ../../content-blocks-architecture.md
   - ./headernavblock-filament-builder.md
@@ -17,7 +17,7 @@ related:
 
 # Header Nav Block Architecture
 
-Indice: [../../00-INDEX.md](../../00-INDEX.md) · scopo: [../../scopo.md](../../scopo.md) · builder: [headernavblock-filament-builder.md](./headernavblock-filament-builder.md).
+Indice: [../../00-INDEX.md](../../00-index.md) · scopo: [../../scopo.md](../../scopo.md) · builder: [headernavblock-filament-builder.md](./headernavblock-filament-builder.md).
 
 **Perché:** se il dato varia per tenant/comune, sta nel JSON — non nel Blade.
 

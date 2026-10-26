@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "header language avatar implementation"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: ../header-language-avatar-implementation.md
 ---
 
 # Implementazione del Selettore di Lingua e Avatar Utente nell'Header

@@ -6,6 +6,7 @@ created: 2026-10-15
 updated: 2026-10-19
 module: Cms
 tags: [docs, cms]
+qmd: "test location rule   cms cms"
 ---
 
 # Test Location Rule — Cms

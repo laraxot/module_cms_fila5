@@ -7,6 +7,7 @@ tags: [phpstan, phpdoc, type-safety, standards]
 created: 2026-06-10
 updated: 2026-06-10
 qmd: docs/wiki/phpstan-cms-module.md
+status: draft
 ---
 
 # PHPStan Level 10 Standards - Cms Module

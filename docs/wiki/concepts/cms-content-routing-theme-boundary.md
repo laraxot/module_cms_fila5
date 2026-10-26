@@ -13,6 +13,8 @@ related:
   - "../../../../Fixcity/docs/wiki/concepts/ticket-domain-and-public-flow-boundary.md"
   - "../../../../../Themes/Sixteen/docs/wiki/concepts/legal-consent-ui-boundary.md"
   - "../../../../../../bmad-output/docs-architecture/ownership.md"
+status: draft
+qmd: "cms content, routing and theme boundary cms"
 ---
 
 # CMS content, routing and theme boundary

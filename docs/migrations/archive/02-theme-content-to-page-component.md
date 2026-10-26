@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "02 theme content to page component"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: theme-content-to-page-component.md
 ---
 
 # Migrazione da $_theme->showPageContent() a <x-page> Component

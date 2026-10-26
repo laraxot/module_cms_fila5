@@ -8,7 +8,7 @@ updated: 2026-10-20
 tags: [scopo, cms, folio, blocks, filament-builder, json, i18n]
 qmd: "scopo cms pagine folio blocchi json filament builder resolve page safe helpers"
 related:
-  - ./00-INDEX.md
+  - ./00-index.md
   - ./README.md
   - ./actions/page-resolution-pipeline.md
   - ./content-blocks-architecture.md
@@ -22,7 +22,7 @@ related:
 
 # Cms — scopo, confini e contratti chiave
 
-Ingresso: [00-INDEX.md](./00-INDEX.md) · stato misurato: [README.md](./README.md).
+Ingresso: [00-INDEX.md](./00-index.md) · stato misurato: [README.md](./README.md).
 
 ## Perché esiste
 
@@ -60,7 +60,7 @@ Cms tocca filesystem e JSON di tenant. Le funzioni native che tornano `false` na
 
 ## Collegamenti
 
-- [00-INDEX.md](./00-INDEX.md)
+- [00-INDEX.md](./00-index.md)
 - [wiki/scopo.md](./wiki/scopo.md) — stub verso questo file
 - [Lang — scopo](../../Lang/docs/scopo.md) — i18n e locale switcher
 - [Themes/Zero — README](../../../Themes/Zero/docs/README.md) — presentazione FO

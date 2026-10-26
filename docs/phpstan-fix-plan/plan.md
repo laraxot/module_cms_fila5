@@ -6,6 +6,7 @@ created: 2026-10-20
 updated: 2026-10-20
 module: Cms
 tags: [docs, cms, phpstan-fix-plan]
+qmd: "phpstan fix plan - cms module cms"
 ---
 
 # PHPStan Fix Plan - Cms Module

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "semantic"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Elementi Semantici HTML5

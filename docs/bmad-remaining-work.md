@@ -9,6 +9,8 @@ tags: [bmad, cms, module, stories, remaining-work]
 related:
   - ../../docs/second-brain/project/bmad-architecture.md
   - ../../docs/second-brain/project/bmad-stories.md
+status: draft
+qmd: "cms module   bmad stories & remaining work cms"
 ---
 
 # Cms Module — BMAD Stories & Remaining Work

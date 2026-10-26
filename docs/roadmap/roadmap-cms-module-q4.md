@@ -1,11 +1,12 @@
 ---
 title: "CMS Module Roadmap (2025 Q4)"
 type: note
-status: draft
 created: 2026-10-20
 updated: 2026-10-20
 module: Cms
 tags: [docs, cms, roadmap]
+status: superseded
+superseded_by: roadmap-q4.md
 ---
 
 # CMS Module Roadmap (2025 Q4)

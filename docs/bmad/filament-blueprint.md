@@ -53,7 +53,7 @@ Test business e Resource CMS: helper su `TestCase` static, no mix Pest chain che
 
 Prima del fix: scopo pagina/Resource in questo blueprint → chiamanti → causa tipizzata; **non zittire** l'errore.
 
-Track: [phpstan-modules-zero-standing-order](../../Xot/docs/wiki/memories/phpstan-modules-zero-standing-order.md), [00-start.md](../../../../../bashscripts/docs/prompts/00-start.md#ordine-permanente-dellutente), [11-phpstan.md](../../../../../bashscripts/docs/prompts/11-phpstan.md). Resource: solo [XotBaseResource](../../Xot/app/Filament/Resources/XotBaseResource.php) — ratchet [NeverExtendFilamentDirectlyTest.php](../../Xot/tests/Unit/Filament/NeverExtendFilamentDirectlyTest.php).
+Track: [phpstan-modules-zero-standing-order](../../../Xot/docs/wiki/memories/phpstan-modules-zero-standing-order.md), [00-start.md](../../../../../bashscripts/docs/prompts/00-start.md#ordine-permanente-dellutente), [11-phpstan.md](../../../../../bashscripts/docs/prompts/11-phpstan.md). Resource: solo [XotBaseResource](../../../Xot/app/Filament/Resources/XotBaseResource.php) — ratchet [NeverExtendFilamentDirectlyTest.php](../../../Xot/tests/Unit/Filament/NeverExtendFilamentDirectlyTest.php).
 
 ## Related
 

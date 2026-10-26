@@ -129,26 +129,53 @@ class Page extends BaseModelLang
     }
 
     /**
-     * @return array<int, string>
+     * Middleware dichiarati dal JSON della pagina, o `[]` se la pagina non esiste o non ne dichiara.
+     *
+     * @return list<string>
+     *
+     * @throws \UnexpectedValueException se il campo e' dichiarato ma non e' una lista di stringhe (DCP-283, C-03)
      */
     public static function getMiddlewareBySlug(string $slug): array
     {
         $page = self::findUniqueBySlug($slug);
 
-        if (! $page instanceof self) {
+        return $page instanceof self ? $page->declaredMiddleware() : [];
+    }
+
+    /**
+     * Un campo `middleware` illeggibile NON equivale a "nessun middleware": renderebbe pubblica una pagina protetta.
+     * Esempi misurati: la stringa `"auth"` al posto della lista il cast `array` la legge come null; `array_filter(is_string)`
+     * toglieva le voci non stringa. Solo `null`, assente o `[]` sono una pagina pubblica.
+     *
+     * @return list<string>
+     *
+     * @throws \UnexpectedValueException
+     */
+    public function declaredMiddleware(): array
+    {
+        $middleware = $this->middleware;
+
+        if ($middleware === null) {
+            if (null !== ($this->getAttributes()['middleware'] ?? null)) {
+                throw new \UnexpectedValueException(sprintf("Il campo 'middleware' della pagina '%s' e' dichiarato ma non e' una lista JSON.", (string) $this->slug));
+            }
+
             return [];
         }
 
-        $middleware = $page->middleware;
-
-        if (! \is_array($middleware)) {
-            return [];
+        if (! array_is_list($middleware)) {
+            throw new \UnexpectedValueException(sprintf("Il campo 'middleware' della pagina '%s' non e' una lista.", (string) $this->slug));
         }
 
-        /** @var array<int, string> $result */
-        $result = array_values(array_filter($middleware, static fn (mixed $value): bool => \is_string($value)));
+        $declared = [];
+        foreach ($middleware as $entry) {
+            if (! \is_string($entry) || trim($entry) === '') {
+                throw new \UnexpectedValueException(sprintf("Il campo 'middleware' della pagina '%s' contiene una voce che non e' una stringa non vuota.", (string) $this->slug));
+            }
+            $declared[] = $entry;
+        }
 
-        return $result;
+        return $declared;
     }
 
     /**

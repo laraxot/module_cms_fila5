@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "pages content strategy"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: pages-content-strategy.md
 ---
 
 # Strategia Contenuti Pagine - <main module>
