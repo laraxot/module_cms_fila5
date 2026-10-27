@@ -37,5 +37,5 @@ Risolti unificando sul nome canonico. Guardia automatica prevista in `laravel/Th
 Contratto del tema: `laravel/Themes/Sixteen/docs/layout-runtime-contract.md`.
 
 ## Sezioni con template alternativo (`tpl`)
-`<x-section slug="header" tpl="design-comuni" />` cerca la vista `pub_theme::components.sections.<slug>.<tpl>` (default `v1`; il footer del sito usa `full`). Una sezione nuova = un file `sections/<slug>.json`
+`<x-section slug="header" tpl="v1" />` cerca la vista `pub_theme::components.sections.<slug>.<tpl>` (default `v1`; il footer canonico del sito usa `v1`). Una sezione nuova = un file `sections/<slug>.json`
 con `blocks.it/en[].data` e un template `sections/<slug>/<tpl>.blade.php` che unisce i `data` dei blocchi come fanno gli altri template. Usato da `layouts/design-comuni` del tema Sixteen (2026-10-13).
