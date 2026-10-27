@@ -47,6 +47,7 @@ docs/archive
 docs/archived
 docs/cache/
 docs/legacy
+docs/archive/
 docs/phpstan/
 /docs/vendor/
 #  docs/wiki/rules/module-theme-root-cleanup.md)
