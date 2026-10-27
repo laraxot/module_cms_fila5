@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "product roadmap"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: product_roadmap.md
 ---
 
 # Cms Module - Product Roadmap
@@ -111,8 +112,3 @@ To provide a **flexible content management system** that empowers non-technical 
 
 ---
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -50,7 +50,10 @@ new class extends Component {
 };
 ```
 
-**Vietato:** `container0.list`, `match` locale→`home`, `CmsPage`/`pageTitle` nel mount. Canon Sixteen: [folio-container0-index-filament-way.md](../../../../../../docs/wiki/memories/folio-container0-index-filament-way.md).
+**Vietato:** `container0.list`, `match` locale→`home`, `CmsPage`/`pageTitle` nel mount,
+`nativePage`/`utilityPage`, `@include` pages, `x-dynamic-component` layout.
+Canon Sixteen: [folio-container0-index-filament-way.md](../../../../../../docs/wiki/memories/folio-container0-index-filament-way.md) ·
+[container0-index-shell-contract.md](../../../../../Themes/Sixteen/docs/bmad/container0-index-shell-contract.md) (D20).
 
 ## Esempio `[container1]`
 

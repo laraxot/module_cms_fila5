@@ -100,8 +100,3 @@ use Modules\User\App\Filament\Widgets\RegistrationWidget;
 ## Conclusione
 
 Rispettare la struttura corretta dei moduli è fondamentale per mantenere un codice organizzato e funzionante. Gli errori nella struttura possono portare a problemi di caricamento delle classi, errori di namespace e difficoltà nella manutenzione del codice. Seguendo le linee guida sopra descritte, è possibile evitare questi errori e contribuire a un codebase più robusto e manutenibile.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

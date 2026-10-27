@@ -7,8 +7,10 @@ namespace Modules\Cms\Providers;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Folio\Folio;
+use Laravel\Folio\FolioRoutes;
 use Livewire\Volt\Volt;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter;
 use Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes;
@@ -17,16 +19,20 @@ use Modules\Cms\Http\Middleware\SetFolioLocale;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 use Modules\Xot\Datas\XotData;
 use Nwidart\Modules\Facades\Module;
-use Webmozart\Assert\Assert;
 
+use function Safe\preg_replace;
 use function Safe\realpath;
+
+use Webmozart\Assert\Assert;
 
 class FolioVoltServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
-    public function register(): void {}
+    public function register(): void
+    {
+    }
 
     /**
      * Bootstrap services.
@@ -44,6 +50,28 @@ class FolioVoltServiceProvider extends ServiceProvider
         $this->app->booted(function (): void {
             $this->registerFolioPaths();
         });
+    }
+
+    /**
+     * Le pagine Folio sono montate una volta per lingua con lo stesso nome di rotta e FolioRoutes tiene
+     * l'ultima (`it`): `route('container0.view')` rimandava a `/it/...` anche da `/de` (DCP-123).
+     * Il resolver di Folio viene sostituito da uno che sposta il prefisso sulla lingua corrente.
+     *
+     * @param  list<string>  $supportedLocales
+     */
+    protected function localizeFolioNamedRoutes(array $supportedLocales): void
+    {
+        $localePrefix = '#^((?:https?://[^/]+)?)/(?:'.implode('|', array_map(preg_quote(...), $supportedLocales)).')(?=[/?\#]|$)#';
+
+        URL::resolveMissingNamedRoutesUsing(
+            static function (string $name, array $parameters, bool $absolute) use ($localePrefix): ?string {
+                $routes = app(FolioRoutes::class);
+
+                return $routes->has($name)
+                    ? preg_replace($localePrefix, '${1}/'.app()->getLocale(), $routes->get($name, $parameters, $absolute), 1)
+                    : null;
+            }
+        );
     }
 
     /**
@@ -160,6 +188,8 @@ class FolioVoltServiceProvider extends ServiceProvider
                     ]);
             }
         }
+
+        $this->localizeFolioNamedRoutes($supportedLocales);
 
         if (! empty($paths)) {
             Volt::mount($paths);

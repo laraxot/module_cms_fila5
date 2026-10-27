@@ -26,4 +26,10 @@ return [
         'edit' => ['label' => 'Modifica Page Content Builder'],
         'delete' => ['label' => 'Elimina Page Content Builder'],
     ],
+    'messages' => [
+        'block_unavailable' => [
+            'title' => 'Blocco non disponibile',
+            'body' => 'Il blocco ":block" non puo essere caricato e non e mostrato nell\'editor. Controllare il log prima di salvare.',
+        ],
+    ],
 ];

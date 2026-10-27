@@ -37,8 +37,3 @@ Secondo le regole di organizzazione della documentazione:
 Questo documento è collegato bidirezionalmente con [cms-link.md](../../xot/project_docs/cms-link.md) nel modulo Xot.
 
 > Aggiorna entrambi i riferimenti se modifichi la struttura della documentazione o aggiungi nuove sezioni.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

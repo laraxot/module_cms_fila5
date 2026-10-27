@@ -7,11 +7,12 @@ updated: 2026-09-26
 qmd: "git conflicts resolution impact"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Impatto Risoluzione Conflitti Git - Modulo Cms
 
-## Data: 2025-01-06
+## Data: [DATE]
 
 ## Contesto
 Il modulo Cms è stato coinvolto indirettamente nella risoluzione di conflitti Git che hanno interessato moduli correlati. Questo documento analizza l'impatto e le implicazioni per il sistema di gestione contenuti.
@@ -159,7 +160,7 @@ php artisan lang:check
 ### Moduli Correlati
 - [Geo Conflict Resolution](../../geo/project_docs/conflict-resolution.md)
 - [User Theme Conflicts](../../user/project_docs/theme-translation-conflicts-resolution.md)
-- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-2025-01-06.md)
+- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-[date].md)
 
 ### Documentazione Cms
 - [Content Management](content-management.md)
@@ -201,7 +202,7 @@ php artisan lang:check
 ### Documentazione Moduli
 - [Geo Conflict Resolution](../../geo/project_docs/conflict-resolution.md)
 - [User Theme Conflicts](../../user/project_docs/theme-translation-conflicts-resolution.md)
-- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-2025-01-06.md)
+- [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-[date].md)
 
 ### Documentazione Cms
 - [Content Management](content-management.md)
@@ -209,19 +210,6 @@ php artisan lang:check
 - [Architecture](frontoffice/architecture.md)
 
 ---
-
-title: "git conflicts resolution impact"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "git conflicts resolution impact"
-issues: []
-discussions: []
-**Ultimo aggiornamento**: 2025-01-06
+**Ultimo aggiornamento**: [DATE]
 **Autore**: Sistema di correzione automatica
 **Stato**: ✅ Completato
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

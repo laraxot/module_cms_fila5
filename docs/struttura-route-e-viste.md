@@ -127,8 +127,3 @@ Per identificare il file corrispondente a un URL specifico:
 **Problema**: Le route e le viste del backoffice (Filament) e del frontoffice sono gestite in modo diverso.
 
 **Soluzione**: Identifica prima se la route appartiene al backoffice o al frontoffice, poi cerca nei percorsi appropriati.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

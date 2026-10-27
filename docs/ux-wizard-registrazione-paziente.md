@@ -218,7 +218,3 @@ L'applicazione di questi principi di UX al wizard di registrazione paziente dovr
 - [Documenti di progettazione il progetto](/project_docs/07-frontend/leggi-ux.md)
 - [Documentazione Filament Forms](https://filamentphp.com/project_docs/forms)
 - [Best Practices Filament](/project_docs/tecnico/filament/best-practices.md) 
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

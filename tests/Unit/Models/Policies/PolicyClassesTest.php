@@ -19,39 +19,33 @@ test('CmsBasePolicy is an abstract class', function () {
 });
 
 test('PagePolicy can be instantiated', function () {
-    $policy = new PagePolicy;
+    Assert::assertSame(PagePolicy::class, (new PagePolicy)::class);
 
-    Assert::assertInstanceOf(PagePolicy::class, $policy);
 });
 
 test('SectionPolicy can be instantiated', function () {
-    $policy = new SectionPolicy;
+    Assert::assertSame(SectionPolicy::class, (new SectionPolicy)::class);
 
-    Assert::assertInstanceOf(SectionPolicy::class, $policy);
 });
 
 test('PageContentPolicy can be instantiated', function () {
-    $policy = new PageContentPolicy;
+    Assert::assertSame(PageContentPolicy::class, (new PageContentPolicy)::class);
 
-    Assert::assertInstanceOf(PageContentPolicy::class, $policy);
 });
 
 test('ConfPolicy can be instantiated', function () {
-    $policy = new ConfPolicy;
+    Assert::assertSame(ConfPolicy::class, (new ConfPolicy)::class);
 
-    Assert::assertInstanceOf(ConfPolicy::class, $policy);
 });
 
 test('MenuPolicy can be instantiated', function () {
-    $policy = new MenuPolicy;
+    Assert::assertSame(MenuPolicy::class, (new MenuPolicy)::class);
 
-    Assert::assertInstanceOf(MenuPolicy::class, $policy);
 });
 
 test('ModulePolicy can be instantiated', function () {
-    $policy = new ModulePolicy;
+    Assert::assertSame(ModulePolicy::class, (new ModulePolicy)::class);
 
-    Assert::assertInstanceOf(ModulePolicy::class, $policy);
 });
 
 test('PagePolicy grants abilities from the page.* permissions', function () {

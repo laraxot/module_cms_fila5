@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "user research"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: user_research.md
 ---
 
 # Cms Module - User Research
@@ -95,8 +96,3 @@ Non-technical users need onboarding.
 
 ---
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

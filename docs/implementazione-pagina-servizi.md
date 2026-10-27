@@ -269,8 +269,3 @@ L'implementazione riflette una comprensione profonda delle implicazioni:
 **Review**: Approvazione stakeholder medici, tecnici, UX
 
 *Implementazione completata seguendo rigorosamente la filosofia <main module>: democratizzazione dell'accesso alla salute orale attraverso tecnologia umana, competente e inclusiva.* 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

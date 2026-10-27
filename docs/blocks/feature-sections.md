@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "feature sections"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Feature Sections Block

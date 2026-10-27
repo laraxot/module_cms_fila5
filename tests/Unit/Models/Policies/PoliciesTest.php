@@ -9,18 +9,18 @@ use PHPUnit\Framework\Assert;
 
 test('PagePolicy can be instantiated', function () {
     $policy = new PagePolicy;
+    Assert::assertSame(PagePolicy::class, $policy::class);
 
-    Assert::assertInstanceOf(PagePolicy::class, $policy);
 });
 
 test('MenuPolicy can be instantiated', function () {
     $policy = new MenuPolicy;
+    Assert::assertSame(MenuPolicy::class, $policy::class);
 
-    Assert::assertInstanceOf(MenuPolicy::class, $policy);
 });
 
 test('SectionPolicy can be instantiated', function () {
     $policy = new SectionPolicy;
+    Assert::assertSame(SectionPolicy::class, $policy::class);
 
-    Assert::assertInstanceOf(SectionPolicy::class, $policy);
 });

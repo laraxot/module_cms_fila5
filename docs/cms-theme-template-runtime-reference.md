@@ -590,7 +590,3 @@ test('page renders with blocks', function () {
 - [Folio Documentation](https://laravel.com/docs/folio)
 - [Volt Documentation](https://laravel.com/docs/volt)
 - [Spatie Laravel Data](https://spatie.be/docs/laravel-data)
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

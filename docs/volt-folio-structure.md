@@ -280,8 +280,3 @@ function login(): void {
 - [Volt Best Practices](./volt_best_practices.md)
 - [Autenticazione con Volt e Folio](../../User/docs/volt_folio_auth_implementation.md)
 - [Layout Components](../components/layouts.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "page component architecture"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Page Component Architecture - Cms Module
@@ -17,15 +18,6 @@ discussions: []
 **Priority:** 🔴 **Critical Architecture**
 
 ---
-
-title: "page component architecture"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "page component architecture"
-issues: []
-discussions: []
 ## 🎯 Scopo
 
 Questo documento spiega l'architettura del componente `Page` nel modulo Cms e come i temi devono (o non devono) overridearlo.
@@ -365,8 +357,3 @@ class BlockData extends Data {
 **🔄 Status:** ✅ **Documented**
 
 🐮 **Architecture Documented - Use x-cms-page!**
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

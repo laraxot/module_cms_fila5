@@ -118,7 +118,7 @@ I blocchi sono l'unità base di contenuto. Ogni blocco:
 
 ## Documentazione Correlata
 
-- [Gestione dei Temi](../themes/readme.md)
+- [Gestione dei Temi](../../../../Themes/README.md)
 - [Componenti UI](../components/README.md)
 - [Configurazione Blocchi](../blocks/README.md)
 - [Ottimizzazione Performance](../performance/readme.md)

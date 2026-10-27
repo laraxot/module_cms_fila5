@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "original"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Frontend e Sistema di Componenti
