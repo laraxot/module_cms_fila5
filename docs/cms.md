@@ -35,8 +35,3 @@ Questo file contiene i collegamenti alla documentazione frontend che si trova ne
 
 Per la documentazione completa sull'architettura frontend, consultare:
 [Architettura Frontend](../laravel/modules/cms/docs/frontend-architecture.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

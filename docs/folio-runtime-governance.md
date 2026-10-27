@@ -35,8 +35,3 @@ Molti bug apparentemente “di Blade” o “di CMS” in realta' nascono dal ru
 - route name non dichiarato;
 - parametro wildcard ri-estratto male;
 - logica business messa nel page file invece che in Action o component.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

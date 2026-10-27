@@ -10,19 +10,20 @@ use Spatie\LaravelData\Data;
 test('FooterData can be instantiated', function (): void {
     $footerData = new FooterData;
 
-    Assert::assertInstanceOf(FooterData::class, $footerData);
+    Assert::assertSame('cms::components.footer', $footerData->view);
 });
 
 test('FooterData extends Spatie Data', function (): void {
-    $footerData = new FooterData;
+    $parent = (new ReflectionClass(FooterData::class))->getParentClass();
 
-    Assert::assertInstanceOf(Data::class, $footerData);
+    Assert::assertNotFalse($parent);
+    Assert::assertSame(Data::class, $parent->getName());
 });
 
 test('FooterData implements Wireable interface', function (): void {
-    $footerData = new FooterData;
+    $interfaces = \Safe\class_implements(FooterData::class);
 
-    Assert::assertInstanceOf(Wireable::class, $footerData);
+    Assert::assertContains(Wireable::class, $interfaces);
 });
 
 test('FooterData has default view path', function (): void {
@@ -69,8 +70,6 @@ test('FooterData can be created from array using from method', function (): void
     ];
 
     $footerData = FooterData::from($data);
-
-    Assert::assertInstanceOf(FooterData::class, $footerData);
 
     Assert::assertSame('#ffffff', $footerData->background_color);
 

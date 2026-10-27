@@ -184,8 +184,3 @@ class CounterTest extends TestCase
 ## Collegamenti tra versioni di volt-introduction.md
 * [volt-introduction.md](laravel/modules/cms/docs/volt-introduction.md)
 * [volt-introduction.md](laravel/modules/cms/docs/components/volt-introduction.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

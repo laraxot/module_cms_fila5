@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "script placement rules"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: script_placement_rules.md
 ---
 
 # Script Placement Rules
@@ -75,8 +76,3 @@ ModuleName/
 
 - 2026-03-12: Rule established after discovering misplaced scripts causing PHPStan errors
 - Files moved: `generate_test_data.php`, `populate_database_comprehensive.php`
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

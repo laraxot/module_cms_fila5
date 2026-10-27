@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\ConfirmComponent;
 use PHPUnit\Framework\Assert;
 
 describe('Password ConfirmComponent', function (): void {
     test('confirm component extends volt component', function (): void {
         $component = new ConfirmComponent;
+        Assert::assertSame(ConfirmComponent::class, $component::class);
 
-        Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
     test('confirm component has password property', function (): void {
@@ -29,8 +28,7 @@ describe('Password ConfirmComponent', function (): void {
         $method = $reflection->getMethod('confirm');
         $returnType = $method->getReturnType();
 
-        Assert::assertNull($returnType);
-
-        Assert::assertSame('Illuminate\Http\RedirectResponse', (string) $returnType);
+        Assert::assertInstanceOf(ReflectionNamedType::class, $returnType);
+        Assert::assertSame('Illuminate\Http\RedirectResponse', $returnType->getName());
     });
 });

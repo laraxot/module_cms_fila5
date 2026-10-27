@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Cms\Unit\Support;
+namespace Modules\Cms\Tests\Unit\Support;
 
 use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\User\Models\User;
@@ -11,7 +11,8 @@ use Modules\Xot\Datas\MetatagData;
 use PHPUnit\Framework\Assert;
 
 /**
- * @param  array<string, mixed>  $schema
+ * @param array<string, mixed> $schema
+ *
  * @return array<string, mixed>
  */
 function pageSchemaMainEntity(array $schema): array

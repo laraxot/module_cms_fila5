@@ -75,8 +75,3 @@ Vedi [folio-filesystem-routing-no-web-php.md](wiki/concepts/folio-filesystem-rou
 
 - [folio-filesystem-routing-no-web-php.md](wiki/concepts/folio-filesystem-routing-no-web-php.md) — file = rotta, mai web.php FO
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

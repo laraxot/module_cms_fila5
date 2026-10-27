@@ -1,10 +1,10 @@
 ---
-title: "quality status "
+title: "quality status"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "quality status "
+qmd: "quality status"
 issues: []
 discussions: []
 status: draft
@@ -94,17 +94,13 @@ This informs PHPStan that the object has BOTH:
 2. Interface contract compliance
 
 ---
+*
 *PHPStan: PASSED*
 *Status: PRODUCTION READY*
 
-## Aggiornamento 2025-11-18
+## Aggiornamento [DATE]
 
 - Introdotto il trait `TypedHasRecursiveRelationships` per tipizzare tutti i metodi richiesti dal contratto `HasRecursiveRelationshipsContract`.
 - `Menu`, `LimeQuestion` e i `BaseTreeModel` di Cms/Xot utilizzano ora il trait tipizzato (non più quello del vendor), evitando i fatal error di compatibilità riscontrati da PHPStan.
 - Aggiornati i test `MenuBusinessLogicTest` per verificare la presenza del nuovo trait e ripristinato l'uso di `SushiToJsons` nel modello.
 - Prossimi passi: eliminare le chiamate di debug `dddx()` e centralizzare l'helper `authId()` per ridurre gli errori residui (613) emersi dall’ultima esecuzione completa di PHPStan.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

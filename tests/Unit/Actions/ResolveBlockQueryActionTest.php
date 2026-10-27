@@ -7,9 +7,8 @@ use Modules\Cms\Models\Page;
 use PHPUnit\Framework\Assert;
 
 test('ResolveBlockQueryAction can be instantiated', function () {
-    $action = new ResolveBlockQueryAction;
+    Assert::assertSame(ResolveBlockQueryAction::class, (new ResolveBlockQueryAction)::class);
 
-    Assert::assertInstanceOf(ResolveBlockQueryAction::class, $action);
 });
 
 test('ResolveBlockQueryAction returns empty array when model is null', function () {

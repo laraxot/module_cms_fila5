@@ -239,8 +239,3 @@ qmd: "page translation strategy"
 issues: []
 discussions: []
 **Status**: Active - Critical issues identified requiring immediate attention
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

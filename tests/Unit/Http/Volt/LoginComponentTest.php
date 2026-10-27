@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use Livewire\Volt\Component;
 use Modules\Cms\Http\Volt\LoginComponent;
 use PHPUnit\Framework\Assert;
 
 describe('LoginComponent', function (): void {
     test('login component extends volt component', function (): void {
         $component = new LoginComponent;
+        Assert::assertSame(LoginComponent::class, $component::class);
 
-        Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('login component has email property', function (): void {

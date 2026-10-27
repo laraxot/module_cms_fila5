@@ -181,8 +181,8 @@ Output: `Themes/Sixteen/docs/design-comuni/screenshots/`
 - [Documentazione Script](../../../bashscripts/docs/DESIGN_COMUNI_SCREENSHOT_SCRIPT.md)
 
 ### Moduli Correlati
-- [UI Module - Blocks System](../UI/docs/blocks-system.md)
-- [UI Module - Design System](../UI/docs/design-system.md)
+- [UI Module - Blocks System](../../UI/docs/blocks-system.md)
+- [UI Module - Design System](../../UI/docs/design-system.md)
 
 ## Prossimi Passi
 
@@ -237,8 +237,3 @@ Esito aggiornato:
 Implicazione pratica:
 - per questa pagina non e ancora corretto parlare di parity ottenibile con soli CSS/JS
 - prima serve riallineare struttura e wrapper effettivamente renderizzati dal tema
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

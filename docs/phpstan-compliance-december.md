@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "phpstan compliance december"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: phpstan-compliance-dec.md
 ---
 
 # PHPStan Compliance - Dicembre 2025
@@ -93,8 +94,3 @@ $description = SafeStringCastAction::cast($attachment->description);
 ## 🎉 Risultati
 
 Il modulo Cms è ora completamente compliant con PHPStan Level 10, servendo da riferimento per gli altri moduli del progetto Laraxot.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
