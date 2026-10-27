@@ -104,7 +104,3 @@ The Cms module provides a comprehensive content management system:
 - External integration
 - Recommendation system
 - Versioning system
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

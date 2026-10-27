@@ -389,7 +389,7 @@ La cartella `docs/` è ben organizzata con:
 ### Documentazione Correlata
 - [Roadmap Progetto](../../../../docs/roadmap_project.md)
 - [Modulo User](../../user/docs/roadmap_complete.md)
-- [Modulo Media](../../Media/docs/readme.md)
+- [Modulo Media](../../Media/docs/README.md)
 - [Theme Sixteen](../../../Themes/Sixteen/docs/README.md)
 
 ### Resources
@@ -404,8 +404,3 @@ La cartella `docs/` è ben organizzata con:
 **Maintainer**: CMS Team
 **Status**: 🚧 In Development (65% completo)
 **Prossima Revisione**: [DATE]
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

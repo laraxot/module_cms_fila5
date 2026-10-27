@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content management"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sistema di Gestione Contenuti
@@ -125,8 +126,3 @@ Questa documentazione è parte del sistema di documentazione di <main module>. P
 * [content-management.md](laravel/modules/cms/project_docs/content-management.md)
 * [content-management.md](laravel/modules/cms/project_docs/roadmap/features/content-management.md)
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

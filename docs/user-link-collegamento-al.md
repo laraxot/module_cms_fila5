@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "user link 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Collegamento al Modulo User
@@ -36,15 +37,6 @@ Per dettagli specifici, consulta:
 - [Best Practices Filament nel modulo User](../../user/docs/filament_best_practices.md)
 
 ---
-
-title: "user link 1"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "user link 1"
-issues: []
-discussions: []
 ### Nota Importante
 Quando aggiungi nuovi componenti Filament, assicurati di:
 1. Utilizzare il namespace corretto
@@ -54,8 +46,3 @@ Quando aggiungi nuovi componenti Filament, assicurati di:
 ## Collegamenti tra versioni di user-link.md
 * [user-link.md](user-link.md)
 * [user-link.md](user-link.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

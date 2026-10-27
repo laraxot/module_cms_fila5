@@ -125,7 +125,3 @@ Ecco l'elenco dei componenti blocchi comuni e i loro percorsi:
 3. **Estensioni Corrette**: Assicurarsi che i file abbiano l'estensione `.blade.php`
 4. **Proprietà Props**: Definire chiaramente le props accettate dal componente usando la direttiva `@props`
 5. **Documentazione**: Documentare il comportamento e l'uso di ogni componente 
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

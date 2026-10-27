@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament blade components 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Filament Blade Components Usage (CMS)
@@ -43,8 +44,3 @@ Per le best practice di **Filament** (https://filamentphp.com/docs/3.x/support/b
 ## Collegamenti tra versioni di filament-blade-components.md
 * [filament-blade-components.md](filament-blade-components.md)
 * [filament-blade-components.md](filament-blade-components.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

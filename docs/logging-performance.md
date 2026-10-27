@@ -63,7 +63,3 @@ activity()->causedBy($user)->log('Page updated');
 // Use metrics for tracking
 Metrics::increment('cms.pages.rendered');
 ```
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

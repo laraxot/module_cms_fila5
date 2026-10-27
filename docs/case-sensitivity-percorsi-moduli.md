@@ -145,8 +145,3 @@ Sviluppare una memoria visiva per i pattern corretti:
 ## Conclusione
 
 Rispettare la case sensitivity nei percorsi è fondamentale per garantire la compatibilità cross-platform e la manutenibilità del codice. Seguendo queste linee guida, è possibile evitare errori comuni e mantenere una struttura coerente in tutto il progetto il progetto.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

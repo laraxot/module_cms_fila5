@@ -153,8 +153,3 @@ Result is merged into block `data` before include.
 - `Modules/Cms/app/Actions/ResolveBlockQueryAction.php`
 - `Themes/Meetup/resources/views/pages/*.blade.php`
 - `config/local/laravelpizza/database/content/pages/*.json`
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

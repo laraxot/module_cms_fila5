@@ -114,8 +114,3 @@ class AdminPanelProvider extends PanelProvider
 ## Collegamenti tra versioni di temi.md
 * [temi.md](docs/regole/temi.md)
 * [temi.md](laravel/modules/cms/docs/temi.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

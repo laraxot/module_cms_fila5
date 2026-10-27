@@ -3,7 +3,7 @@ title: "page directory structure"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-20
 qmd: "page directory structure"
 issues: []
 discussions: []
@@ -40,6 +40,10 @@ Non modellare il routing del frontoffice creando directory dedicate come:
 
 Questi alberi rompono DRY, aumentano il debito di routing e duplicano la responsabilità del CMS.
 
+## JSON del tenant, non le viste Folio
+
+Le cartelle semantiche stanno nei JSON (`pages/blog/`, `pages/services/`, `pages/area-personale/`), non in `resources/views/pages/`. Il tema ha un solo `[container0]/[slug0]`. Regola dello slug: [json-content-slug-uniqueness.md](./json-content-slug-uniqueness.md).
+
 ## Cosa fare
 
 - usare `tests/[slug].blade.php` per le pagine di test replicate da JSON
@@ -61,10 +65,5 @@ Questi alberi rompono DRY, aumentano il debito di routing e duplicano la respons
 
 - [README.md](./README.md)
 - [cms-driven-pages-system.md](./cms-driven-pages-system.md)
-- [folio_routing_system.md](./folio-routing-system.md)
+- [folio_routing_system.md](./folio_routing_system.md)
 - [../../Themes/Sixteen/docs/page-directory-structure.md](../../../Themes/Sixteen/docs/page-directory-structure.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

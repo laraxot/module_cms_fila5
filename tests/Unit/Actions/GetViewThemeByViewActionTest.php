@@ -8,7 +8,7 @@ use PHPUnit\Framework\Assert;
 test('GetViewThemeByViewAction can be executed', function () {
     $action = new GetViewThemeByViewAction;
 
-    Assert::assertInstanceOf(GetViewThemeByViewAction::class, $action);
+    Assert::assertContains($action->execute(), ['', 'pub_theme::', 'adm_theme::']);
 });
 
 test('GetViewThemeByViewAction returns string when executed with empty view', function () {

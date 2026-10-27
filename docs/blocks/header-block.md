@@ -185,5 +185,5 @@ class HeaderBlock extends Block
 
 - [Documentazione Blocchi](content-blocks.md)
 - [Gestione Navigazione](../navigation.md)
-- [Best Practices UI](../../ui/docs/best-practices.md)
+- [Best Practices UI](../../../UI/docs/best-practices.md)
 - [Accessibilità](../../ui/docs/accessibility.md)
