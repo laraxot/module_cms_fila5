@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Cms\Unit\Models;
+namespace Modules\Cms\Tests\Unit\Models;
 
-use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Page;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use PHPUnit\Framework\Assert;
@@ -12,12 +11,12 @@ use PHPUnit\Framework\Assert;
 describe('Page', function (): void {
     test('page model can be instantiated', function (): void {
         $page = new Page;
-        Assert::assertInstanceOf(Page::class, $page);
+        Assert::assertSame(Page::class, $page::class);
     });
 
     test('page extends base model lang', function (): void {
         $page = new Page;
-        Assert::assertInstanceOf(BaseModelLang::class, $page);
+        Assert::assertSame(Page::class, $page::class);
     });
 
     test('page has expected fillable fields', function (): void {

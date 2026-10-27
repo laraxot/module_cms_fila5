@@ -6,9 +6,8 @@ use Modules\Cms\Filament\Pages\Themes;
 use PHPUnit\Framework\Assert;
 
 test('Themes page can be instantiated', function () {
-    $page = new Themes;
+    Assert::assertSame(Themes::class, (new Themes)::class);
 
-    Assert::assertInstanceOf(Themes::class, $page);
 });
 
 test('Themes page has themes property', function () {

@@ -19,10 +19,16 @@ Le pagine CMS dinamiche non devono contenere elementi strutturali globali.
 La divisione corretta e:
 
 - `Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`: risolve lo slug e invoca `<x-page />`
-- `Themes/Sixteen/resources/views/layouts/app.blade.php`: skiplinks, header, main, footer
-- `Themes/Sixteen/resources/views/layouts/main.blade.php`: shell HTML, Vite, Filament, script globali
+- `Themes/Sixteen/resources/views/components/layouts/app.blade.php`: skiplinks, header, main, footer
+- `Themes/Sixteen/resources/views/components/layouts/main.blade.php`: shell HTML, Vite, Filament, script globali
 
 ## Regola operativa
+
+Il campo CMS `layout: design-comuni` è un valore storico di contenuto, non un
+nome di view. Poiché Sixteen è già il tema Design Comuni, il resolver deve
+renderizzare `x-layouts.app`; non deve cercare o creare
+`components/layouts/design-comuni.blade.php`. Questo evita che il dato CMS
+diventi un secondo entrypoint grafico.
 
 ### Nelle page blades
 
@@ -59,8 +65,3 @@ Per replicare Design Comuni pagina per pagina, il markup comune deve stare in un
 - [README.md](./README.md)
 - [design-comuni-page-census.md](./design-comuni-page-census.md)
 - [../../Themes/Sixteen/docs/layout-runtime-contract.md](../../../Themes/Sixteen/docs/layout-runtime-contract.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

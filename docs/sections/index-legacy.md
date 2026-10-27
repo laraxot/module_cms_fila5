@@ -14,7 +14,7 @@ related:
   - ./index-legacy-2.md
   - ../blocks/index.md
   - ../README.md
-  - ../INDEX.md
+  - ../index.md
   - ../roadmap/README.md
 status: draft
 ---

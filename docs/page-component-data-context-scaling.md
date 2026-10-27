@@ -32,8 +32,3 @@ Il componente `Modules\Cms\View\Components\Page` non deve codificare il contesto
 
 - Qualsiasi chiave messa in `data` dalla route page deve essere disponibile nel block include.
 - Il componente `Page` non deve assumere quanti segmenti `containerN/slugN` esistano.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -7,9 +7,7 @@ use Modules\Cms\Datas\FooterData;
 use PHPUnit\Framework\Assert;
 
 test('SaveFooterConfigAction can be executed', function () {
-    $action = new SaveFooterConfigAction;
-
-    Assert::assertInstanceOf(SaveFooterConfigAction::class, $action);
+    Assert::assertTrue((new ReflectionClass(SaveFooterConfigAction::class))->isInstantiable());
 });
 
 test('SaveFooterConfigAction can execute with FooterData', function () {

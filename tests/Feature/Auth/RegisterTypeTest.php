@@ -2,14 +2,10 @@
 
 declare(strict_types=1);
 
-use Illuminate\Http\Response;
-use Illuminate\Testing\TestResponse;
 use PHPUnit\Framework\Assert;
 
-use function Pest\Laravel\get;
-
 beforeEach(function (): void {
-    /* @var \Tests\Modules\Cms\TestCase $this */
+    /* @var \Modules\Cms\Tests\TestCase $this */
     cmsSkipTest('patient/doctor registration types not configured in this install.');
 });
 /*
@@ -53,7 +49,7 @@ describe('Registration Page Content', function () use ($userTypes): void {
 
         test("{$type} registration page has proper HTML structure", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var TestResponse<Response> $response */
+            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
             $content = (string) $response->getContent();
             Assert::assertStringContainsString('<!DOCTYPE html>', $content);
             Assert::assertStringContainsString('<html', $content);
@@ -84,7 +80,7 @@ describe('Registration Page Performance', function () use ($userTypes): void {
             $startTime = microtime(true);
 
             $response = get("/it/auth/{$type}/register");
-            /** @var TestResponse<Response> $response */
+            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
             $loadTime = microtime(true) - $startTime;
 
             Assert::assertSame(200, $response->status());

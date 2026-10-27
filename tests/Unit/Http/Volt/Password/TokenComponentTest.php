@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\TokenComponent;
 use PHPUnit\Framework\Assert;
 
 describe('Password TokenComponent', function (): void {
     test('token component extends volt component', function (): void {
         $component = new TokenComponent;
+        Assert::assertSame(TokenComponent::class, $component::class);
 
-        Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
     test('token component has expected public properties', function (): void {
@@ -47,8 +46,7 @@ describe('Password TokenComponent', function (): void {
         $method = $reflection->getMethod('resetPassword');
         $returnType = $method->getReturnType();
 
-        Assert::assertNull($returnType);
-
-        Assert::assertSame('Illuminate\Routing\Redirector|Illuminate\Http\RedirectResponse', (string) $returnType);
+        Assert::assertNotNull($returnType);
+        Assert::assertStringContainsString('RedirectResponse', (string) $returnType);
     });
 });

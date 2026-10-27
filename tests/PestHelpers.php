@@ -6,12 +6,12 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Testing\TestResponse;
+use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\Xot\Contracts\UserContract as XotUserContract;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\MockObject\MockObject;
-use Tests\Modules\Cms\TestCase;
 
 use function Safe\file_get_contents;
 use function Safe\json_decode;
@@ -20,24 +20,17 @@ use function Safe\json_decode;
  * Helper Pest/PHPStan — modulo Cms.
  *
  * Funzioni globali (autoload-dev.files). Nessun namespace: i test devono
- * chiamarle senza `use function Tests\Modules\Cms\...`.
+ * chiamarle senza `use function Modules\Cms\Tests\...`.
  *
  * Ogni funzione e' dietro `function_exists`: merge paralleli e doppio
  * autoload non devono produrre "Cannot redeclare". Story ROOT-17.10.
  *
- * @see tests/Modules/Gdpr/PestHelpers.php
+ * @see Modules/Gdpr/tests/PestHelpers.php
  */
 if (! function_exists('cmsTest')) {
     function cmsTest(): TestCase
     {
-        if (TestCase::$currentTest !== null) {
-            return TestCase::$currentTest;
-        }
-
-        $test = test();
-        Assert::assertInstanceOf(TestCase::class, $test);
-
-        return $test;
+        return TestCase::$currentTest ?? throw new LogicException('cmsTest() va chiamato durante un test che estende Modules\Cms\Tests\TestCase.');
     }
 }
 
@@ -54,7 +47,10 @@ if (! function_exists('cmsCreateTestUser')) {
      */
     function cmsCreateTestUser(array $attributes = []): XotUserContract
     {
-        return TestCase::pestCreateTestUser($attributes);
+        /** @var XotUserContract $user */
+        $user = TestCase::pestCreateTestUser($attributes);
+
+        return $user;
     }
 }
 
@@ -78,7 +74,7 @@ if (! function_exists('cmsCreateMock')) {
      * @param  class-string<T>  $class
      * @return T&MockObject
      */
-    function cmsCreateMock(string $class): object
+    function cmsCreateMock(string $class): MockObject
     {
         return cmsTest()->createPHPUnitMock($class);
     }
@@ -108,6 +104,18 @@ if (! function_exists('cmsJsonDecodeFile')) {
         $decoded = json_decode(cmsReadFile($path), true);
 
         return $decoded;
+    }
+}
+
+if (! function_exists('cmsHomepageBlocks')) {
+    /**
+     * Blocchi della homepage del tenant per una lingua (loader tipizzato su `TestCase`).
+     *
+     * @return list<array{type: string, data: array<string, mixed>}>
+     */
+    function cmsHomepageBlocks(string $locale): array
+    {
+        return TestCase::homepageBlocksForLocale($locale);
     }
 }
 

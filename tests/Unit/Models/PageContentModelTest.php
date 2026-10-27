@@ -9,9 +9,8 @@ use Spatie\Translatable\HasTranslations;
 
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
-        $model = new PageContent;
+        Assert::assertSame(PageContent::class, (new PageContent)::class);
 
-        Assert::assertInstanceOf(PageContent::class, $model);
     });
 
     test('page content model has expected fillable fields', function (): void {

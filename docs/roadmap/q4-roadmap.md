@@ -10,7 +10,8 @@ discussions: []
 module: theme
 topic: q4-roadmap
 canonical: ../../../../Themes/docs/shared-components/roadmap-Modules-q4.md
-status: stub
+status: superseded
+superseded_by: roadmap.md
 ---
 
 See canonical documentation: ../../../../Themes/docs/shared-components/roadmap-Modules-q4.md

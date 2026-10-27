@@ -7,9 +7,7 @@ use Modules\Cms\Actions\GetStyleClassAction;
 use PHPUnit\Framework\Assert;
 
 test('GetStyleClassAction can be executed', function () {
-    $action = new GetStyleClassAction;
-
-    Assert::assertInstanceOf(GetStyleClassAction::class, $action);
+    Assert::assertTrue(class_exists(GetStyleClassAction::class));
 });
 
 test('GetStyleClassAction handles exceptions gracefully', function () {
@@ -20,12 +18,10 @@ test('GetStyleClassAction handles exceptions gracefully', function () {
 });
 
 test('GetStyleClassAction with mocked config', function () {
-    // Mock the config to prevent exceptions
     Config::set('adm_theme::components.some_component.class', 'mocked-class');
     Config::set('pub_theme::components.some_component.class', 'mocked-class');
 
     $action = new GetStyleClassAction;
 
-    // This should still fail as the action expects specific view structure
-    Assert::assertInstanceOf(GetStyleClassAction::class, $action);
+    Assert::assertSame('mocked-class', $action->execute('some_component'));
 });

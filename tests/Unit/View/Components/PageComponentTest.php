@@ -12,7 +12,7 @@ use PHPUnit\Framework\Assert;
  * Uses only reflection — no database required.
  * For integration tests (constructor that queries DB), see Feature tests.
  *
- * Not to be confused with Tests\Modules\Cms\Unit\Models\PageTest
+ * Not to be confused with Modules\Cms\Tests\Unit\Models\PageTest
  * which tests the Page Eloquent model.
  *
  * @see \Modules\Cms\View\Components\Page

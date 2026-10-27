@@ -82,7 +82,7 @@ ls -la dist/
 
 ## Collegamenti Correlati
 - [Documentazione Generale Errori](/project_docs/errors/readme.md)
-- [Gestione Temi CMS](../themes/readme.md)
+- [Gestione Temi CMS](../../../../Themes/README.md)
 - [Processo di Deploy](../../project_docs/deployment/themes.md)
 
 ## Note Tecniche

@@ -32,7 +32,3 @@ When resolving git conflicts manually:
 ## This file
 
 Updated: 2026-04-22
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

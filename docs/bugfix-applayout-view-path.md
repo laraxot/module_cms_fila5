@@ -90,8 +90,3 @@ Prima di modificare un nome view o la sua tipizzazione, verificare nell'ordine:
 - `docs/wiki/concepts/tenant-config-xra-is-the-source.md`
 - `laravel/docs/wiki/concepts/public-theme-resolution-and-vite-assets.md`
 - `docs/wiki/troubleshooting/phpstan-bootstrap-vendor-incompleto.md`
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

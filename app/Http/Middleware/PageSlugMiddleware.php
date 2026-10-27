@@ -6,6 +6,8 @@ namespace Modules\Cms\Http\Middleware;
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Modules\Cms\Actions\ValidatePageMiddlewareAction;
 use Modules\Cms\Models\Page;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,43 +17,93 @@ class PageSlugMiddleware
      * Gruppi gia' applicati dallo stack Folio: una voce `web` nel JSON non ha effetto.
      * Prima faceva `Target class [web] does not exist` (500 per tutti): D17, 2026-10-13.
      */
-    private const array GROUPS_ALREADY_APPLIED = ['web'];
+    private const array GROUPS_ALREADY_APPLIED = ValidatePageMiddlewareAction::FOLIO_APPLIED_GROUPS;
 
     protected Kernel $kernel;
 
     public function handle(Request $request, \Closure $next): Response
     {
-        $slug = $this->resolveCmsPageSlug($request);
+        $middlewares = $this->middlewaresOrRefuse($request);
 
-        if ($slug === null) {
-            $response = $next($request);
-            if (! $response instanceof Response) {
-                return new Response('Internal Server Error', 500);
-            }
+        // Execute middlewares manually in a chain (con lista vuota la catena chiama solo `$next`).
+        return $this->executeMiddlewareChain($request, $middlewares, $next);
+    }
 
-            return $response;
-        }
+    /**
+     * Middleware dichiarati dalla pagina CMS della richiesta, gia' validati (allowlist e risolvibilita').
+     *
+     * Fail-closed (DCP-283, C-03): se non si riesce a determinare la protezione di una pagina (ricerca dello slug,
+     * lettura o validazione dei middleware) la pagina non viene servita: 503. Prima l'eccezione era inghiottita e la
+     * pagina diventava pubblica. Il log porta slug, nomi dei middleware e tipo di errore; mai IP, utente, percorso o
+     * query string (il percorso puo' contenere identificativi).
+     *
+     * @return list<string>
+     */
+    protected function middlewaresOrRefuse(Request $request): array
+    {
+        $slug = null;
+        $declared = [];
 
         try {
-            $middlewares = Page::getMiddlewareBySlug($slug);
-        } catch (\Throwable) {
-            $middlewares = [];
-        }
-        // Should return ["auth", "Modules\User\Http\Middleware\EnsureUserHasType:doctor"]
-
-        if (empty($middlewares)) {
-            $response = $next($request);
-            if (! $response instanceof Response) {
-                // Middleware chain should always return Response, but if not, wrap it
-                return new Response('Internal Server Error', 500);
+            $slug = $this->resolveCmsPageSlug($request);
+            if ($slug === null) {
+                return [];
             }
 
-            return $response;
-        }
-        $this->kernel = app(Kernel::class);
+            // Should return ["auth", "throttle:10,1"]
+            $declared = $this->declaredMiddlewares($slug);
+            if ($declared === []) {
+                return [];
+            }
 
-        // Execute middlewares manually in a chain
-        return $this->executeMiddlewareChain($request, $middlewares, $next);
+            $this->kernel = app(Kernel::class);
+            $middlewares = app(ValidatePageMiddlewareAction::class)->execute($declared);
+            foreach ($middlewares as $middleware) {
+                $name = $this->parseMiddleware($middleware)[0];
+                if (! \in_array($name, self::GROUPS_ALREADY_APPLIED, true)) {
+                    $this->assertResolvable($this->resolveMiddlewareClass($name), $middleware);
+                }
+            }
+
+            return $middlewares;
+        } catch (\Throwable $exception) {
+            Log::error('Pagina CMS non servita: la sua protezione non e determinabile.', [
+                'slug' => $slug,
+                'middleware' => $declared,
+                'exception' => $exception::class,
+                // Il messaggio solo se scritto da noi: quelli del database possono contenere il valore cercato (parte dell'URL).
+                'reason' => $exception instanceof \InvalidArgumentException || $exception instanceof \UnexpectedValueException
+                    ? $exception->getMessage()
+                    : basename($exception->getFile()).':'.$exception->getLine(),
+            ]);
+
+            abort(503);
+        }
+    }
+
+    /**
+     * Middleware dichiarati dal JSON della pagina `$slug`. Lancia se il campo e' illeggibile.
+     *
+     * @return list<string>
+     */
+    protected function declaredMiddlewares(string $slug): array
+    {
+        return Page::getMiddlewareBySlug($slug);
+    }
+
+    protected function findPageBySlug(string $slug): ?Page
+    {
+        return Page::findUniqueBySlug($slug);
+    }
+
+    /**
+     * Un nome non risolvibile (refuso, gruppo) non si ignora mai: ignorarlo renderebbe pubblica una pagina protetta.
+     */
+    protected function assertResolvable(string $middlewareClass, string $declared): void
+    {
+        if (! class_exists($middlewareClass) && ! app()->bound($middlewareClass)) {
+            throw new \InvalidArgumentException(sprintf("Middleware CMS '%s' non risolvibile: usare un alias (es. 'auth') o una classe esistente; 'web' e' gia' applicato dallo stack Folio.", $declared));
+        }
     }
 
     /**
@@ -94,8 +146,10 @@ class PageSlugMiddleware
             }
         }
 
+        // Un errore nella ricerca (slug duplicato, JSON illeggibile) non salta il candidato: la pagina potrebbe essere proprio
+        // quella protetta. Propaga e `handle()` risponde 503 (DCP-283, C-03).
         foreach (array_unique($candidates) as $candidate) {
-            if (Page::findUniqueBySlug($candidate) !== null) {
+            if ($this->findPageBySlug($candidate) !== null) {
                 return $candidate;
             }
         }
@@ -160,13 +214,7 @@ class PageSlugMiddleware
         // Resolve middleware class name if it's an alias
         $middlewareClass = $this->resolveMiddlewareClass($middlewareClass);
 
-        // Un nome non risolvibile (refuso, gruppo) non si ignora mai: ignorarlo renderebbe pubblica una pagina protetta.
-        if (! class_exists($middlewareClass) && ! app()->bound($middlewareClass)) {
-            throw new \InvalidArgumentException(sprintf(
-                "Middleware CMS '%s' non risolvibile: usare un alias (es. 'auth') o una classe esistente; 'web' e' gia' applicato dallo stack Folio.",
-                $middleware,
-            ));
-        }
+        $this->assertResolvable($middlewareClass, $middleware);
 
         // Create middleware instance
         /** @var object $middlewareInstance */
@@ -175,27 +223,21 @@ class PageSlugMiddleware
         // Create next closure for remaining middlewares
         $next = fn (Request $req): Response => $this->executeMiddlewareChain($req, $middlewares, $finalNext);
 
-        // Execute current middleware
-        if (\is_object($middlewareInstance) && method_exists($middlewareInstance, 'handle')) {
-            if (empty($parameters)) {
-                $response = $middlewareInstance->handle($request, $next);
-                if (! $response instanceof Response) {
-                    return $next($request); // Use next if current middleware didn't return Response
-                }
-
-                return $response;
-            }
-
-            $response = $middlewareInstance->handle($request, $next, ...$parameters);
-            if (! $response instanceof Response) {
-                return $next($request); // Use next if current middleware didn't return Response
-            }
-
-            return $response;
+        // Execute current middleware. Una risposta che non e' una Response o un handle assente non lasciano proseguire:
+        // far passare la richiesta renderebbe pubblica una pagina protetta (DCP-283, C-03).
+        if (! method_exists($middlewareInstance, 'handle')) {
+            throw new \LogicException(sprintf("Middleware CMS '%s' non ha il metodo handle: la pagina non viene servita.", $middleware));
         }
 
-        // If middleware doesn't exist or doesn't have handle method, continue with next
-        return $next($request);
+        $response = $parameters === []
+            ? $middlewareInstance->handle($request, $next)
+            : $middlewareInstance->handle($request, $next, ...$parameters);
+
+        if (! $response instanceof Response) {
+            throw new \LogicException(sprintf("Middleware CMS '%s' non ha restituito una risposta: la pagina non viene servita.", $middleware));
+        }
+
+        return $response;
     }
 
     /**

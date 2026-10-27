@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "product launch plan"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: product_launch_plan.md
 ---
 
 # Cms Module - Product Launch Plan
@@ -90,8 +91,3 @@ status: draft
 
 ---
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

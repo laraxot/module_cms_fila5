@@ -6,9 +6,8 @@ use Modules\Cms\Filament\Front\Pages\Home;
 use PHPUnit\Framework\Assert;
 
 test('Home page can be instantiated', function () {
-    $page = new Home;
+    Assert::assertSame(Home::class, (new Home)::class);
 
-    Assert::assertInstanceOf(Home::class, $page);
 });
 
 test('Home page has view_type property', function () {

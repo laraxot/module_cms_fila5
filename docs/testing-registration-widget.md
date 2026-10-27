@@ -233,9 +233,4 @@ After implementare le migliorie descritte sopra, tutti i test passano con succes
 5. **Test Isolation** - Consider restructuring tests to increase isolation and reduce interdependence between test cases.
 
 ---
-Last update: 2025-07-06
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+Last update: [DATE]

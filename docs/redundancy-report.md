@@ -75,8 +75,3 @@ Implementazioni divergono (es. **`getMenu`**: ciclo chiavi/`(string)` in `app/` 
 | 🟠 | ThemeComposer (copia in `resources/views/`) fuori autoload | Da bonificare / archiviare |
 | 🟡 | Appearance Cluster duplicato con User | Da verificare |
 | 🟡 | EventServiceProvider inconsistente | Da standardizzare |
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

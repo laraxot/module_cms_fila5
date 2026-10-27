@@ -36,8 +36,3 @@ Differenze confermate:
 ## Nota operativa
 
 Per `risultati-ricerca` il gate strutturale non e ancora sufficiente per considerare corretto un pass esclusivamente CSS/JS.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

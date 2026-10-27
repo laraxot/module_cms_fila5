@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "configuration"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Configurazione
@@ -151,18 +152,9 @@ Config::set('cms.custom_option', [
 
 ## Validazione
 
-Il modulo include validatori per le configurazioni:
-
-```php
-use Modules\Cms\Support\ConfigValidator;
-
-$validator = new ConfigValidator();
-$result = $validator->validate();
-
-if (!$result->isValid()) {
-    $errors = $result->getErrors();
-}
-```
+`Modules\Cms\Support\ConfigValidator` **non esiste** (religione no `app/Support`).
+Lo schema pagina pubblica passa da `BuildPageSchemaAction` (`app/Actions/`).
+Vedi [no-app-support-queueable-actions](wiki/concepts/no-app-support-queueable-actions.md).
 
 ## Collegamenti
 
@@ -175,8 +167,3 @@ if (!$result->isValid()) {
 * [configuration.md](docs/configuration.md)
 * [configuration.md](laravel/modules/xot/docs/configuration.md)
 * [configuration.md](laravel/modules/cms/docs/configuration.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

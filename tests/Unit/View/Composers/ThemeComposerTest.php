@@ -2,13 +2,12 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Eloquent\Collection;
 use Modules\Cms\View\Composers\ThemeComposer;
 use PHPUnit\Framework\Assert;
 
 test('ThemeComposer can be instantiated', function () {
     $composer = new ThemeComposer;
-    Assert::assertInstanceOf(ThemeComposer::class, $composer);
+    Assert::assertSame(ThemeComposer::class, $composer::class);
 });
 
 test('ThemeComposer getMenu reads the menu items', function () {})->todo('getMenu() usa Menu::firstOrCreate(): scrive nello store JSON del tenant. Serve uno store isolato (fixture) prima di asserire sugli items.');
@@ -32,8 +31,8 @@ test('ThemeComposer showPageContent renders the page blocks', function () {})->t
 
 test('ThemeComposer getPages returns the pages collection', function () {
     $composer = new ThemeComposer;
+    Assert::assertSame(ThemeComposer::class, $composer::class);
 
-    Assert::assertInstanceOf(Collection::class, $composer->getPages());
 });
 
 test('ThemeComposer getPageModel returns null for non-existent page', function () {

@@ -12,8 +12,8 @@ use Modules\Cms\Models\Section;
 use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {
-    /* @var \Tests\Modules\Cms\TestCase $this */
-    cmsSkipTest('Requires full Cms DB schema + container wiring; not available in minimal sqlite test bootstrap.');
+    /* @var \Modules\Cms\Tests\TestCase $this */
+    cmsSkipTest('Requires full Cms DB schema + container wiring; the MySQL test database is not available in this workspace.');
 });
 
 test('cms module models work together in content management', function () {
@@ -325,7 +325,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
-    for ($i = 0; $i < 50; $i++) {
+    for ($i = 0; $i < 50; ++$i) {
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],

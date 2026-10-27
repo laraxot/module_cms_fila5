@@ -667,7 +667,3 @@ Each module has clear responsibilities and uses Queueable Actions for business l
 
 **Author**: iFlow CLI
 **Status**: Ready for Implementation
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

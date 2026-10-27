@@ -6,9 +6,8 @@ use Modules\Cms\Models\Conf;
 use PHPUnit\Framework\Assert;
 
 test('Conf model can be instantiated', function () {
-    $conf = new Conf;
+    Assert::assertSame(Conf::class, (new Conf)::class);
 
-    Assert::assertInstanceOf(Conf::class, $conf);
 });
 
 test('Conf model has expected fillable fields', function () {

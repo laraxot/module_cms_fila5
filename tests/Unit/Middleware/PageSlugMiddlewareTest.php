@@ -8,9 +8,8 @@ use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
 test('PageSlugMiddleware can be instantiated', function () {
-    $middleware = new PageSlugMiddleware;
+    Assert::assertSame(PageSlugMiddleware::class, (new PageSlugMiddleware)::class);
 
-    Assert::assertInstanceOf(PageSlugMiddleware::class, $middleware);
 });
 
 test('PageSlugMiddleware passes the request through when no CMS page matches', function () {
