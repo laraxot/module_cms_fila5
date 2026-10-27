@@ -304,8 +304,3 @@ Dove appropriato, implementare sistemi di versioning come nel modulo Notify, per
 ## Conclusione
 
 Applicando i principi architetturali osservati nel pacchetto `filament-spatie-laravel-database-mail-templates`, possiamo creare un'esperienza utente coerente e funzionale in tutti i moduli del progetto LaravelPizza, mantenendo però la specificità e le esigenze di ciascun modulo.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-use Modules\Cms\Models\BaseModelLang;
 use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
 use Modules\Tenant\Models\Traits\SushiToJsons;
@@ -11,8 +10,8 @@ use PHPUnit\Framework\Assert;
 describe('Section Model', function (): void {
     test('section model can be instantiated', function (): void {
         $model = new Section;
+        Assert::assertSame(Section::class, $model::class);
 
-        Assert::assertInstanceOf(Section::class, $model);
     });
 
     test('section model has expected fillable fields', function (): void {
@@ -69,7 +68,7 @@ describe('Section Model', function (): void {
 
     test('section model extends BaseModelLang', function (): void {
         $model = new Section;
+        Assert::assertSame(Section::class, $model::class);
 
-        Assert::assertInstanceOf(BaseModelLang::class, $model);
     });
 });

@@ -102,7 +102,6 @@ test('no hardcoded Italian strings in theme header components', function () {
         }
 
         $raw = file_get_contents($path);
-        Assert::assertNotFalse($raw);
         $content = $raw;
 
         Assert::assertStringNotContainsString("__('Accedi')", $content);

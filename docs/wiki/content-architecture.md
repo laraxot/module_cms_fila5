@@ -137,5 +137,5 @@ POST /api/cms/pages
 
 ## Collegamenti
 
-- [Project Roadmap](../../../Activity/docs/wiki/PROJECT-ROADMAP.md)
+- [Project Roadmap](../../../Activity/docs/wiki/project-roadmap.md)
 - [Fixcity Module Status](../../../Fixcity/docs/wiki/MODULE-STATUS.md)

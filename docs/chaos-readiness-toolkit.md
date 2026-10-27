@@ -36,8 +36,3 @@ bashscripts/quality/chaos-readiness-check.sh --tenant=laravelpizza
 1. Eseguire script.
 2. Se `FAIL`, correggere prima JSON/view mapping.
 3. Se `WARN`, aprire remediation task con file e linea.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

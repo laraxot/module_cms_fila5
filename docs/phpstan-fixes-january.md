@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "phpstan fixes january"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Correzioni PHPStan - Gennaio 2025
@@ -147,8 +148,3 @@ $rows = $this->getSushiRows();
 - [Architettura Modulo Cms](./frontoffice/architecture.md)
 - [Middleware System](./middleware-system.md)
 - [Model Management](./model-management.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

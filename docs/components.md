@@ -82,8 +82,3 @@ Il componente Page è uno dei componenti fondamentali del CMS. Per una documenta
 * [components.md](laravel/modules/ui/docs/themes/components.md)
 * [components.md](laravel/modules/cms/docs/components.md)
 * [components.md](laravel/themes/one/docs/components.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

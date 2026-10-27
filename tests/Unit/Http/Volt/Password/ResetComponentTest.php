@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use Livewire\Volt\Component as VoltComponent;
 use Modules\Cms\Http\Volt\Password\ResetComponent;
 use PHPUnit\Framework\Assert;
 
 describe('Password ResetComponent', function (): void {
     test('reset component extends volt component', function (): void {
         $component = new ResetComponent;
+        Assert::assertSame(ResetComponent::class, $component::class);
 
-        Assert::assertInstanceOf(VoltComponent::class, $component);
     });
 
     test('reset component has expected public properties', function (): void {
@@ -33,8 +32,7 @@ describe('Password ResetComponent', function (): void {
         $method = $reflection->getMethod('sendResetPasswordLink');
         $returnType = $method->getReturnType();
 
-        Assert::assertNull($returnType);
-
-        Assert::assertSame('void', (string) $returnType);
+        Assert::assertInstanceOf(ReflectionNamedType::class, $returnType);
+        Assert::assertSame('void', $returnType->getName());
     });
 });

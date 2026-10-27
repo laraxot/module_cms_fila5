@@ -39,8 +39,3 @@ php artisan module_cms:show-versions
 ## Collegamenti tra versioni di upgrade.md
 * [upgrade.md](laravel/modules/lang/docs/upgrade.md)
 * [upgrade.md](laravel/modules/cms/docs/upgrade.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

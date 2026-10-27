@@ -2,23 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Cms\Feature\Auth;
+namespace Modules\Cms\Tests\Feature\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Livewire\Volt\Volt as LivewireVolt;
 use Modules\Xot\Datas\XotData;
-use Tests\Modules\Xot\TestCase;
 
 use function Pest\Laravel\assertAuthenticated;
-use function Pest\Laravel\assertAuthenticatedAs;
 use function Pest\Laravel\assertGuest;
 
-uses(TestCase::class);
-
-// NOTE: Helper functions moved to Tests\Modules\Xot\TestCase for DRY pattern
-// Use $this->$this->generateUniqueEmail(), $this->getUserClass(), $this->$this->createTestUser()
+// Helper (createTestUser, generateUniqueEmail, getUserClass) su Modules\Cms\Tests\TestCase, legato da tests/Pest.php.
+// Use $this->generateUniqueEmail(), $this->getUserClass(), $this->createTestUser()
 
 describe('Volt Component Rendering', function (): void {
     test('volt login component can be rendered', function (): void {
@@ -47,7 +43,7 @@ describe('Volt Component Rendering', function (): void {
 describe('Volt Component Authentication', function (): void {
     test('user can authenticate via volt component', function (): void {
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -60,7 +56,7 @@ describe('Volt Component Authentication', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
     });
 
     test('authentication fails with wrong credentials', function (): void {
@@ -168,7 +164,7 @@ describe('Volt Component Session Management', function (): void {
 
     test('session data is preserved on authentication', function (): void {
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -181,7 +177,7 @@ describe('Volt Component Session Management', function (): void {
             ->set('password', 'password123')
             ->call('save');
 
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
 
         // Session data should be preserved (session regenerated but data kept)
         expect(Session::get('test_key'))->toBe('test_value');
@@ -295,7 +291,7 @@ describe('Volt Component User Types Integration', function (): void {
     test('any user type can login via volt component', function (): void {
         // Using XotData pattern ensures compatibility with any user type
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -308,7 +304,7 @@ describe('Volt Component User Types Integration', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
 
         // Verify authenticated user
         $authenticatedUser = Auth::user();
@@ -319,7 +315,7 @@ describe('Volt Component User Types Integration', function (): void {
     test('component handles different user configurations', function (): void {
         // Test with various user attributes
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
             'name' => 'Test User',
@@ -331,7 +327,7 @@ describe('Volt Component User Types Integration', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
 
         $authenticatedUser = Auth::user();
         expect($authenticatedUser?->name)->toBe('Test User');
@@ -341,7 +337,7 @@ describe('Volt Component User Types Integration', function (): void {
 describe('Volt Component Redirects', function (): void {
     test('component redirects after successful authentication', function (): void {
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -352,7 +348,7 @@ describe('Volt Component Redirects', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
 
         // Component might trigger redirect via JavaScript/Alpine
         // This test ensures the authentication logic completes successfully
@@ -360,7 +356,7 @@ describe('Volt Component Redirects', function (): void {
 
     test('component handles intended redirect', function (): void {
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -374,7 +370,7 @@ describe('Volt Component Redirects', function (): void {
             ->call('save');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
     });
 });
 

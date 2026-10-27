@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Cms\Unit\Actions;
+namespace Modules\Cms\Tests\Unit\Actions;
 
 use Illuminate\Support\Str;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Database\Factories\PageFactory;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Tests\Modules\Cms\TestCase;
 
 describe('Resolve Page Action', function (): void {
     test('it resolves adynamic model from known mappings', function (): void {

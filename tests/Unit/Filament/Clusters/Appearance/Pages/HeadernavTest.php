@@ -10,9 +10,8 @@ use PHPUnit\Framework\Assert;
 use function Safe\class_implements;
 
 test('Headernav page can be instantiated', function () {
-    $page = new Headernav;
+    Assert::assertSame(Headernav::class, (new Headernav)::class);
 
-    Assert::assertInstanceOf(Headernav::class, $page);
 });
 
 test('Headernav page has data property', function () {
@@ -47,7 +46,6 @@ test('Headernav page has getUpdateFormActions method', function () {})->todo('Se
 
 test('Headernav page implements HasForms', function () {
     $interfaces = class_implements(Headernav::class);
-    Assert::assertNotFalse($interfaces);
     Assert::assertContains(HasForms::class, $interfaces);
 });
 

@@ -86,7 +86,3 @@ Il sistema di gestione delle pagine permette di creare, modificare e organizzare
 - [Content Management](./content-management.md)
 - [Frontend Architecture](./frontend-architecture.md)
 - [Documentazione Core](../xot/project_docs/documentation.md) 
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

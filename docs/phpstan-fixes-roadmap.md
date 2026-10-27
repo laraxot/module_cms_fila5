@@ -101,8 +101,3 @@ function ($request, $next) use ($locale): mixed {
 
 - [PHPStan Type Assertions](https://phpstan.org/writing-php-code/phpdoc-types#type-assertions)
 - [Laravel Folio Documentation](https://laravel.com/docs/folio)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

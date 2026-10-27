@@ -174,8 +174,3 @@ Nessuna funzionalità critica mancante - il modulo Cms è ben implementato
 
 ---
 **Prossima Revisione**: [DATE]
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

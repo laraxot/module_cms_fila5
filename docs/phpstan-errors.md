@@ -348,8 +348,3 @@ Same as Error 1 - correct the import and add proper type hint.
 - [Spatie Laravel Data Documentation](https://spatie.be/docs/laravel-data)
 - [DataCollection Usage](https://spatie.be/docs/laravel-data/v3/as-a-data-transfer-object/collections)
 - [UserContract Interface](../../Xot/Contracts/UserContract.php)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

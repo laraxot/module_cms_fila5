@@ -636,7 +636,3 @@ Utilizzo:
 
 ---
 Per ulteriori informazioni sull'implementazione di DaisyUI in il progetto o per segnalare problemi, contattare il team di sviluppo. 
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

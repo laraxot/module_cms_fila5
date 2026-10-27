@@ -26,8 +26,3 @@ Warning autoload PSR-4 su file test Feature/CMS causati da pattern testuali ambi
 
 Intervento di igiene autoload: migliora signal/noise in `composer dump-autoload`.
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

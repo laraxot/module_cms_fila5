@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "technologies"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Tecnologie
@@ -125,8 +126,3 @@ Questo documento descrive le tecnologie principali utilizzate nel modulo CMS.
 - [Frontend](frontoffice/README.md)
 - [Sviluppo](developer/readme.md)
 - [Utente](user/readme.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

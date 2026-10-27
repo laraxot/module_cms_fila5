@@ -125,7 +125,3 @@ return view($view);
 - [Code Quality Standards](code-quality-analysis.md)
 - [Filament Components Best Practices](filament-components.md)
 - [View Component Patterns](components.md)
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

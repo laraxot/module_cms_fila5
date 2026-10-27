@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Cms\Feature\Auth;
-
-use Tests\Modules\Xot\TestCase;
+namespace Modules\Cms\Tests\Feature\Auth;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
-uses(TestCase::class);
-
-// NOTE: Helper functions moved to Tests\Modules\Xot\TestCase for DRY pattern
+// Helper (createTestUser, generateUniqueEmail, getUserClass) su Modules\Cms\Tests\TestCase, legato da tests/Pest.php.
 // Use $this->createTestUser()
 
 describe('Register Page', function () {

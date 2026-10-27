@@ -25,8 +25,3 @@ Caso concreto corretto il 2026-03-12:
 
 Riferimenti:
 - [Bashscripts Location Policy](../../Xot/docs/bashscripts-location-policy.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

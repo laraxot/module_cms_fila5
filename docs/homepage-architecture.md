@@ -209,8 +209,3 @@ Per modificare la struttura o il comportamento della homepage:
 ## Conclusione
 
 L'architettura della homepage è progettata per essere flessibile, manutenibile e facile da personalizzare. Separando i contenuti dal codice e utilizzando componenti modulari, è possibile apportare modifiche in modo rapido e sicuro senza influenzare altre parti del sistema.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

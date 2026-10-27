@@ -13,8 +13,3 @@ status: draft
 https://flowbite.com/docs/components/footer/
 
 https://flowbite.com/blocks/marketing/footer/
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

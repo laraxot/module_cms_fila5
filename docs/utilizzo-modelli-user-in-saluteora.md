@@ -138,8 +138,3 @@ Passport è preferito in il progetto perché offre:
 ## Conclusione
 
 L'utilizzo corretto dei modelli User in il progetto è fondamentale per mantenere un'architettura pulita e modulare. Seguendo le best practices descritte in questo documento, è possibile evitare errori comuni e garantire che il codice sia manutenibile e scalabile.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

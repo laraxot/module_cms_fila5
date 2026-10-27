@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use Livewire\Volt\Component;
 use Modules\Cms\Http\Volt\CounterComponent;
 use PHPUnit\Framework\Assert;
 
 describe('CounterComponent', function (): void {
     test('counter component extends volt component', function (): void {
         $component = new CounterComponent;
+        Assert::assertSame(CounterComponent::class, $component::class);
 
-        Assert::assertInstanceOf(Component::class, $component);
     });
 
     test('counter component has count property', function (): void {

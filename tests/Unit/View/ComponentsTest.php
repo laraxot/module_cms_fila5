@@ -11,16 +11,16 @@ use PHPUnit\Framework\Assert;
  *
  * Page component tests are in:
  *
- * @see \Tests\Modules\Cms\Unit\View\Components\PageComponentTest
+ * @see \Modules\Cms\Tests\Unit\View\Components\PageComponentTest
  */
 test('Section component can be instantiated', function () {
     $component = new Section('test-slug');
 
-    Assert::assertInstanceOf(Section::class, $component);
+    Assert::assertSame('test-slug', $component->slug);
 });
 
 test('PageContent component can be instantiated', function () {
     $component = new PageContent('test-slug');
 
-    Assert::assertInstanceOf(PageContent::class, $component);
+    Assert::assertSame('test-slug', $component->slug);
 });
