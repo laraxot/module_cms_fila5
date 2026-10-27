@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "models factory seeder analysis"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: models-factory-seeder.md
 ---
 
 # Analisi Modelli, Factory e Seeder - Modulo CMS
@@ -117,8 +118,3 @@ Il modulo CMS è ben strutturato con tutte le factory necessarie. Un modello (Mo
 
 ---
 *Analizzato da: Sistema di analisi automatica moduli*
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

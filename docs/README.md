@@ -6,7 +6,7 @@ title: "Cms: README"
 type: documentation
 tags: [module, documentation, cms, content-management]
 created: 2026-07-14
-updated: 2026-10-15
+updated: 2026-10-14
 status: active
 ---
 
@@ -18,7 +18,7 @@ Modulo Laraxot `Modules\Cms` (alias `cms`, priorita' 3 in `module.json`, provide
 
 1. **Il contenuto sono file JSON per tenant.** `Models\Page` estende `BaseModelLang`, usa `HasBlocks` e il trait `SushiToJsons` del modulo Tenant: ogni riga e' un file `laravel/config/<tenant>/database/content/pages/<slug>.json` (per il tenant `local/fixcity`: 99 file al 2026-10-14; `sections/` ne ha 8). Colonne dello schema: `id`, `title` (json per lingua), `slug`, `middleware` (json), `content`, `description`, `layout`, `blocks`, `content_blocks`, `sidebar_blocks`, `footer_blocks` (json per lingua), `created_at/by`, `updated_at/by`. Come si sceglie il tenant: [Tenant](../../Tenant/docs/README.md).
 2. **Le rotte sono Folio, non route Laravel.** `Providers\FolioVoltServiceProvider` monta con `Folio::path()` la cartella `resources/views/pages` del tema pubblico (`XotData::getPubThemeViewPath('pages')`, oggi Sixteen) sotto `/{locale}` per ogni lingua di `laravellocalization.supportedLocales` (a runtime `de,en,es,it`), e lo stesso per `resources/views/pages` di ogni modulo; poi `Volt::mount()` su `livewire/` e `components/blocks/` del tema. `routes/web.php` del Cms contiene solo `/` che reindirizza a `/{locale}`.
-3. **Lo slug e' l'URL.** Pagina generica `pages/[container0]/[slug0]`: `Actions\ResolvePageAction` prova, in ordine, un modello dinamico (`profile`, `events`, `xra.container0_model_map`, `Modules\<Container>\Models\<Singolare>`), poi la pagina `<container0>.<slug0>`, poi `<container0>.view`. Il middleware dichiarato nel JSON (`"middleware": ["auth"]`) lo applica `Http\Middleware\PageSlugMiddleware`, agganciato nelle pagine del tema `[container0]/[slug0]/index.blade.php` e `tests/[slug].blade.php`. Da URL a JSON: [DCP-41](./stories/dcp-41-url-to-json-resolver.story.md) e `bashscripts/tools/cms/page-json-for-url.sh <url>`.
+3. **Lo slug e' l'URL.** Pagina generica `pages/[container0]/[slug0]`: `Actions\ResolvePageAction` prova, in ordine, un modello dinamico (`profile`; `blog` e `events` dal modulo Blog, solo se installato; `xra.container0_model_map`; `Modules\<Container>\Models\<Singolare>`), poi la pagina `<container0>.<slug0>`, poi `<container0>.view`. Il middleware dichiarato nel JSON (`"middleware": ["auth"]`) lo applica `Http\Middleware\PageSlugMiddleware`, agganciato nelle pagine del tema `[container0]/[slug0]/index.blade.php` e `tests/[slug].blade.php`. Da URL a JSON: [DCP-41](./stories/dcp-41-url-to-json-resolver.story.md) e `bashscripts/tools/cms/page-json-for-url.sh <url>`.
 4. **I blocchi sono voci JSON con un `type`.** Esempio da `home.json` (lingue `it`, `en`, `de`, `es`, 4 blocchi per lingua): `home.hero`, `ticket.map-preview`, `how-it-works`, `quick-actions`. `Models\Traits\HasBlocks::getBlocks($side)` legge `blocks` o `<side>_blocks` per la lingua primaria e produce `Datas\BlockData`; `Actions\ResolveLocalizedBlockDataAction` risolve i valori per lingua, `Actions\ResolveBlockQueryAction` esegue la query dichiarata nel blocco (`model`, `scope`/`scopes`, `orderBy`, `limit`, `wrap_in`). Il rendering sono componenti Blade in `Themes/Sixteen/resources/views/components/blocks/` (166 voci) e `Modules/Cms/resources/views/components/blocks/`.
 5. **Metatag e JSON-LD.** `View\Components\Metatags` legge `Modules\Xot\Datas\MetatagData` e `Actions\BuildPageSchemaAction` costruisce lo schema della pagina. Il modulo Seo non e' coinvolto.
 
@@ -46,7 +46,25 @@ bash ../bashscripts/tools/cms/page-json-for-url.sh http://127.0.0.1:8081/it/test
 
 ## Mappa dei docs
 
-Indice operativo: [00-index.md](./00-index.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/).
+Contratto corrente per le pagine pubbliche di primo livello: [container0 index
+JSON-driven pages](./wiki/concepts/container0-index-json-driven-pages.md).
+
+Il contratto comune per la documentazione è
+[DOCUMENTATION_GOVERNANCE.md](../../../../docs/DOCUMENTATION_GOVERNANCE.md).
+Questo `README.md` è l'ingresso canonico del modulo; gli indici esistenti sono
+mappe di navigazione e non fonti concorrenti.
+
+### Regola operativa per le pagine di primo livello
+
+Prima di creare una Blade sotto `resources/views/pages/`, verificare se l'URL è
+già coperto da `[container0]/index.blade.php` o da `[container0]/[slug0]`. Per
+`domande-frequenti.index` la risposta è sì: la view speciale
+`Themes/Sixteen/resources/views/pages/domande-frequenti/index.blade.php` è vietata
+perché duplica il match Folio e bypassa il JSON tenant. Se il problema è nel
+markup, correggere il blocco condiviso; se è nei dati, correggere JSON/Filament;
+se è nel catalogo, correggere il modulo owner.
+
+Indice operativo: [00-INDEX.md](./00-index.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/); PHPStan: [stories/phpstan-cms-zero.story.md](./stories/phpstan-cms-zero.story.md).
 
 ## Dipendenze / Moduli Correlati
 
@@ -79,15 +97,6 @@ Indice operativo: [00-index.md](./00-index.md). Wiki: [wiki/index.md](./wiki/ind
 
 **Ultima verifica**: 2026-10-14 (Laravel 13.35.0, PHP 8.4.26). Livello PHPStan e copertura non rimisurati in questa verifica.
 
+**Sostenibilità (discovery):** [project-sustainability-content.md](./project-sustainability-content.md) — outline `/sostieni` e footer partner. Il dossier locale del modulo è la fonte mantenuta; eventuali riferimenti a `bmad-output/` sono storici.
+
 **Note**: Documentation previously had duplications and merge conflicts. This version consolidates to single source of truth.
-
-## Standing order (qualita' + docs)
-
-- **PHPStan a zero** sul codice del modulo: non ignorare errori, non abbassare il livello, non modificare `phpstan.neon` del progetto. Qualita' + docs + BMAD sono standing order, non opzionali.
-- **Cartella test**: solo `tests/` (minuscolo). `Tests/` e' vietato (case-collision su macOS/Windows e confusione PSR-4).
-- **Nomi `.md`**: kebab-case minuscolo, niente date/timestamp nel nome, unica eccezione `README.md`. Se esistono `readme.md` e `README.md`, resta solo `README.md`.
-- **Docs**: solo dentro `docs/` gia' esistente; consolida invece di moltiplicare file; link relativi; focus su scopo/perche'/business logic (DRY + KISS).
-- **Git**: forward-only (patch in avanti); no reset/revert/checkout come scorciatoia.
-- **BMAD + second brain**: indici e decisioni vivono in `docs/` del modulo; aggiornali quando cambia il perche', non solo il come.
-
-Vedi anche: [00-index.md](./00-index.md) · [index.md](./index.md)

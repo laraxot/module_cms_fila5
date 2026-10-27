@@ -45,8 +45,3 @@ Il progetto usa `mcamara/laravel-localization` come layer applicativo per negoti
 ## Fonte
 
 - README ufficiale `mcamara/laravel-localization`: https://github.com/mcamara/laravel-localization
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

@@ -7,9 +7,8 @@ use Modules\Cms\Actions\View\GetCmsViewAction;
 use PHPUnit\Framework\Assert;
 
 test('GetCmsViewAction can be instantiated', function () {
-    $action = new GetCmsViewAction;
+    Assert::assertSame(GetCmsViewAction::class, (new GetCmsViewAction)::class);
 
-    Assert::assertInstanceOf(GetCmsViewAction::class, $action);
 });
 
 test('GetCmsViewAction execute method with existing view', function () {

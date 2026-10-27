@@ -42,8 +42,3 @@ Per le pagine pubbliche non basta serializzare le entity del dominio. Serve anch
 ## Nota importante
 
 `ProfilePage` non sostituisce `Person`: la pagina profilo usa `ProfilePage` come page type e contiene/collega una entity `Person`.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

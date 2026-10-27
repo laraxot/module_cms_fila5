@@ -118,8 +118,3 @@ In il progetto, tutte le pagine principali del frontoffice utilizzano named rout
 4. **Verifica i Nomi delle Route**: Prima di utilizzare un nome di route, verifica che sia effettivamente definito in un file Folio.
 
 5. **Gestione Parametri**: Quando una route richiede parametri, passali come array associativo: `route('user.profile', ['id' => $userId])`.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

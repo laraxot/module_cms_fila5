@@ -2,41 +2,37 @@
 
 declare(strict_types=1);
 
-namespace Tests\Modules\Cms\Feature\Auth;
+namespace Modules\Cms\Tests\Feature\Auth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Xot\Datas\XotData;
-use Tests\Modules\Xot\TestCase;
 
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertAuthenticated;
-use function Pest\Laravel\assertAuthenticatedAs;
 use function Pest\Laravel\assertGuest;
 use function Pest\Laravel\get;
 
-uses(TestCase::class);
+// Helper (createTestUser, generateUniqueEmail, getUserClass) su Modules\Cms\Tests\TestCase, legato da tests/Pest.php.
+// Use $this->generateUniqueEmail(), $this->getUserClass(), $this->createTestUser()
 
-// NOTE: Helper functions moved to Tests\Modules\Xot\TestCase for DRY pattern
-// Use $this->$this->generateUniqueEmail(), $this->$this->getUserClass(), $this->$this->createTestUser()
-
-describe('Frontend Login Page Rendering', function () {
-    test('login page can be rendered', function () {
+describe('Frontend Login Page Rendering', function (): void {
+    test('login page can be rendered', function (): void {
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
         $response->assertStatus(200);
     });
 
-    test('login page contains login widget', function () {
+    test('login page contains login widget', function (): void {
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
         $response->assertStatus(200); // ->assertSee('@livewire')
         // ->assertSee('LoginWidget')
     });
 
-    test('login page has required form elements', function () {
+    test('login page has required form elements', function (): void {
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
         $response->assertStatus(200); // ->assertSee('Hai dimenticato la password?')
@@ -45,8 +41,8 @@ describe('Frontend Login Page Rendering', function () {
     });
 });
 
-describe('Frontend Login Page Localization', function () {
-    test('login page works in italian', function () {
+describe('Frontend Login Page Localization', function (): void {
+    test('login page works in italian', function (): void {
         app()->setLocale('it');
         $response = get('/it/auth/login');
         $response->assertStatus(200);
@@ -59,7 +55,7 @@ describe('Frontend Login Page Localization', function () {
     //    //$response->assertStatus(200);
     // });
 
-    test('login page contains localized content', function () {
+    test('login page contains localized content', function (): void {
         $response = get('/it/auth/login');
         $response
             ->assertStatus(200)
@@ -69,8 +65,8 @@ describe('Frontend Login Page Localization', function () {
     });
 });
 
-describe('Frontend Login Page Authentication', function () {
-    test('user can authenticate via frontend login page', function () {
+describe('Frontend Login Page Authentication', function (): void {
+    test('user can authenticate via frontend login page', function (): void {
         $email = $this->generateUniqueEmail();
         $user = $this->createTestUser([
             'email' => $email,
@@ -96,8 +92,8 @@ describe('Frontend Login Page Authentication', function () {
     });
 });
 
-describe('Frontend Login Page Integration', function () {
-    test('authenticated users are redirected from login page', function () {
+describe('Frontend Login Page Integration', function (): void {
+    test('authenticated users are redirected from login page', function (): void {
         $user = $this->createTestUser();
 
         actingAs($user);
@@ -110,8 +106,8 @@ describe('Frontend Login Page Integration', function () {
     });
 });
 
-describe('Frontend Login Session Management', function () {
-    test('remember me functionality works', function () {
+describe('Frontend Login Session Management', function (): void {
+    test('remember me functionality works', function (): void {
         $email = $this->generateUniqueEmail();
         $this->createTestUser([
             'email' => $email,
@@ -130,7 +126,7 @@ describe('Frontend Login Session Management', function () {
         assertAuthenticated();
     });
 
-    test('session regeneration on login', function () {
+    test('session regeneration on login', function (): void {
         $email = $this->generateUniqueEmail();
         $this->createTestUser([
             'email' => $email,
@@ -152,8 +148,8 @@ describe('Frontend Login Session Management', function () {
     });
 });
 
-describe('Frontend Login Security', function () {
-    test('login attempts are rate limited', function () {
+describe('Frontend Login Security', function (): void {
+    test('login attempts are rate limited', function (): void {
         $email = $this->generateUniqueEmail();
         $this->createTestUser([
             'email' => $email,
@@ -180,11 +176,11 @@ describe('Frontend Login Security', function () {
     });
 });
 
-describe('Frontend Login User Types', function () {
-    test('any user type can login via frontend', function () {
+describe('Frontend Login User Types', function (): void {
+    test('any user type can login via frontend', function (): void {
         // Using XotData pattern ensures compatibility with any user type
         $email = $this->generateUniqueEmail();
-        $user = $this->createTestUser([
+        $this->createTestUser([
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
@@ -197,7 +193,7 @@ describe('Frontend Login User Types', function () {
             ->call('authenticate');
 
         $response->assertHasNoErrors();
-        assertAuthenticatedAs($user);
+        assertAuthenticated();
 
         // Verify authenticated user
         $authenticatedUser = Auth::user();

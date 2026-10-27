@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "sprint planning"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: sprint_planning.md
 ---
 
 # Cms Module - Sprint Planning
@@ -75,8 +76,3 @@ Launch core CMS page builder with content creation and publishing capabilities.
 
 ---
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

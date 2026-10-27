@@ -43,8 +43,3 @@ Secondo le regole di organizzazione della documentazione:
 Questo documento è collegato bidirezionalmente con [cms-themes-link.md](../../UI/docs/cms-themes-link.md) nel modulo UI.
 
 > Aggiorna entrambi i riferimenti se modifichi la documentazione dei temi o aggiungi nuove sezioni.
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

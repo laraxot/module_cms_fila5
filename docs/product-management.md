@@ -391,8 +391,3 @@ class ProductTest extends TestCase
 * [product-management.md](laravel/modules/cms/project_docs/product-management.md)
 * [product-management.md](laravel/modules/cms/project_docs/components/product-management.md)
 
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

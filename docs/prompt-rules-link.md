@@ -22,8 +22,3 @@ Per le regole sui prompt, fare riferimento a [Regole Prompt nel modulo Xot](../.
 ## Collegamenti tra versioni di prompt_rules_link.md
 * [prompt_rules_link.md](../../ui/docs/prompt_rules_link.md)
 * [prompt_rules_link.md](../../lang/docs/prompt_rules_link.md)
-
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

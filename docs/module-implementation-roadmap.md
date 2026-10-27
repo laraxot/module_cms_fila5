@@ -476,7 +476,3 @@ issues: []
 discussions: []
 **Priority**: High Development Need  
 **Estimated Completion**: 20-24 weeks with full team
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).

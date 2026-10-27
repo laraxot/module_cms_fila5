@@ -1,110 +1,15 @@
 ---
-type: note
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "00 index"
-title: "Cms — indice della documentazione"
-description: "Documentazione del modulo Cms: gestione contenuti e pagine."
-module: Cms
-tags: [cms, documentazione, modulo, laraxot]
-status: active
-repository: https://github.com/laraxot/module_cms_fila5
-related:
-  - ./00-index.md
-  - ./index.md
-  - ../../../../docs/wiki/audits/docs-redundancy-audit.md
-issues: https://github.com/laraxot/module_cms_fila5/issues
-discussions: https://github.com/laraxot/module_cms_fila5/discussions
+title: "Indice Cms (superseded)"
+type: index
+status: superseded
+updated: 2026-10-20
+superseded_by: ./00-INDEX.md
+qmd: "cms index superseded"
+tags: [docs, cms]
 ---
 
-# Cms Module Documentation
+# Indice Cms (storico)
 
-> Nota 2026-10-14: variante storica dell'indice. L'ingresso operativo e' [00-INDEX.md](./00-index.md); lo stato verificato del modulo e' in [README.md](./README.md). Le voci "Core Concepts", "Development Guides", "Frontend Assets" e "Missing Features" qui sotto puntano a `../Meetup/docs/`, cartella che non esiste (`laravel/Modules/Meetup` non c'e' e i file non sono in `Themes/Meetup/docs/`): i link sono annotati come mancanti.
+Canonica: [00-INDEX.md](./00-INDEX.md).
 
-## Overview
-
-# Cms Module Documentation Index
-
-## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) _(target mancante, verificato 2026-10-14)_ - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) _(target mancante, verificato 2026-10-14)_ - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) _(target mancante, verificato 2026-10-14)_ - Module architecture patterns
-
-## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) _(target mancante, verificato 2026-10-14)_ - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) _(target mancante, verificato 2026-10-14)_ - Service layer documentation
-
-## Code Quality
-- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
-
-## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) _(target mancante, verificato 2026-10-14)_ - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) _(target mancante, verificato 2026-10-14)_ - Build process
-
-## Missing Features & Gaps
-- [Missing Features](../Meetup/docs/missing-features.md) _(target mancante, verificato 2026-10-14)_ - Identified missing functionality
-- [Gap Analysis](../Meetup/docs/gap-analysis.md) _(target mancante, verificato 2026-10-14)_ - Gap analysis between current and desired state
-# Cms Module Documentation Index
-
-## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) _(target mancante, verificato 2026-10-14)_ - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) _(target mancante, verificato 2026-10-14)_ - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) _(target mancante, verificato 2026-10-14)_ - Module architecture patterns
-
-## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) _(target mancante, verificato 2026-10-14)_ - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) _(target mancante, verificato 2026-10-14)_ - Service layer documentation
-
-## Code Quality
-- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
-
-## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) _(target mancante, verificato 2026-10-14)_ - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) _(target mancante, verificato 2026-10-14)_ - Build process
-
-## Missing Features & Gaps
-- [Missing Features](../Meetup/docs/missing-features.md) _(target mancante, verificato 2026-10-14)_ - Identified missing functionality
-- [Gap Analysis](../Meetup/docs/gap-analysis.md) _(target mancante, verificato 2026-10-14)_ - Gap analysis between current and desired state
-Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei blocchi. Nel lavoro corrente sulla parity Design Comuni, il Cms governa la struttura della homepage di test, mentre la resa visuale viene rifinita nel tema Sixteen.
-
-## 📚 Design Comuni - Index Completo
-
-- **[DESIGN_COMUNI_INDEX.md](./design-comuni-index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
-
-## Active design-comuni references
-
-- [design-comuni-homepage.md](./design-comuni-homepage.md) - Coordinamento Cms per la homepage parity
-- [design-comuni-faq.md](./design-comuni-faq.md) - Pagina FAQ ✅ 90%
-- [design-comuni-argomenti.md](./design-comuni-argomenti.md) - Pagina argomenti
-- [design-comuni-risultati-ricerca.md](./design-comuni-risultati-ricerca.md) - Pagina risultati ricerca
-- [design-comuni-page-census.md](./design-comuni-page-census.md) - Censimento 38 pagine
-- [design-comuni-services-implementation.md](./design-comuni-services-implementation.md) - Implementazione servizi
-- [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) - Audit batch pagine
-- [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) - Verifica parity
-- [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Flusso runtime aggiornato della homepage di test
-- [PAGE_COMPONENT_ARCHITECTURE.md](./page-component-architecture.md) - Architettura generale componenti pagina
-
-## Theme cross links
-
-- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-INDEX.md) - Indice docs del tema
-- [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
-- [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
-- [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso
-- [../../../docs/design-comuni/MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md) - Master Index globale
-
-## Runtime architecture
-
-- La pagina di test e' servita da `Themes/Sixteen/resources/views/pages/tests/[slug].blade.php`.
-- Il contenuto locale della homepage arriva da `config/local/fixcity/database/content/pages/tests.homepage.json`.
-- Il Cms mantiene il contratto dati e la struttura dei blocchi.
-- Il tema Sixteen mantiene layout, CSS e JS di parity visuale.
-
-## Operational rule for this workstream
-
-- Se il problema e' strutturale, verificare prima Cms JSON + routing.
-- Se il problema e' visivo, lavorare nel tema e documentare i risultati anche qui.
-- Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.
---- BMAD + Second Brain ---
-- Scopo: documentazione tecnica del modulo.
-- Utilità: riferimento sviluppatori/audit.
-- Funzionalità: struttura, dipendenze, convenzioni (no date .md, git avanti).
+Scopo: [scopo.md](./scopo.md). `Page\Show` KEEP FO: [Xot inventory](../../Xot/docs/bmad/livewire-to-filament-widgets-inventory.md).
