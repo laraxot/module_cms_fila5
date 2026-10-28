@@ -158,8 +158,8 @@ php artisan lang:check
 ## Documentazione Correlata
 
 ### Moduli Correlati
-- [Geo Conflict Resolution](../../geo/project_docs/conflict-resolution.md)
-- [User Theme Conflicts](../../user/project_docs/theme-translation-conflicts-resolution.md)
+- [Geo Conflict Resolution](../../Geo/docs/conflict-resolution.md)
+- [User Theme Conflicts](../../User/docs/theme-translation-conflicts-resolution.md)
 - [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-2025-01-06.md)
 
 ### Documentazione Cms
@@ -200,8 +200,8 @@ php artisan lang:check
 ## Collegamenti Correlati
 
 ### Documentazione Moduli
-- [Geo Conflict Resolution](../../geo/project_docs/conflict-resolution.md)
-- [User Theme Conflicts](../../user/project_docs/theme-translation-conflicts-resolution.md)
+- [Geo Conflict Resolution](../../Geo/docs/conflict-resolution.md)
+- [User Theme Conflicts](../../User/docs/theme-translation-conflicts-resolution.md)
 - [Xot Git Conflicts](../../xot/project_docs/git-conflicts-resolution-2025-01-06.md)
 
 ### Documentazione Cms

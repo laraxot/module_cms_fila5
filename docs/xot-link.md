@@ -22,15 +22,15 @@ Secondo le regole di organizzazione della documentazione:
 
 ## Collegamenti Principali
 
-- [Linee Guida Generali](../../xot/project_docs/documentation-guidelines.md) - Linee guida per la documentazione
+- [Linee Guida Generali](../../Xot/docs/documentation-guidelines.md) - Linee guida per la documentazione
 - [Convenzioni di Codice](../../xot/project_docs/code-standards.md) - Standard di codice e best practices
-- [Struttura dei Moduli](../../xot/project_docs/module-structure.md) - Documentazione sulla struttura dei moduli
+- [Struttura dei Moduli](../../Xot/docs/module-structure.md) - Documentazione sulla struttura dei moduli
 - [Regole per i Prompt](../../xot/project_docs/prompt_rules.md) - Regola universale per i prompt
 
 ## Convenzioni e Regole
 
-- [Convenzioni Namespace](../../xot/project_docs/namespace-conventions.md) - Regole per i namespace
-- [Convenzioni di Nomenclatura](../../xot/project_docs/naming-conventions.md) - Regole per la nomenclatura
+- [Convenzioni Namespace](../../Xot/docs/namespace-conventions.md) - Regole per i namespace
+- [Convenzioni di Nomenclatura](../../Xot/docs/naming-conventions.md) - Regole per la nomenclatura
 
 ## Collegamento Bidirezionale
 
