@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Filament\Resources\PageContentResource;
 use Modules\Cms\Filament\Resources\PageResource;
@@ -186,10 +185,4 @@ test('lang base resource provides multilingual features', function () {
         Assert::assertIsString($defaultLocale);
         Assert::assertNotSame('', $defaultLocale);
     }
-=======
-describe('CMS Resource Extension', function () {
-    test('resource extension placeholder', function () {
-        // Placeholder - actual tests require full setup
-    })->todo();
->>>>>>> 127b4277 (.)
 });

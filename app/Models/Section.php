@@ -14,7 +14,6 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Section.
  *
-<<<<<<< HEAD
  * @property string|null                         $id
  * @property array<array-key, mixed>|null        $name
  * @property string|null                         $slug
@@ -27,23 +26,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property array<int|string, mixed>            $translatable_columns_from
  * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null                $updater
-=======
- * @property string $id
- *
- * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- *
- * @property string                       $id
- * @property array<array-key, mixed>|null $name
- * @property string|null                  $slug
- * @property array<array-key, mixed>|null $blocks
- * @property Carbon|null                  $created_at
- * @property Carbon|null                  $updated_at
- * @property string|null                  $created_by
- * @property string|null                  $updated_by
- * @property ProfileContract|null         $creator
- * @property mixed                        $translations
- * @property ProfileContract|null         $updater
->>>>>>> 127b4277 (.)
  *
  * @method static Builder<static>|Section newModelQuery()
  * @method static Builder<static>|Section newQuery()

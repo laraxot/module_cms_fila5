@@ -197,17 +197,10 @@ final class BuildPageSchemaAction
             $schema['identifier'] = $publicIdentifier;
         }
 
-<<<<<<< HEAD
         $givenName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
         $familyName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
         $email = '' !== trim($publicEmail) ? trim($publicEmail) : trim($profileEmail);
         $description = $profileBio;
-=======
-        $givenName = trim((string) ($publicUser->first_name ?? $profileFirstName));
-        $familyName = trim((string) ($publicUser->last_name ?? $profileLastName));
-        $email = trim((string) ($publicUser->email ?? $profileEmail));
-        $description = trim((string) $profileBio);
->>>>>>> 127b4277 (.)
         $image = $profileImage;
 
         if ($givenName !== '') {

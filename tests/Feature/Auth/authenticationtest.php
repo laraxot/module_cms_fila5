@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 namespace Modules\Cms\Tests\Feature\Auth;
 
 use Livewire\Volt\Volt as LivewireVolt;
@@ -16,24 +15,11 @@ test('login screen can be rendered', function (): void {
 
 test('users can authenticate using the login screen', function (): void {
     $user = $this->createTestUser();
-=======
-use Livewire\Features\SupportTesting\Testable;
-use Livewire\Volt\Volt as LivewireVolt;
-
-test('login screen can be rendered', function (): void {
-    $lang = app()->getLocale();
-    cmsGet('/'.$lang.'/auth/login');
-});
-
-test('users can authenticate using the login screen', function (): void {
-    $user = cmsCreateTestUser();
->>>>>>> 127b4277 (.)
 
     $response = LivewireVolt::test('auth.login')
         ->set('email', $user->email)
         ->set('password', 'password')
         ->call('authenticate');
-<<<<<<< HEAD
 
     $response->assertHasNoErrors(); // ->assertRedirect(route('dashboard', absolute: false))
 
@@ -64,9 +50,3 @@ test('users can authenticate using the login screen', function (): void {
  * expect(Auth::guest())->toBeTrue();
  * });
  */
-=======
-    /* @var Testable<\Livewire\Component> $response */
-
-    $response->assertHasNoErrors();
-});
->>>>>>> 127b4277 (.)

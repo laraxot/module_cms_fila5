@@ -20,18 +20,12 @@ function getFolioPaths(): array
     $paths = [];
 
     foreach (preg_split("/\r?\n/", $output) as $line) {
-<<<<<<< HEAD
         if (! is_string($line)) {
             continue;
         }
         // Lines look like: "  GET       /it ...."
         if (1 === preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) && isset($m[1]) && is_string($m[1])) {
             $paths[] = $m[1];
-=======
-        /** @var string $line */
-        if (preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) === 1) {
-            $paths[] = $m[1] ?? '';
->>>>>>> 127b4277 (.)
         }
     }
 
@@ -49,14 +43,9 @@ it('validates Folio routes basic accessibility and localization', function (): v
     $paths = getFolioPaths();
 
     foreach ($paths as $path) {
-<<<<<<< HEAD
         // Root should redirect to /{locale}
         if ('/' === $path) {
             $response = $this->get($path);
-=======
-        if ($path === '/') {
-            $response = cmsGet($path);
->>>>>>> 127b4277 (.)
             $response->assertRedirect('/'.$locale);
 
             continue;
@@ -70,14 +59,9 @@ it('validates Folio routes basic accessibility and localization', function (): v
         $response = $this->get($path);
         $status = $response->getStatusCode();
 
-<<<<<<< HEAD
         // Skip Not Found (routing misalignment) and any server error with context
         if (404 === $status) {
             $this->markTestSkipped("Folio route not found (404): {$path}");
-=======
-        if ($status === 404) {
-            cmsSkipTest("Folio route not found (404): {$path}");
->>>>>>> 127b4277 (.)
         }
         elseif ($status >= 500) {
             $this->markTestSkipped("Folio route returned server error ({$status}): {$path}");

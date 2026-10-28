@@ -7,10 +7,7 @@ use PHPUnit\Framework\Assert;
 
 test('Attachment model can be instantiated', function () {
     $attachment = new Attachment;
-<<<<<<< HEAD
     Assert::assertSame(Attachment::class, $attachment::class);
-=======
->>>>>>> 127b4277 (.)
 
 });
 
@@ -42,9 +39,6 @@ test('Attachment model has expected casts', function () {
 
 test('Attachment model implements HasMedia interface', function () {
     $attachment = new Attachment;
-<<<<<<< HEAD
     Assert::assertSame(Attachment::class, $attachment::class);
-=======
->>>>>>> 127b4277 (.)
 
 });

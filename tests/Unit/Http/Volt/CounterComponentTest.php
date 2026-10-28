@@ -8,10 +8,7 @@ use PHPUnit\Framework\Assert;
 describe('CounterComponent', function (): void {
     test('counter component extends volt component', function (): void {
         $component = new CounterComponent;
-<<<<<<< HEAD
         Assert::assertSame(CounterComponent::class, $component::class);
-=======
->>>>>>> 127b4277 (.)
 
     });
 
@@ -21,19 +18,9 @@ describe('CounterComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('count'));
     });
 
-<<<<<<< HEAD
     test('counter component has increment method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
     test('counter component has decrement method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-    test('counter component has increment method', function (): void {
-        Assert::assertTrue((new ReflectionClass(CounterComponent::class))->hasMethod('increment'));
-    });
-
-    test('counter component has decrement method', function (): void {
-        Assert::assertTrue((new ReflectionClass(CounterComponent::class))->hasMethod('decrement'));
-    });
->>>>>>> 127b4277 (.)
 
     test('counter component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(CounterComponent::class);

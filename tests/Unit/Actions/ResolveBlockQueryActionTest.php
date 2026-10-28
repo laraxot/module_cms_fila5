@@ -7,11 +7,7 @@ use Modules\Cms\Models\Page;
 use PHPUnit\Framework\Assert;
 
 test('ResolveBlockQueryAction can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(ResolveBlockQueryAction::class, (new ResolveBlockQueryAction)::class);
-=======
-    $action = new ResolveBlockQueryAction;
->>>>>>> 127b4277 (.)
 
 });
 

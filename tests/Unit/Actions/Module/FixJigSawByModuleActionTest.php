@@ -15,13 +15,7 @@ use function Safe\rmdir;
 use function Safe\unlink;
 
 test('FixJigSawByModuleAction can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertTrue(class_exists(FixJigSawByModuleAction::class));
-=======
-    $action = new FixJigSawByModuleAction;
-
-    Assert::assertInstanceOf(FixJigSawByModuleAction::class, $action);
->>>>>>> 127b4277 (.)
 });
 
 test('FixJigSawByModuleAction execute method returns array', function () {

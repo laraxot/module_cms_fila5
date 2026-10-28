@@ -7,25 +7,16 @@ use Modules\Cms\Models\Section;
 use Modules\Cms\Models\Traits\HasBlocks;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
 // Si usano i modelli reali che adottano il trait (Page, Section): un'anonymous class
 // ereditata da BaseModel farebbe analizzare il trait fuori dal suo contesto e falserebbe
 // i tipi dei suoi metodi.
 test('HasBlocks trait can be used', function (): void {
     $model = new Page;
-=======
-test('HasBlocks trait can be used', function () {
-    // Create an anonymous class that uses the trait
-    $model = new class extends BaseModel
-    {
-        use HasBlocks;
->>>>>>> 127b4277 (.)
 
     Assert::assertContains(HasBlocks::class, class_uses_recursive($model));
     Assert::assertSame(['title' => 'plain'], $model->compile(['title' => 'plain']));
 });
 
-<<<<<<< HEAD
 // Filament Blueprint C-3 + FO religion (container0.view, mai localizeURL).
 // Under test: Modules\Cms\Models\Traits\HasBlocks::compile. Existing file: this.
 // User: «localizeUrl è sbagliato… corretta era route(container0.view)… non rifarlo più».
@@ -35,16 +26,6 @@ test('compile renders the allowlisted route expression', function (): void {
             'href' => "{{ route('container0.index',['container0'=>'tickets']) }}",
         ],
     ]);
-=======
-test('HasBlocks trait has static method getBlocksBySlug', function () {
-    // Create an anonymous class that uses the trait
-    $modelClass = new class extends BaseModel
-    {
-        use HasBlocks;
-
-        protected $table = 'pages'; // Use existing table
-    };
->>>>>>> 127b4277 (.)
 
     Assert::assertIsArray($compiled['nested']);
     Assert::assertIsString($compiled['nested']['href']);

@@ -2,27 +2,10 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
 namespace Modules\Cms\Tests\Feature;
 
 
 use function Pest\Laravel\get;
-=======
-use Illuminate\Http\Response;
-use Illuminate\Testing\TestResponse;
-use PHPUnit\Framework\Assert;
-
-beforeEach(function (): void {
-    /* @var \Modules\Cms\Tests\TestCase $this */
-    if (! \is_string(config('app.key')) || config('app.key') === '') {
-        $key = 'base64:'.base64_encode(str_repeat('x', 32));
-        config()->set('app.key', $key);
-        $_ENV['APP_KEY'] = $key;
-    }
-
-    cmsSkipTest('Filament blocks homepage integration requires full theme + block wiring in this install.');
-});
->>>>>>> 127b4277 (.)
 
 describe('Filament Blocks Integration', function () {
     it('integrates with PageContentBuilder correctly', function () {
@@ -140,14 +123,7 @@ describe('Filament Blocks Integration', function () {
         $endTime = microtime(true);
         $loadTime = ($endTime - $startTime) * 1000;
 
-<<<<<<< HEAD
         $response->assertStatus(200);
-=======
-        $status = $response->getStatusCode();
-        if ($status !== 200) {
-            cmsSkipTest('Homepage is not directly renderable (redirect/non-200) in this install; performance check is not applicable.');
-        }
->>>>>>> 127b4277 (.)
 
         // Verifica che i blocchi si carichino entro tempi accettabili
         expect($loadTime)->toBeLessThan(500);

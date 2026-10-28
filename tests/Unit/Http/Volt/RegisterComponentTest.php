@@ -10,10 +10,7 @@ use PHPUnit\Framework\Assert;
 describe('Register Component', function (): void {
     test('register component extends volt component', function (): void {
         $component = new RegisterComponent;
-<<<<<<< HEAD
         Assert::assertSame(RegisterComponent::class, $component::class);
-=======
->>>>>>> 127b4277 (.)
 
     });
 

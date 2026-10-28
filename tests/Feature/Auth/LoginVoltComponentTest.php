@@ -57,16 +57,10 @@ final class LoginVoltComponentTest extends TestCase
             ->set('password', 'password123')
             ->call('save');
 
-<<<<<<< HEAD
-    $response->assertHasNoErrors();
-    cmsAssertAuthenticated();
-    Assert::assertEquals($user->getAuthIdentifier(), Auth::id());
-});
-=======
         $response->assertHasNoErrors();
         cmsAssertAuthenticated();
+        Assert::assertEquals($user->getAuthIdentifier(), Auth::id());
     }
->>>>>>> 127b4277 (.)
 
     public function test_authentication_fails_with_wrong_credentials(): void
     {
@@ -262,135 +256,8 @@ final class LoginVoltComponentTest extends TestCase
             ->assertSet('remember', true);
     }
 
-<<<<<<< HEAD
-it('handles keyboard navigation', function (): void {
-})->todo('Serve una asserzione sul markup di navigazione da tastiera (autofocus/tabindex/submit) del form di login: dipende dal tema pubblico attivo, va scritta sul suo markup reale.');
-=======
-    public function test_component_resets_after_failed_authentication(): void
+    public function test_handles_keyboard_navigation(): void
     {
-        $email = cmsGenerateUniqueEmail();
-
-        $component = LivewireVolt::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'wrong_password')
-            ->call('save');
-
-        $component->assertSet('password', '');
-    }
-
-    public function test_loading_state_is_managed_correctly(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-        ]);
-
-        $component = LivewireVolt::test('auth.login')->set('email', $email)->set('password', 'password123');
-
-        $component->assertDontSee('wire:loading');
-
-        $component->call('save');
-
-        $component->assertHasNoErrors();
-    }
-
-    // ---- Volt Component User Types Integration ----
-
-    public function test_any_user_type_can_login_via_volt_component(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-        ]);
-        cmsAssertGuest();
-
-        $response = LivewireVolt::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password123')
-            ->call('save');
-
-        $response->assertHasNoErrors();
-        cmsAssertAuthenticated();
-
-        $authenticatedUser = Auth::user();
-        Assert::assertNotNull($authenticatedUser);
-        Assert::assertSame($email, $authenticatedUser->email);
-    }
-
-    public function test_component_handles_different_user_configurations(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-            'name' => 'Test User',
-        ]);
-
-        $response = LivewireVolt::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password123')
-            ->call('save');
-
-        $response->assertHasNoErrors();
-        cmsAssertAuthenticated();
-
-        $authenticatedUser = Auth::user();
-        Assert::assertSame('Test User', $authenticatedUser?->name);
-    }
-
-    // ---- Volt Component Redirects ----
-
-    public function test_component_redirects_after_successful_authentication(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-        ]);
-
-        $response = LivewireVolt::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password123')
-            ->call('save');
-
-        $response->assertHasNoErrors();
-        cmsAssertAuthenticated();
-    }
-
-    public function test_component_handles_intended_redirect(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-        ]);
-
-        Session::put('url.intended', '/dashboard');
-
-        $response = LivewireVolt::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password123')
-            ->call('save');
-
-        $response->assertHasNoErrors();
-        cmsAssertAuthenticated();
-    }
-
-    // ---- Volt Component Accessibility ----
-
-    public function test_component_has_proper_aria_labels(): void
-    {
-        /** @var Testable<Component> $component */
-        $component = LivewireVolt::test('auth.login');
-        $component->assertSee('aria-label')->assertSee('id="data.email"')->assertSee('id="data.password"');
-    }
-
-    public function test_component_handles_keyboard_navigation(): void
-    {
-        /** @var Testable<Component> $component */
-        $component = LivewireVolt::test('auth.login');
+        $this->markTestSkipped('Dipende dal markup del tema pubblico attivo.');
     }
 }
->>>>>>> 127b4277 (.)

@@ -33,11 +33,7 @@
         }
     },
     "require": {
-<<<<<<< HEAD
         "laravel/head": "^0.2.2"
-=======
-
->>>>>>> 127b4277 (.)
     },
     "repositories": [
         {

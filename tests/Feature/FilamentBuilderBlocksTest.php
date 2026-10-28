@@ -8,14 +8,8 @@ use Filament\Forms\Components\Builder\Block;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-<<<<<<< HEAD
 use PHPUnit\Framework\Assert as PHPUnitAssert;
 use Webmozart\Assert\Assert;
-=======
-use Modules\Xot\Datas\ComponentFileData;
-use PHPUnit\Framework\Assert;
-use Spatie\LaravelData\DataCollection;
->>>>>>> 127b4277 (.)
 
 use function Pest\Laravel\get;
 describe('Filament Builder Blocks System', function () {
@@ -24,7 +18,6 @@ describe('Filament Builder Blocks System', function () {
 
         expect($allBlocks->count())->toBeGreaterThan(0, 'At least one block should be discovered');
 
-<<<<<<< HEAD
         // Verify each block has required properties
         foreach ($allBlocks as $block) {
             expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);
@@ -222,25 +215,4 @@ describe('Filament Builder Blocks System', function () {
         $renderTime = microtime(true) - $startTime;
         expect($renderTime)->toBeLessThan(2.0, 'Page rendering should be reasonably fast');
     });
-=======
-test('blocks component class exists and can be instantiated', function (): void {
-    Assert::assertTrue(class_exists(Blocks::class));
-
-    $component = new Blocks('ui::components.render.blocks', []);
-
-    Assert::assertInstanceOf(Blocks::class, $component);
-
-    Assert::assertSame([], $component->blocks);
-
-    Assert::assertSame('ui::components.render.blocks', $component->view);
-});
-
-test('discovered blocks expose the expected metadata keys', function (): void {
-    $allBlocks = app(GetAllBlocksAction::class)->execute();
-
-    foreach ($allBlocks->toCollection() as $block) {
-        Assert::assertInstanceOf(ComponentFileData::class, $block);
-        Assert::assertArrayHasKey('name', $block->toArray());
-    }
->>>>>>> 127b4277 (.)
 });

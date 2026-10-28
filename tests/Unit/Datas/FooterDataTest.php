@@ -14,22 +14,14 @@ test('FooterData can be instantiated', function (): void {
 });
 
 test('FooterData extends Spatie Data', function (): void {
-<<<<<<< HEAD
     $parent = (new ReflectionClass(FooterData::class))->getParentClass();
-=======
-    $footerData = new FooterData;
->>>>>>> 127b4277 (.)
 
     Assert::assertNotFalse($parent);
     Assert::assertSame(Data::class, $parent->getName());
 });
 
 test('FooterData implements Wireable interface', function (): void {
-<<<<<<< HEAD
     $interfaces = \Safe\class_implements(FooterData::class);
-=======
-    $footerData = new FooterData;
->>>>>>> 127b4277 (.)
 
     Assert::assertContains(Wireable::class, $interfaces);
 });
