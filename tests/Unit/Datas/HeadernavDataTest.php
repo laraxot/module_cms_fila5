@@ -14,22 +14,14 @@ test('HeadernavData can be instantiated', function (): void {
 });
 
 test('HeadernavData extends Spatie Data', function (): void {
-<<<<<<< HEAD
     $parent = (new ReflectionClass(HeadernavData::class))->getParentClass();
-=======
-    $headernavData = new HeadernavData;
->>>>>>> 127b4277 (.)
 
     Assert::assertInstanceOf(ReflectionClass::class, $parent);
     Assert::assertSame(Data::class, $parent->getName());
 });
 
 test('HeadernavData implements Wireable interface', function (): void {
-<<<<<<< HEAD
     $interfaces = \Safe\class_implements(HeadernavData::class);
-=======
-    $headernavData = new HeadernavData;
->>>>>>> 127b4277 (.)
 
     Assert::assertContains(Wireable::class, $interfaces);
 });

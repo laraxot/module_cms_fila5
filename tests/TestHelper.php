@@ -18,7 +18,6 @@ use Spatie\Permission\Contracts\Role;
  */
 abstract class TestHelper extends BaseTestCase
 {
-<<<<<<< HEAD
     // use CreatesApplication;
 
     // in User
@@ -41,37 +40,12 @@ abstract class TestHelper extends BaseTestCase
             })
             ->filter(fn ($value): bool => $value !== null)
             ->first();
-=======
-    public ?User $super_admin_user = null;
-
-    public ?User $no_super_admin_user = null;
-
-    public function getSuperAdminUser(): ?User
-    {
-        /** @var User|null $user */
-        $user = User::role('super-admin')->first();
->>>>>>> 127b4277 (.)
 
         return $user;
     }
 
-<<<<<<< HEAD
     // in Tenant o Cms
     /** @return array<int, string> */
-=======
-    public function getNoSuperAdminUser(): ?User
-    {
-        /** @var User|null $user */
-        $user = User::all()
-            ->first(fn (User $item): bool => ! $item->hasRole('super-admin'));
-
-        return $user;
-    }
-
-    /**
-     * @return list<string>
-     */
->>>>>>> 127b4277 (.)
     public function getModuleNameLists(): array
     {
         /** @var Module $module */
@@ -95,29 +69,11 @@ abstract class TestHelper extends BaseTestCase
     /** @return array<int, string> */
     public function getMainAdminNavigationUrlItems(): array
     {
-<<<<<<< HEAD
         $items = collect(app(GetModulesNavigationItems::class)->execute())
             ->map(function ($item): ?string {
                 $url = $item->getUrl();
                 if (is_string($url) && $url) {
                     return $url;
-=======
-        return collect(app(GetModulesNavigationItems::class)->execute())
-            ->map(fn (NavigationItem $item): ?string => $item->getUrl());
-    }
-
-    /**
-     * @return Collection<int, string>
-     */
-    public function getUserNavigationItemUrlRoles(User $user): Collection
-    {
-        /** @var Collection<int, string> $urls */
-        $urls = $user
-            ->getRoleNames()
-            ->map(function (mixed $item): ?string {
-                if (! is_string($item) || $item === 'super-admin') {
-                    return null;
->>>>>>> 127b4277 (.)
                 }
 
                 return null;

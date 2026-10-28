@@ -10,10 +10,7 @@ use PHPUnit\Framework\Assert;
 describe('Section Model', function (): void {
     test('section model can be instantiated', function (): void {
         $model = new Section;
-<<<<<<< HEAD
         Assert::assertSame(Section::class, $model::class);
-=======
->>>>>>> 127b4277 (.)
 
     });
 
@@ -65,19 +62,13 @@ describe('Section Model', function (): void {
 
     test('section model has getRows method', function (): void {
         $model = new Section;
-<<<<<<< HEAD
 
         Assert::assertContainsOnlyArray($model->getRows());
-=======
->>>>>>> 127b4277 (.)
     });
 
     test('section model extends BaseModelLang', function (): void {
         $model = new Section;
-<<<<<<< HEAD
         Assert::assertSame(Section::class, $model::class);
-=======
->>>>>>> 127b4277 (.)
 
     });
 });

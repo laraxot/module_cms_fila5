@@ -1,10 +1,6 @@
 <?php
 
 declare(strict_types=1);
-<<<<<<< HEAD
-=======
-use Modules\Cms\Tests\TestCase;
->>>>>>> 127b4277 (.)
 
 /*
  * Bootstrap Pest — modulo Cms.

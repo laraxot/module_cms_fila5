@@ -9,11 +9,7 @@ use Spatie\Translatable\HasTranslations;
 
 describe('PageContent Model', function (): void {
     test('page content model can be instantiated', function (): void {
-<<<<<<< HEAD
         Assert::assertSame(PageContent::class, (new PageContent)::class);
-=======
-        $model = new PageContent;
->>>>>>> 127b4277 (.)
 
     });
 
@@ -63,17 +59,9 @@ describe('PageContent Model', function (): void {
 
     test('page content model has getRows method', function (): void {
         $model = new PageContent;
-<<<<<<< HEAD
 
         Assert::assertContainsOnlyArray($model->getRows());
     });
 
     test('page content model has sluggable method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-    });
-
-    test('page content model has sluggable method', function (): void {
-        Assert::assertTrue((new ReflectionClass(PageContent::class))->hasMethod('sluggable'));
-    });
->>>>>>> 127b4277 (.)
 });

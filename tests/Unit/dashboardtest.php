@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
 test('route home returns successful response with correct view', function (): void {
     $response = cmsGetOrSkipOnServerError('/');
     $status = $response->status();
@@ -14,11 +13,6 @@ test('route home returns successful response with correct view', function (): vo
         return;
     }
     Assert::assertContains($status, [200, 404]);
-=======
-test('route home redirects to locale-specific page', function (): void {
-    // The home route redirects to a locale-specific URL
-    get('/')->assertRedirect();
->>>>>>> 127b4277 (.)
 });
 
 test('route login returns successful response with correct view', function (): void {

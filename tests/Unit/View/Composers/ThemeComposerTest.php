@@ -7,7 +7,6 @@ use PHPUnit\Framework\Assert;
 
 test('ThemeComposer can be instantiated', function () {
     $composer = new ThemeComposer;
-<<<<<<< HEAD
     Assert::assertSame(ThemeComposer::class, $composer::class);
 });
 
@@ -43,34 +42,6 @@ test('ThemeComposer getPageModel returns null for non-existent page', function (
 });
 
 test('ThemeComposer getUrlPage returns the localized url of an existing page', function () {})->todo('Manca il caso "pagina esistente": richiede una fixture JSON isolata. Il caso "pagina assente" e\' coperto sotto.');
-=======
-    Assert::assertInstanceOf(ThemeComposer::class, $composer);
-});
-
-test('ThemeComposer has getMenu method', function () {
-    $composer = new ThemeComposer;
-});
-
-test('ThemeComposer has getMenuUrl method', function () {
-    $composer = new ThemeComposer;
-});
-
-test('ThemeComposer has showPageContent method', function () {
-    $composer = new ThemeComposer;
-});
-
-test('ThemeComposer has getPages method', function () {
-    $composer = new ThemeComposer;
-});
-
-test('ThemeComposer has getPageModel method', function () {
-    $composer = new ThemeComposer;
-});
-
-test('ThemeComposer has getUrlPage method', function () {
-    $composer = new ThemeComposer;
-});
->>>>>>> 127b4277 (.)
 
 test('ThemeComposer getMenuUrl returns hash for empty array', function () {
     $composer = new ThemeComposer;

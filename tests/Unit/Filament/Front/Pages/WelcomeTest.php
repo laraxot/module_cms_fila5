@@ -6,12 +6,8 @@ use Modules\Cms\Filament\Front\Pages\Welcome;
 use PHPUnit\Framework\Assert;
 
 test('Welcome page can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(Welcome::class, (new Welcome)::class);
 
-=======
-    $page = new Welcome;
->>>>>>> 127b4277 (.)
 });
 
 test('Welcome page has view_type property', function () {
@@ -50,25 +46,11 @@ test('Welcome page has instanceModel property', function () {
     Assert::assertSame('instanceModel', $property->getName());
 });
 
-<<<<<<< HEAD
 test('Welcome page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Welcome page has getViewData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Welcome page has initView method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
-=======
-test('Welcome page has mount method', function () {
-    Assert::assertTrue((new ReflectionClass(Welcome::class))->hasMethod('mount'));
-});
-
-test('Welcome page has getViewData method', function () {
-    Assert::assertTrue((new ReflectionClass(Welcome::class))->hasMethod('getViewData'));
-});
-
-test('Welcome page has initView method', function () {
-    Assert::assertTrue((new ReflectionClass(Welcome::class))->hasMethod('initView'));
-});
->>>>>>> 127b4277 (.)
 
 test('Welcome page has url method', function () {})->todo();
 

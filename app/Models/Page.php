@@ -17,7 +17,6 @@ use Modules\Xot\Contracts\ProfileContract;
 /**
  * Modules\Cms\Models\Page.
  *
-<<<<<<< HEAD
  * @property string|null                         $id
  * @property array<array-key, mixed>|null        $title
  * @property string|null                         $slug
@@ -37,32 +36,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property array<int|string, mixed>            $translatable_columns_from
  * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null                $updater
-=======
- * @property string $id
- *
- * @method static array<int, array<string, mixed>>            getMiddlewareBySlug(string $slug)
- * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- *
- * @property string                       $id
- * @property array<array-key, mixed>|null $title
- * @property string|null                  $slug
- * @property array<array-key, mixed>|null $middleware
- * @property string|null                  $content
- * @property string|null                  $description
- * @property array<array-key, mixed>|null $blocks
- * @property array<array-key, mixed>|null $content_blocks
- * @property array<array-key, mixed>|null $sidebar_blocks
- * @property array<array-key, mixed>|null $footer_blocks
- * @property Carbon|null                  $created_at
- * @property Carbon|null                  $updated_at
- * @property string|null                  $created_by
- * @property string|null                  $updated_by
- * @property string|null                  $deleted_by
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
- * @property ProfileContract|null         $deleter
- * @property mixed                        $translations
->>>>>>> 127b4277 (.)
  *
  * @method static Builder<static>|Page                                  newModelQuery()
  * @method static Builder<static>|Page                                  newQuery()

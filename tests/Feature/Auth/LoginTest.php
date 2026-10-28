@@ -7,7 +7,6 @@ namespace Modules\Cms\Tests\Feature\Auth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
-<<<<<<< HEAD
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Xot\Datas\XotData;
 
@@ -111,101 +110,11 @@ describe('Frontend Login Session Management', function (): void {
     test('remember me functionality works', function (): void {
         $email = $this->generateUniqueEmail();
         $this->createTestUser([
-=======
-use Modules\Cms\Tests\TestCase;
-use PHPUnit\Framework\Assert;
-
-final class LoginTest extends TestCase
-{
-    public function test_login_page_can_be_rendered(): void
-    {
-        $locale = app()->getLocale();
-        $response = cmsGet('/'.$locale.'/auth/login');
-        Assert::assertSame(200, $response->status());
-    }
-
-    public function test_login_page_contains_login_widget(): void
-    {
-        $locale = app()->getLocale();
-        $response = cmsGet('/'.$locale.'/auth/login');
-        Assert::assertSame(200, $response->status());
-    }
-
-    public function test_login_page_has_required_form_elements(): void
-    {
-        $locale = app()->getLocale();
-        $response = cmsGet('/'.$locale.'/auth/login');
-        Assert::assertSame(200, $response->status());
-    }
-
-    public function test_login_page_works_in_italian(): void
-    {
-        app()->setLocale('it');
-        $response = cmsGet('/it/auth/login');
-        Assert::assertSame(200, $response->status());
-    }
-
-    public function test_login_page_contains_localized_content(): void
-    {
-        $response = cmsGet('/it/auth/login');
-        $response
-            ->assertStatus(200)
-            ->assertSee('Hai dimenticato la password?')
-            ->assertSee(__('pub_theme::auth.login.title'))
-            ->assertSee(__('pub_theme::auth.login.or'));
-    }
-
-    public function test_user_can_authenticate_via_frontend_login_page(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        $user = cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-        ]);
-        cmsAssertGuest();
-
-        $response = LivewireVolt::test('auth.login')
-            ->set('email', $email)
-            ->set('password', 'password123')
-            ->call('authenticate');
-
-        $response->assertHasNoErrors();
-        cmsAssertAuthenticated();
-
-        $this->actingAs($user);
-
-        $locale = app()->getLocale();
-        $response = cmsGet('/'.$locale.'/auth/login');
-
-        Assert::assertSame('/', $response->headers->get('Location'));
-    }
-
-    public function test_authenticated_users_are_redirected_from_login_page(): void
-    {
-        $user = cmsCreateTestUser();
-
-        $this->actingAs($user);
-
-        $locale = app()->getLocale();
-        $response = cmsGet('/'.$locale.'/auth/login');
-
-        Assert::assertSame(302, $response->status());
-    }
-
-    public function test_remember_me_functionality_works(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
->>>>>>> 127b4277 (.)
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-<<<<<<< HEAD
         assertGuest();
-=======
-        cmsAssertGuest();
->>>>>>> 127b4277 (.)
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -214,37 +123,23 @@ final class LoginTest extends TestCase
             ->call('authenticate');
 
         $response->assertHasNoErrors();
-<<<<<<< HEAD
         assertAuthenticated();
     });
 
     test('session regeneration on login', function (): void {
         $email = $this->generateUniqueEmail();
         $this->createTestUser([
-=======
-        cmsAssertAuthenticated();
-    }
-
-    public function test_session_regeneration_on_login(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
->>>>>>> 127b4277 (.)
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-<<<<<<< HEAD
         // Store original session ID
-=======
->>>>>>> 127b4277 (.)
         $originalSessionId = session()->getId();
 
         LivewireVolt::test('auth.login')
             ->set('email', $email)
             ->set('password', 'password123')
             ->call('authenticate');
-<<<<<<< HEAD
 
         assertAuthenticated();
 
@@ -257,25 +152,11 @@ describe('Frontend Login Security', function (): void {
     test('login attempts are rate limited', function (): void {
         $email = $this->generateUniqueEmail();
         $this->createTestUser([
-=======
-        cmsAssertAuthenticated();
-
-        Assert::assertNotSame($originalSessionId, session()->getId());
-    }
-
-    public function test_login_attempts_are_rate_limited(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        cmsCreateTestUser([
->>>>>>> 127b4277 (.)
             'email' => $email,
             'password' => Hash::make('password123'),
         ]);
 
-<<<<<<< HEAD
         // Multiple failed attempts
-=======
->>>>>>> 127b4277 (.)
         for ($i = 0; $i < 5; $i++) {
             LivewireVolt::test('auth.login')
                 ->set('email', $email)
@@ -283,16 +164,12 @@ describe('Frontend Login Security', function (): void {
                 ->call('authenticate');
         }
 
-<<<<<<< HEAD
         // Should be rate limited after too many attempts
-=======
->>>>>>> 127b4277 (.)
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
             ->set('password', 'password123')
             ->call('authenticate');
 
-<<<<<<< HEAD
         // May have throttling errors
         // This test verifies the system handles rate limiting appropriately
         expect($response)->not->toBeNull();
@@ -309,19 +186,6 @@ describe('Frontend Login User Types', function (): void {
         ]);
 
         assertGuest();
-=======
-        Assert::assertNull($response);
-    }
-
-    public function test_any_user_type_can_login_via_frontend(): void
-    {
-        $email = cmsGenerateUniqueEmail();
-        $user = cmsCreateTestUser([
-            'email' => $email,
-            'password' => Hash::make('password123'),
-        ]);
-        cmsAssertGuest();
->>>>>>> 127b4277 (.)
 
         $response = LivewireVolt::test('auth.login')
             ->set('email', $email)
@@ -329,7 +193,6 @@ describe('Frontend Login User Types', function (): void {
             ->call('authenticate');
 
         $response->assertHasNoErrors();
-<<<<<<< HEAD
         assertAuthenticated();
 
         // Verify authenticated user
@@ -338,12 +201,3 @@ describe('Frontend Login User Types', function (): void {
         expect($authenticatedUser?->email)->toBe($email);
     });
 });
-=======
-        cmsAssertAuthenticated();
-
-        $authenticatedUser = Auth::user();
-        Assert::assertNotNull($authenticatedUser);
-        Assert::assertSame($email, $authenticatedUser->email);
-    }
-}
->>>>>>> 127b4277 (.)

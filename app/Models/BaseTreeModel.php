@@ -161,11 +161,7 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
         'updated_by' => 'string',
     ];
 
-<<<<<<< HEAD
     /** @property string $title */
-=======
-    #[\Override]
->>>>>>> 127b4277 (.)
     public function getLabel(): string
     {
         /** @var string $title */

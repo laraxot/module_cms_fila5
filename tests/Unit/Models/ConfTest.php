@@ -6,11 +6,7 @@ use Modules\Cms\Models\Conf;
 use PHPUnit\Framework\Assert;
 
 test('Conf model can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(Conf::class, (new Conf)::class);
-=======
-    $conf = new Conf;
->>>>>>> 127b4277 (.)
 
 });
 
