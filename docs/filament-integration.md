@@ -161,7 +161,7 @@ public function test_filament_components_rendering()
 - [Testing](../testing.md) 
 
 ## Collegamenti tra versioni di filament-integration.md
-* [filament-integration.md](laravel/modules/xot/project_docs/laraxot/filament-integration.md)
+* [filament-integration.md](../../Xot/docs/laraxot/filament-integration.md)
 * [filament-integration.md](laravel/modules/cms/project_docs/roadmap/features/filament-integration.md)
 * [filament-integration.md](laravel/modules/cms/project_docs/filament-integration.md)
 
