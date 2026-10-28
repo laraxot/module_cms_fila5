@@ -389,5 +389,5 @@ class ProductTest extends TestCase
 
 ## Collegamenti tra versioni di product-management.md
 * [product-management.md](laravel/modules/cms/project_docs/product-management.md)
-* [product-management.md](laravel/modules/cms/project_docs/components/product-management.md)
+* [product-management.md](components/product-management.md)
 

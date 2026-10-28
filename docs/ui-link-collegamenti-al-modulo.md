@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "ui link 1"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: ui-link.md
 ---
 
 # Collegamenti al Modulo UI

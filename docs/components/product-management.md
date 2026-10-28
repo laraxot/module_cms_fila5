@@ -491,5 +491,5 @@ $products = computed(function () {
 - [Filament Forms](https://filamentphp.com/docs/forms)
 
 ## Collegamenti tra versioni di product-management.md
-* [product-management.md](laravel/modules/cms/docs/product-management.md)
+* [product-management.md](../product-management.md)
 * [product-management.md](laravel/modules/cms/docs/components/product-management.md)

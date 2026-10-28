@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "code quality analysis 2025 11 24"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: code-quality-analysis-cms-module.md
 ---
 
 # Code Quality Analysis - CMS Module - November 2025

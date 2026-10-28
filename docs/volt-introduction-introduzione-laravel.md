@@ -182,5 +182,5 @@ class CounterTest extends TestCase
 - [Laravel Folio](https://github.com/laravel/folio)
 
 ## Collegamenti tra versioni di volt-introduction.md
-* [volt-introduction.md](laravel/modules/cms/docs/volt-introduction.md)
-* [volt-introduction.md](laravel/modules/cms/docs/components/volt-introduction.md)
+* [volt-introduction.md](volt-introduction.md)
+* [volt-introduction.md](components/volt-introduction.md)
