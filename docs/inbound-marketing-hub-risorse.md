@@ -33,6 +33,6 @@ Niente cento PDF. Contenuto in JSON tenant; Sixteen solo vestito.
 - Blog: [afc-pattern-adaptation](../../Blog/docs/afc-pattern-adaptation.md)
 - Sostenibilità contenuto: [project-sustainability-content.md](./project-sustainability-content.md)
 
-Analisi AFC hub: [afc-formazione-pattern-analysis](../Fixcity/docs/bmad/inbound-marketing/afc-formazione-pattern-analysis.md).
+Analisi AFC hub: [afc-formazione-pattern-analysis](../../Fixcity/docs/bmad/inbound-marketing/afc-formazione-pattern-analysis.md).
 
 Catalogo hub ≤6: vedi [piano editoriale §6.4](../../Fixcity/docs/bmad/inbound-marketing/editorial-plan-afc-aferrari.md).

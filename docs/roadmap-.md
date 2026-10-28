@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "roadmap "
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: roadmap/legacy/legacy-roadmap.md
 ---
 
 # Cms Module Roadmap 2026

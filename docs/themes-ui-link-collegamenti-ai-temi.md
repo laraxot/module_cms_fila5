@@ -29,7 +29,7 @@ Secondo le regole di organizzazione della documentazione:
 
 ## Collegamenti ai Temi nel Modulo Cms
 
-- [Compilazione dei Temi](./theme_compilation.md) - Processo di compilazione e pubblicazione dei temi
+- [Compilazione dei Temi](./theme-compilation.md) - Processo di compilazione e pubblicazione dei temi
 - [Processo di Build del Tema](./theme-build-process.md) - Dettagli sul processo di build
 - [Struttura dei Temi](./themes/structure.md) - Organizzazione dei file nei temi
 

@@ -4,7 +4,7 @@ type: concept
 module: Cms
 sources:
   - "../../../README.md"
-  - "../../../00-INDEX.md"
+  - "../../00-index.md"
 confidence: high
 created: 2026-10-14
 updated: 2026-10-14
