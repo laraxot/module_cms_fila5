@@ -24,7 +24,11 @@ Modulo Laraxot `Modules\Cms` (alias `cms`, priorita' 3 in `module.json`, provide
 
 ## Amministrazione Filament
 
+<<<<<<< .merge_file_9ovcJo
 Risorse: `PageResource`, `SectionResource`, `MenuResource`, `PageContentResource`, `AttachmentResource`. Blocchi per il Builder in `app/Filament/Blocks/` (17 classi: `HeroBlock`, `CtaBlock`, `ParagraphBlock`, `NavigationBlock`, ...). Cluster `Appearance` con pagine `Breadcrumb`, `Footer`, `Headernav` (salvano con `SaveFooterConfigAction`, `SaveHeadernavConfigAction` nella config del tenant), pagina `Themes`. Componenti Volt di autenticazione in `app/Http/Volt/` (Login, Register, Verify, Password).
+=======
+Risorse: `PageResource`, `SectionResource`, `MenuResource`, `PageContentResource`, `AttachmentResource`. Blocchi per il Builder in `app/Filament/Blocks/` (17 classi: `HeroBlock`, `CtaBlock`, `ParagraphBlock`, `NavigationBlock`, ...). `Filament\Fields\PageContentBuilder::make()` costruisce il Builder con i blocchi di `Modules\UI\Actions\Block\GetAllBlocksAction` e lo usano i form di `PageResource` (`content_blocks`, `sidebar_blocks`, `footer_blocks`), `PageContentResource` e `SectionResource` (`blocks`). Cluster `Appearance` con pagine `Breadcrumb`, `Footer`, `Headernav` (salvano con `SaveFooterConfigAction`, `SaveHeadernavConfigAction` nella config del tenant), pagina `Themes`. Componenti Volt di autenticazione in `app/Http/Volt/` (Login, Register, Verify, Password).
+>>>>>>> .merge_file_gbD2hY
 
 ## Quick start
 
@@ -68,13 +72,16 @@ Indice operativo: [00-INDEX.md](./00-index.md). Wiki: [wiki/index.md](./wiki/ind
 
 ## Dipendenze / Moduli Correlati
 
-- [Xot - Framework Base](../../Xot/docs/README.md) — Always dependency
-- [UI - Components](../../UI/docs/README.md) — For UI components library
-- [Lang - Translations](../../Lang/docs/README.md) — For i18n support
-- [Media - File Management](../../Media/docs/README.md) — For image/file handling
+- [Xot - Framework Base](../Xot/docs/README.md) — Always dependency
+- [UI - Components](../UI/docs/README.md) — For UI components library
+- [Lang - Translations](../Lang/docs/README.md) — For i18n support
+- [Media - File Management](../Media/docs/README.md) — For image/file handling
 
 ## Documenti Correlati
 
+- [Content Management Best Practices](../../../docs/wiki/standards/content-management.md)
+- [Block System Patterns](../../../docs/wiki/standards/block-patterns.md)
+- [Frontend Architecture](../../../docs/architecture/frontend.md)
 - [PHPStan Configuration](../../../phpstan.neon)
 
 ## Regole Critiche
@@ -89,9 +96,9 @@ Indice operativo: [00-INDEX.md](./00-index.md). Wiki: [wiki/index.md](./wiki/ind
 
 ## Standard Rules & Workflow
 
-- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
-- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
+- [[BMAD Method](../../../docs/wiki/concepts/bmad-method.md)]
+- [[Context Engineering](../../../docs/wiki/concepts/context-engineering.md)]
+- [[LLM Wiki Governance](../../../docs/wiki/concepts/llm-wiki-governance.md)]
 
 ---
 

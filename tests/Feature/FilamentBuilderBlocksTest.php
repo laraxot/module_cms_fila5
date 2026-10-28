@@ -8,6 +8,10 @@ use Filament\Forms\Components\Builder\Block;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+<<<<<<< .merge_file_i9eKVm
+=======
+use Modules\Xot\Datas\ComponentFileData;
+>>>>>>> .merge_file_Ew4xG7
 use PHPUnit\Framework\Assert as PHPUnitAssert;
 use Webmozart\Assert\Assert;
 
@@ -28,7 +32,11 @@ describe('Filament Builder Blocks System', function () {
     test('xot base block pattern is followed by cms blocks', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
+<<<<<<< .merge_file_i9eKVm
         $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+=======
+        $cmsBlocks = collect($allBlocks)->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
+>>>>>>> .merge_file_Ew4xG7
 
         expect($cmsBlocks->count())->toBeGreaterThan(0, 'CMS module should have blocks');
 
@@ -176,7 +184,11 @@ describe('Filament Builder Blocks System', function () {
 
     test('cms module blocks extend xot base block correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
+<<<<<<< .merge_file_i9eKVm
         $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+=======
+        $cmsBlocks = collect($allBlocks)->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
+>>>>>>> .merge_file_Ew4xG7
 
         foreach ($cmsBlocks as $block) {
             $blockClass = $block->class;

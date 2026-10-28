@@ -121,4 +121,8 @@ Sono stati misurati e non cambiano: 105 gruppi di nomi che differiscono per maiu
 | 2026-10-27 ~21:10 | subagent docs-Cms | riscrittura di `00-index.md` |
 | 2026-10-27 ~21:14 | subagent docs-Cms | rifatte le scansioni ricorsive con `rg`/`git grep` (messaggio del coordinatore sul `grep`), misura finale, questa story |
 
+<<<<<<< .merge_file_y222R1
 Nessun'altra sessione ha toccato `Modules/Cms/docs` durante il lavoro (tutti i file modificati negli ultimi 10 minuti erano miei). Non toccati: `homepage-parity-notes.md.lock` (lock vecchio di 30 giorni, non rimosso), `raw/`, `stories/` esistenti. La memoria collegata e' `docs-cms-module-order-dcp443`.
+=======
+Nessun'altra sessione ha toccato `Modules/Cms/docs` durante il lavoro (tutti i file modificati negli ultimi 10 minuti erano miei). Non toccati: `homepage-parity-notes.md.lock` (lock vecchio di 30 giorni, non rimosso), `raw/`, `stories/` esistenti. La memoria collegata e' `docs-cms-module-order-dcp443`.
+>>>>>>> .merge_file_2MPCe3
