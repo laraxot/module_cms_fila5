@@ -82,4 +82,8 @@ Per sapere se un documento e' ancora vero, la prova rapida e' cercare nel testo 
 
 ## Storia del riordino
 
+<<<<<<< .merge_file_TbzOp8
 [docs-organization-cms](./stories/docs-organization-cms.story.md) (maiuscole, frontmatter, rinomine) e [DCP-443](./stories/dcp-443-ordine-dei-docs-del-modulo-cms-link-nomi-e-scopo.story.md) (link, nomi con mese, scopo e questo indice).
+=======
+[docs-organization-cms](./stories/docs-organization-cms.story.md) (maiuscole, frontmatter, rinomine) e [DCP-443](./stories/dcp-443-ordine-dei-docs-del-modulo-cms-link-nomi-e-scopo.story.md) (link, nomi con mese, scopo e questo indice).
+>>>>>>> .merge_file_OAZAB4

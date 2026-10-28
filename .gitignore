@@ -48,6 +48,10 @@ docs/archived
 docs/cache/
 docs/legacy
 docs/archive/
+<<<<<<< .merge_file_yv4Mhp
+=======
+**/docs/archive/
+>>>>>>> .merge_file_zGgwLM
 docs/phpstan/
 /docs/vendor/
 #  docs/wiki/rules/module-theme-root-cleanup.md)
@@ -58,6 +62,8 @@ ehthumbs.db
 .env
 .env.*
 !.env.example
+
+# ==============================================
 # ENVIRONMENT & CONFIGURATION
 error_log
 *.fila2
@@ -109,6 +115,10 @@ public/storage
 rector.php
 *.rej
 resources/lang/
+
+# ==============================================
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
 resources/views/Components_old/
 scripts
 # (see docs/module-root-hygiene.md and
@@ -142,4 +152,8 @@ graphify-out/
 test-results/
 cms.code-workspace
 ruvector.db
+<<<<<<< .merge_file_yv4Mhp
 .windsurfrules
+=======
+.windsurfrules
+>>>>>>> .merge_file_zGgwLM
