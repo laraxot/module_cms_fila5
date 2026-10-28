@@ -134,6 +134,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static Collection<int, static> get($columns = ['*'])
  * @method static MenuFactory             factory($count = null, $state = [])
  *
+ * @implements HasRecursiveRelationshipsContract<Model>
  * @mixin \Eloquent
  */
 abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationshipsContract

@@ -8,6 +8,7 @@ use Filament\Forms\Components\Builder\Block;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+use Modules\Xot\Datas\ComponentFileData;
 use PHPUnit\Framework\Assert as PHPUnitAssert;
 use Webmozart\Assert\Assert;
 
@@ -28,7 +29,7 @@ describe('Filament Builder Blocks System', function () {
     test('xot base block pattern is followed by cms blocks', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
 
         expect($cmsBlocks->count())->toBeGreaterThan(0, 'CMS module should have blocks');
 
@@ -176,7 +177,7 @@ describe('Filament Builder Blocks System', function () {
 
     test('cms module blocks extend xot base block correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
-        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
 
         foreach ($cmsBlocks as $block) {
             $blockClass = $block->class;

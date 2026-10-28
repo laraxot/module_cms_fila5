@@ -321,8 +321,8 @@ class BlockData extends Data {
 
 ### Internal Documents
 
-- → [Layout Architecture](../../../Themes/Sixteen/docs/LAYOUT_ARCHITECTURE_AND_NAMESPACE.md) - Layout hierarchy
-- → [Fix Tests Pages](../../../Themes/Sixteen/docs/FIX_TESTS_PAGES_ARCHITECTURE.md) - Troubleshooting
+- → [Layout Architecture](../../../Themes/Sixteen/docs/layout-architecture-and-namespace.md) - Layout hierarchy
+- → [Fix Tests Pages](../../../Themes/Sixteen/docs/fix-tests-pages-architecture.md) - Troubleshooting
 - → [BMad Architecture](_bmad-output/design-comuni-architecture.md) - System design
 - → [Block Analysis](_bmad-output/design-comuni-block-analysis.md) - 47 componenti
 

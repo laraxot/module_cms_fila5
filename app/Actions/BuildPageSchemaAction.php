@@ -175,12 +175,18 @@ final class BuildPageSchemaAction
             }
         }
 
-        $name = trim((string) ($publicUser->name ?? ''));
+        $publicFirstName = $this->readNullableStringProperty($publicUser, 'first_name');
+        $publicLastName = $this->readNullableStringProperty($publicUser, 'last_name');
+        $publicEmail = $this->readNullableStringProperty($publicUser, 'email');
+
+        $givenName = $publicFirstName !== '' ? $publicFirstName : $profileFirstName;
+        $familyName = $publicLastName !== '' ? $publicLastName : $profileLastName;
+        $email = $publicEmail !== '' ? $publicEmail : $profileEmail;
+
+        $name = $this->readNullableStringProperty($publicUser, 'name');
 
         if ($name === '') {
-            $firstName = trim((string) ($publicUser->first_name ?? $profileFirstName));
-            $lastName = trim((string) ($publicUser->last_name ?? $profileLastName));
-            $name = trim($firstName.' '.$lastName);
+            $name = trim($givenName.' '.$familyName);
         }
 
         if ($name === '') {
@@ -197,9 +203,6 @@ final class BuildPageSchemaAction
             $schema['identifier'] = $publicIdentifier;
         }
 
-        $givenName = '' !== trim($publicFirstName) ? trim($publicFirstName) : $profileFirstName;
-        $familyName = '' !== trim($publicLastName) ? trim($publicLastName) : $profileLastName;
-        $email = '' !== trim($publicEmail) ? trim($publicEmail) : trim($profileEmail);
         $description = $profileBio;
         $image = $profileImage;
 
