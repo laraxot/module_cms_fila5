@@ -8,6 +8,10 @@ qmd: "content blocks architecture underscore superseded"
 tags: [docs, cms]
 ---
 
+<<<<<<< HEAD
 # Superseded
 
 Canonica: [content-blocks-architecture.md](./content-blocks-architecture.md).
+=======
+See canonical documentation: ../../../Themes/docs/shared-components/content-blocks-architecture.md
+>>>>>>> 127b4277 (.)

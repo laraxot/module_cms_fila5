@@ -15,6 +15,7 @@ beforeEach(function (): void {
 
 describe('Registration Widget', function (): void {
     test('patient widget renders correctly', function (): void {
+<<<<<<< HEAD
         Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
             ->assertStatus(200)
             ->assertViewIs(app(GetViewByClassAction::class)->execute(RegistrationWidget::class));
@@ -24,6 +25,23 @@ describe('Registration Widget', function (): void {
         Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
             ->assertStatus(200)
             ->assertViewIs(app(GetViewByClassAction::class)->execute(RegistrationWidget::class));
+=======
+        /** @var view-string $view */
+        $view = 'pub_theme::filament.widgets.registration';
+
+        Livewire::test(RegistrationWidget::class, ['type' => 'patient'])
+            ->assertStatus(200)
+            ->assertViewIs($view);
+    });
+
+    test('doctor widget renders correctly', function (): void {
+        /** @var view-string $view */
+        $view = 'pub_theme::filament.widgets.registration';
+
+        Livewire::test(RegistrationWidget::class, ['type' => 'doctor'])
+            ->assertStatus(200)
+            ->assertViewIs($view);
+>>>>>>> 127b4277 (.)
     });
 
     test('widget without type throws exception', function (): void {

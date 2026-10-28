@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
@@ -13,6 +14,8 @@ use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertGuest;
 use function Safe\class_implements;
 
+=======
+>>>>>>> 127b4277 (.)
 // LOGIN WIDGET TESTS - Filament Component
 // ✅ Test del WIDGET Filament, non della pagina
 // ✅ Focus su: rendering, form interaction, authentication logic
@@ -20,6 +23,7 @@ use function Safe\class_implements;
 
 // WIDGET STRUCTURE TESTS
 
+<<<<<<< HEAD
 test('widget can be rendered', function (): void {
     $component = Livewire::test(LoginWidget::class);
 
@@ -141,3 +145,28 @@ test('createTestUser creates valid instances', function (): void {
     $foundUser = $userClass::where('email', $user->email)->first();
     expect($foundUser?->getAttribute('email'))->toBe($user->email);
 });
+=======
+test('widget can be rendered', function (): void {})->todo();
+
+test('widget has correct view', function (): void {})->todo();
+
+test('widget initializes correctly', function (): void {})->todo();
+
+// WIDGET DATA BINDING TESTS
+
+test('can set form data', function (): void {})->todo();
+
+// WIDGET AUTHENTICATION LOGIC TESTS
+
+test('authenticates user with valid credentials', function (): void {})->todo();
+
+test('handles invalid credentials gracefully', function (): void {})->todo();
+
+// WIDGET XOTDATA INTEGRATION TESTS
+
+test('authentication works regardless of user type', function (): void {})->todo();
+
+test('getUserClass returns valid class', function (): void {})->todo();
+
+test('createTestUser creates valid instances', function (): void {})->todo();
+>>>>>>> 127b4277 (.)

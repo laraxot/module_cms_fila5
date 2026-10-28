@@ -7,7 +7,10 @@ use PHPUnit\Framework\Assert;
 
 test('PageContent model can be instantiated', function () {
     $pageContent = new PageContent;
+<<<<<<< HEAD
     Assert::assertSame(PageContent::class, $pageContent::class);
+=======
+>>>>>>> 127b4277 (.)
 
 });
 
@@ -25,7 +28,10 @@ test('PageContent model has expected fillable fields', function () {
 
 test('PageContent model extends BaseModel', function () {
     $pageContent = new PageContent;
+<<<<<<< HEAD
     Assert::assertSame(PageContent::class, $pageContent::class);
+=======
+>>>>>>> 127b4277 (.)
 
 });
 

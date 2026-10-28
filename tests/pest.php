@@ -1,6 +1,10 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< HEAD
+=======
+use Modules\Cms\Tests\TestCase;
+>>>>>>> 127b4277 (.)
 
 /*
  * Bootstrap Pest — modulo Cms.
@@ -13,7 +17,7 @@ declare(strict_types=1);
  */
 require_once __DIR__.'/PestHelpers.php';
 
-uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
+uses(TestCase::class)->in('Feature', 'Unit');
 
 /*
  * |--------------------------------------------------------------------------

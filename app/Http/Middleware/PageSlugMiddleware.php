@@ -5,9 +5,14 @@ declare(strict_types=1);
 namespace Modules\Cms\Http\Middleware;
 
 use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Log;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
+=======
+use Illuminate\Routing\Router;
+>>>>>>> 127b4277 (.)
 use Modules\Cms\Models\Page;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -25,9 +30,17 @@ class PageSlugMiddleware
     {
         $middlewares = $this->middlewaresOrRefuse($request);
 
+<<<<<<< HEAD
         // Execute middlewares manually in a chain (con lista vuota la catena chiama solo `$next`).
         return $this->executeMiddlewareChain($request, $middlewares, $next);
     }
+=======
+        if ($slug === null) {
+            $response = $next($request);
+            if (! $response instanceof Response) {
+                return new Response('Internal Server Error', 500);
+            }
+>>>>>>> 127b4277 (.)
 
     /**
      * Middleware dichiarati dalla pagina CMS della richiesta, gia' validati (allowlist e risolvibilita').
@@ -149,7 +162,11 @@ class PageSlugMiddleware
         // Un errore nella ricerca (slug duplicato, JSON illeggibile) non salta il candidato: la pagina potrebbe essere proprio
         // quella protetta. Propaga e `handle()` risponde 503 (DCP-283, C-03).
         foreach (array_unique($candidates) as $candidate) {
+<<<<<<< HEAD
             if ($this->findPageBySlug($candidate) !== null) {
+=======
+            if (Page::findUniqueBySlug($candidate) !== null) {
+>>>>>>> 127b4277 (.)
                 return $candidate;
             }
         }
@@ -245,14 +262,10 @@ class PageSlugMiddleware
      */
     protected function resolveMiddlewareClass(string $middleware): string
     {
-        // Get middleware aliases from HTTP kernel
-        // $kernel = app(\Illuminate\Contracts\Http\Kernel::class);
-
-        // Try to get from route middleware (custom middleware)
-        // method_exists will always be true for Http\Kernel, so we can remove the check
         /** @var array<string, class-string> $routeMiddleware */
-        // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
-        $routeMiddleware = $this->kernel->getMiddlewareAliases();
+        $routeMiddleware = $this->kernel instanceof HttpKernel
+            ? $this->kernel->getMiddlewareAliases()
+            : app(Router::class)->getMiddleware();
         if (isset($routeMiddleware[$middleware])) {
             /* @var class-string */
             return $routeMiddleware[$middleware];

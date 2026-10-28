@@ -7,7 +7,11 @@ use Modules\Cms\Models\Section;
 use PHPUnit\Framework\Assert;
 
 test('Section model can be instantiated', function () {
+<<<<<<< HEAD
     Assert::assertSame(Section::class, (new Section)::class);
+=======
+    $section = new Section;
+>>>>>>> 127b4277 (.)
 
 });
 
@@ -23,7 +27,11 @@ test('Section model has expected fillable fields', function () {
 });
 
 test('Section model extends BaseModelLang', function () {
+<<<<<<< HEAD
     Assert::assertSame(Section::class, (new Section)::class);
+=======
+    $section = new Section;
+>>>>>>> 127b4277 (.)
 
     // Section extends BaseModelLang for translations support
 });

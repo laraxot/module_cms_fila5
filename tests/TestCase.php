@@ -30,6 +30,35 @@ abstract class TestCase extends RootTestCase
     {
         parent::setUp();
         self::$currentTest = $this;
+<<<<<<< HEAD
+=======
+
+        $database = database_path('fixcity_data.sqlite');
+
+        /** @var array<string, array<string, mixed>> $connections */
+        $connections = config('database.connections', []);
+
+        foreach (array_keys($connections) as $connection) {
+            if (config("database.connections.{$connection}.driver") !== 'sqlite') {
+                continue;
+            }
+
+            $this->app['config']->set("database.connections.{$connection}.database", $database);
+            DB::purge($connection);
+        }
+
+        config(['xra.pub_theme' => 'TwentyOne']);
+        config(['xra.main_module' => 'User']);
+
+        XotData::make()->update([
+            'pub_theme' => 'TwentyOne',
+            'main_module' => 'User',
+        ]);
+
+        // NOTE: Migrations are NOT run in setUp()
+        // They must be run ONCE externally: php artisan migrate --env=testing
+        // DatabaseTransactions trait handles rollback automatically between tests
+>>>>>>> 127b4277 (.)
     }
 
     protected function tearDown(): void
@@ -50,6 +79,7 @@ abstract class TestCase extends RootTestCase
     }
 
     /**
+<<<<<<< HEAD
      * Generate a unique email address for testing.
      */
     public static function pestGenerateUniqueEmail(): string
@@ -84,6 +114,8 @@ abstract class TestCase extends RootTestCase
     }
 
     /**
+=======
+>>>>>>> 127b4277 (.)
      * @param  array<string, mixed>  $attributes
      */
     protected static function createTestUser(array $attributes = []): UserContract
@@ -92,7 +124,11 @@ abstract class TestCase extends RootTestCase
     }
 
     /**
+<<<<<<< HEAD
      * Salta il test corrente (stessa firma di `XotBaseTestCase::skipTest()`).
+=======
+     * @param  array<string, mixed>  $attributes
+>>>>>>> 127b4277 (.)
      */
     public function skipTest(string $message = ''): never
     {
@@ -102,6 +138,7 @@ abstract class TestCase extends RootTestCase
     /**
      * Homepage del tenant corrente: il JSON in `database/content/pages` con slug `home`.
      *
+<<<<<<< HEAD
      * Il file non ha un nome fisso (`home.json` nei test, `1.json` nelle docs) e il path non
      * dipende dal progetto: lo risolve `GetTenantFilePathAction`. Se il tenant non ha la
      * homepage i test di architettura dei blocchi non hanno oggetto e vengono saltati; un JSON
@@ -217,5 +254,13 @@ abstract class TestCase extends RootTestCase
         }
 
         return $map;
+=======
+     * @param  class-string<T>  $class
+     * @return T&MockObject
+     */
+    public function createPHPUnitMock(string $class): object
+    {
+        return $this->createUnitMock($class);
+>>>>>>> 127b4277 (.)
     }
 }

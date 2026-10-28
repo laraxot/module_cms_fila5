@@ -15,11 +15,19 @@ use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertGuest;
 use function Pest\Laravel\get;
 
+<<<<<<< HEAD
 // Helper (createTestUser, generateUniqueEmail, getUserClass) su Modules\Cms\Tests\TestCase, legato da tests/Pest.php.
 // Use $this->generateUniqueEmail(), $this->getUserClass(), $this->createTestUser()
 
 describe('Frontend Login Page Rendering', function (): void {
     test('login page can be rendered', function (): void {
+=======
+// NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
+// Use $this->$this->generateUniqueEmail(), $this->$this->getUserClass(), $this->$this->createTestUser()
+
+describe('Frontend Login Page Rendering', function () {
+    test('login page can be rendered', function () {
+>>>>>>> 127b4277 (.)
         $locale = app()->getLocale();
         $response = get('/'.$locale.'/auth/login');
         $response->assertStatus(200);

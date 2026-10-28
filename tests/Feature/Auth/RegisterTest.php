@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Cms\Tests\Feature\Auth;
 
 use function Pest\Laravel\actingAs;
@@ -24,4 +25,10 @@ describe('Register Page', function (): void {
         $response = get('/'.$locale.'/auth/register');
         $response->assertRedirect('/');
     });
+=======
+describe('Register Page', function () {
+    test('register page placeholder', function () {
+        // Placeholder - actual tests require theme components
+    })->todo();
+>>>>>>> 127b4277 (.)
 });

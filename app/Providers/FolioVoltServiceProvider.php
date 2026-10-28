@@ -39,6 +39,7 @@ class FolioVoltServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+<<<<<<< HEAD
         // Folio registra una rotta catch-all marcata `fallback`. Laravel, fra piu'
         // fallback, sceglie la PRIMA registrata. Filament marca come fallback la
         // home di un pannello con multi-tenancy (`/{panelPath}/{tenant}`, vedi
@@ -79,6 +80,8 @@ class FolioVoltServiceProvider extends ServiceProvider
      */
     protected function registerFolioPaths(): void
     {
+=======
+>>>>>>> 127b4277 (.)
         /*
          * Folio::path(resource_path('views/pages'))->middleware([
          * '*' => [

@@ -26,7 +26,167 @@ Modulo Laraxot `Modules\Cms` (alias `cms`, priorita' 3 in `module.json`, provide
 
 Risorse: `PageResource`, `SectionResource`, `MenuResource`, `PageContentResource`, `AttachmentResource`. Blocchi per il Builder in `app/Filament/Blocks/` (17 classi: `HeroBlock`, `CtaBlock`, `ParagraphBlock`, `NavigationBlock`, ...). Cluster `Appearance` con pagine `Breadcrumb`, `Footer`, `Headernav` (salvano con `SaveFooterConfigAction`, `SaveHeadernavConfigAction` nella config del tenant), pagina `Themes`. Componenti Volt di autenticazione in `app/Http/Volt/` (Login, Register, Verify, Password).
 
+<<<<<<< HEAD
 ## Quick start
+=======
+- **Page Management**: Creazione, modifica e pubblicazione pagine
+- **Block System**: Sistema modulare blocchi per composizione dinamica
+- **Content Builder**: Interfaccia Filament per composizione pagine
+- **Folio Integration**: File-based routing per pagine pubbliche
+- **Blade Components**: Componenti riutilizzabili per rendering frontend
+- **JSON Storage**: Persistenza efficiente contenuti strutturati
+- **Multi-language**: Supporto i18n completo per tutti i contenuti
+
+## Struttura del Modulo
+
+```
+Modules/Cms/
+├── app/
+│   ├── Models/
+│   │   ├── Page.php              # Page model
+│   │   ├── Section.php           # Page section
+│   │   └── Block.php             # Content block
+│   ├── Services/
+│   │   ├── PageService.php
+│   │   ├── BlockService.php
+│   │   └── ContentService.php
+│   ├── Actions/
+│   │   ├── PublishPageAction.php
+│   │   └── BuildPageAction.php
+│   ├── Filament/
+│   │   ├── Resources/
+│   │   │   └── PageResource.php
+│   │   └── Fields/
+│   │       └── PageContentBuilder.php
+│   ├── Http/
+│   │   └── Controllers/
+│   └── Traits/
+├── database/
+│   ├── migrations/
+│   ├── factories/
+│   └── seeders/
+├── resources/
+│   ├── views/
+│   │   └── components/
+│   └── lang/
+├── tests/
+├── docs/
+│   ├── README.md
+│   ├── architecture.md
+│   ├── content-management.md
+│   └── block-system.md
+├── module.json
+└── composer.json
+```
+
+## Componenti Principali
+
+| Classe | Scopo | Extends |
+|--------|-------|---------|
+| `Page` | Modello pagina principale | `XotBaseModel` |
+| `Section` | Sezione dentro pagina | `XotBaseModel` |
+| `Block` | Blocco contenuto singolo | `XotBaseModel` |
+| `PageResource` | Amministrazione Filament | `XotBaseResource` |
+| `PageContentBuilder` | Builder Filament per composizione | - |
+| `PageService` | Logica gestione pagine | - |
+| `ContentService` | Logica gestione contenuti | - |
+
+## Utilizzo Comune
+
+### Scenario 1: Creare una Pagina
+
+```php
+use Modules\Cms\Actions\CreatePageAction;
+
+$page = CreatePageAction::execute([
+    'title' => 'Homepage',
+    'slug' => 'home',
+    'status' => 'published',
+    'content' => [
+        'blocks' => [
+            ['type' => 'hero', 'data' => [...] ],
+            ['type' => 'text', 'data' => [...] ],
+        ]
+    ],
+]);
+```
+
+### Scenario 2: Aggiungere Blocchi
+
+```php
+use Modules\Cms\Models\Page;
+
+$page = Page::find(1);
+$page->addBlock([
+    'type' => 'gallery',
+    'data' => ['images' => [...] ],
+]);
+```
+
+### Scenario 3: Renderizzare Pagina Frontend
+
+```blade
+@foreach ($page->blocks as $block)
+    @switch($block->type)
+        @case('hero')
+            <x-cms::blocks.hero :data="$block->data" />
+            @break
+        @case('text')
+            <x-cms::blocks.text :data="$block->data" />
+            @break
+    @endswitch
+@endforeach
+```
+
+## Configuration
+
+### Block Types
+
+Definire tipi di blocchi supportati in `laravel/config/local/cms/blocks.php`:
+
+```php
+return [
+    'types' => [
+        'hero' => [
+            'label' => 'Hero Section',
+            'fields' => ['title', 'subtitle', 'image'],
+        ],
+        'text' => [
+            'label' => 'Text Block',
+            'fields' => ['content'],
+        ],
+        'gallery' => [
+            'label' => 'Gallery',
+            'fields' => ['images'],
+        ],
+    ],
+];
+```
+
+### Content Storage
+
+Contenuti immagazzinati come JSON strutturato:
+
+```json
+{
+  "id": 1,
+  "title": "Homepage",
+  "slug": "home",
+  "status": "published",
+  "blocks": [
+    {
+      "type": "hero",
+      "data": {
+        "title": "Welcome",
+        "subtitle": "Laraxot CMS"
+      }
+    }
+  ]
+}
+```
+
+## Testing
+>>>>>>> 127b4277 (.)
 
 ```bash
 cd laravel
@@ -44,6 +204,7 @@ bash ../bashscripts/tools/cms/page-json-for-url.sh http://127.0.0.1:8081/it/test
 
 151 file PHP in `tests/` (Unit: Actions, Datas, Filament, Http, Middleware, Models, Providers, Support, View; Feature: `HomepageConfigurationGovernanceTest`, `HomepageFilamentBlocksArchitectureTest`, `HeaderNavJsonTest`, `IndividualFolioRoutesTest`, ...). Non eseguiti in questa verifica. Il `Pest.php` di un modulo non viene caricato se si lancia Pest dalla root `laravel/` (Seo: 22 falliti su 46 per questo, vedi [Seo](../../Seo/docs/README.md)); Tenant e' stato lanciato con `bash bashscripts/tools/pest-scratch-db.sh Modules/Tenant/tests/Unit/Actions` (27 passati, 5 falliti per `expectMockery`).
 
+<<<<<<< HEAD
 ## Mappa dei docs
 
 Contratto corrente per le pagine pubbliche di primo livello: [container0 index
@@ -65,16 +226,27 @@ markup, correggere il blocco condiviso; se è nei dati, correggere JSON/Filament
 se è nel catalogo, correggere il modulo owner.
 
 Indice operativo: [00-INDEX.md](./00-index.md). Wiki: [wiki/index.md](./wiki/index.md); middleware e JSON: [wiki/concepts/cms-page-middleware-json-ssot.md](./wiki/concepts/cms-page-middleware-json-ssot.md); guscio Folio: [wiki/concepts/folio-page-shell-pattern.md](./wiki/concepts/folio-page-shell-pattern.md); homepage: [architecture/homepage-structure.md](./architecture/homepage-structure.md); blocchi: [blocks/README.md](./blocks/README.md); front office: [frontoffice/architecture.md](./frontoffice/architecture.md). Story: [stories/](./stories/); PHPStan: [stories/phpstan-cms-zero.story.md](./stories/phpstan-cms-zero.story.md).
+=======
+- [Architecture Details](./architecture.md) — System design and patterns
+- [Content Management](./content-management.md) — Page and content handling
+- [Block System](./block-system.md) — Creating and using blocks
+- [Frontend Rendering](./frontend-rendering.md) — Display components
+- [Folio Integration](./folio-integration.md) — File-based routing
+- [Troubleshooting](./troubleshooting.md) — Common issues and solutions
+>>>>>>> 127b4277 (.)
 
 ## Dipendenze / Moduli Correlati
 
-- [Xot - Framework Base](../../Xot/docs/README.md) — Always dependency
-- [UI - Components](../../UI/docs/README.md) — For UI components library
-- [Lang - Translations](../../Lang/docs/README.md) — For i18n support
-- [Media - File Management](../../Media/docs/README.md) — For image/file handling
+- [Xot - Framework Base](../Xot/docs/README.md) — Always dependency
+- [UI - Components](../UI/docs/README.md) — For UI components library
+- [Lang - Translations](../Lang/docs/README.md) — For i18n support
+- [Media - File Management](../Media/docs/README.md) — For image/file handling
 
 ## Documenti Correlati
 
+- [Content Management Best Practices](../../../docs/wiki/standards/content-management.md)
+- [Block System Patterns](../../../docs/wiki/standards/block-patterns.md)
+- [Frontend Architecture](../../../docs/architecture/frontend.md)
 - [PHPStan Configuration](../../../phpstan.neon)
 
 ## Regole Critiche
@@ -89,9 +261,9 @@ Indice operativo: [00-INDEX.md](./00-index.md). Wiki: [wiki/index.md](./wiki/ind
 
 ## Standard Rules & Workflow
 
-- [[BMAD Method](../../../../docs/wiki/concepts/bmad-method.md)]
-- [[Context Engineering](../../../../docs/wiki/concepts/context-engineering.md)]
-- [[LLM Wiki Governance](../../../../docs/wiki/concepts/llm-wiki-governance.md)]
+- [[BMAD Method](../../../docs/wiki/concepts/bmad-method.md)]
+- [[Context Engineering](../../../docs/wiki/concepts/context-engineering.md)]
+- [[LLM Wiki Governance](../../../docs/wiki/concepts/llm-wiki-governance.md)]
 
 ---
 
