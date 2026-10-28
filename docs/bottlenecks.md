@@ -948,9 +948,9 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 - [Struttura Moduli](../xot/docs/module_structure.md)
 
 ## Collegamenti tra versioni di BOTTLENECKS.md
-* [BOTTLENECKS.md](laravel/modules/xot/docs/bottlenecks.md)
-* [BOTTLENECKS.md](laravel/modules/user/docs/bottlenecks.md)
-* [BOTTLENECKS.md](laravel/modules/media/docs/bottlenecks.md)
+* [BOTTLENECKS.md](../../Xot/docs/bottlenecks.md)
+* [BOTTLENECKS.md](../../User/docs/bottlenecks.md)
+* [BOTTLENECKS.md](../../Media/docs/bottlenecks.md)
 * [BOTTLENECKS.md](laravel/modules/cms/docs/bottlenecks.md)
 
 ## Collegamenti tra versioni di bottlenecks.md

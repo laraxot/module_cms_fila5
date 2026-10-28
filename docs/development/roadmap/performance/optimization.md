@@ -129,5 +129,5 @@ Le altre ottimizzazioni sono in fase di implementazione:
 
 ## Collegamenti tra versioni di optimization.md
 * [optimization.md](laravel/modules/xot/docs/roadmap/performance/optimization.md)
-* [optimization.md](laravel/modules/job/docs/optimization.md)
+* [optimization.md](../../../../../Job/docs/optimization.md)
 * [optimization.md](laravel/modules/cms/docs/roadmap/performance/optimization.md)
