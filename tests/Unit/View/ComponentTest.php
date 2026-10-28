@@ -11,40 +11,21 @@ use Modules\Cms\View\Components\Section;
 use PHPUnit\Framework\Assert;
 
 test('AppLayout can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(AppLayout::class, (new AppLayout)::class);
-=======
-    $component = new AppLayout;
->>>>>>> 127b4277 (.)
 
 });
 
 test('GuestLayout can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(GuestLayout::class, (new GuestLayout)::class);
-=======
-    $component = new GuestLayout;
->>>>>>> 127b4277 (.)
 
 });
 
 test('Metatags can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(Metatags::class, (new Metatags)::class);
-=======
-    $component = new Metatags;
->>>>>>> 127b4277 (.)
 
 });
 
-<<<<<<< HEAD
 test('Page can be instantiated', function () {})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');
-=======
-test('Page can be instantiated', function () {
-    // This test might require a valid page to exist in the database
-    // For now, we'll test instantiation with basic parameters
-})->todo();
->>>>>>> 127b4277 (.)
 
 test('PageContent can be instantiated with slug', function () {
     $component = new PageContent('test-slug');

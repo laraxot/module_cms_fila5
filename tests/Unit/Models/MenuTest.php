@@ -8,11 +8,7 @@ use PHPUnit\Framework\Assert;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 test('Menu model can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(Menu::class, (new Menu)::class);
-=======
-    $menu = new Menu;
->>>>>>> 127b4277 (.)
 
 });
 

@@ -18,7 +18,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 /**
  * ---.
  *
-<<<<<<< HEAD
  * @property string                              $id
  * @property array<array-key, mixed>|null        $title
  * @property array<array-key, mixed>|null        $description
@@ -35,23 +34,6 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property int|null                            $media_count
  * @property array<string, array<string, mixed>> $translations
  * @property ProfileContract|null                $updater
-=======
- * @property string                       $id
- * @property array<array-key, mixed>|null $title
- * @property array<array-key, mixed>|null $description
- * @property string|null                  $slug
- * @property string|null                  $disk
- * @property array<array-key, mixed>|null $attachment
- * @property Carbon|null                  $created_at
- * @property Carbon|null                  $updated_at
- * @property string|null                  $created_by
- * @property string|null                  $updated_by
- * @property ProfileContract|null         $creator
- * @property MediaCollection<int, Media>  $media
- * @property int|null                     $media_count
- * @property mixed                        $translations
- * @property ProfileContract|null         $updater
->>>>>>> 127b4277 (.)
  *
  * @method static Builder<static>|Attachment newModelQuery()
  * @method static Builder<static>|Attachment newQuery()

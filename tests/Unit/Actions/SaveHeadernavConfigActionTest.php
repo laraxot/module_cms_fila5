@@ -8,7 +8,6 @@ use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use PHPUnit\Framework\Assert;
 
 test('SaveHeadernavConfigAction can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertTrue((new ReflectionClass(SaveHeadernavConfigAction::class))->isInstantiable());
 });
 
@@ -23,13 +22,4 @@ test('SaveHeadernavConfigAction saves headernav data in the appearance tenant co
     app()->instance(SaveTenantConfigAction::class, $save);
 
     (new SaveHeadernavConfigAction)->execute($data);
-=======
-    $action = new SaveHeadernavConfigAction;
-
-    Assert::assertInstanceOf(SaveHeadernavConfigAction::class, $action);
-});
-
-test('SaveHeadernavConfigAction execute method exists', function () {
-    $action = new SaveHeadernavConfigAction;
->>>>>>> 127b4277 (.)
 });

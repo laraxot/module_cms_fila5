@@ -8,15 +8,10 @@ use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 
 test('PageSlugMiddleware can be instantiated', function () {
-<<<<<<< HEAD
     Assert::assertSame(PageSlugMiddleware::class, (new PageSlugMiddleware)::class);
-=======
-    $middleware = new PageSlugMiddleware;
->>>>>>> 127b4277 (.)
 
 });
 
-<<<<<<< HEAD
 test('PageSlugMiddleware passes the request through when no CMS page matches', function () {
     $middleware = new PageSlugMiddleware;
     $expected = new Response('ok');
@@ -25,8 +20,4 @@ test('PageSlugMiddleware passes the request through when no CMS page matches', f
     $response = $middleware->handle(Request::create('/it/no-such-page'), fn (Request $request): Response => $expected);
 
     Assert::assertSame($expected, $response);
-=======
-test('PageSlugMiddleware handle method exists', function () {
-    $middleware = new PageSlugMiddleware;
->>>>>>> 127b4277 (.)
 });
