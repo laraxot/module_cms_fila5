@@ -4,7 +4,11 @@ type: story
 module: Cms
 phase: quality-gate
 status: done
+created: 2026-10-20
+updated: 2026-10-28
+tags: [cms, phpstan, tests, swarm]
 related:
+  - ./phpstan-cms-zero.dev.md
   - ./phpstan-test-wave-cms.story.md
   - ./phpstan-cms-swarm-wave.story.md
   - ../00-INDEX.md
@@ -52,3 +56,28 @@ Spike fleet ~12:21 (`phpstan.parse`, marker merge in Lang/AI/Cms): **`parse` ≠
 - Gate TSV: [phpstan-cms-swarm-wave.story.md](./phpstan-cms-swarm-wave.story.md)
 - Piano: [../phpstan-fix-plan/plan.md](../phpstan-fix-plan/plan.md)
 - Indice modulo: [../00-INDEX.md](../00-INDEX.md)
+
+## Ripasso 2026-10-28 (swarm PHPStan Modules, 168 errori / 38 file)
+
+Dopo il merge da `laraxot/dev` (rebase aperto nel repo del modulo) il modulo era tornato a errori: i conflitti `<<<<<<<` erano stati risolti
+tenendo un solo lato. Misura: baseline 168 -> 144 sul working tree all'avvio -> **0** (`phpstan analyse Modules/Cms`, exit 0). Pest NON eseguito (DB sacri).
+
+| Causa radice | Errori | Scopo del codice | Fix |
+|---|---|---|---|
+| `cmsSkipTest` persa nel merge di `tests/PestHelpers.php` | 43 | saltare un test (DB/app non configurati) | ridichiarata `never`, delega a `TestCase::skipTest()`; tolti i `return;`/`continue;` morti nei chiamanti |
+| `XotUserContract` (classe inesistente) | ~25 | utente di test | `UserContract`; `TestCase::pestCreateTestUser()` restituisce `UserContract` (niente `@var`/`assert`) |
+| `BuildPageSchemaAction`: `$publicFirstName/LastName/Email` non definite | 12 | JSON-LD `Person` del profilo | lette con `readNullableStringProperty()` e usate una volta sola (bug runtime: variabili indefinite) |
+| `app/docs/config.php` tornato alla versione non tipizzata | ~41 | config Jigsaw del sito docs | ripristinata la versione verificata (helper `pageStringCall`/`pageProperty`/`docsEnv`, closure tipizzate) |
+| `PageSlugMiddleware`: `Router` senza `use`; `@method getMiddlewareBySlug` stale su `Page` | 3 | alias middleware / middleware dichiarati dal JSON | `use Illuminate\Routing\Router`; tolte le 2 righe `@method` che nascondevano `list<string>` |
+| `TestCase` senza `use` (Homepage*, `pest.php`, `MenuBusinessLogicTest`) | 5 | binding Pest/PHPUnit | `Modules\Cms\Tests\TestCase` |
+| `XotPanelController`/`BaseController` rimossi di proposito in `ce5d0208` (2026-10-23), test riapparso dal merge | 6 | - | test riscritto: asserisce che `app/Http/Controllers` e' vuoto (regola "no Controller HTTP") |
+| `Modules\Blog\Models\Article` (modulo opzionale assente) | 5 | test del finder blog/events | classe risolta a runtime + `->skip()` se Blog non c'e' |
+| `SetFolioLocale::handle(): mixed` | 3 | locale da URL per Folio | `@param \Closure(Request): Response`, ritorno `Response` |
+| `Menu`/`BaseTreeModel` generics, `ViewSection` return | 3 | albero menu / infolist | `@implements HasRecursiveRelationshipsContract<Model>` nel docblock di classe; `@return array<string, Component>` |
+| `typeCoverage.paramTypeCoverage` (24 parametri) | 24 | closure di test/config | tipi veri (`ComponentFileData`, `Component`, `NavigationItem`, `?UserContract`, `?string`, `int\|string`) |
+
+Dettaglio tecnico e decisioni aperte: [phpstan-cms-zero.dev.md](./phpstan-cms-zero.dev.md).
+
+### GitHub
+
+TODO (`gh` non installato).

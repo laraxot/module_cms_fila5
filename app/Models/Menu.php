@@ -163,6 +163,7 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static MenuFactory                      factory($count = null, $state = [])
  * @method        array<int, array<string, mixed>> getSushiRows()
  *
+ * @implements HasRecursiveRelationshipsContract<Model>
  * @mixin \Eloquent
  */
 class Menu extends BaseModel implements HasRecursiveRelationshipsContract
@@ -208,7 +209,7 @@ class Menu extends BaseModel implements HasRecursiveRelationshipsContract
     public function getLabel(): string
     {
         // PHPStan Level 10: Ensure string return
-        return $this->title ?? '';
+        return is_string($this->title) ? $this->title : '';
     }
 
     /** @return array<string, string> */

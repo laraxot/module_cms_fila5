@@ -24,14 +24,10 @@ test('auth buttons show correct translation for German locale on login page', fu
 
     if ($status >= 500) {
         cmsSkipTest("Route /de/auth/login returned server error ({$status}).");
-
-        return;
     }
 
     if ($status !== 200) {
         cmsSkipTest("Route /de/auth/login returned {$status} (redirect). Cannot verify translations.");
-
-        return;
     }
 
     $content = (string) $response->getContent();
@@ -50,14 +46,10 @@ test('auth buttons show correct translation for Italian locale on login page', f
 
     if ($status >= 500) {
         cmsSkipTest("Route /it/auth/login returned server error ({$status}).");
-
-        return;
     }
 
     if ($status !== 200) {
         cmsSkipTest("Route /it/auth/login returned {$status} (redirect). Cannot verify translations.");
-
-        return;
     }
 
     $content = (string) $response->getContent();
@@ -74,14 +66,10 @@ test('auth buttons show correct translation for English locale on login page', f
 
     if ($status >= 500) {
         cmsSkipTest("Route /en/auth/login returned server error ({$status}).");
-
-        return;
     }
 
     if ($status !== 200) {
         cmsSkipTest("Route /en/auth/login returned {$status} (redirect). Cannot verify translations.");
-
-        return;
     }
 
     $content = (string) $response->getContent();

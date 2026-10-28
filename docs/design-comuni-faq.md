@@ -170,10 +170,10 @@ Output: `Themes/Sixteen/docs/design-comuni/screenshots/`
 ## Documentazione Correlata
 
 ### Tema Sixteen
-- [Analisi HTML](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_ANALYSIS.md)
-- [Implementazione](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md)
-- [Analisi Visiva](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_ANALISI_VISIVA.md)
-- [Report Finale](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_REPORT_FINALE.md)
+- [Analisi HTML](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-html-analysis.md)
+- [Implementazione](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-implementazione.md)
+- [Analisi Visiva](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-analisi-visiva.md)
+- [Report Finale](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-report-finale.md)
 - [Index Design Comuni](../../../Themes/Sixteen/docs/design-comuni/00-index.md)
 
 ### Scripts
@@ -227,7 +227,7 @@ Icone utilizzate:
 
 Verifica rilanciata sui render attuali:
 - [Theme parity report](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-parity.md)
-- [Structure diff](../../../Themes/Sixteen/docs/pages/domande-frequenti/STRUCTURE-DIFF.md)
+- [Structure diff](../../../Themes/Sixteen/docs/pages/domande-frequenti/structure-diff.md)
 
 Esito aggiornato:
 - il precedente stato `90% completato` non e piu affidabile come baseline operativa

@@ -27,7 +27,13 @@ if (! function_exists('cmsTest')) {
     {
         return TestCase::$currentTest ?? throw new LogicException('cmsTest() va chiamato durante un test che estende Modules\Cms\Tests\TestCase.');
     }
+}
 
+if (! function_exists('cmsSkipTest')) {
+    function cmsSkipTest(string $message = ''): never
+    {
+        cmsTest()->skipTest($message);
+    }
 }
 
 function cmsGenerateUniqueEmail(): string
@@ -39,12 +45,9 @@ if (! function_exists('cmsCreateTestUser')) {
     /**
      * @param  array<string, mixed>  $attributes
      */
-    function cmsCreateTestUser(array $attributes = []): XotUserContract
+    function cmsCreateTestUser(array $attributes = []): UserContract
     {
-        /** @var XotUserContract $user */
-        $user = TestCase::pestCreateTestUser($attributes);
-
-        return $user;
+        return TestCase::pestCreateTestUser($attributes);
     }
 }
 
@@ -52,12 +55,9 @@ if (! function_exists('cmsCreateUnverifiedUser')) {
     /**
      * @param  array<string, mixed>  $attributes
      */
-    function cmsCreateUnverifiedUser(array $attributes = []): XotUserContract
+    function cmsCreateUnverifiedUser(array $attributes = []): User
     {
-        $user = UserFactory::new()->unverified()->createOne($attributes);
-        assert($user instanceof XotUserContract);
-
-        return $user;
+        return UserFactory::new()->unverified()->createOne($attributes);
     }
 }
 
@@ -127,9 +127,9 @@ if (! function_exists('cmsGetOrSkipOnServerError')) {
     {
         $response = cmsGet($uri, $headers);
 
-    if ((int) $response->getStatusCode() >= 500) {
-        cmsSkipTest('Server error on '.$uri.': '.$response->getStatusCode());
-    }
+        if ($response->getStatusCode() >= 500) {
+            cmsSkipTest('Server error on '.$uri.': '.$response->getStatusCode());
+        }
 
         return $response;
     }

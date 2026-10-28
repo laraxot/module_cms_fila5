@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Filament\Forms\Components\Field;
+use Filament\Schemas\Components\Component;
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Filament\Resources\PageContentResource;
 use Modules\Cms\Filament\Resources\PageResource;
@@ -104,11 +106,11 @@ test('page resource form schema contains expected fields', function () {
 
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
+            fn (Component $field) => $field instanceof Field && 'title' === $field->getName(),
         );
 
     $hasSlugField = collect($schema)
-        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && 'slug' === $field->getName());
+        ->contains(fn (Component $field) => $field instanceof Field && 'slug' === $field->getName());
 
     Assert::assertTrue($hasTitleField, 'PageResource should have title field');
     Assert::assertTrue($hasSlugField, 'PageResource should have slug field');
@@ -122,12 +124,12 @@ test('menu resource form schema contains expected fields', function () {
 
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
+            fn (Component $field) => $field instanceof Field && 'title' === $field->getName(),
         );
 
     $hasItemsField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'items' === $field->getName(),
+            fn (Component $field) => $field instanceof Field && 'items' === $field->getName(),
         );
 
     Assert::assertTrue($hasTitleField, 'MenuResource should have title field');

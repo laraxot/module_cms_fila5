@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
-use Modules\Blog\Models\Article;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
@@ -182,17 +181,18 @@ test('una voce di configurazione che non e un modello viene ignorata', function 
 });
 
 test('blog ed events restano serviti dal finder dei soli contenuti pubblicati', function (): void {
-    $article = new Article;
+    $article = app('Modules\\Blog\\Models\\Article');
+    Assert::assertIsObject($article);
     $composer = new class($article)
     {
-        public function __construct(private readonly Article $article) {}
+        public function __construct(private readonly object $article) {}
 
-        public function findPublishedPostBySlug(string $slug): ?Article
+        public function findPublishedPostBySlug(string $slug): ?object
         {
             return $slug === 'post-pubblicato' ? $this->article : null;
         }
 
-        public function findPublishedEventBySlug(string $slug): ?Article
+        public function findPublishedEventBySlug(string $slug): ?object
         {
             return $slug === 'evento-pubblicato' ? $this->article : null;
         }
@@ -206,4 +206,4 @@ test('blog ed events restano serviti dal finder dei soli contenuti pubblicati', 
     Assert::assertNull($action->execute('blog', 'evento-pubblicato')->item, 'un evento non si legge come post');
     Assert::assertNull($action->execute('events', 'post-pubblicato')->item, 'un post non si legge come evento');
     Assert::assertNull($action->execute('blog', 'inesistente')->item);
-});
+})->skip(! class_exists('Modules\\Blog\\Models\\Article'), 'Il modulo Blog e opzionale e qui non e installato.');

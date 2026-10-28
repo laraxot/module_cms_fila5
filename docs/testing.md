@@ -3,7 +3,7 @@ title: "testing"
 type: note
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-10-18
+updated: 2026-10-28
 qmd: "testing"
 issues: []
 discussions: []
@@ -26,7 +26,6 @@ tests/
   TestCase.php # Base test case for the module
 ```
 
-<<<<<<< HEAD
 ## PestHelpers (PHPStan + merge)
 
 - Funzioni in `tests/PestHelpers.php` sono **globali** (`cmsActingAsGet`, `cmsGet`, …).
@@ -43,9 +42,16 @@ tests/
 - `createPHPUnitMock()` e `skipTest()` sono metodi d'istanza di `TestCase` (come `XotBaseTestCase`);
   `skipTest()` salta davvero il test, non lo fa fallire.
 - Prima di rimuovere un helper: `grep -rn '\bnomeHelper(' Modules --include='*.php'`.
+- `cmsSkipTest(string $message = ''): never` e' l'helper globale per saltare un test: delega a `TestCase::skipTest()` e quindi
+  vale solo nei test che estendono `Modules\Cms\Tests\TestCase` (`cmsTest()` lancia `LogicException` altrimenti; un file che usa
+  la `Tests\TestCase` della radice usa `->skip($condizione, $motivo)` di Pest). Essendo `never`, dopo la chiamata non si scrive
+  `return;`/`continue;` (PHPStan: `deadCode.unreachable`).
+- Utenti di test: `cmsCreateTestUser()` restituisce `Modules\Xot\Contracts\UserContract`, `cmsCreateUnverifiedUser()` un `User`.
+  `XotUserContract` non esiste.
+- Lezione 2026-10-28: `Function cmsSkipTest not found` (43 chiamate) veniva da un conflitto `<<<<<<<`/`>>>>>>>` in `PestHelpers.php`
+  risolto tenendo un solo lato: la funzione stava nell'altro. Dopo un merge che tocca `PestHelpers.php`, `grep -rn 'function cms'` e
+  PHPStan sul modulo prima di committare.
 
-=======
->>>>>>> 127b4277 (.)
 ## Writing Tests
 
 ### Authentication Tests

@@ -75,9 +75,5 @@ status: draft
 | [cms-page-shell-data-bag](../../../../../docs/wiki/architecture/cms-page-shell-data-bag.md) | Architecture (root wiki) | Folio→Volt→data bag — link progetto | 2026-06-04 |
 | [.gitkeep](./concepts/.gitkeep) | Concept | - | 2026-04-21 |
 | [composer-lessons-learned](./concepts/composer-lessons-learned.md) | Concept | ThemeComposer syntax error fix + view composer criticality | 2026-04-23 |
-<<<<<<< HEAD
 | [cms-content-routing-theme-boundary](./concepts/cms-content-routing-theme-boundary.md) | Concept | JSON, Folio e ownership della resa tema | 2026-10-14 |
 | [header-section-component](./concepts/header-section-component.md) | Concept | **NUOVO**: Section.php component architecture, Blade SSoT, JSON config, Filament Builder | 2026-05-04 |
-=======
-| [header-section-component](./concepts/header-section-component.md) | Concept | **NUOVO**: Section.php component architecture, Blade SSoT, JSON config, Filament Builder | 2026-05-04 |
->>>>>>> 127b4277 (.)

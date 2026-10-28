@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Feature;
 
+use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
+use Modules\Xot\Datas\ComponentFileData;
 
 use function Pest\Laravel\get;
 use function Safe\file_get_contents;
@@ -52,7 +54,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
-        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
         if ($cmsBlocks->count() > 0) {
             foreach ($cmsBlocks as $block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);

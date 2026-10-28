@@ -6,6 +6,7 @@ namespace Modules\Cms\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Middleware to set locale from URL for Folio pages.
@@ -17,7 +18,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  */
 class SetFolioLocale
 {
-    public function handle(Request $request, \Closure $next): mixed
+    /**
+     * @param  \Closure(Request): Response  $next
+     */
+    public function handle(Request $request, \Closure $next): Response
     {
         // Get the first segment from the URL
         $segments = $request->segments();
