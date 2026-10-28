@@ -3,13 +3,11 @@
     "description": "",
     "homepage": "https://laraxot.github.io/module_cms",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Marco Sottana",
-            "email": "marco.sottana@gmail.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Marco Sottana",
+        "email": "marco.sottana@gmail.com",
+        "role": "Developer"
+    }],
     "extra": {
         "laravel": {
             "providers": [
@@ -17,7 +15,9 @@
                 "Modules\\Cms\\Providers\\Filament\\AdminPanelProvider",
                 "Modules\\Cms\\Providers\\FolioVoltServiceProvider"
             ],
-            "aliases": {}
+            "aliases": {
+
+            }
         }
     },
     "autoload": {
@@ -33,7 +33,11 @@
         }
     },
     "require": {
+<<<<<<< HEAD
         "laravel/head": "^0.2.2"
+=======
+
+>>>>>>> 127b4277 (.)
     },
     "repositories": [
         {
@@ -70,4 +74,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+
 }

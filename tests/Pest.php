@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+<<<<<<< HEAD
 
 /*
  * Bootstrap Pest — modulo Cms.
@@ -11,12 +12,16 @@ declare(strict_types=1);
 require_once __DIR__.'/PestHelpers.php';
 
 uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
+=======
+use Modules\Cms\Tests\TestCase;
+>>>>>>> 127b4277 (.)
 
-/*
+/**
  * |--------------------------------------------------------------------------
  * | Expectations
  * |--------------------------------------------------------------------------
  * |
+<<<<<<< HEAD
  * | Qui puoi definire aspettative globali per il modulo Cms.
  * | Quando definisci here expectation globali, saranno disponibili
  * | in tutti i test del modulo.
@@ -29,6 +34,37 @@ uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
 
 /*
  * |--------------------------------------------------------------------------
+=======
+ * | Il TestCase di default per tutti i test del modulo Cms.
+ * | Utilizza il TestCase globale di Laravel con setup specifico per frontend.
+ * |
+ */
+
+uses(TestCase::class)->in('Feature', 'Unit');
+
+/*
+ * |--------------------------------------------------------------------------
+ * | Expectations
+ * |--------------------------------------------------------------------------
+ * |
+ * | Qui puoi definire aspettative globali per il modulo Cms.
+ * | Quando definisci here expectation globali, saranno disponibili
+ * | in tutti i test del modulo.
+ * |
+ */
+
+expect()->extend('toBeSubclassOf', function (string $parentClass) {
+    $class = $this->value;
+    if (! is_string($class)) {
+        throw new InvalidArgumentException('Expected a class name string');
+    }
+
+    return $this->and(is_subclass_of($class, $parentClass));
+});
+
+/*
+ * |--------------------------------------------------------------------------
+>>>>>>> 127b4277 (.)
  * | Functions
  * |--------------------------------------------------------------------------
  * |

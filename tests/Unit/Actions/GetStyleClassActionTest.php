@@ -7,7 +7,13 @@ use Modules\Cms\Actions\GetStyleClassAction;
 use PHPUnit\Framework\Assert;
 
 test('GetStyleClassAction can be executed', function () {
+<<<<<<< HEAD
     Assert::assertTrue(class_exists(GetStyleClassAction::class));
+=======
+    $action = new GetStyleClassAction;
+
+    Assert::assertInstanceOf(GetStyleClassAction::class, $action);
+>>>>>>> 127b4277 (.)
 });
 
 test('GetStyleClassAction handles exceptions gracefully', function () {

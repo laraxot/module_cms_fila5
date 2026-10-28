@@ -16,8 +16,12 @@ test('Breadcrumb page uses correct view', function () {
 });
 
 test('Breadcrumb page can be instantiated', function () {
+<<<<<<< HEAD
     Assert::assertSame(Breadcrumb::class, (new Breadcrumb)::class);
 
+=======
+    $page = new Breadcrumb;
+>>>>>>> 127b4277 (.)
 });
 
 test('Breadcrumb page has data property', function () {
@@ -29,8 +33,22 @@ test('Breadcrumb page has data property', function () {
     Assert::assertIsArray($property->getValue($page));
 });
 
+<<<<<<< HEAD
 test('Breadcrumb page has mount method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Breadcrumb page has schema method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
 test('Breadcrumb page has updateData method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+test('Breadcrumb page has mount method', function () {
+    Assert::assertTrue((new ReflectionClass(Breadcrumb::class))->hasMethod('mount'));
+});
+
+test('Breadcrumb page has schema method', function () {
+    Assert::assertTrue((new ReflectionClass(Breadcrumb::class))->hasMethod('schema'));
+});
+
+test('Breadcrumb page has updateData method', function () {
+    Assert::assertTrue((new ReflectionClass(Breadcrumb::class))->hasMethod('updateData'));
+});
+>>>>>>> 127b4277 (.)

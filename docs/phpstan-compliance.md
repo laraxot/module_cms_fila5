@@ -45,10 +45,13 @@ This module provides Content Management System functionality including:
 - Fixed unsafe `file_put_contents` usage in business data generation script
 - Now uses `use function Safe\file_put_contents;` for exception-based error handling
 
+<<<<<<< HEAD
 ### PestHelpers ricaduta (ROOT-17.10)
 - Helper globali senza namespace; homepage JSON su `TestCase::homepageJsonForBlocksArchitecture()` (loader tipizzato e tenant-aware, salta senza homepage)
 - Dettaglio: [testing.md](testing.md#pesthelpers-phpstan--merge)
 
+=======
+>>>>>>> 127b4277 (.)
 ## Filament 4.x Compatibility
 
 All Filament components have been verified for Filament 4.x compatibility:

@@ -23,10 +23,10 @@ tests/
   Feature/    # Feature tests
   Unit/       # Unit tests
   Pest.php    # Module-specific Pest configuration
-  PestHelpers.php # Helper globali (autoload-dev.files, senza namespace)
   TestCase.php # Base test case for the module
 ```
 
+<<<<<<< HEAD
 ## PestHelpers (PHPStan + merge)
 
 - Funzioni in `tests/PestHelpers.php` sono **globali** (`cmsActingAsGet`, `cmsGet`, …).
@@ -44,6 +44,8 @@ tests/
   `skipTest()` salta davvero il test, non lo fa fallire.
 - Prima di rimuovere un helper: `grep -rn '\bnomeHelper(' Modules --include='*.php'`.
 
+=======
+>>>>>>> 127b4277 (.)
 ## Writing Tests
 
 ### Authentication Tests

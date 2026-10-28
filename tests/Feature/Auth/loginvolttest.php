@@ -13,8 +13,13 @@ use Modules\Xot\Datas\XotData;
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertGuest;
 
+<<<<<<< HEAD
 // Helper (createTestUser, generateUniqueEmail, getUserClass) su Modules\Cms\Tests\TestCase, legato da tests/Pest.php.
 // Use $this->generateUniqueEmail(), $this->getUserClass(), $this->createTestUser()
+=======
+// NOTE: Helper functions moved to Modules\Xot\Tests\TestCase for DRY pattern
+// Use $this->$this->generateUniqueEmail(), $this->getUserClass(), $this->$this->createTestUser()
+>>>>>>> 127b4277 (.)
 
 describe('Volt Component Rendering', function (): void {
     test('volt login component can be rendered', function (): void {

@@ -7,7 +7,11 @@ use Modules\Cms\Actions\View\GetCmsViewAction;
 use PHPUnit\Framework\Assert;
 
 test('GetCmsViewAction can be instantiated', function () {
+<<<<<<< HEAD
     Assert::assertSame(GetCmsViewAction::class, (new GetCmsViewAction)::class);
+=======
+    $action = new GetCmsViewAction;
+>>>>>>> 127b4277 (.)
 
 });
 
@@ -29,7 +33,10 @@ test('GetCmsViewAction execute method throws exception for non-existing view', f
         ->andReturn(false);
 
     $action = new GetCmsViewAction;
+<<<<<<< HEAD
 
     expect(fn () => $action->execute('non.existing.view'))
         ->toThrow(Exception::class, 'View not found: non.existing.view');
+=======
+>>>>>>> 127b4277 (.)
 });

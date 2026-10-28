@@ -8,7 +8,10 @@ use PHPUnit\Framework\Assert;
 describe('LoginComponent', function (): void {
     test('login component extends volt component', function (): void {
         $component = new LoginComponent;
+<<<<<<< HEAD
         Assert::assertSame(LoginComponent::class, $component::class);
+=======
+>>>>>>> 127b4277 (.)
 
     });
 
@@ -30,8 +33,14 @@ describe('LoginComponent', function (): void {
         Assert::assertTrue((new ReflectionClass($component))->hasProperty('remember'));
     });
 
+<<<<<<< HEAD
     test('login component has authenticate method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     test('login component has authenticate method #2', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+    test('login component has authenticate method', function (): void {
+        Assert::assertTrue((new ReflectionClass(LoginComponent::class))->hasMethod('authenticate'));
+    });
+>>>>>>> 127b4277 (.)
 
     test('login component uses correct namespace', function (): void {
         $reflector = new ReflectionClass(LoginComponent::class);

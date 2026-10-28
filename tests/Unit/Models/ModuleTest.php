@@ -7,7 +7,10 @@ use PHPUnit\Framework\Assert;
 
 test('Module model can be instantiated', function () {
     $module = new Module;
+<<<<<<< HEAD
     Assert::assertSame(Module::class, $module::class);
+=======
+>>>>>>> 127b4277 (.)
 
 });
 
@@ -23,7 +26,10 @@ test('Module model has expected fillable fields', function () {
 
 test('Module model extends BaseModel', function () {
     $module = new Module;
+<<<<<<< HEAD
     Assert::assertSame(Module::class, $module::class);
+=======
+>>>>>>> 127b4277 (.)
 
 });
 

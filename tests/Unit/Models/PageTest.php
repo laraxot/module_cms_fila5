@@ -11,12 +11,20 @@ use PHPUnit\Framework\Assert;
 describe('Page', function (): void {
     test('page model can be instantiated', function (): void {
         $page = new Page;
+<<<<<<< HEAD
         Assert::assertSame(Page::class, $page::class);
+=======
+        Assert::assertInstanceOf(Page::class, $page);
+>>>>>>> 127b4277 (.)
     });
 
     test('page extends base model lang', function (): void {
         $page = new Page;
+<<<<<<< HEAD
         Assert::assertSame(Page::class, $page::class);
+=======
+        Assert::assertInstanceOf(BaseModelLang::class, $page);
+>>>>>>> 127b4277 (.)
     });
 
     test('page has expected fillable fields', function (): void {

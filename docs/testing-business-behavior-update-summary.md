@@ -44,6 +44,7 @@ Ho aggiornato TUTTO il sistema di memoria e documentazione per cristallizzare qu
 - ✅ `.cursor/rules/testing-business-behavior-supreme.mdc` - NUOVO
 
 ### 📖 Documentazione Moduli
+<<<<<<< HEAD
 - ✅ `Modules/<main module>/docs/testing-guidelines.md` - Aggiornato con regola suprema
 
 ## PRINCIPI IMPLEMENTATI
@@ -164,6 +165,8 @@ Ho aggiornato TUTTO il sistema di memoria e documentazione per cristallizzare qu
 - ✅ `.cursor/rules/testing-business-behavior-supreme.mdc` - NUOVO
 
 ### 📖 Documentazione Moduli
+=======
+>>>>>>> 127b4277 (.)
 - ✅ `Modules/<nome progetto>/docs/testing-guidelines.md` - Aggiornato con regola suprema
 
 ## PRINCIPI IMPLEMENTATI
