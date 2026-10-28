@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Models;
 
 use Modules\Cms\Models\Menu;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Models\Traits\SushiToJsons;
 use Modules\Xot\Contracts\HasRecursiveRelationshipsContract;
 use PHPUnit\Framework\Assert;

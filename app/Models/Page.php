@@ -341,7 +341,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|Page                        whereBlocks($value)
  * @method        array<int, array<string, mixed>>            getSushiRows()
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
  * @method static PageFactory                                 factory($count = null, $state = [])
  * @method static Builder<static>|Page                        newModelQuery()
  * @method static Builder<static>|Page                        newQuery()
@@ -369,7 +368,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static static|null                                 first($columns = ['*'])
  * @method static static|null                                 find($id, $columns = ['*'])
  * @method static array<string, \Modules\Cms\Datas\BlockData> getBlocksBySlug(string $slug, ?string $side = null)
- * @method static array<int, string>                          getMiddlewareBySlug(string $slug)
  * @method        array<int, array<string, mixed>>            getSushiRows()
  *
  * @mixin \Eloquent

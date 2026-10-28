@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests;
 
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -62,7 +61,7 @@ abstract class TestCase extends RootTestCase
      *
      * @param  array<string, mixed>  $attributes
      */
-    public static function pestCreateTestUser(array $attributes = []): Authenticatable
+    public static function pestCreateTestUser(array $attributes = []): UserContract
     {
         return User::factory()->createOne($attributes);
     }

@@ -7,6 +7,7 @@ namespace Modules\Cms\Http\Middleware;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Log;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
 use Modules\Cms\Models\Page;
