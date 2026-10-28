@@ -48,7 +48,6 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 
 | Documento | File | Descrizione |
 |-----------|------|-------------|
-<<<<<<< .merge_file_6ZUtn3
 | **All Pages Analysis** | [ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) | Analisi 54 pagine |
 | **Progress Report** | [PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) | Report progresso |
 | **Fail Pages Analysis** | [FAIL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/FAIL_PAGES_ANALYSIS.md) | Analisi pagine fail |
@@ -57,16 +56,6 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 | **Risultati Ricerca** | [RISULTATI_RICERCA_ANALISI.md](../../../Themes/Sixteen/docs/design-comuni/RISULTATI_RICERCA_ANALISI.md) | Analisi ricerca |
 | **FAQ HTML Analysis** | [DOMANDE_FREQUENTI_HTML_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_HTML_ANALYSIS.md) | Analisi HTML FAQ |
 | **FAQ Implementazione** | [DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md](../../../Themes/Sixteen/docs/design-comuni/DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md) | Implementazione FAQ |
-=======
-| **All Pages Analysis** | [ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/all-pages-analysis.md) | Analisi 54 pagine |
-| **Progress Report** | [PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/progress-report.md) | Report progresso |
-| **Fail Pages Analysis** | [FAIL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/fail-pages-analysis.md) | Analisi pagine fail |
-| **Argomenti Analisi** | [ARGOMENTI_ANALISI.md](../../../Themes/Sixteen/docs/design-comuni/argomenti-analisi.md) | Analisi argomenti |
-| **Argomenti Report** | [ARGOMENTI_REPORT_AGGIORNATO.md](../../../Themes/Sixteen/docs/design-comuni/argomenti-report-aggiornato.md) | Report argomenti |
-| **Risultati Ricerca** | [RISULTATI_RICERCA_ANALISI.md](../../../Themes/Sixteen/docs/design-comuni/risultati-ricerca-analisi.md) | Analisi ricerca |
-| **FAQ HTML Analysis** | [DOMANDE_FREQUENTI_HTML_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-html-analysis.md) | Analisi HTML FAQ |
-| **FAQ Implementazione** | [DOMANDE_FREQUENTI_IMPLEMENTAZIONE.md](../../../Themes/Sixteen/docs/design-comuni/domande-frequenti-implementazione.md) | Implementazione FAQ |
->>>>>>> .merge_file_2ZUxsk
 | **Master Index** | [MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md) | Index globale |
 
 ### Screenshots Tema Sixteen

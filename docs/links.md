@@ -61,7 +61,6 @@ https://laravel-bootstrap-components.com/themes/liara/features
 
 
 
-<<<<<<< .merge_file_acejKz
 
 
 ## Contenuto originale (txt)
@@ -73,5 +72,3 @@ canonical: ../../../Themes/docs/shared-components/links-Modules.md
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/links-Modules.md
-=======
->>>>>>> .merge_file_49fx1X

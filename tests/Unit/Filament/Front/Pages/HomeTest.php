@@ -43,4 +43,7 @@ test('Home page has getViewData method', function () {})->todo('Serve una asserz
 
 test('Home page has initView method', function () {})->todo('Serve una asserzione di comportamento: method_exists() su una classe nota e\' decidibile staticamente, quindi non prova niente.');
 
-test('Home page has url method', function () {})->todo();
+// Rimosso `test('Home page has url method')`: la closure era vuota e il metodo non
+// esiste. `Home` estende `XotBasePage` -> `Filament\Pages\Page`, che espone `getUrl()`
+// statico, non `url()`. Riempire il test con `method_exists(Home::class, 'url')` lo
+// avrebbe reso rosso; riscriverne il nome su `getUrl` sarebbe stato inventare l'intento.
