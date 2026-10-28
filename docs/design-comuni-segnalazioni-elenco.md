@@ -49,17 +49,10 @@ Analisi e implementazione della pagina elenco segnalazioni del progetto Design C
 ## 📚 Link Bidirezionali
 
 ### Tema Sixteen
-<<<<<<< .merge_file_2jVv5N
 - [Analisi HTML](../../../Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_ANALISI.md)
 - [Report](../../../Themes/Sixteen/docs/design-comuni/SEGNALAZIONI_ELENCO_REPORT.md)
 - [Progress Report](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md)
 - [All Pages Analysis](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md)
-=======
-- [Analisi HTML](../../../Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-analisi.md)
-- [Report](../../../Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-report.md)
-- [Progress Report](../../../Themes/Sixteen/docs/design-comuni/progress-report.md)
-- [All Pages Analysis](../../../Themes/Sixteen/docs/design-comuni/all-pages-analysis.md)
->>>>>>> .merge_file_3KB37f
 
 ### Master Index
 - [docs/design-comuni/MASTER_INDEX.md](../../../../docs/design-comuni/MASTER_INDEX.md)

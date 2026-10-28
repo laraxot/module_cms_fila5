@@ -11,10 +11,6 @@ description: "Documento unificato: il contenuto canonico vive in modular_archite
 status: merged
 ---
 
-**Questa regola è ora SUPREMA e ha precedenza su qualsiasi altra considerazione architettuale.**
+# Documento unificato
 
-<<<<<<< .merge_file_kLZtWE
 Questo file era un duplicato esatto. Il contenuto canonico si trova in [modular_architecture_update_summary.md](./modular-architecture-update-summary.md).
-=======
-Questo file era un duplicato esatto. Il contenuto canonico si trova in [modular_architecture_update_summary.md](./modular-architecture-update-summary.md).
->>>>>>> .merge_file_tb7RHA

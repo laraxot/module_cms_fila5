@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-<<<<<<< .merge_file_hxS36g
 /*
  * Bootstrap Pest — modulo Cms.
  * Helper globali (cmsHomepageBlocks, cmsGet, …) in PestHelpers.php.
@@ -13,19 +12,7 @@ require_once __DIR__.'/PestHelpers.php';
 
 uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
 
-=======
->>>>>>> .merge_file_Sh7rHv
 /*
- * Bootstrap Pest — modulo Cms.
- * Helper globali (cmsHomepageBlocks, cmsGet, …) in PestHelpers.php.
- * Binding TestCase solo qui: i file test non dichiarano uses(TestCase) ridondanti.
- * @see docs/stories/phpstan-cms-zero.story.md
- */
-require_once __DIR__.'/PestHelpers.php';
-
-uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
-
-/**
  * |--------------------------------------------------------------------------
  * | Expectations
  * |--------------------------------------------------------------------------
