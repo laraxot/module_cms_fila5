@@ -219,7 +219,7 @@ Use concrete model or update UserContract:
 
 ```php
 // Option 1: Use concrete model
-use Modules\Xot\Contracts\UserContract;
+use Modules\User\Models\User;
 
 /** @var User $user */
 $user = auth()->user();

@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Testing\TestResponse;
 use Modules\Cms\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
-use Modules\Xot\Contracts\UserContract as XotUserContract;
+use Modules\User\Models\User;
+use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Datas\XotData;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -16,14 +17,8 @@ use PHPUnit\Framework\MockObject\MockObject;
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 
-/*
+/**
  * Helper Pest/PHPStan — modulo Cms.
- *
- * Funzioni globali (autoload-dev.files). Nessun namespace: i test devono
- * chiamarle senza `use function Modules\Cms\Tests\...`.
- *
- * Ogni funzione e' dietro `function_exists`: merge paralleli e doppio
- * autoload non devono produrre "Cannot redeclare". Story ROOT-17.10.
  *
  * @see Modules/Gdpr/tests/PestHelpers.php
  */
@@ -34,18 +29,23 @@ if (! function_exists('cmsTest')) {
     }
 }
 
-if (! function_exists('cmsGenerateUniqueEmail')) {
-    function cmsGenerateUniqueEmail(): string
+if (! function_exists('cmsSkipTest')) {
+    function cmsSkipTest(string $message = ''): never
     {
-        return TestCase::pestGenerateUniqueEmail();
+        cmsTest()->skipTest($message);
     }
+}
+
+function cmsGenerateUniqueEmail(): string
+{
+    return TestCase::pestGenerateUniqueEmail();
 }
 
 if (! function_exists('cmsCreateTestUser')) {
     /**
      * @param  array<string, mixed>  $attributes
      */
-    function cmsCreateTestUser(array $attributes = []): XotUserContract
+    function cmsCreateTestUser(array $attributes = []): UserContract
     {
         /** @var XotUserContract $user */
         $user = TestCase::pestCreateTestUser($attributes);
@@ -58,12 +58,9 @@ if (! function_exists('cmsCreateUnverifiedUser')) {
     /**
      * @param  array<string, mixed>  $attributes
      */
-    function cmsCreateUnverifiedUser(array $attributes = []): XotUserContract
+    function cmsCreateUnverifiedUser(array $attributes = []): User
     {
-        $user = UserFactory::new()->unverified()->createOne($attributes);
-        assert($user instanceof XotUserContract);
-
-        return $user;
+        return UserFactory::new()->unverified()->createOne($attributes);
     }
 }
 
@@ -80,31 +77,25 @@ if (! function_exists('cmsCreateMock')) {
     }
 }
 
-if (! function_exists('cmsMockXotData')) {
-    function cmsMockXotData(): void
-    {
-        XotData::make()->update(['main_module' => 'User']);
-    }
+function cmsMockXotData(): void
+{
+    XotData::make()->update(['main_module' => 'User']);
 }
 
-if (! function_exists('cmsReadFile')) {
-    function cmsReadFile(string $path): string
-    {
-        return file_get_contents($path);
-    }
+function cmsReadFile(string $path): string
+{
+    return file_get_contents($path);
 }
 
-if (! function_exists('cmsJsonDecodeFile')) {
-    /**
-     * @return array<string, mixed>
-     */
-    function cmsJsonDecodeFile(string $path): array
-    {
-        /** @var array<string, mixed> $decoded */
-        $decoded = json_decode(cmsReadFile($path), true);
+/**
+ * @return array<string, mixed>
+ */
+function cmsJsonDecodeFile(string $path): array
+{
+    /** @var array<string, mixed> $decoded */
+    $decoded = json_decode(cmsReadFile($path), true);
 
-        return $decoded;
-    }
+    return $decoded;
 }
 
 if (! function_exists('cmsHomepageBlocks')) {
@@ -119,8 +110,23 @@ if (! function_exists('cmsHomepageBlocks')) {
     }
 }
 
+if (! function_exists('cmsHomepageBlocks')) {
+    /**
+<<<<<<< .merge_file_Gu3Dt4
+     * Blocchi della homepage del tenant per una lingua (loader tipizzato su `TestCase`).
+     *
+     * @return list<array{type: string, data: array<string, mixed>}>
+     */
+    function cmsHomepageBlocks(string $locale): array
+    {
+        return TestCase::homepageBlocksForLocale($locale);
+    }
+}
+
 if (! function_exists('cmsGet')) {
     /**
+=======
+>>>>>>> .merge_file_pZWtqS
      * @param  array<string, string>  $headers
      * @return TestResponse<Response>
      */
@@ -139,7 +145,7 @@ if (! function_exists('cmsGetOrSkipOnServerError')) {
     {
         $response = cmsGet($uri, $headers);
 
-        if ((int) $response->getStatusCode() >= 500) {
+        if ($response->getStatusCode() >= 500) {
             cmsSkipTest('Server error on '.$uri.': '.$response->getStatusCode());
         }
 
@@ -159,11 +165,9 @@ if (! function_exists('cmsPost')) {
     }
 }
 
-if (! function_exists('cmsActingAs')) {
-    function cmsActingAs(Authenticatable $user, ?string $driver = null): TestCase
-    {
-        return cmsTest()->actingAs($user, $driver);
-    }
+function cmsActingAs(Authenticatable $user, ?string $driver = null): TestCase
+{
+    return cmsTest()->actingAs($user, $driver);
 }
 
 if (! function_exists('cmsActingAsGet')) {
@@ -179,37 +183,21 @@ if (! function_exists('cmsActingAsGet')) {
     }
 }
 
-if (! function_exists('cmsSkipTest')) {
-    function cmsSkipTest(string $message = ''): void
-    {
-        cmsTest()->markTestSkipped($message);
-    }
+function cmsAssertAuthenticated(?string $guard = null): void
+{
+    Assert::assertTrue(Auth::guard($guard)->check());
 }
 
-if (! function_exists('cmsAssertAuthenticated')) {
-    function cmsAssertAuthenticated(?string $guard = null): void
-    {
-        Assert::assertTrue(Auth::guard($guard)->check());
-    }
+function cmsAssertGuest(?string $guard = null): void
+{
+    Assert::assertFalse(Auth::guard($guard)->check());
 }
 
-if (! function_exists('cmsAssertGuest')) {
-    function cmsAssertGuest(?string $guard = null): void
-    {
-        Assert::assertFalse(Auth::guard($guard)->check());
-    }
-}
-
-if (! function_exists('loadHomepageJsonForBlocksArchitectureTest')) {
-    /**
-     * Wrapper del metodo su TestCase (fonte di verità PSR-4).
-     *
-     * Preferire `TestCase::homepageJsonForBlocksArchitecture()` nei test namespaced.
-     *
-     * @return array<string, mixed>
-     */
-    function loadHomepageJsonForBlocksArchitectureTest(): array
-    {
-        return TestCase::homepageJsonForBlocksArchitecture();
-    }
+/**
+ * @param  array<string, mixed>  $data
+ * @return TestResponse<Response>
+ */
+function cmsActingAsGetWithData(Authenticatable $user, string $uri, array $data = []): TestResponse
+{
+    return cmsActingAs($user)->get($uri, $data);
 }

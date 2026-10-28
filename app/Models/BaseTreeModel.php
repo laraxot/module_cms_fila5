@@ -88,12 +88,53 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu whereTitle($value)
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu withGlobalScopes(array<string, mixed> $scopes)
  * @method static \Staudenmeir\LaravelAdjacencyList\Eloquent\Builder|Menu withRelationshipExpression($direction, callable $constraint, $initialDepth, $from = null, $maxDepth = null)
+ * @method static Collection<int, static>                                 all($columns = ['*'])
+ * @method static Collection<int, static>                                 get($columns = ['*'])
+ * @method static Collection<int, static>                                 all($columns = ['*'])
+ * @method static Collection<int, static>                                 get($columns = ['*'])
+ * @method static Collection<int, static>                                 all($columns = ['*'])
+ * @method static Collection<int, static>                                 get($columns = ['*'])
+ * @method static Collection<int, static>                                 all($columns = ['*'])
+ * @method static Collection<int, static>                                 get($columns = ['*'])
+ * @method static Collection<int, static>                                 all($columns = ['*'])
+ * @method static Collection<int, static>                                 get($columns = ['*'])
+ * @method static Collection<int, static>                                 all($columns = ['*'])
+ * @method static Collection<int, static>                                 get($columns = ['*'])
  *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @method static MenuFactory factory($count = null, $state = [])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static Collection<int, static> all($columns = ['*'])
+ * @method static Collection<int, static> get($columns = ['*'])
+ * @method static MenuFactory             factory($count = null, $state = [])
  *
+ * @implements HasRecursiveRelationshipsContract<Model>
  * @mixin \Eloquent
  */
 abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationshipsContract
@@ -111,7 +152,7 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
     ];
 
     /** @var array<string, string> */
-    protected array $schema = [
+    protected $schema = [
         'id' => 'integer',
         'title' => 'string',
         'parent_id' => 'integer',
@@ -131,6 +172,7 @@ abstract class BaseTreeModel extends BaseModel implements HasRecursiveRelationsh
     }
 
     /** @return array<string, string> */
+    #[\Override]
     protected function casts(): array
     {
         return [

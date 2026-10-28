@@ -102,4 +102,8 @@ Fase BMAD: implementazione e quality gate. Seconda sessione sulla lane cms, avvi
 
 - **Quaeris non ha il JSON della homepage** (`config/local/quaeris/database/` non esiste): i test di architettura dei blocchi si saltano con un messaggio. Se per questo progetto la homepage deve esserci, cambiare in `TestCase::homepageJsonForBlocksArchitecture()` `markTestSkipped` in `fail`. Restano i test che asseriscono testi di un altro progetto (`HomepageContentManagementTest`, `FilamentBlocksIntegrationTest`).
 - **23 docblock `/** @var` e 3 cast `(string) $response->getContent()`** introdotti nella prima passata restano: `PageManagementBusinessLogicTest` 10, `TestHelper` 4, `CmsContentManagementTest` 3, `Auth/registertypetest` 3, `Unit/Models/PageTest` 2, `PestHelpers` 1 (`cmsJsonDecodeFile`, gia' in HEAD). La radice e' `@property array<array-key, mixed>` su `Page`, `PageContent`, `Section`: tipizzare li' la forma tradotta (lingua => lista di blocchi) e togliere i `@var` nei test. Serve decidere la forma, quindi non e' stato fatto in silenzio.
+<<<<<<< .merge_file_7v0tHD
 - **Docs del modulo:** la radice di `docs/` ha ancora centinaia di `.md` fuori posto (DOC-004/006 aperti in `docs/00-INDEX.md`), con guide stantie che descrivono `getFormSchema()` statico sulla Resource (`filament_forms.md`, `FILAMENT-RESOURCE-GUIDELINES.md`, `filament-resource-guidelines.md`). Non spostate ne' rinumerate.
+=======
+- **Docs del modulo:** la radice di `docs/` ha ancora centinaia di `.md` fuori posto (DOC-004/006 aperti in `docs/00-INDEX.md`), con guide stantie che descrivono `getFormSchema()` statico sulla Resource (`filament_forms.md`, `FILAMENT-RESOURCE-GUIDELINES.md`, `filament-resource-guidelines.md`). Non spostate ne' rinumerate.
+>>>>>>> .merge_file_xTE3Ct

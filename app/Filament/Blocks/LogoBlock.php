@@ -11,6 +11,7 @@ use Modules\Xot\Filament\Blocks\XotBaseBlock;
 
 class LogoBlock extends XotBaseBlock
 {
+    #[\Override]
     public static function getBlockSchema(): array
     {
         return [

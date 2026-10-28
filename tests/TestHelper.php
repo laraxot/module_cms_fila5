@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests;
 
+use Filament\Navigation\NavigationItem;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Modules\Cms\Models\Module;
 use Modules\User\Models\User;
@@ -37,7 +38,11 @@ abstract class TestHelper extends BaseTestCase
 
                 return null;
             })
+<<<<<<< .merge_file_piYxW9
             ->filter(fn ($value): bool => $value !== null)
+=======
+            ->filter(fn (?UserContract $value): bool => $value !== null)
+>>>>>>> .merge_file_ACnsqw
             ->first();
 
         return $user;
@@ -69,7 +74,11 @@ abstract class TestHelper extends BaseTestCase
     public function getMainAdminNavigationUrlItems(): array
     {
         $items = collect(app(GetModulesNavigationItems::class)->execute())
+<<<<<<< .merge_file_piYxW9
             ->map(function ($item): ?string {
+=======
+            ->map(function (NavigationItem $item): ?string {
+>>>>>>> .merge_file_ACnsqw
                 $url = $item->getUrl();
                 if (is_string($url) && $url) {
                     return $url;
@@ -77,7 +86,11 @@ abstract class TestHelper extends BaseTestCase
 
                 return null;
             })
+<<<<<<< .merge_file_piYxW9
             ->filter(fn ($url): bool => $url !== null)
+=======
+            ->filter(fn (?string $url): bool => $url !== null)
+>>>>>>> .merge_file_ACnsqw
             ->values()
             ->all();
 

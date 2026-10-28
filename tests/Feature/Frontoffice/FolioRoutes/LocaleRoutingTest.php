@@ -27,7 +27,7 @@ function supportedTestLocales(): array
     /** @var list<string> $locales */
     $locales = array_values(array_map(strval(...), array_keys($supported)));
 
-    return [] !== $locales ? $locales : ['de', 'en', 'it'];
+    return $locales !== [] ? $locales : ['de', 'en', 'it'];
 }
 
 describe('Locale Routing', function (): void {
@@ -53,14 +53,10 @@ describe('Locale Routing', function (): void {
 
             if ($status >= 500) {
                 cmsSkipTest("Route /{$locale} returned server error ({$status}).");
-
-                continue;
             }
 
-            if (200 !== $status) {
+            if ($status !== 200) {
                 cmsSkipTest("Route /{$locale} returned {$status} (redirect). Cannot check HTML lang attribute.");
-
-                continue;
             }
 
             $response->assertSee('lang="'.$locale.'"', false);
@@ -74,14 +70,10 @@ describe('Locale Routing', function (): void {
 
         if ($status >= 500) {
             cmsSkipTest("Route /de returned server error ({$status}).");
-
-            return;
         }
 
-        if (200 !== $status) {
+        if ($status !== 200) {
             cmsSkipTest("Route /de returned {$status} (redirect). Cannot verify locale.");
-
-            return;
         }
 
         $response->assertSee('lang="de"', false);
@@ -96,14 +88,10 @@ describe('Locale Routing', function (): void {
 
         if ($status >= 500) {
             cmsSkipTest("Route /it returned server error ({$status}).");
-
-            return;
         }
 
-        if (200 !== $status) {
+        if ($status !== 200) {
             cmsSkipTest("Route /it returned {$status} (redirect).");
-
-            return;
         }
 
         $response->assertSee('lang="it"', false);
@@ -118,14 +106,10 @@ describe('Locale Routing', function (): void {
 
         if ($status >= 500) {
             cmsSkipTest("Route /en returned server error ({$status}).");
-
-            return;
         }
 
-        if (200 !== $status) {
+        if ($status !== 200) {
             cmsSkipTest("Route /en returned {$status} (redirect).");
-
-            return;
         }
 
         $response->assertSee('lang="en"', false);
