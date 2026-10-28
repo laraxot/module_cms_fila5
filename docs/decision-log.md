@@ -23,7 +23,7 @@ qmd: "decision log   cms homepage audit cms"
 
 ### 2026-10-08: BaseTreeModel e Menu: trait vendor (lavoro del 06/10 sera) senza annotazioni generiche
 <<<<<<< .merge_file_JfXoPw
-- **Choose**: Tenere `BaseTreeModel` e `Menu` all'ultima versione buona (blob `6b4adee6` e `e2a5c3ef`: trait vendor `HasRecursiveRelationships`, pulizia PHPStan della story `2026-10-06-phpstan-cleanup-cms`), togliendo solo `@template`/`@implements HasRecursiveRelationshipsContract<…>`.
+- **Choose**: Tenere `BaseTreeModel` e `Menu` all'ultima versione buona (blob `6b4adee6` e `e2a5c3ef`: trait vendor `HasRecursiveRelationships`, pulizia PHPStan della story `phpstan-cleanup-cms`), togliendo solo `@template`/`@implements HasRecursiveRelationshipsContract<…>`.
 =======
 - **Choose**: Tenere `BaseTreeModel` e `Menu` all'ultima versione buona (blob `6b4adee6` e `e2a5c3ef`: trait vendor `HasRecursiveRelationships`, pulizia PHPStan della story `phpstan-cleanup-cms`), togliendo solo `@template`/`@implements HasRecursiveRelationshipsContract<…>`.
 >>>>>>> .merge_file_4hUfmz
