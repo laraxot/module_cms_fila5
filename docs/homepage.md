@@ -128,7 +128,7 @@ Per una documentazione più approfondita sull'architettura della homepage, consu
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](homepage_architecture.md) - Architettura della homepage
+- [Architettura](homepage-architecture.md) - Architettura della homepage
 - [Gestione](homepage-management.md) - Gestione della homepage
 - [Struttura](homepage-structure.md) - Struttura dettagliata
 - [Contenuti](homepage-contenuti.md) - Gestione dei contenuti
