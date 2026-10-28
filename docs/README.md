@@ -24,7 +24,7 @@ Modulo Laraxot `Modules\Cms` (alias `cms`, priorita' 3 in `module.json`, provide
 
 ## Amministrazione Filament
 
-Risorse: `PageResource`, `SectionResource`, `MenuResource`, `PageContentResource`, `AttachmentResource`. Blocchi per il Builder in `app/Filament/Blocks/` (17 classi: `HeroBlock`, `CtaBlock`, `ParagraphBlock`, `NavigationBlock`, ...). Cluster `Appearance` con pagine `Breadcrumb`, `Footer`, `Headernav` (salvano con `SaveFooterConfigAction`, `SaveHeadernavConfigAction` nella config del tenant), pagina `Themes`. Componenti Volt di autenticazione in `app/Http/Volt/` (Login, Register, Verify, Password).
+Risorse: `PageResource`, `SectionResource`, `MenuResource`, `PageContentResource`, `AttachmentResource`. Blocchi per il Builder in `app/Filament/Blocks/` (17 classi: `HeroBlock`, `CtaBlock`, `ParagraphBlock`, `NavigationBlock`, ...). `Filament\Fields\PageContentBuilder::make()` costruisce il Builder con i blocchi di `Modules\UI\Actions\Block\GetAllBlocksAction` e lo usano i form di `PageResource` (`content_blocks`, `sidebar_blocks`, `footer_blocks`), `PageContentResource` e `SectionResource` (`blocks`). Cluster `Appearance` con pagine `Breadcrumb`, `Footer`, `Headernav` (salvano con `SaveFooterConfigAction`, `SaveHeadernavConfigAction` nella config del tenant), pagina `Themes`. Componenti Volt di autenticazione in `app/Http/Volt/` (Login, Register, Verify, Password).
 
 ## Quick start
 
