@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Cms: indice operativo di docs/ (a cosa serve ogni gruppo)"
 type: index
@@ -16,6 +17,9 @@ related:
 ---
 
 # Cms: indice operativo di docs/
+=======
+# Cms Module Documentation
+>>>>>>> 127b4277 (.)
 
 Questo e' l'ingresso per chi deve capire **dove cercare** nei docs del modulo e **quanto fidarsi** di quello che trova. Non elenca tutti i file: per l'elenco per argomento c'e' [index.md](./index.md) (catalogo, 73 KB). Per lo stato verificato del codice c'e' [README.md](./README.md). Per il perche' del modulo c'e' [scopo.md](./scopo.md).
 

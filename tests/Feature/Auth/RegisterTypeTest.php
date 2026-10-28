@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
+=======
+use Illuminate\Http\Response;
+use Illuminate\Testing\TestResponse;
+>>>>>>> 127b4277 (.)
 use PHPUnit\Framework\Assert;
 
 beforeEach(function (): void {

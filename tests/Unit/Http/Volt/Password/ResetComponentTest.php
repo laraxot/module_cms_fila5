@@ -8,7 +8,10 @@ use PHPUnit\Framework\Assert;
 describe('Password ResetComponent', function (): void {
     test('reset component extends volt component', function (): void {
         $component = new ResetComponent;
+<<<<<<< HEAD
         Assert::assertSame(ResetComponent::class, $component::class);
+=======
+>>>>>>> 127b4277 (.)
 
     });
 
@@ -24,8 +27,14 @@ describe('Password ResetComponent', function (): void {
         Assert::assertFalse($component->emailSentMessage);
     });
 
+<<<<<<< HEAD
     test('reset component has send reset password link method', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
     test('reset component has send reset password link method #2', function (): void {})->todo('Serve una asserzione di comportamento: l\'esistenza di un metodo su una classe nota e\' decidibile staticamente, quindi non prova niente.');
+=======
+    test('reset component has send reset password link method', function (): void {
+        Assert::assertTrue((new ReflectionClass(ResetComponent::class))->hasMethod('sendResetPasswordLink'));
+    });
+>>>>>>> 127b4277 (.)
 
     test('send reset password link method returns void', function (): void {
         $reflection = new ReflectionClass(ResetComponent::class);
