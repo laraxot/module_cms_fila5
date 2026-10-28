@@ -21,7 +21,7 @@ use function Safe\preg_replace_callback;
  *
  * @phpstan-require-extends Model
  *
- * @method mixed getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
+ * @method        mixed                                         getTranslation(string $key, string $locale, bool $useFallbackLocale = true)
  * @method static \Illuminate\Database\Eloquent\Builder<static> query()
  */
 trait HasBlocks
@@ -72,12 +72,12 @@ trait HasBlocks
             if (! is_array($block)) {
                 continue;
             }
-            $typeValue = $block['type'] ?? 'unknown';
-            $type = \is_string($typeValue) ? $typeValue : 'unknown';
+            $rawType = $block['type'] ?? 'unknown';
+            $type = is_string($rawType) ? $rawType : 'unknown';
             /** @var array<string, mixed> $data */
             $data = (array) ($block['data'] ?? []);
-            $slugValue = $block['slug'] ?? null;
-            $slug = \is_scalar($slugValue) ? (string) $slugValue : null;
+            $rawSlug = $block['slug'] ?? null;
+            $slug = is_string($rawSlug) ? $rawSlug : null;
             $active = (bool) ($block['active'] ?? true);
 
             $blockDataInstances[(string) $key] = new BlockData($type, $data, $slug, $active);
@@ -90,7 +90,8 @@ trait HasBlocks
     }
 
     /**
-     * @param  array<int|string, mixed>  $blocks
+     * @param array<int|string, mixed> $blocks
+     *
      * @return array<string, mixed>
      */
     public function compile(array $blocks): array
@@ -147,13 +148,15 @@ trait HasBlocks
      * Cercato il record per slug, itera sui blocchi e filtra per side quando fornito.
      * Struttura attesa: blocks = [{type, data, slug?, side?}, ...]
      *
-     * @param  string  $slug  The section/page slug
-     * @param  string|null  $side  The side to get blocks for (null for all blocks)
+     * @param string      $slug The section/page slug
+     * @param string|null $side The side to get blocks for (null for all blocks)
+     *
      * @return array<string, BlockData>
      */
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
     {
         $query = static::query()->where('slug', $slug);
+
 
         try {
             $record = $query->sole();

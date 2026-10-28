@@ -10,8 +10,4 @@ tags: [docs, cms]
 
 # Superseded
 
-<<<<<<< .merge_file_YbKV70
 Canonica: [content-blocks-architecture.md](./content-blocks-architecture.md).
-=======
-Canonica: [content-blocks-architecture.md](./content-blocks-architecture.md).
->>>>>>> .merge_file_rb1gtl

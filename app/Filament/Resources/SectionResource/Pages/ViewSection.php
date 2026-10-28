@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Cms\Filament\Resources\SectionResource\Pages;
 
 use Filament\Infolists\Components\ViewEntry;
-use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Section;
 use Modules\Cms\Filament\Resources\SectionResource;
 use Modules\Lang\Filament\Resources\Pages\LangBaseViewRecord;
@@ -14,11 +13,10 @@ class ViewSection extends LangBaseViewRecord
 {
     public static string $resource = SectionResource::class;
 
-    /** @return array<string, Component> */
+    /** @return array<string, mixed> */
     protected function getInfolistSchema(): array
     {
         // $view='pub_theme::components.sections.'.$this->record->slug;
-        /** @phpstan-var view-string */
         $view = 'cms::sections.preview';
 
         return [

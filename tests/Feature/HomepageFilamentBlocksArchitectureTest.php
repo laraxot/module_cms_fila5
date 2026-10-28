@@ -7,14 +7,8 @@ namespace Modules\Cms\Tests\Feature;
 use Modules\Cms\Tests\TestCase;
 use Modules\UI\Actions\Block\GetAllBlocksAction;
 use Modules\UI\View\Components\Render\Blocks;
-<<<<<<< .merge_file_wJQAhL
-=======
-use Modules\Xot\Datas\ComponentFileData;
->>>>>>> .merge_file_Q4cbJZ
 
 use function Pest\Laravel\get;
-use function Safe\file_get_contents;
-use function Safe\json_decode;
 
 describe('Homepage Filament Builder Blocks - CMS Module', function () {
     beforeEach(function () {
@@ -57,11 +51,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
-<<<<<<< .merge_file_wJQAhL
         $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
-=======
-        $cmsBlocks = collect($allBlocks)->filter(fn (ComponentFileData $block) => 'Cms' === $block->module);
->>>>>>> .merge_file_Q4cbJZ
         if ($cmsBlocks->count() > 0) {
             foreach ($cmsBlocks as $block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);

@@ -5,12 +5,7 @@ declare(strict_types=1);
 namespace Modules\Cms\Http\Middleware;
 
 use Illuminate\Contracts\Http\Kernel;
-use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
-<<<<<<< .merge_file_urtrzn
-=======
-use Illuminate\Routing\Router;
->>>>>>> .merge_file_tldFAY
 use Illuminate\Support\Facades\Log;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
 use Modules\Cms\Models\Page;
@@ -250,10 +245,14 @@ class PageSlugMiddleware
      */
     protected function resolveMiddlewareClass(string $middleware): string
     {
+        // Get middleware aliases from HTTP kernel
+        // $kernel = app(\Illuminate\Contracts\Http\Kernel::class);
+
+        // Try to get from route middleware (custom middleware)
+        // method_exists will always be true for Http\Kernel, so we can remove the check
         /** @var array<string, class-string> $routeMiddleware */
-        $routeMiddleware = $this->kernel instanceof HttpKernel
-            ? $this->kernel->getMiddlewareAliases()
-            : app(Router::class)->getMiddleware();
+        // `getRouteMiddleware()` e' deprecato e delega a `getMiddlewareAliases()`.
+        $routeMiddleware = $this->kernel->getMiddlewareAliases();
         if (isset($routeMiddleware[$middleware])) {
             /* @var class-string */
             return $routeMiddleware[$middleware];

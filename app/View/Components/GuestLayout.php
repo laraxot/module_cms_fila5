@@ -17,12 +17,7 @@ class GuestLayout extends Component
      */
     public function render(): View|Htmlable|\Closure|string
     {
-<<<<<<< .merge_file_CBb9NS
         $view = app(GetCmsViewAction::class)->execute('pub_theme::components.layouts.guest');
-=======
-        /** @var view-string $view */
-        $view = 'pub_theme::components.layouts.guest';
->>>>>>> .merge_file_nvGmMK
 
         return ViewFacade::make($view);
     }

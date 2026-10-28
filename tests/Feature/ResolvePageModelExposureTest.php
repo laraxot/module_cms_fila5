@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
-<<<<<<< .merge_file_zw5wWW
-use Modules\Blog\Models\Article;
-=======
->>>>>>> .merge_file_QkHKza
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
@@ -185,31 +181,19 @@ test('una voce di configurazione che non e un modello viene ignorata', function 
 });
 
 test('blog ed events restano serviti dal finder dei soli contenuti pubblicati', function (): void {
-<<<<<<< .merge_file_zw5wWW
-    $article = new Article;
-    $composer = new class($article)
-    {
-        public function __construct(private readonly Article $article) {}
-
-        public function findPublishedPostBySlug(string $slug): ?Article
-=======
+    // Blog e' un modulo opzionale (ResolvePageAction usa il finder solo se Article e ThemeComposer esistono): la classe si risolve per nome.
     $article = app('Modules\\Blog\\Models\\Article');
-    Assert::assertIsObject($article);
+    Assert::assertInstanceOf(Model::class, $article);
     $composer = new class($article)
     {
-        public function __construct(private readonly object $article) {}
+        public function __construct(private readonly Model $article) {}
 
-        public function findPublishedPostBySlug(string $slug): ?object
->>>>>>> .merge_file_QkHKza
+        public function findPublishedPostBySlug(string $slug): ?Model
         {
             return $slug === 'post-pubblicato' ? $this->article : null;
         }
 
-<<<<<<< .merge_file_zw5wWW
-        public function findPublishedEventBySlug(string $slug): ?Article
-=======
-        public function findPublishedEventBySlug(string $slug): ?object
->>>>>>> .merge_file_QkHKza
+        public function findPublishedEventBySlug(string $slug): ?Model
         {
             return $slug === 'evento-pubblicato' ? $this->article : null;
         }
@@ -223,8 +207,7 @@ test('blog ed events restano serviti dal finder dei soli contenuti pubblicati', 
     Assert::assertNull($action->execute('blog', 'evento-pubblicato')->item, 'un evento non si legge come post');
     Assert::assertNull($action->execute('events', 'post-pubblicato')->item, 'un post non si legge come evento');
     Assert::assertNull($action->execute('blog', 'inesistente')->item);
-<<<<<<< .merge_file_zw5wWW
-});
-=======
-})->skip(! class_exists('Modules\\Blog\\Models\\Article'), 'Il modulo Blog e opzionale e qui non e installato.');
->>>>>>> .merge_file_QkHKza
+})->skip(
+    ! class_exists('Modules\\Blog\\Models\\Article') || ! class_exists('Modules\\Blog\\View\\Composers\\ThemeComposer'),
+    'Modulo Blog non installato: ResolvePageAction non usa il finder dei contenuti pubblicati.'
+);

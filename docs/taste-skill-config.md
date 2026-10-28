@@ -2,7 +2,7 @@
 type: taste-skill-config
 title: "Taste-Skill Config — CMS Homepage"
 description: "Config taste-skill dials per homepage redesign. Reads DESIGN.md tokens."
-links: {github_issue: #500, taste-skill-repo: leonxlnx/taste-skill}
+links: {github_issue: "#500", taste-skill-repo: leonxlnx/taste-skill}
 status: draft
 updated: 2026-10-08
 tags: [docs, cms]

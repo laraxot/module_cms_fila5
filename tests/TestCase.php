@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests;
 
-<<<<<<< .merge_file_rdDOnB
 use Illuminate\Contracts\Auth\Authenticatable;
-=======
->>>>>>> .merge_file_vuhbtL
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -65,11 +62,7 @@ abstract class TestCase extends RootTestCase
      *
      * @param  array<string, mixed>  $attributes
      */
-<<<<<<< .merge_file_rdDOnB
     public static function pestCreateTestUser(array $attributes = []): Authenticatable
-=======
-    public static function pestCreateTestUser(array $attributes = []): UserContract
->>>>>>> .merge_file_vuhbtL
     {
         return User::factory()->createOne($attributes);
     }

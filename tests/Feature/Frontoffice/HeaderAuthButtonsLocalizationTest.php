@@ -9,6 +9,8 @@ it('renders localized auth labels and links on localized homepages', function ()
 
     if ($status >= 500) {
         cmsSkipTest('Italian homepage returned server error in this install.');
+
+        return;
     }
 
     $response->assertOk();
@@ -22,6 +24,8 @@ it('renders localized auth labels and links on localized homepages', function ()
 
     if ($status >= 500) {
         cmsSkipTest('German homepage returned server error in this install.');
+
+        return;
     }
 
     $response->assertOk();
