@@ -1,0 +1,51 @@
+---
+title: "Niente testi fissi nelle Blade del modulo Cms (multilingua it/en/de/es)"
+type: story
+status: implemented
+module: Cms
+updated: 2026-10-30
+tags: [i18n, blade, multilingua]
+---
+
+# Niente testi fissi nelle Blade del modulo Cms
+
+## Scopo
+
+Il sito risponde in italiano, inglese, tedesco e spagnolo: un testo scritto dentro una Blade esce uguale in ogni lingua. Il `fallback_locale` e' `it`, quindi una chiave mancante in `en`/`de`/`es` non da' errore e mostra l'italiano.
+
+## Regola operativa
+
+- Ogni testo visibile passa da `{{ __('cms::contesto.collezione.chiave.tipo') }}`: cinque elementi, dove `contesto` e' il nome del file lingua e `tipo` il genere di testo (`label`, `title`, `description`, `placeholder`, `tooltip`, `helper_text`, `message`, `aria_label`, `alt`; [regola 008](../../../../../docs/wiki/rules/008-translation-5-level-protocol.md)). Mai la frase come chiave: nessun file la traduce, e il traduttore ignora `['default' => ...]`.
+- La stringa va in `Modules/Cms/lang/{it,en,de,es}/<contesto>.php`, con le stesse chiavi e gli stessi `:parametri` nelle quattro lingue. `it` e' l'originale; `en`, `de`, `es` sono traduzioni vere. Se l'originale era inglese (Flowbite, builder dei menu), `en` lo conserva e `it` e' la traduzione: copiare l'inglese in `it` lascerebbe gli italiani con testo inglese.
+- Vale anche per `aria-label`, `placeholder`, `title`, `alt` e, in PHP, per `->label()`, `->placeholder()`, `->tooltip()`, `->helperText()`.
+- Frasi con variabili: segnaposto `:param` e `trans_choice` per i plurali; il markup resta nella Blade e la frase si spezza solo dove serve.
+- Link a pagine CMS: niente `href="/it/..."`, niente `url('/...')`, niente nomi di rotta inventati per pagina. Si usa la rotta generica della shell Folio, `route('container0.view', ['container0' => 'area-personale', 'slug0' => 'notifiche'])`: il prefisso lingua lo aggiunge Folio. L'indice ha un nome diverso per tema (`container0` in Two e Meetup, `container0.index` in Sixteen e TwentyOne): una vista di modulo condivisa tra temi usa `view` oppure riceve l'URL dal chiamante. I nomi Folio veri (`home`, `login`, `logout`) restano validi.
+- Non sono errori: marchi e nomi propri, sigle (`URL`), numeri, valori che arrivano dal modello o dal contenuto CMS.
+
+## Cosa e' stato fatto
+
+- Rilevatore `bashscripts/tools/i18n/find-hardcoded-blade-text.py` sul modulo: da 200 occorrenze in 35 file a 29 in 16 file (stesso strumento, commit di partenza contro stato attuale).
+- 33 Blade convertite: blocchi `footer` e `headernav` (presenti in quattro alberi di viste duplicati, `Components/` e `components/`), pagina dei temi, suggerimenti della barra di ricerca del blog, builder dei menu, ispettore del database, blocchi di pagina, ordinamento dei pannelli, sezioni, contenuto di pagina.
+- Creati 8 file lingua per ognuna delle quattro lingue, 73 chiavi per lingua: `block_footer`, `block_headernav`, `blog`, `db_inspector`, `menu_builder`, `page_blocks`, `panel_sort`, `themes_page`.
+- Completati de/es sulle chiavi che altre passate avevano creato solo in `it`/`en` (builder dei menu, blog, ispettore, blocchi, ordinamento, sezioni).
+
+## Residui dichiarati (29 occorrenze)
+
+| Categoria | N |
+|---|---:|
+| Marchio Flowbite nei footer (testo, logo, `alt`), nei quattro alberi duplicati | 18 |
+| Sigla `URL` nel builder dei menu, uguale in ogni lingua | 8 |
+| Scaffold nWidart non instradato (indice e layout master) | 3 |
+
+Testi in PHP non toccati: circa 56 chiamate `->label()`, `->placeholder()`, `->tooltip()`, `->helperText()` con testo fisso nei PHP di Cms e Notify insieme (conteggio euristico).
+
+## Limiti
+
+- Nessuna verifica a video: chiavi e compilazione sono controllate in modo statico.
+- I testi dei contenuti CMS (pagine e blocchi nei JSON o nel database) non fanno parte di questa campagna: in de/es restano nella lingua in cui sono stati scritti, dove non tradotti.
+- Una parte delle chiavi (builder dei menu, blog, ispettore del database, blocchi di pagina) e' nata con tre o quattro elementi invece di cinque: funziona in tutte le lingue ma non e' stata rinominata.
+- Verifica del 2026-10-30: PHPStan sui moduli senza errori, compilazione Blade dei file convertiti senza errori, nessuna chiave usata dalla campagna manca in `it`, `en`, `de`, `es`.
+
+## Riferimenti
+
+Metodo e regola completa: [story del tema Two](../../../../Themes/Two/docs/stories/blade-i18n-no-hardcoded-text.story.md); protocollo a cinque elementi: [regola 008](../../../../../docs/wiki/rules/008-translation-5-level-protocol.md). Il dettaglio per file e' nel repo privato di audit.
