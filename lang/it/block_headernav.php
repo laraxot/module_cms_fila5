@@ -14,4 +14,12 @@ return [
             'label' => 'Esci',
         ],
     ],
+    'auth' => [
+        'login' => [
+            'label' => 'Accedi',
+        ],
+        'sign_up' => [
+            'label' => 'Registrati',
+        ],
+    ],
 ];

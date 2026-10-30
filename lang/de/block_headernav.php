@@ -14,4 +14,12 @@ return [
             'label' => 'Abmelden',
         ],
     ],
+    'auth' => [
+        'login' => [
+            'label' => 'Anmelden',
+        ],
+        'sign_up' => [
+            'label' => 'Registrieren',
+        ],
+    ],
 ];
