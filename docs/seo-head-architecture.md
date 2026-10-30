@@ -33,12 +33,17 @@ La libreria è già installata e offre title, meta, Open Graph, canonical, robot
 Schema.org. Il componente la usa come unica sorgente di rendering tramite `@head`;
 non vengono stampati a mano title, description, OG o JSON-LD concorrenti.
 
+La politica robots e le alternate hreflang sono risolte da Action dedicate del Cms.
+Le pagine non tradotte ricevono `noindex`; la homepage pubblica `Organization` e
+`WebSite`, mentre le pagine interne pubblicano l'entità pagina e `BreadcrumbList`.
+
 ## Regole markup
 
 - un charset e un viewport;
 - un title e una description per documento pubblico;
 - robots solo se il resolver fornisce una direttiva;
 - canonical e alternate devono rispettare locale e routing Folio;
+- robots deve riflettere indicizzabilità e disponibilità della traduzione;
 - JSON-LD deve essere JSON valido e viene serializzato dal renderer Laravel Head;
 - nessuno script CSS/JS del tema Sixteen: il runtime è quello di Two.
 
