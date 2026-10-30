@@ -27,17 +27,23 @@ final class BuildPageSchemaAction
         string $path,
         array $routeParameters = [],
         ?Authenticatable $user = null,
+        ?string $name = null,
+        ?string $description = null,
     ): array {
         $pageType = $this->resolvePageType($routeName, $path, $routeParameters);
+        $description ??= $meta->getDescription(limit: 160);
 
         $schema = [
             '@context' => 'https://schema.org',
             '@type' => $pageType,
-            'name' => $meta->getBrandName(),
-            'description' => $meta->getDescription(limit: 160),
+            'name' => $name ?? $meta->getBrandName(),
             'url' => $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),
         ];
+
+        if ('' !== trim($description)) {
+            $schema['description'] = $description;
+        }
 
         if ('ProfilePage' === $pageType) {
             $personSchema = $this->resolveProfileMainEntity($routeParameters, $user);
