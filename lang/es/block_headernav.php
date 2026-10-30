@@ -14,4 +14,12 @@ return [
             'label' => 'Cerrar sesión',
         ],
     ],
+    'auth' => [
+        'login' => [
+            'label' => 'Iniciar sesión',
+        ],
+        'sign_up' => [
+            'label' => 'Registrarse',
+        ],
+    ],
 ];
