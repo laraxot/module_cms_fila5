@@ -10,7 +10,7 @@ declare(strict_types=1);
  */
 require_once __DIR__.'/PestHelpers.php';
 
-uses(Modules\Cms\Tests\TestCase::class)->in('Feature', 'Unit');
+uses(\Modules\Cms\Tests\TestCase::class)->in(__DIR__.'/Feature', __DIR__.'/Unit');
 
 /*
  * |--------------------------------------------------------------------------

@@ -14,12 +14,9 @@ use Modules\Cms\Actions\ResolvePageAction;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
-use Tests\TestCase;
 
-// TestCase della radice (DatabaseTransactions su mariadb, user, fixcity): Modules/Cms/tests/Pest.php non e caricato
-// da `pest-scratch-db.sh`, quindi il binding va dichiarato qui.
-uses(TestCase::class);
-
+// Il test usa il TestCase del modulo: eredita il bootstrap applicativo root e
+// mantiene un solo binding Pest per la directory Cms.
 /*
  * DCP-283 (C-04): ResolvePageAction non deve piu' caricare modelli arbitrari dai due segmenti dell'URL.
  * Prima (misurato): /it/profile/<uuid> e /it/user/<uuid> rispondevano 200 per un utente reale (anche a un ospite) e 404 per

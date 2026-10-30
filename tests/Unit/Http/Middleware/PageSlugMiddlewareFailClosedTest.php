@@ -10,15 +10,12 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Log;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use Modules\Cms\Models\Page;
-use Modules\Xot\Tests\XotBaseTestCase;
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\Logger as Monolog;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-
-uses(XotBaseTestCase::class);
 
 /*
  * DCP-283 (C-03): PageSlugMiddleware deve essere fail-closed. Una pagina la cui protezione non si riesce a determinare

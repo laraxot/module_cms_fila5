@@ -39,6 +39,7 @@ Il sito legge JSON per tenant: per `local/fixcity` ci sono 113 file in `laravel/
 | Il JSON del tenant e' contenuto del front office | [wiki/concepts/tenant-json-is-fo-content.md](./wiki/concepts/tenant-json-is-fo-content.md) |
 | Header e navigazione da Builder a JSON | [wiki/concepts/header-nav-block-architecture.md](./wiki/concepts/header-nav-block-architecture.md), [wiki/concepts/headernavblock-filament-builder.md](./wiki/concepts/headernavblock-filament-builder.md) |
 | Come si verifica un URL | [stories/dcp-41-url-to-json-resolver.story.md](./stories/dcp-41-url-to-json-resolver.story.md) |
+| Come si scrive un testo in una Blade (quattro lingue) | [stories/blade-i18n-no-hardcoded-text.story.md](./stories/blade-i18n-no-hardcoded-text.story.md) |
 
 Lacuna da sapere: i tipi di blocco che le pagine usano di piu' (ad esempio `service-flow`, presente in 44 dei 113 JSON) non compaiono in nessun documento di questa cartella. I file di [blocks/](./blocks/README.md) descrivono le 16 classi `*Block.php` del Builder di amministrazione (`app/Filament/Blocks`), non i tipi che il front office rende: quelli sono componenti Blade del tema Sixteen (`Themes/Sixteen/resources/views/components/blocks/`, 168 voci). Per i blocchi del sito si legge il tema, non `blocks/`.
 

@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Support;
 
-use Modules\Xot\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\parse_url;
-
-uses(TestCase::class);
 
 /**
  * DCP-123: le rotte Folio hanno lo stesso nome in ogni lingua e vinceva l'ultima registrata (`it`),

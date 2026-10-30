@@ -3,14 +3,11 @@
 declare(strict_types=1);
 
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
-use Modules\Xot\Tests\XotBaseTestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\Finder\Finder;
 
 use function Safe\file_get_contents;
 use function Safe\json_decode;
-
-uses(XotBaseTestCase::class);
 
 /*
  * DCP-283 (C-03): nessuna pagina esistente deve cambiare comportamento. Si percorrono TUTTI i JSON di pagina del
