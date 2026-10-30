@@ -36,8 +36,8 @@ responsabilità SEO e produrre markup valido, localizzato e verificabile.
 - [x] Un solo `<head>` per ciascun layout pubblico di Two che adotta il componente.
 - [x] Charset, viewport, title, description, robots opzionale, theme-color, OG,
       Twitter, canonical/alternate e asset SEO coerenti con la locale corrente.
-- [x] JSON-LD `WebSite` sulla homepage; sulle pagine interne viene usato lo schema
-      già risolto da `BuildPageSchemaAction`.
+- [x] JSON-LD `Organization` + `WebSite` sulla homepage; sulle pagine interne
+      vengono usati entità pagina + `BreadcrumbList` risolti dal Cms.
 - [x] Dark-mode anti-FOUC e `[x-cloak]` restano prima del primo paint.
 - [x] Nessuna stringa utente hardcoded nelle Blade.
 - [x] PHPStan e test mirati superano i gate del repo.
@@ -69,6 +69,12 @@ responsabilità SEO e produrre markup valido, localizzato e verificabile.
   creato o modificato alcun database.
 - Verificato il render reale del componente via `artisan tinker`, inclusi title,
   description, canonical, Open Graph, Twitter e viewport prodotti da `@head`.
+- Verificati anche robots, cinque alternate hreflang, theme-color e due blocchi
+  JSON-LD nel render della homepage simulata.
+- Eliminati i valori duplicati di `pub_theme` nelle configurazioni root, tenant
+  TechPlanner e localhost: il valore canonico è ora univocamente `Two`. Il server
+  già in esecuzione continua però a servire Sixteen finché non viene riavviato;
+  Playwright non viene quindi usato per falsificare una verifica visuale di Two.
 - Browser check eseguito su `http://127.0.0.1:8011/it` con Playwright a 390×844:
   hero completamente visibile sotto l'header, `meta` principali unici, un solo
   `head` nel DOM e zero errori console. Screenshot salvato in
