@@ -53,3 +53,14 @@ Metodo e regola completa: [story del tema Two](../../../../Themes/Two/docs/stori
 ## Seguito: forma delle chiavi
 
 Le chiavi a 2-3 segmenti create da questa campagna sono state in parte portate a `ns::file.collezione.chiave.tipo`: **56 chiavi spostate** in questo proprietario (stesso testo, tutte le lingue, usi riscritti, nessun uso della vecchia chiave rimasto). Due chiavi non sono state spostate (il gruppo `sections.preview` e' letto come array). Le Blade `builder_body_a` e `builder_body_b` non compilano gia' in HEAD: vedi [la story di User](../../../User/docs/stories/blade-templates-that-do-not-compile.story.md). La frase sui «tre o quattro elementi» qui sopra descrive lo stato precedente: le chiavi rimaste a 3-4 elementi non sono state verificate una per una; la misura assoluta, lo strumento e i residui sono in [la story di Lang](../../../Lang/docs/stories/translation-key-shape-rekey.story.md).
+
+### Passata 2026-10-30 (sessione 97f16a39, i18n-small-modules: Cms)
+
+Scanner `Modules/Cms`: prima 37 occorrenze in 20 file (22 text, 7 attr, 8 route-unknown), dopo 37 in 20 file (invariato). Escluse le 8 `route-unknown` (`route('profile.show')`, residui con decisione dell'utente), le occorrenze utili sono 29 prima e 29 dopo.
+
+- Blade toccate (2): `resources/views/Components/headernav/simple.blade.php` e `resources/views/Components/blocks/headernav/simple.blade.php` (copie identiche). Usavano `user::auth.login-in.text` e `user::auth.sign-up`, chiavi del proprietario User che mancano in `de` (la voce `sign-up` e' italiana) e in `es`: ora usano chiavi di Cms, come per Seo (`seo::social_share`).
+- Chiavi nuove: `cms::block_headernav.auth.login.label` e `auth.sign_up.label` in `it` (Accedi, Registrati; stesso output di prima), `en`, `de`, `es` (2 per lingua); `es/sections.php` +1 (`preview.empty`, usata da `section-preview.blade.php`).
+- Controlli: `check-blade-keys` su `Modules/Cms` da 3 chiavi mancanti (de 1, es 3) a 0; compilazione Blade 85 file, 2 non compilano (`builder_body_a`, `builder_body_b`: copie troncate morte, non toccate, vedi story di User); `php -l` pulito sui file lingua toccati; `check-key-shape`: nessuna delle chiavi nuove e' tra le storte.
+- Residui (29 + 8 `route-unknown`): marchio Flowbite nei footer (18: testo, logo, `alt="Flowbite Logo"`, nei quattro alberi duplicati), sigla `URL`/`Url` e segnaposto `url` del builder dei menu (8, di cui 3 nelle copie `builder_body_a/b`), stub nWidart non instradato (`index`, `layouts/master`).
+- Le copie `Components/` e `components/` dei blocchi `headernav` non sono identiche: quella in minuscolo usa `pub_theme::components.ui.auth-buttons` (nessun testo fisso) e non e' stata toccata.
+- Non verificato: nessuna pagina guardata in un browser; i testi PHP (`->label()` ecc.) non cercati.
