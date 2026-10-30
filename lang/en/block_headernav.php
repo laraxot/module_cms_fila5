@@ -14,4 +14,12 @@ return [
             'label' => 'Log Out',
         ],
     ],
+    'auth' => [
+        'login' => [
+            'label' => 'Sign in',
+        ],
+        'sign_up' => [
+            'label' => 'Sign up',
+        ],
+    ],
 ];
