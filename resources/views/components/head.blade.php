@@ -11,5 +11,6 @@
     @livewireStyles
     @filamentStyles
     @vite(['resources/css/app.css'], 'themes/Two')
+    @stack('head')
     @stack('styles')
 </head>

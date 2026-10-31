@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
-use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\View\Component;
@@ -12,20 +11,25 @@ use Laravel\Head\Facades\Head as HeadManager;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
+use Modules\Cms\Actions\Head\ComposeDocumentTitleAction;
+use Modules\Cms\Actions\Head\ResolveCmsPageAction;
 use Modules\Cms\Actions\Head\ResolveHreflangAlternatesAction;
+use Modules\Cms\Actions\Head\ResolvePageDescriptionAction;
 use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
+use Modules\Cms\Actions\Head\ResolveWrittenLocalesAction;
 use Modules\Cms\Models\Page;
 use Modules\Xot\Datas\MetatagData;
 
-use function Safe\json_decode;
 use function Safe\parse_url;
+use function Safe\preg_replace;
 
 /**
  * Il `<head>` del front office: la vista emette `<head>…</head>`, i layout non lo avvolgono.
  *
- * I valori di pagina si scrivono a runtime sullo strato più alto di `laravel/head`
- * (senza `flush()`, per non cancellare ciò che una pagina ha già impostato).
- * Testi e immagini del sito arrivano dal tema (`pub_theme::seo.*`, `pub_theme::header.*`);
+ * I valori si scrivono a runtime sullo strato più alto di `laravel/head` (senza `flush()`) e vincono su defaults,
+ * gruppo di rotte e rotta. Il layout rende questo componente dopo la pagina: per cambiare titolo, descrizione o colore
+ * di una pagina si usano le props del componente, non `Head::…()` dalla pagina (verrebbe sovrascritto).
+ * Testi e immagini del sito arrivano dal tema (`pub_theme::seo.*`, `pub_theme::header.*`) e dal testo della pagina CMS;
  * un tag senza dato reale viene omesso, mai riempito con segnaposto o chiavi grezze.
  */
 final class Head extends Component
@@ -50,23 +54,26 @@ final class Head extends Component
     {
         $meta = MetatagData::make();
         $brand = $this->resolveBrand($meta);
-        $page = $this->resolvePage();
-        $pageTitle = $this->resolvePageTitle($page);
-        $title = $this->composeDocumentTitle($pageTitle, $brand);
-        $description = $this->resolveDescription();
-        $canonical = url()->current();
         $localeCodes = array_keys(LaravelLocalization::getSupportedLocales());
-        $translatedLocales = $this->translatedLocales($page);
-        $translated = null === $translatedLocales || in_array(app()->getLocale(), $translatedLocales, true);
-        $robots = app(ResolveRobotsPolicyAction::class);
-        $path = request()->path();
+        $path = request()->decodedPath();
+        $isHome = $this->isHomepage();
+        $page = $this->resolvePage($path, $localeCodes);
+        $titles = app(ComposeDocumentTitleAction::class);
+        $pageTitle = $titles->withoutBrand($this->resolvePageTitle($page), $brand);
+        $title = $titles->execute($pageTitle, $brand);
+        $description = $this->resolveDescription($meta, $page, $isHome);
+        $canonical = $this->canonicalUrl();
+        $writtenLocales = $page instanceof Page ? app(ResolveWrittenLocalesAction::class)->execute($page) : null;
+        $translated = null === $writtenLocales || in_array(app()->getLocale(), $writtenLocales, true);
+        $policy = app(ResolveRobotsPolicyAction::class);
+        $indexable = $policy->isIndexable($path, $localeCodes, $translated)
+            && (! $page instanceof Page || $policy->isPageIndexable($this->stringAttribute($page, 'slug'), $page->getAttribute('middleware')));
         $image = $this->themeAssetUrl($meta, self::SOCIAL_IMAGE);
 
         HeadManager::title($title, exact: true)
             ->viewport('width=device-width, initial-scale=1.0')
             ->applicationName($brand)
-            ->canonical($canonical, forceHttps: false)
-            ->robots($robots->execute($path, $localeCodes, $translated))
+            ->robots($policy->directive($indexable))
             ->og(type: $meta->getType(), title: $title, description: $description, url: $canonical, siteName: $brand, locale: $this->openGraphLocale())
             ->twitter(card: null !== $image ? 'summary_large_image' : 'summary', title: $title, description: $description);
 
@@ -82,9 +89,11 @@ final class Head extends Component
 
         $this->applyIcons($meta);
 
-        if ($robots->isIndexable($path, $localeCodes, $translated)) {
-            HeadManager::alternates(app(ResolveHreflangAlternatesAction::class)->execute($translatedLocales));
-            $this->applySchema($meta, $brand, $pageTitle, $description, $canonical);
+        // Una pagina `noindex` non dichiara un canonical (segnale contraddittorio) né alternative linguistiche né dati strutturati.
+        if ($indexable) {
+            HeadManager::canonical($canonical, forceHttps: false);
+            HeadManager::alternates(app(ResolveHreflangAlternatesAction::class)->execute($writtenLocales));
+            $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
         return view('cms::components.head');
@@ -93,19 +102,52 @@ final class Head extends Component
     private function resolveBrand(MetatagData $meta): string
     {
         $key = 'pub_theme::header.brand.name';
+        $brand = Lang::has($key) ? trim((string) __($key)) : '';
 
-        return Lang::has($key) ? trim((string) __($key)) : trim($meta->getBrandName());
+        if ('' === $brand) {
+            $brand = trim($meta->getBrandName());
+        }
+
+        if ('' === $brand) {
+            $applicationName = config('app.name');
+            $brand = is_string($applicationName) ? trim($applicationName) : '';
+        }
+
+        if ('' !== $brand) {
+            return $brand;
+        }
+
+        $host = parse_url(url('/'), PHP_URL_HOST);
+
+        return is_string($host) && '' !== trim($host) ? trim($host) : 'website';
     }
 
-    private function resolveDescription(): ?string
+    /**
+     * Prop del componente, poi testo della pagina CMS (non per la home, che ha la descrizione curata del sito), poi descrizione del sito.
+     */
+    private function resolveDescription(MetatagData $meta, ?Page $page, bool $isHome): ?string
     {
         if (null !== $this->description && '' !== trim($this->description)) {
             return trim($this->description);
         }
 
         $key = 'pub_theme::seo.site.description';
+        $siteDescription = Lang::has($key) ? trim((string) __($key)) : '';
 
-        return Lang::has($key) ? trim((string) __($key)) : null;
+        if (! $isHome && $page instanceof Page) {
+            $derived = app(ResolvePageDescriptionAction::class)->execute($page, app()->getLocale());
+            if (null !== $derived) {
+                return $derived;
+            }
+        }
+
+        if ('' !== $siteDescription) {
+            return $siteDescription;
+        }
+
+        $fallback = trim($meta->getDescription(limit: 160));
+
+        return '' !== $fallback ? $fallback : null;
     }
 
     private function openGraphLocale(): ?string
@@ -115,13 +157,12 @@ final class Head extends Component
         return is_string($regional) && '' !== $regional ? $regional : null;
     }
 
-    private function composeDocumentTitle(string $pageTitle, string $brand): string
+    /** URL della richiesta, https in produzione: la stessa stringa per canonical, `og:url` e dati strutturati. */
+    private function canonicalUrl(): string
     {
-        if ('' === $pageTitle) {
-            return $brand;
-        }
+        $url = url()->current();
 
-        return '' === $brand || str_contains($pageTitle, $brand) ? $pageTitle : $pageTitle.' — '.$brand;
+        return app()->environment('production') ? preg_replace('/^http:\/\//', 'https://', $url) : $url;
     }
 
     private function resolvePageTitle(?Page $page): string
@@ -131,64 +172,35 @@ final class Head extends Component
             return $pageTitle;
         }
 
-        $titleValue = $page->getAttribute('title');
+        return trim($this->stringAttribute($page, 'title'));
+    }
 
-        return is_string($titleValue) ? trim($titleValue) : '';
+    private function stringAttribute(Page $page, string $attribute): string
+    {
+        $value = $page->getAttribute($attribute);
+
+        return is_string($value) ? $value : '';
     }
 
     /**
-     * Lingue in cui la pagina CMS ha un titolo scritto davvero (le altre ripiegano sulla lingua predefinita).
-     * `null` quando la rotta non è una pagina CMS o il dato non è leggibile: nessuna restrizione.
-     *
-     * @return list<string>|null
+     * @param list<string> $localeCodes
      */
-    private function translatedLocales(?Page $page): ?array
-    {
-        if (null === $page) {
-            return null;
-        }
-
-        $raw = $page->getRawOriginal('title');
-        $titles = is_string($raw) && str_starts_with(ltrim($raw), '{') ? json_decode($raw, true) : $raw;
-        if (! is_array($titles)) {
-            return null;
-        }
-
-        $written = array_filter($titles, static fn (mixed $text): bool => is_string($text) && '' !== trim($text));
-
-        return array_values(array_map('strval', array_keys($written)));
-    }
-
-    private function resolvePage(): ?Page
+    private function resolvePage(string $path, array $localeCodes): ?Page
     {
         $route = request()->route();
-        if (! is_object($route)) {
-            return null;
-        }
+        $routeName = is_object($route) ? $route->getName() : null;
 
-        $container = $route->parameter('container0');
-        $slug = $route->parameter('slug0');
-        $routeName = (string) $route->getName();
-        $slugs = array_values(array_filter([
-            is_string($container) && is_string($slug) && '' !== $slug ? $container.'.'.$slug : null,
-            is_string($container) ? $container : null,
-            ! in_array($routeName, ['', 'container0', 'container0.view'], true) ? $routeName : null,
-        ]));
-        foreach ($slugs as $cmsSlug) {
-            $page = Page::findUniqueBySlug($cmsSlug);
-            if (null !== $page) {
-                return $page;
-            }
-        }
-
-        return null;
+        return app(ResolveCmsPageAction::class)->execute($path, $localeCodes, is_string($routeName) ? $routeName : null);
     }
 
     private function applyIcons(MetatagData $meta): void
     {
-        $favicon = $this->themeAssetUrl($meta, 'favicon.ico');
+        // Il favicon applicativo vive nel public root; il manifest invece può essere
+        // generato dal build del tema con il nome standard Vite `manifest.json`.
+        $favicon = $this->themeAssetUrl($meta, 'favicon.ico') ?? $this->publicAssetUrl('favicon.ico');
         $appleTouchIcon = $this->themeAssetUrl($meta, 'favicon-180x180.png');
-        $manifest = $this->themeAssetUrl($meta, 'site.webmanifest');
+        $manifest = $this->themeAssetUrl($meta, 'site.webmanifest')
+            ?? $this->themeAssetUrl($meta, 'manifest.json');
 
         if (null !== $favicon) {
             HeadManager::favicon($favicon);
@@ -212,31 +224,54 @@ final class Head extends Component
         return is_string($path) && is_file(public_path(ltrim($path, '/'))) ? $url : null;
     }
 
-    private function applySchema(MetatagData $meta, string $brand, string $pageTitle, ?string $description, string $canonical): void
+    private function publicAssetUrl(string $file): ?string
     {
-        $isHome = $this->isHomepage();
-        $logo = $meta->getBrandLogo();
-        $schemas = app(BuildHeadSchemaAction::class)->execute(
-            isHome: $isHome,
-            brand: $brand,
-            homeUrl: url('/'.app()->getLocale()),
-            pageTitle: '' !== $pageTitle ? $pageTitle : $brand,
-            pageUrl: $canonical,
-            locale: app()->getLocale(),
-            logoUrl: '' !== $logo ? url($logo) : null,
-            page: $isHome ? [] : $this->resolvePageEntity($meta, '' !== $pageTitle ? $pageTitle : $brand, $description),
-        );
+        $url = asset($file);
 
-        foreach ($schemas as $schema) {
-            HeadManager::schema($schema);
+        return is_file(public_path($file)) ? $url : null;
+    }
+
+    /**
+     * @param list<string>|null $siteLocales lingue in cui il sito è scritto (dalla home CMS); `null` = solo la lingua corrente
+     */
+    private function applySchema(MetatagData $meta, string $brand, string $pageTitle, ?string $description, string $canonical, bool $isHome, ?array $siteLocales): void
+    {
+        $logo = $meta->getBrandLogo();
+        $homeLabelKey = 'pub_theme::navigation.home';
+        $name = '' !== $pageTitle ? $pageTitle : $brand;
+
+        try {
+            $schemas = app(BuildHeadSchemaAction::class)->execute(
+                isHome: $isHome,
+                brand: $brand,
+                homeUrl: url('/'.app()->getLocale()),
+                pageTitle: $name,
+                pageUrl: $canonical,
+                locale: app()->getLocale(),
+                logoUrl: '' !== $logo ? url($logo) : null,
+                page: $isHome ? [] : $this->resolvePageEntity($meta, $name, $description, $canonical),
+                rootUrl: url('/'),
+                homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
+                languages: $siteLocales,
+            );
+
+            foreach ($schemas as $schema) {
+                HeadManager::schema($schema);
+            }
+        } catch (\Throwable $exception) {
+            // I dati strutturati sono un di più: un valore non valido (il validatore di laravel/head lancia fuori produzione) non deve togliere la pagina.
+            report($exception);
         }
     }
 
-    /** @return array<string, mixed> */
-    private function resolvePageEntity(MetatagData $meta, string $name, ?string $description): array
+    /**
+     * Il JSON-LD è markup pubblico (può finire in una cache condivisa): non riceve mai l'utente della sessione.
+     *
+     * @return array<string, mixed>
+     */
+    private function resolvePageEntity(MetatagData $meta, string $name, ?string $description, string $canonical): array
     {
         $route = request()->route();
-        $user = auth()->user();
         $routeParameters = [];
         if (is_object($route)) {
             foreach ($route->parameters() as $key => $value) {
@@ -251,9 +286,9 @@ final class Head extends Component
             routeName: is_object($route) ? $route->getName() : null,
             path: request()->path(),
             routeParameters: $routeParameters,
-            user: $user instanceof Authenticatable ? $user : null,
             name: $name,
             description: $description ?? '',
+            canonical: $canonical,
         );
     }
 
