@@ -29,6 +29,7 @@ final class BuildPageSchemaAction
         ?Authenticatable $user = null,
         ?string $name = null,
         ?string $description = null,
+        ?string $canonical = null,
     ): array {
         $pageType = $this->resolvePageType($routeName, $path, $routeParameters);
         $description ??= $meta->getDescription(limit: 160);
@@ -37,7 +38,7 @@ final class BuildPageSchemaAction
             '@context' => 'https://schema.org',
             '@type' => $pageType,
             'name' => $name ?? $meta->getBrandName(),
-            'url' => $meta->getCanonical(),
+            'url' => $canonical ?? $meta->getCanonical(),
             'inLanguage' => app()->getLocale(),
         ];
 
@@ -61,7 +62,7 @@ final class BuildPageSchemaAction
         ) {
             $schema['mainEntity'] = [
                 '@type' => 'Event',
-                'url' => url('/events/'.$routeParameters['slug0']),
+                'url' => $this->localizedUrl('/events/'.$routeParameters['slug0']),
             ];
         }
 
@@ -159,7 +160,7 @@ final class BuildPageSchemaAction
                 return [
                     '@type' => 'Person',
                     'identifier' => $routeParameters['slug0'],
-                    'url' => url('/profile/'.$routeParameters['slug0']),
+                    'url' => $this->localizedUrl('/profile/'.$routeParameters['slug0']),
                 ];
             }
 
@@ -224,7 +225,7 @@ final class BuildPageSchemaAction
         $schema = [
             '@type' => 'Person',
             'name' => $name,
-            'url' => url('/profile/'.$publicKeyStr),
+            'url' => $this->localizedUrl('/profile/'.$publicKeyStr),
         ];
 
         if (is_string($publicIdentifier) && '' !== $publicIdentifier) {
@@ -269,5 +270,10 @@ final class BuildPageSchemaAction
         $value = $object->{$property};
 
         return is_string($value) ? trim($value) : '';
+    }
+
+    private function localizedUrl(string $path): string
+    {
+        return url('/'.app()->getLocale().'/'.ltrim($path, '/'));
     }
 }

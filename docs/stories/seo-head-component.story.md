@@ -83,3 +83,16 @@ responsabilità SEO e produrre markup valido, localizzato e verificabile.
   (tema Sixteen): un solo head, description/canonical/alternate/JSON-LD presenti,
   viewport mobile 390×844 e screenshot salvato nell'output browser. Non viene
   dichiarato come prova del tema Two.
+
+## Secondo giro «va piu' a fondo» (2026-10-30)
+
+Nuove Action in `Modules/Cms/app/Actions/Head/`, tutte pure e coperte da test senza database (`tests/Unit/Actions/Head/`, 63 test):
+
+- `ResolveRobotsPolicyAction`: `directive(bool)`, `isIndexable($path, $localeCodes, $translated)` (percorso normalizzato: minuscole, percent-encoding, prefisso lingua) e `isPageIndexable($slug, $middleware)` (regole per pagina). Letta da `<x-cms::head>` **e** da `Seo` `BuildSitemapAction`: pagina indicizzabile nel `<head>` ⇔ pagina in sitemap.
+- `ResolveWrittenLocalesAction::fromRaw()`: una lingua e' «scritta» se ha titolo **e** blocchi di contenuto.
+- `ResolveCmsPageAction`: risolve la `Page` dal percorso come il middleware delle pagine (`home`, `a.b`, `.index`, nome rotta); slug duplicati segnalati con `report()`, non fatali.
+- `ComposeDocumentTitleAction`: `Pagina — Brand`, brand una sola volta.
+- `ResolvePageDescriptionAction`: descrizione dal `subtitle`/`description` del primo blocco della lingua corrente (20–160 caratteri, taglio a parola intera).
+- `BuildHeadSchemaAction`: `Organization` e `WebSite` con `@id`, `isPartOf` e briciole brevi sulle pagine interne.
+
+Regole del componente: una pagina `noindex` non emette canonical, hreflang ne' JSON-LD; il JSON-LD non riceve l'utente della sessione; un errore di schema e' segnalato e non toglie la pagina; canonical, `og:url` e JSON-LD usano la stessa stringa. Storia hub, numeri e decisioni aperte: `docs/stories/seo-head-maximum-schema-org-hreflang.story.md` (root).
