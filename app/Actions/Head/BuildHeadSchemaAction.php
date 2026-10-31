@@ -13,8 +13,9 @@ use Spatie\QueueableAction\QueueableAction;
 /**
  * Dati strutturati schema.org del `<head>`.
  *
- * Home: `Organization` + `WebSite` (descrivono chi è il sito, una volta sola).
- * Pagine interne: l'entità di pagina già risolta + `BreadcrumbList`.
+ * Home: `Organization` + `WebSite` (descrivono chi è il sito, una volta sola), con un `@id` che non dipende dalla lingua:
+ * `/it` e `/en` descrivono la stessa entità. Pagine interne: l'entità di pagina già risolta (che rimanda al `WebSite` con
+ * `isPartOf`) + `BreadcrumbList` con nomi brevi.
  * Non si pubblicano proprietà senza dato reale (indirizzo, telefono, sameAs):
  * Google le tratta come contenuto da verificare.
  */
@@ -23,7 +24,10 @@ final class BuildHeadSchemaAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed> $page entità di pagina già risolta (vedi BuildPageSchemaAction)
+     * @param array<string, mixed> $page      entità di pagina già risolta (vedi BuildPageSchemaAction)
+     * @param string|null          $rootUrl   URL della radice del sito, senza lingua: è l'identità dell'entità (`#organization`, `#website`); se manca si usa `$homeUrl`
+     * @param string               $homeLabel nome della prima briciola («Home»); se vuoto si usa il brand
+     * @param list<string>|null    $languages lingue in cui il sito è scritto; se manca si usa `$locale`
      *
      * @return list<SchemaObject|array<string, mixed>>
      */
@@ -36,28 +40,43 @@ final class BuildHeadSchemaAction
         string $locale,
         ?string $logoUrl,
         array $page,
+        ?string $rootUrl = null,
+        string $homeLabel = '',
+        ?array $languages = null,
     ): array {
+        $root = rtrim($rootUrl ?? $homeUrl, '/').'/';
+
         if ($isHome) {
-            return [$this->organization($brand, $homeUrl, $logoUrl), $this->webSite($brand, $homeUrl, $locale)];
+            return [
+                $this->organization($brand, $root, $logoUrl),
+                $this->webSite($brand, $root, [] !== ($languages ?? []) ? (array) $languages : [$locale]),
+            ];
         }
 
-        return [$page, $this->breadcrumbs($brand, $homeUrl, $pageTitle, $pageUrl)];
+        return [
+            [] === $page ? $page : $page + ['isPartOf' => ['@id' => $root.'#website']],
+            $this->breadcrumbs('' !== $homeLabel ? $homeLabel : $brand, $homeUrl, $pageTitle, $pageUrl),
+        ];
     }
 
-    private function organization(string $brand, string $homeUrl, ?string $logoUrl): Organization
+    private function organization(string $brand, string $root, ?string $logoUrl): Organization
     {
-        $organization = (new Organization())->name($brand)->url($homeUrl);
+        $organization = (new Organization())->name($brand)->url($root)->set('@id', $root.'#organization');
 
         return null !== $logoUrl ? $organization->logo($logoUrl) : $organization;
     }
 
-    private function webSite(string $brand, string $homeUrl, string $locale): SchemaObject
+    /**
+     * @param list<string> $languages
+     */
+    private function webSite(string $brand, string $root, array $languages): SchemaObject
     {
-        return (new WebSite())->name($brand)->url($homeUrl)->set('inLanguage', $locale);
+        return (new WebSite())->name($brand)->url($root)->set('@id', $root.'#website')
+            ->set('inLanguage', 1 === count($languages) ? $languages[0] : $languages);
     }
 
-    private function breadcrumbs(string $brand, string $homeUrl, string $pageTitle, string $pageUrl): Breadcrumbs
+    private function breadcrumbs(string $homeLabel, string $homeUrl, string $pageTitle, string $pageUrl): Breadcrumbs
     {
-        return (new Breadcrumbs())->item($brand, $homeUrl)->item($pageTitle, $pageUrl);
+        return (new Breadcrumbs())->item($homeLabel, $homeUrl)->item($pageTitle, $pageUrl);
     }
 }
