@@ -27,6 +27,13 @@ function contentGuardRoot(): string
     return dirname(__DIR__, 5);
 }
 
+function contentGuardPublicTheme(): string
+{
+    $theme = function_exists('config') ? config('xot.pub_theme', 'Two') : 'Two';
+
+    return is_string($theme) && $theme !== '' ? $theme : 'Two';
+}
+
 /** @return list<string> */
 function contentGuardGlob(string $pattern, int $flags = 0): array
 {
@@ -63,10 +70,19 @@ function contentGuardTenantModulePairs(): array
     $dirs = contentGuardPageDirs();
     $pairs = [];
     foreach ($dirs as $dir) {
-        // ponytail: nome modulo = ucfirst della cartella `config/<tenant>/<modulo>` (fixcity -> Fixcity); moduli con nome composto vanno mappati a mano.
+        // Il filesystem è case-sensitive: il tenant può usare una variante
+        // diversa dal nome PSR del modulo (techplanner/TechPlanner).
         if (str_starts_with($dir, 'config/')) {
-            $moduleDir = 'Modules/'.ucfirst(basename(dirname($dir, 3))).'/config/database/content/pages';
-            if (in_array($moduleDir, $dirs, true)) {
+            $tenantModule = basename(dirname($dir, 3));
+            $moduleDir = null;
+            foreach ($dirs as $candidate) {
+                if (str_starts_with($candidate, 'Modules/')
+                    && strcasecmp(basename(dirname($candidate, 4)), $tenantModule) === 0) {
+                    $moduleDir = $candidate;
+                    break;
+                }
+            }
+            if (is_string($moduleDir)) {
                 $pairs[$dir.' vs '.$moduleDir] = [$dir, $moduleDir];
             }
         }
@@ -158,7 +174,12 @@ function contentGuardViews(mixed $node, string $path): array
 function contentGuardManifest(): array
 {
     $rows = [];
-    foreach (explode("\n", file_get_contents(contentGuardRoot().'/Themes/Sixteen/scripts/design-comuni-pages.txt')) as $line) {
+    $manifest = contentGuardRoot().'/Themes/Sixteen/scripts/design-comuni-pages.txt';
+    if (! is_file($manifest)) {
+        return [];
+    }
+
+    foreach (explode("\n", file_get_contents($manifest)) as $line) {
         $line = trim($line);
         if ('' === $line || str_starts_with($line, '#')) {
             continue;
@@ -189,11 +210,11 @@ function contentGuardAssertNone(array $problems, string $title): void
 dataset('page directories', contentGuardPageDirDataset(...));
 dataset('tenant and module page directories', contentGuardTenantModulePairs(...));
 
-it('finds the Fixcity tenant and module page folders', function (): void {
+it('finds the TechPlanner tenant and module page folders', function (): void {
     $dirs = contentGuardPageDirs();
 
-    Assert::assertContains('config/local/fixcity/database/content/pages', $dirs);
-    Assert::assertContains('Modules/Fixcity/config/database/content/pages', $dirs);
+    Assert::assertContains('config/local/techplanner/database/content/pages', $dirs);
+    Assert::assertContains('Modules/TechPlanner/config/database/content/pages', $dirs);
     Assert::assertNotEmpty(contentGuardTenantModulePairs());
 });
 
@@ -252,6 +273,9 @@ it('names every tests.*.json after its id and slug', function (string $dir): voi
 // (c) incidente: `npm run copy` ha azzerato due PNG (sorgente vuota).
 it('has no zero byte file under design-comuni assets', function (): void {
     $dir = contentGuardRoot().'/Themes/Sixteen/public/design-comuni/assets';
+    if (! is_dir($dir)) {
+        Assert::markTestSkipped('La guardia Design Comuni vale solo per il tema Sixteen, non attivo in questo progetto.');
+    }
     $checked = 0;
     $empty = [];
     foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir, FilesystemIterator::SKIP_DOTS)) as $file) {
@@ -271,9 +295,13 @@ it('has no zero byte file under design-comuni assets', function (): void {
 
 // (d) manifest design-comuni-pages.txt <-> JSON `tests.*` (tenant local/fixcity e modulo Fixcity).
 it('has a tests JSON in tenant and module for every manifest row', function (): void {
+    if (contentGuardManifest() === []) {
+        Assert::markTestSkipped('Manifest Design Comuni assente: il tema attivo non è Sixteen.');
+    }
+
     $missing = [];
     foreach (contentGuardManifest() as $slug => $row) {
-        foreach (['config/local/fixcity/database/content/pages', 'Modules/Fixcity/config/database/content/pages'] as $dir) {
+        foreach (['config/local/techplanner/database/content/pages', 'Modules/TechPlanner/config/database/content/pages'] as $dir) {
             if (! is_file(contentGuardRoot().'/'.$dir.'/tests.'.$slug.'.json')) {
                 $missing[] = sprintf('riga [%s] -> manca %s/tests.%s.json', $row, $dir, $slug);
             }
@@ -285,11 +313,15 @@ it('has a tests JSON in tenant and module for every manifest row', function (): 
 });
 
 it('lists every tenant tests JSON in the manifest except the documented exceptions', function (): void {
+    if (contentGuardManifest() === []) {
+        Assert::markTestSkipped('Manifest Design Comuni assente: il tema attivo non è Sixteen.');
+    }
+
     $manifest = contentGuardManifest();
     $exceptions = contentGuardManifestExceptions();
     $tenantSlugs = array_map(
         static fn (string $file): string => substr(basename($file, '.json'), strlen('tests.')),
-        contentGuardGlob(contentGuardRoot().'/config/local/fixcity/database/content/pages/tests.*.json'),
+        contentGuardGlob(contentGuardRoot().'/config/local/techplanner/database/content/pages/tests.*.json'),
     );
 
     $problems = [];
@@ -314,7 +346,7 @@ it('points every pub_theme component view to an existing Blade file', function (
     foreach (contentGuardPagesIn($dir) as $file => $page) {
         foreach (['content_blocks', 'sidebar_blocks', 'footer_blocks'] as $area) {
             foreach (contentGuardViews($page[$area] ?? null, $area) as $where => $view) {
-                $blade = 'Themes/Sixteen/resources/views/components/'.str_replace('.', '/', substr($view, strlen($prefix))).'.blade.php';
+                $blade = 'Themes/'.contentGuardPublicTheme().'/resources/views/components/'.str_replace('.', '/', substr($view, strlen($prefix))).'.blade.php';
                 if (str_starts_with($view, $prefix) && ! is_file(contentGuardRoot().'/'.$blade)) {
                     $missing[] = sprintf('%s (%s): vista [%s] -> manca %s', $file, $where, $view, $blade);
                 }

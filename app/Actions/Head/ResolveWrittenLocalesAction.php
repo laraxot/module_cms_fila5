@@ -49,12 +49,31 @@ final class ResolveWrittenLocalesAction
 
         $written = array_filter(
             $titles,
-            static fn (mixed $text, int|string $locale): bool => is_string($text) && '' !== trim($text)
-                && (null === $blocks || ! empty($blocks[$locale])),
+            fn (mixed $text, int|string $locale): bool => is_string($text) && '' !== trim($text)
+                && (null === $blocks || $this->hasBodyBlocks($blocks[$locale] ?? null)),
             ARRAY_FILTER_USE_BOTH,
         );
 
         return array_values(array_map(strval(...), array_keys($written)));
+    }
+
+    /**
+     * Una lingua con il solo `hero` e' una pagina vuota: indicizzarla e accoppiarla in hreflang a una pagina piena
+     * danneggia entrambe. Un blocco di cui non si legge il tipo conta come corpo: un formato sconosciuto non nasconde mai una pagina.
+     */
+    private function hasBodyBlocks(mixed $localeBlocks): bool
+    {
+        if (! is_array($localeBlocks)) {
+            return ! empty($localeBlocks);
+        }
+
+        foreach ($localeBlocks as $block) {
+            if (! is_array($block) || 'hero' !== ($block['type'] ?? null)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

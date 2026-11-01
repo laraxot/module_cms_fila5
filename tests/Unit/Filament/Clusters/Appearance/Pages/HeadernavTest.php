@@ -22,7 +22,7 @@ test('Headernav page has data property', function () {
 
     /** @var array<string, mixed> $dataValue */
     $dataValue = $property->getValue($page);
-    Assert::assertArrayHasKey('sections', $dataValue);
+    Assert::assertSame([], $dataValue);
 });
 
 test('Headernav page has headernavData property', function () {

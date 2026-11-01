@@ -81,8 +81,8 @@ final class ResolveRobotsPolicyAction
     }
 
     /**
-     * Segmenti del percorso come li vede il router: decodificati, in minuscolo, senza il prefisso lingua.
-     * `/IT/preview-content` e `/it/%61uth` sono lo stesso percorso riservato di `/it/auth`.
+     * Segmenti del percorso come li vede il router: decodificati, in minuscolo, senza segmenti vuoti o punto e senza il prefisso lingua.
+     * `/IT/preview-content`, `/it/%61uth` e `/it/./auth` sono lo stesso percorso riservato di `/it/auth`.
      *
      * @param list<string> $localeCodes
      *
@@ -90,10 +90,7 @@ final class ResolveRobotsPolicyAction
      */
     public function pathSegments(string $path, array $localeCodes): array
     {
-        $segments = array_values(array_filter(
-            explode('/', mb_strtolower(rawurldecode(trim($path, '/')))),
-            static fn (string $segment): bool => '' !== $segment,
-        ));
+        $segments = (new CollapsePathSegmentsAction())->segments(mb_strtolower(rawurldecode($path)));
 
         $locales = array_map(mb_strtolower(...), $localeCodes);
         if (isset($segments[0]) && in_array($segments[0], $locales, true)) {
