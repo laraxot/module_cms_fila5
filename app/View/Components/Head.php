@@ -11,6 +11,7 @@ use Laravel\Head\Facades\Head as HeadManager;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
+use Modules\Cms\Actions\Head\CollapsePathSegmentsAction;
 use Modules\Cms\Actions\Head\ComposeDocumentTitleAction;
 use Modules\Cms\Actions\Head\ResolveCmsPageAction;
 use Modules\Cms\Actions\Head\ResolveHreflangAlternatesAction;
@@ -90,9 +91,14 @@ final class Head extends Component
         $this->applyIcons($meta);
 
         // Una pagina `noindex` non dichiara un canonical (segnale contraddittorio) né alternative linguistiche né dati strutturati.
+        // Le alternative linguistiche si derivano dall'URL richiesto: su una variante non canonica (`/it/./faq`, `/index.php/it/faq`)
+        // le dichiara solo la forma pulita a cui punta il canonical.
         if ($indexable) {
             HeadManager::canonical($canonical, forceHttps: false);
-            HeadManager::alternates(app(ResolveHreflangAlternatesAction::class)->execute($writtenLocales));
+            if ($this->isCanonicalForm()) {
+                HeadManager::alternates(app(ResolveHreflangAlternatesAction::class)->execute($writtenLocales));
+            }
+
             $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
@@ -157,12 +163,35 @@ final class Head extends Component
         return is_string($regional) && '' !== $regional ? $regional : null;
     }
 
-    /** URL della richiesta, https in produzione: la stessa stringa per canonical, `og:url` e dati strutturati. */
+    /**
+     * URL pulito della richiesta (senza `index.php`, segmenti-punto, barre doppie e query), https in produzione:
+     * la stessa stringa per canonical, `og:url` e dati strutturati.
+     */
     private function canonicalUrl(): string
     {
-        $url = url()->current();
+        $path = app(CollapsePathSegmentsAction::class)->execute(request()->path());
 
-        return app()->environment('production') ? preg_replace('/^http:\/\//', 'https://', $url) : $url;
+        return '' === $path ? $this->siteRoot() : $this->siteRoot().'/'.$path;
+    }
+
+    /**
+     * Radice del sito senza il file di ingresso (come fa `asset()`: `/index.php/it` non deve finire negli URL dichiarati),
+     * https in produzione. Canonical, `@id` e URL dello schema partono tutti da qui, così non possono divergere.
+     */
+    private function siteRoot(): string
+    {
+        $root = rtrim(str_replace('/index.php', '', url('/')), '/');
+
+        return app()->environment('production') ? preg_replace('/^http:\/\//', 'https://', $root) : $root;
+    }
+
+    /** `true` se la richiesta è già nella forma del canonical: nessun `index.php` nell'URL e nessun segmento vuoto o punto. */
+    private function isCanonicalForm(): bool
+    {
+        $request = request();
+
+        return $request->getBaseUrl() === $request->getBasePath()
+            && trim($request->path(), '/') === app(CollapsePathSegmentsAction::class)->execute($request->path());
     }
 
     private function resolvePageTitle(?Page $page): string
@@ -198,9 +227,10 @@ final class Head extends Component
         // Il favicon applicativo vive nel public root; il manifest invece può essere
         // generato dal build del tema con il nome standard Vite `manifest.json`.
         $favicon = $this->themeAssetUrl($meta, 'favicon.ico') ?? $this->publicAssetUrl('favicon.ico');
-        $appleTouchIcon = $this->themeAssetUrl($meta, 'favicon-180x180.png');
-        $manifest = $this->themeAssetUrl($meta, 'site.webmanifest')
-            ?? $this->themeAssetUrl($meta, 'manifest.json');
+        $appleTouchIcon = $this->themeAssetUrl($meta, 'apple-touch-icon.png');
+        // Vite's manifest.json is a build index, not a Web App Manifest.
+        // Never expose it through rel=manifest: browsers expect name/icons/start_url.
+        $manifest = $this->themeAssetUrl($meta, 'site.webmanifest');
 
         if (null !== $favicon) {
             HeadManager::favicon($favicon);
@@ -244,13 +274,13 @@ final class Head extends Component
             $schemas = app(BuildHeadSchemaAction::class)->execute(
                 isHome: $isHome,
                 brand: $brand,
-                homeUrl: url('/'.app()->getLocale()),
+                homeUrl: $this->siteRoot().'/'.app()->getLocale(),
                 pageTitle: $name,
                 pageUrl: $canonical,
                 locale: app()->getLocale(),
-                logoUrl: '' !== $logo ? url($logo) : null,
+                logoUrl: '' !== $logo ? asset($logo) : null,
                 page: $isHome ? [] : $this->resolvePageEntity($meta, $name, $description, $canonical),
-                rootUrl: url('/'),
+                rootUrl: $this->siteRoot(),
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
                 languages: $siteLocales,
             );

@@ -96,3 +96,17 @@ Nuove Action in `Modules/Cms/app/Actions/Head/`, tutte pure e coperte da test se
 - `BuildHeadSchemaAction`: `Organization` e `WebSite` con `@id`, `isPartOf` e briciole brevi sulle pagine interne.
 
 Regole del componente: una pagina `noindex` non emette canonical, hreflang ne' JSON-LD; il JSON-LD non riceve l'utente della sessione; un errore di schema e' segnalato e non toglie la pagina; canonical, `og:url` e JSON-LD usano la stessa stringa. Storia hub, numeri e decisioni aperte: `docs/stories/seo-head-maximum-schema-org-hreflang.story.md` (root).
+
+## Terzo giro (2026-10-31)
+
+`CollapsePathSegmentsAction` (`execute(path): string`, `segments(path): list<string>`) e' l'unica definizione di «stesso percorso» per il router: la policy robots la usa in `pathSegments()` e `Head` per il canonical (`canonicalUrl()` sul percorso ridotto, `siteRoot()` senza `index.php` e https in produzione, `isCanonicalForm()` per decidere se emettere gli hreflang). Test puri in `tests/Unit/Actions/Head/CollapsePathSegmentsActionTest.php` e nuovi casi in `ResolveRobotsPolicyActionTest.php`.
+
+## Quarto giro: re-audit del sito (2026-11-01)
+
+`ResolveWrittenLocalesAction` (l'unica regola «lingua scritta» per `<head>`, hreflang e sitemap) ora richiede titolo **e** almeno un blocco che non sia `hero`: una lingua con il solo `hero` e' una pagina vuota e non va ne' indicizzata ne' accoppiata in hreflang a una pagina piena. Un blocco di cui non si legge il tipo conta come corpo, cosi' un formato sconosciuto non nasconde mai una pagina. Test: 79 passati nel runner isolato (3 nuovi), PHPStan 0 errori su `Actions/Head` e sui test. Esito misurato sul sito del progetto: sitemap da 32 a 27 URL, le 5 pagine vuote in `noindex`, nessun hreflang verso di esse. Le pagine con testo reale in piu' lingue non cambiano.
+
+## GitHub (tracciamento)
+
+- Issue: https://github.com/laraxot/base_techplanner_fila5/issues/18 (coordinamento multi-agente del repo base)
+- Discussion: https://github.com/laraxot/base_techplanner_fila5/discussions/54
+- Nota: riusate le due di coordinamento del repo base; nessuna issue o discussion nuova creata da questa passata (decisione dell'utente se aprirne una per modulo/tema owner).
