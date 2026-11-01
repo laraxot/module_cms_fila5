@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "vite errors 2"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione Errori Vite nei Temi
@@ -81,7 +82,7 @@ ls -la dist/
 
 ## Collegamenti Correlati
 - [Documentazione Generale Errori](/docs/errors/README.md)
-- [Gestione Temi CMS](../themes/README.md)
+- [Gestione Temi CMS](../../../../Themes/README.md)
 - [Processo di Deploy](../frontoffice/themes.md)
 
 ## Note Tecniche

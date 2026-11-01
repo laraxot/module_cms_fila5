@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "filament blade components 1"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Filament Blade Components Usage (CMS)

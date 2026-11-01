@@ -9,14 +9,14 @@ issues: []
 discussions: []
 status: active
 related:
-  - ./00-INDEX.md
+  - ./00-index.md
   - ./scopo.md
   - ./content-blocks-architecture.md
 ---
 
 # Utilizzo di Safe nel modulo Cms
 
-Indice: [00-INDEX.md](./00-INDEX.md) · scopo: [scopo.md](./scopo.md).
+Indice: [00-INDEX.md](./00-index.md) · scopo: [scopo.md](./scopo.md).
 
 ## Perché qui
 

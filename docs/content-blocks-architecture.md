@@ -9,7 +9,7 @@ issues: []
 discussions: []
 status: active
 related:
-  - ./00-INDEX.md
+  - ./00-index.md
   - ./scopo.md
   - ./wiki/concepts/header-nav-block-architecture.md
   - ./wiki/concepts/headernavblock-filament-builder.md
@@ -17,7 +17,7 @@ related:
 
 # Architettura Content Blocks — Cms
 
-Indice: [00-INDEX.md](./00-INDEX.md) · scopo: [scopo.md](./scopo.md).
+Indice: [00-INDEX.md](./00-index.md) · scopo: [scopo.md](./scopo.md).
 
 **Perché:** l'admin modifica struttura e copy senza deploy; il tema solo renderizza. Filament Builder è l'editor dello schema, non un form generico.
 
@@ -160,7 +160,7 @@ Builder::make('content_blocks')
 4. **Real-time Collaboration**: Editing collaborativo delle pagine
 
 ## Collegamenti
-- [00-INDEX.md](./00-INDEX.md) · [scopo.md](./scopo.md)
+- [00-INDEX.md](./00-index.md) · [scopo.md](./scopo.md)
 - [actions/page-resolution-pipeline.md](./actions/page-resolution-pipeline.md)
 - [wiki/concepts/header-nav-block-architecture.md](./wiki/concepts/header-nav-block-architecture.md)
 - [wiki/concepts/headernavblock-filament-builder.md](./wiki/concepts/headernavblock-filament-builder.md)

@@ -6,15 +6,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
 use Modules\User\Filament\Widgets\LoginWidget;
-use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Actions\View\GetViewByClassAction;
-use Modules\Xot\Tests\TestCase;
+use Modules\Xot\Contracts\UserContract;
 
 use function Pest\Laravel\assertAuthenticated;
 use function Pest\Laravel\assertGuest;
 use function Safe\class_implements;
-
-uses(TestCase::class);
 
 // LOGIN WIDGET TESTS - Filament Component
 // ✅ Test del WIDGET Filament, non della pagina
