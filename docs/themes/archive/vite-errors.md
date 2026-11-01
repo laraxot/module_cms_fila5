@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "vite errors"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Gestione Errori Vite nei Temi

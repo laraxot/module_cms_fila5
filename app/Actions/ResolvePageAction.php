@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Gate;
 use Modules\Cms\Datas\ResolvePageData;
 use Modules\Cms\Models\Page as PageModel;
 use Spatie\QueueableAction\QueueableAction;
@@ -16,7 +16,8 @@ use Spatie\QueueableAction\QueueableAction;
  *
  * Risolve il contenuto da renderizzare per le rotte Folio [container0]/[slug0].
  * Segue la logica di priorità:
- * 1. Tentativo di caricamento di un modello dinamico (es. Event).
+ * 1. Tentativo di caricamento di un modello dinamico: solo `blog`/`events` (contenuti pubblicati) e i contenitori
+ *    elencati in `cms.config.container0_models` (DCP-283, C-04). Nessun modello arbitrario dall'URL.
  * 2. Verifica se esiste una pagina CMS con slug esatto (container.slug).
  * 3. Fallback a una pagina CMS generica (container.view).
  */
@@ -40,7 +41,7 @@ final class ResolvePageAction
     {
         $item = $this->loadDynamicModel($container0, $slug0);
 
-        if (null !== $item) {
+        if ($item !== null) {
             return new ResolvePageData(
                 renderMode: 'model',
                 item: $item,
@@ -75,39 +76,59 @@ final class ResolvePageAction
 
     private function loadDynamicModel(string $container0, string $slug0): ?object
     {
-        if ('profile' === $container0) {
-            return $this->resolvePublicProfileItem($slug0);
-        }
-
         // /blog/{slug} e /events/{slug}: contenuti pubblicati del solo tipo giusto (mai post per event e viceversa).
-        // Il modulo Blog e' opzionale: dove non c'e' si ripiega sulla risoluzione generica qui sotto.
+        // Il modulo Blog e' opzionale: dove non c'e' si ripiega sulla mappa dei contenitori qui sotto.
         $publishedFinder = self::BLOG_PUBLISHED_FINDERS[$container0] ?? null;
-        if (null !== $publishedFinder && class_exists(self::BLOG_COMPOSER) && class_exists(self::BLOG_ARTICLE)) {
+        if ($publishedFinder !== null && class_exists(self::BLOG_COMPOSER) && class_exists(self::BLOG_ARTICLE)) {
             return $this->findPublishedArticle($publishedFinder, $slug0);
         }
 
-        $modelMap = config('xra.container0_model_map');
-        if (is_array($modelMap) && array_key_exists($container0, $modelMap)) {
-            $modelClass = $modelMap[$container0];
-            if (is_string($modelClass)) {
-                return $this->queryModel($modelClass, $slug0);
-            }
-        }
+        $modelClass = $this->allowedModelClass($container0);
 
-        $singular = rtrim($container0, 's');
-        $possibleModels = [
-            'Modules\\'.ucfirst($container0).'\\Models\\'.ucfirst($singular),
-            'App\\Models\\'.ucfirst($singular),
-        ];
+        return $modelClass === null ? null : $this->findAuthorizedModel($modelClass, $slug0);
+    }
 
-        foreach ($possibleModels as $modelClass) {
-            $item = $this->queryModel($modelClass, $slug0);
-            if (null !== $item) {
-                return $item;
+    /**
+     * Allowlist esplicita contenitore => modello (DCP-283, C-04). Il default e' negato: un contenitore non elencato non
+     * carica nulla. `xra.container0_model_map` e' l'alias storico della stessa mappa.
+     *
+     * @return class-string<Model>|null
+     */
+    private function allowedModelClass(string $container0): ?string
+    {
+        foreach (['cms.config.container0_models', 'xra.container0_model_map'] as $key) {
+            $map = config($key);
+            $class = \is_array($map) ? ($map[$container0] ?? null) : null;
+
+            if (\is_string($class) && class_exists($class) && is_subclass_of($class, Model::class)) {
+                return $class;
             }
         }
 
         return null;
+    }
+
+    /**
+     * Il modello e' letto con la sua chiave di rotta e i suoi scope globali, e mostrato solo se la policy `view` lo
+     * consente a chi guarda (ospite incluso). Un record non autorizzato e' indistinguibile da uno inesistente: niente
+     * oracolo di esistenza.
+     *
+     * @param  class-string<Model>  $modelClass
+     */
+    private function findAuthorizedModel(string $modelClass, string $identifier): ?Model
+    {
+        $model = app($modelClass);
+        if (! $model instanceof Model) {
+            return null;
+        }
+
+        try {
+            $item = $model->resolveRouteBinding($identifier);
+        } catch (QueryException) {
+            return null;
+        }
+
+        return $item instanceof Model && Gate::allows('view', $item) ? $item : null;
     }
 
     private function findPublishedArticle(string $finder, string $slug): ?object
@@ -116,99 +137,5 @@ final class ResolvePageAction
         $item = is_callable([$composer, $finder]) ? call_user_func([$composer, $finder], $slug) : null;
 
         return is_object($item) && is_a($item, self::BLOG_ARTICLE) ? $item : null;
-    }
-
-    private function queryModel(string $modelClass, string $identifier): ?object
-    {
-        if (class_exists($modelClass) && is_subclass_of($modelClass, Model::class)) {
-            /** @var Model $model */
-            $model = app($modelClass);
-            $candidateKeys = array_values(array_unique([
-                $model->getRouteKeyName(),
-                'slug',
-                'id',
-                'uuid',
-                'user_id',
-                'user_name',
-            ]));
-
-            foreach ($candidateKeys as $key) {
-                foreach ($this->buildCandidateQueries($model) as $query) {
-                    try {
-                        $item = $query->where($key, $identifier)->first();
-                    } catch (\Throwable) {
-                        continue;
-                    }
-
-                    if (null !== $item) {
-                        return $item;
-                    }
-                }
-            }
-
-            foreach ($candidateKeys as $key) {
-                try {
-                    $row = $model->getConnection()
-                        ->table($model->getTable())
-                        ->where($key, $identifier)
-                        ->first();
-                } catch (\Throwable) {
-                    continue;
-                }
-
-                if (null !== $row) {
-                    /** @var array<string, mixed> $attributes */
-                    $attributes = (array) $row;
-
-                    return $model->newFromBuilder($attributes);
-                }
-            }
-        }
-
-        return null;
-    }
-
-    /**
-     * @return array<int, Builder<Model>>
-     */
-    private function buildCandidateQueries(Model $model): array
-    {
-        /** @var array<int, Builder<Model>> $queries */
-        $queries = [$model->newQuery()];
-
-        try {
-            $queries[] = $model->newQueryWithoutScopes();
-        } catch (\Throwable) {
-        }
-
-        if (in_array(SoftDeletes::class, class_uses_recursive($model), true)) {
-            // Soft deleted records are already covered by the fallback DB query branch.
-            return $queries;
-        }
-
-        return $queries;
-    }
-
-    private function resolvePublicProfileItem(string $identifier): ?object
-    {
-        $userClass = 'Modules\\User\\Models\\User';
-        $user = $this->queryModel($userClass, $identifier);
-        if (null !== $user) {
-            return $user;
-        }
-
-        $profileClasses = [
-            'Modules\\Meetup\\Models\\Profile',
-            'Modules\\User\\Models\\Profile',
-        ];
-
-        foreach ($profileClasses as $profileClass) {
-            $profile = $this->queryModel($profileClass, $identifier);
-            if (null !== $profile) {
-                return $profile;
-            }
-        }
-
-        return null;
     }
 }

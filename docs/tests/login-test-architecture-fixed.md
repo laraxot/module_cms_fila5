@@ -6,6 +6,7 @@ created: 2026-01-27
 updated: 2026-10-18
 module: Cms
 tags: [docs, cms, tests]
+qmd: "login test architecture - problema risolto cms"
 ---
 
 # Login Test Architecture - PROBLEMA RISOLTO ✅
@@ -142,7 +143,7 @@ test('any user type can login successfully', function (): void {
 
 ## 📖 **Collegamenti**
 
-- [XotData Architecture](../../Modules/Xot/docs/best-practices.md)
+- [XotData Architecture](../../../Xot/docs/best-practices.md)
 - [UserContract Interface](../../Modules/Xot/Contracts/UserContract.php)
 - [Modular Testing Guide](../../docs/testing/modular-independence.md)
 

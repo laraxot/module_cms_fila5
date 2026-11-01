@@ -47,6 +47,7 @@ docs/archive
 docs/archived
 docs/cache/
 docs/legacy
+docs/archive/
 docs/phpstan/
 /docs/vendor/
 #  docs/wiki/rules/module-theme-root-cleanup.md)
@@ -134,8 +135,11 @@ v8-compile-cache-*
 yarn-error.log*
 yarn.lock
 *:Zone.Identifier
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
 graphify-out/
 .claude/
 .claude-audit/
 test-results/
 cms.code-workspace
+ruvector.db
+.windsurfrules

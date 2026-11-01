@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "frontoffice"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Documentazione Frontoffice
@@ -295,8 +296,8 @@ Per estendere il frontoffice con nuove funzionalità:
 
 ## Vedi Anche
 - [Modulo UI](../../UI/docs/README.md) - Componenti UI per il frontoffice
-- [Modulo Lang](../../Lang/docs/readme.md) - Gestione traduzioni
-- [Modulo User](../../User/docs/readme.md) - Gestione utenti
+- [Modulo Lang](../../Lang/docs/README.md) - Gestione traduzioni
+- [Modulo User](../../User/docs/README.md) - Gestione utenti
 - [Modulo Xot](../../Xot/docs/README.md) - Classi base e utilities
 - [Documentazione Volt](volt-introduction.md) - Introduzione a Laravel Volt
 - [Documentazione Folio](folio-pages.md) - Gestione delle pagine con Laravel Folio

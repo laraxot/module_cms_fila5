@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "assets troubleshooting"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Risoluzione Problemi con Assets dei Temi
@@ -33,7 +34,7 @@ Questo errore è uno dei più comuni nella gestione dei temi. Per la risoluzione
 ## Collegamenti Rilevanti
 
 - [Processo di Build dei Temi](../theme-build-process.md)
-- [Compilazione dei Temi](theme_compilation.md)
+- [Compilazione dei Temi](../theme-compilation.md)
 - [Documentazione Principale Vite](/docs/vite_assets_troubleshooting.md)
 
 ## Comandi Utili

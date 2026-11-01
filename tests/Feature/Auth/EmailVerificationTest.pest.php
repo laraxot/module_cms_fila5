@@ -2,51 +2,50 @@
 
 declare(strict_types=1);
 
-namespace Modules\Cms\Tests\Feature\Auth;
-
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\URL;
+use Modules\User\Models\User;
+use PHPUnit\Framework\Assert;
 
-// Test: Email verification screen can be rendered
-test('email verification screen can be rendered', function () {
+test('email verification screen can be rendered', function (): void {
     $user = cmsCreateUnverifiedUser();
 
     $lang = app()->getLocale();
     $response = cmsActingAsGet($user, '/'.$lang.'/verify-email');
-    $response->assertStatus(200);
+    Assert::assertSame(200, $response->status());
 });
 
-// Test: Email can be verified
-test('email can be verified', function () {
+test('email can be verified', function (): void {
     $user = cmsCreateUnverifiedUser();
 
     Event::fake();
 
     $verificationUrl = URL::temporarySignedRoute('verification.verify', now()->addMinutes(60), [
-        'id' => $user->getKey(),
-        'hash' => sha1($user->getEmailForVerification()),
+        'id' => $user->id,
+        'hash' => sha1((string) $user->email),
     ]);
 
     $response = cmsActingAsGet($user, $verificationUrl);
 
     Event::assertDispatched(Verified::class);
-    $user->refresh();
-    expect($user->hasVerifiedEmail())->toBeTrue();
-    $response->assertRedirect(route('dashboard', absolute: false).'?verified=1');
+    $freshUser = $user->fresh();
+    Assert::assertInstanceOf(User::class, $freshUser);
+    Assert::assertTrue($freshUser->hasVerifiedEmail());
+    Assert::assertSame(route('dashboard', absolute: false).'?verified=1', $response->headers->get('Location'));
 });
 
-// Test: Email is not verified with invalid hash
-test('email is not verified with invalid hash', function () {
+test('email is not verified with invalid hash', function (): void {
     $user = cmsCreateUnverifiedUser();
 
     $verificationUrl = URL::temporarySignedRoute('verification.verify', now()->addMinutes(60), [
-        'id' => $user->getKey(),
+        'id' => $user->id,
         'hash' => sha1('wrong-email'),
     ]);
 
     cmsActingAsGet($user, $verificationUrl);
 
-    $user->refresh();
-    expect($user->hasVerifiedEmail())->toBeFalse();
+    $freshUser = $user->fresh();
+    Assert::assertInstanceOf(User::class, $freshUser);
+    Assert::assertFalse($freshUser->hasVerifiedEmail());
 });

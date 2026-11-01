@@ -72,7 +72,6 @@ describe('Registration Widget', function (): void {
         try {
             $widget->call('register');
         } catch (Exception $e) {
-            Assert::assertInstanceOf(Exception::class, $e);
         }
     });
 
@@ -94,7 +93,6 @@ describe('Registration Widget', function (): void {
             try {
                 $widget->call('register');
             } catch (Exception $e) {
-                Assert::assertInstanceOf(Exception::class, $e);
             }
         }
     });

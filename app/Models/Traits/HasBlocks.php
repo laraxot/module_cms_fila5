@@ -45,7 +45,11 @@ trait HasBlocks
             $localeKeys = ['it', 'en', 'fr', 'de', 'es', $primary_lang];
             $hasLocaleKeys = count(array_intersect(array_keys($blocks), $localeKeys)) > 0;
             if ($hasLocaleKeys) {
-                $blocks = $this->getTranslation($field, $primary_lang);
+                $locale = app()->getLocale();
+                $blocks = $this->getTranslation($field, $locale, false);
+                if (! is_array($blocks) && $locale !== $primary_lang) {
+                    $blocks = $this->getTranslation($field, $primary_lang, false);
+                }
             }
         }
 
@@ -113,10 +117,12 @@ trait HasBlocks
     }
 
     /**
-     * Unico PHP ammesso nei blocchi: link localizzati. Ogni altra espressione o direttiva resta testo,
-     * perche' i blocchi li scrive chi modifica il contenuto (Filament Blueprint C-3).
+     * Unico PHP ammesso nei blocchi: `route(...)` Folio (es. container0.view).
+     * Vietato `LaravelLocalization::localizeURL` (religione FO — Fixcity
+     * frontoffice-link-conventions). Ogni altra espressione resta testo
+     * (Filament Blueprint C-3).
      */
-    private const string SAFE_EXPRESSION = '/^(?:LaravelLocalization::localizeURL|route)\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
+    private const string SAFE_EXPRESSION = '/^route\((?:\s*(?:\'[^\'\\\\$@{}]*\'|"[^"\\\\$@{}]*"|\[|\]|,|=>))*\s*\)$/';
 
     private function renderAllowedExpressions(string $value): string
     {
@@ -150,6 +156,7 @@ trait HasBlocks
     public static function getBlocksBySlug(string $slug, ?string $side = null): array
     {
         $query = static::query()->where('slug', $slug);
+
 
         try {
             $record = $query->sole();

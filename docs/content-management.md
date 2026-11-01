@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "content management"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Sistema di Gestione Contenuti
@@ -108,7 +109,7 @@ Questa documentazione è parte del sistema di documentazione di il progetto. Per
 - [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
 - [Gestione Pagine](page-management.md) - Sistema di gestione pagine
 - [Storage](content-storage.md) - Archiviazione contenuti
-- [Mapping JSON](content_json_mapping.md) - Mappatura JSON
+- [Mapping JSON](content-json-mapping.md) - Mappatura JSON
 - [Filament](filament-integration.md) - Integrazione con Filament
 - [Performance](performance.md) - Ottimizzazione performance
 

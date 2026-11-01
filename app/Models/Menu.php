@@ -16,6 +16,8 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\Menu.
  *
+ * @implements HasRecursiveRelationshipsContract<Model>
+ *
  * @property string                $id
  * @property string|null           $title
  * @property int|null              $parent_id

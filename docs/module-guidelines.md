@@ -7,6 +7,7 @@ updated: 2026-09-26
 qmd: "module guidelines"
 issues: []
 discussions: []
+status: draft
 ---
 
 # Linee Guida per la Documentazione dei Moduli

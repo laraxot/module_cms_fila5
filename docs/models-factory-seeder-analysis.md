@@ -7,7 +7,8 @@ updated: 2026-09-26
 qmd: "models factory seeder analysis"
 issues: []
 discussions: []
-status: draft
+status: superseded
+superseded_by: models-factory-seeder.md
 ---
 
 # Analisi Modelli, Factory e Seeder - Modulo CMS

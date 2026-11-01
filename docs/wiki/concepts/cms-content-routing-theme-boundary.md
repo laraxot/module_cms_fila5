@@ -4,7 +4,7 @@ type: concept
 module: Cms
 sources:
   - "../../../README.md"
-  - "../../../00-INDEX.md"
+  - "../../00-index.md"
 confidence: high
 created: 2026-10-14
 updated: 2026-10-14
@@ -13,6 +13,8 @@ related:
   - "../../../../Fixcity/docs/wiki/concepts/ticket-domain-and-public-flow-boundary.md"
   - "../../../../../Themes/Sixteen/docs/wiki/concepts/legal-consent-ui-boundary.md"
   - "../../../../../../bmad-output/docs-architecture/ownership.md"
+status: draft
+qmd: "cms content, routing and theme boundary cms"
 ---
 
 # CMS content, routing and theme boundary

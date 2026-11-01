@@ -6,6 +6,7 @@ created: 2026-01-27
 updated: 2026-10-18
 module: Cms
 tags: [docs, cms, tests]
+qmd: "widget test patterns - gold standard cms"
 ---
 
 # Widget Test Patterns - Gold Standard

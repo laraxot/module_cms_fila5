@@ -27,7 +27,7 @@ Fase BMAD documentazione (lane DOCS, Cms, dopo Lang). Ordine permanente dell'ute
 
 ## Modifiche
 - **Gemelli per maiuscole**: canonico = nome minuscolo (eccezioni `README.md`, `AGENTS.md`, `00-INDEX.md`; per `INDEX.md`/`index.md` nelle sottocartelle, chi ha piu' riferimenti entranti). 30 gemelli marcati `status: superseded` con `superseded_by` (corpo invariato); 5 gia' superseded o merged non toccati. 1 cancellato: `design-comuni/screenshots/TESTS_ROUTING_NORMALIZATION.md` (corpo identico a `tests_routing_normalization.md`, frontmatter uguale a meno delle maiuscole, tracciato, pulito in git, zero riferimenti entranti con due metodi indipendenti e controprova positiva, mtime oltre 120 secondi; dopo la cancellazione `rg -F` sul nome = 0 risultati).
-- **Rinomina con `md-filenames.py apply`**, solo dove il dry-run preciso non riscrive nulla fuori dal modulo: `quality-status-2025-11.md` diventa `quality-status-cms-module-november.md`, `fix-session-2026-07-13.md` diventa `fix-session.md`, `coverage-pest-80.md` diventa `coverage-pest.md`, `roadmap/2025-q4-roadmap.md` diventa `roadmap/roadmap-cms-module-q4.md` (0 riferimenti riscritti, 4 file mossi).
+- **Rinomina con `md-filenames.py apply`**, solo dove il dry-run preciso non riscrive nulla fuori dal modulo: `quality-status.md` diventa `quality-status-cms-module-november.md`, `fix-session-2026-07-13.md` diventa `fix-session.md`, `coverage-pest-80.md` diventa `coverage-pest.md`, `roadmap/roadmap.md` diventa `roadmap/roadmap-cms-module-q4.md` (0 riferimenti riscritti, 4 file mossi).
 - **Frontmatter minimo** (title, type, status: draft, created, updated, module, tags) a 21 file senza, corpo invariato. Il titolo di `coverage-pest.md` e' ricavato solo dalla prima riga logica: il file contiene `\n` letterali al posto degli a capo.
 - **Indice**: `00-INDEX.md` aggiornato con i conteggi reali e la sezione "Riordino della docs". `index.md` e' il catalogo per argomento e rimanda gia' a `00-INDEX.md` con una nota in testa: non marcato superseded.
 
@@ -51,10 +51,29 @@ Nota sui link rotti. Confronto insiemistico con la copia di `HEAD` (stesso scrip
 ## Decisioni
 - Stessa regola di Lang: canonico minuscolo, gemello superseded, cancellazione solo con zero riferimenti.
 - Le coppie con contenuto diverso (similarita' sotto 0.9) non sono state marcate se il gemello piu' piccolo non e' chiaramente uno stub.
-- `code-quality-analysis-2025-11-24.md` non rinominato: `md-filenames.py apply` riscriverebbe anche i registri di lavoro `docs/worklog/2026/03/13/*.md` e `bashscripts/docs/md-collisions-migration-map.json`, che sono cronologia.
+- `code-quality-analysis-cms-module-november.md` non rinominato: `md-filenames.py apply` riscriverebbe anche i registri di lavoro `docs/worklog/2026/03/13/*.md` e `bashscripts/docs/md-collisions-migration-map.json`, che sono cronologia.
+
+## Coppie divergenti — chiuse per contenuto (2026-10-25)
+Le coppie non si fondono (due PRD, due strategie: un merge produrrebbe un testo
+contraddittorio) e non si archiviano (nessuna prova di sussunzione). Si rinominano per
+concetto, come gia' fatto in `Themes/Barthelemy`:
+
+| Prima | Dopo | Perche' |
+|---|---|---|
+| `PHILOSOPHY.md` (625 r., dogmi EN) | `philosophy-religion.md` | `philosophy.md` (153 r., IT, con story e issue) resta il canonico del modulo |
+| `PRD.md` (525 r., corporate v1.0) | `prd-corporate.md` | `prd.md` (94 r., vivente) resta il canonico; il corporate non e' dichiarato superseded perche' nessuno l'ha deciso |
+| `PRODUCT_STRATEGY.md` (97 r., EN) | `product-strategy-corporate.md`, con `superseded_by: product-strategy.md` | il file si dichiarava gia' superseded verso `product_strategy.md`, nome che non esiste piu' dopo il collasso: puntatore riallineato al reale |
+
+Census `basename.lower()` per cartella: **3 -> 0 gruppi** (927 `.md`). Link ripuntati:
+`index.md` (3 ref), piu' 4 moduli esterni (Seo x2, AI, Blog) che puntavano a
+`Cms/docs/PRD.md` e ora vanno a `prd.md`.
 
 ## Aperto
-- **Coppie divergenti** (decisione dell'owner): `PHILOSOPHY.md` (22 KB) contro `philosophy.md` (7 KB, 69 riferimenti); `PRD.md` (17 KB) contro `prd.md` (3 KB, 106 riferimenti); `license.md` contro `LICENSE.md`; `FILAMENT_RESOURCE_GUIDELINES.md` (copia completa) contro `filament_resource_guidelines.md` (stub con `canonical` verso la docs dei temi).
-- **`INDEX.md` contro `index.md` in radice**: `INDEX.md` era in modifica non committata di un'altra sessione, non toccato.
-- **Radice di `docs/`**: restano 567 `.md`. Nessuno strumento del repo sposta file tra cartelle riscrivendo i riferimenti; spostare a mano romperebbe link.
-- **Link rotti**: la riparazione e' dello strumento in lavorazione in un'altra sessione; qui nessun `--fix`.
+- **Radice di `docs/`**: 525 `.md`. Nessuno strumento del repo sposta file tra cartelle
+  riscrivendo i riferimenti; spostare a mano romperebbe link.
+- **Link rotti preesistenti**: centinaia, quasi tutti path stile `laravel/modules/xot/...`
+  o `docs/...` mai esistiti in questo checkout. La riparazione e' dello strumento in
+  lavorazione in un'altra sessione; qui nessun `--fix`.
+- **Blocchi frontmatter spurii**: il generatore shard lascia un secondo blocco
+  `title: ...` dentro il corpo (996 file in tutto il repo). Rimosso nei file toccati; in Cms
+  il rilevatore stretto ora non ne trova (0), il resto del repo e' uno sweep a se'.

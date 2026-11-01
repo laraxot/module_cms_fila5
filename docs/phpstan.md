@@ -9,7 +9,7 @@ issues: []
 discussions: []
 status: draft
 related:
-  - ./00-INDEX.md
+  - ./00-index.md
   - ../../Xot/docs/wiki/memories/phpstan-single-neon-config.md
 ---
 
@@ -23,7 +23,7 @@ GateGuard facts:
 
 # Configurazione PHPStan per i moduli
 
-> **Avviso (2026-10-20):** questo file e' **legacy/archivio**. Il gate operativo e' **solo** `laravel/phpstan.neon` (solo l'umano lo modifica). Agenti: `cd laravel && ./vendor/bin/phpstan analyse …` senza `-c`, `--level`, neon di modulo o temp. `Modules/*/phpstan.neon.dist` e gli esempi sotto **non** sono il gate. Canon: [phpstan-single-neon-config](../../Xot/docs/wiki/memories/phpstan-single-neon-config.md). Indice Cms: [00-INDEX.md](./00-INDEX.md).
+> **Avviso (2026-10-20):** questo file e' **legacy/archivio**. Il gate operativo e' **solo** `laravel/phpstan.neon` (solo l'umano lo modifica). Agenti: `cd laravel && ./vendor/bin/phpstan analyse …` senza `-c`, `--level`, neon di modulo o temp. `Modules/*/phpstan.neon.dist` e gli esempi sotto **non** sono il gate. Canon: [phpstan-single-neon-config](../../Xot/docs/wiki/memories/phpstan-single-neon-config.md). Indice Cms: [00-INDEX.md](./00-index.md).
 
 ## Introduzione
 
