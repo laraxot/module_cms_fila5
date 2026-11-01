@@ -27,9 +27,24 @@ test('a language counts as written only when its content exists too, not just it
     $action = new ResolveWrittenLocalesAction();
     $title = '{"it":"Servizi","en":"Services"}';
 
-    Assert::assertSame(['it'], $action->fromRaw($title, '{"it":[{"type":"hero"}]}'));
-    Assert::assertSame(['it'], $action->fromRaw($title, ['it' => [['type' => 'hero']], 'en' => []]));
-    Assert::assertSame(['it', 'en'], $action->fromRaw($title, ['it' => [['type' => 'hero']], 'en' => [['type' => 'hero']]]));
+    Assert::assertSame(['it'], $action->fromRaw($title, '{"it":[{"type":"content"}]}'));
+    Assert::assertSame(['it'], $action->fromRaw($title, ['it' => [['type' => 'content']], 'en' => []]));
+    Assert::assertSame(['it', 'en'], $action->fromRaw($title, ['it' => [['type' => 'content']], 'en' => [['type' => 'content']]]));
+});
+
+test('a language with only a hero block is not written: it would be a thin page paired by hreflang to a full one', function (): void {
+    $action = new ResolveWrittenLocalesAction();
+    $title = '{"it":"Chi siamo","en":"About us"}';
+
+    Assert::assertSame(['it'], $action->fromRaw($title, ['it' => [['type' => 'hero'], ['type' => 'values']], 'en' => [['type' => 'hero']]]));
+    Assert::assertSame([], $action->fromRaw($title, ['it' => [['type' => 'hero']], 'en' => [['type' => 'hero'], ['type' => 'hero']]]));
+});
+
+test('a block without a readable type counts as body content, so unknown block shapes never hide a page', function (): void {
+    $action = new ResolveWrittenLocalesAction();
+    $title = '{"it":"Servizi","en":"Services"}';
+
+    Assert::assertSame(['it', 'en'], $action->fromRaw($title, ['it' => [['type' => 'hero'], 'plain html'], 'en' => [['data' => ['x' => 1]]]]));
 });
 
 test('content that is not split by language does not restrict the written languages', function (): void {

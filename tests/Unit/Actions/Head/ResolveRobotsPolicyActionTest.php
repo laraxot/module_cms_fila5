@@ -17,6 +17,10 @@ test('private areas stay noindex however the path is written', function (string 
     'percent-encoded segment' => ['/it/%61uth/login'],
     'trailing and double slashes' => ['/en//profile/'],
     'no locale prefix' => ['dashboard'],
+    'dot segment after the locale' => ['/it/./auth/login'],
+    'dot segment before the area' => ['en/./dashboard'],
+    'parent segment' => ['/it/blog/../auth/login'],
+    'dot segment in a deeper position' => ['/it/./profile/./edit'],
 ]);
 
 test('public pages are indexable, with and without the locale prefix', function (string $path): void {
