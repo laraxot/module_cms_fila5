@@ -46,8 +46,8 @@ test('the setting page exposes exactly the properties of the config data', funct
 test('the theme choices are the installed themes and nothing else', function (): void {
     $themes = app(ListInstalledThemesAction::class)->execute();
 
-    expect($themes)->toHaveKey('Four')
-        ->and($themes['Four'])->toBe('Four')
+    expect($themes)->toHaveKey('TwentyOne')
+        ->and($themes['TwentyOne'])->toBe('TwentyOne')
         ->and($themes)->not->toHaveKey('public')
         ->and($themes)->not->toHaveKey('AdminLTE');
 });
