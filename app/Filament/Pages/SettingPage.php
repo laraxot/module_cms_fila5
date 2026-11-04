@@ -34,9 +34,6 @@ class SettingPage extends BaseSettingPage
                 ->options(app(ListInstalledThemesAction::class)->execute())
                 ->required(),
             'register_pub_theme' => Toggle::make('register_pub_theme'),
-            'primary_lang' => Select::make('primary_lang')
-                ->options(['it' => 'Italiano', 'en' => 'English'])
-                ->required(),
         ];
     }
 }
