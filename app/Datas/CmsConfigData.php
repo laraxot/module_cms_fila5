@@ -26,6 +26,8 @@ class CmsConfigData extends Data
 {
     use MakesFromTenantConfig;
 
+    public bool $enabled = true;
+
     /** Tema del front office: una cartella di `Themes/` (letto da `XotData::make()->pub_theme`). */
     public string $pub_theme = '';
 

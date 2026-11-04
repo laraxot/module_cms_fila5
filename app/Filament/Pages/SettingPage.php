@@ -30,6 +30,7 @@ class SettingPage extends BaseSettingPage
     protected function getFormSchema(): array
     {
         return [
+            ...parent::getFormSchema(),
             'pub_theme' => Select::make('pub_theme')
                 ->options(app(ListInstalledThemesAction::class)->execute())
                 ->required(),
