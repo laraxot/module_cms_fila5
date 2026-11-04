@@ -10,6 +10,22 @@ return [
         'sort' => 99,
     ],
     'title' => 'Impostazioni',
+    'fields' => [
+        'pub_theme' => [
+            'label' => 'Tema del sito pubblico',
+            'placeholder' => 'Scegli un tema',
+            'helper_text' => 'Solo i temi installati in Themes/. Si legge a ogni richiesta, senza config:cache.',
+            'tooltip' => '',
+            'description' => '',
+        ],
+        'register_pub_theme' => [
+            'label' => 'Registra viste e traduzioni del tema',
+            'placeholder' => '',
+            'helper_text' => 'Spento: il sito usa le viste dei moduli. Acceso: il tema scelto sovrascrive le viste e carica le sue traduzioni.',
+            'tooltip' => '',
+            'description' => '',
+        ],
+    ],
     'actions' => [
         'save' => [
             'label' => 'Salva',
