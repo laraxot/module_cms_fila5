@@ -39,9 +39,6 @@ test('the setting page exposes exactly the properties of the config data', funct
     $schema = (new ReflectionMethod(SettingPage::class, 'getFormSchema'))
         ->invoke(app(SettingPage::class));
     Assert::isArray($schema);
-    if (! is_array($schema)) {
-        throw new RuntimeException('Setting schema must be an array.');
-    }
 
     expect(array_keys($schema))->toEqualCanonicalizing($properties);
 });

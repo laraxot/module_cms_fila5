@@ -29,6 +29,10 @@ final class ListInstalledThemesAction
 
         $themes = [];
         foreach (File::directories($root) as $directory) {
+            if (! is_string($directory)) {
+                continue;
+            }
+
             if (! File::isDirectory($directory.'/resources/views')) {
                 continue;
             }
