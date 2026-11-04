@@ -46,8 +46,12 @@ test('the setting page exposes exactly the properties of the config data', funct
 test('the theme choices are the installed themes and nothing else', function (): void {
     $themes = app(ListInstalledThemesAction::class)->execute();
 
-    expect($themes)->toHaveKey('TwentyOne')
-        ->and($themes['TwentyOne'])->toBe('TwentyOne')
-        ->and($themes)->not->toHaveKey('public')
-        ->and($themes)->not->toHaveKey('AdminLTE');
+    // Il modulo Cms e' condiviso tra progetti con temi diversi: niente nome di tema scritto qui, si guarda il disco.
+    expect($themes)->not->toBeEmpty()
+        ->and($themes)->not->toHaveKey('public');
+
+    foreach ($themes as $key => $name) {
+        expect($name)->toBe($key)
+            ->and(base_path("Themes/{$name}/resources/views"))->toBeDirectory();
+    }
 });
