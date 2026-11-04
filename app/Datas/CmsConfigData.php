@@ -32,10 +32,10 @@ class CmsConfigData extends Data
     /** Registra viste e traduzioni del tema pubblico (letto da `CmsServiceProvider`, default di `XotData`). */
     public bool $register_pub_theme = false;
 
+    public string $primary_lang = 'it';
+
     public static function tenantConfigName(): string
     {
         return 'xra';
     }
-
-    public string $primary_lang = 'it';
 }
