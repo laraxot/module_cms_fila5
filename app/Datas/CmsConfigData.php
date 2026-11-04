@@ -26,14 +26,6 @@ class CmsConfigData extends Data
 {
     use MakesFromTenantConfig;
 
-<<<<<<< HEAD
-    public bool $enabled = true;
-
-    public string $pub_theme = 'TwentyOne';
-
-    public string $primary_lang = 'it';
-
-=======
     /** Tema del front office: una cartella di `Themes/` (letto da `XotData::make()->pub_theme`). */
     public string $pub_theme = '';
 
@@ -44,5 +36,6 @@ class CmsConfigData extends Data
     {
         return 'xra';
     }
->>>>>>> f6951729f6a52934fe712dd4c9bebf8f917f3775
+
+    public string $primary_lang = 'it';
 }
