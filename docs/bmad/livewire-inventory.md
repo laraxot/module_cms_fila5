@@ -16,7 +16,7 @@ related:
   - ./livewire-widget-decision-log.md
   - ./livewire-widget-epics.md
   - ../stories/12.1.cms-page-show-not-widget.story.md
-  - ../00-INDEX.md
+  - ../00-index.md
   - ../scopo.md
   - ../../../User/docs/bmad/livewire-inventory.md
   - ../../../Xot/docs/bmad/livewire-to-filament-widgets-inventory.md
@@ -99,7 +99,7 @@ Il documento originale del 2026-08-25 (ora rinominato in `livewire-widget-conver
 
 Nessuna story di implementazione: zero candidati reali nei Cluster A/B. Resta valida come gate anti-scope-creep la story [12.1](../stories/12.1.cms-page-show-not-widget.story.md), aggiornata in questo audit con le citazioni file:riga raccolte qui.
 
-**Allineamento fleet (2026-10-20):** in [Xot livewire-to-filament-widgets-inventory](../../../Xot/docs/bmad/livewire-to-filament-widgets-inventory.md) la riga Cms `Page\Show` e' **KEEP FO Folio** (W2). Ingresso modulo: [00-INDEX.md](../00-INDEX.md) · [scopo.md](../scopo.md).
+**Allineamento fleet (2026-10-20):** in [Xot livewire-to-filament-widgets-inventory](../../../Xot/docs/bmad/livewire-to-filament-widgets-inventory.md) la riga Cms `Page\Show` e' **KEEP FO Folio** (W2). Ingresso modulo: [00-INDEX.md](../00-index.md) · [scopo.md](../scopo.md).
 
 ## Riferimenti correlati (non SSoT, coerenti col verdetto)
 
