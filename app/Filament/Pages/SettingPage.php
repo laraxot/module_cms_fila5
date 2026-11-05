@@ -6,11 +6,12 @@ namespace Modules\Cms\Filament\Pages;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
+use Modules\Cms\Actions\ListInstalledThemesAction;
 use Modules\Cms\Datas\CmsConfigData;
 use Modules\Xot\Filament\Pages\BaseSettingPage;
 
 /**
- * Impostazioni di Cms: tema del sito pubblico, registrazione del tema, lingua primaria.
+ * Impostazioni di Cms: tema del sito pubblico e registrazione del tema.
  *
  * Salva in `config/{tenant}/xra.php` (le chiavi vivono lì per compatibilità con XotData).
  *
@@ -33,15 +34,6 @@ class SettingPage extends BaseSettingPage
 
             'register_pub_theme' => Toggle::make('register_pub_theme'),
 
-            'primary_lang' => Select::make('primary_lang')
-                ->options([
-                    'it' => 'Italiano',
-                    'en' => 'English',
-                    'fr' => 'Français',
-                    'de' => 'Deutsch',
-                    'es' => 'Español',
-                ])
-                ->required(),
         ];
     }
 
@@ -52,21 +44,6 @@ class SettingPage extends BaseSettingPage
      */
     private function getAvailableThemes(): array
     {
-        $themesPath = base_path('Themes');
-        if (! is_dir($themesPath)) {
-            return [];
-        }
-
-        $themes = [];
-        foreach (scandir($themesPath) ?: [] as $entry) {
-            if ($entry === '.' || $entry === '..') {
-                continue;
-            }
-            if (is_dir($themesPath.'/'.$entry)) {
-                $themes[$entry] = $entry;
-            }
-        }
-
-        return $themes;
+        return app(ListInstalledThemesAction::class)->execute();
     }
 }
