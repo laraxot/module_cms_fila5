@@ -9,6 +9,8 @@ use Filament\Forms\Components\Toggle;
 use Modules\Cms\Datas\CmsConfigData;
 use Modules\Xot\Filament\Pages\BaseSettingPage;
 
+use function Safe\scandir;
+
 /**
  * Impostazioni di Cms: tema del sito pubblico, registrazione del tema, lingua primaria.
  *
@@ -58,7 +60,11 @@ class SettingPage extends BaseSettingPage
         }
 
         $themes = [];
-        foreach (scandir($themesPath) ?: [] as $entry) {
+        foreach (scandir($themesPath) as $entry) {
+            if (! is_string($entry)) {
+                continue;
+            }
+
             if ($entry === '.' || $entry === '..') {
                 continue;
             }
