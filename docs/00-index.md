@@ -41,10 +41,7 @@ Il sito legge JSON per tenant: per `local/fixcity` ci sono 113 file in `laravel/
 | Come si verifica un URL | [stories/dcp-41-url-to-json-resolver.story.md](./stories/dcp-41-url-to-json-resolver.story.md) |
 <<<<<<< HEAD
 <<<<<<< .merge_file_wUhF38
-<<<<<<< .merge_file_1lvZlh
-=======
 | Come si scrive un testo in una Blade (quattro lingue) | [stories/blade-i18n-no-hardcoded-text.story.md](./stories/blade-i18n-no-hardcoded-text.story.md) |
->>>>>>> .merge_file_YyR809
 =======
 | Come si scrive un testo in una Blade (quattro lingue) | [stories/blade-i18n-no-hardcoded-text.story.md](./stories/blade-i18n-no-hardcoded-text.story.md) |
 >>>>>>> .merge_file_RYa1nH
