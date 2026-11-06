@@ -1,23 +1,11 @@
-<<<<<<< .merge_file_B0hqcc
-# Git LFS is forbidden in this repository. Binary files remain normal Git blobs.
-# This file is the canonical root policy for modules and themes.
-=======
-# Prototype: laravel/Modules/* e laravel/Themes/*
-# Canon: bashscripts/ai/wiki/rules/no-git-lfs.md
-# Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
-#
-# Git LFS vietato: i binari restano blob Git normali.
-
->>>>>>> .merge_file_BPC9cO
+# Git LFS is forbidden. Binary files remain normal Git blobs.
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
-<<<<<<< .merge_file_B0hqcc
 
-# `binary` implies no text normalization, diff, or merge driver.
-# `!filter` disables any inherited Git LFS filter.
+# Binary files are regular Git blobs; !filter disables inherited Git LFS.
 *.png binary !filter
 *.jpg binary !filter
 *.jpeg binary !filter
@@ -36,24 +24,4 @@ CHANGELOG.md export-ignore
 *.phar binary !filter
 *.db binary !filter
 *.sqlite binary !filter
-=======
-# Binary files (regular Git blobs, never Git LFS).
-*.png binary !filter !merge !diff
-*.jpg binary !filter !merge !diff
-*.jpeg binary !filter !merge !diff
-*.gif binary !filter !merge !diff
-*.webp binary !filter !merge !diff
-*.ico binary !filter !merge !diff
-*.svg binary !filter !merge !diff
-*.psd binary !filter !merge !diff
-*.pdf binary !filter !merge !diff
-*.zip binary !filter !merge !diff
-*.woff binary !filter !merge !diff
-*.woff2 binary !filter !merge !diff
-*.ttf binary !filter !merge !diff
-*.eot binary !filter !merge !diff
-*.otf binary !filter !merge !diff
-*.phar binary !filter !merge !diff
-*.db binary !filter !merge !diff
-*.sqlite binary !filter !merge !diff
->>>>>>> .merge_file_BPC9cO
+
