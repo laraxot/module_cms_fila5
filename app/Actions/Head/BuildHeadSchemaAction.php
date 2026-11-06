@@ -24,11 +24,10 @@ final class BuildHeadSchemaAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed> $page      entità di pagina già risolta (vedi BuildPageSchemaAction)
-     * @param string|null          $rootUrl   URL della radice del sito, senza lingua: è l'identità dell'entità (`#organization`, `#website`); se manca si usa `$homeUrl`
-     * @param string               $homeLabel nome della prima briciola («Home»); se vuoto si usa il brand
-     * @param list<string>|null    $languages lingue in cui il sito è scritto; se manca si usa `$locale`
-     *
+     * @param  array<string, mixed>  $page  entità di pagina già risolta (vedi BuildPageSchemaAction)
+     * @param  string|null  $rootUrl  URL della radice del sito, senza lingua: è l'identità dell'entità (`#organization`, `#website`); se manca si usa `$homeUrl`
+     * @param  string  $homeLabel  nome della prima briciola («Home»); se vuoto si usa il brand
+     * @param  list<string>|null  $languages  lingue in cui il sito è scritto; se manca si usa `$locale`
      * @return list<SchemaObject|array<string, mixed>>
      */
     public function execute(
@@ -54,8 +53,8 @@ final class BuildHeadSchemaAction
         }
 
         return [
-            [] === $page ? $page : $page + ['isPartOf' => ['@id' => $root.'#website']],
-            $this->breadcrumbs('' !== $homeLabel ? $homeLabel : $brand, $homeUrl, $pageTitle, $pageUrl),
+            $page === [] ? $page : $page + ['isPartOf' => ['@id' => $root.'#website']],
+            $this->breadcrumbs($homeLabel !== '' ? $homeLabel : $brand, $homeUrl, $pageTitle, $pageUrl),
         ];
     }
 
@@ -63,16 +62,16 @@ final class BuildHeadSchemaAction
     {
         $organization = (new Organization())->name($brand)->url($root)->set('@id', $root.'#organization');
 
-        return null !== $logoUrl ? $organization->logo($logoUrl) : $organization;
+        return $logoUrl !== null ? $organization->logo($logoUrl) : $organization;
     }
 
     /**
-     * @param list<string> $languages
+     * @param  list<string>  $languages
      */
     private function webSite(string $brand, string $root, array $languages): SchemaObject
     {
         return (new WebSite())->name($brand)->url($root)->set('@id', $root.'#website')
-            ->set('inLanguage', 1 === count($languages) ? $languages[0] : $languages);
+            ->set('inLanguage', count($languages) === 1 ? $languages[0] : $languages);
     }
 
     private function breadcrumbs(string $homeLabel, string $homeUrl, string $pageTitle, string $pageUrl): Breadcrumbs

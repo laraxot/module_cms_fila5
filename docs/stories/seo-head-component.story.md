@@ -55,7 +55,8 @@ responsabilità SEO e produrre markup valido, localizzato e verificabile.
 ## Dev Agent Record
 
 - Stato iniziale: layout Two conteneva head duplicati e Cms possedeva già `Metatags`.
-- Dipendenza `laravel/head`: presente nel composer del modulo Cms e in `vendor/`.
+- Dipendenza `laravel/head`: dichiarata nel composer del modulo Cms; l'installazione in `vendor/` dipende
+  dall'ambiente (in `base_restaurant_fila5` manca dal lock: vedi [phpstan-head-schema.story.md](./phpstan-head-schema.story.md)).
 - Implementato `Modules\\Cms\\View\\Components\\Head`, con Laravel Head come
   renderer unico dei tag SEO e Schema.org.
 - Migrati i layout class-based attivi `components/layouts/main` e `base` del tema
