@@ -28,7 +28,9 @@
         }
     },
     "autoload-dev": {
-        "classmap": ["tests/"]
+        "psr-4": {
+            "Modules\\Cms\\Tests\\": "tests/"
+        }
     },
     "require": {
         "laravel/head": "^0.2.2"

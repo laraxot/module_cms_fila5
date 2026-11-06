@@ -29,10 +29,7 @@ in ogni layout.
 
 ## Integrazione `laravel/head`
 
-La libreria è una dipendenza del modulo (`laravel/head ^0.2.2` in `composer.json`, richiede
-`illuminate/* ^13.17`): `vendor/` non è versionato, quindi va installata con Composer in ogni
-ambiente (vedi [stories/phpstan-head-schema.story.md](./stories/phpstan-head-schema.story.md)).
-Offre title, meta, Open Graph, canonical, robots e
+La libreria è già installata e offre title, meta, Open Graph, canonical, robots e
 Schema.org. Il componente la usa come unica sorgente di rendering tramite `@head`;
 non vengono stampati a mano title, description, OG o JSON-LD concorrenti.
 
