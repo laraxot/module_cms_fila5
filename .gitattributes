@@ -1,3 +1,4 @@
+<<<<<<< .merge_file_gCnUE3
 # Prototype: laravel/Modules/* e laravel/Themes/*
 # Canon: bashscripts/ai/wiki/rules/no-git-lfs.md
 # Sync: bash bashscripts/templates/sync-gitattributes-modules.sh
@@ -5,11 +6,16 @@
 # Git LFS VIETATO. Binari = blob git normali.
 # Mai: filter=lfs / diff=lfs / merge=lfs
 
+=======
+# Git LFS is intentionally disabled for this repository.
+# All binary assets are stored as normal Git blobs.
+>>>>>>> .merge_file_pSAue8
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
+<<<<<<< .merge_file_gCnUE3
 # Binary files (regular git blobs — NO git-lfs)
 # `binary` + `!filter` azzera eventuali filtri LFS ereditati
 *.png binary !filter
@@ -36,3 +42,25 @@ CHANGELOG.md export-ignore
 *.jpeg !text !filter !merge !diff
 *.gif !text !filter !merge !diff
 *.webp !text !filter !merge !diff
+=======
+
+# Explicitly clear any inherited or local LFS attributes.
+*.png binary !filter !merge !diff
+*.jpg binary !filter !merge !diff
+*.jpeg binary !filter !merge !diff
+*.gif binary !filter !merge !diff
+*.webp binary !filter !merge !diff
+*.ico binary !filter !merge !diff
+*.svg binary !filter !merge !diff
+*.psd binary !filter !merge !diff
+*.pdf binary !filter !merge !diff
+*.zip binary !filter !merge !diff
+*.woff binary !filter !merge !diff
+*.woff2 binary !filter !merge !diff
+*.ttf binary !filter !merge !diff
+*.eot binary !filter !merge !diff
+*.otf binary !filter !merge !diff
+*.phar binary !filter !merge !diff
+*.db binary !filter !merge !diff
+*.sqlite binary !filter !merge !diff
+>>>>>>> .merge_file_pSAue8

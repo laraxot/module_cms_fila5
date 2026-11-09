@@ -10,6 +10,12 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Log;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use Modules\Cms\Models\Page;
+<<<<<<< .merge_file_salMlU
+=======
+use Modules\Cms\Tests\Unit\Http\Middleware\Dcp283NoHandleMiddleware;
+use Modules\Cms\Tests\Unit\Http\Middleware\Dcp283ProbeMiddleware;
+use Modules\Cms\Tests\Unit\Http\Middleware\Dcp283ReturnsNothingMiddleware;
+>>>>>>> .merge_file_aEPPtI
 use Monolog\Handler\TestHandler;
 use Monolog\Level;
 use Monolog\Logger as Monolog;
@@ -23,6 +29,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
  */
 
 /** Middleware con effetto osservabile: se la allowlist non lo ferma, `$calls` sale. */
+<<<<<<< .merge_file_salMlU
 final class Dcp283ProbeMiddleware
 {
     public static int $calls = 0;
@@ -48,6 +55,8 @@ final class Dcp283ReturnsNothingMiddleware
 /** Classe esistente senza `handle`: la richiesta non deve proseguire. */
 final class Dcp283NoHandleMiddleware {}
 
+=======
+>>>>>>> .merge_file_aEPPtI
 /**
  * Middleware con slug e middleware dichiarati decisi dal test (le due cuciture sono i metodi protetti).
  *
