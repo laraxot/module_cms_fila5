@@ -102,7 +102,9 @@ final class Head extends Component
             $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
-        return view('cms::components.head');
+        return view('cms::components.head', [
+            'pubTheme' => $meta->getPubTheme(),
+        ]);
     }
 
     private function resolveBrand(MetatagData $meta): string

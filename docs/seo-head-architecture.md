@@ -9,6 +9,7 @@ tags: [cms, seo, blade, architecture, schema-org, theme-two]
 qmd: "cms seo head blade component theme two schema org laravel head"
 related:
   - "./stories/seo-head-component.story.md"
+  - "./foot-component-architecture.md"
   - "../../Seo/docs/wiki/concepts/metatag-data-contract.md"
 ---
 
