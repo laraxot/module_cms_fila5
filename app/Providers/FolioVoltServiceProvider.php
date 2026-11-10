@@ -162,6 +162,13 @@ class FolioVoltServiceProvider extends ServiceProvider
         }
 
         foreach ($modules as $module) {
+            // Moduli disabilitati (es. Mobile in smantellamento) non devono
+            // esporre pagine Folio/Volt: le loro view non avrebbero namespace
+            // registrato e farebbero fallire `view:cache`.
+            if (! $module->isEnabled()) {
+                continue;
+            }
+
             $path = $module->getPath().'/resources/views/pages';
             if (! File::exists($path) || ! File::isDirectory($path)) {
                 continue;
