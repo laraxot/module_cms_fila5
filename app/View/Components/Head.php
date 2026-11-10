@@ -48,7 +48,8 @@ final class Head extends Component
         public readonly ?string $description = null,
         public readonly ?bool $homepage = null,
         public readonly ?string $themeColor = null,
-    ) {}
+    ) {
+    }
 
     public function render(): ViewContract
     {
@@ -64,7 +65,7 @@ final class Head extends Component
         $description = $this->resolveDescription($meta, $page, $isHome);
         $canonical = $this->canonicalUrl();
         $writtenLocales = $page instanceof Page ? app(ResolveWrittenLocalesAction::class)->execute($page) : null;
-        $translated = $writtenLocales === null || in_array(app()->getLocale(), $writtenLocales, true);
+        $translated = null === $writtenLocales || in_array(app()->getLocale(), $writtenLocales, true);
         $policy = app(ResolveRobotsPolicyAction::class);
         $indexable = $policy->isIndexable($path, $localeCodes, $translated)
             && (! $page instanceof Page || $policy->isPageIndexable($this->stringAttribute($page, 'slug'), $page->getAttribute('middleware')));
@@ -75,15 +76,15 @@ final class Head extends Component
             ->applicationName($brand)
             ->robots($policy->directive($indexable))
             ->og(type: $meta->getType(), title: $title, description: $description, url: $canonical, siteName: $brand, locale: $this->openGraphLocale())
-            ->twitter(card: $image !== null ? 'summary_large_image' : 'summary', title: $title, description: $description);
+            ->twitter(card: null !== $image ? 'summary_large_image' : 'summary', title: $title, description: $description);
 
-        if ($description !== null) {
+        if (null !== $description) {
             HeadManager::description($description);
         }
 
         HeadManager::themeColor($this->themeColor ?? self::DEFAULT_THEME_COLOR);
 
-        if ($image !== null) {
+        if (null !== $image) {
             HeadManager::ogImage($image, alt: $brand, width: self::SOCIAL_IMAGE_WIDTH, height: self::SOCIAL_IMAGE_HEIGHT)->twitterImage($image, alt: $brand);
         }
 
@@ -101,7 +102,9 @@ final class Head extends Component
             $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
-        return view('cms::components.head');
+        return view('cms::components.head', [
+            'pubTheme' => $meta->getPubTheme(),
+        ]);
     }
 
     private function resolveBrand(MetatagData $meta): string
@@ -109,22 +112,22 @@ final class Head extends Component
         $key = 'pub_theme::header.brand.name';
         $brand = Lang::has($key) ? trim((string) __($key)) : '';
 
-        if ($brand === '') {
+        if ('' === $brand) {
             $brand = trim($meta->getBrandName());
         }
 
-        if ($brand === '') {
+        if ('' === $brand) {
             $applicationName = config('app.name');
             $brand = is_string($applicationName) ? trim($applicationName) : '';
         }
 
-        if ($brand !== '') {
+        if ('' !== $brand) {
             return $brand;
         }
 
         $host = parse_url(url('/'), PHP_URL_HOST);
 
-        return is_string($host) && trim($host) !== '' ? trim($host) : 'website';
+        return is_string($host) && '' !== trim($host) ? trim($host) : 'website';
     }
 
     /**
@@ -132,7 +135,7 @@ final class Head extends Component
      */
     private function resolveDescription(MetatagData $meta, ?Page $page, bool $isHome): ?string
     {
-        if ($this->description !== null && trim($this->description) !== '') {
+        if (null !== $this->description && '' !== trim($this->description)) {
             return trim($this->description);
         }
 
@@ -141,25 +144,25 @@ final class Head extends Component
 
         if (! $isHome && $page instanceof Page) {
             $derived = app(ResolvePageDescriptionAction::class)->execute($page, app()->getLocale());
-            if ($derived !== null) {
+            if (null !== $derived) {
                 return $derived;
             }
         }
 
-        if ($siteDescription !== '') {
+        if ('' !== $siteDescription) {
             return $siteDescription;
         }
 
         $fallback = trim($meta->getDescription(limit: 160));
 
-        return $fallback !== '' ? $fallback : null;
+        return '' !== $fallback ? $fallback : null;
     }
 
     private function openGraphLocale(): ?string
     {
         $regional = LaravelLocalization::getCurrentLocaleRegional();
 
-        return is_string($regional) && $regional !== '' ? $regional : null;
+        return is_string($regional) && '' !== $regional ? $regional : null;
     }
 
     /**
@@ -170,7 +173,7 @@ final class Head extends Component
     {
         $path = app(CollapsePathSegmentsAction::class)->execute(request()->path());
 
-        return $path === '' ? $this->siteRoot() : $this->siteRoot().'/'.$path;
+        return '' === $path ? $this->siteRoot() : $this->siteRoot().'/'.$path;
     }
 
     /**
@@ -196,7 +199,7 @@ final class Head extends Component
     private function resolvePageTitle(?Page $page): string
     {
         $pageTitle = trim((string) $this->title);
-        if ($pageTitle !== '' || $page === null) {
+        if ('' !== $pageTitle || null === $page) {
             return $pageTitle;
         }
 
@@ -211,7 +214,7 @@ final class Head extends Component
     }
 
     /**
-     * @param  list<string>  $localeCodes
+     * @param list<string> $localeCodes
      */
     private function resolvePage(string $path, array $localeCodes): ?Page
     {
@@ -231,15 +234,15 @@ final class Head extends Component
         // Never expose it through rel=manifest: browsers expect name/icons/start_url.
         $manifest = $this->themeAssetUrl($meta, 'site.webmanifest');
 
-        if ($favicon !== null) {
+        if (null !== $favicon) {
             HeadManager::favicon($favicon);
         }
 
-        if ($appleTouchIcon !== null) {
+        if (null !== $appleTouchIcon) {
             HeadManager::appleTouchIcon($appleTouchIcon, '180x180');
         }
 
-        if ($manifest !== null) {
+        if (null !== $manifest) {
             HeadManager::manifest($manifest);
         }
     }
@@ -261,13 +264,13 @@ final class Head extends Component
     }
 
     /**
-     * @param  list<string>|null  $siteLocales  lingue in cui il sito è scritto (dalla home CMS); `null` = solo la lingua corrente
+     * @param list<string>|null $siteLocales lingue in cui il sito è scritto (dalla home CMS); `null` = solo la lingua corrente
      */
     private function applySchema(MetatagData $meta, string $brand, string $pageTitle, ?string $description, string $canonical, bool $isHome, ?array $siteLocales): void
     {
         $logo = $meta->getBrandLogo();
         $homeLabelKey = 'pub_theme::navigation.home';
-        $name = $pageTitle !== '' ? $pageTitle : $brand;
+        $name = '' !== $pageTitle ? $pageTitle : $brand;
 
         try {
             $schemas = app(BuildHeadSchemaAction::class)->execute(
@@ -277,7 +280,7 @@ final class Head extends Component
                 pageTitle: $name,
                 pageUrl: $canonical,
                 locale: app()->getLocale(),
-                logoUrl: $logo !== '' ? asset($logo) : null,
+                logoUrl: '' !== $logo ? asset($logo) : null,
                 page: $isHome ? [] : $this->resolvePageEntity($meta, $name, $description, $canonical),
                 rootUrl: $this->siteRoot(),
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
@@ -323,7 +326,7 @@ final class Head extends Component
 
     private function isHomepage(): bool
     {
-        if ($this->homepage !== null) {
+        if (null !== $this->homepage) {
             return $this->homepage;
         }
 
@@ -331,6 +334,6 @@ final class Head extends Component
         $path = trim(request()->path(), '/');
         $locale = (string) app()->getLocale();
 
-        return (is_object($route) && $route->getName() === 'home') || $path === '' || $path === $locale;
+        return (is_object($route) && 'home' === $route->getName()) || '' === $path || $path === $locale;
     }
 }
