@@ -24,7 +24,6 @@ return [
             'label' => 'Elimina',
         ],
         'edit' => [
-            'tooltip' => 'edit',
             'icon' => 'edit',
         ],
     ],

@@ -17,18 +17,4 @@ return [
             'description' => '',
         ],
     ],
-    'sections' => [
-        'Content' => [
-            'label' => 'Content',
-            'heading' => 'Content',
-        ],
-        'Sidebar' => [
-            'label' => 'Sidebar',
-            'heading' => 'Sidebar',
-        ],
-        'Footer' => [
-            'label' => 'Footer',
-            'heading' => 'Footer',
-        ],
-    ],
 ];

@@ -203,7 +203,6 @@ return [
             'label' => 'Esci',
         ],
         'profile' => [
-            'tooltip' => 'profile',
             'icon' => 'profile',
         ],
     ],
@@ -223,20 +222,6 @@ return [
     ],
     'model' => [
         'label' => 'page.model',
-    ],
-    'sections' => [
-        'Content' => [
-            'label' => 'Content',
-            'heading' => 'Content',
-        ],
-        'Sidebar' => [
-            'label' => 'Sidebar',
-            'heading' => 'Sidebar',
-        ],
-        'Footer' => [
-            'label' => 'Footer',
-            'heading' => 'Footer',
-        ],
     ],
     'label' => 'Page',
     'plural_label' => 'Page (Plurale)',
