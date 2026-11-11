@@ -40,7 +40,7 @@ To see changes in the browser, follow this strict sequence:
 1.  **Navigate** to the theme directory: `Themes/Meetup/`
 2.  **Install** dependencies: `npm install`
 3.  **Build** assets: `npm run build`
-4.  **Deploy** to public root: `npm run copy` (Deploys compiled assets to `public_html/themes/Meetup`)
+4.  **Deploy** to public root: `npm run copy` (dismesso: `public_html/themes/<Tema>` e' un symlink a `laravel/Themes/<Tema>/public`) (Deploys compiled assets to `public_html/themes/Meetup`)
 
 ## 5. Tenant Resolution
 

@@ -90,7 +90,10 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-    'actions' => [
+    'preview' => [
+        'empty' => 'No content available for this section',
+        'no_blocks' => 'No blocks configured for this section',
+        'no_translation' => 'No translation available for the current language',
     ],
     'preview' => [
         'empty' => 'No content available for this section',

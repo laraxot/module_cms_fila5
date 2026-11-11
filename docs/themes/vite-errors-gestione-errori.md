@@ -56,7 +56,6 @@ cd /var/www/html/_bases/base_predict_fila3_mono/laravel/Themes/[NomeTema]
 npm install
 
 # Compilazione tema
-npm run copy
 ```
 
 ### 3. Verifica Post-Compilazione
@@ -120,7 +119,7 @@ npm cache clean --force
 
 # Ricompilazione forzata
 rm -rf dist/ node_modules/
-npm install && npm run copy
+npm install && npm run build
 ```
 
 ## Manutenzione

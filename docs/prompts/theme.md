@@ -23,6 +23,5 @@ cd laravel/Themes/<nome tem>
 composer update -W 
 npm install
 npm run build
-npm run copy 
 capisci te i perche' 
 utilizza openviking installato globalmente, bmad, gsd , ralph loop e notebooklm
