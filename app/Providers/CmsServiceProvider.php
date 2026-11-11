@@ -94,9 +94,9 @@ class CmsServiceProvider extends XotBaseServiceProvider
             ->execute(base_path($resource_path.'/views/components'));
 
         Blade::anonymousComponentPath($componentViewPath);
-        Blade::anonymousComponentNamespace(
-            $theme_type,
-            $componentViewPath
-        );
+        // Prefisso esplicito (<x-pub_theme::layouts.guest>): senza, un componente omonimo di un modulo registrato
+        // prima (es. UI layouts.guest) vince su quello del tema. anonymousComponentNamespace() vuole
+        // (directory dei view, prefisso) e qui riceveva gli argomenti invertiti, quindi il prefisso non esisteva.
+        Blade::anonymousComponentPath($componentViewPath, $theme_type);
     }
 }
