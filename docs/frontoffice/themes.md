@@ -48,7 +48,6 @@ laravel/Themes/One/
 npm run build
 
 # Pubblicazione
-npm run copy
 ```
 
 ## Riflessioni e Linee Guida
@@ -129,7 +128,6 @@ npm run copy
    ls -la public/themes/One
 
    # Forza copia
-   npm run copy -- --force
    ```
 
 3. **Problemi di Cache**

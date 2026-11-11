@@ -232,7 +232,6 @@ npm run preview
 
 3. **Copiatura degli Asset**
 ```bash
-npm run copy
 ```
 
 ## Troubleshooting
