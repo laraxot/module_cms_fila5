@@ -4,10 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Http\Middleware\SetCacheHeaders;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
-use Modules\Xot\Tests\XotBaseTestCase;
 use PHPUnit\Framework\Assert;
-
-uses(XotBaseTestCase::class);
 
 /*
  * DCP-283 (C-03): dal campo `middleware` del JSON si accettano solo i nomi in allowlist

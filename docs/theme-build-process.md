@@ -28,7 +28,6 @@ npm run build
 2. **Pubblicazione degli asset** - Copia i file compilati nella directory pubblica:
 
 ```bash
-npm run copy
 ```
 
 È fondamentale eseguire entrambi i comandi per vedere le modifiche nel frontend dell'applicazione.

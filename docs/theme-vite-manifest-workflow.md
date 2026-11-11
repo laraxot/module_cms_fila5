@@ -29,7 +29,6 @@ Per i temi con build separata il contratto operativo e':
 ```bash
 npm install
 npm run build
-npm run copy
 ```
 
 `build` genera il manifest del tema.

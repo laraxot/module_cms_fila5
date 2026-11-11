@@ -143,7 +143,6 @@ Universal Blocks Renderer
 ```bash
 cd laravel/Themes/Sixteen
 npm run build    # Compila CSS/JS
-npm run copy     # Copia in public_html/themes/Sixteen/
 ```
 
 ## Testing

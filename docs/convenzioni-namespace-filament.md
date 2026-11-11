@@ -66,7 +66,6 @@ namespace Modules\User\App\Filament\Widgets;
 - Per temi custom (es. Themes/One) la build e pubblicazione asset si fa SOLO dalla cartella del tema:
   ```sh
   npm run build
-  npm run copy
   ```
 - Non usare mai `vendor:publish` per asset dei temi custom.
 - Vedi anche [README tema One](../../../../themes/one/readme.md)
