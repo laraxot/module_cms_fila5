@@ -3,10 +3,7 @@
 declare(strict_types=1);
 
 use Modules\Cms\Models\Page;
-use Modules\Xot\Tests\XotBaseTestCase;
 use PHPUnit\Framework\Assert;
-
-uses(XotBaseTestCase::class);
 
 /*
  * DCP-283 (C-03): un campo `middleware` dichiarato ma illeggibile non deve rendere pubblica la pagina.

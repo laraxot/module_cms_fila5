@@ -159,7 +159,7 @@ php artisan phpstan:incremental Modules/Theme
 ## Riferimenti
 
 - [Documentazione PHPStan](../phpstan.md)
-- [Issues PHPStan](../phpstan_issues.md)
+- [Issues PHPStan](../phpstan-issues.md)
 - [Analisi Incrementale](../phpstan-incremental.md)
 
 ## Note di Manutenzione

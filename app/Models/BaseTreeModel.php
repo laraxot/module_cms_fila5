@@ -18,6 +18,10 @@ use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 /**
  * Modules\Cms\Models\BaseTreeModel.
  *
+ * @template TModel of Model
+ *
+ * @implements HasRecursiveRelationshipsContract<TModel>
+ *
  * @property int                    $id
  * @property string                 $name
  * @property array<int, mixed>|null $items

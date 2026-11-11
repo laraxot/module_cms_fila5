@@ -2,25 +2,22 @@
 
 declare(strict_types=1);
 
-use Illuminate\Contracts\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
-use Modules\Blog\Models\Article;
 use Modules\Cms\Actions\ResolvePageAction;
+use Modules\Cms\Tests\Feature\Dcp283AllowViewPolicy;
+use Modules\Cms\Tests\Feature\Dcp283DenyViewPolicy;
+use Modules\Cms\Tests\Feature\Dcp283Item;
 use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
-use Tests\TestCase;
 
-// TestCase della radice (DatabaseTransactions su mariadb, user, fixcity): Modules/Cms/tests/Pest.php non e caricato
-// da `pest-scratch-db.sh`, quindi il binding va dichiarato qui.
-uses(TestCase::class);
-
+// Il test usa il TestCase del modulo: eredita il bootstrap applicativo root e
+// mantiene un solo binding Pest per la directory Cms.
 /*
  * DCP-283 (C-04): ResolvePageAction non deve piu' caricare modelli arbitrari dai due segmenti dell'URL.
  * Prima (misurato): /it/profile/<uuid> e /it/user/<uuid> rispondevano 200 per un utente reale (anche a un ospite) e 404 per
@@ -29,41 +26,6 @@ uses(TestCase::class);
  */
 
 /** Modello di prova su una tabella sqlite in memoria, con uno scope globale: nasconde le righe `visible = 0`. */
-final class Dcp283Item extends Model
-{
-    public $timestamps = false;
-
-    protected $connection = 'dcp283';
-
-    protected $table = 'dcp283_items';
-
-    protected $guarded = [];
-
-    #[Override]
-    protected static function booted(): void
-    {
-        self::addGlobalScope('dcp283-visible', static function (Builder $query): void {
-            $query->where('visible', true);
-        });
-    }
-}
-
-final class Dcp283AllowViewPolicy
-{
-    public function view(?Authenticatable $user, Dcp283Item $model): bool
-    {
-        return true;
-    }
-}
-
-final class Dcp283DenyViewPolicy
-{
-    public function view(?Authenticatable $user, Dcp283Item $model): bool
-    {
-        return false;
-    }
-}
-
 /**
  * Crea la tabella di prova (sqlite in memoria, una per test) con una riga visibile (id 1) e una nascosta dallo scope (id 2).
  */
@@ -182,17 +144,19 @@ test('una voce di configurazione che non e un modello viene ignorata', function 
 });
 
 test('blog ed events restano serviti dal finder dei soli contenuti pubblicati', function (): void {
-    $article = new Article;
+    // Blog e' un modulo opzionale (ResolvePageAction usa il finder solo se Article e ThemeComposer esistono): la classe si risolve per nome.
+    $article = app('Modules\\Blog\\Models\\Article');
+    Assert::assertInstanceOf(Model::class, $article);
     $composer = new class($article)
     {
-        public function __construct(private readonly Article $article) {}
+        public function __construct(private readonly Model $article) {}
 
-        public function findPublishedPostBySlug(string $slug): ?Article
+        public function findPublishedPostBySlug(string $slug): ?Model
         {
             return $slug === 'post-pubblicato' ? $this->article : null;
         }
 
-        public function findPublishedEventBySlug(string $slug): ?Article
+        public function findPublishedEventBySlug(string $slug): ?Model
         {
             return $slug === 'evento-pubblicato' ? $this->article : null;
         }
@@ -206,4 +170,7 @@ test('blog ed events restano serviti dal finder dei soli contenuti pubblicati', 
     Assert::assertNull($action->execute('blog', 'evento-pubblicato')->item, 'un evento non si legge come post');
     Assert::assertNull($action->execute('events', 'post-pubblicato')->item, 'un post non si legge come evento');
     Assert::assertNull($action->execute('blog', 'inesistente')->item);
-});
+})->skip(
+    ! class_exists('Modules\\Blog\\Models\\Article') || ! class_exists('Modules\\Blog\\View\\Composers\\ThemeComposer'),
+    'Modulo Blog non installato: ResolvePageAction non usa il finder dei contenuti pubblicati.'
+);

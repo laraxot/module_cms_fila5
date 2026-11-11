@@ -8,7 +8,7 @@ qmd: "phpstan fixes gennaio 2025"
 issues: []
 discussions: []
 status: superseded
-superseded_by: phpstan-fixes-january.md
+superseded_by: phpstan-fixes-cms-module.md
 ---
 
 # Correzioni PHPStan - Gennaio 2025

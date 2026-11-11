@@ -157,6 +157,7 @@ trait HasBlocks
     {
         $query = static::query()->where('slug', $slug);
 
+
         try {
             $record = $query->sole();
         } catch (MultipleRecordsFoundException $e) {

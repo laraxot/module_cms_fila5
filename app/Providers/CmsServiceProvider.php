@@ -6,6 +6,8 @@ namespace Modules\Cms\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
+use Modules\Cms\View\Components\Foot;
+use Modules\Cms\View\Components\Head;
 use Modules\Cms\View\Components\Page;
 use Modules\Xot\Actions\File\FixPathAction;
 use Modules\Xot\Datas\XotData;
@@ -30,6 +32,8 @@ class CmsServiceProvider extends XotBaseServiceProvider
         // Keep the canonical CMS contract deterministic in optimized/native
         // bundles where filesystem component discovery may be unavailable.
         Blade::component('page', Page::class);
+        Blade::component('cms::head', Head::class);
+        Blade::component('cms::foot', Foot::class);
 
         $this->xot = XotData::make();
 
@@ -91,8 +95,8 @@ class CmsServiceProvider extends XotBaseServiceProvider
 
         Blade::anonymousComponentPath($componentViewPath);
         Blade::anonymousComponentNamespace(
-            $theme_type.'::',
-            app(FixPathAction::class)->execute(base_path($resource_path.'/views'))
+            $theme_type,
+            $componentViewPath
         );
     }
 }

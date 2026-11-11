@@ -7,6 +7,7 @@ module: Cms
 tags: [docs, cms, roadmap]
 status: superseded
 superseded_by: roadmap-q4.md
+qmd: "cms module roadmap (2025 q4) cms"
 ---
 
 # CMS Module Roadmap (2025 Q4)
