@@ -21,6 +21,12 @@ related:
 
 # DCP-101: guardie su JSON, asset e manifest
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 ## Richiesta (2026-10-13)
 Gli incidenti del giorno (500 "CMS content collision", PNG a 0 byte dopo `npm run copy`, manifest e JSON non allineati) si trovavano solo guardando la pagina.
 Servono test che li facciano emergere nel codice, senza database ne' HTTP. Realizza in parte DCP-09 (guardia JSON) e DCP-08 (asset senza 0 byte).
