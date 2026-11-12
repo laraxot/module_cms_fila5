@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions\Head;
 
+use Illuminate\Support\Str;
 use Modules\Tenant\Actions\Config\GetTenantConfigArrayAction;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -77,8 +78,10 @@ final class ComposeDocumentTitleAction
 
         $quoted = preg_quote($brand, '/');
         $separators = self::SEPARATORS;
-        $title = preg_replace('/\s*['.$separators.']\s*'.$quoted.'\s*$/iu', '', $title);
-        $title = preg_replace('/^'.$quoted.'\s*['.$separators.']\s*/iu', '', $title);
+        $title = Str::of($title)
+            ->replaceMatches('/\s*['.$separators.']\s*'.$quoted.'\s*$/iu', '')
+            ->replaceMatches('/^'.$quoted.'\s*['.$separators.']\s*/iu', '')
+            ->toString();
 
         return trim($title);
     }
