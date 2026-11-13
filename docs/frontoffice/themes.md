@@ -12,6 +12,12 @@ status: draft
 
 # Gestione Temi - Linee Guida e Riflessioni
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 ## Introduzione
 
 Questa sezione descrive come gestire, compilare e pubblicare i temi del CMS, con particolare attenzione al tema One.
@@ -48,7 +54,6 @@ laravel/Themes/One/
 npm run build
 
 # Pubblicazione
-npm run copy
 ```
 
 ## Riflessioni e Linee Guida
@@ -129,7 +134,6 @@ npm run copy
    ls -la public/themes/One
 
    # Forza copia
-   npm run copy -- --force
    ```
 
 3. **Problemi di Cache**
