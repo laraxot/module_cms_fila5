@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "modules integration reference"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Modules Integration Reference

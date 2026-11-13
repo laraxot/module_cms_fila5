@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "folio runtime governance"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Folio Runtime Governance

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "template theme cms reference"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Template, Theme, CMS - Runtime Reference
