@@ -31,9 +31,13 @@ return [
         ],
         'slug' => [
             'label' => 'Slug',
+<<<<<<< .merge_file_xyJQxK
             'placeholder' => 'Page content slug',
             'description' => 'slug',
             'helper_text' => 'slug',
+=======
+            'placeholder' => 'Slug del contenuto pagina',
+>>>>>>> .merge_file_AHu5TL
             'tooltip' => '',
         ],
         'blocks' => [
@@ -70,55 +74,48 @@ return [
             'description' => '',
         ],
         'toggleColumns' => [
-            'label' => 'toggleColumns',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
-            'label' => 'reorderRecords',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
-            'label' => 'resetFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
-            'label' => 'applyFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
-            'label' => 'openFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'delete' => [
-            'label' => 'delete',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
-            'label' => 'edit',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
-            'label' => 'view',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
     ],
     'actions' => [
+<<<<<<< .merge_file_xyJQxK
         'view' => 'View Content',
         'create' => [
             'label' => 'create',
@@ -128,6 +125,11 @@ return [
         'activeLocale' => [
             'label' => 'activeLocale',
         ],
+=======
+        'view' => 'Visualizza Contenuto',
+        'edit' => 'Modifica Contenuto',
+        'delete' => 'Elimina Contenuto',
+>>>>>>> .merge_file_AHu5TL
     ],
     'messages' => [
         'created' => 'Content created successfully',
