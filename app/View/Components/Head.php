@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
+use Illuminate\Support\Str;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\View\Component;
@@ -191,7 +192,7 @@ final class Head extends Component
     {
         $root = rtrim(str_replace('/index.php', '', url('/')), '/');
 
-        return app()->environment('production') ? preg_replace('/^http:\/\//', 'https://', $root) : $root;
+        return app()->environment('production') ? Str::of($root)->replaceMatches('/^http:\/\//', 'https://')->toString() : $root;
     }
 
     /** `true` se la richiesta è già nella forma del canonical: nessun `index.php` nell'URL e nessun segmento vuoto o punto. */
