@@ -116,8 +116,20 @@ class PageSlugMiddleware
             return null;
         }
 
+        // Primo candidato: il percorso stesso (/events/my -> "events.my", file pages/events/my.json). È il più specifico:
+        // il nome della rotta Folio (es. "profile.view" per pages/profile/[id]) indica la pagina generica del contenitore
+        // e, se controllato per primo, nascondeva il middleware di una sotto-pagina (pages/profile/edit.json, "auth").
+        // Con il fallback di Folio (nome "laravel-folio", nessun parametro slug) è anche l'unico modo di trovare la pagina.
+        // Una sola convenzione: niente varianti con il trattino (events-my). Docs: Modules/Cms/docs/cms-subpages-folders.md
         /** @var list<string> $candidates */
         $candidates = [];
+        $segments = array_values(array_filter($request->segments(), is_string(...)));
+        if ($segments !== [] && \in_array($segments[0], array_keys((array) config('laravellocalization.supportedLocales', [])), true)) {
+            array_shift($segments);
+        }
+        if ($segments !== []) {
+            $candidates[] = implode('.', $segments);
+        }
 
         $name = $route->getName();
         if (\is_string($name) && $name !== '') {
