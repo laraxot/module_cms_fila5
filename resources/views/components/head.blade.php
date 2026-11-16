@@ -8,8 +8,7 @@
             document.documentElement.classList.add('dark');
         }
     </script>
-    @livewireStyles
+@livewireStyles
+    @filamentStyles
     @vite(['resources/css/app.css'], 'themes/'.$pubTheme)
-    @stack('head')
-    @stack('styles')
 </head>

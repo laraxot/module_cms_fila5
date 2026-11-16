@@ -72,7 +72,7 @@ Since this project uses **Folio** (not traditional `web.php` routes), a custom m
 2. If URL first segment is a supported locale → use that
 3. Otherwise → use default locale (`it`)
 
-**Applied via**: `app/Providers/FolioServiceProvider.php` → `Folio::path($pagesPath)->middleware(['*' => [SetFolioLocale::class]])`
+**Applied via**: `Modules/Cms/app/Providers/FolioVoltServiceProvider.php` → registrazione dei path Folio del tema attivo e dei moduli con `SetFolioLocale`.
 
 ### URL Structure
 ```
