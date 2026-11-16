@@ -53,10 +53,7 @@ laravel/Themes/One/
 npm run build
 
 # Pubblicazione
-<<<<<<< .merge_file_aHQ1WL
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_yMAB5R
 ```
 
 ## Riflessioni e Linee Guida
@@ -137,10 +134,7 @@ npm run build
    ls -la public/themes/One
 
    # Forza copia
-<<<<<<< .merge_file_aHQ1WL
    # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_yMAB5R
    ```
 
 3. **Problemi di Cache**

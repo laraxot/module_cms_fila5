@@ -4,71 +4,65 @@ declare(strict_types=1);
 
 return [
     'navigation' => [
-        'name' => 'Page Contents',
-        'plural' => 'Page Contents',
+        'name' => 'Contenuti Pagina',
+        'plural' => 'Contenuti Pagina',
         'group' => [
-            'name' => 'Content Management',
-            'description' => 'Manage the site page contents',
+            'name' => 'Gestione Contenuti',
+            'description' => 'Gestione dei contenuti delle pagine del sito',
         ],
-        'label' => 'Page Contents',
+        'label' => 'Contenuti Pagina',
         'sort' => '87',
         'icon' => 'heroicon-o-document-text',
     ],
     'fields' => [
         'id' => [
             'label' => 'ID',
-            'placeholder' => 'Page content ID',
+            'placeholder' => 'ID del contenuto pagina',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'name' => [
-            'label' => 'Name',
-            'placeholder' => 'Content name',
+            'label' => 'Nome',
+            'placeholder' => 'Nome del contenuto',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'slug' => [
             'label' => 'Slug',
-<<<<<<< .merge_file_xyJQxK
-            'placeholder' => 'Page content slug',
-            'description' => 'slug',
-            'helper_text' => 'slug',
-=======
             'placeholder' => 'Slug del contenuto pagina',
->>>>>>> .merge_file_AHu5TL
             'tooltip' => '',
         ],
         'blocks' => [
-            'label' => 'Blocks',
-            'placeholder' => 'Content blocks',
+            'label' => 'Blocchi',
+            'placeholder' => 'Blocchi di contenuto',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'created_at' => [
-            'label' => 'Creation Date',
+            'label' => 'Data Creazione',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'updated_at' => [
-            'label' => 'Last Modified',
+            'label' => 'Ultima Modifica',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'created_by' => [
-            'label' => 'Created by',
-            'placeholder' => 'Created by',
+            'label' => 'Creato da',
+            'placeholder' => 'Creato da',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'updated_by' => [
-            'label' => 'Updated by',
-            'placeholder' => 'Updated by',
+            'label' => 'Aggiornato da',
+            'placeholder' => 'Aggiornato da',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -115,31 +109,19 @@ return [
         ],
     ],
     'actions' => [
-<<<<<<< .merge_file_xyJQxK
-        'view' => 'View Content',
-        'create' => [
-            'label' => 'create',
-        ],
-        'edit' => 'Edit Content',
-        'delete' => 'Delete Content',
-        'activeLocale' => [
-            'label' => 'activeLocale',
-        ],
-=======
         'view' => 'Visualizza Contenuto',
         'edit' => 'Modifica Contenuto',
         'delete' => 'Elimina Contenuto',
->>>>>>> .merge_file_AHu5TL
     ],
     'messages' => [
-        'created' => 'Content created successfully',
-        'updated' => 'Content updated successfully',
-        'deleted' => 'Content deleted successfully',
+        'created' => 'Contenuto creato con successo',
+        'updated' => 'Contenuto aggiornato con successo',
+        'deleted' => 'Contenuto eliminato con successo',
     ],
     'validation' => [
         'name_required' => 'The name is required',
-        'slug_unique' => 'The slug must be unique',
-        'blocks_required' => 'Content blocks are required',
+        'slug_unique' => 'Lo slug deve essere unico',
+        'blocks_required' => 'I blocchi di contenuto sono obbligatori',
     ],
     'model' => [
         'label' => 'page content.model',
