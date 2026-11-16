@@ -1,6 +1,7 @@
-@livewire('notifications')
+@auth
+    @livewire('notifications')
+@endauth
 
-@filamentScripts
 @vite(['resources/js/app.js'], 'themes/'.$pubTheme)
 
 @stack('scripts')
