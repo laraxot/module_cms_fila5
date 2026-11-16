@@ -44,7 +44,7 @@ Riferimento: [Laravel Folio 13.x](https://laravel.com/docs/13.x/folio)
 | Dove **nasce** la rotta | File in `pages/` montato da `Folio::path()` | `Route::get()` in `web.php` |
 | Cosa fa `route('notifications')` | **Genera URL** verso pagina con `name('notifications')` | «Registra» la rotta |
 | Cosa fa `name('notifications')` | **Registra** il nome Folio sul file | Opzionale ma obbligatorio per `route()` |
-| Chi monta le cartelle | `FolioVoltServiceProvider` (Cms) | Ogni modulo con `web.php` |
+| Chi monta le cartelle | `FolioVoltServiceProvider` (Cms) — mai `App\Providers\FolioServiceProvider` | Ogni modulo/`App` con `Folio::path` o `web.php` |
 | Nome route | Inglese, allineato al path file | Italiano (`area-personale.*`) |
 
 **Zen:** il filesystem è il router. `web.php` è un secondo router — nel FO crea doppia verità, nomi fantasma e `RouteNotFoundException`.
