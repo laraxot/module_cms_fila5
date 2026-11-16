@@ -7,6 +7,10 @@ updated: 2026-09-26
 qmd: "vite errors"
 issues: []
 discussions: []
+<<<<<<< .merge_file_n7663j
+=======
+status: draft
+>>>>>>> .merge_file_3ClL9x
 ---
 
 # Gestione Errori Vite nei Temi
@@ -55,7 +59,11 @@ cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/[NomeTema]
 npm install
 
 # Compilazione tema
+<<<<<<< .merge_file_n7663j
 npm run copy
+=======
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
+>>>>>>> .merge_file_3ClL9x
 ```
 
 ### 3. Verifica Post-Compilazione
@@ -82,7 +90,11 @@ ls -la dist/
 ## Collegamenti Correlati
 - [Documentazione Generale Errori](/project_docs/errors/readme.md)
 - [Gestione Temi CMS](../themes/readme.md)
+<<<<<<< .merge_file_n7663j
 - [Processo di Deploy](../../project_docs/deployment/themes.md)
+=======
+- [Processo di Deploy](../../frontoffice/themes.md)
+>>>>>>> .merge_file_3ClL9x
 
 ## Note Tecniche
 - La compilazione deve essere eseguita per ogni tema individualmente
@@ -119,7 +131,11 @@ npm cache clean --force
 
 # Ricompilazione forzata
 rm -rf dist/ node_modules/
+<<<<<<< .merge_file_n7663j
 npm install && npm run copy
+=======
+npm install
+>>>>>>> .merge_file_3ClL9x
 ```
 
 ## Manutenzione
