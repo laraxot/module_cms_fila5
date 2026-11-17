@@ -53,6 +53,7 @@ class PageContent extends Component
      */
     public function render(): Factory|ViewContract
     {
+        /** @var view-string $view */
         $view = 'cms::components.page-content';
         $view_params = [];
 

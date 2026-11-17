@@ -108,6 +108,6 @@ return [
 - [Regole Traduzioni](../translations.md)
 
 ## Collegamenti tra versioni di namespaces.md
-* [namespaces.md](docs/conventions/namespaces.md)
-* [namespaces.md](laravel/modules/xot/docs/conventions/namespaces.md)
-* [namespaces.md](laravel/modules/cms/docs/conventions/namespaces.md)
+* [namespaces.md](namespaces.md)
+* [namespaces.md](namespaces.md)
+* [namespaces.md](namespaces.md)

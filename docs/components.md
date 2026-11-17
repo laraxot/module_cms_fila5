@@ -85,7 +85,7 @@ discussions: []
 @see laravel/Modules/Cms/docs/best-practices/page-rendering.md
 
 ## Collegamenti tra versioni di components.md
-* [components.md](laravel/modules/ui/docs/components.md)
-* [components.md](laravel/modules/ui/docs/themes/components.md)
-* [components.md](laravel/modules/cms/docs/components.md)
-* [components.md](laravel/themes/one/docs/components.md)
+* [components.md](components.md)
+* [components.md](components.md)
+* [components.md](components.md)
+* [components.md](components.md)

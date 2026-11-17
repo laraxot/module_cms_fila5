@@ -65,6 +65,7 @@ final class Page extends Component
 
     public function render(): ViewContract|Factory
     {
+        /** @var view-string $viewName */
         $viewName = 'cms::components.page';
 
         return view($viewName, array_merge($this->data, [

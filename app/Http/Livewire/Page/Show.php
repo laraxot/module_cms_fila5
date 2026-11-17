@@ -31,6 +31,7 @@ class Show extends Component
 
     public function render(): View|Factory
     {
+        /** @var view-string $viewName */
         $viewName = 'cms::livewire.page.show';
 
         return view($viewName, [

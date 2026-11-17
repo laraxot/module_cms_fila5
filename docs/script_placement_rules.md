@@ -68,7 +68,7 @@ ModuleName/
 ### Reference Projects
 
 - `base_laravelpizza`: Fully PHPStan compliant (0 errors)
-- `base_quaeris_fila5_mono`: Follows same pattern
+- `base_<nome progetto>_fila5_mono`: Follows same pattern
 
 ### Update History
 

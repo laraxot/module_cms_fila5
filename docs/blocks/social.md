@@ -150,10 +150,10 @@ Il blocco può essere utilizzato in vari contesti:
 ## Collegamenti
 
 - [Documentazione Filament Forms](../filament-forms.md)
-- [UI Components](../ui/components.md)
+- [UI Components](../components.md)
 - [Social Media Guidelines](../marketing/social-media.md)
-- [Analytics Integration](../marketing/analytics.md)
+- [Analytics Integration](../packages/analytics.md)
 
 ## Collegamenti tra versioni di social.md
-* [social.md](laravel/modules/tenant/docs/it/config/social.md)
-* [social.md](laravel/modules/cms/docs/blocks/social.md)
+* [social.md](social.md)
+* [social.md](social.md)

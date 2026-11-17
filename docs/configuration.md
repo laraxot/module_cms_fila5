@@ -167,11 +167,11 @@ if (!$result->isValid()) {
 ## Collegamenti
 
 - [Installazione](installation.md)
-- [Architettura](architecture.md)
+- [Architettura](frontoffice/architecture.md)
 - [API](api.md)
 - [Cache](cache.md)
 
 ## Collegamenti tra versioni di configuration.md
-* [configuration.md](docs/configuration.md)
-* [configuration.md](laravel/modules/xot/docs/configuration.md)
-* [configuration.md](laravel/modules/cms/docs/configuration.md)
+* [configuration.md](configuration.md)
+* [configuration.md](configuration.md)
+* [configuration.md](configuration.md)

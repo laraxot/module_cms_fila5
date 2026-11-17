@@ -466,4 +466,4 @@ npm run preview
 Se preferisci utilizzare un framework frontend moderno, puoi consultare le guide per:
 - [Creazione di un tema con Vue.js](create_theme_vue.md)
 - [Creazione di un tema con React](create_theme_react.md)
-- [Creazione di un tema con Laravel](create_theme.md)
+- [Creazione di un tema con Laravel](../create_theme.md)

@@ -46,7 +46,7 @@ ThemeName/
 
 ### 1. Verifica Preliminare
 ```bash
-cd /var/www/html/_bases/base_predict_fila3_mono/laravel/Themes/[NomeTema]
+cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/[NomeTema]
 ```
 
 ### 2. Processo di Compilazione
@@ -82,7 +82,7 @@ ls -la dist/
 ## Collegamenti Correlati
 - [Documentazione Generale Errori](/docs/errors/README.md)
 - [Gestione Temi CMS](../themes/README.md)
-- [Processo di Deploy](../../docs/deployment/THEMES.md)
+- [Processo di Deploy](../frontoffice/themes.md)
 
 ## Note Tecniche
 - La compilazione deve essere eseguita per ogni tema individualmente
@@ -125,4 +125,4 @@ npm install && npm run copy
 ## Manutenzione
 - Aggiornare regolarmente le dipendenze npm
 - Verificare la compatibilità con le versioni Laravel
-- Mantenere backup dei file di configurazione 
+- Mantenere backup dei file di configurazione

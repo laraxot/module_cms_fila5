@@ -16,7 +16,7 @@ discussions: []
 - [Struttura della Homepage](../frontend-architecture/struttura-homepage.md)
 - [Componenti Disponibili](../blocks.md)
 - [Come Funziona](../frontend-architecture/come-funziona.md)
-- [Best Practices](../frontend-architecture/best-practices.md)
+- [Best Practices](../best-practices.md)
 - [Esempio di Configurazione](../frontend-architecture/esempio-configurazione.md)
 - [Manutenzione](../frontend-architecture/debugging.md)
 

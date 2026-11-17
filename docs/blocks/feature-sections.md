@@ -90,5 +90,5 @@ Builder::make('content')
 
 - [Documentazione Filament Forms](../filament-forms.md)
 - [Gestione Contenuti](../content.md)
-- [UI Components](../ui/components.md)
+- [UI Components](../components.md)
 - [Heroicons](https://heroicons.com/)

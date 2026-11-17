@@ -247,8 +247,8 @@ git checkout -- Themes/*/resources/views/pages/
 ## Riferimenti
 
 - [Laravel Components Documentation](https://laravel.com/docs/blade#components)
-- [Best Practices per il Rendering delle Pagine](best-practices/page-rendering.md)
-- [Architettura del CMS](../architecture.md)
+- [Best Practices per il Rendering delle Pagine](../best-practices/page-rendering.md)
+- [Architettura del CMS](../frontoffice/architecture.md)
 
 ---
 title: "01 theme to components"

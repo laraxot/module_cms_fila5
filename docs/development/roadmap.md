@@ -296,8 +296,8 @@ discussions: []
 - [Livewire Documentation](https://livewire.laravel.com/docs)
 
 ### Collegamenti Interni
-- [Bottlenecks](bottlenecks.md)
-- [Best Practices](best-practices.md)
+- [Bottlenecks](../bottlenecks.md)
+- [Best Practices](../best-practices.md)
 ## Note
 - Le percentuali sono aggiornate mensilmente
 - I dettagli specifici sono disponibili nelle sottocartelle

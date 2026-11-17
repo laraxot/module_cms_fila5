@@ -102,7 +102,10 @@ final class Head extends Component
             $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
-        return view('cms::components.head', [
+        /** @var view-string $view */
+        $view = 'cms::components.head';
+
+        return view($view, [
             'pubTheme' => $meta->getPubTheme(),
         ]);
     }

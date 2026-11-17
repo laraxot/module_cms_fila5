@@ -17,7 +17,7 @@ Il sistema di gestione dei contenuti di il progetto è basato su un'architettura
 ## Componenti Principali
 
 ### PageContent
-- **Modello**: [`Modules\Cms\Models\PageContent`](../laravel/modules/cms/project_docs/page-content-management.md)
+- **Modello**: [`Modules\Cms\Models\PageContent`](page-content-management.md)
 - **Gestione**: Interfaccia admin Filament
 - **Storage**: File JSON con supporto multilingua
 - **Funzionalità**: Blocchi di contenuto flessibili e riutilizzabili
@@ -96,8 +96,8 @@ laravel/
 - Monitorare le dimensioni
 
 ## Links
-- [Documentazione PageContent](../laravel/modules/cms/project_docs/page-content-management.md)
-- [Filament Resources](../laravel/modules/cms/project_docs/filament-resources.md)
+- [Documentazione PageContent](page-content-management.md)
+- [Filament Resources](filament-resources.md)
 - [Performance](performance.md)
 
 ## Note
@@ -105,7 +105,7 @@ Questa documentazione è parte del sistema di documentazione di il progetto. Per
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](architecture.md) - Architettura del sistema CMS
+- [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
 - [Gestione Pagine](page-management.md) - Sistema di gestione pagine
 - [Storage](content-storage.md) - Archiviazione contenuti
 - [Mapping JSON](content_json_mapping.md) - Mappatura JSON

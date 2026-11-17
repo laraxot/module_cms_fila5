@@ -52,5 +52,5 @@ Quando aggiungi nuovi componenti Filament, assicurati di:
 3. Mantenere aggiornata la documentazione in entrambi i moduli
 
 ## Collegamenti tra versioni di user-link.md
-* [user-link.md](laravel/modules/lang/docs/user-link.md)
-* [user-link.md](laravel/modules/cms/docs/user-link.md)
+* [user-link.md](user-link.md)
+* [user-link.md](user-link.md)

@@ -94,6 +94,6 @@ Builder::make('content')
 ## Collegamenti
 
 - [Documentazione Filament Forms](../filament-forms.md)
-- [UI Components](../ui/components.md)
+- [UI Components](../components.md)
 - [Best Practices UX](../ui/ux-guidelines.md)
 - [Accessibilità](../ui/accessibility.md)

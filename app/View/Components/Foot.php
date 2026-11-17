@@ -26,7 +26,10 @@ final class Foot extends Component
 {
     public function render(): ViewContract
     {
-        return view('cms::components.foot', [
+        /** @var view-string $view */
+        $view = 'cms::components.foot';
+
+        return view($view, [
             'pubTheme' => MetatagData::make()->getPubTheme(),
         ]);
     }
