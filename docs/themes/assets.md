@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "assets"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Gestione degli Assets dei Temi
@@ -44,20 +43,16 @@ status: draft
 ## Best Practices
 
 1. **Sviluppo**
-<<<<<<< .merge_file_HV41t7
    - niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
-=======
+
    - Utilizzare `npm run dev`
->>>>>>> .merge_file_OQg5Zq
    - Verificare il corretto caricamento degli assets
    - Mantenere la documentazione aggiornata
 
 2. **Produzione**
-<<<<<<< .merge_file_HV41t7
    - niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
-=======
+
    - Eseguire `npm run build` (servito via symlink, niente copy)
->>>>>>> .merge_file_OQg5Zq
    - Verificare la presenza e l'accessibilità degli assets
    - Testare il funzionamento completo del tema
 
@@ -118,6 +113,6 @@ status: draft
    - Verificare i timestamp dei file
 
 ## Collegamenti tra versioni di assets.md
-* [assets.md](laravel/modules/xot/docs/assets.md)
-* [assets.md](laravel/modules/cms/docs/themes/assets.md)
-* [assets.md](laravel/themes/one/docs/assets.md)
+* [assets.md](assets.md)
+* [assets.md](assets.md)
+* [assets.md](assets.md)

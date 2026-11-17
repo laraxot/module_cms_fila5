@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "phpstan fixes sumy"
 issues: []
 discussions: []
-status: draft
 ---
 
 # PHPStan Fixes Summary - CMS Module
@@ -23,7 +22,7 @@ status: draft
 ## 🔧 Specific Fixes Applied
 
 ### 1. ProfileContract References (18 files)
-**Problem**: Models referenced non-existent `Modules\Quaeris\Models\Profile`
+**Problem**: Models referenced non-existent `Modules\<nome progetto>\Models\Profile`
 **Solution**: Updated to use `Modules\Xot\Contracts\ProfileContract`
 
 **Affected Models**:

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "html"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Componenti HTML

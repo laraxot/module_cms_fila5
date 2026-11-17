@@ -7,13 +7,12 @@ updated: 2026-09-26
 qmd: "missing features analysis"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Analisi Funzionalità Mancanti - Modulo Cms
 
-**Data Analisi**: [DATE]  
-**Versione LimeSurvey Upstream**: 5.4.x+  
+**Data Analisi**: [DATE]
+**Versione LimeSurvey Upstream**: 5.4.x+
 **Repository Upstream**: https://github.com/LimeSurvey/LimeSurvey
 
 ## Scopo del Modulo
@@ -168,9 +167,18 @@ Nessuna funzionalità critica mancante - il modulo Cms è ben implementato
 
 ## Collegamenti
 
-- [Modulo Quaeris](../quaeris/docs/readme.md)
+- [Modulo <nome progetto>](../<nome progetto>/docs/readme.md)
 - [Modulo Limesurvey](../limesurvey/docs/readme.md)
 - [Cms README](./README.md)
 
 ---
+
+title: "missing features analysis"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "missing features analysis"
+issues: []
+discussions: []
 **Prossima Revisione**: [DATE]

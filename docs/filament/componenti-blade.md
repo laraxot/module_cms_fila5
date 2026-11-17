@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "componenti blade"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Componenti Blade di Filament
@@ -163,5 +162,5 @@ Per domande o problemi con i componenti Filament:
 - [Personalizzazioni avanzate Filament](../filament-personalizzazioni-avanzate.md)
 
 ## Collegamenti tra versioni di componenti-blade.md
-* [componenti-blade.md](docs/filament/componenti-blade.md)
-* [componenti-blade.md](laravel/modules/cms/docs/filament/componenti-blade.md)
+* [componenti-blade.md](componenti-blade.md)
+* [componenti-blade.md](componenti-blade.md)

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "test smtp page"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Test SMTP in il progetto
@@ -59,6 +58,6 @@ MAIL_FROM_NAME="il progetto"
 MAIL_FROM_NAME="<main module>"
 ```
 ## Collegamenti tra versioni di test-smtp-page.md
-* [test-smtp-page.md](laravel/modules/notify/project_docs/test-smtp-page.md)
-* [test-smtp-page.md](laravel/modules/cms/project_docs/test-smtp-page.md)
+* [test-smtp-page.md](test-smtp-page.md)
+* [test-smtp-page.md](test-smtp-page.md)
 

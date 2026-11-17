@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "page content management"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Gestione Contenuti Pagine
@@ -19,7 +18,7 @@ Questo documento fornisce una panoramica del sistema di gestione dei contenuti d
 ## Collegamenti
 
 ### Documentazione Completa
-- [Documentazione Modulo Cms](../laravel/modules/cms/project_docs/page-content-management.md)
+- [Documentazione Modulo Cms](page-content-management.md)
 
 ### Moduli Correlati
 - [Documentazione UI](../laravel/modules/ui/project_docs/readme.md)

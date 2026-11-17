@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "theme vite manifest workflow"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Theme Vite Manifest Workflow
@@ -35,10 +34,7 @@ Per i temi con build separata il contratto operativo e':
 ```bash
 npm install
 npm run build
-<<<<<<< .merge_file_LR7UYK
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_A0LhRE
 ```
 
 `build` genera il manifest del tema.

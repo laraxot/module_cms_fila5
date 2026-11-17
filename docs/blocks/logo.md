@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "logo"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Logo Block

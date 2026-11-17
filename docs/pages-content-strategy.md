@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "pages content strategy"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Strategia Contenuti Pagine - <main module>
@@ -110,6 +109,6 @@ La pagina servizi deve comunicare:
 ## Collegamenti Strategici
 
 - [Content Management](content-management.md)
-- [UI Components](../ui/project_docs/components.md)
+- [UI Components](components.md)
 - [Theme Blocks](../../themes/one/project_docs/blocks.md)
 - [User Experience](../../../../docs/project/frontend/ux-guidelines.md)

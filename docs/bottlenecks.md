@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "bottlenecks"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Colli di Bottiglia e Soluzioni - Modulo Cms
@@ -944,14 +943,14 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 ## Collegamenti
 - [Roadmap Principale](./roadmap.md)
 - [Convenzioni Namespace Filament](./convenzioni-namespace-filament.md)
-- [Best Practices](../../Xot/docs/best-practices.md)
+- [Best Practices](best-practices.md)
 - [Struttura Moduli](../xot/docs/module_structure.md)
 
 ## Collegamenti tra versioni di BOTTLENECKS.md
-* [BOTTLENECKS.md](../../Xot/docs/bottlenecks.md)
-* [BOTTLENECKS.md](../../User/docs/bottlenecks.md)
-* [BOTTLENECKS.md](../../Media/docs/bottlenecks.md)
-* [BOTTLENECKS.md](laravel/modules/cms/docs/bottlenecks.md)
+* [BOTTLENECKS.md](bottlenecks.md)
+* [BOTTLENECKS.md](bottlenecks.md)
+* [BOTTLENECKS.md](bottlenecks.md)
+* [BOTTLENECKS.md](bottlenecks.md)
 
 ## Collegamenti tra versioni di bottlenecks.md
 * [bottlenecks.md](../../../../bashscripts/docs/bottlenecks.md)
@@ -959,14 +958,14 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 * [bottlenecks.md](../../chart/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../Gdpr/docs/bottlenecks.md)
 * [bottlenecks.md](../../Gdpr/docs/performance/bottlenecks.md)
-* [bottlenecks.md](../../Xot/docs/bottlenecks.md)
+* [bottlenecks.md](../../xot/docs/bottlenecks.md)
 * [bottlenecks.md](../../xot/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../xot/docs/roadmap/bottlenecks.md)
 * [bottlenecks.md](../../dental/docs/bottlenecks.md)
 * [bottlenecks.md](../../User/docs/bottlenecks.md)
 * [bottlenecks.md](../../User/docs/roadmap/bottlenecks.md)
-* [bottlenecks.md](../../UI/docs/bottlenecks.md)
-* [bottlenecks.md](../../UI/docs/roadmap/bottlenecks.md)
+* [bottlenecks.md](../../ui/docs/bottlenecks.md)
+* [bottlenecks.md](../../ui/docs/roadmap/bottlenecks.md)
 * [bottlenecks.md](../../Lang/docs/bottlenecks.md)
 * [bottlenecks.md](../../Lang/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../Job/docs/performance/bottlenecks.md)

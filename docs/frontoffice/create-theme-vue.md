@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "create theme vue"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Creazione di un Tema con Vue
@@ -218,10 +217,7 @@ npm run preview
 
 3. **Copiatura degli Asset**
 ```bash
-<<<<<<< .merge_file_MNaw3h
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_kWNSxu
 ```
 
 ## Troubleshooting
@@ -253,6 +249,6 @@ npm run preview
 ## Alternative
 
 Se preferisci utilizzare un altro approccio, puoi consultare le guide per:
-- [Creazione di un tema con Volt, Folio e Filament](create-theme-volt-folio-filament.md)
-- [Creazione di un tema con React](create-theme-react.md)
+- [Creazione di un tema con Volt, Folio e Filament](create_theme_volt_folio_filament.md)
+- [Creazione di un tema con React](create_theme_react.md)
 - [Creazione di un tema con Laravel](../create_theme.md)

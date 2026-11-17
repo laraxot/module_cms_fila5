@@ -53,7 +53,7 @@ ThemeName/
 
 ### 1. Verifica Preliminare
 ```bash
-cd /var/www/html/_bases/base_predict_fila3_mono/laravel/Themes/[NomeTema]
+cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/[NomeTema]
 ```
 
 ### 2. Processo di Compilazione
@@ -62,10 +62,7 @@ cd /var/www/html/_bases/base_predict_fila3_mono/laravel/Themes/[NomeTema]
 npm install
 
 # Compilazione tema
-<<<<<<< .merge_file_IHnoeW
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_AkQxkG
 ```
 
 ### 3. Verifica Post-Compilazione
@@ -129,14 +126,12 @@ npm cache clean --force
 
 # Ricompilazione forzata
 rm -rf dist/ node_modules/
-<<<<<<< .merge_file_IHnoeW
 npm install
-=======
+
 npm install && npm run build
->>>>>>> .merge_file_AkQxkG
 ```
 
 ## Manutenzione
 - Aggiornare regolarmente le dipendenze npm
 - Verificare la compatibilità con le versioni Laravel
-- Mantenere backup dei file di configurazione 
+- Mantenere backup dei file di configurazione

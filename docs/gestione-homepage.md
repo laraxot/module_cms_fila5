@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "gestione homepage"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Gestione della Homepage in il progetto
@@ -121,8 +120,8 @@ I contenuti della homepage sono gestiti attraverso un sistema basato su JSON che
 
 Per i dettagli tecnici sulla gestione dei contenuti, consultare:
 - [Documentazione Tecnica CMS](../laravel/modules/cms/project_docs/homepage.md)
-- [Gestione dei Blocchi](../laravel/modules/cms/project_docs/content-blocks.md)
-- [Sistema dei Temi](../laravel/modules/cms/project_docs/themes.md)
+- [Gestione dei Blocchi](blocks/content-blocks.md)
+- [Sistema dei Temi](frontoffice/themes.md)
 
 ## Collegamenti alla Documentazione
 

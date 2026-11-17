@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "optimization"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Ottimizzazione Performance CMS
@@ -128,6 +127,6 @@ Le altre ottimizzazioni sono in fase di implementazione:
 - [Best Practices Performance](../../../best-practices.md#performance)
 
 ## Collegamenti tra versioni di optimization.md
-* [optimization.md](laravel/modules/xot/docs/roadmap/performance/optimization.md)
-* [optimization.md](../../../../../Job/docs/optimization.md)
-* [optimization.md](laravel/modules/cms/docs/roadmap/performance/optimization.md)
+* [optimization.md](optimization.md)
+* [optimization.md](optimization.md)
+* [optimization.md](optimization.md)

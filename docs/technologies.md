@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "technologies"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Tecnologie
