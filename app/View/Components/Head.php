@@ -49,6 +49,9 @@ final class Head extends Component
         public readonly ?string $description = null,
         public readonly ?bool $homepage = null,
         public readonly ?string $themeColor = null,
+        // false: niente CSS dei pannelli Filament (e font Inter) ne' script del tema scuro. Per i siti
+        // pubblici che non usano componenti Filament: meno peso su telefono. Default true: nulla cambia.
+        public readonly bool $panelAssets = true,
     ) {}
 
     public function render(): ViewContract
@@ -104,6 +107,7 @@ final class Head extends Component
 
         return view('cms::components.head', [
             'pubTheme' => $meta->getPubTheme(),
+            'panelAssets' => $this->panelAssets,
         ]);
     }
 
