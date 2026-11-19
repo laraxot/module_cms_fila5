@@ -90,6 +90,14 @@ final class Head extends Component
 
         $this->applyIcons($meta);
 
+        // Verifica della proprietà del sito (Search Console, Bing, Yandex): basta in home, solo i token configurati.
+        // @see Modules/Seo/docs/adr/search-engine-presence.md
+        if ($isHome) {
+            foreach ($meta->getSiteVerifications() as $name => $token) {
+                HeadManager::meta($name, $token);
+            }
+        }
+
         // Una pagina `noindex` non dichiara un canonical (segnale contraddittorio) né alternative linguistiche né dati strutturati.
         // Le alternative linguistiche si derivano dall'URL richiesto: su una variante non canonica (`/it/./faq`, `/index.php/it/faq`)
         // le dichiara solo la forma pulita a cui punta il canonical.
@@ -302,6 +310,8 @@ final class Head extends Component
                 rootUrl: $this->siteRoot(),
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
                 languages: $siteLocales,
+                description: $isHome ? $description : null,
+                sameAs: $isHome ? $meta->getSameAs() : [],
             );
 
             foreach ($schemas as $schema) {
