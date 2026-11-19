@@ -208,11 +208,19 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 
 ## Documentation Index
 
+<<<<<<< HEAD
 - [Architecture Details](./architecture.md) — System design and patterns
 - [Block System](./block-system.md) — Creating and using blocks
 - [Frontend Rendering](./frontend-rendering.md) — Display components
 - [Folio Integration](./folio-integration.md) — File-based routing
 - [Troubleshooting](./troubleshooting.md) — Common issues and solutions
+=======
+- [Architecture Details](frontoffice/architecture.md) — System design and patterns
+- [Block System](./block-system.md) — Creating and using blocks
+- [Frontend Rendering](./frontend-rendering.md) — Display components
+- [Folio Integration](./folio-integration.md) — File-based routing
+- [Troubleshooting](frontoffice/troubleshooting.md) — Common issues and solutions
+>>>>>>> laraxot/dev
 
 ### Head SEO condiviso
 

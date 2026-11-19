@@ -120,8 +120,13 @@ $value = $data['key']; // PHPStan: offsetAccess.nonOffsetAccessible
 
 ## Related Documents
 
+<<<<<<< HEAD
 - [Module Architecture](./architecture.md)
 - [Content Blocks System](./content-blocks.md)
+=======
+- [Module Architecture](frontoffice/architecture.md)
+- [Content Blocks System](blocks/content-blocks.md)
+>>>>>>> laraxot/dev
 - [BlockData Implementation](../app/Datas/BlockData.php)
 
 ## Compliance

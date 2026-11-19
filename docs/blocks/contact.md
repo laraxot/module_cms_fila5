@@ -134,6 +134,10 @@ Non usare `<x-pub_theme::components.blocks.contact.info />`, perche' `view:cache
 ## Collegamenti
 
 - [Documentazione Filament Forms](../filament-forms.md)
+<<<<<<< HEAD
 - [UI Components](../ui/components.md)
+=======
+- [UI Components](../components.md)
+>>>>>>> laraxot/dev
 - [Maps Integration](../integrations/maps.md)
 - [Schema.org Guidelines](../seo/schema-org.md)

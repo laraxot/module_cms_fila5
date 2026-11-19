@@ -240,5 +240,9 @@ return [
 
 ## Collegamenti
 - [Documentazione User Dropdown](./user-dropdown.md)
+<<<<<<< HEAD
 - [Best Practices UI/UX](./guida-implementazione-ux.md)
+=======
+- [Best Practices UI/UX](../guida-implementazione-ux.md)
+>>>>>>> laraxot/dev
 - [Documentazione Accessibilità](./accessibility.md)

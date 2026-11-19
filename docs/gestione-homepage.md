@@ -120,8 +120,13 @@ I contenuti della homepage sono gestiti attraverso un sistema basato su JSON che
 
 Per i dettagli tecnici sulla gestione dei contenuti, consultare:
 - [Documentazione Tecnica CMS](../laravel/modules/cms/project_docs/homepage.md)
+<<<<<<< HEAD
 - [Gestione dei Blocchi](../laravel/modules/cms/project_docs/content-blocks.md)
 - [Sistema dei Temi](../laravel/modules/cms/project_docs/themes.md)
+=======
+- [Gestione dei Blocchi](blocks/content-blocks.md)
+- [Sistema dei Temi](frontoffice/themes.md)
+>>>>>>> laraxot/dev
 
 ## Collegamenti alla Documentazione
 

@@ -1,9 +1,15 @@
 {
     "name": "Cms",
     "alias": "cms",
+<<<<<<< HEAD
     "description": "Content Management System con Laravel Folio e Livewire Volt per gestione pagine e contenuti dinamici",
     "keywords": ["cms", "content", "pages", "folio", "volt", "livewire"],
     "priority": 3,
+=======
+    "description": "Content Management System con Laravel Folio e Livewire Volt per gestione di pagine, sezioni, menu e contenuti dinamici",
+    "keywords": ["cms", "content", "pages", "folio", "volt", "livewire"],
+    "priority": 0,
+>>>>>>> laraxot/dev
     "active": 1,
     "order": 3,
     "providers": [
@@ -11,7 +17,15 @@
         "Modules\\Cms\\Providers\\Filament\\AdminPanelProvider",
         "Modules\\Cms\\Providers\\FolioVoltServiceProvider"
     ],
+<<<<<<< HEAD
     "aliases": [],
     "files": [],
     "requires": []
+=======
+    "aliases": {},
+    "files": [],
+    "requires": ["Xot", "Tenant", "Lang", "User", "UI", "Media"],
+    "minimumCoreVersion": "10.0",
+    "phpVersion": "^8.3"
+>>>>>>> laraxot/dev
 }

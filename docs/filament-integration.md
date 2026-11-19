@@ -137,13 +137,21 @@ public function test_filament_components_rendering()
 ## Collegamenti
 
 - [Documentazione CMS](../README.md)
+<<<<<<< HEAD
 - [Best Practices](../best_practices/theme-reusability.md)
+=======
+- [Best Practices](best-practices/theme-reusability.md)
+>>>>>>> laraxot/dev
 - [Configurazione](../config.md)
 - [Testing](../testing.md)
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
+<<<<<<< HEAD
 - [Architettura](architecture.md) - Architettura del sistema CMS
+=======
+- [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
+>>>>>>> laraxot/dev
 - [Componenti](filament-components.md) - Componenti Filament
 - [Form](filament-forms.md) - Sistema di form
 - [Resources](filament-resources.md) - Gestione risorse

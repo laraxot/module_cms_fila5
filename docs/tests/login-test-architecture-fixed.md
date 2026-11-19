@@ -143,7 +143,11 @@ test('any user type can login successfully', function (): void {
 
 ## 📖 **Collegamenti**
 
+<<<<<<< HEAD
 - [XotData Architecture](../../modules/xot/docs/best-practices.md)
+=======
+- [XotData Architecture](../best-practices.md)
+>>>>>>> laraxot/dev
 - [UserContract Interface](../../Modules/Xot/Contracts/UserContract.php)
 - [Modular Testing Guide](../../../docs/testing/modular-independence.md)
 

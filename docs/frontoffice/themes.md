@@ -170,6 +170,12 @@ npm run build
 - [Laravel Mix](https://laravel-mix.com/)
 
 ## Collegamenti tra versioni di themes.md
+<<<<<<< HEAD
 * [themes.md](docs/rules/themes.md)
 * [themes.md](laravel/modules/xot/docs/themes.md)
 * [themes.md](laravel/modules/cms/docs/frontoffice/themes.md)
+=======
+* [themes.md](themes.md)
+* [themes.md](themes.md)
+* [themes.md](themes.md)
+>>>>>>> laraxot/dev

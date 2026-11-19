@@ -144,6 +144,10 @@ $rows = $this->getSushiRows();
 - Migliore gestione degli errori
 
 ## Collegamenti Correlati
+<<<<<<< HEAD
 - [Architettura Modulo Cms](./architecture.md)
+=======
+- [Architettura Modulo Cms](frontoffice/architecture.md)
+>>>>>>> laraxot/dev
 - [Middleware System](./middleware-system.md)
 - [Model Management](./model-management.md)

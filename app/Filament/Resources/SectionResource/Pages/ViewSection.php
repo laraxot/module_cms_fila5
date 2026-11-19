@@ -17,6 +17,10 @@ class ViewSection extends LangBaseViewRecord
     protected function getInfolistSchema(): array
     {
         // $view='pub_theme::components.sections.'.$this->record->slug;
+<<<<<<< HEAD
+=======
+        /** @var view-string $view */
+>>>>>>> laraxot/dev
         $view = 'cms::sections.preview';
 
         return [

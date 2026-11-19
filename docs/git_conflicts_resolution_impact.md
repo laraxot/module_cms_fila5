@@ -164,7 +164,11 @@ php artisan lang:check
 ### Documentazione Cms
 - [Content Management](content-management.md)
 - [Filament Integration](filament-integration.md)
+<<<<<<< HEAD
 - [Architecture](architecture.md)
+=======
+- [Architecture](frontoffice/architecture.md)
+>>>>>>> laraxot/dev
 
 ## Note per Sviluppatori Cms
 
@@ -206,7 +210,11 @@ php artisan lang:check
 ### Documentazione Cms
 - [Content Management](content-management.md)
 - [Filament Integration](filament-integration.md)
+<<<<<<< HEAD
 - [Architecture](architecture.md)
+=======
+- [Architecture](frontoffice/architecture.md)
+>>>>>>> laraxot/dev
 
 ---
 

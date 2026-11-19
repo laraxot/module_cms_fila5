@@ -14,7 +14,14 @@ test('page component merges route context into block data', function (): void {
         'active' => true,
     ];
 
+<<<<<<< HEAD
     $html = view('cms::components.page', [
+=======
+    /** @var view-string $pageView */
+    $pageView = 'cms::components.page';
+
+    $html = view($pageView, [
+>>>>>>> laraxot/dev
         'blocks' => [$block],
         'side' => 'content',
         'slug' => 'events.view',
@@ -44,7 +51,14 @@ test('page component lets page data bag override block defaults', function (): v
         'active' => true,
     ];
 
+<<<<<<< HEAD
     $html = view('cms::components.page', [
+=======
+    /** @var view-string $pageView */
+    $pageView = 'cms::components.page';
+
+    $html = view($pageView, [
+>>>>>>> laraxot/dev
         'blocks' => [$block],
         'side' => 'content',
         'slug' => 'tickets.confirmation',

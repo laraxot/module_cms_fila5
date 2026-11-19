@@ -169,5 +169,9 @@ I componenti HTML del modulo CMS seguono le best practices HTML5 e utilizzano ta
 
 ## Collegamenti
 - [Elementi Semantici](../html/semantic.md)
+<<<<<<< HEAD
 - [Struttura Layout](../structure/layout.md)
+=======
+- [Struttura Layout](../architecture/structure/layout.md)
+>>>>>>> laraxot/dev
 - [Accessibilità](../accessibility/readme.md)

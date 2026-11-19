@@ -88,7 +88,11 @@ ls -la dist/
 ## Collegamenti Correlati
 - [Documentazione Generale Errori](/project_docs/errors/readme.md)
 - [Gestione Temi CMS](../themes/readme.md)
+<<<<<<< HEAD
 - [Processo di Deploy](../../project_docs/deployment/themes.md)
+=======
+- [Processo di Deploy](../frontoffice/themes.md)
+>>>>>>> laraxot/dev
 
 ## Note Tecniche
 - La compilazione deve essere eseguita per ogni tema individualmente

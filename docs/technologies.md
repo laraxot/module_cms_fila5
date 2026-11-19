@@ -120,7 +120,11 @@ Questo documento descrive le tecnologie principali utilizzate nel modulo CMS.
 
 ## Collegamenti
 
+<<<<<<< HEAD
 - [Architettura](architecture.md)
+=======
+- [Architettura](frontoffice/architecture.md)
+>>>>>>> laraxot/dev
 - [API](api/readme.md)
 - [Frontend](frontoffice/README.md)
 - [Sviluppo](developer/readme.md)

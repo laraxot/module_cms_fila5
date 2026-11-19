@@ -53,6 +53,10 @@ class PageContent extends Component
      */
     public function render(): Factory|ViewContract
     {
+<<<<<<< HEAD
+=======
+        /** @var view-string $view */
+>>>>>>> laraxot/dev
         $view = 'cms::components.page-content';
         $view_params = [];
 

@@ -122,9 +122,17 @@ return [
 - [Resources](https://filamentphp.com/project_docs/3.x/resources) - Gestione risorse
 - [Best Practices](https://filamentphp.com/project_docs/3.x/resources/best-practices) - Best practices
 ## Collegamenti tra versioni di filament-resources.md
+<<<<<<< HEAD
 * [filament-resources.md](docs/tecnico/filament/filament-resources.md)
 * [filament-resources.md](docs/regole/filament-resources.md)
 * [filament-resources.md](laravel/modules/gdpr/project_docs/filament-resources.md)
 * [filament-resources.md](laravel/modules/xot/project_docs/filament-resources.md)
 * [filament-resources.md](laravel/modules/cms/project_docs/filament-resources.md)
+=======
+* [filament-resources.md](filament-resources.md)
+* [filament-resources.md](filament-resources.md)
+* [filament-resources.md](filament-resources.md)
+* [filament-resources.md](filament-resources.md)
+* [filament-resources.md](filament-resources.md)
+>>>>>>> laraxot/dev
 

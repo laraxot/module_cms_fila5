@@ -76,5 +76,10 @@ myChart.showLoading();
 In questo modo, puoi utilizzare Echarts con Laravel e Apache per creare un grafico e visualizzare i dati. Tuttavia, questo è solo un semplice esempio e puoi personalizzare il codice per soddisfare le tue esigenze specifiche.
 
 ## Collegamenti tra versioni di echarts.md
+<<<<<<< HEAD
 * [echarts.md](laravel/modules/chart/docs/advanced/echarts.md)
 * [echarts.md](laravel/modules/cms/docs/advanced/echarts.md)
+=======
+* [echarts.md](echarts.md)
+* [echarts.md](echarts.md)
+>>>>>>> laraxot/dev

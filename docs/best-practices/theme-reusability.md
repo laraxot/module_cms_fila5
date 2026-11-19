@@ -194,6 +194,12 @@ Prima di committare modifiche a un tema, verificare che:
 - [Testing dei Temi](/laravel/modules/cms/docs/themes/testing.md)
 
 ## Collegamenti tra versioni di theme-reusability.md
+<<<<<<< HEAD
 * [theme-reusability.md](laravel/modules/cms/docs/best-practices/theme-reusability.md)
 * [theme-reusability.md](laravel/themes/one/docs/best_practices/theme-reusability.md)
 * [theme-reusability.md](laravel/themes/one/docs/theme-reusability.md)
+=======
+* [theme-reusability.md](theme-reusability.md)
+* [theme-reusability.md](theme-reusability.md)
+* [theme-reusability.md](theme-reusability.md)
+>>>>>>> laraxot/dev

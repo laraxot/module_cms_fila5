@@ -158,7 +158,11 @@ Contenuto autonomo con didascalia:
 | `<time>` | Data/ora |
 
 ## Collegamenti
+<<<<<<< HEAD
 - [Struttura Layout](../structure/layout.md)
+=======
+- [Struttura Layout](../architecture/structure/layout.md)
+>>>>>>> laraxot/dev
 - [Componenti HTML](../components/html.md)
 - [Accessibilità](../accessibility/readme.md)
 

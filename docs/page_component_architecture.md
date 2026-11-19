@@ -337,7 +337,11 @@ class BlockData extends Data {
 ### Module Documentation
 
 - → [Cms Module Docs](Modules/Cms/docs/README.md) - Cms documentation
+<<<<<<< HEAD
 - → [BlockData](Modules/Cms/docs/block-data.md) - Block data structure
+=======
+- → [BlockData](data/block-data.md) - Block data structure
+>>>>>>> laraxot/dev
 - → [Page Model](Modules/Cms/docs/page-model.md) - Page model docs
 
 ---

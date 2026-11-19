@@ -188,5 +188,9 @@ class HeaderBlock extends Block
 
 - [Documentazione Blocchi](content-blocks.md)
 - [Gestione Navigazione](../navigation.md)
+<<<<<<< HEAD
 - [Best Practices UI](../../ui/docs/best-practices.md)
+=======
+- [Best Practices UI](../best-practices.md)
+>>>>>>> laraxot/dev
 - [Accessibilità](../../ui/docs/accessibility.md)

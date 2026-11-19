@@ -31,6 +31,10 @@ class Show extends Component
 
     public function render(): View|Factory
     {
+<<<<<<< HEAD
+=======
+        /** @var view-string $viewName */
+>>>>>>> laraxot/dev
         $viewName = 'cms::livewire.page.show';
 
         return view($viewName, [

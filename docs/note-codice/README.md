@@ -10,7 +10,11 @@ updated_at: '2026-11-12'
 # Note di codice
 
 Appunti che stavano dentro `app/`, spostati qui il 2026-11-12
+<<<<<<< HEAD
 ([module_quaeris_fila5#64](https://github.com/laraxot/module_quaeris_fila5/issues/64)).
+=======
+([module_<nome progetto>_fila5#64](https://github.com/laraxot/module_<nome progetto>_fila5/issues/64)).
+>>>>>>> laraxot/dev
 
 ## Perche' si sono spostati
 

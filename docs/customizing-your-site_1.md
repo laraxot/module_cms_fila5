@@ -95,8 +95,16 @@ class Foo extends bar
 
 
 ---
+<<<<<<< HEAD
 * [customizing-your-site.md](laravel/Modules/Gdpr/docs/customizing-your-site.md)
 * [customizing-your-site.md](laravel/Modules/Xot/docs/customizing-your-site.md)
 * [customizing-your-site.md](laravel/Modules/UI/docs/customizing-your-site.md)
 * [customizing-your-site.md](laravel/Modules/Tenant/docs/it/customizing-your-site.md)
 * [customizing-your-site.md](laravel/Modules/Cms/docs/customizing-your-site.md)
+=======
+* [customizing-your-site.md](customizing-your-site.md)
+* [customizing-your-site.md](customizing-your-site.md)
+* [customizing-your-site.md](customizing-your-site.md)
+* [customizing-your-site.md](customizing-your-site.md)
+* [customizing-your-site.md](customizing-your-site.md)
+>>>>>>> laraxot/dev

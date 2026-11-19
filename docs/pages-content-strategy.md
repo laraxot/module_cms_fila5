@@ -109,6 +109,10 @@ La pagina servizi deve comunicare:
 ## Collegamenti Strategici
 
 - [Content Management](content-management.md)
+<<<<<<< HEAD
 - [UI Components](../ui/project_docs/components.md)
+=======
+- [UI Components](components.md)
+>>>>>>> laraxot/dev
 - [Theme Blocks](../../themes/one/project_docs/blocks.md)
 - [User Experience](../../../../docs/project/frontend/ux-guidelines.md)
