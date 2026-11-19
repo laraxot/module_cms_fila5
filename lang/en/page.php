@@ -1,0 +1,206 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'navigation' => [
+        'name' => 'Page',
+        'plural' => 'Pages',
+        'group' => [
+            'name' => 'Content Management',
+            'description' => 'Manage website pages',
+        ],
+        'label' => 'Pages',
+        'sort' => '5',
+        'icon' => 'heroicon-o-document',
+    ],
+    'fields' => [
+        'id' => [
+            'label' => 'ID',
+            'placeholder' => 'Page ID',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'title' => [
+            'label' => 'Title',
+            'placeholder' => 'Page title',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'slug' => [
+            'label' => 'Slug',
+            'placeholder' => 'Page slug',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'content' => [
+            'label' => 'Content',
+            'placeholder' => 'Page content',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'meta_title' => [
+            'label' => 'Meta Title',
+            'placeholder' => 'Meta title for SEO',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'meta_description' => [
+            'label' => 'Meta Description',
+            'placeholder' => 'Meta description for SEO',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'status' => [
+            'label' => 'Status',
+            'placeholder' => 'Page status',
+            'options' => [
+                'published' => 'Published',
+                'draft' => 'Draft',
+                'scheduled' => 'Scheduled',
+                'archived' => 'Archived',
+            ],
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'layout' => [
+            'label' => 'Layout',
+            'placeholder' => 'Page layout',
+            'options' => [
+                'default' => 'Default',
+                'full-width' => 'Full Width',
+                'sidebar' => 'With Sidebar',
+            ],
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'parent_id' => [
+            'label' => 'Parent Page',
+            'placeholder' => 'Select parent page',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'order' => [
+            'label' => 'Order',
+            'placeholder' => 'Display order',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'lang' => [
+            'label' => 'Language',
+            'placeholder' => 'Select page language',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'updated_at' => [
+            'label' => 'Last Updated',
+            'placeholder' => 'Last update date and time',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'toggleColumns' => [
+            'label' => 'Toggle Columns',
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'reorderRecords' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'resetFilters' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'applyFilters' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'openFilters' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'delete' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'edit' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'view' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'create' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'message' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'footer_blocks' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+        'caption' => [
+            'tooltip' => '',
+            'helper_text' => '',
+            'description' => '',
+        ],
+    ],
+    'actions' => [
+        'create' => [
+            'label' => 'Create Page',
+        ],
+        'edit' => 'Edit Page',
+        'delete' => 'Delete Page',
+        'publish' => 'Publish',
+        'unpublish' => 'Unpublish',
+        'archive' => 'Archive',
+        'restore' => 'Restore',
+        'preview' => 'Preview',
+    ],
+    'messages' => [
+        'created' => 'Page created successfully',
+        'updated' => 'Page updated successfully',
+        'deleted' => 'Page deleted successfully',
+        'published' => 'Page published successfully',
+        'unpublished' => 'Page unpublished successfully',
+        'archived' => 'Page archived successfully',
+        'restored' => 'Page restored successfully',
+    ],
+    'validation' => [
+        'title_required' => 'The title is required',
+        'slug_unique' => 'The slug must be unique',
+        'content_required' => 'The content is required',
+    ],
+    'model' => [
+        'label' => 'page.model',
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+];
