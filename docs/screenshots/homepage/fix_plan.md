@@ -1,10 +1,10 @@
 ---
-title: "fix plan"
+title: "Fix Plan"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "fix plan"
+qmd: "Fix Plan"
 issues: []
 discussions: []
 ---
@@ -19,12 +19,12 @@ Allineare la homepage FixCity (`/it/tests/homepage`) al design Bootstrap Italia 
 
 ---
 
-title: "fix plan"
+title: "FIX PLAN"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "fix plan"
+qmd: "FIX PLAN"
 issues: []
 discussions: []
 ## Fase 1: Header & Hero (Settimana 1)
@@ -162,8 +162,8 @@ discussions: []
 
 ### Documentazione
 - [Bootstrap Italia Docs](https://italia.github.io/design-web-toolkit/)
-- [Analisi Visiva](ANALISI_VISIVA.md)
-- [Screenshot Analysis](SCREENSHOT_ANALYSIS.md)
+- [Analisi Visiva](analisi_visiva.md)
+- [Screenshot Analysis](screenshot_analysis.md)
 
 ### File Correlati
 - `Themes/Sixteen/resources/css/bootstrap-italia.css`

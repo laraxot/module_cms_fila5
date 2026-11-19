@@ -25,5 +25,5 @@ discussions: []
 - Copri edge case per permessi pagina (draft vs published).
 
 ## Documentazione
-- Aggiorna `docs/INDEX.md` con nuovi blocchi disponibili.
+- Aggiorna `docs/index.md` con nuovi blocchi disponibili.
 - Documenta flusso approvazione contenuti.

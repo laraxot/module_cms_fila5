@@ -12,6 +12,7 @@ updated: 2026-10-13
 tags: [cms, json, slug, governance]
 qmd: "dcp-41 Da URL a JSON: strumento di verifica e regola contro i JSON inventati"
 related: [Modules/Fixcity/docs/stories/2026-10-13-dcp-35-tickets-create-privacy-dati-coordinamento.story.md, Modules/Fixcity/docs/stories/2026-10-13-dcp-44-audit-docs-tickets-create.story.md]
+date_originale_nome_file: 2026-10-13
 ---
 
 # DCP-41: da URL a JSON

@@ -151,9 +151,9 @@ public function test_filament_components_rendering()
 - [Personalizzazioni](filament-personalizzazioni-avanzate.md) - Personalizzazioni avanzate
 
 ## Vedi Anche
-- [Modulo UI](../ui/project_docs/readme.md) - Componenti di interfaccia
-- [Modulo Xot](../xot/project_docs/readme.md) - Classi base e utilities
-- [Modulo Theme](../theme/project_docs/readme.md) - Gestione temi
+- [Modulo UI](../ui/project_docs/README.md) - Componenti di interfaccia
+- [Modulo Xot](../xot/project_docs/README.md) - Classi base e utilities
+- [Modulo Theme](../theme/project_docs/README.md) - Gestione temi
 - [Documentazione Filament](https://filamentphp.com/docs) - Documentazione ufficiale
 - [Best Practices](https://filamentphp.com/project_docs/3.x/best-practices) - Best practices Filament
 - [Componenti Blade](https://filamentphp.com/project_docs/3.x/support/blade-components) - Componenti Blade

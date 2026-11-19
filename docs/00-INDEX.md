@@ -27,7 +27,7 @@ riferimenti con `rg`.
 
 ## 📚 Design Comuni - Index Completo
 
-- **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
+- **[design_comuni_index.md](./design_comuni_index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
 
 ## Active design-comuni references
 
@@ -40,11 +40,11 @@ riferimenti con `rg`.
 - [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) - Audit batch pagine
 - [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) - Verifica parity
 - [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Flusso runtime aggiornato della homepage di test
-- [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale componenti pagina
+- [page_component_architecture.md](./page_component_architecture.md) - Architettura generale componenti pagina
 
 ## Theme cross links
 
-- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-INDEX.md) - Indice docs del tema
+- [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
 - [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
 - [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso

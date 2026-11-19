@@ -113,10 +113,10 @@ Questa documentazione è parte del sistema di documentazione di il progetto. Per
 - [Performance](performance.md) - Ottimizzazione performance
 
 ## Vedi Anche
-- [Modulo UI](../ui/project_docs/readme.md) - Componenti di interfaccia
-- [Modulo Lang](../lang/project_docs/readme.md) - Gestione traduzioni
-- [Modulo Theme](../theme/project_docs/readme.md) - Gestione temi
-- [Modulo Xot](../xot/project_docs/readme.md) - Classi base e utilities
+- [Modulo UI](../ui/project_docs/README.md) - Componenti di interfaccia
+- [Modulo Lang](../lang/project_docs/README.md) - Gestione traduzioni
+- [Modulo Theme](../theme/project_docs/README.md) - Gestione temi
+- [Modulo Xot](../xot/project_docs/README.md) - Classi base e utilities
 - [Documentazione Filament](https://filamentphp.com/docs) - Documentazione ufficiale
 - [Best Practices Laravel](https://laravel.com/project_docs/11.x/best-practices) - Best practices 
 Questa documentazione è parte del sistema di documentazione di <main module>. Per dettagli specifici sui singoli componenti, consultare la documentazione dei rispettivi moduli. 

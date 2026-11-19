@@ -1,10 +1,10 @@
 ---
-title: "design comuni index"
+title: "Design Comuni Index"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "design comuni index"
+qmd: "Design Comuni Index"
 issues: []
 discussions: []
 ---
@@ -102,12 +102,12 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 
 ---
 
-title: "design comuni index"
+title: "DESIGN COMUNI INDEX"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "design comuni index"
+qmd: "DESIGN COMUNI INDEX"
 issues: []
 discussions: []
 **Data**: 2026-04-03  

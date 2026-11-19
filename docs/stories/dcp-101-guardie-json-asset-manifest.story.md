@@ -17,6 +17,7 @@ related:
   - Themes/Sixteen/docs/bmad/decisions/2026-10-13-parity-root-cause-and-guardrails.md
   - Modules/Cms/docs/json-content-slug-uniqueness.md
   - Modules/Fixcity/tests/Unit/TicketCreatePageMiddlewareGuardTest.php
+date_originale_nome_file: 2026-10-13
 ---
 
 # DCP-101: guardie su JSON, asset e manifest

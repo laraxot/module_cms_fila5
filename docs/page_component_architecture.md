@@ -1,10 +1,10 @@
 ---
-title: "page component architecture"
+title: "Page Component Architecture"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "page component architecture"
+qmd: "Page Component Architecture"
 issues: []
 discussions: []
 ---
@@ -18,12 +18,12 @@ discussions: []
 
 ---
 
-title: "page component architecture"
+title: "PAGE COMPONENT ARCHITECTURE"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "page component architecture"
+qmd: "PAGE COMPONENT ARCHITECTURE"
 issues: []
 discussions: []
 ## 🎯 Scopo
