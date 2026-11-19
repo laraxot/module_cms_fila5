@@ -6,7 +6,7 @@ created: 2026-10-06
 updated: 2026-10-06
 tags: [cms, phpstan, tests, enum, lang]
 related:
-  - ./2026-10-06-phpstan-cleanup-cms.story.md
+  - ./phpstan-cleanup-cms.story.md
 ---
 
 # [DEV] PHPStan cleanup modulo Cms

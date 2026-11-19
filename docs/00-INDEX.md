@@ -64,4 +64,4 @@ riferimenti con `rg`.
 - Mantenere collegamenti bidirezionali tra docs di modulo e docs di tema.
 
 ## Story URL -> JSON (2026-10-13)
-- [DCP-41 da URL a JSON: strumento e regola](stories/2026-10-13-dcp-41-url-to-json-resolver.story.md)
+- [DCP-41 da URL a JSON: strumento e regola](stories/dcp-41-url-to-json-resolver.story.md)
