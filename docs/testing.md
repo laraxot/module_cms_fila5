@@ -13,7 +13,7 @@ discussions: []
 
 ## Overview
 
-This module follows the project's [testing guidelines](../../docs/TESTING.md) and uses Pest PHP as the testing framework.
+This module follows the project's [testing rules](testing-rules.md) and uses Pest PHP as the testing framework.
 
 ## Test Structure
 
@@ -21,10 +21,24 @@ This module follows the project's [testing guidelines](../../docs/TESTING.md) an
 tests/
   Feature/    # Feature tests
   Unit/       # Unit tests
-  Pest.php    # Module-specific Pest configuration
+  Pest.php    # Solo helper: nessun binding del TestCase (vedi sotto)
   PestHelpers.php # Helper globali (autoload-dev.files, senza namespace)
   TestCase.php # Base test case for the module
 ```
+
+## Binding del TestCase
+
+Ogni file di test che usa l'applicazione o i metodi di `Modules\Cms\Tests\TestCase` lo lega da solo:
+
+```php
+use Modules\Cms\Tests\TestCase;
+
+uses(TestCase::class);
+```
+
+Mai `uses(...)->in(...)` in `tests/Pest.php`: il runner di root non lo esegue (i test restano senza
+applicazione) e con `--test-directory` raddoppia il binding (`TestCaseAlreadyInUse`). Decisione e guardia:
+[ADR pest-testcase-binding-per-file](../../Xot/docs/adr/pest-testcase-binding-per-file.md).
 
 ## PestHelpers (PHPStan + merge)
 
