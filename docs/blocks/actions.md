@@ -94,10 +94,6 @@ Builder::make('content')
 ## Collegamenti
 
 - [Documentazione Filament Forms](../filament-forms.md)
-<<<<<<< HEAD
 - [UI Components](../ui/components.md)
-=======
-- [UI Components](../components.md)
->>>>>>> laraxot/dev
 - [Best Practices UX](../ui/ux-guidelines.md)
 - [Accessibilità](../ui/accessibility.md)

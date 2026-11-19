@@ -53,11 +53,7 @@ ThemeName/
 
 ### 1. Verifica Preliminare
 ```bash
-<<<<<<< HEAD
 cd /var/www/html/_bases/base_predict_fila3_mono/laravel/Themes/[NomeTema]
-=======
-cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/[NomeTema]
->>>>>>> laraxot/dev
 ```
 
 ### 2. Processo di Compilazione
@@ -138,8 +134,4 @@ npm install && npm run build
 ## Manutenzione
 - Aggiornare regolarmente le dipendenze npm
 - Verificare la compatibilità con le versioni Laravel
-<<<<<<< HEAD
 - Mantenere backup dei file di configurazione 
-=======
-- Mantenere backup dei file di configurazione
->>>>>>> laraxot/dev

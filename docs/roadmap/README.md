@@ -13,7 +13,6 @@ discussions: []
 
 ## 🎯 Module Purpose
 
-<<<<<<< HEAD
 The CMS module provides comprehensive content management capabilities with modular blocks, page management, and theme integration. It serves as the foundation for building dynamic, multi-lingual websites and applications within the Quaeris Fila5 Mono ecosystem.
 
 ## 📋 Current Status
@@ -21,15 +20,6 @@ The CMS module provides comprehensive content management capabilities with modul
 **Maturity**: Production Ready  
 **PHPStan Level**: 10 ✅  
 **Test Coverage**: 80%+  
-=======
-The CMS module provides comprehensive content management capabilities with modular blocks, page management, and theme integration. It serves as the foundation for building dynamic, multi-lingual websites and applications within the <nome progetto> fila5 ecosystem.
-
-## 📋 Current Status
-
-**Maturity**: Production Ready
-**PHPStan Level**: 10 ✅
-**Test Coverage**: 80%+
->>>>>>> laraxot/dev
 **Rendering Engine**: Blade + Livewire + Volt
 
 ## 🗓️ Development Roadmap
@@ -157,8 +147,4 @@ The CMS module provides comprehensive content management capabilities with modul
 - Real-time preview with instant content updates
 - Mobile-responsive content editing capabilities
 - Contextual help and guidance for content creators
-<<<<<<< HEAD
 - Accessible design following WCAG 2.1 AA standards
-=======
-- Accessible design following WCAG 2.1 AA standards
->>>>>>> laraxot/dev

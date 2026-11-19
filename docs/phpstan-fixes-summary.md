@@ -22,11 +22,7 @@ discussions: []
 ## 🔧 Specific Fixes Applied
 
 ### 1. ProfileContract References (18 files)
-<<<<<<< HEAD
 **Problem**: Models referenced non-existent `Modules\Quaeris\Models\Profile`
-=======
-**Problem**: Models referenced non-existent `Modules\<nome progetto>\Models\Profile`
->>>>>>> laraxot/dev
 **Solution**: Updated to use `Modules\Xot\Contracts\ProfileContract`
 
 **Affected Models**:
@@ -135,8 +131,4 @@ All fixes verified with:
 1. **Monitor**: Regular PHPStan checks
 2. **Document**: Update component documentation
 3. **Educate**: Share contract usage patterns
-<<<<<<< HEAD
 4. **Automate**: Pre-commit hooks for quality
-=======
-4. **Automate**: Pre-commit hooks for quality
->>>>>>> laraxot/dev

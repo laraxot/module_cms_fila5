@@ -150,10 +150,5 @@ export default defineConfig({
 - [ ] Verificare la sicurezza
 
 ## Collegamenti tra versioni di troubleshooting.md
-<<<<<<< HEAD
 * [troubleshooting.md](laravel/modules/xot/docs/troubleshooting.md)
 * [troubleshooting.md](laravel/modules/cms/docs/frontoffice/troubleshooting.md)
-=======
-* [troubleshooting.md](troubleshooting.md)
-* [troubleshooting.md](troubleshooting.md)
->>>>>>> laraxot/dev

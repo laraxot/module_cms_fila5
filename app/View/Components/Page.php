@@ -65,10 +65,6 @@ final class Page extends Component
 
     public function render(): ViewContract|Factory
     {
-<<<<<<< HEAD
-=======
-        /** @var view-string $viewName */
->>>>>>> laraxot/dev
         $viewName = 'cms::components.page';
 
         return view($viewName, array_merge($this->data, [

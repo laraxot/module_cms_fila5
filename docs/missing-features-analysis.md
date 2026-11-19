@@ -11,13 +11,8 @@ discussions: []
 
 # Analisi Funzionalità Mancanti - Modulo Cms
 
-<<<<<<< HEAD
 **Data Analisi**: [DATE]  
 **Versione LimeSurvey Upstream**: 5.4.x+  
-=======
-**Data Analisi**: [DATE]
-**Versione LimeSurvey Upstream**: 5.4.x+
->>>>>>> laraxot/dev
 **Repository Upstream**: https://github.com/LimeSurvey/LimeSurvey
 
 ## Scopo del Modulo
@@ -172,11 +167,7 @@ Nessuna funzionalità critica mancante - il modulo Cms è ben implementato
 
 ## Collegamenti
 
-<<<<<<< HEAD
 - [Modulo Quaeris](../quaeris/docs/readme.md)
-=======
-- [Modulo <nome progetto>](../<nome progetto>/docs/readme.md)
->>>>>>> laraxot/dev
 - [Modulo Limesurvey](../limesurvey/docs/readme.md)
 - [Cms README](./README.md)
 

@@ -99,9 +99,5 @@ Il blocco CTA può essere utilizzato in diverse posizioni:
 
 - [Documentazione Filament Forms](../filament-forms.md)
 - [Gestione Contenuti](../content.md)
-<<<<<<< HEAD
 - [UI Components](../ui/components.md)
-=======
-- [UI Components](../components.md)
->>>>>>> laraxot/dev
 - [Best Practices UX](../ui/ux-guidelines.md)

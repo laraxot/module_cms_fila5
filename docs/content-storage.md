@@ -59,11 +59,7 @@ Il processo è il seguente:
 3. Sushi carica i dati dal file JSON corrispondente (es. "1.json")
 4. I contenuti vengono renderizzati a partire dai blocchi definiti nel JSON
 
-<<<<<<< HEAD
 Per approfondimenti tecnici su questo meccanismo, consulta la [documentazione dettagliata nel modulo CMS](../laravel/modules/cms/project_docs/content-storage.md).
-=======
-Per approfondimenti tecnici su questo meccanismo, consulta la [documentazione dettagliata nel modulo CMS](content-storage.md).
->>>>>>> laraxot/dev
 
 ## Sezioni del FrontOffice
 
@@ -98,11 +94,7 @@ Una caratteristica fondamentale del sistema è la gestione delle pagine tramite 
 - Flessibilità nella composizione delle pagine
 - Facilità di manutenzione e aggiornamento
 
-<<<<<<< HEAD
 Per maggiori dettagli sulla struttura dei blocchi di contenuto, consulta la [documentazione dei blocchi nel modulo CMS](../laravel/modules/cms/project_docs/content.md).
-=======
-Per maggiori dettagli sulla struttura dei blocchi di contenuto, consulta la [documentazione dei blocchi nel modulo CMS](content.md).
->>>>>>> laraxot/dev
 
 ## Esempi Pratici
 
@@ -145,12 +137,6 @@ Per modificare la homepage:
 
 Per approfondire il funzionamento tecnico del sistema:
 
-<<<<<<< HEAD
 - [Sistema di Archiviazione dei Contenuti](../laravel/modules/cms/project_docs/content-storage.md) - Documentazione tecnica completa
 - [Gestione dei Blocchi di Contenuto](../laravel/modules/cms/project_docs/content.md) - Come funzionano i blocchi di contenuto
 - [Struttura delle Pagine](../laravel/modules/cms/project_docs/page-resource.md) - Informazioni sulle risorse Page
-=======
-- [Sistema di Archiviazione dei Contenuti](content-storage.md) - Documentazione tecnica completa
-- [Gestione dei Blocchi di Contenuto](content.md) - Come funzionano i blocchi di contenuto
-- [Struttura delle Pagine](page-resource.md) - Informazioni sulle risorse Page
->>>>>>> laraxot/dev

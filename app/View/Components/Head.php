@@ -4,15 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
-<<<<<<< HEAD
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
-=======
-use Illuminate\Support\Str;
-use Illuminate\Contracts\View\View as ViewContract;
-use Illuminate\Support\Facades\Lang;
->>>>>>> laraxot/dev
 use Illuminate\View\Component;
 use Laravel\Head\Facades\Head as HeadManager;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -28,13 +22,8 @@ use Modules\Cms\Actions\Head\ResolveWrittenLocalesAction;
 use Modules\Cms\Models\Page;
 use Modules\Xot\Datas\MetatagData;
 
-<<<<<<< HEAD
 use function Safe\filesize;
 use function Safe\parse_url;
-=======
-use function Safe\parse_url;
-use function Safe\preg_replace;
->>>>>>> laraxot/dev
 
 /**
  * Il `<head>` del front office: la vista emette `<head>…</head>`, i layout non lo avvolgono.
@@ -60,12 +49,6 @@ final class Head extends Component
         public readonly ?string $description = null,
         public readonly ?bool $homepage = null,
         public readonly ?string $themeColor = null,
-<<<<<<< HEAD
-=======
-        // false: niente CSS dei pannelli Filament (e font Inter) ne' script del tema scuro. Per i siti
-        // pubblici che non usano componenti Filament: meno peso su telefono. Default true: nulla cambia.
-        public readonly bool $panelAssets = true,
->>>>>>> laraxot/dev
     ) {}
 
     public function render(): ViewContract
@@ -119,17 +102,8 @@ final class Head extends Component
             $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
-<<<<<<< HEAD
         return view('cms::components.head', [
             'pubTheme' => $meta->getPubTheme(),
-=======
-        /** @var view-string $view */
-        $view = 'cms::components.head';
-
-        return view($view, [
-            'pubTheme' => $meta->getPubTheme(),
-            'panelAssets' => $this->panelAssets,
->>>>>>> laraxot/dev
         ]);
     }
 
@@ -281,28 +255,19 @@ final class Head extends Component
         }
     }
 
-<<<<<<< HEAD
     /** URL dell'asset del tema, solo se il file esiste davvero in `public/` e non e' vuoto. */
-=======
-    /** URL dell'asset del tema, solo se il file esiste davvero in `public/`. */
->>>>>>> laraxot/dev
     private function themeAssetUrl(MetatagData $meta, string $file): ?string
     {
         $url = $meta->getPubThemeAsset($file);
         $path = parse_url($url, PHP_URL_PATH);
 
-<<<<<<< HEAD
         return is_string($path) && $this->isServableFile(public_path(ltrim($path, '/'))) ? $url : null;
-=======
-        return is_string($path) && is_file(public_path(ltrim($path, '/'))) ? $url : null;
->>>>>>> laraxot/dev
     }
 
     private function publicAssetUrl(string $file): ?string
     {
         $url = asset($file);
 
-<<<<<<< HEAD
         return $this->isServableFile(public_path($file)) ? $url : null;
     }
 
@@ -313,9 +278,6 @@ final class Head extends Component
     private function isServableFile(string $absolutePath): bool
     {
         return is_file($absolutePath) && filesize($absolutePath) > 0;
-=======
-        return is_file(public_path($file)) ? $url : null;
->>>>>>> laraxot/dev
     }
 
     /**

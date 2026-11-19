@@ -1,6 +1,5 @@
 {
     "private": true,
-<<<<<<< HEAD
     "scripts": {
         "development": "mix",
         "watch": "mix watch",
@@ -23,19 +22,5 @@
         "tailwindcss": "^3.4.1",
         "tippy.js": "^6.3.7",
         "vite": "^6.4.2"
-=======
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build"
-    },
-    "devDependencies": {
-        "@tailwindcss/vite": "^4.0.0",
-        "axios": "^1.7.0",
-        "laravel-vite-plugin": "^2.0.0",
-        "sass": "^1.69.5",
-        "tailwindcss": "^4.0.0",
-        "vite": "^7.0.0"
->>>>>>> laraxot/dev
     }
 }

@@ -39,10 +39,5 @@ php artisan splade:show-versions
 da   @components('theme::includes.components.(nome)
 a <x-(nome controllato)
 ## Collegamenti tra versioni di aggiornamenti.md
-<<<<<<< HEAD
 * [aggiornamenti.md](laravel/modules/chart/docs/aggiornamenti.md)
 * [aggiornamenti.md](laravel/modules/cms/docs/aggiornamenti.md)
-=======
-* [aggiornamenti.md](aggiornamenti.md)
-* [aggiornamenti.md](aggiornamenti.md)
->>>>>>> laraxot/dev

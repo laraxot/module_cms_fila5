@@ -84,17 +84,9 @@ npm run dev
 ```
 
 ## Collegamenti tra versioni di getting-started.md
-<<<<<<< HEAD
 * [getting-started.md](laravel/modules/gdpr/project_docs/getting-started.md)
 * [getting-started.md](laravel/modules/xot/project_docs/getting-started.md)
 * [getting-started.md](laravel/modules/ui/project_docs/getting-started.md)
 * [getting-started.md](laravel/modules/tenant/project_docs/it/getting-started.md)
 * [getting-started.md](laravel/modules/cms/project_docs/getting-started.md)
-=======
-* [getting-started.md](getting-started.md)
-* [getting-started.md](getting-started.md)
-* [getting-started.md](getting-started.md)
-* [getting-started.md](getting-started.md)
-* [getting-started.md](getting-started.md)
->>>>>>> laraxot/dev
 

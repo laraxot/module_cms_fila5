@@ -41,11 +41,6 @@ Per le best practice di **Filament** (https://filamentphp.com/project_docs/3.x/s
 ```
 
 ## Collegamenti tra versioni di filament-blade-components.md
-<<<<<<< HEAD
 * [filament-blade-components.md](laravel/modules/cms/project_docs/filament-blade-components.md)
 * [filament-blade-components.md](laravel/themes/one/project_docs/filament-blade-components.md)
-=======
-* [filament-blade-components.md](filament-blade-components.md)
-* [filament-blade-components.md](filament-blade-components.md)
->>>>>>> laraxot/dev
 

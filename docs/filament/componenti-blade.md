@@ -162,10 +162,5 @@ Per domande o problemi con i componenti Filament:
 - [Personalizzazioni avanzate Filament](../filament-personalizzazioni-avanzate.md)
 
 ## Collegamenti tra versioni di componenti-blade.md
-<<<<<<< HEAD
 * [componenti-blade.md](docs/filament/componenti-blade.md)
 * [componenti-blade.md](laravel/modules/cms/docs/filament/componenti-blade.md)
-=======
-* [componenti-blade.md](componenti-blade.md)
-* [componenti-blade.md](componenti-blade.md)
->>>>>>> laraxot/dev

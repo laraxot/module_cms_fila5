@@ -281,11 +281,7 @@ Per estendere il frontoffice con nuove funzionalità:
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-<<<<<<< HEAD
 - [Architettura](architecture.md) - Architettura generale del frontoffice
-=======
-- [Architettura](frontoffice/architecture.md) - Architettura generale del frontoffice
->>>>>>> laraxot/dev
 - [Gestione Route](gestione-route-folio.md) - Gestione delle route con Folio
 - [Volt](volt-web-application.md) - Sviluppo con Laravel Volt
 - [Layout](struttura-layout-componenti-blade-<nome progetto>.md) - Struttura dei layout

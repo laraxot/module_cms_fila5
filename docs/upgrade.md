@@ -36,10 +36,5 @@ Infine, se si sono pubblicati il file di configurazione o i modelli Blade, assic
 php artisan module_cms:show-versions
 ```
 ## Collegamenti tra versioni di upgrade.md
-<<<<<<< HEAD
 * [upgrade.md](laravel/modules/lang/docs/upgrade.md)
 * [upgrade.md](laravel/modules/cms/docs/upgrade.md)
-=======
-* [upgrade.md](upgrade.md)
-* [upgrade.md](upgrade.md)
->>>>>>> laraxot/dev

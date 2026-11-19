@@ -184,11 +184,7 @@ php artisan view:clear
 
 - [Documentazione Temi](../temi.md)
 - [Gestione Conflitti Git](../../../../docs/git-conflicts-management.md)
-<<<<<<< HEAD
 - [Architettura CMS](../../architecture.md)
-=======
-- [Architettura CMS](../frontoffice/architecture.md)
->>>>>>> laraxot/dev
 - [Best Practices Sviluppo](../best-practices.md)
 
 ## Changelog

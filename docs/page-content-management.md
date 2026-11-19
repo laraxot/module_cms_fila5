@@ -18,11 +18,7 @@ Questo documento fornisce una panoramica del sistema di gestione dei contenuti d
 ## Collegamenti
 
 ### Documentazione Completa
-<<<<<<< HEAD
 - [Documentazione Modulo Cms](../laravel/modules/cms/project_docs/page-content-management.md)
-=======
-- [Documentazione Modulo Cms](page-content-management.md)
->>>>>>> laraxot/dev
 
 ### Moduli Correlati
 - [Documentazione UI](../laravel/modules/ui/project_docs/readme.md)

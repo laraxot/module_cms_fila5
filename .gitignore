@@ -143,14 +143,3 @@ test-results/
 cms.code-workspace
 ruvector.db
 .windsurfrules
-<<<<<<< HEAD
-=======
-
-# Laraxot — directory agenti/IDE e tool locali alla root del modulo (module-theme-root-hygiene)
-.agents/
-.codex/
-.opencode/
-.qwen/
-.php-cs-fixer.php
-.php-cs-fixer.dist.php
->>>>>>> laraxot/dev

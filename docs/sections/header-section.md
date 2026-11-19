@@ -95,9 +95,5 @@ L'header è una sezione che contiene vari blocchi di navigazione e contenuto.
 
 ## Collegamenti
 - [Documentazione Blocchi](./blocks.md)
-<<<<<<< HEAD
 - [Best Practices UI/UX](./guida-implementazione-ux.md)
-=======
-- [Best Practices UI/UX](../guida-implementazione-ux.md)
->>>>>>> laraxot/dev
 - [Documentazione Accessibilità](./accessibility.md)

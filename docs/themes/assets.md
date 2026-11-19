@@ -113,12 +113,6 @@ discussions: []
    - Verificare i timestamp dei file
 
 ## Collegamenti tra versioni di assets.md
-<<<<<<< HEAD
 * [assets.md](laravel/modules/xot/docs/assets.md)
 * [assets.md](laravel/modules/cms/docs/themes/assets.md)
 * [assets.md](laravel/themes/one/docs/assets.md)
-=======
-* [assets.md](assets.md)
-* [assets.md](assets.md)
-* [assets.md](assets.md)
->>>>>>> laraxot/dev

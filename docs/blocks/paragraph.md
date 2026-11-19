@@ -79,9 +79,5 @@ Builder::make('content')
 
 - [Documentazione Filament Forms](../filament-forms.md)
 - [Gestione Contenuti](../content.md)
-<<<<<<< HEAD
 - [Best Practices SEO](../best-practices/seo.md)
-=======
-- [Best Practices SEO](../packages/seo.md)
->>>>>>> laraxot/dev
 - [Accessibilità](../ui/accessibility.md)

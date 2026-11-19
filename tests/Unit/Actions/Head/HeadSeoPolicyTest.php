@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Actions\Head;
 
-<<<<<<< HEAD
 use Laravel\Head\Schema\SchemaObject;
 use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
@@ -19,18 +18,6 @@ uses(TestCase::class);
 
 /**
  * @param  SchemaObject|array<string, mixed>  $schema
-=======
-use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
-use Modules\Cms\Actions\Head\ResolveHreflangAlternatesAction;
-use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
-use Modules\Cms\Actions\BuildPageSchemaAction;
-use Modules\Xot\Datas\MetatagData;
-use Laravel\Head\Schema\SchemaObject;
-use PHPUnit\Framework\Assert;
-
-/**
- * @param SchemaObject|array<string, mixed> $schema
->>>>>>> laraxot/dev
  */
 function schemaType(SchemaObject|array $schema): ?string
 {

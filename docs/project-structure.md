@@ -78,11 +78,7 @@ related:
 
 ### Link Rules
 
-<<<<<<< HEAD
 - **Interno modulo**: `[[concepts/page]]` o `[link](./concepts/page.md)`
-=======
-- **Interno modulo**: `[[concepts/page]]` o `[link](components/page.md)`
->>>>>>> laraxot/dev
 - **Modulo altro**: `[[../../OtherModule/docs/wiki/concepts/page]]`
 - **Project wiki**: `[Global rule](../../docs/wiki/rules/rule.md)`
 
