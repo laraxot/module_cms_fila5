@@ -5,9 +5,17 @@ declare(strict_types=1);
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Modules\Cms\Filament\Clusters\Appearance\Pages\Headernav;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 test('Headernav page can be instantiated', function () {
     Assert::assertSame(Headernav::class, (new Headernav)::class);

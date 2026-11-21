@@ -46,7 +46,6 @@ final class Head extends Component
 
     private const string DEFAULT_THEME_COLOR = '#0f2b46';
 
-    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
     /**
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
@@ -124,7 +123,6 @@ final class Head extends Component
         ]);
     }
 
-    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
     /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolveBrand(MetatagData $meta): string
     {
@@ -178,7 +176,6 @@ final class Head extends Component
         return $fallback !== '' ? $fallback : null;
     }
 
-    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
     /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function openGraphLocale(): ?string
     {
@@ -242,7 +239,6 @@ final class Head extends Component
         return trim($this->stringAttribute($page, 'title'));
     }
 
-    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
     /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function stringAttribute(Page $page, string $attribute): string
     {
@@ -253,9 +249,8 @@ final class Head extends Component
 
     /**
      * @param  list<string>  $localeCodes
-     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
-    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolvePage(string $path, array $localeCodes): ?Page
     {
         $route = request()->route();
@@ -264,7 +259,6 @@ final class Head extends Component
         return app(ResolveCmsPageAction::class)->execute($path, $localeCodes, is_string($routeName) ? $routeName : null);
     }
 
-    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
     /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function applyIcons(MetatagData $meta): void
     {
@@ -359,9 +353,8 @@ final class Head extends Component
      * Il JSON-LD è markup pubblico (può finire in una cache condivisa): non riceve mai l'utente della sessione.
      *
      * @return array<string, mixed>
-     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
-    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolvePageEntity(MetatagData $meta, string $name, ?string $description, string $canonical): array
     {
         $route = request()->route();
@@ -385,7 +378,6 @@ final class Head extends Component
         );
     }
 
-    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
     /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function isHomepage(): bool
     {
