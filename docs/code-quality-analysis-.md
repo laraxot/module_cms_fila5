@@ -1,10 +1,10 @@
 ---
-title: "code quality analysis "
+title: "code quality analysis"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "code quality analysis "
+qmd: "code quality analysis cms 2025-11-24"
 issues: []
 discussions: []
 ---
@@ -22,12 +22,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_ns1bvS
 title: "code quality analysis "
+=======
+title: "code quality analysis"
+>>>>>>> .merge_file_6EZiLF
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_ns1bvS
 qmd: "code quality analysis "
+=======
+qmd: "code quality analysis cms 2025-11-24"
+>>>>>>> .merge_file_6EZiLF
 issues: []
 discussions: []
 ## 🚨 Status Critico
@@ -175,6 +183,6 @@ Il modulo CMS presenta problemi critici che bloccano l'analisi completa e richie
 
 ---
 
-**
+**Ultimo Aggiornamento:** 24 Novembre 2025
 **Versione Analisi:** 1.0
 **Status:** ❌ CRITICAL - Requires Immediate Fixes

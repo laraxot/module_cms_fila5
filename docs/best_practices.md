@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_PZeywt
 title: "best practices"
+=======
+title: "Best Practices"
+>>>>>>> .merge_file_rX0Usq
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_PZeywt
 qmd: "best practices"
+=======
+qmd: "Best Practices"
+>>>>>>> .merge_file_rX0Usq
 issues: []
 discussions: []
 ---
@@ -25,5 +33,9 @@ discussions: []
 - Copri edge case per permessi pagina (draft vs published).
 
 ## Documentazione
+<<<<<<< .merge_file_PZeywt
 - Aggiorna `docs/INDEX.md` con nuovi blocchi disponibili.
+=======
+- Aggiorna `docs/index.md` con nuovi blocchi disponibili.
+>>>>>>> .merge_file_rX0Usq
 - Documenta flusso approvazione contenuti.

@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_1xx6g4
 title: "fix plan"
+=======
+title: "Fix Plan"
+>>>>>>> .merge_file_VumKii
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_1xx6g4
 qmd: "fix plan"
+=======
+qmd: "Fix Plan"
+>>>>>>> .merge_file_VumKii
 issues: []
 discussions: []
 ---
@@ -19,12 +27,20 @@ Allineare la homepage FixCity (`/it/tests/homepage`) al design Bootstrap Italia 
 
 ---
 
+<<<<<<< .merge_file_1xx6g4
 title: "fix plan"
+=======
+title: "FIX PLAN"
+>>>>>>> .merge_file_VumKii
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_1xx6g4
 qmd: "fix plan"
+=======
+qmd: "FIX PLAN"
+>>>>>>> .merge_file_VumKii
 issues: []
 discussions: []
 ## Fase 1: Header & Hero (Settimana 1)
@@ -162,8 +178,13 @@ discussions: []
 
 ### Documentazione
 - [Bootstrap Italia Docs](https://italia.github.io/design-web-toolkit/)
+<<<<<<< .merge_file_1xx6g4
 - [Analisi Visiva](ANALISI_VISIVA.md)
 - [Screenshot Analysis](SCREENSHOT_ANALYSIS.md)
+=======
+- [Analisi Visiva](analisi_visiva.md)
+- [Screenshot Analysis](screenshot_analysis.md)
+>>>>>>> .merge_file_VumKii
 
 ### File Correlati
 - `Themes/Sixteen/resources/css/bootstrap-italia.css`

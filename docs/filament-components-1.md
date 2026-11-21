@@ -152,7 +152,11 @@ Filament offre una vasta gamma di componenti Blade riutilizzabili. Di seguito i 
 ## Vedi Anche
 - [Modulo UI](../../UI/docs/README.md) - Componenti UI riutilizzabili
 - [Modulo Xot](../../Xot/docs/README.md) - Classi base Filament personalizzate
+<<<<<<< .merge_file_UyfrAc
 - [Modulo Theme](../theme/docs/readme.md) - Personalizzazione temi Filament
+=======
+- [Modulo Theme](../theme/docs/README.md) - Personalizzazione temi Filament
+>>>>>>> .merge_file_QFm0vP
 - [Convenzioni Namespace](convenzioni-namespace-filament.md) - Convenzioni di namespace
 - [Documentazione Filament](https://filamentphp.com/docs) - Documentazione ufficiale
 ## Collegamenti tra versioni di filament-components.md

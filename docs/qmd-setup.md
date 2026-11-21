@@ -1,8 +1,8 @@
 ---
-qmd: "qmd setup"
+qmd: "Qmd Setup"
 issues: []
 discussions: []
-title: "QMD Setup — Module Cms"
+title: "Qmd Setup"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11

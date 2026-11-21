@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_GNcsLe
 title: "product roadmap"
+=======
+title: "Product Roadmap"
+>>>>>>> .merge_file_BScdld
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_GNcsLe
 qmd: "product roadmap"
+=======
+qmd: "Product Roadmap"
+>>>>>>> .merge_file_BScdld
 issues: []
 discussions: []
 ---
@@ -18,12 +26,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_GNcsLe
 title: "product roadmap"
+=======
+title: "PRODUCT ROADMAP"
+>>>>>>> .merge_file_BScdld
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_GNcsLe
 qmd: "product roadmap"
+=======
+qmd: "PRODUCT ROADMAP"
+>>>>>>> .merge_file_BScdld
 issues: []
 discussions: []
 ## Vision Statement

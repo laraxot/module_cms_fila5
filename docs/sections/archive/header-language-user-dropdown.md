@@ -12,7 +12,11 @@ discussions: []
 # Implementazione del Selettore di Lingua e Dropdown Utente nell'Header
 
 ## Collegamenti correlati
+<<<<<<< .merge_file_bOu4ba
 - [Documentazione centrale](/project_docs/readme.md)
+=======
+- [Documentazione centrale](/project_docs/README.md)
+>>>>>>> .merge_file_QXUcss
 - [Collegamenti documentazione](/project_docs/collegamenti-documentazione.md)
 - [Documentazione sezioni](/project_docs/sections.md)
 - [Sezioni CMS](/laravel/modules/cms/project_docs/sections.md)

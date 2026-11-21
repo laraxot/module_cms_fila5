@@ -97,10 +97,10 @@ Link: ./components/
 ### **Caso 2: Link ad altro modulo**
 ```markdown
 <!-- PRIMA (ERRATO) -->
-[Modulo User](/var/www/html/_bases/<directory progetto>/laravel/modules/user/docs/readme.md)
+[Modulo User](/var/www/html/_bases/<directory progetto>/laravel/modules/user/docs/README.md)
 
 <!-- DOPO (CORRETTO) -->
-[Modulo User](../../user/docs/readme.md)
+[Modulo User](../../User/docs/readme.md)
 ```
 
 ### **Caso 3: Link interno al modulo**

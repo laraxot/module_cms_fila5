@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_x0qovs
 title: "user research"
+=======
+title: "User Research"
+>>>>>>> .merge_file_Q6qmz4
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_x0qovs
 qmd: "user research"
+=======
+qmd: "User Research"
+>>>>>>> .merge_file_Q6qmz4
 issues: []
 discussions: []
 ---
@@ -17,12 +25,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_x0qovs
 title: "user research"
+=======
+title: "USER RESEARCH"
+>>>>>>> .merge_file_Q6qmz4
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_x0qovs
 qmd: "user research"
+=======
+qmd: "USER RESEARCH"
+>>>>>>> .merge_file_Q6qmz4
 issues: []
 discussions: []
 ## Research Goals

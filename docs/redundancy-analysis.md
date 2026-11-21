@@ -9,7 +9,11 @@ issues: []
 discussions: []
 module: theme
 topic: REDUNDANCY_ANALYSIS
+<<<<<<< .merge_file_BIUwO7
 canonical: ../../../Themes/docs/shared-components/REDUNDANCY_ANALYSIS.md
+=======
+canonical: ../../../Themes/docs/shared-components/redundancy_analysis.md
+>>>>>>> .merge_file_9PjjhW
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/REDUNDANCY_ANALYSIS.md
+See canonical documentation: ../../../Themes/docs/shared-components/redundancy_analysis.md

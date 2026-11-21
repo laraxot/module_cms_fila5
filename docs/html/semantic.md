@@ -160,6 +160,6 @@ Contenuto autonomo con didascalia:
 ## Collegamenti
 - [Struttura Layout](../structure/layout.md)
 - [Componenti HTML](../components/html.md)
-- [Accessibilità](../accessibility/readme.md)
+- [Accessibilità](../accessibility/README.md)
 
 [Fonte: W3Schools](https://www.w3schools.com/html/html5_semantic_elements.asp)

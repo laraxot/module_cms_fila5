@@ -21,9 +21,14 @@ use Modules\Xot\Datas\MetatagData;
  *
  * `@livewireScripts` non serve: `config('livewire.inject_assets')` è `true` e Livewire inietta i propri
  * asset automaticamente prima di `</body>`.
+ *
+ * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
  */
 final class Foot extends Component
 {
+    /**
+     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
+     */
     public function render(): ViewContract
     {
         return view('cms::components.foot', [

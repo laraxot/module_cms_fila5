@@ -156,7 +156,7 @@ it('uses correct namespace for view models', function () {
 
 - [PSR-4 Autoloading Standard](https://www.php-fig.org/psr/psr-4/)
 - [Laravel Module Development](https://laravel.com/docs/10.x/packages)
-- [Best Practices](/laravel/modules/cms/docs/best-practices/readme.md)
+- [Best Practices](/laravel/modules/cms/docs/best-practices/README.md)
 - [Architettura Modulare](/laravel/modules/cms/docs/architecture.md)
 
 ## Collegamenti tra versioni di namespace-conventions.md

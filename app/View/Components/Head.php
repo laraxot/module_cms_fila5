@@ -33,6 +33,8 @@ use function Safe\parse_url;
  * di una pagina si usano le props del componente, non `Head::…()` dalla pagina (verrebbe sovrascritto).
  * Testi e immagini del sito arrivano dal tema (`pub_theme::seo.*`, `pub_theme::header.*`) e dal testo della pagina CMS;
  * un tag senza dato reale viene omesso, mai riempito con segnaposto o chiavi grezze.
+ *
+ * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
  */
 final class Head extends Component
 {
@@ -44,6 +46,10 @@ final class Head extends Component
 
     private const string DEFAULT_THEME_COLOR = '#0f2b46';
 
+    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
+    /**
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
+     */
     public function __construct(
         public readonly ?string $title = null,
         public readonly ?string $description = null,
@@ -51,6 +57,9 @@ final class Head extends Component
         public readonly ?string $themeColor = null,
     ) {}
 
+    /**
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
+     */
     public function render(): ViewContract
     {
         $meta = MetatagData::make();
@@ -115,6 +124,8 @@ final class Head extends Component
         ]);
     }
 
+    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolveBrand(MetatagData $meta): string
     {
         $key = 'pub_theme::header.brand.name';
@@ -140,6 +151,7 @@ final class Head extends Component
 
     /**
      * Prop del componente, poi testo della pagina CMS (non per la home, che ha la descrizione curata del sito), poi descrizione del sito.
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function resolveDescription(MetatagData $meta, ?Page $page, bool $isHome): ?string
     {
@@ -166,6 +178,8 @@ final class Head extends Component
         return $fallback !== '' ? $fallback : null;
     }
 
+    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function openGraphLocale(): ?string
     {
         $regional = LaravelLocalization::getCurrentLocaleRegional();
@@ -176,6 +190,7 @@ final class Head extends Component
     /**
      * URL pulito della richiesta (senza `index.php`, segmenti-punto, barre doppie e query), https in produzione:
      * la stessa stringa per canonical, `og:url` e dati strutturati.
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function canonicalUrl(): string
     {
@@ -195,6 +210,7 @@ final class Head extends Component
     /**
      * Radice del sito senza il file di ingresso (come fa `asset()`: `/index.php/it` non deve finire negli URL dichiarati),
      * https in produzione. Canonical, `@id` e URL dello schema partono tutti da qui, così non possono divergere.
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function siteRoot(): string
     {
@@ -203,7 +219,10 @@ final class Head extends Component
         return app()->environment('production') ? Str::of($root)->replaceMatches('/^http:\/\//', 'https://')->toString() : $root;
     }
 
-    /** `true` se la richiesta è già nella forma del canonical: nessun `index.php` nell'URL e nessun segmento vuoto o punto. */
+    /**
+     * `true` se la richiesta è già nella forma del canonical: nessun `index.php` nell'URL e nessun segmento vuoto o punto.
+     */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function isCanonicalForm(): bool
     {
         $request = request();
@@ -212,6 +231,7 @@ final class Head extends Component
             && trim($request->path(), '/') === app(CollapsePathSegmentsAction::class)->execute($request->path());
     }
 
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolvePageTitle(?Page $page): string
     {
         $pageTitle = trim((string) $this->title);
@@ -222,6 +242,8 @@ final class Head extends Component
         return trim($this->stringAttribute($page, 'title'));
     }
 
+    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function stringAttribute(Page $page, string $attribute): string
     {
         $value = $page->getAttribute($attribute);
@@ -231,7 +253,9 @@ final class Head extends Component
 
     /**
      * @param  list<string>  $localeCodes
+     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
      */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolvePage(string $path, array $localeCodes): ?Page
     {
         $route = request()->route();
@@ -240,6 +264,8 @@ final class Head extends Component
         return app(ResolveCmsPageAction::class)->execute($path, $localeCodes, is_string($routeName) ? $routeName : null);
     }
 
+    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function applyIcons(MetatagData $meta): void
     {
         // Il favicon applicativo vive nel public root; il manifest invece può essere
@@ -263,7 +289,10 @@ final class Head extends Component
         }
     }
 
-    /** URL dell'asset del tema, solo se il file esiste davvero in `public/` e non e' vuoto. */
+    /**
+     * URL dell'asset del tema, solo se il file esiste davvero in `public/` e non e' vuoto.
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
+     */
     private function themeAssetUrl(MetatagData $meta, string $file): ?string
     {
         $url = $meta->getPubThemeAsset($file);
@@ -272,6 +301,7 @@ final class Head extends Component
         return is_string($path) && $this->isServableFile(public_path(ltrim($path, '/'))) ? $url : null;
     }
 
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function publicAssetUrl(string $file): ?string
     {
         $url = asset($file);
@@ -282,6 +312,7 @@ final class Head extends Component
     /**
      * Un file di 0 byte (il segnaposto `favicon.ico` dello scheletro Laravel) non e' un'icona: linkarlo lascia la scheda
      * del browser senza icona e fa credere che l'icona ci sia.
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function isServableFile(string $absolutePath): bool
     {
@@ -290,6 +321,7 @@ final class Head extends Component
 
     /**
      * @param  list<string>|null  $siteLocales  lingue in cui il sito è scritto (dalla home CMS); `null` = solo la lingua corrente
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function applySchema(MetatagData $meta, string $brand, string $pageTitle, ?string $description, string $canonical, bool $isHome, ?array $siteLocales): void
     {
@@ -327,7 +359,9 @@ final class Head extends Component
      * Il JSON-LD è markup pubblico (può finire in una cache condivisa): non riceve mai l'utente della sessione.
      *
      * @return array<string, mixed>
+     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
      */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function resolvePageEntity(MetatagData $meta, string $name, ?string $description, string $canonical): array
     {
         $route = request()->route();
@@ -351,6 +385,8 @@ final class Head extends Component
         );
     }
 
+    /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
+    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function isHomepage(): bool
     {
         if ($this->homepage !== null) {

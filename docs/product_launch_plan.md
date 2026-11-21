@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_tY60yY
 title: "product launch plan"
+=======
+title: "Product Launch Plan"
+>>>>>>> .merge_file_73ffRK
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_tY60yY
 qmd: "product launch plan"
+=======
+qmd: "Product Launch Plan"
+>>>>>>> .merge_file_73ffRK
 issues: []
 discussions: []
 ---
@@ -17,12 +25,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_tY60yY
 title: "product launch plan"
+=======
+title: "PRODUCT LAUNCH PLAN"
+>>>>>>> .merge_file_73ffRK
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_tY60yY
 qmd: "product launch plan"
+=======
+qmd: "PRODUCT LAUNCH PLAN"
+>>>>>>> .merge_file_73ffRK
 issues: []
 discussions: []
 ## Launch Objectives

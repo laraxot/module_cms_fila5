@@ -1,10 +1,10 @@
 ---
-title: "filament resource guidelines"
+title: "Filament Resource Guidelines"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "filament resource guidelines"
+qmd: "Filament Resource Guidelines"
 issues: []
 discussions: []
 ---

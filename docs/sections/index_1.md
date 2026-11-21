@@ -12,14 +12,23 @@ discussions: []
 # Indice della Documentazione - Sezioni CMS
 
 ## Collegamenti Correlati
+<<<<<<< .merge_file_oehZMT
 - [Indice CMS](../INDEX.md)
+=======
+- [Indice CMS](../index.md)
+>>>>>>> .merge_file_K2N6Mi
 - [README CMS](../README.md)
 - [Sezioni](../sections.md)
 - [Gestione Sezioni](../section-management.md)
 - [Documentazione Generale](../../../../../docs/README.md)
 - [Collegamenti Documentazione](../../../../../docs/collegamenti-documentazione.md)
+<<<<<<< .merge_file_oehZMT
 - [Implementazione nell'UI](../../../UI/docs/sections/INDEX.md)
 - [Implementazione nel Tema One](../../../../Themes/One/docs/sections/INDEX.md)
+=======
+- [Implementazione nell'UI](../../../UI/docs/sections/index.md)
+- [Implementazione nel Tema One](../../../../Themes/One/docs/sections/index.md)
+>>>>>>> .merge_file_K2N6Mi
 
 ## Panoramica
 Le sezioni sono componenti strutturali che compongono le pagine del sito. Ogni sezione può contenere diversi blocchi e viene definita tramite file JSON di configurazione.

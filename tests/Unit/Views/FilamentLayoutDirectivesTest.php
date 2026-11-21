@@ -8,12 +8,15 @@ declare(strict_types=1);
  *
  * @see https://filamentphp.com/docs/5.x/introduction/installation#configuring-your-layout
  * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
+ *
+ * Le direttive sono sempre emesse dal contratto del front office. L'ordine resta quello di Filament.
  */
 
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
+/** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
 test('cms head blade contains @filamentStyles before theme vite css', function (): void {
     $path = module_path('Cms', 'resources/views/components/head.blade.php');
     Assert::assertFileExists($path);
@@ -22,6 +25,7 @@ test('cms head blade contains @filamentStyles before theme vite css', function (
     Assert::assertMatchesRegularExpression('/@filamentStyles\s*\n\s*@vite\(\[\'resources\/css\/app\.css\'\]/', $blade);
 });
 
+/** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
 test('cms foot blade contains notifications then @filamentScripts then theme vite js', function (): void {
     $path = module_path('Cms', 'resources/views/components/foot.blade.php');
     Assert::assertFileExists($path);

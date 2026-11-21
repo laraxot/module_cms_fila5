@@ -12,7 +12,11 @@ discussions: []
 # Indice della Documentazione - Blocchi CMS
 
 ## Collegamenti Correlati
+<<<<<<< .merge_file_Ws85Pp
 - [Indice CMS](../INDEX.md)
+=======
+- [Indice CMS](../index.md)
+>>>>>>> .merge_file_NVn65Z
 - [README CMS](../README.md)
 - [Blocchi](../blocks.md)
 - [Componenti Blocchi Contenuto](../componenti-blocchi-contenuto.md)
