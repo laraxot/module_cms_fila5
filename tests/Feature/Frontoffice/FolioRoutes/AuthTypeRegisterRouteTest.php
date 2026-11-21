@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< .merge_file_IqW0hs
 use Modules\Cms\Tests\TestCase;
 
 // Senza questo binding le closure di `test()`/`it()` restano legate a
@@ -11,6 +12,8 @@ use Modules\Cms\Tests\TestCase;
 // (base_quaeris_fila5#228).
 uses(TestCase::class);
 
+=======
+>>>>>>> .merge_file_BowD0d
 it('SKIP dynamic /it/auth/{type}/register', function (): void {
     $this->markTestSkipped('Dynamic type route requires fixture.');
 });

@@ -6,10 +6,16 @@ updated: 2026-09-26
 qmd: "algolia docsearch"
 issues: []
 discussions: []
+<<<<<<< .merge_file_RpdRDF
 title: Algolia DocSearch
 description: Configure Algolia DocSearch with the Jigsaw docs starter template
 extends: _layouts.documentation
 section: content
+=======
+module: theme
+topic: algolia-docsearch
+canonical: ../../../Themes/docs/shared-components/algolia-docsearch-old.md
+>>>>>>> .merge_file_Kmshqp
 ---
 
 # Algolia DocSearch {#algolia-docsearch}
