@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "header language selector with flags"
 issues: []
 discussions: []
-status: superseded
-superseded_by: header-language-selector-with-flags.md
 ---
 
 # Implementazione del Selettore di Lingua con Bandiere SVG

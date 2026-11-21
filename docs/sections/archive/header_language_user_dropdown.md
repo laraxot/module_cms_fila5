@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "header language user dropdown"
 issues: []
 discussions: []
-status: superseded
-superseded_by: ../header-language-user-dropdown.md
 ---
 
 # Implementazione del Selettore di Lingua e Dropdown Utente nell'Header
