@@ -6,11 +6,18 @@ namespace Modules\Cms\Tests\Unit\Actions\Head;
 
 use Laravel\Head\Schema\SchemaObject;
 use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
 /**
- * @param SchemaObject|array<string, mixed> $schema
- *
+ * @param  SchemaObject|array<string, mixed>  $schema
  * @return array<string, mixed>
  */
 function schemaArray(SchemaObject|array $schema): array
@@ -19,8 +26,7 @@ function schemaArray(SchemaObject|array $schema): array
 }
 
 /**
- * @param SchemaObject|array<string, mixed> $schema
- *
+ * @param  SchemaObject|array<string, mixed>  $schema
  * @return list<array<mixed>>
  */
 function breadcrumbItems(SchemaObject|array $schema): array
@@ -38,7 +44,7 @@ function breadcrumbItems(SchemaObject|array $schema): array
 }
 
 test('home identity does not depend on the language of the page that publishes it', function (string $locale, string $homeUrl): void {
-    $schemas = (new BuildHeadSchemaAction())->execute(
+    $schemas = (new BuildHeadSchemaAction)->execute(
         isHome: true,
         brand: 'Example',
         homeUrl: $homeUrl,
@@ -65,7 +71,7 @@ test('home identity does not depend on the language of the page that publishes i
 ]);
 
 test('a site written in one language declares that language as a single value', function (): void {
-    $schemas = (new BuildHeadSchemaAction())->execute(
+    $schemas = (new BuildHeadSchemaAction)->execute(
         isHome: true,
         brand: 'Example',
         homeUrl: 'https://example.test/it',
@@ -81,7 +87,7 @@ test('a site written in one language declares that language as a single value', 
 });
 
 test('inner pages link to the web site and use short breadcrumb names', function (): void {
-    $schemas = (new BuildHeadSchemaAction())->execute(
+    $schemas = (new BuildHeadSchemaAction)->execute(
         isHome: false,
         brand: 'Example',
         homeUrl: 'https://example.test/it',
@@ -103,7 +109,7 @@ test('inner pages link to the web site and use short breadcrumb names', function
 });
 
 test('the first breadcrumb falls back to the brand and an existing isPartOf is kept', function (): void {
-    $schemas = (new BuildHeadSchemaAction())->execute(
+    $schemas = (new BuildHeadSchemaAction)->execute(
         isHome: false,
         brand: 'Example',
         homeUrl: 'https://example.test/it',
@@ -116,4 +122,35 @@ test('the first breadcrumb falls back to the brand and an existing isPartOf is k
 
     Assert::assertSame('Example', breadcrumbItems($schemas[1])[0]['name']);
     Assert::assertSame(['@id' => 'https://other.test/#website'], schemaArray($schemas[0])['isPartOf']);
+});
+
+/**
+ * @param  list<string>  $sameAs
+ * @return array<string, mixed>
+ */
+function homeOrganization(?string $description, array $sameAs): array
+{
+    return schemaArray((new BuildHeadSchemaAction)->execute(
+        isHome: true,
+        brand: 'Example',
+        homeUrl: 'https://example.test/it',
+        pageTitle: 'Example',
+        pageUrl: 'https://example.test/it',
+        locale: 'it',
+        logoUrl: null,
+        page: [],
+        rootUrl: 'https://example.test',
+        description: $description,
+        sameAs: $sameAs,
+    )[0]);
+}
+
+test('home organization carries description and official profiles only when the tenant has them', function (): void {
+    $full = homeOrganization('  Segnala un disservizio al Comune.  ', ['https://www.linkedin.com/company/example', 'https://github.com/example']);
+    Assert::assertSame('Segnala un disservizio al Comune.', $full['description']);
+    Assert::assertSame(['https://www.linkedin.com/company/example', 'https://github.com/example'], $full['sameAs']);
+
+    $bare = homeOrganization(' ', []);
+    Assert::assertArrayNotHasKey('description', $bare);
+    Assert::assertArrayNotHasKey('sameAs', $bare);
 });

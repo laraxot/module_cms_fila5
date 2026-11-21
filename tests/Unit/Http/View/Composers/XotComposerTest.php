@@ -9,15 +9,23 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Modules\Cms\Http\View\Composers\XotComposer;
+use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 test('compose returns early when no authenticated user', function (): void {
     Auth::shouldReceive('user')->once()->andReturn(null);
 
     $view = cmsCreateMock(View::class);
 
-    $composer = new XotComposer();
+    $composer = new XotComposer;
     $composer->compose($view);
 });
 
@@ -27,7 +35,7 @@ test('compose returns early when authenticated user is not user contract', funct
 
     $view = cmsCreateMock(View::class);
 
-    $composer = new XotComposer();
+    $composer = new XotComposer;
     $composer->compose($view);
 });
 
@@ -54,10 +62,10 @@ test('compose shares params lang and profile when user contract is authenticated
     $view->method('with')->willReturnCallback(
         static function (string $key, mixed $value) use ($view, $profile, &$calls): View {
             $calls = (int) $calls + 1;
-            if (1 === $calls) {
+            if ($calls === 1) {
                 Assert::assertSame('params', $key);
                 Assert::assertSame(['slug' => 'about'], $value);
-            } elseif (2 === $calls) {
+            } elseif ($calls === 2) {
                 Assert::assertSame('lang', $key);
                 Assert::assertSame('it', $value);
             } else {
@@ -69,6 +77,6 @@ test('compose shares params lang and profile when user contract is authenticated
         }
     );
 
-    $composer = new XotComposer();
+    $composer = new XotComposer;
     $composer->compose($view);
 });

@@ -10,6 +10,13 @@ use Modules\UI\View\Components\Render\Blocks;
 
 use function Pest\Laravel\get;
 
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
 describe('Homepage Filament Builder Blocks - CMS Module', function () {
     beforeEach(function () {
         $this->lang = app()->getLocale();
@@ -51,7 +58,7 @@ describe('Homepage Filament Builder Blocks - CMS Module', function () {
         expect($allBlocks->count())->toBeGreaterThan(0);
 
         // Verify CMS blocks are discovered
-        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => $block->module === 'Cms');
         if ($cmsBlocks->count() > 0) {
             foreach ($cmsBlocks as $block) {
                 expect($block->toArray())->toHaveKeys(['name', 'class', 'module', 'path']);

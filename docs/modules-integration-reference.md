@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "modules integration reference"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Modules Integration Reference
@@ -444,6 +443,8 @@ Vite Build Process:
 2. Compiles resources/css/app.css
 3. Compiles resources/js/app.js
 4. Outputs to public/
+5. niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
+
 5. npm run copy (dismesso: symlink public_html/themes/<Tema>) (copies to public_html/themes/Meetup)
 ```
 

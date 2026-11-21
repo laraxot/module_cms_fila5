@@ -12,6 +12,14 @@ use PHPUnit\Framework\Assert as PHPUnitAssert;
 use Webmozart\Assert\Assert;
 
 use function Pest\Laravel\get;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
 describe('Filament Builder Blocks System', function () {
     test('blocks discovery system finds all available blocks', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
@@ -28,7 +36,7 @@ describe('Filament Builder Blocks System', function () {
     test('xot base block pattern is followed by cms blocks', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
 
-        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => $block->module === 'Cms');
 
         expect($cmsBlocks->count())->toBeGreaterThan(0, 'CMS module should have blocks');
 
@@ -176,7 +184,7 @@ describe('Filament Builder Blocks System', function () {
 
     test('cms module blocks extend xot base block correctly', function () {
         $allBlocks = app(GetAllBlocksAction::class)->execute();
-        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => 'Cms' === $block->module);
+        $cmsBlocks = collect($allBlocks)->filter(fn ($block) => $block->module === 'Cms');
 
         foreach ($cmsBlocks as $block) {
             $blockClass = $block->class;

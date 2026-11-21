@@ -9,7 +9,15 @@ use Modules\Cms\Database\Factories\SectionFactory;
 use Modules\Cms\Models\Page;
 use Modules\Cms\Models\PageContent;
 use Modules\Cms\Models\Section;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -325,7 +333,7 @@ test('cms module handles bulk operations efficiently', function () {
     $pageContentsData = [];
     $sectionsData = [];
 
-    for ($i = 0; $i < 50; ++$i) {
+    for ($i = 0; $i < 50; $i++) {
         $pagesData[] = [
             'slug' => "page-{$i}",
             'title' => ['en' => "Page {$i}", 'it' => "Pagina {$i}"],

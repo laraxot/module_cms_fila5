@@ -2,7 +2,17 @@
 
 declare(strict_types=1);
 
+use Illuminate\Http\Response;
+use Illuminate\Testing\TestResponse;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 beforeEach(function (): void {
     /* @var \Modules\Cms\Tests\TestCase $this */
@@ -49,7 +59,7 @@ describe('Registration Page Content', function () use ($userTypes): void {
 
         test("{$type} registration page has proper HTML structure", function () use ($type): void {
             $response = get("/it/auth/{$type}/register");
-            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+            /** @var TestResponse<Response> $response */
             $content = (string) $response->getContent();
             Assert::assertStringContainsString('<!DOCTYPE html>', $content);
             Assert::assertStringContainsString('<html', $content);
@@ -80,7 +90,7 @@ describe('Registration Page Performance', function () use ($userTypes): void {
             $startTime = microtime(true);
 
             $response = get("/it/auth/{$type}/register");
-            /** @var Illuminate\Testing\TestResponse<Illuminate\Http\Response> $response */
+            /** @var TestResponse<Response> $response */
             $loadTime = microtime(true) - $startTime;
 
             Assert::assertSame(200, $response->status());

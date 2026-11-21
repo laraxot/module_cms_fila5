@@ -6,11 +6,19 @@ use Filament\Forms\Components\Field;
 use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Filament\Resources\MenuResource\Schemas\MenuForm;
 use Modules\Cms\Models\Menu;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 describe('MenuResource', function (): void {
     test('menu resource has correct model', function (): void {
-        $resource = new MenuResource();
+        $resource = new MenuResource;
 
         Assert::assertSame(Menu::class, $resource::getModel());
     });
@@ -33,10 +41,10 @@ describe('MenuResource', function (): void {
                 continue;
             }
             $name = $item->getName();
-            if ('title' === $name) {
+            if ($name === 'title') {
                 $hasTitle = true;
             }
-            if ('items' === $name) {
+            if ($name === 'items') {
                 $hasItems = true;
             }
         }

@@ -5,10 +5,18 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Actions\Head;
 
 use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
 test('private areas stay noindex however the path is written', function (string $path): void {
-    $policy = new ResolveRobotsPolicyAction();
+    $policy = new ResolveRobotsPolicyAction;
 
     Assert::assertFalse($policy->isIndexable($path, ['it', 'en']), $path);
 })->with([
@@ -24,13 +32,13 @@ test('private areas stay noindex however the path is written', function (string 
 ]);
 
 test('public pages are indexable, with and without the locale prefix', function (string $path): void {
-    $policy = new ResolveRobotsPolicyAction();
+    $policy = new ResolveRobotsPolicyAction;
 
     Assert::assertTrue($policy->isIndexable($path, ['it', 'en']), $path);
 })->with(['', 'it', '/en/', 'it/faq', 'EN/Services/Radioprotezione', 'it/blog/some-post']);
 
 test('path segments are decoded, lower-cased and stripped of the locale prefix', function (): void {
-    $policy = new ResolveRobotsPolicyAction();
+    $policy = new ResolveRobotsPolicyAction;
 
     Assert::assertSame(['servizi', 'radio protezione'], $policy->pathSegments('/IT/Servizi/Radio%20protezione/', ['it', 'en']));
     Assert::assertSame([], $policy->pathSegments('it', ['IT', 'EN']));
@@ -38,7 +46,7 @@ test('path segments are decoded, lower-cased and stripped of the locale prefix',
 });
 
 test('page rules hide test pages, auth pages, detail templates, redirect aliases and pages behind auth', function (string $slug, mixed $middleware, bool $expected): void {
-    $policy = new ResolveRobotsPolicyAction();
+    $policy = new ResolveRobotsPolicyAction;
 
     Assert::assertSame($expected, $policy->isPageIndexable($slug, $middleware), $slug);
 })->with([
@@ -57,7 +65,7 @@ test('page rules hide test pages, auth pages, detail templates, redirect aliases
 ]);
 
 test('the robots directive follows the decision', function (): void {
-    $policy = new ResolveRobotsPolicyAction();
+    $policy = new ResolveRobotsPolicyAction;
 
     Assert::assertSame('noindex, follow', $policy->directive(false));
     Assert::assertSame('index, follow, max-image-preview:large', $policy->directive(true));

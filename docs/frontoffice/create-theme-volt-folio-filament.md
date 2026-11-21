@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "create theme volt folio filament"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Creazione di un Tema con Volt, Folio e Filament
@@ -427,6 +426,7 @@ npm run preview
 
 3. **Copiatura degli Asset**
 ```bash
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ## Troubleshooting
@@ -464,6 +464,6 @@ npm run preview
 ## Alternative
 
 Se preferisci utilizzare un framework frontend moderno, puoi consultare le guide per:
-- [Creazione di un tema con Vue.js](create-theme-vue.md)
-- [Creazione di un tema con React](create-theme-react.md)
-- [Creazione di un tema con Laravel](../create_theme.md)
+- [Creazione di un tema con Vue.js](create_theme_vue.md)
+- [Creazione di un tema con React](create_theme_react.md)
+- [Creazione di un tema con Laravel](create_theme.md)

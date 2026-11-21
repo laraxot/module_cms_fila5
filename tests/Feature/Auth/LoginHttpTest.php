@@ -7,10 +7,17 @@ namespace Modules\Cms\Tests\Feature\Auth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Volt\Volt as LivewireVolt;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\actingAs;
 
-use PHPUnit\Framework\Assert;
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 describe('Login Http', function (): void {
     test('login page can be rendered', function (): void {
@@ -125,7 +132,7 @@ describe('Login Http', function (): void {
             'password' => Hash::make('password123'),
         ]);
 
-        for ($i = 0; $i < 5; ++$i) {
+        for ($i = 0; $i < 5; $i++) {
             LivewireVolt::test('auth.login #4')
                 ->set('email', $email)
                 ->set('password', 'wrong_password')

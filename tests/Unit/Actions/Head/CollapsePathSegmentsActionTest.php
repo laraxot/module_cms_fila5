@@ -5,10 +5,18 @@ declare(strict_types=1);
 namespace Modules\Cms\Tests\Unit\Actions\Head;
 
 use Modules\Cms\Actions\Head\CollapsePathSegmentsAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
 test('a path is reduced to the form the router serves', function (string $path, string $expected): void {
-    Assert::assertSame($expected, (new CollapsePathSegmentsAction())->execute($path), $path);
+    Assert::assertSame($expected, (new CollapsePathSegmentsAction)->execute($path), $path);
 })->with([
     'already clean' => ['it/faq', 'it/faq'],
     'leading and trailing slashes' => ['/it/faq/', 'it/faq'],
@@ -22,5 +30,5 @@ test('a path is reduced to the form the router serves', function (string $path, 
 ]);
 
 test('segments come back as a list in path order', function (): void {
-    Assert::assertSame(['it', 'auth', 'login'], (new CollapsePathSegmentsAction())->segments('/it/./x/../auth//login/'));
+    Assert::assertSame(['it', 'auth', 'login'], (new CollapsePathSegmentsAction)->segments('/it/./x/../auth//login/'));
 });

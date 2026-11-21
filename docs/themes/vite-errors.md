@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "vite errors"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Gestione Errori Vite nei Temi
@@ -62,6 +61,7 @@ cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/[NomeTema]
 npm install
 
 # Compilazione tema
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ### 3. Verifica Post-Compilazione
@@ -86,8 +86,8 @@ ls -la dist/
 - Verifica dell'integrità dei file compilati
 
 ## Collegamenti Correlati
-- [Documentazione Generale Errori](/project_docs/errors/readme.md)
-- [Gestione Temi CMS](../../../../Themes/README.md)
+- [Documentazione Generale Errori](/project_docs/errors/README.md)
+- [Gestione Temi CMS](../themes/README.md)
 - [Processo di Deploy](../../project_docs/deployment/themes.md)
 
 ## Note Tecniche
@@ -125,6 +125,8 @@ npm cache clean --force
 
 # Ricompilazione forzata
 rm -rf dist/ node_modules/
+npm install
+
 npm install && npm run build
 ```
 

@@ -12,20 +12,15 @@ updated: 2026-10-13
 tags: [cms, json, slug, asset, manifest, guardia, tdd]
 qmd: "dcp-101 guardie json slug duplicato asset 0 byte manifest design-comuni-pages blade view pub_theme tests tenant modulo identici"
 related:
-  - Themes/Sixteen/docs/bmad/stories/dcp-09-json-content-integrity-guard.story.md
-  - Themes/Sixteen/docs/bmad/stories/dcp-08-asset-integrity-and-fonts.story.md
-  - Themes/Sixteen/docs/bmad/decisions/parity-root-cause-and-guardrails.md
+  - Themes/Sixteen/docs/bmad/stories/2026-10-13-dcp-09-json-content-integrity-guard.story.md
+  - Themes/Sixteen/docs/bmad/stories/2026-10-13-dcp-08-asset-integrity-and-fonts.story.md
+  - Themes/Sixteen/docs/bmad/decisions/2026-10-13-parity-root-cause-and-guardrails.md
   - Modules/Cms/docs/json-content-slug-uniqueness.md
   - Modules/Fixcity/tests/Unit/TicketCreatePageMiddlewareGuardTest.php
+date_originale_nome_file: 2026-10-13
 ---
 
 # DCP-101: guardie su JSON, asset e manifest
-
-> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
-> arrivano nella document root con un symlink, non con una copia. Per il
-> procedimento valido vedi
-> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
-> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ## Richiesta (2026-10-13)
 Gli incidenti del giorno (500 "CMS content collision", PNG a 0 byte dopo `npm run copy`, manifest e JSON non allineati) si trovavano solo guardando la pagina.

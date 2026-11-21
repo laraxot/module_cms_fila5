@@ -62,6 +62,7 @@ cd /var/www/html/_bases/base_predict_fila3_mono/laravel/Themes/[NomeTema]
 npm install
 
 # Compilazione tema
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ### 3. Verifica Post-Compilazione
@@ -125,6 +126,8 @@ npm cache clean --force
 
 # Ricompilazione forzata
 rm -rf dist/ node_modules/
+npm install
+
 npm install && npm run build
 ```
 

@@ -6,9 +6,17 @@ use Modules\Cms\Filament\Resources\MenuResource;
 use Modules\Cms\Filament\Resources\PageContentResource;
 use Modules\Cms\Filament\Resources\PageResource;
 use Modules\Cms\Filament\Resources\SectionResource;
+use Modules\Cms\Tests\TestCase;
 use Modules\Lang\Filament\Resources\LangBaseResource;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 test('cms resources extend proper base resources', function () {
     foreach ([PageResource::class, PageContentResource::class, SectionResource::class] as $resourceClass) {
@@ -104,11 +112,11 @@ test('page resource form schema contains expected fields', function () {
 
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'title',
         );
 
     $hasSlugField = collect($schema)
-        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && 'slug' === $field->getName());
+        ->contains(fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'slug');
 
     Assert::assertTrue($hasTitleField, 'PageResource should have title field');
     Assert::assertTrue($hasSlugField, 'PageResource should have slug field');
@@ -122,12 +130,12 @@ test('menu resource form schema contains expected fields', function () {
 
     $hasTitleField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'title' === $field->getName(),
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'title',
         );
 
     $hasItemsField = collect($schema)
         ->contains(
-            fn ($field) => is_object($field) && method_exists($field, 'getName') && 'items' === $field->getName(),
+            fn ($field) => is_object($field) && method_exists($field, 'getName') && $field->getName() === 'items',
         );
 
     Assert::assertTrue($hasTitleField, 'MenuResource should have title field');

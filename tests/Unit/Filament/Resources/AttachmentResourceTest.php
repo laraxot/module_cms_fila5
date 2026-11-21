@@ -5,11 +5,19 @@ declare(strict_types=1);
 use Modules\Cms\Filament\Resources\AttachmentResource;
 use Modules\Cms\Filament\Resources\AttachmentResource\Schemas\AttachmentForm;
 use Modules\Cms\Models\Attachment;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 describe('AttachmentResource', function (): void {
     test('attachment resource has correct model', function (): void {
-        $resource = new AttachmentResource();
+        $resource = new AttachmentResource;
 
         Assert::assertSame(Attachment::class, $resource::getModel());
     });
@@ -47,8 +55,6 @@ describe('AttachmentResource', function (): void {
         Assert::assertTrue(property_exists(AttachmentResource::class, 'navigationLabel'));
     });
 
-    test('attachment resource has plural label', function (): void {
-    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
-    test('attachment resource has plural label #2', function (): void {
-    })->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+    test('attachment resource has plural label', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
+    test('attachment resource has plural label #2', function (): void {})->todo('AttachmentResource non dichiara ne\' $pluralModelLabel ne\' getPluralModelLabel(): l\'etichetta arriva da XotBaseResource via trans(). Il test va scritto sul valore tradotto, non sull\'esistenza del membro.');
 });

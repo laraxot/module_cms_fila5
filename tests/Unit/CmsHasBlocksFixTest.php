@@ -4,10 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit;
 
+use Modules\Cms\Models\Traits\HasBlocks;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
 test('HasBlocks getBlocksBySlug handles MultipleRecordsFoundException', function (): void {
-    $reflectionClass = new \ReflectionClass(\Modules\Cms\Models\Traits\HasBlocks::class);
+    $reflectionClass = new \ReflectionClass(HasBlocks::class);
     $method = $reflectionClass->getMethod('getBlocksBySlug');
     expect($method)->not->toBeNull();
     expect($method->isStatic())->toBeTrue();
@@ -17,7 +26,7 @@ test('HasBlocks getBlocksBySlug handles MultipleRecordsFoundException', function
 });
 
 test('getBlocksBySlug method signature is correct', function (): void {
-    $reflectionClass = new \ReflectionClass(\Modules\Cms\Models\Traits\HasBlocks::class);
+    $reflectionClass = new \ReflectionClass(HasBlocks::class);
     $method = $reflectionClass->getMethod('getBlocksBySlug');
     $params = $method->getParameters();
     expect(count($params))->toBe(2);

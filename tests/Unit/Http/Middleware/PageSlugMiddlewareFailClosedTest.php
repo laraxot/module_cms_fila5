@@ -10,10 +10,7 @@ use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Log;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use Modules\Cms\Models\Page;
-<<<<<<< .merge_file_2zYH6W
-=======
 use Modules\Cms\Tests\TestCase;
->>>>>>> .merge_file_vmOYAm
 use Modules\Cms\Tests\Unit\Http\Middleware\Dcp283NoHandleMiddleware;
 use Modules\Cms\Tests\Unit\Http\Middleware\Dcp283ProbeMiddleware;
 use Modules\Cms\Tests\Unit\Http\Middleware\Dcp283ReturnsNothingMiddleware;
@@ -24,6 +21,11 @@ use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
 uses(TestCase::class);
 
 /*
