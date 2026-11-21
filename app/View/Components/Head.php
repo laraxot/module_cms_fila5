@@ -149,6 +149,7 @@ final class Head extends Component
 
     /**
      * Prop del componente, poi testo della pagina CMS (non per la home, che ha la descrizione curata del sito), poi descrizione del sito.
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function resolveDescription(MetatagData $meta, ?Page $page, bool $isHome): ?string
@@ -187,6 +188,7 @@ final class Head extends Component
     /**
      * URL pulito della richiesta (senza `index.php`, segmenti-punto, barre doppie e query), https in produzione:
      * la stessa stringa per canonical, `og:url` e dati strutturati.
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function canonicalUrl(): string
@@ -207,6 +209,7 @@ final class Head extends Component
     /**
      * Radice del sito senza il file di ingresso (come fa `asset()`: `/index.php/it` non deve finire negli URL dichiarati),
      * https in produzione. Canonical, `@id` e URL dello schema partono tutti da qui, così non possono divergere.
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function siteRoot(): string
@@ -250,6 +253,7 @@ final class Head extends Component
 
     /**
      * @param  list<string>  $localeCodes
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function resolvePage(string $path, array $localeCodes): ?Page
@@ -286,6 +290,7 @@ final class Head extends Component
 
     /**
      * URL dell'asset del tema, solo se il file esiste davvero in `public/` e non e' vuoto.
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function themeAssetUrl(MetatagData $meta, string $file): ?string
@@ -307,6 +312,7 @@ final class Head extends Component
     /**
      * Un file di 0 byte (il segnaposto `favicon.ico` dello scheletro Laravel) non e' un'icona: linkarlo lascia la scheda
      * del browser senza icona e fa credere che l'icona ci sia.
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function isServableFile(string $absolutePath): bool
@@ -316,6 +322,7 @@ final class Head extends Component
 
     /**
      * @param  list<string>|null  $siteLocales  lingue in cui il sito è scritto (dalla home CMS); `null` = solo la lingua corrente
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function applySchema(MetatagData $meta, string $brand, string $pageTitle, ?string $description, string $canonical, bool $isHome, ?array $siteLocales): void
@@ -354,6 +361,7 @@ final class Head extends Component
      * Il JSON-LD è markup pubblico (può finire in una cache condivisa): non riceve mai l'utente della sessione.
      *
      * @return array<string, mixed>
+     *
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function resolvePageEntity(MetatagData $meta, string $name, ?string $description, string $canonical): array
