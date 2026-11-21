@@ -218,8 +218,9 @@ final class Head extends Component
 
     /**
      * `true` se la richiesta è già nella forma del canonical: nessun `index.php` nell'URL e nessun segmento vuoto o punto.
+     *
+     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
-    /** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
     private function isCanonicalForm(): bool
     {
         $request = request();
