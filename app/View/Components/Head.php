@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
-use Illuminate\Support\Str;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Laravel\Head\Facades\Head as HeadManager;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -20,10 +20,10 @@ use Modules\Cms\Actions\Head\ResolvePageDescriptionAction;
 use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
 use Modules\Cms\Actions\Head\ResolveWrittenLocalesAction;
 use Modules\Cms\Models\Page;
+use Modules\Tenant\Actions\Config\GetTenantConfigArrayAction;
 use Modules\Xot\Datas\MetatagData;
 
 use function Safe\parse_url;
-use function Safe\preg_replace;
 
 /**
  * Il `<head>` del front office: la vista emette `<head>…</head>`, i layout non lo avvolgono.
@@ -300,6 +300,7 @@ final class Head extends Component
                 rootUrl: $this->siteRoot(),
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
                 languages: $siteLocales,
+                business: $isHome ? $this->businessData() : [],
             );
 
             foreach ($schemas as $schema) {
@@ -309,6 +310,26 @@ final class Head extends Component
             // I dati strutturati sono un di più: un valore non valido (il validatore di laravel/head lancia fuori produzione) non deve togliere la pagina.
             report($exception);
         }
+    }
+
+    /**
+     * Dati dell'attività del tenant (`metatag.php`, chiave `business`): solo dati pubblici, come nel piè di pagina.
+     *
+     * @return array<string, mixed>
+     */
+    private function businessData(): array
+    {
+        $business = app(GetTenantConfigArrayAction::class)->execute('metatag')['business'] ?? [];
+        if (! \is_array($business)) {
+            return [];
+        }
+
+        $data = [];
+        foreach ($business as $key => $value) {
+            $data[(string) $key] = $value;
+        }
+
+        return $data;
     }
 
     /**

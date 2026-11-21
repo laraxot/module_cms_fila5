@@ -28,6 +28,10 @@ final class BuildHeadSchemaAction
      * @param  string|null  $rootUrl  URL della radice del sito, senza lingua: è l'identità dell'entità (`#organization`, `#website`); se manca si usa `$homeUrl`
      * @param  string  $homeLabel  nome della prima briciola («Home»); se vuoto si usa il brand
      * @param  list<string>|null  $languages  lingue in cui il sito è scritto; se manca si usa `$locale`
+     * @param  array<string, mixed>  $business  dati dell'attività dal tenant (`metatag.business`): `type` (per esempio
+     *                                          `ProfessionalService`, sottotipo di LocalBusiness) e proprietà schema.org
+     *                                          (`telephone`, `email`, `address`, `areaServed`, `sameAs`, ...). Vuoto =
+     *                                          Organization con solo nome, URL e logo.
      * @return list<SchemaObject|array<string, mixed>>
      */
     public function execute(
@@ -42,12 +46,13 @@ final class BuildHeadSchemaAction
         ?string $rootUrl = null,
         string $homeLabel = '',
         ?array $languages = null,
+        array $business = [],
     ): array {
         $root = rtrim($rootUrl ?? $homeUrl, '/').'/';
 
         if ($isHome) {
             return [
-                $this->organization($brand, $root, $logoUrl),
+                $this->organization($brand, $root, $logoUrl, $business),
                 $this->webSite($brand, $root, [] !== ($languages ?? []) ? (array) $languages : [$locale]),
             ];
         }
@@ -58,11 +63,40 @@ final class BuildHeadSchemaAction
         ];
     }
 
-    private function organization(string $brand, string $root, ?string $logoUrl): Organization
+    /**
+     * Con i dati dell'attività l'organizzazione diventa un'attività locale (indirizzo, telefono, zona servita): è
+     * il segnale che Google usa per le ricerche «servizio + città». Nome, URL, `@id` e logo restano quelli del sito.
+     *
+     * @param  array<string, mixed>  $business
+     */
+    private function organization(string $brand, string $root, ?string $logoUrl, array $business = []): Organization
     {
-        $organization = (new Organization)->name($brand)->url($root)->set('@id', $root.'#organization');
+        $type = $business['type'] ?? null;
+        $organization = (new Organization(is_string($type) && $type !== '' ? $type : null))
+            ->name($brand)->url($root)->set('@id', $root.'#organization');
 
-        return $logoUrl !== null ? $organization->logo($logoUrl) : $organization;
+        if ($logoUrl !== null) {
+            $organization = $organization->logo($logoUrl)->set('image', $logoUrl);
+        }
+
+        foreach ($business as $property => $value) {
+            if (\in_array($property, ['type', 'name', 'url', '@id', '@type', 'logo'], true) || $this->isEmpty($value)) {
+                continue;
+            }
+            $organization = $organization->set($property, $value);
+        }
+
+        return $organization;
+    }
+
+    /** Valori vuoti fuori: il validatore di laravel/head li rifiuta e uno schema con campi vuoti non serve. */
+    private function isEmpty(mixed $value): bool
+    {
+        if (\is_array($value)) {
+            return array_filter($value, fn (mixed $item): bool => ! $this->isEmpty($item)) === [];
+        }
+
+        return $value === null || (\is_string($value) && trim($value) === '');
     }
 
     /**
@@ -70,12 +104,12 @@ final class BuildHeadSchemaAction
      */
     private function webSite(string $brand, string $root, array $languages): SchemaObject
     {
-        return (new WebSite)->name($brand)->url($root)->set('@id', $root.'#website')
+        return (new WebSite())->name($brand)->url($root)->set('@id', $root.'#website')
             ->set('inLanguage', count($languages) === 1 ? $languages[0] : $languages);
     }
 
     private function breadcrumbs(string $homeLabel, string $homeUrl, string $pageTitle, string $pageUrl): Breadcrumbs
     {
-        return (new Breadcrumbs)->item($homeLabel, $homeUrl)->item($pageTitle, $pageUrl);
+        return (new Breadcrumbs())->item($homeLabel, $homeUrl)->item($pageTitle, $pageUrl);
     }
 }

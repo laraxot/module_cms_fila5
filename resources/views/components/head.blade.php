@@ -22,4 +22,6 @@
         @filamentStyles
     @endif
     @vite(['resources/css/app.css'], 'themes/'.$pubTheme)
+    {{-- Stili dei blocchi della pagina (@push('styles'), per esempio content.simple): senza lo stack non arrivavano mai. --}}
+    @stack('styles')
 </head>
