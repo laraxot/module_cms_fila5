@@ -15,15 +15,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-// Senza questo binding le closure di `test()`/`it()` restano legate a
-// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
-// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
-// 94 fallimenti «Target class [config] does not exist» nel modulo
-// (base_quaeris_fila5#228).
 // This is a pure Blade contract test; it does not boot the Laravel application.
 /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
 test('cms head blade contains @filamentStyles before theme vite css', function (): void {
-    $path = module_path('Cms', 'resources/views/components/head.blade.php');
+    $path = dirname(__DIR__, 3).'/resources/views/components/head.blade.php';
     Assert::assertFileExists($path);
     $blade = file_get_contents($path);
     Assert::assertStringContainsString('@filamentStyles', $blade);
@@ -32,7 +27,7 @@ test('cms head blade contains @filamentStyles before theme vite css', function (
 
 /** @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md */
 test('cms foot blade contains notifications then @filamentScripts then theme vite js', function (): void {
-    $path = module_path('Cms', 'resources/views/components/foot.blade.php');
+    $path = dirname(__DIR__, 3).'/resources/views/components/foot.blade.php';
     Assert::assertFileExists($path);
     $blade = file_get_contents($path);
     Assert::assertStringContainsString("@livewire('notifications')", $blade);
