@@ -219,8 +219,8 @@ it('renders filament icon buttons for social links', function () {
 - [Best Practices Filament](https://filamentphp.com/docs/3.x/support/overview)
 
 ## Collegamenti Interni
-- [Guida ai Temi](/laravel/themes/one/docs/readme.md)
-- [Componenti UI](/laravel/modules/cms/docs/components/readme.md)
+- [Guida ai Temi](/laravel/themes/one/docs/README.md)
+- [Componenti UI](/laravel/Modules/Cms/docs/components/README.md)
 - [Testing Components](/laravel/modules/cms/docs/testing/components.md)
 
 ## Collegamenti tra versioni di filament-components.md

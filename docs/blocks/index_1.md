@@ -12,7 +12,7 @@ discussions: []
 # Indice della Documentazione - Blocchi CMS
 
 ## Collegamenti Correlati
-- [Indice CMS](../INDEX.md)
+- [Indice CMS](../index.md)
 - [README CMS](../README.md)
 - [Blocchi](../blocks.md)
 - [Componenti Blocchi Contenuto](../componenti-blocchi-contenuto.md)

@@ -1,10 +1,10 @@
 ---
-title: "script placement rules"
+title: "Script Placement Rules"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "script placement rules"
+qmd: "Script Placement Rules"
 issues: []
 discussions: []
 ---

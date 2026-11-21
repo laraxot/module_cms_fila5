@@ -80,8 +80,8 @@ ls -la dist/
 - Verifica dell'integrità dei file compilati
 
 ## Collegamenti Correlati
-- [Documentazione Generale Errori](/docs/errors/readme.md)
-- [Gestione Temi CMS](../themes/readme.md)
+- [Documentazione Generale Errori](/docs/errors/README.md)
+- [Gestione Temi CMS](../themes/README.md)
 - [Processo di Deploy](../../../docs/deployment/themes.md)
 
 ## Note Tecniche

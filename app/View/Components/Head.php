@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Cms\View\Components;
 
-use Illuminate\Support\Str;
 use Illuminate\Contracts\View\View as ViewContract;
 use Illuminate\Support\Facades\Lang;
+use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Laravel\Head\Facades\Head as HeadManager;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -22,8 +22,8 @@ use Modules\Cms\Actions\Head\ResolveWrittenLocalesAction;
 use Modules\Cms\Models\Page;
 use Modules\Xot\Datas\MetatagData;
 
+use function Safe\filesize;
 use function Safe\parse_url;
-use function Safe\preg_replace;
 
 /**
  * Il `<head>` del front office: la vista emette `<head>…</head>`, i layout non lo avvolgono.
@@ -92,6 +92,14 @@ final class Head extends Component
         }
 
         $this->applyIcons($meta);
+
+        // Verifica della proprietà del sito (Search Console, Bing, Yandex): basta in home, solo i token configurati.
+        // @see Modules/Seo/docs/adr/search-engine-presence.md
+        if ($isHome) {
+            foreach ($meta->getSiteVerifications() as $name => $token) {
+                HeadManager::meta($name, $token);
+            }
+        }
 
         // Una pagina `noindex` non dichiara un canonical (segnale contraddittorio) né alternative linguistiche né dati strutturati.
         // Le alternative linguistiche si derivano dall'URL richiesto: su una variante non canonica (`/it/./faq`, `/index.php/it/faq`)
@@ -259,20 +267,29 @@ final class Head extends Component
         }
     }
 
-    /** URL dell'asset del tema, solo se il file esiste davvero in `public/`. */
+    /** URL dell'asset del tema, solo se il file esiste davvero in `public/` e non e' vuoto. */
     private function themeAssetUrl(MetatagData $meta, string $file): ?string
     {
         $url = $meta->getPubThemeAsset($file);
         $path = parse_url($url, PHP_URL_PATH);
 
-        return is_string($path) && is_file(public_path(ltrim($path, '/'))) ? $url : null;
+        return is_string($path) && $this->isServableFile(public_path(ltrim($path, '/'))) ? $url : null;
     }
 
     private function publicAssetUrl(string $file): ?string
     {
         $url = asset($file);
 
-        return is_file(public_path($file)) ? $url : null;
+        return $this->isServableFile(public_path($file)) ? $url : null;
+    }
+
+    /**
+     * Un file di 0 byte (il segnaposto `favicon.ico` dello scheletro Laravel) non e' un'icona: linkarlo lascia la scheda
+     * del browser senza icona e fa credere che l'icona ci sia.
+     */
+    private function isServableFile(string $absolutePath): bool
+    {
+        return is_file($absolutePath) && filesize($absolutePath) > 0;
     }
 
     /**
@@ -297,6 +314,8 @@ final class Head extends Component
                 rootUrl: $this->siteRoot(),
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
                 languages: $siteLocales,
+                description: $isHome ? $description : null,
+                sameAs: $isHome ? $meta->getSameAs() : [],
             );
 
             foreach ($schemas as $schema) {

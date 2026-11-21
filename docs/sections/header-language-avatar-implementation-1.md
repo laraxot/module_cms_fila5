@@ -12,7 +12,7 @@ discussions: []
 # Implementazione del Selettore di Lingua e Avatar Utente nell'Header
 
 ## Collegamenti correlati
-- [README modulo Cms](./readme.md)
+- [README modulo Cms](./README.md)
 - [Documentazione User](../../../User/docs/header_language_avatar_implementation.md)
 - [Documentazione Sezioni](./sections_structure.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)

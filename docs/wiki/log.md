@@ -40,7 +40,7 @@ discussions: []
 - Struttura wiki/log.md inizializzata.
 - Layer raw: tutti i file in `docs/` (eccetto `wiki/`).
 - Layer wiki: `docs/wiki/` — LLM-maintained, sintesi ad alto riuso.
-- Schema: `docs/.schema/WIKI_SCHEMA.md`
+- Schema: `docs/.schema/wiki_schema.md`
 - Adozione moduli: `docs/project/llm-wiki-module-adoption.md`
 
 ## [2026-04-21] conflict-resolution-batch-1 | cms

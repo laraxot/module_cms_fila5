@@ -1,10 +1,10 @@
 ---
-title: "analisi visiva"
+title: "Analisi Visiva"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "analisi visiva"
+qmd: "Analisi Visiva"
 issues: []
 discussions: []
 ---
@@ -19,12 +19,12 @@ discussions: []
 
 ---
 
-title: "analisi visiva"
+title: "ANALISI VISIVA"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "analisi visiva"
+qmd: "ANALISI VISIVA"
 issues: []
 discussions: []
 ## 1. Header Structure

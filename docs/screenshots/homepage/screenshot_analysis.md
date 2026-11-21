@@ -1,10 +1,10 @@
 ---
-title: "screenshot analysis"
+title: "Screenshot Analysis"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "screenshot analysis"
+qmd: "Screenshot Analysis"
 issues: []
 discussions: []
 ---
@@ -36,12 +36,12 @@ URL: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
 
 ---
 
-title: "screenshot analysis"
+title: "SCREENSHOT ANALYSIS"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "screenshot analysis"
+qmd: "SCREENSHOT ANALYSIS"
 issues: []
 discussions: []
 ### 2. Hero Section

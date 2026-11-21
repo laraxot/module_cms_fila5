@@ -117,10 +117,10 @@ I blocchi sono l'unità base di contenuto. Ogni blocco:
 
 ## Documentazione Correlata
 
-- [Gestione dei Temi](../themes/readme.md)
+- [Gestione dei Temi](../themes/README.md)
 - [Componenti UI](../components/README.md)
 - [Configurazione Blocchi](../blocks/README.md)
-- [Ottimizzazione Performance](../performance/readme.md)
+- [Ottimizzazione Performance](../performance/README.md)
 
 ## Collegamenti tra versioni di architecture.md
 * [architecture.md](docs/tecnico/filament/architecture.md)
