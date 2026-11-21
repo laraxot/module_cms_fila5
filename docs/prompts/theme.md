@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "theme"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Theme
@@ -29,9 +28,6 @@ cd laravel/Themes/<nome tem>
 composer update -W 
 npm install
 npm run build
-<<<<<<< .merge_file_aqWyml
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_5IOrxT
 capisci te i perche' 
 utilizza openviking installato globalmente, bmad, gsd , ralph loop e notebooklm

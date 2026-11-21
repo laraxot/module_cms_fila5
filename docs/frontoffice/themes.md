@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "themes"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Gestione Temi - Linee Guida e Riflessioni
@@ -54,10 +53,7 @@ laravel/Themes/One/
 npm run build
 
 # Pubblicazione
-<<<<<<< .merge_file_aHQ1WL
 # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_yMAB5R
 ```
 
 ## Riflessioni e Linee Guida
@@ -138,10 +134,7 @@ npm run build
    ls -la public/themes/One
 
    # Forza copia
-<<<<<<< .merge_file_aHQ1WL
    # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
-=======
->>>>>>> .merge_file_yMAB5R
    ```
 
 3. **Problemi di Cache**
@@ -178,5 +171,5 @@ npm run build
 
 ## Collegamenti tra versioni di themes.md
 * [themes.md](docs/rules/themes.md)
-* [themes.md](../../../Xot/docs/themes.md)
+* [themes.md](laravel/modules/xot/docs/themes.md)
 * [themes.md](laravel/modules/cms/docs/frontoffice/themes.md)
