@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_pbQBkR
 title: "page component architecture"
+=======
+title: "Page Component Architecture"
+>>>>>>> .merge_file_4A4m4S
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_pbQBkR
 qmd: "page component architecture"
+=======
+qmd: "Page Component Architecture"
+>>>>>>> .merge_file_4A4m4S
 issues: []
 discussions: []
 ---
@@ -18,12 +26,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_pbQBkR
 title: "page component architecture"
+=======
+title: "PAGE COMPONENT ARCHITECTURE"
+>>>>>>> .merge_file_4A4m4S
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_pbQBkR
 qmd: "page component architecture"
+=======
+qmd: "PAGE COMPONENT ARCHITECTURE"
+>>>>>>> .merge_file_4A4m4S
 issues: []
 discussions: []
 ## 🎯 Scopo

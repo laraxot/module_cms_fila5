@@ -55,8 +55,8 @@ return [
 
 ## Collegamenti Utili
 
-- [Tema One - Overview](/laravel/themes/one/docs/readme.md)
-- [CMS Module - Components](/laravel/modules/cms/docs/components.md)
+- [Tema One - Overview](/laravel/themes/one/docs/README.md)
+- [CMS Module - Components](/laravel/Modules/Cms/docs/components.md)
 - [Integrazione Temi](/laravel/modules/cms/docs/themes.md)
 
 ## Collegamenti tra versioni di footer.md

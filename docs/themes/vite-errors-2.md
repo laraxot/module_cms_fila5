@@ -80,8 +80,13 @@ ls -la dist/
 - Verifica dell'integrità dei file compilati
 
 ## Collegamenti Correlati
+<<<<<<< .merge_file_8ogxvM
 - [Documentazione Generale Errori](/docs/errors/readme.md)
 - [Gestione Temi CMS](../themes/readme.md)
+=======
+- [Documentazione Generale Errori](/docs/errors/README.md)
+- [Gestione Temi CMS](../themes/README.md)
+>>>>>>> .merge_file_bwcJsL
 - [Processo di Deploy](../../../docs/deployment/themes.md)
 
 ## Note Tecniche

@@ -102,7 +102,7 @@ return [
    - Fornire collegamenti bidirezionali
 
 ## Collegamenti
-- [Documentazione Filament](../filament/readme.md)
+- [Documentazione Filament](../filament/README.md)
 - [Struttura Moduli](../modules/structure.md)
 - [Convenzioni di Codice](../coding/conventions.md)
 - [Regole Traduzioni](../translations.md)

@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_UlLJbM
 title: "user research"
+=======
+title: "User Research"
+>>>>>>> .merge_file_ExICG7
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_UlLJbM
 qmd: "user research"
+=======
+qmd: "User Research"
+>>>>>>> .merge_file_ExICG7
 issues: []
 discussions: []
 ---
@@ -17,12 +25,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_UlLJbM
 title: "user research"
+=======
+title: "USER RESEARCH"
+>>>>>>> .merge_file_ExICG7
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_UlLJbM
 qmd: "user research"
+=======
+qmd: "USER RESEARCH"
+>>>>>>> .merge_file_ExICG7
 issues: []
 discussions: []
 ## Research Goals

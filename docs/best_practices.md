@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_An01Zi
 title: "best practices"
+=======
+title: "Best Practices"
+>>>>>>> .merge_file_6RVCRK
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_An01Zi
 qmd: "best practices"
+=======
+qmd: "Best Practices"
+>>>>>>> .merge_file_6RVCRK
 issues: []
 discussions: []
 ---
@@ -25,5 +33,9 @@ discussions: []
 - Copri edge case per permessi pagina (draft vs published).
 
 ## Documentazione
+<<<<<<< .merge_file_An01Zi
 - Aggiorna `docs/INDEX.md` con nuovi blocchi disponibili.
+=======
+- Aggiorna `docs/index.md` con nuovi blocchi disponibili.
+>>>>>>> .merge_file_6RVCRK
 - Documenta flusso approvazione contenuti.

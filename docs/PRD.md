@@ -517,7 +517,11 @@ CREATE TABLE cms_navigation (
 
 ### 12.3 Related PRDs
 - [Blog Module PRD](../../Blog/docs/PRD.md)
+<<<<<<< .merge_file_QqUzjl
 - [Media Module PRD](../../Media/docs/PRD.md)
+=======
+- [Media Module PRD](../../Media/docs/prd.md)
+>>>>>>> .merge_file_TnK99L
 - [Seo Module PRD](../../Seo/docs/PRD.md)
 - [Lang Module PRD](../../Lang/docs/PRD.md)
 

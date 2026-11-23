@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_GJ5mKO
 title: "analisi visiva"
+=======
+title: "Analisi Visiva"
+>>>>>>> .merge_file_n4iy4R
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_GJ5mKO
 qmd: "analisi visiva"
+=======
+qmd: "Analisi Visiva"
+>>>>>>> .merge_file_n4iy4R
 issues: []
 discussions: []
 ---
@@ -19,12 +27,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_GJ5mKO
 title: "analisi visiva"
+=======
+title: "ANALISI VISIVA"
+>>>>>>> .merge_file_n4iy4R
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_GJ5mKO
 qmd: "analisi visiva"
+=======
+qmd: "ANALISI VISIVA"
+>>>>>>> .merge_file_n4iy4R
 issues: []
 discussions: []
 ## 1. Header Structure

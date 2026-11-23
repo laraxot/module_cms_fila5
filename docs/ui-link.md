@@ -21,7 +21,11 @@ Secondo le regole di organizzazione della documentazione:
 
 ## Collegamenti Principali
 
+<<<<<<< .merge_file_JPspmT
 - [Componenti UI](../../ui/project_docs/readme.md) - Panoramica dei componenti UI disponibili
+=======
+- [Componenti UI](../../ui/project_docs/README.md) - Panoramica dei componenti UI disponibili
+>>>>>>> .merge_file_U2mLOf
 - [Componenti Filament](../../ui/project_docs/filament-components.md) - Componenti personalizzati per Filament
 - [Componenti Blade](../../ui/project_docs/blade-components.md) - Componenti Blade riutilizzabili
 

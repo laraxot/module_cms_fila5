@@ -1,10 +1,18 @@
 ---
+<<<<<<< .merge_file_vAUXgI
 title: "product roadmap"
+=======
+title: "Product Roadmap"
+>>>>>>> .merge_file_Hdqcar
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_vAUXgI
 qmd: "product roadmap"
+=======
+qmd: "Product Roadmap"
+>>>>>>> .merge_file_Hdqcar
 issues: []
 discussions: []
 ---
@@ -18,12 +26,20 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_vAUXgI
 title: "product roadmap"
+=======
+title: "PRODUCT ROADMAP"
+>>>>>>> .merge_file_Hdqcar
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_vAUXgI
 qmd: "product roadmap"
+=======
+qmd: "PRODUCT ROADMAP"
+>>>>>>> .merge_file_Hdqcar
 issues: []
 discussions: []
 ## Vision Statement
