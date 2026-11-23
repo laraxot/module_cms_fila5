@@ -1,18 +1,34 @@
 ---
+<<<<<<< .merge_file_usMNnC
 <<<<<<< .merge_file_98Dcov
 title: "script placement rules"
 =======
 title: "Script Placement Rules"
 >>>>>>> .merge_file_qPqLW1
+=======
+<<<<<<< .merge_file_F0fteT
+title: "script placement rules"
+=======
+title: "Script Placement Rules"
+>>>>>>> .merge_file_mgDAfC
+>>>>>>> .merge_file_bXRaWl
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_usMNnC
 <<<<<<< .merge_file_98Dcov
 qmd: "script placement rules"
 =======
 qmd: "Script Placement Rules"
 >>>>>>> .merge_file_qPqLW1
+=======
+<<<<<<< .merge_file_F0fteT
+qmd: "script placement rules"
+=======
+qmd: "Script Placement Rules"
+>>>>>>> .merge_file_mgDAfC
+>>>>>>> .merge_file_bXRaWl
 issues: []
 discussions: []
 ---

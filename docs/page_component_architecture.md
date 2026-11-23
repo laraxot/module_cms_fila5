@@ -1,18 +1,34 @@
 ---
+<<<<<<< .merge_file_CqpZSV
 <<<<<<< .merge_file_pbQBkR
 title: "page component architecture"
 =======
 title: "Page Component Architecture"
 >>>>>>> .merge_file_4A4m4S
+=======
+<<<<<<< .merge_file_xfZ1Tw
+title: "page component architecture"
+=======
+title: "Page Component Architecture"
+>>>>>>> .merge_file_UAno2o
+>>>>>>> .merge_file_Tz0Msy
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_CqpZSV
 <<<<<<< .merge_file_pbQBkR
 qmd: "page component architecture"
 =======
 qmd: "Page Component Architecture"
 >>>>>>> .merge_file_4A4m4S
+=======
+<<<<<<< .merge_file_xfZ1Tw
+qmd: "page component architecture"
+=======
+qmd: "Page Component Architecture"
+>>>>>>> .merge_file_UAno2o
+>>>>>>> .merge_file_Tz0Msy
 issues: []
 discussions: []
 ---
@@ -26,20 +42,36 @@ discussions: []
 
 ---
 
+<<<<<<< .merge_file_CqpZSV
 <<<<<<< .merge_file_pbQBkR
 title: "page component architecture"
 =======
 title: "PAGE COMPONENT ARCHITECTURE"
 >>>>>>> .merge_file_4A4m4S
+=======
+<<<<<<< .merge_file_xfZ1Tw
+title: "page component architecture"
+=======
+title: "PAGE COMPONENT ARCHITECTURE"
+>>>>>>> .merge_file_UAno2o
+>>>>>>> .merge_file_Tz0Msy
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
+<<<<<<< .merge_file_CqpZSV
 <<<<<<< .merge_file_pbQBkR
 qmd: "page component architecture"
 =======
 qmd: "PAGE COMPONENT ARCHITECTURE"
 >>>>>>> .merge_file_4A4m4S
+=======
+<<<<<<< .merge_file_xfZ1Tw
+qmd: "page component architecture"
+=======
+qmd: "PAGE COMPONENT ARCHITECTURE"
+>>>>>>> .merge_file_UAno2o
+>>>>>>> .merge_file_Tz0Msy
 issues: []
 discussions: []
 ## 🎯 Scopo

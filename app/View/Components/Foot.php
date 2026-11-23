@@ -21,26 +21,33 @@ use Modules\Xot\Datas\MetatagData;
  *
  * `@livewireScripts` non serve: `config('livewire.inject_assets')` è `true` e Livewire inietta i propri
  * asset automaticamente prima di `</body>`.
+ *
+ * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
  */
 final class Foot extends Component
 {
 <<<<<<< .merge_file_ZBge2n
 =======
     /**
-     * @param  bool  $panelAssets  false: niente notifiche ne' script Filament (~250 KB di JS e una richiesta
-     *                             Livewire a ogni pagina) per i siti pubblici che non usano componenti Filament.
+     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
      */
+<<<<<<< .merge_file_ar9ybK
     public function __construct(public readonly bool $panelAssets = true) {}
 
 >>>>>>> .merge_file_8HoOeY
+=======
+>>>>>>> .merge_file_e4yHgo
     public function render(): ViewContract
     {
         return view('cms::components.foot', [
             'pubTheme' => MetatagData::make()->getPubTheme(),
+<<<<<<< .merge_file_ar9ybK
 <<<<<<< .merge_file_ZBge2n
 =======
             'panelAssets' => $this->panelAssets,
 >>>>>>> .merge_file_8HoOeY
+=======
+>>>>>>> .merge_file_e4yHgo
         ]);
     }
 }

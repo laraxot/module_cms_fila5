@@ -169,7 +169,11 @@ class XotBaseContentPage
 - Caching
 - Error handling
 ## Collegamenti tra versioni di README.md
+<<<<<<< .merge_file_OYQQOI
 <<<<<<< .merge_file_nIusGu
+=======
+<<<<<<< .merge_file_CCuPFF
+>>>>>>> .merge_file_CIQesL
 * [README.md](bashscripts/docs/readme.md)
 * [README.md](bashscripts/docs/it/readme.md)
 * [README.md](docs/laravel-app/phpstan/readme.md)
@@ -323,4 +327,8 @@ class XotBaseContentPage
 * [README.md](laravel/modules/cms/docs/components/README.md)
 * [README.md](laravel/themes/two/docs/README.md)
 * [README.md](laravel/themes/one/docs/README.md)
+<<<<<<< .merge_file_OYQQOI
 >>>>>>> .merge_file_WVKY8i
+=======
+>>>>>>> .merge_file_RfumOv
+>>>>>>> .merge_file_CIQesL

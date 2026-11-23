@@ -15,7 +15,7 @@ return [
      *
      * @var list<string>
      */
-    'page_middleware_allowlist' => ['auth', 'throttle'],
+    'page_middleware_allowlist' => ['auth', 'guest', 'throttle'],
 
     /*
      * DCP-283 (C-04): contenitori dell'URL (`/{container0}/{slug0}`) per cui `ResolvePageAction` puo' caricare un modello.

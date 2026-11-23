@@ -61,11 +61,19 @@ namespace Modules\User\App\Filament\Widgets;
   }
   ```
 
+<<<<<<< .merge_file_qlqQil
 <<<<<<< .merge_file_YlXHFA
 - Per le regole generali e best practice consulta la doc del modulo [Xot](../../xot/project_docs/readme.md).
 =======
 - Per le regole generali e best practice consulta la doc del modulo [Xot](../../xot/project_docs/README.md).
 >>>>>>> .merge_file_VMGJNX
+=======
+<<<<<<< .merge_file_f1foZ1
+- Per le regole generali e best practice consulta la doc del modulo [Xot](../../xot/project_docs/readme.md).
+=======
+- Per le regole generali e best practice consulta la doc del modulo [Xot](../../xot/project_docs/README.md).
+>>>>>>> .merge_file_qyMPuF
+>>>>>>> .merge_file_ysNsfu
 
 ## Regole Tailwind CSS con Filament
 - **IMPORTANTE:** Con Filament 3.x, usare solo `tailwindcss@3.x` (NO 4.x). Riferimento: [Filament Docs](https://filamentphp.com/project_docs/3.x/notifications/installation#installing-tailwind-css).
@@ -101,11 +109,19 @@ Section::make('Anteprima')
 ## Collegamenti Bidirezionali
 
 ### Modulo Xot (Core)
+<<<<<<< .merge_file_qlqQil
 <<<<<<< .merge_file_YlXHFA
 - [README.md](../../xot/project_docs/readme.md) - Indice principale della documentazione
 =======
 - [README.md](../../xot/project_docs/README.md) - Indice principale della documentazione
 >>>>>>> .merge_file_VMGJNX
+=======
+<<<<<<< .merge_file_f1foZ1
+- [README.md](../../xot/project_docs/readme.md) - Indice principale della documentazione
+=======
+- [README.md](../../xot/project_docs/README.md) - Indice principale della documentazione
+>>>>>>> .merge_file_qyMPuF
+>>>>>>> .merge_file_ysNsfu
 - [Struttura dei Moduli](../../xot/project_docs/module_structure.md) - Struttura standard dei moduli
 - [Case Sensitivity delle Directory](../../xot/project_docs/directory-case-sensitivity.md) - Regole per la case sensitivity
 - [Regole per i Namespace](../../xot/project_docs/namespace-rules.md) - Convenzioni per i namespace

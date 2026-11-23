@@ -19,6 +19,10 @@ use Modules\Cms\Models\Page as PageModel;
  *
  * Priorità: il modello mostrato dalla pagina (es. l'evento di /events/{slug}), poi il titolo del JSON
  * della pagina; la descrizione viene dal modello o dal primo blocco che ha `description` o `subtitle`.
+ *
+ * @see Modules/Cms/docs/page-title-and-description.md
+ * @see Modules/Cms/docs/contracts/page-meta-resolution-action.md
+ * @contract docs/contracts/page-meta-resolution-action.md
  */
 final class ResolvePageMetaAction
 {
@@ -30,6 +34,8 @@ final class ResolvePageMetaAction
      * @param  iterable<BlockData>  $blocks
      * @param  array<string, mixed>  $data
      * @return array{title: ?string, description: ?string}
+     *
+     * @see Modules/Cms/docs/page-title-and-description.md
      */
     public function execute(string $slug, iterable $blocks, array $data = []): array
     {
@@ -38,8 +44,11 @@ final class ResolvePageMetaAction
 
         $item = $data['item'] ?? null;
         if ($item instanceof Model) {
-            $title = $this->clean($item->getAttribute('title'));
-            $description = $this->clean($item->getAttribute('description'));
+            $title = $this->clean($item->getAttribute('title')) ?? $this->clean($item->getAttribute('name'));
+            $description = $this->clean($item->getAttribute('description')) ?? $this->clean($item->getAttribute('content'));
+            if ($description !== null) {
+                $description = Str::limit($description, 157, '...');
+            }
         }
 
         if ($title === null && $slug !== '') {

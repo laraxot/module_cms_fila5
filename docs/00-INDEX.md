@@ -27,11 +27,19 @@ riferimenti con `rg`.
 
 ## 📚 Design Comuni - Index Completo
 
+<<<<<<< .merge_file_6KF7Y6
 <<<<<<< .merge_file_VhnkMb
 - **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
 =======
 - **[design_comuni_index.md](./design_comuni_index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
 >>>>>>> .merge_file_ttvIKM
+=======
+<<<<<<< .merge_file_iUv4N2
+- **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
+=======
+- **[design_comuni_index.md](./design_comuni_index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
+>>>>>>> .merge_file_4xGu08
+>>>>>>> .merge_file_J3pcxY
 
 ## Active design-comuni references
 
@@ -44,7 +52,11 @@ riferimenti con `rg`.
 - [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) - Audit batch pagine
 - [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) - Verifica parity
 - [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Flusso runtime aggiornato della homepage di test
+<<<<<<< .merge_file_6KF7Y6
 <<<<<<< .merge_file_VhnkMb
+=======
+<<<<<<< .merge_file_iUv4N2
+>>>>>>> .merge_file_J3pcxY
 - [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale componenti pagina
 
 ## Theme cross links
@@ -56,7 +68,11 @@ riferimenti con `rg`.
 ## Theme cross links
 
 - [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema
+<<<<<<< .merge_file_6KF7Y6
 >>>>>>> .merge_file_ttvIKM
+=======
+>>>>>>> .merge_file_4xGu08
+>>>>>>> .merge_file_J3pcxY
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
 - [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
 - [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso

@@ -136,13 +136,21 @@ Per una documentazione più approfondita sull'architettura della homepage, consu
 
 ## Vedi Anche
 - [Modulo UI](../../UI/docs/README.md) - Componenti UI per la homepage
+<<<<<<< .merge_file_9BslTL
 <<<<<<< .merge_file_utAwsb
+=======
+<<<<<<< .merge_file_9Fx9X1
+>>>>>>> .merge_file_UVGfWD
 - [Modulo Theme](../theme/docs/readme.md) - Personalizzazione tema
 - [Modulo Lang](../../Lang/docs/readme.md) - Gestione traduzioni
 =======
 - [Modulo Theme](../theme/docs/README.md) - Personalizzazione tema
 - [Modulo Lang](../../Lang/docs/README.md) - Gestione traduzioni
+<<<<<<< .merge_file_9BslTL
 >>>>>>> .merge_file_zoHhK2
+=======
+>>>>>>> .merge_file_sZ6tfm
+>>>>>>> .merge_file_UVGfWD
 - [Gestione Contenuti](content-management.md) - Sistema di gestione contenuti
 - [Sezioni](sections.md) - Gestione delle sezioni
 - [Layout](struttura-layout-componenti-blade-<nome progetto>.md) - Struttura dei layout

@@ -130,11 +130,19 @@ Ogni sezione può contenere diversi tipi di blocchi:
 
 ## Collegamenti
 - [Documentazione Blocchi](blocks/README.md)
+<<<<<<< .merge_file_maz8Da
 <<<<<<< .merge_file_LcwwVp
 - [Documentazione UI](../../ui/project_docs/readme.md)
 =======
 - [Documentazione UI](../../ui/project_docs/README.md)
 >>>>>>> .merge_file_crzcmw
+=======
+<<<<<<< .merge_file_fJdmkO
+- [Documentazione UI](../../ui/project_docs/readme.md)
+=======
+- [Documentazione UI](../../ui/project_docs/README.md)
+>>>>>>> .merge_file_jhvYj7
+>>>>>>> .merge_file_1ZksqY
 - [Documentazione Root](../../../../docs/project/README.md)
 - [Documentazione Root – Sezioni](../../../../../docs/project/sections.md)
 - [Panoramica Gestione Pagine (Root)](../../../../../docs/project/page-content-management.md)

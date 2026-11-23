@@ -14,19 +14,29 @@ use Modules\Tenant\Actions\Translations\TranslateTenantKeyAction;
 use Modules\Xot\Actions\GetViewAction;
 use Modules\Xot\Datas\MetatagData;
 
-class Metatags extends Component
+/**
+ * Legacy SEO component that resolves page metadata and renders the active theme view.
+ *
+ * @see Modules/Cms/docs/page-title-and-description.md
+ */
+final class Metatags extends Component
 {
     /**
      * @param  string|null  $title  titolo esplicito della pagina (es. login, errori); vince su quello del CMS
      * @param  string|null  $description  descrizione esplicita della pagina
+     *
+     * @see Modules/Cms/docs/page-title-and-description.md
      */
     public function __construct(
         private ?string $title = null,
         private ?string $description = null,
-    ) {}
+    ) {
+    }
 
     /**
      * Get the view / contents that represents the component.
+     *
+     * @see Modules/Cms/docs/page-title-and-description.md
      */
     public function render(): ViewContract
     {
@@ -81,6 +91,8 @@ class Metatags extends Component
     /**
      * Descrizione del sito nella lingua corrente. MetatagData è un singleton creato spesso prima che il
      * middleware imposti la lingua, quindi la sua descrizione può essere nella lingua sbagliata.
+     *
+     * @see Modules/Cms/docs/page-title-and-description.md
      */
     private function siteDescription(MetatagData $metatag): string
     {
@@ -89,6 +101,9 @@ class Metatags extends Component
         return $translated !== 'metatag.description' ? $translated : $metatag->getDescription(limit: 160);
     }
 
+    /**
+     * @see Modules/Cms/docs/page-title-and-description.md
+     */
     private function pageValue(?string $explicit, string $attribute): ?string
     {
         $value = $explicit ?? request()->attributes->get($attribute);

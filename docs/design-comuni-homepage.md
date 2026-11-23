@@ -55,8 +55,16 @@ La homepage di test ` /it/tests/homepage ` e' orchestrata da due livelli distint
 
 - [00-index.md](./00-index.md) - Indice del modulo Cms
 - [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Architettura runtime aggiornata
+<<<<<<< .merge_file_O20F53
 <<<<<<< .merge_file_RPtGOY
 - [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale dei componenti pagina
 =======
 - [page_component_architecture.md](./page_component_architecture.md) - Architettura generale dei componenti pagina
 >>>>>>> .merge_file_ulX3Vj
+=======
+<<<<<<< .merge_file_Soy2my
+- [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale dei componenti pagina
+=======
+- [page_component_architecture.md](./page_component_architecture.md) - Architettura generale dei componenti pagina
+>>>>>>> .merge_file_a77yel
+>>>>>>> .merge_file_ioqriC
