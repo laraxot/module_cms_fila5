@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+/**
+ * @see docs/metatag-population-strategy.md
+ */
+
 use Modules\Cms\Tests\TestCase;
 use Modules\Cms\View\Components\AppLayout;
 use Modules\Cms\View\Components\GuestLayout;
@@ -27,5 +31,5 @@ test('GuestLayout component can be instantiated', function () {
 
 test('Metatags component can be instantiated', function () {
     $component = new Metatags;
-    Assert::assertSame(Metatags::class, $component::class);
+    Assert::assertSame(Metatags::class, get_class($component));
 });

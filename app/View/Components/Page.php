@@ -16,6 +16,8 @@ use Spatie\LaravelData\DataCollection;
  * CMS page shell: blocks loaded by slug. Route/context keys live only in {@see $data}.
  *
  * @SuppressWarnings("PHPMD.StaticAccess")
+ *
+ * @see Modules/Cms/docs/components/page-component-data-contract.md
  */
 final class Page extends Component
 {
@@ -31,6 +33,8 @@ final class Page extends Component
 
     /**
      * @param  array<string, mixed>  $data  Opaque context bag (container0, slug0, models, …)
+     *
+     * @see Modules/Cms/docs/components/page-component-data-contract.md
      */
     public function __construct(
         string $side = 'content',
@@ -63,6 +67,9 @@ final class Page extends Component
         }
     }
 
+    /**
+     * @see Modules/Cms/docs/components/page-component-data-contract.md
+     */
     public function render(): ViewContract|Factory
     {
         $viewName = 'cms::components.page';
