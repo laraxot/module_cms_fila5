@@ -26,28 +26,15 @@ use Modules\Xot\Datas\MetatagData;
  */
 final class Foot extends Component
 {
-<<<<<<< .merge_file_ZBge2n
-=======
-    /**
-     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
-     */
-<<<<<<< .merge_file_ar9ybK
-    public function __construct(public readonly bool $panelAssets = true) {}
+    public function __construct(public readonly bool $panelAssets = true)
+    {
+    }
 
->>>>>>> .merge_file_8HoOeY
-=======
->>>>>>> .merge_file_e4yHgo
     public function render(): ViewContract
     {
         return view('cms::components.foot', [
             'pubTheme' => MetatagData::make()->getPubTheme(),
-<<<<<<< .merge_file_ar9ybK
-<<<<<<< .merge_file_ZBge2n
-=======
             'panelAssets' => $this->panelAssets,
->>>>>>> .merge_file_8HoOeY
-=======
->>>>>>> .merge_file_e4yHgo
         ]);
     }
 }
