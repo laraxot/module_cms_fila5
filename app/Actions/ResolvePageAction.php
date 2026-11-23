@@ -20,6 +20,10 @@ use Spatie\QueueableAction\QueueableAction;
  *    elencati in `cms.config.container0_models` (DCP-283, C-04). Nessun modello arbitrario dall'URL.
  * 2. Verifica se esiste una pagina CMS con slug esatto (container.slug).
  * 3. Fallback a una pagina CMS generica (container.view).
+ *
+ * @contract docs/contracts/page-resolution-action.md
+ *
+ * @see Modules/Cms/docs/contracts/page-resolution-action.md
  */
 final class ResolvePageAction
 {

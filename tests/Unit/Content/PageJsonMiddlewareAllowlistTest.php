@@ -43,7 +43,7 @@ function dcp283PageJsonFiles(): array
     return $files;
 }
 
-test('ogni middleware dichiarato in un JSON di pagina e in allowlist', function (): void {
+test('ogni middleware dichiarato in un JSON di pagina è un alias CMS o un middleware owner', function (): void {
     $declaredByFile = [];
     foreach (dcp283PageJsonFiles() as $file) {
         $decoded = json_decode(file_get_contents($file), true);
@@ -72,10 +72,24 @@ test('ogni middleware dichiarato in un JSON di pagina e in allowlist', function 
     Assert::assertArrayHasKey('throttle', $names, 'nessun JSON dichiara throttle');
 
     foreach ($stringsByFile as $file => $entries) {
+        $cmsEntries = array_values(array_filter(
+            $entries,
+            static fn (string $entry): bool => ! str_contains(explode(':', $entry, 2)[0], '\\'),
+        ));
+
         try {
-            app(ValidatePageMiddlewareAction::class)->execute($entries);
+            app(ValidatePageMiddlewareAction::class)->execute($cmsEntries);
         } catch (InvalidArgumentException $exception) {
             Assert::fail($file.': '.$exception->getMessage());
+        }
+
+        foreach ($entries as $entry) {
+            $name = explode(':', $entry, 2)[0];
+            if (! str_contains($name, '\\')) {
+                continue;
+            }
+
+            Assert::assertTrue(class_exists($name), $file.': middleware owner inesistente '.$name);
         }
     }
 });

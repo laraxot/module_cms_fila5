@@ -40,3 +40,5 @@ Pro, contro, debito che resta, cosa misurare. Chi cambia la decisione scrive un 
 
 ## Decisioni
 
+- [CMS e Folio risolvono le pagine tramite slug](cms-owns-page-resolution.md)
+

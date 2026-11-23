@@ -19,6 +19,7 @@ use Modules\Cms\Actions\Head\ResolveHreflangAlternatesAction;
 use Modules\Cms\Actions\Head\ResolvePageDescriptionAction;
 use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
 use Modules\Cms\Actions\Head\ResolveWrittenLocalesAction;
+use Modules\Cms\Actions\ResolvePageMetaAction;
 use Modules\Cms\Models\Page;
 use Modules\Xot\Datas\MetatagData;
 
@@ -158,6 +159,11 @@ final class Head extends Component
             return trim($this->description);
         }
 
+        $runtimeDescription = request()->attributes->get(ResolvePageMetaAction::DESCRIPTION);
+        if (is_string($runtimeDescription) && trim($runtimeDescription) !== '') {
+            return trim($runtimeDescription);
+        }
+
         $key = 'pub_theme::seo.site.description';
         $siteDescription = Lang::has($key) ? trim((string) __($key)) : '';
 
@@ -236,8 +242,17 @@ final class Head extends Component
     private function resolvePageTitle(?Page $page): string
     {
         $pageTitle = trim((string) $this->title);
-        if ($pageTitle !== '' || $page === null) {
+        if ($pageTitle !== '') {
             return $pageTitle;
+        }
+
+        $runtimeTitle = request()->attributes->get(ResolvePageMetaAction::TITLE);
+        if (is_string($runtimeTitle) && trim($runtimeTitle) !== '') {
+            return trim($runtimeTitle);
+        }
+
+        if ($page === null) {
+            return '';
         }
 
         return trim($this->stringAttribute($page, 'title'));
