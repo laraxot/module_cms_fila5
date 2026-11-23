@@ -28,11 +28,6 @@ test('SaveFooterConfigAction can execute with FooterData', function () {
         'overlay_color' => '#000000',
     ]);
 
-    // This may fail due to TenantService dependency, so we catch any exception
-    try {
-        $action->execute($footerData);
-        cmsSkipTest('Covered by integration test'); // If we get here, no exception was thrown
-    } catch (Exception $e) {
-        // If an exception is thrown due to missing service, that's expected
-    }
+    Assert::assertSame('#ffffff', $footerData->background_color);
+    $action->execute($footerData);
 });

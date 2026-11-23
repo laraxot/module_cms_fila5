@@ -38,6 +38,8 @@ Chi cambia il comportamento aggiorna il contratto nello stesso commit.
 
 - [ResolvePageAction](page-resolution-action.md)
 - [ResolvePageMetaAction](page-meta-resolution-action.md)
+- [SaveFooterConfigAction](save-footer-config-action.md)
+- [SaveHeadernavConfigAction](save-headernav-config-action.md)
 
 - [Contratto `PageSlugMiddleware`](page-slug-middleware.md)
 - [ADR ownership della risoluzione](../adr/cms-owns-page-resolution.md)
