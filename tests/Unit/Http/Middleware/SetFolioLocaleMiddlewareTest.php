@@ -1,0 +1,70 @@
+<?php
+
+declare(strict_types=1);
+
+use Illuminate\Http\Request;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use Modules\Cms\Http\Middleware\SetFolioLocale;
+use Modules\Cms\Tests\TestCase;
+use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+
+test('it uses user language with highest priority', function (): void {
+    LaravelLocalization::shouldReceive('setLocale')->once()->with('fr');
+
+    $request = Request::create('/en/some-page', 'GET');
+    $request->setUserResolver(fn (): object => (object) ['lang' => 'fr']);
+
+    $middleware = new SetFolioLocale;
+    $response = $middleware->handle($request, fn (Request $req) => response('ok'));
+
+    Assert::assertSame(200, $response->getStatusCode());
+
+    Assert::assertSame('fr', app()->getLocale());
+});
+
+test('it uses first url segment when locale is supported', function (): void {
+    LaravelLocalization::shouldReceive('getSupportedLanguagesKeys')
+        ->once()
+        ->andReturn(['it', 'en', 'de', 'fr']);
+    LaravelLocalization::shouldReceive('setLocale')
+        ->once()
+        ->with('de');
+
+    $request = Request::create('/de/some-page', 'GET');
+    $request->setUserResolver(fn () => null);
+
+    $middleware = new SetFolioLocale;
+    $response = $middleware->handle($request, fn (Request $req) => response('ok'));
+
+    Assert::assertSame(200, $response->getStatusCode());
+
+    Assert::assertSame('de', app()->getLocale());
+});
+
+test('it falls back to default app locale when url segment is not supported', function (): void {
+    config()->set('app.locale', 'it');
+
+    LaravelLocalization::shouldReceive('getSupportedLanguagesKeys')
+        ->once()
+        ->andReturn(['it', 'en', 'fr']);
+    LaravelLocalization::shouldReceive('setLocale')
+        ->once()
+        ->with('it');
+
+    $request = Request::create('/blog/post-1', 'GET');
+    $request->setUserResolver(fn () => null);
+
+    $middleware = new SetFolioLocale;
+    $response = $middleware->handle($request, fn (Request $req) => response('ok'));
+
+    Assert::assertSame(200, $response->getStatusCode());
+
+    Assert::assertSame('it', app()->getLocale());
+});

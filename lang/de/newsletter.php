@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'fields' => [
+        'title' => [
+            'tooltip' => '',
+        ],
+        'description' => [
+            'tooltip' => '',
+        ],
+        'button_text' => [
+            'tooltip' => '',
+        ],
+        'placeholder' => [
+            'tooltip' => '',
+        ],
+        'success_message' => [
+            'tooltip' => '',
+        ],
+        'error_message' => [
+            'tooltip' => '',
+        ],
+    ],
+    'navigation' => [
+        'label' => 'Missing Navigation Label',
+        'plural_label' => 'Missing Navigation Plural Label',
+        'group' => 'Missing Group',
+        'icon' => 'heroicon-o-puzzle-piece',
+        'sort' => 100,
+    ],
+    'label' => 'Missing Label',
+    'plural_label' => 'Missing Plural label',
+];
