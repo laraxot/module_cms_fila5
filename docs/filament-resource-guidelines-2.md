@@ -147,5 +147,5 @@ All Cms resources must be tested to ensure:
 
 - [XotBaseResource Documentation](../../Xot/docs/filament/resources/xot-base-resource.md)
 - [LangBaseResource Documentation](../../Lang/docs/filament/lang-base-resource.md)
-- [Multilingual Best Practices](../../Lang/docs/translation-best-practices.md)
+- [Multilingual Best Practices](../../User/docs/translation-best-practices-2.md)
 - [Filament Resource Guidelines](../../Xot/docs/filament-resource-rules.md)

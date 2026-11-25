@@ -13,9 +13,9 @@ discussions: []
 
 ## Collegamenti correlati
 - [README modulo Cms](../README.md)
-- [Documentazione User](/laravel/Modules/User/project_docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
+- [Documentazione User](/laravel/Modules/Cms/docs/sections/header-language-selector-with-flags-3.md)
 - [Documentazione Sezioni](./SECTIONS_STRUCTURE.md)
-- [Best Practices Chiavi di Traduzione](/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
+- [Best Practices Chiavi di Traduzione](/laravel/Modules/Lang/docs/translation-keys-best-practices-3.md)
 - [Collegamenti Documentazione](/project_docs/collegamenti-documentazione.md)
 
 ## Panoramica

@@ -73,7 +73,7 @@ discussions: []
 - Aggiorna `docs/index.md` con nuovi blocchi disponibili.
 =======
 <<<<<<< HEAD
-- Aggiorna `docs/INDEX.md` con nuovi blocchi disponibili.
+- Aggiorna `docs/index-2.md` con nuovi blocchi disponibili.
 =======
 - Aggiorna `docs/index.md` con nuovi blocchi disponibili.
 >>>>>>> laraxot/dev

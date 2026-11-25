@@ -13,7 +13,7 @@ discussions: []
 
 ## Collegamenti correlati
 - [README modulo Cms](./README.md)
-- [Documentazione User](../../User/project_docs/HEADER_LANGUAGE_AVATAR_IMPLEMENTATION.md)
+- [Documentazione User](header-language-avatar-implementation-3.md)
 - [Documentazione Sezioni](./SECTIONS_STRUCTURE.md)
 - [Collegamenti Documentazione](/project_docs/collegamenti-documentazione.md)
 

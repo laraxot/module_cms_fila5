@@ -551,7 +551,7 @@ CREATE TABLE cms_navigation (
 - [Filament Documentation](https://filamentphp.com/docs)
 
 ### 12.3 Related PRDs
-- [Blog Module PRD](../../Blog/docs/PRD.md)
+- [Blog Module PRD](../../Blog/docs/prd-2.md)
 <<<<<<< .merge_file_LBHHLf
 <<<<<<< .merge_file_OFwEJ2
 <<<<<<< .merge_file_8w9AL4
@@ -565,7 +565,7 @@ CREATE TABLE cms_navigation (
 - [Media Module PRD](../../Media/docs/prd.md)
 =======
 <<<<<<< HEAD
-- [Media Module PRD](../../Media/docs/PRD.md)
+- [Media Module PRD](../../Media/docs/prd-2.md)
 =======
 - [Media Module PRD](../../Media/docs/prd.md)
 >>>>>>> laraxot/dev
@@ -577,8 +577,8 @@ CREATE TABLE cms_navigation (
 >>>>>>> .merge_file_3Wi9Rc
 =======
 >>>>>>> .merge_file_k9pJdN
-- [Seo Module PRD](../../Seo/docs/PRD.md)
-- [Lang Module PRD](../../Lang/docs/PRD.md)
+- [Seo Module PRD](../../Seo/docs/prd-2.md)
+- [Lang Module PRD](../../Lang/docs/prd-2.md)
 
 ---
 
