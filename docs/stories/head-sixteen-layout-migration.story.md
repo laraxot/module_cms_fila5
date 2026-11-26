@@ -5,7 +5,7 @@ module: Cms
 status: in-progress
 priority: high
 created: 2026-11-11
-updated: 2026-11-23
+updated: 2026-11-26
 tags: [bmad, ecc, seo, head, laravel-head, theme-sixteen, migration, parity]
 related:
   - "head-sixteen-parity-closeout.story.md"
@@ -159,7 +159,17 @@ resolver del modulo) — non cancellato: la storia delle decisioni resta.
 e il layout front office richiede sempre `@filamentStyles`, notifications e
 `@filamentScripts`. La condizione `@if ($panelAssets)` introduceva una variante
 non usata e poteva nascondere asset obbligatori. Il contratto canonico è quindi
-sempre quello documentato in `../bmad/filament-layout-styles-scripts.md`.
+sempre quello documentato in `../bmad/filament-layout-styles-scripts.md`. Per la prop `panelAssets` la decisione è in parte
+superata: vedi «Aggiornamento 2026-11-26» più sotto.
+
+## Verifica 2026-11-23
+
+La verifica ha trovato marcatori di conflitto nelle due Blade Cms e nel test
+del contratto. Sono stati risolti mantenendo il contratto canonico: notifiche,
+`@filamentStyles` e `@filamentScripts` sono sempre emessi, in ordine, e la
+prop `panelAssets` è stata rimossa anche dai componenti perché nessun caller la
+valorizza. `FilamentLayoutDirectivesTest` passa e PHPStan su `Modules/Cms` e
+`Modules/Fixcity` è a zero.
 
 ### Risoluzione conflitti nested (2026-11-23)
 
@@ -167,6 +177,15 @@ Marker nested in `head.blade.php`, `foot.blade.php` e
 `tests/Unit/Views/FilamentLayoutDirectivesTest.php` risolti a favore del
 contratto «sempre emesso» (niente guard `$panelAssets`): allinea Blade, test e
 questa decisione. Fonte: `../bmad/filament-layout-styles-scripts.md`.
+
+### Aggiornamento 2026-11-26 (merge con `laraxot/dev`)
+
+Il modulo Cms è condiviso con altri progetti e la punta di `laraxot/dev` ha reintrodotto `panelAssets` (su `Head` e `Foot`)
+e la prop `stylesheet` (su `Head`), per un sito che serve un foglio più leggero ai visitatori anonimi (vedi
+`../bmad/filament-layout-styles-scripts.md`). I default lasciano invariato il front office FixCity: `panelAssets = true` e
+`stylesheet = resources/css/app.css`; nessun caller FixCity le valorizza, quindi notifiche, `@filamentStyles` e
+`@filamentScripts` restano sempre emessi, in ordine. La riga «prop rimossa» della decisione del 2026-11-23 è superata
+per le prop, non per il comportamento di FixCity. `FilamentLayoutDirectivesTest` descrive il contratto con la guardia.
 
 ---
 

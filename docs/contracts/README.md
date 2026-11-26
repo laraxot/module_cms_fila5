@@ -51,7 +51,7 @@ Chi cambia il comportamento aggiorna il contratto nello stesso commit.
 
 - [ResolvePageAction, contratto di risoluzione Folio](page-resolution-action.md) — modello solo da elenco e con policy `view`, poi pagina CMS esatta o generica; vista dalle rotte `[container0]/[slug0]`: `renderMode`, `item`, `pageSlug`; un contenitore fuori allowlist non carica modelli dall'URL. Il vecchio file `resolve-page-action.md` (tabella invarianti e ADR dell'allowlist) è stato fuso in questo.
 - [ResolvePageMetaAction](page-meta-resolution-action.md) — titolo e descrizione della pagina in rendering: priorità modello poi blocchi, descrizioni da 160 caratteri al massimo, valore già registrato non sovrascritto.
-- [ValidatePageMiddlewareAction](validate-page-middleware-action.md) — allowlist dei middleware dichiarati nel JSON di pagina.
+- [ValidatePageMiddlewareAction](../adr/page-middleware-allowlist.md) — allowlist dei middleware dichiarati nel JSON di pagina (contratto in forma di ADR: il file `validate-page-middleware-action.md` non esiste ancora).
 - [Contratto `PageSlugMiddleware`](page-slug-middleware.md) — esegue i middleware dichiarati dal contenuto CMS e risponde 404 alle route legacy di profilo non risolvibili, 503 fail-closed se lo slug non è determinabile.
 - [SaveHeadernavConfigAction](save-headernav-config-action.md) — salva la testata nella chiave `headernav` di `appearance.php` del tenant.
 - [SaveFooterConfigAction](save-footer-config-action.md) — salva il piede nella chiave `footer` di `appearance.php` del tenant.
@@ -60,4 +60,4 @@ Chi cambia il comportamento aggiorna il contratto nello stesso commit.
 ## Indici e template
 
 - [index.md](index.md) — inventario machine-readable dei contratti Cms (elenca solo i tre contratti di risoluzione e middleware, non le Action di salvataggio config).
-- [template.md](template.md) — template minimo `type: contract` con `action: <FQCN>` e le sei sezioni.
+- [_template.md](_template.md) — template minimo `type: contract` con `action: <FQCN>` e le sei sezioni.

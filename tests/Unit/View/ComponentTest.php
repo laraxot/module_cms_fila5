@@ -31,9 +31,16 @@ test('GuestLayout can be instantiated', function () {
 
 });
 
-test('Metatags can be instantiated', function () {
-    Assert::assertSame(Metatags::class, (new Metatags)::class);
+test('Metatags usa titolo e descrizione espliciti nel render', function () {
+    $view = (new Metatags('Titolo SEO', 'Descrizione pagina di prova'))->render();
+    $data = $view->getData();
 
+    Assert::assertArrayHasKey('title', $data);
+    Assert::assertArrayHasKey('description', $data);
+    Assert::assertIsString($data['title']);
+    Assert::assertIsString($data['description']);
+    Assert::assertStringContainsString('Titolo SEO', $data['title']);
+    Assert::assertStringContainsString('Descrizione pagina di prova', $data['description']);
 });
 
 test('Page can be instantiated', function () {})->todo('A differenza degli altri componenti, Page vuole uno slug esistente: serve una pagina di fixture, non una istanza nuda.');

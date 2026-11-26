@@ -29,7 +29,14 @@ test('GuestLayout component can be instantiated', function () {
     Assert::assertSame(GuestLayout::class, $component::class);
 });
 
-test('Metatags component can be instantiated', function () {
-    $component = new Metatags;
-    Assert::assertSame(Metatags::class, $component::class);
+test('Metatags component compose title and description on render', function () {
+    $view = (new Metatags('Titolo SEO', 'Descrizione pagina di prova'))->render();
+    $data = $view->getData();
+
+    Assert::assertArrayHasKey('title', $data);
+    Assert::assertArrayHasKey('description', $data);
+    Assert::assertIsString($data['title']);
+    Assert::assertIsString($data['description']);
+    Assert::assertStringContainsString('Titolo SEO', $data['title']);
+    Assert::assertStringContainsString('Descrizione pagina di prova', $data['description']);
 });
