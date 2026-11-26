@@ -7,10 +7,18 @@ namespace Modules\Cms\Http\Middleware;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
 use Modules\Cms\Models\Page;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Applica la protezione dichiarata dal contenuto CMS senza conoscere domini applicativi.
+ *
+ * @contract docs/contracts/page-slug-middleware.md
+ *
+ * @see Modules/Cms/docs/contracts/page-slug-middleware.md
+ */
 class PageSlugMiddleware
 {
     /**
@@ -21,12 +29,40 @@ class PageSlugMiddleware
 
     protected Kernel $kernel;
 
+    /** @see Modules/Cms/docs/adr/0001-cms-owns-page-resolution.md */
     public function handle(Request $request, \Closure $next): Response
     {
+        $this->rejectLegacyProfileRoutes($request);
         $middlewares = $this->middlewaresOrRefuse($request);
 
         // Execute middlewares manually in a chain (con lista vuota la catena chiama solo `$next`).
         return $this->executeMiddlewareChain($request, $middlewares, $next);
+    }
+
+    /**
+     * @see Modules/Cms/docs/adr/0001-cms-owns-page-resolution.md
+     */
+    private function rejectLegacyProfileRoutes(Request $request): void
+    {
+        $route = $request->route();
+        if ($route === null) {
+            return;
+        }
+
+        $container0 = $route->parameter('container0');
+        $slug0 = $route->parameter('slug0');
+        if (! is_string($container0) || ! is_string($slug0) || $slug0 === '') {
+            return;
+        }
+
+        if (! in_array($container0, ['profile', 'user', 'users'], true)) {
+            return;
+        }
+
+        $resolved = app(ResolvePageAction::class)->execute($container0, $slug0);
+        if ($resolved->item === null) {
+            abort(404);
+        }
     }
 
     /**

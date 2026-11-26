@@ -11,6 +11,8 @@ use Spatie\QueueableAction\QueueableAction;
  *
  * Il nome della classe arriva da dati modificabili: senza elenco, chi edita un JSON farebbe eseguire
  * qualunque classe con un metodo `handle`. Il confronto e' sul nome prima dei due punti.
+ *
+ * @contract docs/contracts/validate-page-middleware-action.md
  */
 final class ValidatePageMiddlewareAction
 {

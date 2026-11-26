@@ -9,6 +9,7 @@
 
   @livewireScripts non serve: config('livewire.inject_assets') = true.
   Con :panel-assets="false" i punti 1 e 2 si saltano (siti pubblici senza componenti Filament).
+  @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
 --}}
 @if ($panelAssets)
     @livewire('notifications')

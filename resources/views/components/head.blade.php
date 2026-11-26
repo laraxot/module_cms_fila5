@@ -7,6 +7,7 @@
   @livewireStyles non si ripete: gli asset Livewire sono già coperti da Filament + inject_assets.
   Con :panel-assets="false" (siti pubblici senza componenti Filament) CSS Filament e script del tema scuro
   non si caricano: Livewire, se la pagina ha componenti, si inietta da solo.
+  @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
 --}}
 <head>
     <meta charset="utf-8">
@@ -21,5 +22,9 @@
         </script>
         @filamentStyles
     @endif
-    @vite(['resources/css/app.css'], 'themes/'.$pubTheme)
+    @vite([$stylesheet], 'themes/'.$pubTheme)
+    {{-- Tag aggiunti dalle pagine e dai layout (@push('head'): JSON-LD dell'evento, JS del tema). --}}
+    @stack('head')
+    {{-- Stili dei blocchi della pagina (@push('styles'), per esempio content.simple): senza lo stack non arrivavano mai. --}}
+    @stack('styles')
 </head>

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Safe\Exceptions\JsonException;
 
@@ -9,6 +10,13 @@ use function Safe\file_get_contents;
 use function Safe\glob;
 use function Safe\json_decode;
 use function Safe\json_encode;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 /*
  * Guardie DCP-101 sull'integrita' dei contenuti delle pagine di prova `/it/tests/<slug>` (pagina = JSON + blocchi del tema).

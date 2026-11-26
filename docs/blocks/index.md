@@ -12,11 +12,11 @@ discussions: []
 # Indice della Documentazione - Blocchi CMS
 
 ## Collegamenti Correlati
-- [Indice CMS](../index.md)
+- [Indice CMS](../../archive/docs-legacy/docs/index.md)
 - [README CMS](../README.md)
 - [Blocchi](../blocks.md)
-- [Componenti Blocchi Contenuto](../componenti-blocchi-contenuto.md)
-- [Namespace Componenti Blocchi](../namespace-componenti-blocchi.md)
+- [Componenti Blocchi Contenuto](../../archive/docs-legacy/docs/componenti-blocchi-contenuto.md)
+- [Namespace Componenti Blocchi](../../archive/docs-legacy/docs/namespace-componenti-blocchi.md)
 - [Documentazione Generale](../../../../../docs/README.md)
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 
@@ -32,14 +32,14 @@ I blocchi sono componenti riutilizzabili che compongono le sezioni del sito <nom
 
 ### Navigazione e Layout
 - [Header](./header.md) - Blocco header con logo, navigazione e dropdown utente
-- [Footer](./footer.md) - Blocco footer con copyright, link e contatti
-- [Navigation](./navigation.md) - Blocco di navigazione personalizzabile
+- [Footer](../../archive/docs-legacy/docs/blocks/footer.md) - Blocco footer con copyright, link e contatti
+- [Navigation](../../archive/docs-legacy/docs/blocks/navigation.md) - Blocco di navigazione personalizzabile
 - [Container](./container.md) - Blocco container per strutturare il layout
 
 ### Contenuti
-- [Hero](./hero.md) - Blocco hero per sezioni in evidenza
+- [Hero](../../archive/docs-legacy/docs/blocks/hero.md) - Blocco hero per sezioni in evidenza
 - [Text](./text.md) - Blocco testo per contenuti testuali
-- [CTA](./cta.md) - Blocco call-to-action per conversioni
+- [CTA](../../archive/docs-legacy/docs/blocks/cta.md) - Blocco call-to-action per conversioni
 - [Features](./features.md) - Blocco per elencare caratteristiche/servizi
 - [Testimonials](./testimonials.md) - Blocco per testimonianze
 - [Team](./team.md) - Blocco per presentare il team
@@ -55,7 +55,7 @@ I blocchi sono componenti riutilizzabili che compongono le sezioni del sito <nom
 ### Interattivi
 - [Form](./form.md) - Blocco per form di contatto
 - [Map](./map.md) - Blocco per mappe
-- [Social](./social.md) - Blocco per link social
+- [Social](../../archive/docs-legacy/docs/blocks/social.md) - Blocco per link social
 - [Search](./search.md) - Blocco per ricerca
 
 ## Struttura dei Blocchi

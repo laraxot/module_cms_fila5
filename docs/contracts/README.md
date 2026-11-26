@@ -1,32 +1,25 @@
 ---
-title: "Contratti"
-type: index
-tags: [contracts, actions, interfaces]
-created: 2026-11-18
-updated: 2026-11-18
+title: "Contratti comportamentali — Cms"
+type: documentation
+module: Cms
+status: active
 ---
 
-# Contratti
+# Contratti comportamentali — Cms
 
-Cosa promette la superficie pubblica di questo pacchetto: le Action che scrivono dati, chiamano servizi esterni o hanno
-effetti collaterali, e le interfacce (`app/Contracts`). Regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`.
+Questa cartella descrive gli input, gli output, gli invarianti, gli effetti e
+gli errori osservabili delle Action del modulo CMS. L'indice alfabetico è in
+[INDEX.md](./INDEX.md); i contratti devono restare aderenti al codice e ai
+test del modulo.
 
-## Contratto di comportamento di un'Action
+## Convenzioni
 
-Un file per Action, nome in kebab-case della classe (`create-ticket-action.md`), frontmatter `type: contract` e
-`action: <FQCN>`, e queste sei sezioni nell'ordine:
+- ogni Action con effetti osservabili ha un contratto con riferimento @see;
+- gli invarianti importanti sono verificabili con Pest o con un controllo
+  source-level ripetibile;
+- il file _template.md è il modello per i nuovi contratti;
+- le integrazioni applicative restano configurabili dall'host.
 
-```markdown
-## Input
-## Output
-## Invarianti
-## Effetti collaterali
-## Errori
-## Non fa
-```
+## Verifica
 
-Il docblock dell'Action rimanda al file con la riga `Contratto di comportamento: docs/contracts/<file>.md`.
-Chi cambia il comportamento aggiorna il contratto nello stesso commit.
-
-## Contratti
-
+Da laravel/: vendor/bin/pest Modules/Xot/tests/Unit/Docs/PackagesHaveContractsAndAdrTest.php.

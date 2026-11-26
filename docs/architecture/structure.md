@@ -99,6 +99,7 @@ Modules/Cms/
 6. Aggiornare i riferimenti nelle routes
 
 ## Collegamenti Bidirezionali
+- [README](readme.md) - Documentazione principale del modulo
 - [README](README.md) - Documentazione principale del modulo
 - [Architettura](architecture.md) - Architettura del sistema CMS
 - [Struttura Moduli Laravel](struttura-moduli-laravel.md) - Struttura standard dei moduli Laravel
