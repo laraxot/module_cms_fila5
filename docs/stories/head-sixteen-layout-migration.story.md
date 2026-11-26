@@ -161,14 +161,12 @@ e il layout front office richiede sempre `@filamentStyles`, notifications e
 non usata e poteva nascondere asset obbligatori. Il contratto canonico è quindi
 sempre quello documentato in `../bmad/filament-layout-styles-scripts.md`.
 
-## Verifica 2026-11-23
+### Risoluzione conflitti nested (2026-11-23)
 
-La verifica ha trovato marcatori di conflitto nelle due Blade Cms e nel test
-del contratto. Sono stati risolti mantenendo il contratto canonico: notifiche,
-`@filamentStyles` e `@filamentScripts` sono sempre emessi, in ordine, e la
-prop `panelAssets` è stata rimossa anche dai componenti perché nessun caller la
-valorizza. `FilamentLayoutDirectivesTest` passa e PHPStan su `Modules/Cms` e
-`Modules/Fixcity` è a zero.
+Marker nested in `head.blade.php`, `foot.blade.php` e
+`tests/Unit/Views/FilamentLayoutDirectivesTest.php` risolti a favore del
+contratto «sempre emesso» (niente guard `$panelAssets`): allinea Blade, test e
+questa decisione. Fonte: `../bmad/filament-layout-styles-scripts.md`.
 
 ---
 

@@ -31,5 +31,5 @@ test('GuestLayout component can be instantiated', function () {
 
 test('Metatags component can be instantiated', function () {
     $component = new Metatags;
-    Assert::assertSame(Metatags::class, get_class($component));
+    Assert::assertSame(Metatags::class, $component::class);
 });

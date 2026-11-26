@@ -21,6 +21,7 @@ use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
 use Modules\Cms\Actions\Head\ResolveWrittenLocalesAction;
 use Modules\Cms\Actions\ResolvePageMetaAction;
 use Modules\Cms\Models\Page;
+use Modules\Tenant\Actions\Config\GetTenantConfigArrayAction;
 use Modules\Xot\Datas\MetatagData;
 
 use function Safe\filesize;
@@ -49,14 +50,17 @@ final class Head extends Component
 
     /**
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
+     * @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md  prop `stylesheet` e `@stack('head')`
      */
     public function __construct(
         public readonly ?string $title = null,
         public readonly ?string $description = null,
         public readonly ?bool $homepage = null,
         public readonly ?string $themeColor = null,
-    ) {
-    }
+        public readonly bool $panelAssets = true,
+        // Entry Vite del CSS del tema: un tema può servire un foglio più leggero dove non servono i componenti Filament.
+        public readonly string $stylesheet = 'resources/css/app.css',
+    ) {}
 
     /**
      * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
@@ -122,6 +126,8 @@ final class Head extends Component
 
         return view('cms::components.head', [
             'pubTheme' => $meta->getPubTheme(),
+            'panelAssets' => $this->panelAssets,
+            'stylesheet' => $this->stylesheet,
         ]);
     }
 
@@ -360,6 +366,7 @@ final class Head extends Component
                 rootUrl: $this->siteRoot(),
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
                 languages: $siteLocales,
+                business: $isHome ? $this->businessData() : [],
                 description: $isHome ? $description : null,
                 sameAs: $isHome ? $meta->getSameAs() : [],
             );
@@ -374,11 +381,29 @@ final class Head extends Component
     }
 
     /**
+     * Dati dell'attività del tenant (`metatag.php`, chiave `business`): solo dati pubblici, come nel piè di pagina.
+     *
+     * @return array<string, mixed>
+     */
+    private function businessData(): array
+    {
+        $business = app(GetTenantConfigArrayAction::class)->execute('metatag')['business'] ?? [];
+        if (! \is_array($business)) {
+            return [];
+        }
+
+        $data = [];
+        foreach ($business as $key => $value) {
+            $data[(string) $key] = $value;
+        }
+
+        return $data;
+    }
+
+    /**
      * Il JSON-LD è markup pubblico (può finire in una cache condivisa): non riceve mai l'utente della sessione.
      *
      * @return array<string, mixed>
-     *
-     * @see Modules/Cms/docs/bmad/head-component-adoption-plan.md
      */
     private function resolvePageEntity(MetatagData $meta, string $name, ?string $description, string $canonical): array
     {

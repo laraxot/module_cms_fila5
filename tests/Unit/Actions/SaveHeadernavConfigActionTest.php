@@ -30,4 +30,4 @@ test('SaveHeadernavConfigAction saves headernav data in the appearance tenant co
     app()->instance(SaveTenantConfigAction::class, $save);
 
     (new SaveHeadernavConfigAction)->execute($data);
-});
+})->group('CMS-HEADERNAV-SAVE-INV-1');

@@ -9,6 +9,8 @@ use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
+ * Salva la testata del sito nella config appearance del tenant.
+ *
  * @contract docs/contracts/save-headernav-config-action.md
  * @see docs/contracts/save-headernav-config-action.md
  */

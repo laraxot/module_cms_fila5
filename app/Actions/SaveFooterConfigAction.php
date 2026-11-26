@@ -9,6 +9,8 @@ use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
+ * Salva il piede del sito nella config appearance del tenant.
+ *
  * @contract docs/contracts/save-footer-config-action.md
  * @see docs/contracts/save-footer-config-action.md
  */
