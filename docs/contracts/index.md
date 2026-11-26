@@ -1,15 +1,10 @@
-# Cms behavioral contract index
+# Behavioral and surface contracts — Cms
 
-This is the machine-readable inventory of behavioral contracts owned by the **Cms** module.
+Indice operativo della cartella owner-local. Il formato e la governance condivisi sono in [Xot](../../../Xot/docs/contracts/README.md).
 
-A contract describes an existing public operation or boundary. It names the owner, input, output, stable invariants, side effects and their order, errors, and non-goals. Every invariant gets a stable ID and a Pest group when a test exists; missing coverage is recorded as debt instead of being implied away.
-
-## Contracts
-
-- [page-meta-resolution-action](page-meta-resolution-action.md)
-- [page-resolution-action](page-resolution-action.md)
-- [page-slug-middleware](page-slug-middleware.md)
-
-## Authoring
-
-Use [Xot contract authoring standard](../../../Xot/docs/contracts/contract-authoring-standard.md) and the shared template. Legacy behavior is documented as-is and is not a model for new code.
+- [page-meta-resolution-action.md](page-meta-resolution-action.md)
+- [page-resolution-action.md](page-resolution-action.md)
+- [page-slug-middleware.md](page-slug-middleware.md)
+- [save-footer-config-action.md](save-footer-config-action.md)
+- [save-headernav-config-action.md](save-headernav-config-action.md)
+- [validate-page-middleware-action.md](validate-page-middleware-action.md)

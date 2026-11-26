@@ -11,7 +11,7 @@ Sintesi automatica di 3 documenti (chiave `folio-volt`).
 
 ## FolioVolt = unico owner del mount Folio
 
-_Fonte: `bmad/folio-volt-sole-owner.md`_
+_Fonte: `bmad/0003-folio-volt-sole-owner.md`_
 
 # FolioVolt = unico owner del mount Folio
 

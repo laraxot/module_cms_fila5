@@ -28,4 +28,4 @@ test('PageSlugMiddleware passes the request through when no CMS page matches', f
     $response = $middleware->handle(Request::create('/it/no-such-page'), fn (Request $request): Response => $expected);
 
     Assert::assertSame($expected, $response);
-});
+})->group('CMS-PAGE-SLUG-INV-5');

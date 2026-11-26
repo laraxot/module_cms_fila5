@@ -6,7 +6,7 @@ declare(strict_types=1);
  * Contratto: unico owner Folio = Cms FolioVoltServiceProvider.
  * Non deve esistere App\Providers\FolioServiceProvider.
  *
- * @see Modules/Cms/docs/bmad/folio-volt-sole-owner.md
+ * @see Modules/Cms/docs/bmad/0003-folio-volt-sole-owner.md
  */
 
 use App\Providers\FolioServiceProvider;

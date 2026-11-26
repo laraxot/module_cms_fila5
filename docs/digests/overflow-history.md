@@ -171,7 +171,7 @@ config/local/<tenant>/database/content/
 # ResolvePageAction
 
 Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`).
-Sorgente: `app/Actions/ResolvePageAction.php`. Perche': [ADR](../adr/container0-model-allowlist.md).
+Sorgente: `app/Actions/ResolvePageAction.php`. Perche': [ADR](../adr/0002-container0-model-allowlist.md).
 Chiamante: pagina Folio del tema `[container0]/[slug0]`.
 
 ## Input
@@ -240,7 +240,7 @@ Sorgente: `app/Actions/SaveHeadernavConfigAction.php`. Chiamante: pagina Filamen
 # ValidatePageMiddlewareAction
 
 Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`).
-Sorgente: `app/Actions/ValidatePageMiddlewareAction.php`. Perche': [ADR](../adr/page-middleware-allowlist.md).
+Sorgente: `app/Actions/ValidatePageMiddlewareAction.php`. Perche': [ADR](../adr/0004-page-middleware-allowlist.md).
 Chiamante: `app/Http/Middleware/PageSlugMiddleware.php`. Action pura, con contratto perche' e' un confine di sicurezza.
 
 ## Input

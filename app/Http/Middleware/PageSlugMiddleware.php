@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Applica la protezione dichiarata dal contenuto CMS senza conoscere domini applicativi.
  *
+ * @contract docs/contracts/page-slug-middleware.md
+ *
  * @see Modules/Cms/docs/contracts/page-slug-middleware.md
  */
 class PageSlugMiddleware
@@ -27,7 +29,7 @@ class PageSlugMiddleware
 
     protected Kernel $kernel;
 
-    /** @see Modules/Cms/docs/adr/cms-owns-page-resolution.md */
+    /** @see Modules/Cms/docs/adr/0001-cms-owns-page-resolution.md */
     public function handle(Request $request, \Closure $next): Response
     {
         $this->rejectLegacyProfileRoutes($request);
@@ -38,7 +40,7 @@ class PageSlugMiddleware
     }
 
     /**
-     * @see Modules/Cms/docs/adr/cms-owns-page-resolution.md
+     * @see Modules/Cms/docs/adr/0001-cms-owns-page-resolution.md
      */
     private function rejectLegacyProfileRoutes(Request $request): void
     {

@@ -31,7 +31,7 @@ describe('Resolve Page Action', function (): void {
 
         Assert::assertSame('cms', $result->renderMode);
         Assert::assertSame($slug, $result->pageSlug);
-    });
+    })->group('CMS-RESOLVE-PAGE-INV-6');
 
     test('it falls back to container view if slug not found', function (): void {
         $viewSlug = 'blog.view';
@@ -43,7 +43,7 @@ describe('Resolve Page Action', function (): void {
 
         Assert::assertSame('cms', $result->renderMode);
         Assert::assertSame($viewSlug, $result->pageSlug);
-    });
+    })->group('CMS-RESOLVE-PAGE-INV-6');
 
     test('it returns full slug as final fallback', function (): void {
         $action = app(ResolvePageAction::class);
@@ -51,5 +51,5 @@ describe('Resolve Page Action', function (): void {
 
         Assert::assertSame('cms', $result->renderMode);
         Assert::assertSame('unknown.page', $result->pageSlug);
-    });
+    })->group('CMS-RESOLVE-PAGE-INV-6');
 });

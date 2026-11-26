@@ -10,7 +10,7 @@ use Modules\Cms\Tests\TestCase;
 // 94 fallimenti «Target class [config] does not exist» nel modulo
 // (base_quaeris_fila5#228).
 uses(TestCase::class);
-/** @see Modules/Cms/docs/bmad/folio-volt-sole-owner.md */
+/** @see Modules/Cms/docs/bmad/0003-folio-volt-sole-owner.md */
 it('SKIP dynamic /it/auth/{type}/register', function (): void {
     $this->markTestSkipped('Dynamic type route requires fixture.');
 });

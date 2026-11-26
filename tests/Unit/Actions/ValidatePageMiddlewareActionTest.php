@@ -25,11 +25,11 @@ test('accetta i middleware realmente usati dai JSON, con i loro parametri', func
     $declared = ['auth', 'throttle:10,1'];
 
     Assert::assertSame($declared, app(ValidatePageMiddlewareAction::class)->execute($declared));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-5');
 
 test('una lista vuota e valida: la pagina e pubblica', function (): void {
     Assert::assertSame([], app(ValidatePageMiddlewareAction::class)->execute([]));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-5');
 
 test('web e un gruppo gia applicato dallo stack Folio e non viene rifiutato', function (): void {
     Assert::assertSame(['web'], app(ValidatePageMiddlewareAction::class)->execute(['web']));

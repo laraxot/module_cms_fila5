@@ -72,7 +72,7 @@ final class Page extends Component
     /**
      * Risolve il fallback per le rotte Folio dinamiche senza riportare query o rami di dominio nelle Blade.
      *
-     * @see Modules/Cms/docs/adr/cms-owns-page-resolution.md
+     * @see Modules/Cms/docs/adr/0001-cms-owns-page-resolution.md
      * @see Modules/Cms/docs/components/page-component-data-contract.md
      */
     private function resolveDynamicContext(): void

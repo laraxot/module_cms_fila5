@@ -105,7 +105,7 @@ final class Head extends Component
         $this->applyIcons($meta);
 
         // Verifica della proprietà del sito (Search Console, Bing, Yandex): basta in home, solo i token configurati.
-        // @see Modules/Seo/docs/adr/search-engine-presence.md
+        // @see Modules/Seo/docs/adr/0002-search-engine-presence.md
         if ($isHome) {
             foreach ($meta->getSiteVerifications() as $name => $token) {
                 HeadManager::meta($name, $token);

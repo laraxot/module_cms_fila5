@@ -20,7 +20,7 @@ use Spatie\QueueableAction\QueueableAction;
  * Google le tratta come contenuto da verificare. `description` e `sameAs` entrano solo se il tenant li ha (descrizione del
  * sito, profili ufficiali in `metatag`): sono i segnali con cui un motore lega il nome del sito a un'entità.
  *
- * @see Modules/Seo/docs/adr/search-engine-presence.md
+ * @see Modules/Seo/docs/adr/0002-search-engine-presence.md
  */
 final class BuildHeadSchemaAction
 {

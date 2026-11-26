@@ -28,7 +28,7 @@ con merge semantico: head/meta schema, Folio, allowlist middleware. Non toccare
 | Event schema (`BuildPageSchemaAction`) | `@id` riferimento `#event` (+ contratto `@type`/`url` se presente) | Event incompleto con solo URL fallisce Google |
 | Head schema | param `business` + Organization tipizzata | LocalBusiness/ProfessionalService dal tenant |
 | `Head` component | `panelAssets` + `stylesheet` + `businessData()` | FO pubblico può spegnere CSS/JS Filament |
-| Allowlist middleware | `['auth', 'throttle']`, `guest` rifiutato | ADR `page-middleware-allowlist.md` |
+| Allowlist middleware | `['auth', 'throttle']`, `guest` rifiutato | ADR `0004-page-middleware-allowlist.md` |
 | Test | group Pest + assert allineati al lato sopra | invarianti CMS-*-INV-* |
 
 ## Verifica

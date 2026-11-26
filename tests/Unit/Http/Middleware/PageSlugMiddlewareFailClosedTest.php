@@ -112,7 +112,7 @@ test('una lettura dei middleware che fallisce rende la pagina 503, non pubblica'
 
     Assert::assertSame(503, $status);
     Assert::assertFalse($next, 'la pagina non deve essere servita');
-});
+})->group('CMS-PAGE-SLUG-INV-1');
 
 test('il 503 registra il contesto della pagina senza dati personali', function (): void {
     $middleware = dcp283Middleware(static fn (string $slug): array => throw new RuntimeException('lettura JSON fallita'));
@@ -128,7 +128,7 @@ test('il 503 registra il contesto della pagina senza dati personali', function (
     foreach (['ip', 'user', 'user_id', 'path', 'url'] as $forbidden) {
         Assert::assertArrayNotHasKey($forbidden, $context);
     }
-});
+})->group('CMS-PAGE-SLUG-INV-3');
 
 test('uno slug duplicato nella ricerca della pagina rende la pagina 503, non pubblica', function (): void {
     $middleware = new class extends PageSlugMiddleware
@@ -142,7 +142,7 @@ test('uno slug duplicato nella ricerca della pagina rende la pagina 503, non pub
     $request->setRouteResolver(static fn (): Route => (new Route(['GET'], '/it/dcp283/page', static fn (): string => 'ok'))->name('dcp283.page')->bind($request));
 
     Assert::assertSame(503, dcp283Status(fn (): Response => $middleware->handle($request, dcp283Reached())));
-});
+})->group('CMS-PAGE-SLUG-INV-1');
 
 test('un middleware fuori allowlist non viene istanziato ne eseguito', function (): void {
     Dcp283ProbeMiddleware::$calls = 0;
@@ -152,19 +152,19 @@ test('un middleware fuori allowlist non viene istanziato ne eseguito', function 
 
     Assert::assertSame(503, $status);
     Assert::assertSame(0, Dcp283ProbeMiddleware::$calls, 'una classe qualunque dal JSON non deve girare');
-});
+})->group('CMS-PAGE-SLUG-INV-2');
 
 test('un refuso nel nome del middleware non rende pubblica la pagina', function (): void {
     $middleware = dcp283Middleware(static fn (string $slug): array => ['auht']);
 
     Assert::assertSame(503, dcp283Status(fn (): Response => $middleware->handle(Request::create('/it/x'), dcp283Reached())));
-});
+})->group('CMS-PAGE-SLUG-INV-2');
 
 test('auth in allowlist esegue ancora la catena: un ospite non passa', function (): void {
     $middleware = dcp283Middleware(static fn (string $slug): array => ['auth']);
 
     expect(fn () => $middleware->handle(Request::create('/it/x'), dcp283Reached()))->toThrow(AuthenticationException::class);
-});
+})->group('CMS-PAGE-SLUG-INV-7');
 
 test('throttle:10,1 in allowlist risponde come prima, con le intestazioni del limite', function (): void {
     $middleware = dcp283Middleware(static fn (string $slug): array => ['throttle:10,1']);
@@ -175,19 +175,19 @@ test('throttle:10,1 in allowlist risponde come prima, con le intestazioni del li
 
     Assert::assertSame(200, $response->getStatusCode());
     Assert::assertSame('10', $response->headers->get('X-RateLimit-Limit'));
-});
+})->group('CMS-PAGE-SLUG-INV-7');
 
 test('web resta un no-op: la pagina arriva a destinazione', function (): void {
     $middleware = dcp283Middleware(static fn (string $slug): array => ['web']);
 
     Assert::assertSame(200, dcp283Status(fn (): Response => $middleware->handle(Request::create('/it/x'), dcp283Reached())));
-});
+})->group('CMS-PAGE-SLUG-INV-5');
 
 test('senza middleware dichiarati la pagina e pubblica come prima', function (): void {
     $middleware = dcp283Middleware(static fn (string $slug): array => []);
 
     Assert::assertSame(200, dcp283Status(fn (): Response => $middleware->handle(Request::create('/it/x'), dcp283Reached())));
-});
+})->group('CMS-PAGE-SLUG-INV-5');
 
 test('un middleware che non restituisce una Response non lascia proseguire la richiesta', function (): void {
     $middleware = new PageSlugMiddleware;
@@ -197,7 +197,7 @@ test('un middleware che non restituisce una Response non lascia proseguire la ri
 
     expect(fn () => $chain->invoke($middleware, Request::create('/it/x'), [Dcp283ReturnsNothingMiddleware::class], dcp283Reached()))
         ->toThrow(LogicException::class);
-});
+})->group('CMS-PAGE-SLUG-INV-8');
 
 test('una classe senza handle non lascia proseguire la richiesta', function (): void {
     $middleware = new PageSlugMiddleware;
@@ -207,4 +207,4 @@ test('una classe senza handle non lascia proseguire la richiesta', function (): 
 
     expect(fn () => $chain->invoke($middleware, Request::create('/it/x'), [Dcp283NoHandleMiddleware::class], dcp283Reached()))
         ->toThrow(LogicException::class);
-});
+})->group('CMS-PAGE-SLUG-INV-8');

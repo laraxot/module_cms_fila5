@@ -6,8 +6,13 @@ An ADR records a difficult-to-reverse or surprising choice with a real trade-off
 
 ## Decisions
 
-- [cms-owns-page-resolution](cms-owns-page-resolution.md)
+- [cms-owns-page-resolution](0001-cms-owns-page-resolution.md)
+- [container0-model-allowlist](0002-container0-model-allowlist.md)
+- [folio-volt-sole-owner](0003-folio-volt-sole-owner.md)
+- [page-middleware-allowlist](0004-page-middleware-allowlist.md)
+
+Motivi, stato e contratti collegati: [README](README.md).
 
 ## Authoring
 
-Use the shared template and rules in [Xot ADR standards](../../Xot/docs/adr/README.md). Do not create an ADR for a local implementation detail or an unverified hypothesis.
+Use the shared template and rules in [Xot ADR standards](../../../Xot/docs/adr/README.md). Do not create an ADR for a local implementation detail or an unverified hypothesis.

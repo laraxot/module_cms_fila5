@@ -54,3 +54,8 @@ la maggior parte dei "variabile mai letta" nei test erano test **senza asserzion
 
 - Issue: TODO (gh non installato su questa macchina)
 - Discussion: TODO
+
+## Follow-up 2026-11-26
+
+- `ComponentTest` / `ViewComponentsTest`: asserzione tautologica su `Metatags::class` sostituita con assert su titolo/descrizione del `render()`.
+- Verifica: `vendor/bin/phpstan analyse Modules/Cms` → 0.

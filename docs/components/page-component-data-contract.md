@@ -87,7 +87,7 @@ data bag, il componente **non** lo rilegge e **non** decide la visibilita': il r
 codice della pagina (es. `Event::visibleTo()` per `/events/{slug}`, con anteprima della bozza al proprietario; `User` per
 `/profile/{id}`), non dall'URL. Prima di questa uscita un record valido dava 404 perche' `ResolvePageAction` non conosceva
 il contenitore (allowlist `container0_models` vuota). Gli identificativi senza `item` seguono invece la risoluzione di
-`ResolvePageAction` (vedi [container0-model-allowlist](../adr/container0-model-allowlist.md)).
+`ResolvePageAction` (vedi [container0-model-allowlist](../adr/0002-container0-model-allowlist.md)).
 
 ## Regola: non aggiungere parametri espliciti al costruttore
 

@@ -73,7 +73,7 @@ test('un ospite non distingue un utente reale da uno inesistente su /profile e /
     Assert::assertSame(404, $real->getStatusCode(), 'un utente reale non deve produrre una pagina');
     Assert::assertSame($missing->getStatusCode(), $real->getStatusCode(), 'nessun oracolo di esistenza');
     Assert::assertStringNotContainsString('Models\\\\User', (string) $real->getContent(), 'il nome della classe non deve comparire nello snapshot');
-})->with(['profile', 'user']);
+})->with(['profile', 'user'])->group('CMS-PAGE-SLUG-INV-4');
 
 test('nemmeno un utente loggato carica il profilo di un altro dall URL', function (): void {
     $users = dcp283Users();
@@ -81,7 +81,7 @@ test('nemmeno un utente loggato carica il profilo di un altro dall URL', functio
 
     $this->get('/it/profile/'.dcp283KeyOf($users['visible']))->assertNotFound();
     $this->get('/it/user/'.dcp283KeyOf($users['visible']))->assertNotFound();
-});
+})->group('CMS-PAGE-SLUG-INV-4');
 
 test('un contenitore non elencato non carica nessun modello', function (): void {
     dcp283Items();

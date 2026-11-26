@@ -35,7 +35,7 @@ Per supportare l'architettura modulare di Laraxot, il mount point di Folio non d
 L'unico owner è `Modules\Cms\Providers\FolioVoltServiceProvider` — **non** `App\Providers\FolioServiceProvider`
 (istruizione: scomodare `laravel/app/Providers/FolioServiceProvider.php` è sbagliato; basta Cms).
 Il path tema si risolve con `XotData::make()->getPubThemeViewPath('pages')`; i moduli abilitati espongono
-`resources/views/pages` (+ `pages/api` → `/api`). SSoT: [bmad/folio-volt-sole-owner.md](./bmad/folio-volt-sole-owner.md).
+`resources/views/pages` (+ `pages/api` → `/api`). SSoT: [bmad/0003-folio-volt-sole-owner.md](./bmad/0003-folio-volt-sole-owner.md).
 
 ## Testing
 

@@ -19,7 +19,7 @@ Nel progetto il frontoffice tema viene servito da `laravel/folio` e il modulo `C
 
 Prima di modificare una pagina pubblica servita da Folio bisogna verificare:
 
-- mount path registrato **solo** in `Modules\Cms\Providers\FolioVoltServiceProvider` (mai `App\Providers\FolioServiceProvider`; SSoT: [bmad/folio-volt-sole-owner.md](./bmad/folio-volt-sole-owner.md));
+- mount path registrato **solo** in `Modules\Cms\Providers\FolioVoltServiceProvider` (mai `App\Providers\FolioServiceProvider`; SSoT: [bmad/0003-folio-volt-sole-owner.md](./bmad/0003-folio-volt-sole-owner.md));
 - middleware mount-level (`SetFolioLocale`);
 - middleware inline dichiarati nel file pagina (`middleware(...)`);
 - route name dichiarato con `name(...)`;
