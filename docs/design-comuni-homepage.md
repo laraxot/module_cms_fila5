@@ -53,7 +53,7 @@ La homepage di test ` /it/tests/homepage ` e' orchestrata da due livelli distint
 
 ## Related docs
 
-- [00-index.md](./00-index.md) - Indice del modulo Cms
+- [00-index.md](../archive/docs-legacy/docs/00-index.md) - Indice del modulo Cms
 - [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Architettura runtime aggiornata
-- [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale dei componenti pagina
-- [page_component_architecture.md](./page_component_architecture.md) - Architettura generale dei componenti pagina
+- [PAGE_COMPONENT_ARCHITECTURE.md](../archive/docs-legacy/docs/PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale dei componenti pagina
+- [page_component_architecture.md](../archive/docs-legacy/docs/page_component_architecture.md) - Architettura generale dei componenti pagina

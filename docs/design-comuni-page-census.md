@@ -101,4 +101,4 @@ Use each converted page as evidence for refining the reusable taxonomy instead o
 ## Cross References
 - [Theme Census](../../../Themes/Sixteen/docs/design-comuni-page-census.md)
 - [CMS README](README.md)
-- [Content Blocks System](content-blocks-system.md)
+- [Content Blocks System](../archive/docs-legacy/docs/content-blocks-system.md)

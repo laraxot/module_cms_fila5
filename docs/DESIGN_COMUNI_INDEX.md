@@ -28,18 +28,18 @@ Documentazione del modulo Cms per il progetto Design Comuni Italia.
 | **Homepage** | [design-comuni-homepage.md](./design-comuni-homepage.md) | Analisi homepage |
 | **FAQ** | [design-comuni-faq.md](./design-comuni-faq.md) | Pagina domande frequenti |
 | **Argomenti** | [design-comuni-argomenti.md](./design-comuni-argomenti.md) | Pagina argomenti |
-| **Argomento** | [design-comuni-argomento.md](./design-comuni-argomento.md) | Dettaglio argomento |
+| **Argomento** | [design-comuni-argomento.md](../archive/docs-legacy/docs/design-comuni-argomento.md) | Dettaglio argomento |
 | **Risultati Ricerca** | [design-comuni-risultati-ricerca.md](./design-comuni-risultati-ricerca.md) | Pagina risultati ricerca |
 | **Segnalazioni Elenco** | [design-comuni-ticket-list.md](./design-comuni-ticket-list.md) | Pagina segnalazioni elenco |
-| **Services Implementation** | [design-comuni-services-implementation.md](./design-comuni-services-implementation.md) | Implementazione servizi |
+| **Services Implementation** | [design-comuni-services-implementation.md](../archive/docs-legacy/docs/design-comuni-services-implementation.md) | Implementazione servizi |
 | **Page Census** | [design-comuni-page-census.md](./design-comuni-page-census.md) | Censimento pagine |
 
 ### Audit e Parity
 
 | Documento | File | Descrizione |
 |-----------|------|-------------|
-| **Batch Audit** | [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) | Audit batch pagine |
-| **Batch Parity** | [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) | Verifica parity |
+| **Batch Audit** | [design-comuni-batch-audit.md](../archive/docs-legacy/docs/design-comuni-batch-audit.md) | Audit batch pagine |
+| **Batch Parity** | [design-comuni-batch-parity.md](../archive/docs-legacy/docs/design-comuni-batch-parity.md) | Verifica parity |
 
 ## 🔗 Link Bidirezionali - Tema Sixteen
 

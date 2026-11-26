@@ -20,7 +20,7 @@ related:
   locale), `resources/views/pages` di ogni modulo abilitato, `pages/api` con prefisso `/api`.
 - L'installer di Laravel Folio genera `app/Providers/FolioServiceProvider.php`; documenti vecchi lo citavano come owner.
   Due provider che montano Folio = rotte duplicate o in ordine diverso a seconda dell'ordine di boot (vedi
-  [folio-volt-sole-owner](../bmad/folio-volt-sole-owner.md)).
+  [folio-volt-sole-owner](../../archive/docs-legacy/docs/bmad/folio-volt-sole-owner.md)).
 
 Domanda: chi registra i percorsi Folio e Volt?
 
@@ -80,7 +80,7 @@ Il codice di oggi contraddice la decisione in due punti. Misurato il 2026-11-26,
    `FolioVoltServiceProvider.php:193-199`. Da decidere: togliere `registerFolioApiRoutes()` dal Fixcity.
 
 Inoltre il test e il riferimento `related` citavano `../bmad/0003-folio-volt-sole-owner.md`, che non esiste: il documento
-vero è [docs/bmad/folio-volt-sole-owner.md](../bmad/folio-volt-sole-owner.md) (qui corretto; il docblock del test, riga 9,
+vero è [docs/bmad/folio-volt-sole-owner.md](../../archive/docs-legacy/docs/bmad/folio-volt-sole-owner.md) (qui corretto; il docblock del test, riga 9,
 resta da correggere).
 
 ## Conferma

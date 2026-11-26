@@ -11,7 +11,7 @@ An ADR records a difficult-to-reverse or surprising choice with a real trade-off
 - [folio-volt-sole-owner](0003-folio-volt-sole-owner.md)
 - [page-middleware-allowlist](0004-page-middleware-allowlist.md)
 
-Motivi, stato e contratti collegati: [README](README.md).
+Motivi, stato e contratti collegati: [README](../../archive/docs-legacy/docs/adr/README.md).
 
 ## Authoring
 

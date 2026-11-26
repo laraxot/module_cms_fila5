@@ -13,7 +13,7 @@ updated: 2026-11-26
 
 Contratto per titolo e descrizione della pagina in corso di rendering (regola:
 `Modules/Xot/docs/rules/action-behavioral-contract.md`). Sorgente: `app/Actions/ResolvePageMetaAction.php`; spiegazione
-estesa in [page-title-and-description.md](../page-title-and-description.md). Chiamante: `<x-page>`
+estesa in [page-title-and-description.md](../../archive/docs-legacy/docs/page-title-and-description.md). Chiamante: `<x-page>`
 (`app/View/Components/Page.php:66-69`, solo con `side="content"`). Lettori dei valori registrati:
 `app/View/Components/Head.php:169,256` e `Metatags.php:58-59`.
 

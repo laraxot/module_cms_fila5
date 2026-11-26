@@ -195,6 +195,6 @@ Per tutto il resto: **Plain Blade**!
 | `config/local/laravelpizza/database/content/pages/*.json` | Page definitions |
 
 ## See Also
-- [Componenti Blocchi Contenuto](./componenti-blocchi-contenuto.md)
-- [Content Management](./content-management.md)
+- [Componenti Blocchi Contenuto](../archive/docs-legacy/docs/componenti-blocchi-contenuto.md)
+- [Content Management](../archive/docs-legacy/docs/content-management.md)
 - [Folio Volt Architecture](../meetup/docs/folio-volt-filament-architecture.md)
