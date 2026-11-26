@@ -1,34 +1,10 @@
 ---
-<<<<<<< .merge_file_DzwF8F
-<<<<<<< .merge_file_J7nUM4
 title: "product launch plan"
-=======
-title: "Product Launch Plan"
->>>>>>> .merge_file_LHOe7O
-=======
-<<<<<<< .merge_file_tY60yY
-title: "product launch plan"
-=======
-title: "Product Launch Plan"
->>>>>>> .merge_file_73ffRK
->>>>>>> .merge_file_x9Vp7q
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_DzwF8F
-<<<<<<< .merge_file_J7nUM4
 qmd: "product launch plan"
-=======
-qmd: "Product Launch Plan"
->>>>>>> .merge_file_LHOe7O
-=======
-<<<<<<< .merge_file_tY60yY
-qmd: "product launch plan"
-=======
-qmd: "Product Launch Plan"
->>>>>>> .merge_file_73ffRK
->>>>>>> .merge_file_x9Vp7q
 issues: []
 discussions: []
 ---
@@ -41,36 +17,12 @@ discussions: []
 
 ---
 
-<<<<<<< .merge_file_DzwF8F
-<<<<<<< .merge_file_J7nUM4
 title: "product launch plan"
-=======
-title: "PRODUCT LAUNCH PLAN"
->>>>>>> .merge_file_LHOe7O
-=======
-<<<<<<< .merge_file_tY60yY
-title: "product launch plan"
-=======
-title: "PRODUCT LAUNCH PLAN"
->>>>>>> .merge_file_73ffRK
->>>>>>> .merge_file_x9Vp7q
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_DzwF8F
-<<<<<<< .merge_file_J7nUM4
 qmd: "product launch plan"
-=======
-qmd: "PRODUCT LAUNCH PLAN"
->>>>>>> .merge_file_LHOe7O
-=======
-<<<<<<< .merge_file_tY60yY
-qmd: "product launch plan"
-=======
-qmd: "PRODUCT LAUNCH PLAN"
->>>>>>> .merge_file_73ffRK
->>>>>>> .merge_file_x9Vp7q
 issues: []
 discussions: []
 ## Launch Objectives

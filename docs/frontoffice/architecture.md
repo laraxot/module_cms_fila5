@@ -117,19 +117,8 @@ I blocchi sono l'unità base di contenuto. Ogni blocco:
 
 ## Documentazione Correlata
 
-<<<<<<< .merge_file_LhZvCP
-<<<<<<< .merge_file_GahnOU
 - [Gestione dei Temi](../themes/readme.md)
-=======
 - [Gestione dei Temi](../themes/README.md)
->>>>>>> .merge_file_j2UxnJ
-=======
-<<<<<<< .merge_file_xs4Geh
-- [Gestione dei Temi](../themes/readme.md)
-=======
-- [Gestione dei Temi](../themes/README.md)
->>>>>>> .merge_file_JuHdXk
->>>>>>> .merge_file_6AdIks
 - [Componenti UI](../components/README.md)
 - [Configurazione Blocchi](../blocks/README.md)
 - [Ottimizzazione Performance](../performance/README.md)

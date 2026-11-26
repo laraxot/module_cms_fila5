@@ -323,11 +323,6 @@ public function it_shows_loading_state(): void
 - [WCAG Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
 
 ## Collegamenti tra versioni di README.md
-<<<<<<< .merge_file_8XhNt1
-<<<<<<< .merge_file_4RyPya
-=======
-<<<<<<< .merge_file_X0hd0P
->>>>>>> .merge_file_AM0IUk
 * [README.md](bashscripts/docs/readme.md)
 * [README.md](bashscripts/docs/it/readme.md)
 * [README.md](docs/laravel-app/phpstan/readme.md)
@@ -404,7 +399,6 @@ public function it_shows_loading_state(): void
 * [README.md](laravel/modules/cms/docs/components/readme.md)
 * [README.md](laravel/themes/two/docs/readme.md)
 * [README.md](laravel/themes/one/docs/readme.md)
-=======
 * [README.md](bashscripts/docs/README.md)
 * [README.md](bashscripts/docs/it/README.md)
 * [README.md](docs/laravel-app/phpstan/README.md)
@@ -481,8 +475,3 @@ public function it_shows_loading_state(): void
 * [README.md](laravel/modules/cms/docs/components/README.md)
 * [README.md](laravel/themes/two/docs/README.md)
 * [README.md](laravel/themes/one/docs/README.md)
-<<<<<<< .merge_file_8XhNt1
->>>>>>> .merge_file_6SLlko
-=======
->>>>>>> .merge_file_YIAnUh
->>>>>>> .merge_file_AM0IUk

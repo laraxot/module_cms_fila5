@@ -25,11 +25,6 @@ Questa cartella contiene la documentazione relativa al frontoffice del sito.
 
 Questa documentazione descrive come gestire e personalizzare il frontoffice del sito.
 ## Collegamenti tra versioni di README.md
-<<<<<<< .merge_file_XzvKIy
-<<<<<<< .merge_file_ABsT2t
-=======
-<<<<<<< .merge_file_i2Je4q
->>>>>>> .merge_file_dt0271
 * [README.md](bashscripts/docs/readme.md)
 * [README.md](bashscripts/docs/it/readme.md)
 * [README.md](docs/laravel-app/phpstan/readme.md)
@@ -106,7 +101,6 @@ Questa documentazione descrive come gestire e personalizzare il frontoffice del 
 * [README.md](laravel/modules/cms/docs/components/readme.md)
 * [README.md](laravel/themes/two/docs/readme.md)
 * [README.md](laravel/themes/one/docs/readme.md)
-=======
 * [README.md](bashscripts/docs/README.md)
 * [README.md](bashscripts/docs/it/README.md)
 * [README.md](docs/laravel-app/phpstan/README.md)
@@ -183,8 +177,3 @@ Questa documentazione descrive come gestire e personalizzare il frontoffice del 
 * [README.md](laravel/modules/cms/docs/components/README.md)
 * [README.md](laravel/themes/two/docs/README.md)
 * [README.md](laravel/themes/one/docs/README.md)
-<<<<<<< .merge_file_XzvKIy
->>>>>>> .merge_file_A5631N
-=======
->>>>>>> .merge_file_Kn5TKe
->>>>>>> .merge_file_dt0271

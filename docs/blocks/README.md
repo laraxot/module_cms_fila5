@@ -267,11 +267,6 @@ class BlockApiTest extends TestCase
 
 - `system.md`
 ## Collegamenti tra versioni di README.md
-<<<<<<< .merge_file_3fUrNa
-<<<<<<< .merge_file_DIAlQ6
-=======
-<<<<<<< .merge_file_Q6vkNF
->>>>>>> .merge_file_RqVvRl
 * [README.md](bashscripts/docs/readme.md)
 * [README.md](bashscripts/docs/it/readme.md)
 * [README.md](docs/laravel-app/phpstan/readme.md)
@@ -348,7 +343,6 @@ class BlockApiTest extends TestCase
 * [README.md](laravel/modules/cms/docs/components/readme.md)
 * [README.md](laravel/themes/two/docs/readme.md)
 * [README.md](laravel/themes/one/docs/readme.md)
-=======
 * [README.md](bashscripts/docs/README.md)
 * [README.md](bashscripts/docs/it/README.md)
 * [README.md](docs/laravel-app/phpstan/README.md)
@@ -425,8 +419,3 @@ class BlockApiTest extends TestCase
 * [README.md](laravel/modules/cms/docs/components/README.md)
 * [README.md](laravel/themes/two/docs/README.md)
 * [README.md](laravel/themes/one/docs/README.md)
-<<<<<<< .merge_file_3fUrNa
->>>>>>> .merge_file_2L3kod
-=======
->>>>>>> .merge_file_kNB0ji
->>>>>>> .merge_file_RqVvRl

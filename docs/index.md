@@ -430,7 +430,6 @@ Questo file e' l'indice di navigazione di `docs/`: organizza per argomento i fil
 - [site-replication-report.md](./site-replication-report.md)
 - [workflow-improvements.md](./workflow-improvements.md)
 
-
 ## Sottocartelle di docs/
 
 Sottocartelle con indice interno proprio (usarlo come punto di ingresso):
@@ -489,17 +488,13 @@ Sottocartelle senza indice interno (elenco file diretto consigliato per chi le a
 
 Cartelle vuote o senza file `.md` diretti: `examples/`, `root-code-workspace-files/`, `source/` (verificare se vanno rimosse o popolate).
 
-
 ## Storico / da consolidare
 
 Questi file non sono stati toccati (nessuna cancellazione o rinomina), ma sono raggruppati qui perche' palesemente duplicati o superati. Per ciascuna riga il primo link e' il riferimento consigliato; gli altri sono le varianti storiche.
 
 - **[00-index.md](./00-index.md)** — contenuto identico duplicato per case del filename. Varianti storiche: [00-index.md](./00-index.md)
-<<<<<<< .merge_file_3RBxtY
 - **[algolia-docsearch.md](./algolia-docsearch.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [algolia-docsearch.md](./algolia-docsearch-adding-custom.md), [algolia-docsearch-old.md](./algolia-docsearch-old.md), [algolia-docsearch-old2.md](./algolia-docsearch-old2.md), [algolia-docsearch_1.md](./algolia-docsearch-adding-custom.md), [algolia_docsearch.md](./algolia_docsearch.md)
-=======
 - **[algolia-docsearch.md](./algolia-docsearch.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [algolia-docsearch-1.md](./algolia-docsearch-adding-custom.md), [algolia-docsearch-old.md](./algolia-docsearch-old.md), [algolia-docsearch-old2.md](./algolia-docsearch-old2.md), [algolia-docsearch_1.md](./algolia-docsearch-adding-custom.md), [algolia_docsearch.md](./algolia_docsearch.md)
->>>>>>> .merge_file_rHNb9B
 - **[analisi-componenti-blade-laravel.md](./analisi-componenti-blade-laravel.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [analisi-componenti-blade-laravel-1.md](./analisi-componenti-blade-laravel-corretta.md), [analisi-componenti-blade-laravel_1.md](./analisi-componenti-blade-laravel-problema-identificato.md), [analisi_componenti_blade_laravel.md](./analisi_componenti_blade_laravel.md)
 - **[architecture-xotdata-pattern.md](./architecture-xotdata-pattern.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [architecture-xotdata-pattern-1.md](./architecture-xotdata-pattern-errore-critico.md), [architecture-xotdata-pattern_1.md](./architecture-xotdata-pattern-errore-critico-risolto.md), [architecture_xotdata_pattern.md](./architecture_xotdata_pattern.md)
 - **[best_practices.md](./best-practices.md)** — varianti dello stesso contenuto per case/underscore-trattino/suffisso numerico (-1, _1, -old, -renamed) o data di redazione. Varianti storiche: [best_practices.md](./best-practices.md)
@@ -663,7 +658,6 @@ Durante l'audit sono stati individuati alcuni file con nome chiaramente corrotto
 - `gits-resolution-impact.md` -> variante di `git-conflicts-resolution-impact.md`
 - `phpstanes.md` -> variante di `phpstan.md`
 - `footer-ui-ux-correction-sumy.md` / `footer-ui-ux-correction-sumy-.md` -> variante di `footer-ui-ux-correction.md` (documento base non presente separatamente)
-
 
 ## Manutenzione di questo indice
 

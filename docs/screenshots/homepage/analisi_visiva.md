@@ -1,34 +1,10 @@
 ---
-<<<<<<< .merge_file_QJxAs4
-<<<<<<< .merge_file_GJ5mKO
 title: "analisi visiva"
-=======
-title: "Analisi Visiva"
->>>>>>> .merge_file_n4iy4R
-=======
-<<<<<<< .merge_file_vD2WxV
-title: "analisi visiva"
-=======
-title: "Analisi Visiva"
->>>>>>> .merge_file_aUVF52
->>>>>>> .merge_file_sBs5Mu
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_QJxAs4
-<<<<<<< .merge_file_GJ5mKO
 qmd: "analisi visiva"
-=======
-qmd: "Analisi Visiva"
->>>>>>> .merge_file_n4iy4R
-=======
-<<<<<<< .merge_file_vD2WxV
-qmd: "analisi visiva"
-=======
-qmd: "Analisi Visiva"
->>>>>>> .merge_file_aUVF52
->>>>>>> .merge_file_sBs5Mu
 issues: []
 discussions: []
 ---
@@ -43,36 +19,12 @@ discussions: []
 
 ---
 
-<<<<<<< .merge_file_QJxAs4
-<<<<<<< .merge_file_GJ5mKO
 title: "analisi visiva"
-=======
-title: "ANALISI VISIVA"
->>>>>>> .merge_file_n4iy4R
-=======
-<<<<<<< .merge_file_vD2WxV
-title: "analisi visiva"
-=======
-title: "ANALISI VISIVA"
->>>>>>> .merge_file_aUVF52
->>>>>>> .merge_file_sBs5Mu
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_QJxAs4
-<<<<<<< .merge_file_GJ5mKO
 qmd: "analisi visiva"
-=======
-qmd: "ANALISI VISIVA"
->>>>>>> .merge_file_n4iy4R
-=======
-<<<<<<< .merge_file_vD2WxV
-qmd: "analisi visiva"
-=======
-qmd: "ANALISI VISIVA"
->>>>>>> .merge_file_aUVF52
->>>>>>> .merge_file_sBs5Mu
 issues: []
 discussions: []
 ## 1. Header Structure

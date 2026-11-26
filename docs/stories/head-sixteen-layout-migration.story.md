@@ -5,7 +5,7 @@ module: Cms
 status: in-progress
 priority: high
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-23
 tags: [bmad, ecc, seo, head, laravel-head, theme-sixteen, migration, parity]
 related:
   - "head-sixteen-parity-closeout.story.md"
@@ -160,6 +160,15 @@ e il layout front office richiede sempre `@filamentStyles`, notifications e
 `@filamentScripts`. La condizione `@if ($panelAssets)` introduceva una variante
 non usata e poteva nascondere asset obbligatori. Il contratto canonico è quindi
 sempre quello documentato in `../bmad/filament-layout-styles-scripts.md`.
+
+## Verifica 2026-11-23
+
+La verifica ha trovato marcatori di conflitto nelle due Blade Cms e nel test
+del contratto. Sono stati risolti mantenendo il contratto canonico: notifiche,
+`@filamentStyles` e `@filamentScripts` sono sempre emessi, in ordine, e la
+prop `panelAssets` è stata rimossa anche dai componenti perché nessun caller la
+valorizza. `FilamentLayoutDirectivesTest` passa e PHPStan su `Modules/Cms` e
+`Modules/Fixcity` è a zero.
 
 ---
 

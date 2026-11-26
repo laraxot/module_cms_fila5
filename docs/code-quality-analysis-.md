@@ -1,10 +1,10 @@
 ---
-title: "code quality analysis"
+title: "code quality analysis "
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "code quality analysis cms 2025-11-24"
+qmd: "code quality analysis "
 issues: []
 discussions: []
 ---
@@ -22,20 +22,12 @@ discussions: []
 
 ---
 
-<<<<<<< .merge_file_ns1bvS
 title: "code quality analysis "
-=======
-title: "code quality analysis"
->>>>>>> .merge_file_6EZiLF
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_ns1bvS
 qmd: "code quality analysis "
-=======
-qmd: "code quality analysis cms 2025-11-24"
->>>>>>> .merge_file_6EZiLF
 issues: []
 discussions: []
 ## 🚨 Status Critico

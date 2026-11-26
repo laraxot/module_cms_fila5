@@ -1,34 +1,10 @@
 ---
-<<<<<<< .merge_file_eXlO18
-<<<<<<< .merge_file_cHnjo6
 title: "screenshot analysis"
-=======
-title: "Screenshot Analysis"
->>>>>>> .merge_file_ufbtml
-=======
-<<<<<<< .merge_file_7KrABE
-title: "screenshot analysis"
-=======
-title: "Screenshot Analysis"
->>>>>>> .merge_file_oG0sWg
->>>>>>> .merge_file_rBAWbW
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_eXlO18
-<<<<<<< .merge_file_cHnjo6
 qmd: "screenshot analysis"
-=======
-qmd: "Screenshot Analysis"
->>>>>>> .merge_file_ufbtml
-=======
-<<<<<<< .merge_file_7KrABE
-qmd: "screenshot analysis"
-=======
-qmd: "Screenshot Analysis"
->>>>>>> .merge_file_oG0sWg
->>>>>>> .merge_file_rBAWbW
 issues: []
 discussions: []
 ---
@@ -60,36 +36,12 @@ URL: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html
 
 ---
 
-<<<<<<< .merge_file_eXlO18
-<<<<<<< .merge_file_cHnjo6
 title: "screenshot analysis"
-=======
-title: "SCREENSHOT ANALYSIS"
->>>>>>> .merge_file_ufbtml
-=======
-<<<<<<< .merge_file_7KrABE
-title: "screenshot analysis"
-=======
-title: "SCREENSHOT ANALYSIS"
->>>>>>> .merge_file_oG0sWg
->>>>>>> .merge_file_rBAWbW
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_eXlO18
-<<<<<<< .merge_file_cHnjo6
 qmd: "screenshot analysis"
-=======
-qmd: "SCREENSHOT ANALYSIS"
->>>>>>> .merge_file_ufbtml
-=======
-<<<<<<< .merge_file_7KrABE
-qmd: "screenshot analysis"
-=======
-qmd: "SCREENSHOT ANALYSIS"
->>>>>>> .merge_file_oG0sWg
->>>>>>> .merge_file_rBAWbW
 issues: []
 discussions: []
 ### 2. Hero Section
@@ -195,11 +147,6 @@ Screenshot: footer_bootstrap_italia.png
 ### Screenshots
 ```
 Screenshot: fixcity_header_current.png
-Screenshot: fixcity_hero_current.png
-Screenshot: fixcity_governance_current.png
-Screenshot: fixcity_events_current.png
-Screenshot: fixcity_topics_current.png
-Screenshot: fixcity_footer_current.png
 URL: http://fixcity.local/it/tests/homepage
 ```
 

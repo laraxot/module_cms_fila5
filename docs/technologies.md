@@ -121,19 +121,8 @@ Questo documento descrive le tecnologie principali utilizzate nel modulo CMS.
 ## Collegamenti
 
 - [Architettura](architecture.md)
-<<<<<<< .merge_file_o7cUXQ
-<<<<<<< .merge_file_0Et52Z
 - [API](api/readme.md)
-=======
 - [API](api/README.md)
->>>>>>> .merge_file_UWd2bh
-=======
-<<<<<<< .merge_file_r5wWIt
-- [API](api/readme.md)
-=======
-- [API](api/README.md)
->>>>>>> .merge_file_Rnd6Xe
->>>>>>> .merge_file_7T6FMz
 - [Frontend](frontoffice/README.md)
 - [Sviluppo](developer/README.md)
 - [Utente](user/README.md)

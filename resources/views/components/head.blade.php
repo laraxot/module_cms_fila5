@@ -1,47 +1,25 @@
 {{--
   Contratto Filament 5.x — Configuring your layout:
   https://filamentphp.com/docs/5.x/introduction/installation#configuring-your-layout
-<<<<<<< .merge_file_ylJzDd
 
+<<<<<<< .merge_file_VXNuPP
+=======
   OBBLIGATORIO in <head>: @filamentStyles (prima del CSS Vite del tema).
   Senza di esso i componenti Filament/Livewire fuori pannello non hanno CSS.
   @livewireStyles non si ripete: gli asset Livewire sono già coperti da Filament + inject_assets.
-<<<<<<< .merge_file_qR3GIA
-=======
-  Con :panel-assets="false" (siti pubblici senza componenti Filament) CSS Filament e script del tema scuro
-  non si caricano: Livewire, se la pagina ha componenti, si inietta da solo.
->>>>>>> .merge_file_tb5YGG
-=======
+>>>>>>> .merge_file_ChTDyu
   @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
->>>>>>> .merge_file_qBlJ3X
 --}}
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @head
     <style>[x-cloak] { display: none !important; }</style>
-<<<<<<< .merge_file_ylJzDd
-<<<<<<< .merge_file_qR3GIA
-=======
->>>>>>> .merge_file_qBlJ3X
     <script>
         if (typeof Storage !== 'undefined' && localStorage.getItem('dark_mode') === 'true') {
             document.documentElement.classList.add('dark');
         }
     </script>
     @filamentStyles
-<<<<<<< .merge_file_ylJzDd
-=======
-    @if ($panelAssets)
-        <script>
-            if (typeof Storage !== 'undefined' && localStorage.getItem('dark_mode') === 'true') {
-                document.documentElement.classList.add('dark');
-            }
-        </script>
-        @filamentStyles
-    @endif
->>>>>>> .merge_file_tb5YGG
-=======
->>>>>>> .merge_file_qBlJ3X
     @vite(['resources/css/app.css'], 'themes/'.$pubTheme)
 </head>

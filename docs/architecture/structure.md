@@ -99,19 +99,8 @@ Modules/Cms/
 6. Aggiornare i riferimenti nelle routes
 
 ## Collegamenti Bidirezionali
-<<<<<<< .merge_file_1bgZUz
-<<<<<<< .merge_file_5MFZQH
 - [README](readme.md) - Documentazione principale del modulo
-=======
 - [README](README.md) - Documentazione principale del modulo
->>>>>>> .merge_file_HSbmZs
-=======
-<<<<<<< .merge_file_5dSoB5
-- [README](readme.md) - Documentazione principale del modulo
-=======
-- [README](README.md) - Documentazione principale del modulo
->>>>>>> .merge_file_rrLr9A
->>>>>>> .merge_file_cH7xjf
 - [Architettura](architecture.md) - Architettura del sistema CMS
 - [Struttura Moduli Laravel](struttura-moduli-laravel.md) - Struttura standard dei moduli Laravel
 - [Namespace Moduli](namespace-moduli-laravel-<nome progetto>.md) - Convenzioni di namespace

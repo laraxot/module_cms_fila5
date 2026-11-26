@@ -13,23 +13,11 @@ discussions: []
 
 ## Collegamenti correlati
 - [README modulo Cms](../README.md)
-<<<<<<< .merge_file_IBvj1X
-<<<<<<< .merge_file_tQlh13
-=======
-<<<<<<< .merge_file_0WvIaV
->>>>>>> .merge_file_W63CgS
 - [Documentazione User](/laravel/Modules/User/docs/HEADER_LANGUAGE_SELECTOR_WITH_FLAGS.md)
 - [Documentazione Sezioni](./SECTIONS_STRUCTURE.md)
 - [Best Practices Chiavi di Traduzione](/laravel/Modules/Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
-=======
 - [Documentazione User](/laravel/Modules/User/docs/header_language_selector_with_flags.md)
-- [Documentazione Sezioni](./SECTIONS_STRUCTURE.md)
 - [Best Practices Chiavi di Traduzione](/laravel/Modules/Lang/docs/translation_keys_best_practices.md)
-<<<<<<< .merge_file_IBvj1X
->>>>>>> .merge_file_bOETzr
-=======
->>>>>>> .merge_file_1enFr7
->>>>>>> .merge_file_W63CgS
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)
 
 ## Panoramica

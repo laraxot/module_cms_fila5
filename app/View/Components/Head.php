@@ -55,7 +55,6 @@ final class Head extends Component
         public readonly ?string $description = null,
         public readonly ?bool $homepage = null,
         public readonly ?string $themeColor = null,
-        public readonly bool $panelAssets = true,
     ) {
     }
 
@@ -123,7 +122,6 @@ final class Head extends Component
 
         return view('cms::components.head', [
             'pubTheme' => $meta->getPubTheme(),
-            'panelAssets' => $this->panelAssets,
         ]);
     }
 

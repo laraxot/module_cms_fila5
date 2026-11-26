@@ -144,22 +144,11 @@ export function validateForm(data) {
    - Controllare i messaggi
    - Testare gli input
 
-<<<<<<< .merge_file_TiEQrQ
-<<<<<<< .merge_file_Z4pZOf
-=======
-<<<<<<< .merge_file_z3jrnx
->>>>>>> .merge_file_aKtdU5
 ## Collegamenti tra versioni di security.md
 * [security.md](laravel/modules/gdpr/docs/packages/security.md)
 * [security.md](laravel/modules/cms/docs/frontoffice/security.md)
 * [security.md](laravel/themes/one/docs/security.md)
-=======
 ## Collegamenti tra versioni di SECURITY.md
 * [SECURITY.md](laravel/modules/gdpr/docs/packages/SECURITY.md)
 * [SECURITY.md](laravel/modules/cms/docs/frontoffice/SECURITY.md)
 * [SECURITY.md](laravel/themes/one/docs/SECURITY.md)
-<<<<<<< .merge_file_TiEQrQ
->>>>>>> .merge_file_gMV12T
-=======
->>>>>>> .merge_file_0Oh1Hh
->>>>>>> .merge_file_aKtdU5

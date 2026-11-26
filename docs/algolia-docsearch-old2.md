@@ -9,11 +9,7 @@ issues: []
 discussions: []
 module: theme
 topic: algolia-docsearch-old2
-<<<<<<< .merge_file_ki8fSA
-canonical: ../../../Themes/docs/shared-components/algolia-docsearch.md
-=======
 canonical: ../../../Themes/docs/shared-components/algolia-docsearch-1.md
->>>>>>> .merge_file_MxOmxU
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/algolia-docsearch.md

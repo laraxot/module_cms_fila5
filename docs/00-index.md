@@ -44,22 +44,6 @@ discussions: https://github.com/laraxot/module_cms_fila5/discussions
 - [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
 # Cms Module Documentation Index
 
-## Core Concepts
-- [Project Purpose](../Meetup/docs/project-purpose.md) - Purpose of the CMS system
-- [Business Logic](../Meetup/docs/business-logic.md) - Core business requirements
-- [Architecture Overview](../Meetup/docs/architecture-overview.md) - Module architecture patterns
-
-## Development Guides
-- [Implementation Plan](../Meetup/docs/implementation-plan.md) - Development roadmap
-- [Services Guide](../Meetup/docs/services-guide.md) - Service layer documentation
-
-## Code Quality
-- [Common PHPStan Errors](common-phpstan-errors.md) - Documentation about common PHPStan issues and their solutions
-
-## Frontend Assets
-- [Development Workflow CSS/JS Changes](../Meetup/docs/development-workflow-css-js-changes.md) - Asset management
-- [Build and Copy Workflow](../Meetup/docs/build-and-copy-workflow.md) - Build process
-
 ## Missing Features & Gaps
 - [Missing Features](../Meetup/docs/missing-features.md) - Identified missing functionality
 - [Gap Analysis](../Meetup/docs/gap-analysis.md) - Gap analysis between current and desired state
@@ -67,19 +51,8 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 
 ## 📚 Design Comuni - Index Completo
 
-<<<<<<< .merge_file_WE7Hse
-<<<<<<< .merge_file_rbRymi
 - **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
-=======
 - **[design_comuni_index.md](./design_comuni_index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
->>>>>>> .merge_file_DmRFTE
-=======
-<<<<<<< .merge_file_4Jkqvd
-- **[DESIGN_COMUNI_INDEX.md](./DESIGN_COMUNI_INDEX.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
-=======
-- **[design_comuni_index.md](./design_comuni_index.md)** - **INDEX COMPLETO** con tutti i link bidirezionali
->>>>>>> .merge_file_bLStPb
->>>>>>> .merge_file_1imx40
 
 ## Active design-comuni references
 
@@ -92,27 +65,14 @@ Il modulo Cms gestisce contenuti, composizione pagina e rendering CMS-driven dei
 - [design-comuni-batch-audit.md](./design-comuni-batch-audit.md) - Audit batch pagine
 - [design-comuni-batch-parity.md](./design-comuni-batch-parity.md) - Verifica parity
 - [architecture/homepage-structure.md](./architecture/homepage-structure.md) - Flusso runtime aggiornato della homepage di test
-<<<<<<< .merge_file_WE7Hse
-<<<<<<< .merge_file_rbRymi
-=======
-<<<<<<< .merge_file_4Jkqvd
->>>>>>> .merge_file_1imx40
 - [PAGE_COMPONENT_ARCHITECTURE.md](./PAGE_COMPONENT_ARCHITECTURE.md) - Architettura generale componenti pagina
 
 ## Theme cross links
 
 - [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-INDEX.md) - Indice docs del tema
-=======
 - [page_component_architecture.md](./page_component_architecture.md) - Architettura generale componenti pagina
 
-## Theme cross links
-
 - [../../../Themes/Sixteen/docs/00-index.md](../../../Themes/Sixteen/docs/00-index.md) - Indice docs del tema
-<<<<<<< .merge_file_WE7Hse
->>>>>>> .merge_file_DmRFTE
-=======
->>>>>>> .merge_file_bLStPb
->>>>>>> .merge_file_1imx40
 - [../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../Themes/Sixteen/docs/design-comuni/00-index.md) - Workspace attivo parity homepage
 - [../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md](../../../Themes/Sixteen/docs/design-comuni/ALL_PAGES_ANALYSIS.md) - Analisi 54 pagine
 - [../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md](../../../Themes/Sixteen/docs/design-comuni/PROGRESS_REPORT.md) - Report progresso

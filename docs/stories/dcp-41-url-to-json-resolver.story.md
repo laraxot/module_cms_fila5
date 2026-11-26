@@ -12,17 +12,7 @@ updated: 2026-10-13
 tags: [cms, json, slug, governance]
 qmd: "dcp-41 Da URL a JSON: strumento di verifica e regola contro i JSON inventati"
 related: [Modules/Fixcity/docs/stories/2026-10-13-dcp-35-tickets-create-privacy-dati-coordinamento.story.md, Modules/Fixcity/docs/stories/2026-10-13-dcp-44-audit-docs-tickets-create.story.md]
-<<<<<<< .merge_file_EXNMzU
-<<<<<<< .merge_file_cLnXI4
-=======
 date_originale_nome_file: 2026-10-13
->>>>>>> .merge_file_ScP4Bi
-=======
-<<<<<<< .merge_file_d8LBGH
-=======
-date_originale_nome_file: 2026-10-13
->>>>>>> .merge_file_CATgu5
->>>>>>> .merge_file_xTvZlC
 ---
 
 # DCP-41: da URL a JSON
@@ -66,12 +56,10 @@ laravel/config/local/fixcity/database/content/pages/tickets.create.json
 laravel/Modules/Fixcity/config/database/content/pages/tickets.create.json
 exit=0
 $ page-json-for-url.sh http://192.168.1.40:8000/it/tests
-slug: tests.index (letto dalla risposta)
 laravel/config/local/fixcity/database/content/pages/tests.index.json
 laravel/Modules/Fixcity/config/database/content/pages/tests.index.json
 exit=0
 $ page-json-for-url.sh http://192.168.1.40:8000/it/tickets/inesistente-xyz
-slug: tickets.inesistente-xyz (letto dalla risposta)
 NESSUN JSON per 'tickets.inesistente-xyz': non crearlo senza chiedere
 exit=2
 $ page-json-for-url.sh http://192.168.1.40:8000/it/pagina-che-non-esiste

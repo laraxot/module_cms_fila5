@@ -1,34 +1,10 @@
 ---
-<<<<<<< .merge_file_O7EncS
-<<<<<<< .merge_file_HccFz8
 title: "sprint planning"
-=======
-title: "Sprint Planning"
->>>>>>> .merge_file_0TnJJB
-=======
-<<<<<<< .merge_file_jhFgsD
-title: "sprint planning"
-=======
-title: "Sprint Planning"
->>>>>>> .merge_file_qkASMx
->>>>>>> .merge_file_n18qPB
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_O7EncS
-<<<<<<< .merge_file_HccFz8
 qmd: "sprint planning"
-=======
-qmd: "Sprint Planning"
->>>>>>> .merge_file_0TnJJB
-=======
-<<<<<<< .merge_file_jhFgsD
-qmd: "sprint planning"
-=======
-qmd: "Sprint Planning"
->>>>>>> .merge_file_qkASMx
->>>>>>> .merge_file_n18qPB
 issues: []
 discussions: []
 ---
@@ -41,36 +17,12 @@ discussions: []
 
 ---
 
-<<<<<<< .merge_file_O7EncS
-<<<<<<< .merge_file_HccFz8
 title: "sprint planning"
-=======
-title: "SPRINT PLANNING"
->>>>>>> .merge_file_0TnJJB
-=======
-<<<<<<< .merge_file_jhFgsD
-title: "sprint planning"
-=======
-title: "SPRINT PLANNING"
->>>>>>> .merge_file_qkASMx
->>>>>>> .merge_file_n18qPB
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-<<<<<<< .merge_file_O7EncS
-<<<<<<< .merge_file_HccFz8
 qmd: "sprint planning"
-=======
-qmd: "SPRINT PLANNING"
->>>>>>> .merge_file_0TnJJB
-=======
-<<<<<<< .merge_file_jhFgsD
-qmd: "sprint planning"
-=======
-qmd: "SPRINT PLANNING"
->>>>>>> .merge_file_qkASMx
->>>>>>> .merge_file_n18qPB
 issues: []
 discussions: []
 ## Sprint Goal
