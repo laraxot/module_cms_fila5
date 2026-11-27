@@ -12,11 +12,17 @@ use Spatie\QueueableAction\QueueableAction;
  * Salva la testata del sito nella config appearance del tenant.
  *
  * @contract docs/contracts/save-headernav-config-action.md
+<<<<<<< .merge_file_gb43jq
+=======
+ *
+ * @see docs/contracts/save-headernav-config-action.md
+>>>>>>> .merge_file_T5qYD9
  */
 class SaveHeadernavConfigAction
 {
     use QueueableAction;
 
+    /** @see docs/contracts/save-headernav-config-action.md */
     public function execute(HeadernavData $data): void
     {
         $config = ['headernav' => $data->toArray()];

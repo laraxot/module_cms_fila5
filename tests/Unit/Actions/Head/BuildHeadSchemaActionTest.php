@@ -6,7 +6,15 @@ namespace Modules\Cms\Tests\Unit\Actions\Head;
 
 use Laravel\Head\Schema\SchemaObject;
 use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 /**
  * @param  SchemaObject|array<string, mixed>  $schema
@@ -116,8 +124,14 @@ test('the first breadcrumb falls back to the brand and an existing isPartOf is k
     Assert::assertSame(['@id' => 'https://other.test/#website'], schemaArray($schemas[0])['isPartOf']);
 });
 
+<<<<<<< .merge_file_KCfZlw
 test('business data turn the home organization into a local business', function (): void {
     $schemas = (new BuildHeadSchemaAction())->execute(
+=======
+/** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
+test('business data turn the home organization into a local business', function (): void {
+    $schemas = (new BuildHeadSchemaAction)->execute(
+>>>>>>> .merge_file_2EQmtT
         isHome: true,
         brand: 'Example',
         homeUrl: 'https://example.test/it',
@@ -154,8 +168,14 @@ test('business data turn the home organization into a local business', function 
     Assert::assertArrayNotHasKey('sameAs', $organization);
 });
 
+<<<<<<< .merge_file_KCfZlw
 test('without business data the home organization stays a plain Organization', function (): void {
     $schemas = (new BuildHeadSchemaAction())->execute(
+=======
+/** @see Modules/Cms/docs/bmad/head-component-adoption-plan.md */
+test('without business data the home organization stays a plain Organization', function (): void {
+    $schemas = (new BuildHeadSchemaAction)->execute(
+>>>>>>> .merge_file_2EQmtT
         isHome: true,
         brand: 'Example',
         homeUrl: 'https://example.test/it',

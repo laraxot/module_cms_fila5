@@ -8,8 +8,16 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Mockery\MockInterface;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Symfony\Component\HttpFoundation\Response;
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
 
 /**
  * @param  array<int, mixed>  $args
@@ -40,7 +48,7 @@ test('handle returns next response when cms page slug cannot be resolved', funct
     Assert::assertSame(200, $response->getStatusCode());
 
     Assert::assertSame('ok', $response->getContent());
-});
+})->group('CMS-PAGE-SLUG-INV-5');
 
 test('resolveCmsPageSlug prefers folio route name when it matches a cms page', function (): void {
     $middleware = new PageSlugMiddleware;
@@ -83,7 +91,7 @@ test('handle wraps non-response next value into 500 response when slug is not a 
     Assert::assertSame(500, $response->getStatusCode());
 
     Assert::assertSame('Internal Server Error', $response->getContent());
-});
+})->group('CMS-PAGE-SLUG-INV-9');
 
 test('parseMiddleware splits name and parameters', function (): void {
     $middleware = new PageSlugMiddleware;
@@ -125,7 +133,7 @@ test('executeMiddlewareChain returns 500 when final closure does not return resp
     Assert::assertSame(500, $response->getStatusCode());
 
     Assert::assertSame('Internal Server Error', $response->getContent());
-});
+})->group('CMS-PAGE-SLUG-INV-9');
 
 test('executeMiddlewareChain treats the web group as already applied by the folio stack', function (): void {
     $middleware = new PageSlugMiddleware;
@@ -139,7 +147,7 @@ test('executeMiddlewareChain treats the web group as already applied by the foli
 
     Assert::assertSame(200, $response->getStatusCode());
     Assert::assertSame('reached', $response->getContent());
-});
+})->group('CMS-PAGE-SLUG-INV-5');
 
 test('executeMiddlewareChain refuses an unresolvable middleware name with a clear message', function (): void {
     $middleware = new PageSlugMiddleware;
@@ -154,4 +162,4 @@ test('executeMiddlewareChain refuses an unresolvable middleware name with a clea
         ['auht'],
         fn (Request $req): Response => new Response('must not be reached', 200),
     ]))->toThrow(InvalidArgumentException::class, "'auht'");
-});
+})->group('CMS-PAGE-SLUG-INV-2');

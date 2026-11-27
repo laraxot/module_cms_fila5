@@ -4,9 +4,21 @@ declare(strict_types=1);
 
 use Illuminate\Http\Middleware\SetCacheHeaders;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
+use Modules\Cms\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< .merge_file_EWJesC
 uses(\Modules\Cms\Tests\TestCase::class);
+=======
+/** @see docs/wiki/concepts/cms-page-middleware-json-ssot.md */
+
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+>>>>>>> .merge_file_2FSduA
 
 /*
  * DCP-283 (C-03): dal campo `middleware` del JSON si accettano solo i nomi in allowlist
@@ -17,11 +29,11 @@ test('accetta i middleware realmente usati dai JSON, con i loro parametri', func
     $declared = ['auth', 'throttle:10,1'];
 
     Assert::assertSame($declared, app(ValidatePageMiddlewareAction::class)->execute($declared));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-5');
 
 test('una lista vuota e valida: la pagina e pubblica', function (): void {
     Assert::assertSame([], app(ValidatePageMiddlewareAction::class)->execute([]));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-5');
 
 test('web e un gruppo gia applicato dallo stack Folio e non viene rifiutato', function (): void {
     Assert::assertSame(['web'], app(ValidatePageMiddlewareAction::class)->execute(['web']));

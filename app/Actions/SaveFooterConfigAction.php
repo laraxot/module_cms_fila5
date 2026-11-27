@@ -12,11 +12,17 @@ use Spatie\QueueableAction\QueueableAction;
  * Salva il piede del sito nella config appearance del tenant.
  *
  * @contract docs/contracts/save-footer-config-action.md
+<<<<<<< .merge_file_wqgDm3
+=======
+ *
+ * @see docs/contracts/save-footer-config-action.md
+>>>>>>> .merge_file_DY2FLr
  */
 class SaveFooterConfigAction
 {
     use QueueableAction;
 
+    /** @see docs/contracts/save-footer-config-action.md */
     public function execute(FooterData $data): void
     {
         $config = ['footer' => $data->toArray()];

@@ -4,10 +4,20 @@ declare(strict_types=1);
 
 use Modules\Cms\Actions\SaveHeadernavConfigAction;
 use Modules\Cms\Datas\HeadernavData;
+use Modules\Cms\Tests\TestCase;
 use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< .merge_file_ELmF6L
 uses(\Modules\Cms\Tests\TestCase::class);
+=======
+// Senza questo binding le closure di `test()`/`it()` restano legate a
+// PHPUnit\Framework\TestCase, cioe' a un caso di test SENZA applicazione
+// Laravel: `app()`, `config()` e le facade non si risolvono. Era la causa di
+// 94 fallimenti «Target class [config] does not exist» nel modulo
+// (base_quaeris_fila5#228).
+uses(TestCase::class);
+>>>>>>> .merge_file_DxbYkr
 
 test('SaveHeadernavConfigAction can be instantiated', function () {
     Assert::assertTrue((new ReflectionClass(SaveHeadernavConfigAction::class))->isInstantiable());

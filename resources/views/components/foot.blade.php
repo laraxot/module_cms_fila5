@@ -8,10 +8,14 @@
   3. @vite JS del tema
 
   @livewireScripts non serve: config('livewire.inject_assets') = true.
+  Con :panel-assets="false" i punti 1 e 2 si saltano (siti pubblici senza componenti Filament).
+  @see Modules/Cms/docs/bmad/filament-layout-styles-scripts.md
 --}}
-@livewire('notifications')
+@if ($panelAssets)
+    @livewire('notifications')
 
-@filamentScripts
+    @filamentScripts
+@endif
 @vite(['resources/js/app.js'], 'themes/'.$pubTheme)
 
 @stack('scripts')

@@ -143,12 +143,24 @@ test-results/
 cms.code-workspace
 ruvector.db
 .windsurfrules
+<<<<<<< .merge_file_qNJZlE
 <<<<<<< .merge_file_kMZUsd
+=======
+>>>>>>> .merge_file_g0g6ht
 
 # screenshot di comparazione visiva (artefatti locali)
 docs/project/visual-comparison/
 docs/visual-comparison/
+<<<<<<< .merge_file_qNJZlE
 =======
 tests/coverage-*.*
 docs/screenshots/
 >>>>>>> .merge_file_zTWqWN
+=======
+
+# --- entries uniti da laraxot/dev (sync merge) ---
+tests/coverage-*.*
+docs/screenshots/
+# Regole portate dal remoto laraxot/dev (sync del 24/11), unite alla base senza perdere nulla
+tests/graphify-out/
+>>>>>>> .merge_file_g0g6ht

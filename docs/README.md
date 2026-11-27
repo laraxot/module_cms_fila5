@@ -217,7 +217,7 @@ php -d memory_limit=-1 ./vendor/bin/phpstan analyse --level=max Modules/Cms
 ### Head SEO condiviso
 
 - [Architettura Seo Head](./seo-head-architecture.md)
-- [Piano Cms Head per Sixteen](./bmad/head-component-adoption-plan.md)
+- [Piano Cms Head per Sixteen](../archive/docs-legacy/docs/bmad/head-component-adoption-plan.md)
 - [Story di migrazione](./stories/head-sixteen-layout-migration.story.md)
 - [Story di chiusura parita' e D-7](./stories/head-sixteen-parity-closeout.story.md)
 - [Discussion di coordinamento #93](https://github.com/laraxot/theme_sixteen_fila5/discussions/93)

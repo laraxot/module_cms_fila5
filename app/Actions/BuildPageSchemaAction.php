@@ -12,6 +12,9 @@ use Modules\Xot\Datas\MetatagData;
 use Modules\Xot\Datas\XotData;
 use Spatie\QueueableAction\QueueableAction;
 
+/**
+ * @see docs/schema-org-web-pages.md
+ */
 final class BuildPageSchemaAction
 {
     use QueueableAction;
@@ -59,9 +62,14 @@ final class BuildPageSchemaAction
             && is_string($routeParameters['slug0'])
             && $routeParameters['slug0'] !== ''
         ) {
+            $eventUrl = $this->localizedUrl('/events/'.$routeParameters['slug0']);
+
+            // @type e url sono il contratto coperto da PageSchemaBuilderTest; l'@id permette alla pagina evento di
+            // pubblicare il nodo completo (nome, date, luogo) con lo stesso identificatore e collegarlo a questo.
             $schema['mainEntity'] = [
                 '@type' => 'Event',
-                'url' => $this->localizedUrl('/events/'.$routeParameters['slug0']),
+                '@id' => $eventUrl.'#event',
+                'url' => $eventUrl,
             ];
         }
 

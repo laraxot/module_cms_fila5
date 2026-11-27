@@ -98,7 +98,7 @@ Per il lavoro corrente, la distinzione e' fondamentale:
 
 ### Cms
 - [../design-comuni-homepage.md](../design-comuni-homepage.md)
-- [../00-index.md](../00-index.md)
+- [../00-index.md](../../archive/docs-legacy/docs/00-index.md)
 
 ### Theme Sixteen
 - [../../../../Themes/Sixteen/docs/design-comuni/00-index.md](../../../../Themes/Sixteen/docs/design-comuni/00-index.md)
