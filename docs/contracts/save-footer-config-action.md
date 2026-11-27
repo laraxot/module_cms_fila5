@@ -1,36 +1,16 @@
 ---
 title: "Contratto — SaveFooterConfigAction"
 type: contract
-<<<<<<< .merge_file_cX0vg3
-action: "Modules\Cms\Actions\SaveFooterConfigAction"
-tags: [contract, action, cms, appearance, tenant-config]
-created: 2026-11-24
-updated: 2026-11-24
-=======
 action: "Modules\\Cms\\Actions\\SaveFooterConfigAction"
 tags: [contract, action, tenant, appearance, footer]
 module: Cms
 status: accepted
 created: 2026-11-23
 updated: 2026-11-26
->>>>>>> .merge_file_VuKQd2
 ---
 
 # SaveFooterConfigAction
 
-<<<<<<< .merge_file_cX0vg3
-Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`).
-Sorgente: `app/Actions/SaveFooterConfigAction.php`. Chiamante: pagina Filament
-`app/Filament/Clusters/Appearance/Pages/Footer.php` (salvataggio del form).
-
-## Input
-
-- `FooterData`: dati del form footer (colori, classi, sfondo, ...).
-
-## Output
-
-- `void`.
-=======
 Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`). Sorgente:
 `app/Actions/SaveFooterConfigAction.php`. Chiamante: la pagina Filament `Modules\Cms\Filament\Clusters\Appearance\Pages\Footer`
 (`app/Filament/Clusters/Appearance/Pages/Footer.php`, `updateData()`). Gemella di
@@ -45,31 +25,11 @@ Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-co
 ## Output
 
 - `void`. Il risultato è nel file di configurazione del tenant, chiave `footer` della sezione `appearance`.
->>>>>>> .merge_file_VuKQd2
 
 ## Invarianti
 
 | ID | Regola | Group Pest |
 |---|---|---|
-<<<<<<< .merge_file_cX0vg3
-| CMS-FOOTER-SAVE-INV-1 | Scrive solo la chiave `footer` del file di config `appearance` del tenant, con `FooterData::toArray()`, delegando a `Modules\Tenant\Actions\Config\SaveTenantConfigAction`. | — |
-| CMS-FOOTER-SAVE-INV-2 | Le altre chiavi di `appearance.php` restano (fusione ricorsiva in `SaveTenantConfigAction`; una lista arriva sempre completa e sostituisce la precedente). | — |
-
-## Effetti collaterali
-
-- Riscrive il file PHP `appearance.php` della cartella di config del tenant corrente (via `SaveTenantConfigAction` e
-  `Modules\Xot\Actions\Arr\SaveArrayAction`).
-
-## Errori
-
-- Errori di scrittura del file risalgono al chiamante.
-
-## Non fa
-
-- Non salva nel database: l'aspetto del sito sta nella config del tenant, versionabile con il resto della config.
-- Non svuota la cache di configurazione.
-- Non valida i colori o le classi oltre a quanto fa `FooterData`.
-=======
 | CMS-FOOTER-SAVE-INV-1 | `execute()` delega esattamente una volta a `SaveTenantConfigAction::execute('appearance', ['footer' => $data->toArray()])`: nessun'altra chiave, nessun'altra sezione. Se cade, il salvataggio del piede tocca la configurazione sbagliata. | `CMS-FOOTER-SAVE-INV-1` |
 | CMS-FOOTER-SAVE-INV-2 | Vengono scritti tutti i campi del `Data`, `null` inclusi: un campo svuotato nel form sovrascrive il vecchio valore con `null` invece di lasciarlo. Se cade, non si riesce più a togliere uno sfondo dal pannello. | — (non dimostrato) |
 
@@ -115,4 +75,3 @@ Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-co
 ## Verifica
 
 - `cd laravel && vendor/bin/pest Modules/Cms/tests/Unit/Actions/SaveFooterConfigActionTest.php --group=CMS-FOOTER-SAVE-INV-1`
->>>>>>> .merge_file_VuKQd2

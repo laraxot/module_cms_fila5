@@ -1,36 +1,16 @@
 ---
 title: "Contratto — SaveHeadernavConfigAction"
 type: contract
-<<<<<<< .merge_file_Yhf248
-action: "Modules\Cms\Actions\SaveHeadernavConfigAction"
-tags: [contract, action, cms, appearance, tenant-config]
-created: 2026-11-24
-updated: 2026-11-24
-=======
 action: "Modules\\Cms\\Actions\\SaveHeadernavConfigAction"
 tags: [contract, action, tenant, appearance, headernav]
 module: Cms
 status: accepted
 created: 2026-11-23
 updated: 2026-11-26
->>>>>>> .merge_file_fmVVXx
 ---
 
 # SaveHeadernavConfigAction
 
-<<<<<<< .merge_file_Yhf248
-Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`).
-Sorgente: `app/Actions/SaveHeadernavConfigAction.php`. Chiamante: pagina Filament
-`app/Filament/Clusters/Appearance/Pages/Headernav.php` (salvataggio del form).
-
-## Input
-
-- `HeadernavData`: dati del form headernav (colori, classi, sfondo, ...).
-
-## Output
-
-- `void`.
-=======
 Contratto di comportamento (regola: `Modules/Xot/docs/rules/action-behavioral-contract.md`). Salva la testata del sito nella
 config `appearance` del tenant. Sorgente: `app/Actions/SaveHeadernavConfigAction.php`; delega a
 `Modules\Tenant\Actions\Config\SaveTenantConfigAction`. Chiamante: la pagina Filament
@@ -46,31 +26,11 @@ Gemella di [SaveFooterConfigAction](save-footer-config-action.md).
 ## Output
 
 - `void`. Il risultato è nel file di configurazione del tenant, chiave `headernav` della sezione `appearance`.
->>>>>>> .merge_file_fmVVXx
 
 ## Invarianti
 
 | ID | Regola | Group Pest |
 |---|---|---|
-<<<<<<< .merge_file_Yhf248
-| CMS-HEADERNAV-SAVE-INV-1 | Scrive solo la chiave `headernav` del file di config `appearance` del tenant, con `HeadernavData::toArray()`, delegando a `Modules\Tenant\Actions\Config\SaveTenantConfigAction`. | `CMS-HEADERNAV-SAVE-INV-1` |
-| CMS-HEADERNAV-SAVE-INV-2 | Le altre chiavi di `appearance.php` restano (fusione ricorsiva in `SaveTenantConfigAction`; una lista arriva sempre completa e sostituisce la precedente). | — |
-
-## Effetti collaterali
-
-- Riscrive il file PHP `appearance.php` della cartella di config del tenant corrente (via `SaveTenantConfigAction` e
-  `Modules\Xot\Actions\Arr\SaveArrayAction`).
-
-## Errori
-
-- Errori di scrittura del file risalgono al chiamante.
-
-## Non fa
-
-- Non salva nel database: l'aspetto del sito sta nella config del tenant, versionabile con il resto della config.
-- Non svuota la cache di configurazione.
-- Non valida i colori o le classi oltre a quanto fa `HeadernavData`.
-=======
 | CMS-HEADERNAV-SAVE-INV-1 | `execute()` chiama `SaveTenantConfigAction::execute` una volta con sezione `appearance` e payload esatto `['headernav' => $data->toArray()]`: nessun'altra chiave. Se cade, il tema legge una chiave diversa o perde il merge con footer e altre voci. | `CMS-HEADERNAV-SAVE-INV-1` |
 | CMS-HEADERNAV-SAVE-INV-2 | Non scrive file da sola: tutta la persistenza passa da `SaveTenantConfigAction` (modulo Tenant); l'Action non conosce il percorso del file. Se cade, Cms inventa un percorso tenant e salta merge e difesa da traversal del modulo owner. | — (non dimostrato: struttura del codice) |
 | CMS-HEADERNAV-SAVE-INV-3 | Vengono scritti tutti i campi del `Data`, `null` inclusi: un campo svuotato nel form sovrascrive il vecchio valore con `null` invece di lasciarlo. Se cade, non si riesce più a togliere uno sfondo o una classe CSS dal pannello. | — (non dimostrato) |
@@ -118,4 +78,3 @@ Gemella di [SaveFooterConfigAction](save-footer-config-action.md).
 ## Verifica
 
 - `cd laravel && vendor/bin/pest Modules/Cms/tests/Unit/Actions/SaveHeadernavConfigActionTest.php --group=CMS-HEADERNAV-SAVE-INV-1`
->>>>>>> .merge_file_fmVVXx

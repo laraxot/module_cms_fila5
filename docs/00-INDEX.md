@@ -24,7 +24,7 @@ test, mentre la resa visuale vive nel tema Sixteen.
 - [CHANGELOG.md](./CHANGELOG.md) - Cronologia modifiche
 - [BEST_PRACTICES.md](./BEST_PRACTICES.md) - Best practice consolidate
 - [best-practices/](./best-practices/) - Convenzioni blade, Filament, namespace, rendering
-- [adr/](./adr/INDEX.md) - Decisioni architetturali (ADR)
+- [adr/](./adr/index.md) - Decisioni architetturali (ADR)
 - [contracts/](./contracts/INDEX.md) - Contratti delle Action pubbliche
 - [stories/](./stories/) - Solo story attive (in-progress, in-review, planning, todo)
 - [roadmap/](./roadmap/index.md) - Stato e prossimi passi
