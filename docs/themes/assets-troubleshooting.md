@@ -33,8 +33,13 @@ Questo errore è uno dei più comuni nella gestione dei temi. Per la risoluzione
 
 ## Collegamenti Rilevanti
 
+<<<<<<< .merge_file_5gOiOu
 - [Processo di Build dei Temi](../theme-build-process.md)
 - [Compilazione dei Temi](../theme-compilation.md)
+=======
+- [Processo di Build dei Temi](theme-build-process.md)
+- [Compilazione dei Temi](theme_compilation.md)
+>>>>>>> .merge_file_g28oZb
 - [Documentazione Principale Vite](/docs/vite_assets_troubleshooting.md)
 
 ## Comandi Utili

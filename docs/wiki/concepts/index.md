@@ -1,8 +1,8 @@
 ---
-qmd: "index"
+qmd: "Index"
 issues: []
 discussions: []
-title: "concepts index — Cms"
+title: "Index"
 type: index
 tags: [concepts, Cms]
 created: 2026-05-11

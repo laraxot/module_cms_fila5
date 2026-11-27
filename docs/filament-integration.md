@@ -137,13 +137,13 @@ public function test_filament_components_rendering()
 ## Collegamenti
 
 - [Documentazione CMS](../README.md)
-- [Best Practices](best-practices/theme-reusability.md)
+- [Best Practices](../best_practices/theme-reusability.md)
 - [Configurazione](../config.md)
 - [Testing](../testing.md)
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](frontoffice/architecture.md) - Architettura del sistema CMS
+- [Architettura](architecture.md) - Architettura del sistema CMS
 - [Componenti](filament-components.md) - Componenti Filament
 - [Form](filament-forms.md) - Sistema di form
 - [Resources](filament-resources.md) - Gestione risorse
@@ -151,9 +151,9 @@ public function test_filament_components_rendering()
 - [Personalizzazioni](filament-personalizzazioni-avanzate.md) - Personalizzazioni avanzate
 
 ## Vedi Anche
-- [Modulo UI](../ui/project_docs/readme.md) - Componenti di interfaccia
-- [Modulo Xot](../xot/project_docs/readme.md) - Classi base e utilities
-- [Modulo Theme](../theme/project_docs/readme.md) - Gestione temi
+- [Modulo UI](../ui/project_docs/README.md) - Componenti di interfaccia
+- [Modulo Xot](../xot/project_docs/README.md) - Classi base e utilities
+- [Modulo Theme](../theme/project_docs/README.md) - Gestione temi
 - [Documentazione Filament](https://filamentphp.com/docs) - Documentazione ufficiale
 - [Best Practices](https://filamentphp.com/project_docs/3.x/best-practices) - Best practices Filament
 - [Componenti Blade](https://filamentphp.com/project_docs/3.x/support/blade-components) - Componenti Blade

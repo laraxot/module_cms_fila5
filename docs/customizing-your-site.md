@@ -82,9 +82,9 @@ class Foo extends bar
 </div>
 
 ## Collegamenti tra versioni di customizing-your-site.md
-* [customizing-your-site.md](customizing-your-site.md)
-* [customizing-your-site.md](customizing-your-site.md)
-* [customizing-your-site.md](customizing-your-site.md)
-* [customizing-your-site.md](customizing-your-site.md)
-* [customizing-your-site.md](customizing-your-site.md)
+* [customizing-your-site.md](laravel/modules/gdpr/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](laravel/modules/xot/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](laravel/modules/ui/project_docs/customizing-your-site.md)
+* [customizing-your-site.md](laravel/modules/tenant/project_docs/it/customizing-your-site.md)
+* [customizing-your-site.md](laravel/modules/cms/project_docs/customizing-your-site.md)
 

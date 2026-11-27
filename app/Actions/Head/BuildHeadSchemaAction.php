@@ -17,7 +17,10 @@ use Spatie\QueueableAction\QueueableAction;
  * `/it` e `/en` descrivono la stessa entità. Pagine interne: l'entità di pagina già risolta (che rimanda al `WebSite` con
  * `isPartOf`) + `BreadcrumbList` con nomi brevi.
  * Non si pubblicano proprietà senza dato reale (indirizzo, telefono, sameAs):
- * Google le tratta come contenuto da verificare.
+ * Google le tratta come contenuto da verificare. `description` e `sameAs` entrano solo se il tenant li ha (descrizione del
+ * sito, profili ufficiali in `metatag`): sono i segnali con cui un motore lega il nome del sito a un'entità.
+ *
+ * @see Modules/Seo/docs/adr/search-engine-presence.md
  */
 final class BuildHeadSchemaAction
 {
@@ -32,6 +35,8 @@ final class BuildHeadSchemaAction
      *                                          `ProfessionalService`, sottotipo di LocalBusiness) e proprietà schema.org
      *                                          (`telephone`, `email`, `address`, `areaServed`, `sameAs`, ...). Vuoto =
      *                                          Organization con solo nome, URL e logo.
+     * @param  string|null  $description  descrizione dell'organizzazione (home); vuota = proprietà assente
+     * @param  list<string>  $sameAs  profili ufficiali (URL https), già filtrati; [] = proprietà assente
      * @return list<SchemaObject|array<string, mixed>>
      */
     public function execute(
@@ -47,12 +52,14 @@ final class BuildHeadSchemaAction
         string $homeLabel = '',
         ?array $languages = null,
         array $business = [],
+        ?string $description = null,
+        array $sameAs = [],
     ): array {
         $root = rtrim($rootUrl ?? $homeUrl, '/').'/';
 
         if ($isHome) {
             return [
-                $this->organization($brand, $root, $logoUrl, $business),
+                $this->organization($brand, $root, $logoUrl, $business, $description, $sameAs),
                 $this->webSite($brand, $root, [] !== ($languages ?? []) ? (array) $languages : [$locale]),
             ];
         }
@@ -66,10 +73,12 @@ final class BuildHeadSchemaAction
     /**
      * Con i dati dell'attività l'organizzazione diventa un'attività locale (indirizzo, telefono, zona servita): è
      * il segnale che Google usa per le ricerche «servizio + città». Nome, URL, `@id` e logo restano quelli del sito.
+     * `description` e `sameAs` del sito entrano se l'attività non li dichiara già.
      *
      * @param  array<string, mixed>  $business
+     * @param  list<string>  $sameAs
      */
-    private function organization(string $brand, string $root, ?string $logoUrl, array $business = []): Organization
+    private function organization(string $brand, string $root, ?string $logoUrl, array $business = [], ?string $description = null, array $sameAs = []): Organization
     {
         $type = $business['type'] ?? null;
         $organization = (new Organization(is_string($type) && $type !== '' ? $type : null))
@@ -84,6 +93,13 @@ final class BuildHeadSchemaAction
                 continue;
             }
             $organization = $organization->set($property, $value);
+        }
+
+        if ($description !== null && trim($description) !== '' && $this->isEmpty($business['description'] ?? null)) {
+            $organization = $organization->set('description', trim($description));
+        }
+        if ($sameAs !== [] && $this->isEmpty($business['sameAs'] ?? null)) {
+            $organization = $organization->set('sameAs', array_values($sameAs));
         }
 
         return $organization;

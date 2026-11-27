@@ -13,3 +13,4 @@ canonical: ../../../Themes/docs/shared-components/code-quality-analysis-legacy.m
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/code-quality-analysis-legacy.md
+

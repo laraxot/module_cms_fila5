@@ -9,7 +9,7 @@ issues: []
 discussions: []
 module: theme
 topic: filament_resource_guidelines
-canonical: ../../../Themes/docs/shared-components/FILAMENT-RESOURCE-GUIDELINES.md
+canonical: ../../../Themes/docs/shared-components/filament-resource-guidelines.md
 ---
 
-See canonical documentation: ../../../Themes/docs/shared-components/FILAMENT-RESOURCE-GUIDELINES.md
+See canonical documentation: ../../../Themes/docs/shared-components/filament-resource-guidelines.md

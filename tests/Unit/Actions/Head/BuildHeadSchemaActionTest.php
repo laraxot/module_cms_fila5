@@ -172,3 +172,55 @@ test('without business data the home organization stays a plain Organization', f
     Assert::assertSame('Organization', $organization['@type']);
     Assert::assertArrayNotHasKey('address', $organization);
 });
+
+/**
+ * @param  list<string>  $sameAs
+ * @return array<string, mixed>
+ */
+function homeOrganization(?string $description, array $sameAs): array
+{
+    return schemaArray((new BuildHeadSchemaAction)->execute(
+        isHome: true,
+        brand: 'Example',
+        homeUrl: 'https://example.test/it',
+        pageTitle: 'Example',
+        pageUrl: 'https://example.test/it',
+        locale: 'it',
+        logoUrl: null,
+        page: [],
+        rootUrl: 'https://example.test',
+        description: $description,
+        sameAs: $sameAs,
+    )[0]);
+}
+
+test('home organization carries description and official profiles only when the tenant has them', function (): void {
+    $full = homeOrganization('  Segnala un disservizio al Comune.  ', ['https://www.linkedin.com/company/example', 'https://github.com/example']);
+    Assert::assertSame('Segnala un disservizio al Comune.', $full['description']);
+    Assert::assertSame(['https://www.linkedin.com/company/example', 'https://github.com/example'], $full['sameAs']);
+
+    $bare = homeOrganization(' ', []);
+    Assert::assertArrayNotHasKey('description', $bare);
+    Assert::assertArrayNotHasKey('sameAs', $bare);
+});
+
+test('business data and site description combine, and business wins on the same property', function (): void {
+    $organization = schemaArray((new BuildHeadSchemaAction)->execute(
+        isHome: true,
+        brand: 'Example',
+        homeUrl: 'https://example.test/it',
+        pageTitle: 'Example',
+        pageUrl: 'https://example.test/it',
+        locale: 'it',
+        logoUrl: null,
+        page: [],
+        rootUrl: 'https://example.test',
+        business: ['type' => 'ProfessionalService', 'sameAs' => ['https://business.example/profile']],
+        description: 'Descrizione del sito',
+        sameAs: ['https://www.linkedin.com/company/example'],
+    )[0]);
+
+    Assert::assertSame('ProfessionalService', $organization['@type']);
+    Assert::assertSame('Descrizione del sito', $organization['description']);
+    Assert::assertSame(['https://business.example/profile'], $organization['sameAs']);
+});

@@ -6,6 +6,8 @@ use Illuminate\Http\Middleware\SetCacheHeaders;
 use Modules\Cms\Actions\ValidatePageMiddlewareAction;
 use PHPUnit\Framework\Assert;
 
+uses(\Modules\Cms\Tests\TestCase::class);
+
 /*
  * DCP-283 (C-03): dal campo `middleware` del JSON si accettano solo i nomi in allowlist
  * (`cms.config.page_middleware_allowlist`), confrontati sul nome prima dei due punti.
@@ -23,7 +25,7 @@ test('una lista vuota e valida: la pagina e pubblica', function (): void {
 
 test('web e un gruppo gia applicato dallo stack Folio e non viene rifiutato', function (): void {
     Assert::assertSame(['web'], app(ValidatePageMiddlewareAction::class)->execute(['web']));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-3');
 
 test('rifiuta ogni nome fuori allowlist', function (string $name): void {
     expect(fn () => app(ValidatePageMiddlewareAction::class)->execute([$name]))
@@ -39,18 +41,18 @@ test('rifiuta ogni nome fuori allowlist', function (string $name): void {
     'nome vuoto' => [''],
     'solo parametri' => [':10,1'],
     'prefisso di un nome ammesso' => ['authorize:view'],
-]);
+])->group('CMS-PAGE-MIDDLEWARE-INV-1');
 
 test('un solo nome non ammesso rifiuta tutta la lista', function (): void {
     expect(fn () => app(ValidatePageMiddlewareAction::class)->execute(['auth', 'api']))
         ->toThrow(InvalidArgumentException::class, 'api');
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-2');
 
 test('l allowlist si estende dalla configurazione, non dal JSON', function (): void {
     config(['cms.config.page_middleware_allowlist' => ['auth', 'throttle', 'verified']]);
 
     Assert::assertSame(['verified'], app(ValidatePageMiddlewareAction::class)->execute(['verified']));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-4');
 
 test('con allowlist vuota o non valida non passa nulla tranne web', function (): void {
     config(['cms.config.page_middleware_allowlist' => 'auth']);
@@ -58,4 +60,4 @@ test('con allowlist vuota o non valida non passa nulla tranne web', function ():
     expect(fn () => app(ValidatePageMiddlewareAction::class)->execute(['auth']))
         ->toThrow(InvalidArgumentException::class);
     Assert::assertSame(['web'], app(ValidatePageMiddlewareAction::class)->execute(['web']));
-});
+})->group('CMS-PAGE-MIDDLEWARE-INV-4');

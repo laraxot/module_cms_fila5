@@ -99,8 +99,8 @@ Modules/Cms/
 6. Aggiornare i riferimenti nelle routes
 
 ## Collegamenti Bidirezionali
-- [README](readme.md) - Documentazione principale del modulo
-- [Architettura](../frontoffice/architecture.md) - Architettura del sistema CMS
+- [README](README.md) - Documentazione principale del modulo
+- [Architettura](architecture.md) - Architettura del sistema CMS
 - [Struttura Moduli Laravel](struttura-moduli-laravel.md) - Struttura standard dei moduli Laravel
 - [Namespace Moduli](namespace-moduli-laravel-<nome progetto>.md) - Convenzioni di namespace
 - [Struttura Route e Viste](struttura-route-e-viste.md) - Organizzazione di route e viste

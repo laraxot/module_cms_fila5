@@ -52,7 +52,7 @@ Nessuna modifica necessaria per Task 1: gia' corretto.
 Scoperta rilevante: tutti e 5 i model (`Attachment`, `Menu`, `PageContent`, `Page`,
 `Section`) usano il trait `Modules\Tenant\Models\Traits\SushiToJsons` (Sushi + file JSON
 in `database/content/<table>/*.json`). **Non sono tabelle MySQL vere** — infatti
-`Schema::getColumnListing()` sulla connessione di default (`mysql`, db `<nome progetto>_data`)
+`Schema::getColumnListing()` sulla connessione di default (`mysql`, db `quaeris_data`)
 ritorna vuoto o dati fuorvianti (es. per `menus` esiste per caso una tabella MySQL
 legacy con colonne `id,name,created_at,updated_at`, non collegata al model Sushi).
 

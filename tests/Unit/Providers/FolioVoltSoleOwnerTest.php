@@ -11,6 +11,8 @@ declare(strict_types=1);
 
 use PHPUnit\Framework\Assert;
 
+uses(\Modules\Cms\Tests\TestCase::class);
+
 test('app providers must not define FolioServiceProvider', function (): void {
     $path = base_path('app/Providers/FolioServiceProvider.php');
     Assert::assertFileDoesNotExist($path);

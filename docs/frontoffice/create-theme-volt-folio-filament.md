@@ -459,6 +459,12 @@ npm run preview
 ## Alternative
 
 Se preferisci utilizzare un framework frontend moderno, puoi consultare le guide per:
+<<<<<<< .merge_file_qQ0zOI
 - [Creazione di un tema con Vue.js](create-theme-vue.md)
 - [Creazione di un tema con React](create-theme-react.md)
 - [Creazione di un tema con Laravel](../create_theme.md)
+=======
+- [Creazione di un tema con Vue.js](create_theme_vue.md)
+- [Creazione di un tema con React](create_theme_react.md)
+- [Creazione di un tema con Laravel](create_theme.md)
+>>>>>>> .merge_file_IVTm2U

@@ -270,6 +270,12 @@ npm run preview
 ## Alternative
 
 Se preferisci utilizzare un altro approccio, puoi consultare le guide per:
+<<<<<<< .merge_file_OoFTf0
 - [Creazione di un tema con Volt, Folio e Filament](create-theme-volt-folio-filament.md)
 - [Creazione di un tema con Vue.js](create-theme-vue.md)
 - [Creazione di un tema con Laravel](../create_theme.md)
+=======
+- [Creazione di un tema con Volt, Folio e Filament](create_theme_volt_folio_filament.md)
+- [Creazione di un tema con Vue.js](create_theme_vue.md)
+- [Creazione di un tema con Laravel](create_theme.md)
+>>>>>>> .merge_file_moYd0T

@@ -476,7 +476,7 @@ Add PHPStan to CI/CD pipeline:
 ### 2. Extend to Other Modules
 Apply same patterns to:
 - Modules/User
-- Modules/<nome progetto>
+- Modules/Quaeris
 - Modules/Xot
 - All other modules
 

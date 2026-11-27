@@ -102,12 +102,12 @@ return [
    - Fornire collegamenti bidirezionali
 
 ## Collegamenti
-- [Documentazione Filament](../filament/readme.md)
+- [Documentazione Filament](../filament/README.md)
 - [Struttura Moduli](../modules/structure.md)
 - [Convenzioni di Codice](../coding/conventions.md)
 - [Regole Traduzioni](../translations.md)
 
 ## Collegamenti tra versioni di namespaces.md
-* [namespaces.md](namespaces.md)
-* [namespaces.md](namespaces.md)
-* [namespaces.md](namespaces.md)
+* [namespaces.md](docs/conventions/namespaces.md)
+* [namespaces.md](laravel/modules/xot/docs/conventions/namespaces.md)
+* [namespaces.md](laravel/modules/cms/docs/conventions/namespaces.md)

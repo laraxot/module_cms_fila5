@@ -143,11 +143,12 @@ test-results/
 cms.code-workspace
 ruvector.db
 .windsurfrules
+<<<<<<< .merge_file_kMZUsd
 
-# Laraxot — directory agenti/IDE e tool locali alla root del modulo (module-theme-root-hygiene)
-.agents/
-.codex/
-.opencode/
-.qwen/
-.php-cs-fixer.php
-.php-cs-fixer.dist.php
+# screenshot di comparazione visiva (artefatti locali)
+docs/project/visual-comparison/
+docs/visual-comparison/
+=======
+tests/coverage-*.*
+docs/screenshots/
+>>>>>>> .merge_file_zTWqWN

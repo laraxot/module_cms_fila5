@@ -112,7 +112,7 @@ I blocchi sono componenti modulari che:
 
 ## Collegamenti
 - [Glossario Tecnico](../glossary.md)
-- [Guida allo Stile](../style/readme.md)
+- [Guida allo Stile](../style/README.md)
 - [Documentazione Blocchi](../blocks/README.md)
 
 ## Collegamenti tra versioni di structure.md

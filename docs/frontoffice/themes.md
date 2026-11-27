@@ -166,5 +166,9 @@ npm run build
 
 ## Collegamenti tra versioni di themes.md
 * [themes.md](docs/rules/themes.md)
+<<<<<<< .merge_file_Y3mFfB
 * [themes.md](../../../Xot/docs/themes.md)
+=======
+* [themes.md](laravel/modules/xot/docs/themes.md)
+>>>>>>> .merge_file_hD5dBj
 * [themes.md](laravel/modules/cms/docs/frontoffice/themes.md)

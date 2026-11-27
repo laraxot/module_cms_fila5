@@ -189,11 +189,11 @@ Prima di committare modifiche a un tema, verificare che:
 
 ## Collegamenti
 
-- [Documentazione Temi](/laravel/modules/cms/docs/themes/readme.md)
+- [Documentazione Temi](/laravel/modules/cms/docs/themes/README.md)
 - [Configurazione Temi](/laravel/modules/cms/docs/themes/configuration.md)
 - [Testing dei Temi](/laravel/modules/cms/docs/themes/testing.md)
 
 ## Collegamenti tra versioni di theme-reusability.md
-* [theme-reusability.md](theme-reusability.md)
-* [theme-reusability.md](theme-reusability.md)
-* [theme-reusability.md](theme-reusability.md)
+* [theme-reusability.md](laravel/modules/cms/docs/best-practices/theme-reusability.md)
+* [theme-reusability.md](laravel/themes/one/docs/best_practices/theme-reusability.md)
+* [theme-reusability.md](laravel/themes/one/docs/theme-reusability.md)

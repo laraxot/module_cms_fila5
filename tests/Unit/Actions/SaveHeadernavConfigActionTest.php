@@ -7,6 +7,8 @@ use Modules\Cms\Datas\HeadernavData;
 use Modules\Tenant\Actions\Config\SaveTenantConfigAction;
 use PHPUnit\Framework\Assert;
 
+uses(\Modules\Cms\Tests\TestCase::class);
+
 test('SaveHeadernavConfigAction can be instantiated', function () {
     Assert::assertTrue((new ReflectionClass(SaveHeadernavConfigAction::class))->isInstantiable());
 });
@@ -22,4 +24,4 @@ test('SaveHeadernavConfigAction saves headernav data in the appearance tenant co
     app()->instance(SaveTenantConfigAction::class, $save);
 
     (new SaveHeadernavConfigAction)->execute($data);
-});
+})->group('CMS-HEADERNAV-SAVE-INV-1');

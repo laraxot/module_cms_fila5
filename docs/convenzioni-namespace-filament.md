@@ -56,7 +56,11 @@ namespace Modules\User\App\Filament\Widgets;
   }
   ```
 
+<<<<<<< .merge_file_nammGU
 - Per le regole generali e best practice consulta la doc del modulo [Xot](../../Xot/docs/README.md).
+=======
+- Per le regole generali e best practice consulta la doc del modulo [Xot](../../xot/project_docs/README.md).
+>>>>>>> .merge_file_SYrrp5
 
 ## Regole Tailwind CSS con Filament
 - **IMPORTANTE:** Con Filament 3.x, usare solo `tailwindcss@3.x` (NO 4.x). Riferimento: [Filament Docs](https://filamentphp.com/project_docs/3.x/notifications/installation#installing-tailwind-css).
@@ -69,7 +73,7 @@ namespace Modules\User\App\Filament\Widgets;
   # public_html/themes/<Tema> è un symlink a laravel/Themes/<Tema>/public: niente copia (Modules/Xot/docs/wiki/concepts/public-html-symlink-assets.md)
   ```
 - Non usare mai `vendor:publish` per asset dei temi custom.
-- Vedi anche [README tema One](../../../../themes/one/readme.md)
+- Vedi anche [README tema One](../../../../themes/one/README.md)
 
 ## Preview custom in Filament
 - **Per anteprime custom nelle pagine Filament usare sempre `ViewEntry`** (mai `CustomEntry`).
@@ -92,10 +96,14 @@ Section::make('Anteprima')
 ## Collegamenti Bidirezionali
 
 ### Modulo Xot (Core)
+<<<<<<< .merge_file_nammGU
 - [README.md](../../Xot/docs/README.md) - Indice principale della documentazione
+=======
+- [README.md](../../xot/project_docs/README.md) - Indice principale della documentazione
+>>>>>>> .merge_file_SYrrp5
 - [Struttura dei Moduli](../../xot/project_docs/module_structure.md) - Struttura standard dei moduli
 - [Case Sensitivity delle Directory](../../Xot/docs/directory-case-sensitivity.md) - Regole per la case sensitivity
-- [Regole per i Namespace](../../Xot/docs/namespace-rules.md) - Convenzioni per i namespace
+- [Regole per i Namespace](../../Xot/docs/standards/namespace-rules.md) - Convenzioni per i namespace
 
 ### Filament
 - [Widget Filament](../../xot/project_docs/filament/widgets/xot-base-widget.md) - Documentazione su XotBaseWidget

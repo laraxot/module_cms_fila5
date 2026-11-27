@@ -22,7 +22,7 @@ discussions: []
 ## 🔧 Specific Fixes Applied
 
 ### 1. ProfileContract References (18 files)
-**Problem**: Models referenced non-existent `Modules\<nome progetto>\Models\Profile`
+**Problem**: Models referenced non-existent `Modules\Quaeris\Models\Profile`
 **Solution**: Updated to use `Modules\Xot\Contracts\ProfileContract`
 
 **Affected Models**:

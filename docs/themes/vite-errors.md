@@ -81,8 +81,13 @@ ls -la dist/
 - Verifica dell'integrità dei file compilati
 
 ## Collegamenti Correlati
+<<<<<<< .merge_file_7vScen
 - [Documentazione Generale Errori](/project_docs/errors/readme.md)
 - [Gestione Temi CMS](../../../../Themes/README.md)
+=======
+- [Documentazione Generale Errori](/project_docs/errors/README.md)
+- [Gestione Temi CMS](../themes/README.md)
+>>>>>>> .merge_file_QXiiK6
 - [Processo di Deploy](../../project_docs/deployment/themes.md)
 
 ## Note Tecniche

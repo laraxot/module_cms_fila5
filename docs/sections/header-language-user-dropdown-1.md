@@ -12,14 +12,14 @@ discussions: []
 # Implementazione del Selettore di Lingua e Dropdown Utente nell'Header
 
 ## Collegamenti correlati
-- [Documentazione centrale](/docs/readme.md)
+- [Documentazione centrale](/docs/README.md)
 - [Collegamenti documentazione](/docs/collegamenti-documentazione.md)
 - [Documentazione sezioni](/docs/sections.md)
-- [Sezioni CMS](/laravel/modules/cms/docs/sections.md)
+- [Sezioni CMS](/laravel/Modules/Cms/docs/sections.md)
 - [Sezioni Tema One](/laravel/themes/one/docs/sections/header_language_user_dropdown.md)
-- [Implementazione Logout](/laravel/modules/user/docs/logout_blade_implementation.md)
-- [Analisi Errore Logout](/laravel/modules/user/docs/logout_blade_error_analysis.md)
-- [Errore Eventi Logout](/laravel/modules/user/docs/logout_event_error.md)
+- [Implementazione Logout](/laravel/Modules/User/docs/logout_blade_implementation.md)
+- [Analisi Errore Logout](/laravel/Modules/User/docs/logout_blade_error_analysis.md)
+- [Errore Eventi Logout](/laravel/Modules/User/docs/logout_event_error.md)
 
 ## Panoramica
 
@@ -270,7 +270,7 @@ Per maggiori dettagli, consultare la [documentazione sui componenti SVG delle ba
 Il componente Dropdown Utente deve essere compatibile con il sistema di gestione della sessione di Laravel:
 
 1. Il link di logout deve inviare una richiesta GET al percorso `/logout`
-2. Il file `logout.blade.php` deve gestire correttamente gli eventi di logout come descritto in [LOGOUT_EVENT_ERROR.md](/laravel/modules/user/docs/logout_event_error.md)
+2. Il file `logout.blade.php` deve gestire correttamente gli eventi di logout come descritto in [LOGOUT_EVENT_ERROR.md](/laravel/Modules/User/docs/logout_event_error.md)
 
 ### Sicurezza
 

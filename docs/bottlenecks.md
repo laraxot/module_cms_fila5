@@ -943,19 +943,19 @@ Implementando queste soluzioni, il modulo Cms potrà superare i principali colli
 ## Collegamenti
 - [Roadmap Principale](./roadmap.md)
 - [Convenzioni Namespace Filament](./convenzioni-namespace-filament.md)
-- [Best Practices](best-practices.md)
+- [Best Practices](../xot/docs/best-practices.md)
 - [Struttura Moduli](../xot/docs/module_structure.md)
 
 ## Collegamenti tra versioni di BOTTLENECKS.md
-* [BOTTLENECKS.md](bottlenecks.md)
-* [BOTTLENECKS.md](bottlenecks.md)
-* [BOTTLENECKS.md](bottlenecks.md)
-* [BOTTLENECKS.md](bottlenecks.md)
+* [BOTTLENECKS.md](laravel/modules/xot/docs/bottlenecks.md)
+* [BOTTLENECKS.md](laravel/modules/user/docs/bottlenecks.md)
+* [BOTTLENECKS.md](laravel/modules/media/docs/bottlenecks.md)
+* [BOTTLENECKS.md](laravel/modules/cms/docs/bottlenecks.md)
 
 ## Collegamenti tra versioni di bottlenecks.md
 * [bottlenecks.md](../../../../bashscripts/docs/bottlenecks.md)
 * [bottlenecks.md](../../chart/docs/bottlenecks.md)
-* [bottlenecks.md](../../chart/docs/performance/bottlenecks.md)
+* [bottlenecks.md](../../Chart/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../Gdpr/docs/bottlenecks.md)
 * [bottlenecks.md](../../Gdpr/docs/performance/bottlenecks.md)
 * [bottlenecks.md](../../xot/docs/bottlenecks.md)

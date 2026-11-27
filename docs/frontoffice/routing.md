@@ -234,5 +234,5 @@ $locale = app()->getLocale();
 - [Collegamenti alla Root](../../../../../docs/routing.md)
 
 ## Collegamenti tra versioni di routing.md
-* [routing.md](routing.md)
-* [routing.md](routing.md)
+* [routing.md](docs/routing.md)
+* [routing.md](laravel/modules/cms/docs/frontoffice/routing.md)

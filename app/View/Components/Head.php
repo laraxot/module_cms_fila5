@@ -23,6 +23,7 @@ use Modules\Cms\Models\Page;
 use Modules\Tenant\Actions\Config\GetTenantConfigArrayAction;
 use Modules\Xot\Datas\MetatagData;
 
+use function Safe\filesize;
 use function Safe\parse_url;
 
 /**
@@ -49,9 +50,6 @@ final class Head extends Component
         public readonly ?string $description = null,
         public readonly ?bool $homepage = null,
         public readonly ?string $themeColor = null,
-        // false: niente CSS dei pannelli Filament (e font Inter) ne' script del tema scuro. Per i siti
-        // pubblici che non usano componenti Filament: meno peso su telefono. Default true: nulla cambia.
-        public readonly bool $panelAssets = true,
     ) {}
 
     public function render(): ViewContract
@@ -93,6 +91,14 @@ final class Head extends Component
 
         $this->applyIcons($meta);
 
+        // Verifica della proprietà del sito (Search Console, Bing, Yandex): basta in home, solo i token configurati.
+        // @see Modules/Seo/docs/adr/search-engine-presence.md
+        if ($isHome) {
+            foreach ($meta->getSiteVerifications() as $name => $token) {
+                HeadManager::meta($name, $token);
+            }
+        }
+
         // Una pagina `noindex` non dichiara un canonical (segnale contraddittorio) né alternative linguistiche né dati strutturati.
         // Le alternative linguistiche si derivano dall'URL richiesto: su una variante non canonica (`/it/./faq`, `/index.php/it/faq`)
         // le dichiara solo la forma pulita a cui punta il canonical.
@@ -105,12 +111,8 @@ final class Head extends Component
             $this->applySchema($meta, $brand, $pageTitle, $description, $canonical, $isHome, $isHome ? $writtenLocales : null);
         }
 
-        /** @var view-string $view */
-        $view = 'cms::components.head';
-
-        return view($view, [
+        return view('cms::components.head', [
             'pubTheme' => $meta->getPubTheme(),
-            'panelAssets' => $this->panelAssets,
         ]);
     }
 
@@ -262,20 +264,29 @@ final class Head extends Component
         }
     }
 
-    /** URL dell'asset del tema, solo se il file esiste davvero in `public/`. */
+    /** URL dell'asset del tema, solo se il file esiste davvero in `public/` e non e' vuoto. */
     private function themeAssetUrl(MetatagData $meta, string $file): ?string
     {
         $url = $meta->getPubThemeAsset($file);
         $path = parse_url($url, PHP_URL_PATH);
 
-        return is_string($path) && is_file(public_path(ltrim($path, '/'))) ? $url : null;
+        return is_string($path) && $this->isServableFile(public_path(ltrim($path, '/'))) ? $url : null;
     }
 
     private function publicAssetUrl(string $file): ?string
     {
         $url = asset($file);
 
-        return is_file(public_path($file)) ? $url : null;
+        return $this->isServableFile(public_path($file)) ? $url : null;
+    }
+
+    /**
+     * Un file di 0 byte (il segnaposto `favicon.ico` dello scheletro Laravel) non e' un'icona: linkarlo lascia la scheda
+     * del browser senza icona e fa credere che l'icona ci sia.
+     */
+    private function isServableFile(string $absolutePath): bool
+    {
+        return is_file($absolutePath) && filesize($absolutePath) > 0;
     }
 
     /**
@@ -301,6 +312,8 @@ final class Head extends Component
                 homeLabel: Lang::has($homeLabelKey) ? trim((string) __($homeLabelKey)) : '',
                 languages: $siteLocales,
                 business: $isHome ? $this->businessData() : [],
+                description: $isHome ? $description : null,
+                sameAs: $isHome ? $meta->getSameAs() : [],
             );
 
             foreach ($schemas as $schema) {

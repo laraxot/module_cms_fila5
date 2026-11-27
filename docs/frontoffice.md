@@ -281,7 +281,7 @@ Per estendere il frontoffice con nuove funzionalità:
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](frontoffice/architecture.md) - Architettura generale del frontoffice
+- [Architettura](architecture.md) - Architettura generale del frontoffice
 - [Gestione Route](gestione-route-folio.md) - Gestione delle route con Folio
 - [Volt](volt-web-application.md) - Sviluppo con Laravel Volt
 - [Layout](struttura-layout-componenti-blade-<nome progetto>.md) - Struttura dei layout
@@ -291,8 +291,8 @@ Per estendere il frontoffice con nuove funzionalità:
 
 ## Vedi Anche
 - [Modulo UI](../../UI/docs/README.md) - Componenti UI per il frontoffice
-- [Modulo Lang](../../Lang/docs/readme.md) - Gestione traduzioni
-- [Modulo User](../../User/docs/readme.md) - Gestione utenti
+- [Modulo Lang](../../Lang/docs/README.md) - Gestione traduzioni
+- [Modulo User](../../User/docs/README.md) - Gestione utenti
 - [Modulo Xot](../../Xot/docs/README.md) - Classi base e utilities
 - [Documentazione Volt](volt-introduction.md) - Introduzione a Laravel Volt
 - [Documentazione Folio](folio-pages.md) - Gestione delle pagine con Laravel Folio
